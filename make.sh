@@ -1,0 +1,1 @@
+pandoc -s --highlight-style pygments -S --toc -c css/vendor.css -B basic.html preface.md intro.md  -o index.html
