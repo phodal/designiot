@@ -1,8 +1,9 @@
 
-##《设计物联网系统》
+##《一步步搭建物联网系统》
 
 
-A Document by [Phodal](http://www.phodal.com)
+A Document by [Phodal](http://www.phodal.com) & IoT Future Group
+
 
 ## License
 
