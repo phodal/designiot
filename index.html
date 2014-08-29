@@ -32,7 +32,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link rel="stylesheet" href="css/vendor.css" />
-  <title>设计物联网系统></title>
+  <title>设计物联网系统</title>
   <meta name="keywords" content="设计物联网系统,物联网系统设计">
   <meta name="description" content="一份关于如何设计物联网系统的文档">
 </head>
@@ -45,6 +45,35 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#前言">前言</a></li>
 <li><a href="#目标读者">目标读者</a></li>
 <li><a href="#介绍">介绍</a></li>
+<li><a href="#be-a-geek">Be a Geek</a><ul>
+<li><a href="#从html开始">从html开始</a><ul>
+<li><a href="#html的helloworld">html的hello,world</a></li>
+<li><a href="#调试helloworld">调试hello,world</a></li>
+<li><a href="#说说helloworld">说说hello,world</a></li>
+<li><a href="#想用中文">想用中文？</a></li>
+<li><a href="#其他html标记">其他html标记</a></li>
+<li><a href="#美妙之处">美妙之处</a></li>
+</ul></li>
+<li><a href="#更多">更多</a></li>
+<li><a href="#javascript的helloworld">Javascript的Hello,world</a><ul>
+<li><a href="#更js一点">更js一点</a></li>
+<li><a href="#从数学出发">从数学出发</a></li>
+<li><a href="#设计和编程">设计和编程</a></li>
+<li><a href="#函数">函数</a></li>
+<li><a href="#重新设计">重新设计</a></li>
+<li><a href="#object和函数">object和函数</a></li>
+<li><a href="#面向对象">面向对象</a></li>
+<li><a href="#其他">其他</a></li>
+<li><a href="#美妙之处-1">美妙之处</a></li>
+</ul></li>
+<li><a href="#css">CSS</a></li>
+<li><a href="#关于css">关于CSS</a></li>
+<li><a href="#代码结构">代码结构</a></li>
+<li><a href="#样式与目标">样式与目标</a><ul>
+<li><a href="#选择器">选择器</a></li>
+</ul></li>
+<li><a href="#更有趣的css">更有趣的CSS</a></li>
+</ul></li>
 <li><a href="#物联网毕业设计">物联网毕业设计</a><ul>
 <li><a href="#摘要">摘要</a></li>
 <li><a href="#abstract">Abstract</a></li>
@@ -107,6 +136,596 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>本文档的目标读者是初入物联网领域，希望对物联网系统有一个大概的认识和把握，并学会如何掌握好一个基础的物联网系统的设计。</p>
 <p>本文档对一些概念(如)只做了一些基本介绍，以及便于理解。如果想进一步了解这些概念，会列出一些推荐书目，以供参考。</p>
 <h2 id="介绍">介绍</h2>
+<h1 id="be-a-geek">Be a Geek</h1>
+<p>有一天，走在回学校的路上，我在想：“未来是科技时代（现在也是），只是未来科技会无处不在，而如果我们对于周围的无处不在的代码一无所知的话，或许我们会成为黑客帝国中的一般人”。所以开始想着，人们会开始学习编程就像学习一门语言一样，直到有一天我看到了学习编程如同学习一门语言。这算是一个有趣的时间点，于是我开始想着像之前做最小物联网系统的那些步骤一样，写一个简单的入门。也可以补充好之前在这个最小物联网系统缺失的那些东西，给那些正在开始试图去解决编程问题的人。</p>
+<p>我们先从身边的语言下手，也就是现在无处不在的html+javascript+css。</p>
+<h2 id="从html开始">从html开始</h2>
+<p>从html开始的原因在于我们不需要去配置一个复杂的开发环境，也许你还不知道开始环境是什么东西，而这些需要去慢慢的了解才能接触，特别是对于普通的业余爱好者来说，对于专业的选手那些自然不是问题。HTML是Web的核心语言，也算是基础的语言。</p>
+<h3 id="html的helloworld">html的hello,world</h3>
+<p>Hello,world是一个传统，所以在这里也遵循这个有趣的传统，我们所要做的事情事实很简单。虽然也有点hack的感觉，所以让我们新建一个文件叫“helloworld.html”。</p>
+<p>(PS:大部分人应该都是在windows下工作的，所以你需要新建一个文本，然后重命名，或者你需要一个编辑器，在这里推荐用<strong>sublime text</strong>。破解不破解，注册不注册都不会对你的使用有太多的影响。)</p>
+<ol style="list-style-type: decimal">
+<li><p>新建文件</p></li>
+<li>输入
+<pre><code class="html">hello,world</code></pre>
+</li>
+<li><p>保存为-&gt;“helloworld.html”，</p></li>
+<li><p>然后双击打开这个文件。 正常情况下应该是刚好用你的默认浏览器打开。只要是一个现代的浏览器的话，应该可以看到上面显示的是“Hello,world”。</p></li>
+</ol>
+<p>这才是最短的hello,world程序，其次呢？ruby中的会是这样子的</p>
+<pre><code class="bash">2.0.0-p353 :001 > p "hello,world"
+"hello,world"
+ => "hello,world"
+2.0.0-p353 :002 >
+</code></pre>
+
+<p>等等，如果你了解过html的话，会觉得这一点都不符合语法规则，但是他工作了，没有什么比安装完Nginx后看到It works!更让人激动了。</p>
+<p>遗憾的是，它可能无法在所有的浏览器上工作，所以我们需要去调试其中的bug。</p>
+<h3 id="调试helloworld">调试hello,world</h3>
+<p>我们会发现我们的代码在浏览器中变成了下面的代码，如果你和我一样用的是chrome，那么你可以右键浏览器中的空白区域，点击审查元素，就会看到下面的代码。</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;hello,world&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>这个才是真正能在大部分浏览器上工作的代码，所以复制它到编辑器里吧。</p>
+<h3 id="说说helloworld">说说hello,world</h3>
+我很不喜欢其中的&lt;*&gt;<!--*-->超文本标记语言
+</blockquote>
+<p>所以我们可以发现其中的关键词是标记——markup，也就是说html是一个markup，head是一个markup，body是一个markup。</p>
+<p>而后，我们真正工作的代码是在body里面，至于为什么是在里面，这个问题算是太复杂了。</p>
+<ol style="list-style-type: decimal">
+<li><p>我们所学的汉语是别人创造的，我们所正在学的这门语言也是别人创造的。</p></li>
+<li><p>我们在自己的语言里遵循着<strong>他代表是个男的，她代替是个女的</strong>。</p></li>
+</ol>
+<h3 id="想用中文">想用中文？</h3>
+<p>所以我们也可以把计算机语言与现实世界的语言划上一个等号。而我们所要学习的语言，因为没有一门真正意义上的汉语语言，所以我们便觉得这些很复杂，如果我们可以用汉语代换掉上面的代码的话</p>
+<pre><code>&lt;语言&gt;
+    &lt;头&gt;&lt;结束头&gt;
+    &lt;身体&gt;你好，世界&lt;结束身体&gt;
+&lt;结束语言&gt;</code></pre>
+<p>看上去很奇怪，只是因为是音译过去的原因，也许你会觉得这样会好理解一点，但是输入上可能一点儿也不方便，因为这键盘都不适合我们去输入汉字，也意味着可能你输入的会有问题。</p>
+<p>让我们把上面的代码代替掉原来的代码然后保存，打开浏览器会看到下面的结果</p>
+<pre><code>&lt;语言&gt; &lt;头&gt;&lt;结束头&gt; &lt;身体&gt;你好，世界&lt;结束身体&gt; &lt;结束语言&gt;</code></pre>
+<p>更不幸的结果可能是</p>
+<pre><code>&lt;璇█&gt; &lt;澶�&gt;&lt;缁撴潫澶�&gt; &lt;韬綋&gt;浣犲ソ锛屼笘鐣�&lt;缁撴潫韬綋&gt; &lt;缁撴潫璇█&gt;</code></pre>
+<p>这是一个编码问题，对中文支持不友好。</p>
+<p>所以我们把上面的代码改为和标记语言一样的结构</p>
+<pre><code>&lt;语言&gt;
+    &lt;头&gt;&lt;/头&gt;
+    &lt;身体&gt;你好，世界&lt;/身体&gt;
+&lt;结束语言&gt;</code></pre>
+<p>于是我们看到的结果便是</p>
+<pre><code>&lt;语言&gt; &lt;头&gt; &lt;身体&gt;你好，世界</code></pre>
+<p>被chrome浏览器解析成什么样了？</p>
+<pre><code>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;语言&gt;
+        &lt;头&gt;&lt;!--头--&gt;
+        &lt;身体&gt;你好，世界&lt;!--身体--&gt;
+    &lt;!--语言--&gt;
+&lt;/body&gt;&lt;/html&gt;      </code></pre>
+<p>以&lt;!–开头，–&gt;结尾的是注释，写给人看的代码，不是给机器看的，所以机器不会去理解这些代码。</p>
+<p>但是当我们把代码改成</p>
+<pre><code>&lt;whatwewanttosay&gt;你好世界&lt;/whatwewanttosay&gt;</code></pre>
+<p>浏览器上面显示的内容就变成了</p>
+<pre><code>你好世界</code></pre>
+<p>或许你会觉得很神奇，但是这一点儿也不神奇，虽然我们的中文语法也遵循着标记语言的标准，但是我们的浏览器不支持中文标记。</p>
+<p>结论:</p>
+<ol style="list-style-type: decimal">
+<li>浏览器对中文支持不友好。</li>
+<li>浏览器对英文支持友好。</li>
+</ol>
+<p>刚开始的时候不要对中文编程有太多的想法，这不是很现实的:</p>
+<ol style="list-style-type: decimal">
+<li>现有的系统都是基于英语构建的，对中文支持不是很友好。</li>
+<li>中文输入的速度在某种程度上来说没有英语快。</li>
+</ol>
+<p>我们离开话题已经很远了，但是这里说的都是针对于那些不满于英语的人来说的，只有当我们可以从头构建一个中文系统的时候才是可行的，这些包括的东西有cpu，软件，硬件，而我们还需要考虑重新设计cpu的结构，在某种程度上来说会有些不现实。需要一代又一代的人的努力，只是在当前就更不现实了。忘记那些，师夷长之技以治夷。</p>
+<h3 id="其他html标记">其他html标记</h3>
+<p>添加一个标题，</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;标题&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;hello,world&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>我们便可以在浏览器的最上方看到“标题”二字，真实世界的淘宝网也包含了上面的东西，只是还包括了更多的东西，所以你也可以看懂那些我们可以看到的淘宝的标题。</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+hello,world
+&lt;h1&gt;大标题&lt;/h1&gt;
+&lt;h2&gt;次标题&lt;/h2&gt;
+&lt;h3&gt;...&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;列表1&lt;/li&gt;
+    &lt;li&gt;列表2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>更多的东西可以在一些书籍上看到，这边所要说的只是一次简单的语言入门，其他的东西都和这些类似。</p>
+<h3 id="美妙之处">美妙之处</h3>
+<p>我们简单地上手了一门不算是语言的语言，浏览器简化了这其中的大部分过程，虽然没有C和其他语言来得有专业感，但是我们试着去开始写代码了。我们可能在未来的某一篇中可能会看到类似的语言，诸如python，我们所要做的就是</p>
+<pre><code>$ python file.py
+=&gt;hello,world</code></pre>
+<p>然后在终端上返回结果。只是因为在我看来学会html是有意义的，简单的上手，而后再慢慢地深入，如果一开始我们就开始去理解指针，开始去理解类。我们甚至还知道程序是怎么编译运行的时候，在这个过程中又发生了什么。虽然现在我们也没能理解这其中发生了什么，但是至少展示了</p>
+<ol style="list-style-type: decimal">
+<li>中文编程语言在当前意义不大，不现实，效率不高兼容性差</li>
+<li>语言的语法是固定的。（ps:虽然我们也可以进行扩充，我们将会在后来支持上述的中文标记。）</li>
+<li>已经开始写代码，而不是还在配置开发环境。</li>
+<li>随身的工具才是最好的，最常用的code也才是实在的。</li>
+</ol>
+<h2 id="更多">更多</h2>
+<p>我们还没有试着去解决，某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱的问题。也就是说我们学会的是一个还不能解决实际问题的语言，于是我们还需要学点东西如javascript,css。我们可以理解为Javascript是解决问题的语言，html是前端显示，css是配置文件，这样的话，我们会在那之后学会成为一个近乎专业的程序员。我们刚学了下怎么在前端显示那些代码的行为，于是我们还需要Javascript。 #无处不在的Javascript#</p>
+<p>Javascript现在已经无处不在了，也许你正打开的某个网站他可能是node.js+json+javascript+mustache.js完成的，虽然你还没理解上面那些是什么，也正是因为你不理解才需要去学习更多的东西。但是Javascript已经无处不在了，可能会在你手机上的某个app里，在你浏览的网页里，在你IDE中的某个进程中运行的。</p>
+<h2 id="javascript的helloworld">Javascript的Hello,world</h2>
+<p>这里我们还需要有一个helloworld.html，Javascript是专为网页交互而设计的脚本语言，所以我们一点点来开始这部分的旅途，先写一个符合标准的helloworld.html</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>然后开始融入我们的javascript，向HTML中插入Javascript的方法，就需要用到html中的&lt;script&gt;标签，我们先用页面嵌入的方法来写helloworld。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script&gt;
+            document.write(&#39;hello,world&#39;);
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>按照标准的写法，我们还需要声明这个脚本的类型</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            document.write(&#39;hello,world&#39;);
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>没有显示hello,world?试试下面的代码</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            document.write(&#39;hello,world&#39;);
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;noscript&gt;
+            disable Javascript
+        &lt;/noscript&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3 id="更js一点">更js一点</h3>
+<p>我们需要让我们的代码看上去更像是js，同时是以js结尾。C语言的源码但是以C结尾的，所以我们要让我们的代码看上去更正式一点。于是我们需要在helloworld.html的同文件夹下创建一个app.js，里面写着</p>
+<pre><code class="javascript">document.write('hello,world');
+</code></pre>
+
+<p>同时我们的helloworld.html还需要告诉我们的浏览器js代码在哪里</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;app.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;noscript&gt;
+            disable Javascript
+        &lt;/noscript&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3 id="从数学出发">从数学出发</h3>
+<p>让我们回到第一章讲述的小明的问题，<strong>从实际问题下手编程，更容易学会编程</strong>。小学时代的数学题最喜欢这样子了——某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱的问题。在编程方面，也许我们还算是小学生。最直接的方法就是直接计算3x5=?</p>
+<pre><code class="javascript">document.write(3*5);
+</code></pre>
+
+<p>document.write实际也我们可以理解为输出，也就是往页面里写入3*5的结果，在有双引号的情况下会输出字符串。我们便会在浏览器上看到15，这便是一个好的开始，也是一个不好的开始。</p>
+<h3 id="设计和编程">设计和编程</h3>
+<p>对于我们的实际问题如果总是止于所要的结果，很多年之后，我们成为了code monkey。对这个问题进行一次设计，所谓的设计有些时候会把简单的问题复杂化，有些时候会使以后的扩展更加简单。这一天因为这家商店的糖价格太高了，于是店长将价格降为了4块钱。</p>
+<pre><code class="javascript">
+document.write(3*4);
+</code></pre>
+
+<p>于是我们又得到了我们的结果，但是下次我们看到这些代码的时候没有分清楚哪个是糖的数量，哪个是价格，于是我们重新设计了程序</p>
+<pre><code class="javascript">
+tang=4;
+num=3;
+document.write(tang*num);
+</code></pre>
+
+<p>这才能叫得上是程序设计，或许你注意到了“;”这个符号的存在，我想说的是这是另外一个标准，我们不得不去遵守，也不得不去fuck。</p>
+<h3 id="函数">函数</h3>
+<p>记得刚开始学三角函数的时候，我们会写</p>
+<pre><code>sin 30=0.5</code></pre>
+而我们的函数也是类似于此，换句话说，因为很多搞计算机的先驱都学好了数学，都把数学世界的规律带到了计算机世界，所以我们的函数也是类似于此，让我们做一个简单的开始。
+<pre><code class="javascript">
+function hello(){
+    return document.write("hello,world");
+}
+hello();
+</code></pre>
+<p>当我第一次看到函数的时候，有些小激动终于出现了。我们写了一个叫hello的函数，它返回了往页面中写入hello,world的方法，然后我们调用了hello这个函数，于是页面上有了hello,world。</p>
+<pre><code class="javascript">
+function sin(degree){
+    return document.write(Math.sin(degree));
+}
+sin(30);
+</code></pre>
+<p>在这里degree称之为变量，也就是可以改变的量。 于是输出了-0.9880316240928602，而不是0.5，因为这里用的是弧度制，而不是角度制。</p>
+<pre><code>sin(30)</code></pre>
+<p>的输出结果有点类似于sin 30。写括号的目的在于，括号是为了方便解析，这个在不同的语言中可能是不一样的，比如在ruby中我们可以直接用类似于数学中的表达:</p>
+<pre><code class="ruby">
+2.0.0-p353 :004 > Math.sin 30
+=> -0.9880316240928618
+2.0.0-p353 :005 >
+</code></pre>
+
+<p>我们可以在函数中传入多个变量，于是我们再回到小明的问题，就会这样去写代码。</p>
+<pre><code class="javascript">
+function calc(tang,num){
+    result=tang*num;
+    document.write(result);
+}
+calc(3,4);
+</code></pre>
+
+<p>但是从某种程度上来说，我们的calc做了计算的事又做了输出的事，总的来说设计上有些不好。</p>
+<h3 id="重新设计">重新设计</h3>
+我们将输出的工作移到函数的外面，
+<pre><code class="javascript">
+function calc(tang,num){
+    return tang*num;
+}
+document.write(calc(3,4));
+</code></pre>
+
+接着我们用一种更有意思的方法来写这个问题的解决方案
+<pre><code class="javascript">
+function calc(tang,num){
+    return tang*num;
+}
+function printResult(tang,num){
+    document.write(calc(tang,num));
+}
+printResult(3, 4)
+</code></pre>
+<p>看上去更专业了一点点，如果我们只需要计算的时候我们只需要调用calc，如果我们需要输出的时候我们就调用printResult的方法。</p>
+<h3 id="object和函数">object和函数</h3>
+<p>我们还没有说清楚之前我们遇到过的document.write以及Math.sin的语法看上去很奇怪，所以让我们看看他们到底是什么，修改app.js为以及内容</p>
+<pre><code>document.write(typeof document);
+document.write(typeof Math);</code></pre>
+<p>typeof document会返回document的数据类型，就会发现输出的结果是</p>
+<pre><code>object object</code></pre>
+<p>所以我们需要去弄清楚什么是object。对象的定义是</p>
+<blockquote>
+无序属性的集合，其属性可以包含基本值、对象或者函数。
+</blockquote>
+
+<p>创建一个object，然后观察这便是我们接下来要做的</p>
+<pre><code>store={};
+store.tang=4;
+store.num=3;
+document.write(store.tang*store.num);</code></pre>
+<p>我们就有了和document.write一样的用法，这也是对象的美妙之处，只是这里的对象只是包含着基本值，因为</p>
+<pre><code>typeof story.tang=&quot;number&quot;</code></pre>
+<p>一个包含对象的对象应该是这样子的。</p>
+<pre><code>store={};
+store.tang=4;
+store.num=3;
+document.writeln(store.tang*store.num);
+
+var wall=new Object();
+wall.store=store;
+document.write(typeof wall.store);</code></pre>
+<p>而我们用到的document.write和上面用到的document.writeln都是属于这个无序属性集合中的函数。</p>
+<p>下面代码说的就是这个无序属性集中中的函数。</p>
+<pre><code>var IO=new Object();
+function print(result){
+    document.write(result);
+};
+IO.print=print;
+IO.print(&quot;a obejct with function&quot;);
+IO.print(typeof IO.print);</code></pre>
+<p>我们定义了一个叫IO的对象，声明对象可以用</p>
+<pre><code>var store={};</code></pre>
+<p>又或者是</p>
+<pre><code>var store=new Object{};</code></pre>
+<p>两者是等价的，但是用后者的可读性会更好一点，我们定义了一个叫print的函数，他的作用也就是document.write，IO中的print函数是等价于print()函数，这也就是对象和函数之间的一些区别，对象可以包含函数，对象是无序属性的集合，其属性可以包含基本值、对象或者函数。</p>
+<p>复杂一点的对象应该是下面这样的一种情况。</p>
+<pre><code>var Person={name:&quot;phodal&quot;,weight:50,height:166};
+function dream(){
+    future;
+};
+Person.future=dream;
+document.write(typeof Person);
+document.write(Person.future);</code></pre>
+<p>而这些会在我们未来的实际编编程中用得更多。</p>
+<h3 id="面向对象">面向对象</h3>
+<p>开始之前先我们简化上面的代码，</p>
+<pre><code>Person.future=function dream(){
+    future;
+}</code></pre>
+<p>看上去比上面的简单多了，不过我们还可以简化为下面的代码。。。</p>
+<pre><code>var Person=function(){
+    this.name=&quot;phodal&quot;;
+    this.weight=50;
+    this.height=166;
+    this.future=function dream(){
+        return &quot;future&quot;;
+    };
+};
+var person=new Person();
+document.write(person.name+&quot;&lt;br&gt;&quot;);
+document.write(typeof person+&quot;&lt;br&gt;&quot;);
+document.write(typeof person.future+&quot;&lt;br&gt;&quot;);
+document.write(person.future()+&quot;&lt;br&gt;&quot;);</code></pre>
+<p>只是在这个时候Person是一个函数，但是我们声明的person却变成了一个对象<strong>一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数。</strong>这里的+“<br>”是HTML中的元素，称之为DOM，在这里起的是换行的作用，我们会在稍后介绍它，这里我们先关心下this。this关键字表示函数的所有者或作用域，也就是这里的Person。</p>
+<p>上面的方法显得有点不可取，换句话说和一开始的</p>
+<pre><code>document.write(3*4);</code></pre>
+<p>一样，不具有灵活性，因此在我们完成功能之后，我们需要对其进行优化，这就是程序设计的真谛——解决完实际问题后，我们需要开始真正的设计，而不是解决问题时的编程。</p>
+<pre><code>var Person=function(name,weight,height){
+    this.name=name;
+    this.weight=weight;
+    this.height=height; 
+    this.future=function(){
+        return &quot;future&quot;;
+    };
+};
+var phodal=new Person(&quot;phodal&quot;,50,166);
+document.write(phodal.name+&quot;&lt;br&gt;&quot;);
+document.write(phodal.weight+&quot;&lt;br&gt;&quot;);
+document.write(phodal.height+&quot;&lt;br&gt;&quot;);
+document.write(phodal.future()+&quot;&lt;br&gt;&quot;);</code></pre>
+<p>于是，产生了这样一个可重用的Javascript对象,this关键字确立了属性的所有者。</p>
+<h3 id="其他">其他</h3>
+<p>Javascript还有一个很强大的特性，也就是原型继承，不过这里我们先不考虑这些部分，用尽量少的代码及关键字来实际我们所要表达的核心功能，这才是这里的核心，其他的东西我们可以从其他书本上学到。</p>
+<p>所谓的继承，</p>
+<pre><code>var Chinese=function(){
+    this.country=&quot;China&quot;;
+}
+
+var Person=function(name,weight,height){
+    this.name=name;
+    this.weight=weight;
+    this.height=height; 
+    this.futrue=function(){
+        return &quot;future&quot;;
+    }
+}
+Chinese.prototype=new Person();
+
+
+var phodal=new Chinese(&quot;phodal&quot;,50,166);
+document.write(phodal.country);</code></pre>
+<p>完整的Javascript应该由下列三个部分组成:</p>
+<ul>
+<li>核心(ECMAScript)——核心语言功能</li>
+<li>文档对象模型(DOM)——访问和操作网页内容的方法和接口</li>
+<li>浏览器对象模型(BOM)——与浏览器交互的方法和接口</li>
+</ul>
+<p>我们在上面讲的都是ECMAScript，也就是语法相关的，但是JS真正强大的，或者说我们最需要的可能就是对DOM的操作，这也就是为什么jQuery等库可以流行的原因之一，而核心语言功能才是真正在哪里都适用的，至于BOM真正用到的机会很少，因为没有好的统一的标准。</p>
+<p>一个简单的DOM示例,</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;noscript&gt;
+        disable Javascript
+    &lt;/noscript&gt;
+    &lt;p id=&quot;para&quot; style=&quot;color:red&quot;&gt;Red&lt;/p&gt;
+&lt;/body&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;app.js&quot;&gt;&lt;/script&gt;
+&lt;/html&gt;</code></pre>
+<p>我们需要修改一下helloworld.html添加</p>
+<pre><code>&lt;p id=&quot;para&quot; style=&quot;color:red&quot;&gt;Red&lt;/p&gt;</code></pre>
+<p>同时还需要将script标签移到body下面，如果没有意外的话我们会看到页面上用红色的字体显示Red，修改app.js。</p>
+<pre><code>var para=document.getElementById(&quot;para&quot;);
+para.style.color=&quot;blue&quot;;</code></pre>
+<p>接着，字体就变成了蓝色，有了DOM我们就可以对页面进行操作，可以说我们看到的绝大部分的页面效果都是通过DOM操作实现的。</p>
+<h3 id="美妙之处-1">美妙之处</h3>
+<p>这里说到的Javascript仅仅只是其中的一小小部分，忽略掉的东西很多，只关心的是如何去设计一个实用的app，作为一门编程语言，他还有其他强大的内制函数，要学好需要一本有价值的参考书。这里提到的只是其中的不到20%的东西，其他的80%或者更多会在你解决问题的时候出现。</p>
+<ul>
+<li>我们可以创建一个对象或者说函数，它可以包含基本值、对象或者函数。</li>
+<li>我们可以用Javascript修改页面的属性，虽然只是简单的示例。</li>
+<li>我们还可以去解决实际的编程问题。 #无处不在的CSS#</li>
+</ul>
+<p>CSS或许你觉得他一点儿也不重要，HTML好比是建筑的框架，CSS就是用于装修房子。那么Javascript呢，我听到的最有趣的说法是小三，先让我们回到代码上来吧。</p>
+<h2 id="css">CSS</h2>
+<p>下面就是我们之前说到的代码，css将Red三个字母变成了红色。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id=&quot;para&quot; style=&quot;color:red&quot;&gt;Red&lt;/p&gt;
+&lt;/body&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;app.js&quot;&gt;&lt;/script&gt;
+&lt;/html&gt;</code></pre>
+<p>只是，</p>
+<pre><code>var para=document.getElementById(&quot;para&quot;);
+para.style.color=&quot;blue&quot;;</code></pre>
+<p>将字体变成了蓝色，CSS+HTML让页面有序的工作着，但是Javascript打乱了这些秩序，不过却也让生活多姿多彩，小三不都是这样的么——终于可以理解，为什么以前人们对于Javascript没有好感了？不过这里要讲的是正室，也就是CSS，这时还没有Javascript。</p>
+<div class="figure">
+<img src="./src/redfonts.png" alt="Alt text" /><p class="caption">Alt text</p>
+</div>
+<h2 id="关于css">关于CSS</h2>
+<p>这不是一篇好的关于讲述CSS的书籍，所以不会去说CSS是怎么来的，有些东西既然我们可以很容易从其他地方知道，也就不需要花太多时间去重复。诸如重构等这些的目的之一也在于去除重复的代码，不过有些重复是不可少的，也是有必要的，而通常这些东西可能是由其他地方复制过来的。</p>
+<p>到目前为止我们没有依赖于任何特殊的硬件或者是软件，对于我们来说我们最基本的需求就是一台电脑，或者可以是你的平板电脑，当然也可以是你的智能手机，因为他们都有个浏览器，而这些都是能用的，对于我们的CSS来说也不会有例外的。</p>
+<p>CSS是来自于(Cascading Style Sheets)，到今天我也没有记得他的全称，CSS还有一个中文名字是层叠式样式表，翻译成什么样的可能并不是我们关心的内容，我们需要关心的是他能做些什么。作为三剑客之一，它的主要目的在于可以让我们方便灵活地去控制Web页面的外观表现。我们可以用它做出像淘宝一样复杂的界面，也可以像我们的书本一样简单，不过如果要和我们书本一样简单的话，可能不需要用到CSS。HTML一开始就是依照报纸的格式而设计的，我们还可以继续用上面说到的编辑器，又或者是其他的。如果你喜欢DreamWeaver那也不错，不过一开始使用IDE可无助于我们写出良好的代码。</p>
+<p>忘说了，CSS也是有版本的，和windows，Linux内核等等一样，但是更新可能没有那么频繁，HTML也是有版本的，JS也是有版本的，复杂的东西不是当前考虑的内容。</p>
+<h2 id="代码结构">代码结构</h2>
+<p>对于我们的上面的Red示例来说，如果没有一个好的结构，那么以后可能就是这样子。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p style=&quot;font-size: 22px;color:#f00;text-align: center;padding-left: 20px;&quot;&gt;如果没有一个好的结构&lt;/p&gt;
+    &lt;p style=&quot;  font-size:44px;color:#3ed;text-indent: 2em;padding-left: 2em;&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>虽然我们看到的还是一样的:</p>
+<div class="figure">
+<img src="./src/nostyle.png" alt="Alt text" /><p class="caption">Alt text</p>
+</div>
+<p>于是我们就按各种书上的建议重新写了上面的代码</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;CSS example&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .para{
+            font-size: 22px;
+            color:#f00;
+            text-align: center;
+            padding-left: 20px;
+        }
+        .para2{
+            font-size:44px;
+            color:#3ed;
+            text-indent: 2em;
+            padding-left: 2em;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p class=&quot;para&quot;&gt;如果没有一个好的结构&lt;/p&gt;
+    &lt;p class=&quot;para2&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>总算比上面好看也好理解多了，这只是临时的用法，当文件太大的时候，正式一点的写法应该是下面:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;CSS example&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p class=&quot;para&quot;&gt;如果没有一个好的结构&lt;/p&gt;
+    &lt;p class=&quot;para2&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>我们需要</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;CSS example&lt;/title&gt;
+    &lt;link href=&quot;./style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p class=&quot;para&quot;&gt;如果没有一个好的结构&lt;/p&gt;
+    &lt;p class=&quot;para2&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>然后我们有一个像app.js一样的style.css放在同目录下，而他的内容便是</p>
+<pre><code>.para{
+    font-size: 22px;
+    color:#f00;
+    text-align: center;
+    padding-left: 20px;
+}
+.para2{
+    font-size:44px;
+    color:#3ed;
+    text-indent: 2em;
+    padding-left: 2em;
+}</code></pre>
+<p>这代码和JS的代码有如此多的相似</p>
+<pre><code>var para={
+    font_size:&#39;22px&#39;,
+    color:&#39;#f00&#39;,
+    text_align:&#39;center&#39;,
+    padding_left:&#39;20px&#39;,
+}</code></pre>
+<p>而22px、20px以及#f00都是数值，因此。。</p>
+<pre><code>var para={
+    font_size:22px,
+    color:#f00,
+    text_align:center,
+    padding_left:20px,
+}   </code></pre>
+<p>目测差距已经尽可能的小了，至于这些话题会在以后讨论到，如果要让我们的编译器更正确的工作，那么我们就需要非常多的这种符号，除非你乐意去理解:</p>
+<pre><code>(dotimes (i 4) (print i))</code></pre>
+<p>总的来说我们减少了符号的使用，但是用lisp便带入了更多的括号，不过这是一种简洁的表达方式，也许我们可以在其他语言中看到，或者说用这个去。。</p>
+<pre><code>\d{2}/[A-Z][a-z][a-z]/\d{4}</code></pre>
+<p>没有什么会比一开始不理解那是正则表达式，然后去修改上面的代码，为的是去从一堆数据中找出某日/某月/某年。</p>
+<p>这门语言可能是为设计师而设计的，但是设计师大部分还是不懂编程的，不过相对来说还是比其他语言好理解一些。</p>
+<h2 id="样式与目标">样式与目标</h2>
+<p>下面也就是我们的样式</p>
+<pre><code>.para{
+    font-size: 22px;
+    color:#f00;
+    text-align: center;
+    padding-left: 20px;
+}</code></pre>
+<p>我们的目标就是</p>
+<pre><code>如果没有一个好的结构</code></pre>
+<p>所以样式和目标在这里牵手了，问题是他们是如何在一起的呢？下面就是CSS与HTML沟通的重点所在了:</p>
+<h3 id="选择器">选择器</h3>
+<p>我们用到的选择器叫做类选择器，也就是class，或者说应该称之为class选择器更合适。与类选择器最常一起出现的是ID选择器，不过这个适用于比较高级的场合，诸如用JS控制DOM的时候就需要用到ID选择器。而基本的选择器就是如下面的例子:</p>
+<pre><code>p.para{
+    color:#f0f;
+}</code></pre>
+<p>将代码添加到style.css的最下面会发现“如果没有一个的结构”变成了粉红色，当然我们还会有这样的写法</p>
+<pre><code>p&gt;.para{
+    color:#f0f;
+}</code></pre>
+<p>为了产生上面的特殊的样式，虽然不好看，但是我们终于理解什么叫层叠样式了，下面的代码的重要度比上面高，也因此有更高的优先规则。</p>
+<p>而通常我们可以通过一个</p>
+<pre><code>p{
+    text-align:left;
+}</code></pre>
+<p>这样的元素选择器来给予所有的p元素一个左对齐。</p>
+<p>还有复杂一点的复合型选择器，下面的是HTML文件</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;CSS example&lt;/title&gt;
+    &lt;link href=&quot;./style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p class=&quot;para&quot;&gt;如果没有一个好的结构&lt;/p&gt;
+    &lt;div id=&quot;content&quot;&gt;
+        &lt;p class=&quot;para2&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>还有CSS文件</p>
+<pre><code>.para{
+    font-size: 22px;
+    color:#f00;
+    text-align: center;
+    padding-left: 20px;
+}
+.para2{
+    font-size:44px;
+    color:#3ed;
+    text-indent: 2em;
+    padding-left: 2em;
+}
+
+p.para{
+    color:#f0f;
+}
+div#content p {
+    font-size:22px;
+}</code></pre>
+<h2 id="更有趣的css">更有趣的CSS</h2>
+<p>一个包含了para2以及para_bg的例子</p>
+<pre><code>    &lt;div id=&quot;content&quot;&gt;
+        &lt;p class=&quot;para2 para_bg&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
+    &lt;/div&gt;
+    </code></pre>
+<p>我们只是添加了一个黑色的背景</p>
+<pre><code>.para_bg{
+    background-color:#000;
+}</code></pre>
+<p>重新改变后的网页变得比原来有趣了很多，所谓的继承与合并就是如上面的例子。</p>
+<p>我们还可以用CSS3做出有趣的效果，而这些并不在我们的讨论范围里面，因为我们讨论的是be a geek。</p>
+<p>或许我们写的代码都是那么的简单，从HTML到Javascript，还有现在的CSS，只是有一些东西才是核心的，而不是去考虑一些基础的语法，基础的东西我们可以从实践的过程中一一发现。但是我们可能发现不了，或者在平时的使用中考虑不到一些有趣的用法或者说特殊的用法，这些可以从观察一些比较好的设计的代码中学习到。复杂的东西可以变得很简单，简单的东西也可以变得很复杂。</p>
 <h1 id="物联网毕业设计">物联网毕业设计</h1>
 <h2 id="摘要">摘要</h2>
 <p>随着经济社会的日趋发展及科学技术水平的不断提高，人们对于便利生活的要求越来越高。近年来，随着物联网领域稳步、缓慢地发展，物联网建设的网络环境已经逐渐成熟。由于物联网系统是一个综合性的，包含了硬件、软件、网络等多学科交叉的系统。对于物联网的研究和开发，已经成为一个个热门的话题。</p>
