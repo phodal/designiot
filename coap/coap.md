@@ -1,0 +1,544 @@
+#CoAP
+
+##CoAP简介
+
+引自维基百科上的介绍，用的是谷歌翻译。。。
+
+> 受约束的应用协议（COAP）是一种软件协议旨在以非常简单的电子设备，使他们能够在互联网上进行交互式通信中使用。它特别针对小型低功率传感器，开关，阀门和需要被控制或监督远程，通过标准的Internet网络类似的组件。 COAP是一个应用层协议，该协议是用于在资源受限的网络连接设备，例如无线传感器网络节点使用。 COAP被设计为容易地转换为HTTP与Web简化集成，同时也能满足特殊的要求，例如多播支持，非常低的开销，和简单性。多播，低开销，以及简单性是因特网极其重要物联网（IOT）和机器对机器（M2M）设备，这往往是积重难返，有太多的内存和电源，比传统的互联网设备有。因此，效率是非常重要的。 COAP可以在支持UDP或UDP的模拟大多数设备上运行。
+
+简单地来说，CoAP简化了HTTP协议，只提供了REST的四个方法，PUT,GET,POST和DELETE，和其与HTTP的不同之处在于——CoAP简化了HTTP协议。至于为什么是REST可以看一下这个页面[物联网系统设计](http://www.phodal.com/bare-minimum-iot/)的相关文章。
+
+CoAP使用UDP的好处在于: 对于微小的资源受限，在资源受限的通信的IP的网络，HTTP不是一种可行的选择。它占用了太多的资源和太多的带宽。而对于物联网这种嵌入式设备来说，这是我们需要优先考虑的问题。
+
+ - CoAP采用了二进制报头，而不是文本报头(text header)
+ - CoAP降低了头的可用选项的数量。
+ - CoAP减少了一些HTTP的方法
+ - CoAP可以支持检测装置
+ 
+ ##物联网系统与CoAP Hello,World
+
+关于CoAP与物联网系统我们在上一篇中(ps:[CoAP与物联网系统](http://www.phodal.com/blog/use-constrained-application-protocol-in-internet-of-things/))中做一个简单的介绍，接着我们便开始试试CoAP协议的应用
+
+##CoAP应用之Hello,World
+
+开始之前我们需要能访问[coap://localhost/](coap://localhost/)，于是我们便需要安装一个Firefox的插件Copper。
+
+###Firefox Copper
+
+下载地址: [https://addons.mozilla.org/en-US/firefox/addon/copper-270430/](https://addons.mozilla.org/en-US/firefox/addon/copper-270430/)
+
+作为测试我们可以访问 [coap://vs0.inf.ethz.ch:5683/](coap://vs0.inf.ethz.ch:5683/)    
+
+###Node CoAP
+
+> node-coap is a client and server library for CoAP modelled after the http module.
+
+Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建一个package.json文件，添加我们的库
+
+	{
+		"dependencies":{
+			"coap": "0.7.2"
+		}
+	}
+	
+	
+接着执行
+
+    npm install
+
+就可以安装好我们的依赖
+
+###CoAP 示例
+
+于是我们就可以创建这样一个app.js文件
+
+    const coap        = require('coap')
+        , server  = coap.createServer()
+
+    server.on('request', function(req, res) {
+      res.end('Hello ' + req.url.split('/')[1] + '\n')
+    })
+
+    server.listen(function() {
+      console.log('server started')
+    })	
+    
+    
+接着执行
+
+    node app.js
+    
+我们就可以在浏览器上访问了，只是现在什么也没有。   接着我们再创建一个client端的js，并运行之
+
+	const coap  = require('coap') 
+	    , req   = coap.request('coap://localhost/World')
+
+	req.on('response', function(res) {
+	  res.pipe(process.stdout)
+	})
+
+	req.end()
+
+就可以在console上输出
+
+    Hello World 
+
+也就达到了我们的目的，用CoAP协议创建一个服务，接着我们应该用它创建更多的东西，如产生JSON数据，以及RESTful。
+
+
+和HTTP版的最小物联网系统一样，CoAP版的最小物联网系统也是要返回JSON的。
+
+##CoAP CLI 命令行工具
+
+
+开始之前我们需要安装一个CoAP的命令行工具，以方便我们测试我们的代码是否是正确的。
+
+###Node CoAP CLI
+
+     npm install coap-cli -g 
+
+这样我们就可以用这个来测试我们的代码
+
+###CoAP命令行
+
+一共有四个方法
+
+    Commands:
+
+    get                    performs a GET request
+    put                    performs a PUT request
+    post                   performs a POST request
+    delete                 performs a DELETE request
+
+我们用[coap://vs0.inf.ethz.ch/](coap://vs0.inf.ethz.ch/)来作一个简单的测试
+
+    coap get coap://vs0.inf.ethz.ch/
+    (2.05)	************************************************************
+    I-D
+
+也可以用来测试我们现在的最小的物联网系统
+
+    coap get coap://coap.phodal.com/id/1
+    (4.06)	[{"id":1,"value":"is id 1","sensors1":19,"sensors2":20}]
+
+数据是直接从数据库中读取出来的，然而状态码是错的，忘了刚代码更新。
+
+###libcoap 
+
+如果我们已经装有LibCoAP那么，我们可以直接用自带的两个命令
+
+    coap-client 
+    coap-server
+
+###libcoap使用
+
+1.我们简单地起一个CoAP服务
+
+     coap-server
+
+2.客户端获取数据
+
+    coap-client -m get coap://localhost
+
+返回结果
+
+    v:1 t:0 tkl:0 c:1 id:37109
+    This is a test server made with libcoap (see http://libcoap.sf.net) 
+    Copyright (C) 2010--2013 Olaf Bergmann <bergmann@tzi.org>
+
+在经历了几次重构之后，我们的IoT终于开始有个好的代码结构，再经过几次修正之后，我们就可以很愉快地发出第一个版本，v0.1或许将会是Nodejs的一个库。
+
+##构建基于CoAP SQLite Nodejs的物联网之数据库
+
+###Node Module
+
+这说里Module的意义是因为我们需要在别的地方引用到db_helper这个库，也就是下一小节要的讲的内容。
+
+这样我们就可以在server.js类似于这样去引用这个js库。
+
+    var DBHelper = require('./db_helper.js');
+    DBHelper.initDB();
+
+而这样调用的前提是我们需要去声明这样的module，为了方便地导出函数功能调用。
+
+    function DBHelper(){
+    }
+    DBHelper.initDB = function(){};
+    module.exports = DBHelper;
+
+虽然这里的功能很简单，简单也能做我们想做的事情。
+
+##Node Sqlite3
+
+还是继续用到了SQLite3，只是这里用到的只是基本的查询和创建。
+
+###一个简单的initDB函数
+
+    var db = new sqlite3.Database(config["db_name"]);
+    var create_table = 'create table if not exists basic (' + config["db_table"] + ');';
+
+    db.serialize(function() {
+        db.run(create_table);
+        _.each(config["init_table"], function(insert_data) {
+            db.run(insert_data);
+        });
+    });
+    db.close();
+
+首先从配置中读取db_name，接着创建table，然后调用underscore的each方法，创建几个数据。配置如下所示
+
+	config = {
+	    "db_name": "iot.db",
+	    "db_table": "id integer primary key, value text, sensors1 float, sensors2 float",
+	    "init_table":[
+	        "insert or replace into basic (id,value,sensors1,sensors2) VALUES (1, 'is id 1', 19, 20);",
+	        "insert or replace into basic (id,value,sensors1,sensors2) VALUES (2, 'is id 2', 20, 21);"
+	    ],
+	    "query_table":"select * from basic;"
+	};
+
+而我们在之前所提到的url查询所做的事情便是
+
+	DBHelper.urlQueryData = function (url, callback) {
+	    var db = new sqlite3.Database("iot.db");
+
+	    var result = [];
+	    console.log("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2]);
+	    db.all("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2], function(err, rows) {
+	        db.close();
+	        callback(JSON.stringify(rows));
+	    });
+	};
+
+将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。
+
+这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。
+
+##查询数据
+
+简单地记录一下在IoT-CoAP中一次获取数据地过程。
+
+##CoAP Get Client
+
+我们先看看我们在示例中的Get.js的代码，这关乎在后面server端的代码。
+
+	const coap       = require('coap')
+	     ,requestURI = 'coap://localhost/'
+	     ,url        = require('url').parse(requestURI + 'id/1/')
+	     ,req        = coap.request(url)
+	     ,bl         = require('bl');
+
+	req.setHeader("Accept", "application/json");
+	req.on('response', function(res) {
+		res.pipe(bl(function(err, data) {
+			var json = JSON.parse(data);
+			console.log(json);
+		}));
+
+	});
+	req.end();
+
+const定义数据的方法，和我们在其他语言中有点像。只是这的const主要是为了程序的健壮型,减少程序出错，当然这不是javascript的用法。
+
+我们构建了一个请求的URL
+
+     coap://localhost/id/1/
+
+我们对我们的请求添加了一个Header，内容是Accept，值是'application/json'也就是JSON格式。接着，便是等待请求回来，再处理返回的内容。
+
+##IoT CoAP
+
+###判断请求的方法
+
+在这里先把一些无关的代码删除掉，并保证其能工作，so，下面就是简要的逻辑代码。
+
+    var coap            = require('coap');
+    var server          = coap.createServer({});
+    var request_handler = require('./request_handler.js');
+
+    server.on('request', function(req, res) {
+        switch(req.method){
+            case "GET": request_handler.getHandler(req, res);
+                break;
+        }
+    });
+
+    server.listen(function() {
+        console.log('server started');
+    });
+
+创建一个CoAP服务，判断req.method，也就是请求的方法，如果是GET的话，就调用request_handler.getHandler(req, res)。而在getHandler里，判断了下请求的Accept
+
+    request_helper.getHandler = function(req, res) {
+        switch (req.headers['Accept']) {
+            case "application/json":
+                qh.returnJSON(req, res);
+                break;
+            case "application/xml":
+                qh.returnXML(req, res);
+                break;
+        }
+    };
+
+如果是json刚调用returnJSON,
+
+###Database与回调
+而这里为了处理回调函数刚分为了两部分
+
+    query_helper.returnJSON = function(req, res) {
+        DBHelper.urlQueryData(req.url, function (result) {
+            QueryData.returnJSON(result, res);
+        });
+    };
+
+而这里只是调用了
+
+	DBHelper.urlQueryData = function (url, callback) {
+	    var db = new sqlite3.Database(config["db_name"]);
+
+	    console.log("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2]);
+	    db.all("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2], function(err, rows) {
+	        db.close();
+	        callback(JSON.stringify(rows));
+	    });
+	};
+
+这里调用了node sqlite3去查询对应id的数据，用回调处理了数据无法到外部的问题，而上面的returnJSON则只是返回最后的结果，code以及其他的内容。
+
+	QueryData.returnJSON = function(result, res) {
+	    if (result.length == 2) {
+	        res.code = '4.04';
+	        res.end(JSON.stringify({
+	            error: "Not Found"
+	        }));
+	    } else {
+	        res.code = '2.05';
+	        res.end(result);
+	    }
+	};
+
+当resulst的结果为空时，返回一个404，因为没有数据。这样我们就构成了整个的链，再一步步返回结果。
+
+在[IoT-CoAP](https://github.com/gmszone/iot-coap)中我们使用到了一个Block2的东西，于是便整理相关的一些资料，作一个简单的介绍，以及在代码中的使用。
+
+##CoAP Block
+
+简单地翻译了一下(谷歌 + 理解)
+
+> CoAP是一个RESTful传输协议用于受限设备的节点和网络。基本的CoAP消息对于小型载荷——如温度传感器，光开关，和相似的楼宇自动化设备是相当不错的。然而，有时应用将需要传输更大的有效载荷，例如——更新固件。同HTTP，TCP做繁重工作将大型有效载荷分成多个数据包，并确保他们所有到达并以正确的顺序被处理。
+
+CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示(resource representation)的最大大小，使得传输不需要太多的分割。虽然UDP支持通过IP分片传输更大的有效载荷，且仅限于64KiB，更重要的是，并没有真正很好地约束应用和网络。
+
+而不是依赖于IP分片，这种规范基本COAP了对“块”选项，用于传输信息从多个资源区块的请求 - 响应对。在许多重要的情况下，阻止使服务器能够真正无状态：服务器可以处理每块分开传输，而无需建立连接以前的数据块传输的其他服务器端内存。 
+
+综上所述，块(Block)选项提供了传送一个最小的在分块的方式更大的陈述。
+
+##CoAP Post Block
+
+看看在IoT CoAP中的post示例。
+
+	const coap     = require('coap')
+	      ,request  = coap.request
+	      ,bl       = require('bl')
+	      ,req = request({hostname: 'localhost',port:5683,pathname: '',method: 'POST'});
+
+	req.setOption('Block2',  [new Buffer('1'),new Buffer("'must'"), new Buffer('23'), new Buffer('12')]);
+	req.setHeader("Accept", "application/json");
+	req.on('response', function(res) {
+	    res.pipe(bl(function(err, data) {
+	        console.log(data);
+	        process.exit(0);
+	    }));
+
+	});
+
+	req.end();
+
+Block2中一共有四个数据，相应的数据结果应该是
+
+	{ name: 'Block2', value: <Buffer 31> }
+	{ name: 'Block2', value: <Buffer 27 6d 75 73 74 27> }
+	{ name: 'Block2', value: <Buffer 32 33> }
+	{ name: 'Block2', value: <Buffer 31 32> }
+
+这是没有解析的Block2，简单地可以用
+
+     _.values(e).toString()
+
+将结果转换为
+
+	Block2,1
+	Block2,'must'
+	Block2,23
+	Block2,12
+
+接着按","分开，
+
+    _.values(e).toString().split(',')[1]
+
+就有
+
+
+
+    [ '1', '\'must\'', '23', '12' ]
+
+便可以很愉快地将其post到数据库中了，
+
+##JSON请求
+
+在做IoT-CoAP的过程中只支持JSON，查阅CoAP的草稿时发现支持了诸多的Content Types。
+
+##CoAP Content Types
+
+以下文字来自谷歌翻译:
+
+> 互联网媒体类型是通过HTTP字符串标识，如“application/xml”。该字符串是由一个顶层的类型“applicaion”和子类型的“XML”。为了尽量减少使用这些类型的媒体类型来表示的开销消息有效载荷，COAP定义一个标识符编码方案互联网媒体类型的子集。预计这桌将可扩展标识符的值的IANA维护。内容类型选项被格式化为一个8位无符号整数。初始映射到一个合适的互联网媒体类型标识符表所示。复合型高层次类型（multipart和不支持消息）。标识符值是从201-255保留的特定于供应商的，应用程序特定的或实验使用和不由IANA。
+
+下面是HTTP的标识符及类型
+
+| Internet media type                              | Identifier |
+|--------------------------------------------------|--------------|
+| text/plain (UTF-8)                                  | 0          |
+| text/xml (UTF-8)                                    | 1          |
+| text/csv (UTF-8)                                    | 2          |
+   | text/html (UTF-8)                                   | 3          |
+   | image/gif                                           | 21         |
+   | image/jpeg                                          | 22         |
+   | image/png                                           | 23         |
+   | image/tiff                                          | 24         |
+   | audio/raw                                           | 25         |
+   | video/raw                                           | 26         |
+   | application/link-format [I-D.ietf-core-link-format] | 40         |
+   | application/xml                                     | 41         |
+   | application/octet-stream                            | 42         |
+   | application/rdf+xml                                 | 43         |
+   | application/soap+xml                                | 44         |
+   | application/atom+xml                                | 45         |
+   | application/xmpp+xml                                | 46         |
+   | application/exi                                     | 47         |
+   | application/x-bxml                                  | 48         |
+   | application/fastinfoset                             | 49         |
+   | application/soap+fastinfoset                        | 50         |
+| application/json                                    | 51         |
+
+
+而在CoAP中只有简单地几个
+
+   
+   | Media type       | Encoding |   Id. | Reference                   |
+   |------------------|----------|-------|-----------------------------|
+   | text/plain;      | -        |     0 | [RFC2046][RFC3676][RFC5147] |
+   | charset=utf-8    |          |       |                             |
+   | application/     | -        |    40 | [RFC6690]                   |
+   | link-format      |          |       |                             |
+   | application/xml  | -        |    41 | [RFC3023]                   |
+   | application/     | -        |    42 | [RFC2045][RFC2046]          |
+   | octet-stream     |          |       |                             |
+   | application/exi  | -        |    47 | [EXIMIME]                   |
+   | application/json | -        |    50 | [RFC4627]                   |
+
+
+简单地说就是：
+
+``诸如application/json的Content Types在CoAP中应该是50``。如上表所示的结果是其对应的结果，这样的话可以减少传递的信息量。
+
+##IoT CoAP JSON
+
+于是在一开始的时候首先支持的便是"application/json"这样的类型。
+
+首先判断请求的header
+
+	request_helper.getHandler = function(req, res) {
+	    switch (req.headers['Accept']) {
+	        case "application/json":
+	            qh.returnJSON(req, res);
+	            break;
+	        case "application/xml":
+	            qh.returnXML(req, res);
+	            break;
+	    }
+	};
+
+再转至相应的函数处理，而判断的依据则是Accept是不是"application/json"。
+
+	registerFormat('text/plain', 0)
+	registerFormat('application/link-format', 40)
+	registerFormat('application/xml', 41)
+	registerFormat('application/octet-stream', 42)
+	registerFormat('application/exi', 47)
+	registerFormat('application/json', 50)
+
+对应地我们需要在一发出请求的时候设置好Accept，要不就没有办法返回我们需要的结果。
+
+    req.setHeader("Accept", "application/json");
+
+
+##返回JSON
+
+在给IoT CoAP添加了JSON支持之后，变得非常有意思，至少我们可以获得我们想要的结果。在上一篇中我们介绍了一些常用的工具——[CoAP 命令行工具集](http://www.phodal.com/blog/coap-command-line-tools-set/)。
+
+##CoAP客户端代码示例
+
+开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析
+
+	var coap = require('coap');
+	var requestURI = 'coap://localhost/';
+	var url = require('url').parse(requestURI + 'id/1/');
+	console.log("Request URL: " + url.href);
+	var req = coap.request(url);
+	var bl = require('bl');
+
+	req.setHeader("Accept", "application/json");
+	req.on('response', function(res) {
+		res.pipe(bl(function(err, data) {
+			var json = JSON.parse(data);
+			console.log(json);
+		}));
+
+	});
+
+	req.end();
+
+代码有点长内容也有点多，但是核心是这句话：
+
+     req.setHeader("Accept", "application/json");
+
+这样的话，我们只需要在我们的服务端一判断，
+
+    if(req.headers['Accept'] == 'application/json') {
+         //do something
+     };
+
+这样就可以返回数据了
+
+##CoAP Server端代码
+
+Server端的代码比较简单，判断一下
+
+    if (req.headers['Accept'] == 'application/json') {
+            parse_url(req.url, function(result){
+                res.end(result);
+            });
+            res.code = '2.05';
+        }
+
+请求的是否是JSON格式，再返回一个205，也就是Content，只是这时设计是请求一个URL返回对应的数据。如
+
+     coap://localhost/id/1/
+
+这时应该请求的是ID为1的数据，即
+
+    [ { id: 1, value: 'is id 1', sensors1: 19, sensors2: 20 }]
+
+而parse_url只是从数据库从读取相应的数据。
+
+	function parse_url(url ,callback) {
+	    var db = new sqlite3.Database(config["db_name"]);
+
+	    var result = [];
+	    db.all("SELECT * FROM basic;", function(err, rows) {
+	        callback(JSON.stringify(rows));
+	    })
+	}
+
+并且全部都显示出来，设计得真是有点不行，不过现在已经差不多了。
