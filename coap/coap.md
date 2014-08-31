@@ -15,11 +15,9 @@ CoAP使用UDP的好处在于: 对于微小的资源受限，在资源受限的�
  - CoAP减少了一些HTTP的方法
  - CoAP可以支持检测装置
  
- ##物联网系统与CoAP Hello,World
+##物联网系统与CoAP Hello,World
 
 关于CoAP与物联网系统我们在上一篇中(ps:[CoAP与物联网系统](http://www.phodal.com/blog/use-constrained-application-protocol-in-internet-of-things/))中做一个简单的介绍，接着我们便开始试试CoAP协议的应用
-
-##CoAP应用之Hello,World
 
 开始之前我们需要能访问[coap://localhost/](coap://localhost/)，于是我们便需要安装一个Firefox的插件Copper。
 
@@ -168,11 +166,11 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 虽然这里的功能很简单，简单也能做我们想做的事情。
 
-##Node Sqlite3
+###Node Sqlite3
 
 还是继续用到了SQLite3，只是这里用到的只是基本的查询和创建。
 
-###一个简单的initDB函数
+####一个简单的initDB函数
 
     var db = new sqlite3.Database(config["db_name"]);
     var create_table = 'create table if not exists basic (' + config["db_table"] + ');';
@@ -214,11 +212,11 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。
 
-##查询数据
+###查询数据
 
 简单地记录一下在IoT-CoAP中一次获取数据地过程。
 
-##CoAP Get Client
+###CoAP Get Client
 
 我们先看看我们在示例中的Get.js的代码，这关乎在后面server端的代码。
 
@@ -246,7 +244,7 @@ const定义数据的方法，和我们在其他语言中有点像。只是这的
 
 我们对我们的请求添加了一个Header，内容是Accept，值是'application/json'也就是JSON格式。接着，便是等待请求回来，再处理返回的内容。
 
-##IoT CoAP
+###IoT CoAP
 
 ###判断请求的方法
 
@@ -333,7 +331,7 @@ CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示
 
 综上所述，块(Block)选项提供了传送一个最小的在分块的方式更大的陈述。
 
-##CoAP Post Block
+###CoAP Post Block
 
 看看在IoT CoAP中的post示例。
 
@@ -384,11 +382,11 @@ Block2中一共有四个数据，相应的数据结果应该是
 
 便可以很愉快地将其post到数据库中了，
 
-##JSON请求
+###JSON请求
 
 在做IoT-CoAP的过程中只支持JSON，查阅CoAP的草稿时发现支持了诸多的Content Types。
 
-##CoAP Content Types
+###CoAP Content Types
 
 以下文字来自谷歌翻译:
 
@@ -473,11 +471,11 @@ Block2中一共有四个数据，相应的数据结果应该是
     req.setHeader("Accept", "application/json");
 
 
-##返回JSON
+###返回JSON
 
 在给IoT CoAP添加了JSON支持之后，变得非常有意思，至少我们可以获得我们想要的结果。在上一篇中我们介绍了一些常用的工具——[CoAP 命令行工具集](http://www.phodal.com/blog/coap-command-line-tools-set/)。
 
-##CoAP客户端代码示例
+###CoAP客户端代码示例
 
 开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析
 
@@ -511,7 +509,7 @@ Block2中一共有四个数据，相应的数据结果应该是
 
 这样就可以返回数据了
 
-##CoAP Server端代码
+###CoAP Server端代码
 
 Server端的代码比较简单，判断一下
 

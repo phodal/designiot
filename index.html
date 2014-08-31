@@ -91,7 +91,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 <li><a href="#coap">CoAP</a><ul>
 <li><a href="#coap简介">CoAP简介</a></li>
-<li><a href="#coap应用之helloworld">CoAP应用之Hello,World</a><ul>
+<li><a href="#物联网系统与coap-helloworld">物联网系统与CoAP Hello,World</a><ul>
 <li><a href="#firefox-copper">Firefox Copper</a></li>
 <li><a href="#node-coap">Node CoAP</a></li>
 <li><a href="#coap-示例">CoAP 示例</a></li>
@@ -104,24 +104,23 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 <li><a href="#构建基于coap-sqlite-nodejs的物联网之数据库">构建基于CoAP SQLite Nodejs的物联网之数据库</a><ul>
 <li><a href="#node-module">Node Module</a></li>
-</ul></li>
-<li><a href="#node-sqlite3">Node Sqlite3</a><ul>
-<li><a href="#一个简单的initdb函数">一个简单的initDB函数</a></li>
-</ul></li>
+<li><a href="#node-sqlite3">Node Sqlite3</a></li>
 <li><a href="#查询数据">查询数据</a></li>
 <li><a href="#coap-get-client">CoAP Get Client</a></li>
-<li><a href="#iot-coap">IoT CoAP</a><ul>
+<li><a href="#iot-coap">IoT CoAP</a></li>
 <li><a href="#判断请求的方法">判断请求的方法</a></li>
 <li><a href="#database与回调">Database与回调</a></li>
 </ul></li>
-<li><a href="#coap-block">CoAP Block</a></li>
+<li><a href="#coap-block">CoAP Block</a><ul>
 <li><a href="#coap-post-block">CoAP Post Block</a></li>
 <li><a href="#json请求">JSON请求</a></li>
 <li><a href="#coap-content-types">CoAP Content Types</a></li>
-<li><a href="#iot-coap-json">IoT CoAP JSON</a></li>
+</ul></li>
+<li><a href="#iot-coap-json">IoT CoAP JSON</a><ul>
 <li><a href="#返回json">返回JSON</a></li>
 <li><a href="#coap客户端代码示例">CoAP客户端代码示例</a></li>
 <li><a href="#coap-server端代码">CoAP Server端代码</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#附录一-物联网毕业设计">附录一 物联网毕业设计</a><ul>
 <li><a href="#摘要">摘要</a></li>
@@ -919,9 +918,8 @@ a[href^=&quot;#&quot;]:after {
 <li>CoAP减少了一些HTTP的方法</li>
 <li>CoAP可以支持检测装置</li>
 </ul>
-<p>##物联网系统与CoAP Hello,World</p>
+<h2 id="物联网系统与coap-helloworld">物联网系统与CoAP Hello,World</h2>
 <p>关于CoAP与物联网系统我们在上一篇中(ps:<a href="http://www.phodal.com/blog/use-constrained-application-protocol-in-internet-of-things/">CoAP与物联网系统</a>)中做一个简单的介绍，接着我们便开始试试CoAP协议的应用</p>
-<h2 id="coap应用之helloworld">CoAP应用之Hello,World</h2>
 <p>开始之前我们需要能访问<a href="coap://localhost/">coap://localhost/</a>，于是我们便需要安装一个Firefox的插件Copper。</p>
 <h3 id="firefox-copper">Firefox Copper</h3>
 <p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p>
@@ -1013,9 +1011,9 @@ DBHelper.initDB();</code></pre>
 DBHelper.initDB = function(){};
 module.exports = DBHelper;</code></pre>
 <p>虽然这里的功能很简单，简单也能做我们想做的事情。</p>
-<h2 id="node-sqlite3">Node Sqlite3</h2>
+<h3 id="node-sqlite3">Node Sqlite3</h3>
 <p>还是继续用到了SQLite3，只是这里用到的只是基本的查询和创建。</p>
-<h3 id="一个简单的initdb函数">一个简单的initDB函数</h3>
+<h4 id="一个简单的initdb函数">一个简单的initDB函数</h4>
 <pre><code>var db = new sqlite3.Database(config[&quot;db_name&quot;]);
 var create_table = &#39;create table if not exists basic (&#39; + config[&quot;db_table&quot;] + &#39;);&#39;;
 
@@ -1049,9 +1047,9 @@ db.close();</code></pre>
 };</code></pre>
 <p>将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。</p>
 <p>这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。</p>
-<h2 id="查询数据">查询数据</h2>
+<h3 id="查询数据">查询数据</h3>
 <p>简单地记录一下在IoT-CoAP中一次获取数据地过程。</p>
-<h2 id="coap-get-client">CoAP Get Client</h2>
+<h3 id="coap-get-client">CoAP Get Client</h3>
 <p>我们先看看我们在示例中的Get.js的代码，这关乎在后面server端的代码。</p>
 <pre><code>const coap       = require(&#39;coap&#39;)
      ,requestURI = &#39;coap://localhost/&#39;
@@ -1072,7 +1070,7 @@ req.end();</code></pre>
 <p>我们构建了一个请求的URL</p>
 <pre><code> coap://localhost/id/1/</code></pre>
 <p>我们对我们的请求添加了一个Header，内容是Accept，值是’application/json’也就是JSON格式。接着，便是等待请求回来，再处理返回的内容。</p>
-<h2 id="iot-coap">IoT CoAP</h2>
+<h3 id="iot-coap">IoT CoAP</h3>
 <h3 id="判断请求的方法">判断请求的方法</h3>
 <p>在这里先把一些无关的代码删除掉，并保证其能工作，so，下面就是简要的逻辑代码。</p>
 <pre><code>var coap            = require(&#39;coap&#39;);
@@ -1140,7 +1138,7 @@ server.listen(function() {
 <p>CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示(resource representation)的最大大小，使得传输不需要太多的分割。虽然UDP支持通过IP分片传输更大的有效载荷，且仅限于64KiB，更重要的是，并没有真正很好地约束应用和网络。</p>
 <p>而不是依赖于IP分片，这种规范基本COAP了对“块”选项，用于传输信息从多个资源区块的请求 - 响应对。在许多重要的情况下，阻止使服务器能够真正无状态：服务器可以处理每块分开传输，而无需建立连接以前的数据块传输的其他服务器端内存。</p>
 <p>综上所述，块(Block)选项提供了传送一个最小的在分块的方式更大的陈述。</p>
-<h2 id="coap-post-block">CoAP Post Block</h2>
+<h3 id="coap-post-block">CoAP Post Block</h3>
 <p>看看在IoT CoAP中的post示例。</p>
 <pre><code>const coap     = require(&#39;coap&#39;)
       ,request  = coap.request
@@ -1175,9 +1173,9 @@ Block2,12</code></pre>
 <p>就有</p>
 <pre><code>[ &#39;1&#39;, &#39;\&#39;must\&#39;&#39;, &#39;23&#39;, &#39;12&#39; ]</code></pre>
 <p>便可以很愉快地将其post到数据库中了，</p>
-<h2 id="json请求">JSON请求</h2>
+<h3 id="json请求">JSON请求</h3>
 <p>在做IoT-CoAP的过程中只支持JSON，查阅CoAP的草稿时发现支持了诸多的Content Types。</p>
-<h2 id="coap-content-types">CoAP Content Types</h2>
+<h3 id="coap-content-types">CoAP Content Types</h3>
 <p>以下文字来自谷歌翻译:</p>
 <blockquote>
 <p>互联网媒体类型是通过HTTP字符串标识，如“application/xml”。该字符串是由一个顶层的类型“applicaion”和子类型的“XML”。为了尽量减少使用这些类型的媒体类型来表示的开销消息有效载荷，COAP定义一个标识符编码方案互联网媒体类型的子集。预计这桌将可扩展标识符的值的IANA维护。内容类型选项被格式化为一个8位无符号整数。初始映射到一个合适的互联网媒体类型标识符表所示。复合型高层次类型（multipart和不支持消息）。标识符值是从201-255保留的特定于供应商的，应用程序特定的或实验使用和不由IANA。</p>
@@ -1372,9 +1370,9 @@ registerFormat(&#39;application/exi&#39;, 47)
 registerFormat(&#39;application/json&#39;, 50)</code></pre>
 <p>对应地我们需要在一发出请求的时候设置好Accept，要不就没有办法返回我们需要的结果。</p>
 <pre><code>req.setHeader(&quot;Accept&quot;, &quot;application/json&quot;);</code></pre>
-<h2 id="返回json">返回JSON</h2>
+<h3 id="返回json">返回JSON</h3>
 <p>在给IoT CoAP添加了JSON支持之后，变得非常有意思，至少我们可以获得我们想要的结果。在上一篇中我们介绍了一些常用的工具——<a href="http://www.phodal.com/blog/coap-command-line-tools-set/">CoAP 命令行工具集</a>。</p>
-<h2 id="coap客户端代码示例">CoAP客户端代码示例</h2>
+<h3 id="coap客户端代码示例">CoAP客户端代码示例</h3>
 <p>开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析</p>
 <pre><code>var coap = require(&#39;coap&#39;);
 var requestURI = &#39;coap://localhost/&#39;;
@@ -1400,7 +1398,7 @@ req.end();</code></pre>
      //do something
  };</code></pre>
 <p>这样就可以返回数据了</p>
-<h2 id="coap-server端代码">CoAP Server端代码</h2>
+<h3 id="coap-server端代码">CoAP Server端代码</h3>
 <p>Server端的代码比较简单，判断一下</p>
 <pre><code>if (req.headers[&#39;Accept&#39;] == &#39;application/json&#39;) {
         parse_url(req.url, function(result){
