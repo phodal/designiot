@@ -401,41 +401,41 @@ Block2中一共有四个数据，相应的数据结果应该是
 | text/plain (UTF-8)                                  | 0          |
 | text/xml (UTF-8)                                    | 1          |
 | text/csv (UTF-8)                                    | 2          |
-   | text/html (UTF-8)                                   | 3          |
-   | image/gif                                           | 21         |
-   | image/jpeg                                          | 22         |
-   | image/png                                           | 23         |
-   | image/tiff                                          | 24         |
-   | audio/raw                                           | 25         |
-   | video/raw                                           | 26         |
-   | application/link-format [I-D.ietf-core-link-format] | 40         |
-   | application/xml                                     | 41         |
-   | application/octet-stream                            | 42         |
-   | application/rdf+xml                                 | 43         |
-   | application/soap+xml                                | 44         |
-   | application/atom+xml                                | 45         |
-   | application/xmpp+xml                                | 46         |
-   | application/exi                                     | 47         |
-   | application/x-bxml                                  | 48         |
-   | application/fastinfoset                             | 49         |
-   | application/soap+fastinfoset                        | 50         |
+| text/html (UTF-8)                                   | 3          |
+| image/gif                                           | 21         |
+| image/jpeg                                          | 22         |
+| image/png                                           | 23         |
+| image/tiff                                          | 24         |
+| audio/raw                                           | 25         |
+| video/raw                                           | 26         |
+| application/link-format [I-D.ietf-core-link-format] | 40         |
+| application/xml                                     | 41         |
+| application/octet-stream                            | 42         |
+| application/rdf+xml                                 | 43         |
+| application/soap+xml                                | 44         |
+| application/atom+xml                                | 45         |
+| application/xmpp+xml                                | 46         |
+| application/exi                                     | 47         |
+| application/x-bxml                                  | 48         |
+| application/fastinfoset                             | 49         |
+| application/soap+fastinfoset                        | 50         |
 | application/json                                    | 51         |
 
 
 而在CoAP中只有简单地几个
 
    
-   | Media type       | Encoding |   Id. | Reference                   |
-   |------------------|----------|-------|-----------------------------|
-   | text/plain;      | -        |     0 | [RFC2046][RFC3676][RFC5147] |
-   | charset=utf-8    |          |       |                             |
-   | application/     | -        |    40 | [RFC6690]                   |
-   | link-format      |          |       |                             |
-   | application/xml  | -        |    41 | [RFC3023]                   |
-   | application/     | -        |    42 | [RFC2045][RFC2046]          |
-   | octet-stream     |          |       |                             |
-   | application/exi  | -        |    47 | [EXIMIME]                   |
-   | application/json | -        |    50 | [RFC4627]                   |
+| Media type       | Encoding |   Id. | Reference                   |
+|------------------|----------|-------|-----------------------------|
+| text/plain;      | -        |     0 | [RFC2046][RFC3676][RFC5147] |
+| charset=utf-8    |          |       |                             |
+| application/     | -        |    40 | [RFC6690]                   |
+| link-format      |          |       |                             |
+| application/xml  | -        |    41 | [RFC3023]                   |
+| application/     | -        |    42 | [RFC2045][RFC2046]          |
+| octet-stream     |          |       |                             |
+| application/exi  | -        |    47 | [EXIMIME]                   |
+| application/json | -        |    50 | [RFC4627]                   |
 
 
 简单地说就是：
