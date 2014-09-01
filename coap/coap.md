@@ -61,8 +61,6 @@ coap-cli 一共有四个方法
     coap-client 
     coap-server
 
-###libcoap使用
-
 1.我们简单地起一个CoAP服务
 
      coap-server
@@ -77,7 +75,7 @@ coap-cli 一共有四个方法
     This is a test server made with libcoap (see http://libcoap.sf.net) 
     Copyright (C) 2010--2013 Olaf Bergmann <bergmann@tzi.org>
  
-##CoAP的Hello,World
+##Hello,World
 
 接着我们便开始试试做一个简单的CoAP协议的应用，开始之前我们需要能访问[coap://localhost/](coap://localhost/)，于是我们便需要安装一个Firefox的插件Copper。
 
@@ -85,7 +83,7 @@ coap-cli 一共有四个方法
 
 2. 作为测试我们可以访问 [coap://vs0.inf.ethz.ch:5683/](coap://vs0.inf.ethz.ch:5683/)    
 
-###Node CoAP
+###Node-CoAP
 
 这是我们这里用到的一个Node的扩展Node-CoAP
 
@@ -106,7 +104,7 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 就可以安装好这个库
 
-###Node CoAP 示例
+###Node CoAP示例
 
 接着，创建这样一个app.js
 
@@ -165,7 +163,7 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 虽然这里的功能很简单，简单也能做我们想做的事情。
 
-###Node Sqlite3
+###Node-Sqlite3
 
 还是继续用到了SQLite3，只是这里用到的只是基本的查询和创建。
 
@@ -213,7 +211,7 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 简单地记录一下在IoT-CoAP中一次获取数据地过程。
 
-###CoAP Get Client
+###GET
 
 先看看在示例中的Get.js的代码，这关乎在后面server端的代码。
 
@@ -318,9 +316,13 @@ const定义数据的方法，和我们在其他语言中有点像。只是这的
 
 ##CoAP Block
 
-简单地翻译了一下(谷歌 + 理解)
+CoAP是一个RESTful传输协议用于受限设备的节点和网络。基本的CoAP消息是一个不错的选择对于小型载荷如
 
-> CoAP是一个RESTful传输协议用于受限设备的节点和网络。基本的CoAP消息对于小型载荷——如温度传感器，光开关，和相似的楼宇自动化设备是相当不错的。然而，有时应用将需要传输更大的有效载荷，例如——更新固件。同HTTP，TCP做繁重工作将大型有效载荷分成多个数据包，并确保他们所有到达并以正确的顺序被处理。
+- 温度传感器
+- 灯光开关
+- 楼宇自动化设备
+
+然而，有时我们的应用需要传输更大的有效载荷，如——更新固件。与HTTP，TCP做繁重工作将大型有效载荷分成多个数据包，并确保他们所有到达并以正确的顺序被处理。
 
 CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示(resource representation)的最大大小，使得传输不需要太多的分割。虽然UDP支持通过IP分片传输更大的有效载荷，且仅限于64KiB，更重要的是，并没有真正很好地约束应用和网络。
 
@@ -328,7 +330,7 @@ CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示
 
 综上所述，块(Block)选项提供了传送一个最小的在分块的方式更大的陈述。
 
-###CoAP Post Block
+###CoAP POST
 
 看看在IoT CoAP中的post示例。
 
@@ -437,7 +439,7 @@ Block2中一共有四个数据，相应的数据结果应该是
 
 ``诸如application/json的Content Types在CoAP中应该是50``。如上表所示的结果是其对应的结果，这样的话可以减少传递的信息量。
 
-##IoT CoAP JSON
+##CoAP JSON
 
 于是在一开始的时候首先支持的便是"application/json"这样的类型。
 
@@ -472,7 +474,7 @@ Block2中一共有四个数据，相应的数据结果应该是
 
 在给IoT CoAP添加了JSON支持之后，变得非常有意思，至少我们可以获得我们想要的结果。在上一篇中我们介绍了一些常用的工具——[CoAP 命令行工具集](http://www.phodal.com/blog/coap-command-line-tools-set/)。
 
-###CoAP客户端代码示例
+###CoAP客户端代码
 
 开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析
 

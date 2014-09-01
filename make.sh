@@ -1,1 +1,1 @@
-pandoc -s --highlight-style pygments -S --toc -c css/vendor.css -B basic.html preface.md intro.md beageek/anywhere-html.md beageek/anywhere-javascript.md beageek/anywhere-css.md beageek/anywhere-hjc.md  coap/coap.md intro2.md -o index.html
+pandoc -s --highlight-style pygments -S --toc -c css/vendor.css -B basic.html preface.md intro.md beageek/anywhere-html.md beageek/anywhere-javascript.md beageek/anywhere-css.md beageek/anywhere-hjc.md http/http.md coap/coap.md intro2.md -o index.html
