@@ -101,7 +101,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#启动引导程序">启动引导程序</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#第六章-arduino">第六章 Arduino</a></li>
+<li><a href="#第六章-arduino">第六章 Arduino</a><ul>
+<li><a href="#极客的玩具">极客的玩具</a></li>
+</ul></li>
 <li><a href="#第七章-python">第七章 Python</a><ul>
 <li><a href="#代码与散文">代码与散文</a></li>
 <li><a href="#开始之前">开始之前</a></li>
@@ -110,10 +112,13 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#算法">算法</a></li>
 <li><a href="#实用主义哲学">实用主义哲学</a></li>
 </ul></li>
-<li><a href="#第八章-raspberry-pi">第八章 Raspberry Pi</a></li>
+<li><a href="#第八章-raspberry-pi">第八章 Raspberry Pi</a><ul>
+<li><a href="#geek的盛宴">Geek的盛宴</a></li>
+</ul></li>
 <li><a href="#第二部分">第二部分</a></li>
-<li><a href="#第x章-http与restful">第x章 HTTP与RESTful</a><ul>
+<li><a href="#第九章-http与restful">第九章 HTTP与RESTful</a><ul>
 <li><a href="#你所没有深入的http">你所没有深入的HTTP</a></li>
+<li><a href="#rest">REST</a></li>
 </ul></li>
 <li><a href="#第三部分">第三部分</a></li>
 <li><a href="#第x章-构建基于coap协议的物联网系统">第x章 构建基于CoAP协议的物联网系统</a><ul>
@@ -993,6 +998,9 @@ a[href^=&quot;#&quot;]:after {
 <p>GNU GRUB的前身为Grand Unified Bootloader。它主要用于类Unix系统；同大多Linux发行版一样，GNU系统也采用GNU GRUB作为它的启动器。Solaris从10 1/06版开始在x86系统上也采用GNU GRUB作为启动器。</p>
 <p>以上也就构成了一个简单的操作系统。</p>
 <h1 id="第六章-arduino">第六章 Arduino</h1>
+<h2 id="极客的玩具">极客的玩具</h2>
+<p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
+<p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往串口发送数据时，可以用Serial.write(‘1’)的方式向串口发送字串’1’。</p>
 <h1 id="第七章-python">第七章 Python</h1>
 <p>作为一门计算机语言来说，Python会有下面的特点。</p>
 <ul>
@@ -1106,9 +1114,15 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <p>也就是计算或其他解决问题的操作需要遵循的一个过程或者一套规则，书上还提到的说法是——解决问题的诀窍，让我想起了hack一词。我们总会去想某些东西是否有一个更快的计算方法，有时候在处理某些问题上也显示了一个好的算法的重要性。</p>
 <h2 id="实用主义哲学">实用主义哲学</h2>
 <h1 id="第八章-raspberry-pi">第八章 Raspberry Pi</h1>
+<h2 id="geek的盛宴">Geek的盛宴</h2>
+<p>Raspberry Pi是一款针对电脑业余爱好者、教师、小学生以及小型企业等用户的迷你电脑，预装Linux系统，体积仅信用卡大小，搭载ARM架构处理器，运算性能和智能手机相仿。在接口方面，Raspberry Pi提供了可供键鼠使用的USB接口，此外还有千兆以太网接口、SD卡扩展接口以及1个HDMI高清视频输出接口，可与显示器或者TV相连。</p>
+<p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
+<p>Raspberry Pi相比于一般的ARM开发板来说，由于其本身搭载着Linux操作系统，可以用诸如Python、Ruby或Bash来执行脚本，而不是通过编译程序来运行，具有更高的开发效率。</p>
 <h1 id="第二部分">第二部分</h1>
-<h1 id="第x章-http与restful">第x章 HTTP与RESTful</h1>
+<h1 id="第九章-http与restful">第九章 HTTP与RESTful</h1>
 <h2 id="你所没有深入的http">你所没有深入的HTTP</h2>
+<h2 id="rest">REST</h2>
+<p>REST<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> 从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的 应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。 随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转 移。</p>
 <h1 id="第三部分">第三部分</h1>
 <h1 id="第x章-构建基于coap协议的物联网系统">第x章 构建基于CoAP协议的物联网系统</h1>
 <h2 id="coap简介">CoAP简介</h2>
@@ -1669,26 +1683,26 @@ req.end();</code></pre>
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用 了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且 具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
 <p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主 要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串 口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往 串口发送数据时，可以用Serial.write(‘1’)的方式向串口发送字串’1’。</p>
 <h4 id="section">51</h4>
-<p>单片机<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>，又称微控制器，是把中央处理器、存储器、定时/计数器 （Timer/Counter）、各种输入输出接口等都集成在一块集成电路芯片上的微型 计算机。与应用在个人计算机中的通用型微处理器相比，它更强调自供应（不用 外接硬件）和节约成本。它的最大优点是体积小，可放在仪表内部，但存储量小， 输入输出接口简单，功能较低。</p>
+<p>单片机<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>，又称微控制器，是把中央处理器、存储器、定时/计数器 （Timer/Counter）、各种输入输出接口等都集成在一块集成电路芯片上的微型 计算机。与应用在个人计算机中的通用型微处理器相比，它更强调自供应（不用 外接硬件）和节约成本。它的最大优点是体积小，可放在仪表内部，但存储量小， 输入输出接口简单，功能较低。</p>
 <p>51单片机相较于Arduino开发板，不仅代码复杂，由于系统比较古老而不方便于 快速开发。</p>
 <h2 id="软件方案选择">软件方案选择</h2>
 <h3 id="数据通讯方式选择">数据通讯方式选择</h3>
-<h4 id="rest">REST</h4>
-<p>REST<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> 从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的 应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。 随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转 移。</p>
+<h4 id="rest-1">REST</h4>
+<p>REST<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> 从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的 应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。 随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转 移。</p>
 <h4 id="soap">SOAP</h4>
 <p>简单对象访问协议是交换数据的一种协议规范，使用在计算机网络Web服务中， 交换带结构信息。SOAP为了简化网页服务器从XML数据库中提取数据时，节省去 格式化页面时间，以及不同应用程序之间按照HTTP通信协议，遵从XML格式执行 资料互换，使其抽象于语言实现、平台和硬件。</p>
 <h3 id="数据通信格式选择">数据通信格式选择</h3>
 <h4 id="json">JSON</h4>
-<p>JSON<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>是一种轻量级的数据交换格式。 易于人阅读和编写。同时也易于机 器解析和生成。 它基于JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999的一个子集。 JSON采用完全独立于语 言的文本格式，但是也使用了类似于C语言家族的习惯<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>。 这些特性使 JSON成为理想的数据交换语言。</p>
+<p>JSON<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>是一种轻量级的数据交换格式。 易于人阅读和编写。同时也易于机 器解析和生成。 它基于JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999的一个子集。 JSON采用完全独立于语 言的文本格式，但是也使用了类似于C语言家族的习惯<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>。 这些特性使 JSON成为理想的数据交换语言。</p>
 <p>JSON相对于XML来说可以减少文件的大小，同时我们可以用于网站前端的数据通讯。</p>
 <p>对于基于浏览器的客户端使用的web服务更倾向于使用JSON作为表述格式。</p>
 <h4 id="xml">XML</h4>
-<p>可扩展标记语言<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>，是一种标记语言。标记指计算机所能理解的信息符号， 通过此种标记，计算机之间可以处理包含各种信息的文章等。如何定义这些标记， 既可以选择国际通用的标记语言，比如HTML，也可以使用像XML这样由相关人士 自由决定的标记语言，这就是语言的可扩展性。XML是从标准通用标记语言 （SGML）中简化修改出来的。它主要用到的有可扩展标记语言、可扩展样式语言 （XSL）、XBRL和XPath等。</p>
+<p>可扩展标记语言<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>，是一种标记语言。标记指计算机所能理解的信息符号， 通过此种标记，计算机之间可以处理包含各种信息的文章等。如何定义这些标记， 既可以选择国际通用的标记语言，比如HTML，也可以使用像XML这样由相关人士 自由决定的标记语言，这就是语言的可扩展性。XML是从标准通用标记语言 （SGML）中简化修改出来的。它主要用到的有可扩展标记语言、可扩展样式语言 （XSL）、XBRL和XPath等。</p>
 <p>XML具有良好的可读性，有着较好的库支持，从Java语言到其他语言，如Linux系 统上libxml等对XML的支持比较好。</p>
 <h2 id="网络服务方案选择">网络服务方案选择</h2>
 <h3 id="语言选择">语言选择</h3>
 <p><strong>PHP Laravel</strong></p>
-<p>PHP <a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> 是一种开源的通用计算机脚本语言，尤其适用于网络开发并可嵌入 HTML中使用。PHP的语法借鉴吸收了C语言、Java和Perl等流行计算机语言的特点， 易于一般程序员学习。PHP的主要目标是允许网络开发人员快速编写动态页面， 但PHP也被用于其他很多领域。</p>
+<p>PHP <a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> 是一种开源的通用计算机脚本语言，尤其适用于网络开发并可嵌入 HTML中使用。PHP的语法借鉴吸收了C语言、Java和Perl等流行计算机语言的特点， 易于一般程序员学习。PHP的主要目标是允许网络开发人员快速编写动态页面， 但PHP也被用于其他很多领域。</p>
 <p><strong>Laravel</strong></p>
 <p>Laravel是一套简洁、优雅的PHP Web开发框架。它可以让你从面条一样杂乱的代 码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、 富于表达力。</p>
 <p><strong>Java Spring</strong></p>
@@ -1717,7 +1731,7 @@ req.end();</code></pre>
 ser.write(<span class="st">&quot;1&quot;</span>)</code></pre>
 <p>就可以向串口发送一个字符1。</p>
 <h2 id="网页通信">网页通信</h2>
-<p><strong>Ajax</strong> AJAX <a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> 是由Jesse James Gaiiett创造的名词，是指一种创建交互式网页 应用的网页开发技术。</p>
+<p><strong>Ajax</strong> AJAX <a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> 是由Jesse James Gaiiett创造的名词，是指一种创建交互式网页 应用的网页开发技术。</p>
 <p>系统主要用Ajax来实现实时温度显示，通过直接访问JSON数据的情况下，可以在 不需要刷新页面的情况下直接读取数据。</p>
 <h2 id="数据可视化框架选择">数据可视化框架选择</h2>
 <p><strong>HighCharts</strong></p>
@@ -1863,10 +1877,10 @@ void loop() {
 <h3 id="串口通讯">串口通讯</h3>
 <p>由于python中没有用于串口通讯的库，需要寻找并安装这样一个库，这里就用到 了pip这样的包管理工具——用于管理python的库。</p>
 <h4 id="安装pyserial">安装pyserial</h4>
-<p>pip常用命令有install、uninstall以及search，install顾名思义就是安装，安 装pip库如下所示<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>，如后代码如下所示，$<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>开头:</p>
+<p>pip常用命令有install、uninstall以及search，install顾名思义就是安装，安 装pip库如下所示<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>，如后代码如下所示，$<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>开头:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">    <span class="ot">$pip</span> <span class="kw">install</span> pyserial</code></pre>
 <h3 id="python串口通讯">python串口通讯</h3>
-<p>在Linux内核的系统<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>中虚拟串口用的节点是ttyACM，位于/dev目录下。</p>
+<p>在Linux内核的系统<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>中虚拟串口用的节点是ttyACM，位于/dev目录下。</p>
 <pre class="sourceCode python"><code class="sourceCode python">    serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)</code></pre>
 <p>串行接口是一种可以将接受来自CPU的并行数据字符转换为连续的串行数据流发送出去， 同时可将接受的串行数据流转换为并行的数据字符供给CPU的器件。一般完成这种功能 的电路，我们称为串行接口电路。</p>
 <p>便是打开这个设备，以9600的速率传输数据。</p>
@@ -1915,7 +1929,7 @@ while 1:
 <div class="figure">
 <img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/jsondata.png" title="JSON结果返回图" alt="JSON结果返回图" /><p class="caption">JSON结果返回图</p>
 </div>
-<p>假设有这样一个资源用于呈现led的状态，即 http://localhost/status/1 <a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>，获取这个LED的状态便发出了类似下面这样的请求:</p>
+<p>假设有这样一个资源用于呈现led的状态，即 http://localhost/status/1 <a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>，获取这个LED的状态便发出了类似下面这样的请求:</p>
 <pre class="sourceCode python"><code class="sourceCode python">    GET /status/<span class="dv">1</span> HTTP/<span class="fl">1.1</span>
     Host:localhost
     Cotent-Type:application/json;charset=UTF<span class="dv">-8</span></code></pre>
@@ -2017,7 +2031,7 @@ while 1:
 </div>
 <h2 id="系统后台设计">系统后台设计</h2>
 <h3 id="数据库设计">数据库设计</h3>
-<p>系统使用Laravel框架作为系统底层，需要配置其运行环境<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>，创建数 据库<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>，对应于上面生成的最后的JSON数据，创建对应的数据库:</p>
+<p>系统使用Laravel框架作为系统底层，需要配置其运行环境<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>，创建数 据库<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>，对应于上面生成的最后的JSON数据，创建对应的数据库:</p>
 <p>系统数据库结构如下所示</p>
 <table>
 <thead>
@@ -2119,19 +2133,20 @@ while 1:
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>全称单片微型计算机（英语：Single-Chip Microcomputer）<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Representational State Transfer<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>JavaScript Object Notation<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>包括C, C++, C#, Java, JavaScript, Perl, Python等<a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>eXtensible Markup Language，简称: XML<a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>PHP：Hypertext Preprocessor，即超文本预处理器<a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>Asynchronous JavaScript and XML（异步JavaScript和XML)<a href="#fnref7">↩</a></p></li>
-<li id="fn8"><p>在Windows系统中需要先安装pip，再安装pyserial。<a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p>指在*nix系统的终端中执行的命令。<a href="#fnref9">↩</a></p></li>
-<li id="fn10"><p>在Windows系统上，只需要将/dev/ttyACM0改为对应的com口。 [getjson]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/getjson.png “python返回json数据” [python返回json数据][getjson]<a href="#fnref10">↩</a></p></li>
-<li id="fn11"><p>在本地进行web开发时，浏览器可以识别localhost，配置好Hosts时相当于127.0.0.1。<a href="#fnref11">↩</a></p></li>
-<li id="fn12"><p>这里用的是Linux+Nginx+MySQL+PHP。<a href="#fnref12">↩</a></p></li>
-<li id="fn13"><p>创建数据的代码:CREATE DATABASE IF NOT EXISTS bbs default charset utf8 COLLATE utf8_general_ci;<a href="#fnref13">↩</a></p></li>
+<li id="fn1"><p>Representational State Transfer<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>全称单片微型计算机（英语：Single-Chip Microcomputer）<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Representational State Transfer<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>JavaScript Object Notation<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>包括C, C++, C#, Java, JavaScript, Perl, Python等<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>eXtensible Markup Language，简称: XML<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>PHP：Hypertext Preprocessor，即超文本预处理器<a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>Asynchronous JavaScript and XML（异步JavaScript和XML)<a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>在Windows系统中需要先安装pip，再安装pyserial。<a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>指在*nix系统的终端中执行的命令。<a href="#fnref10">↩</a></p></li>
+<li id="fn11"><p>在Windows系统上，只需要将/dev/ttyACM0改为对应的com口。 [getjson]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/getjson.png “python返回json数据” [python返回json数据][getjson]<a href="#fnref11">↩</a></p></li>
+<li id="fn12"><p>在本地进行web开发时，浏览器可以识别localhost，配置好Hosts时相当于127.0.0.1。<a href="#fnref12">↩</a></p></li>
+<li id="fn13"><p>这里用的是Linux+Nginx+MySQL+PHP。<a href="#fnref13">↩</a></p></li>
+<li id="fn14"><p>创建数据的代码:CREATE DATABASE IF NOT EXISTS bbs default charset utf8 COLLATE utf8_general_ci;<a href="#fnref14">↩</a></p></li>
 </ol>
 </div>
 </body>
