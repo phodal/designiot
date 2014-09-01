@@ -92,6 +92,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#css盒模型图">CSS盒模型图</a></li>
 <li><a href="#笔记">笔记</a></li>
 </ul></li>
+<li><a href="#第二部分">第二部分</a></li>
+<li><a href="#第x章-http与restful">第x章 HTTP与RESTful</a><ul>
+<li><a href="#你所没有深入的http">你所没有深入的HTTP</a></li>
+</ul></li>
 <li><a href="#第三部分">第三部分</a></li>
 <li><a href="#第x章-构建基于coap协议的物联网系统">第x章 构建基于CoAP协议的物联网系统</a><ul>
 <li><a href="#coap简介">CoAP简介</a></li>
@@ -99,29 +103,28 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#node-coap-cli">Node CoAP CLI</a></li>
 <li><a href="#coap命令行">CoAP命令行</a></li>
 <li><a href="#libcoap">libcoap</a></li>
-<li><a href="#libcoap使用">libcoap使用</a></li>
 </ul></li>
-<li><a href="#coap的helloworld">CoAP的Hello,World</a><ul>
-<li><a href="#node-coap">Node CoAP</a></li>
-<li><a href="#node-coap-示例">Node CoAP 示例</a></li>
+<li><a href="#helloworld">Hello,World</a><ul>
+<li><a href="#node-coap">Node-CoAP</a></li>
+<li><a href="#node-coap示例">Node CoAP示例</a></li>
 </ul></li>
 <li><a href="#数据库查询">数据库查询</a><ul>
 <li><a href="#node-module">Node Module</a></li>
-<li><a href="#node-sqlite3">Node Sqlite3</a></li>
+<li><a href="#node-sqlite3">Node-Sqlite3</a></li>
 <li><a href="#查询数据">查询数据</a></li>
-<li><a href="#coap-get-client">CoAP Get Client</a></li>
+<li><a href="#get">GET</a></li>
 <li><a href="#iot-coap">IoT CoAP</a></li>
 <li><a href="#判断请求的方法">判断请求的方法</a></li>
 <li><a href="#database与回调">Database与回调</a></li>
 </ul></li>
 <li><a href="#coap-block">CoAP Block</a><ul>
-<li><a href="#coap-post-block">CoAP Post Block</a></li>
+<li><a href="#coap-post">CoAP POST</a></li>
 <li><a href="#json请求">JSON请求</a></li>
 <li><a href="#coap-content-types">CoAP Content Types</a></li>
 </ul></li>
-<li><a href="#iot-coap-json">IoT CoAP JSON</a><ul>
+<li><a href="#coap-json">CoAP JSON</a><ul>
 <li><a href="#返回json">返回JSON</a></li>
-<li><a href="#coap客户端代码示例">CoAP客户端代码示例</a></li>
+<li><a href="#coap客户端代码">CoAP客户端代码</a></li>
 <li><a href="#coap-server端代码">CoAP Server端代码</a></li>
 </ul></li>
 </ul></li>
@@ -907,6 +910,9 @@ a[href^=&quot;#&quot;]:after {
 <h2 id="笔记">笔记</h2>
 <p>写博客似乎是一个不错的好习惯，作为一个不是很优秀的写手。对于来说，有时候发现原来能教会别人对于自己的能力来说算是一种肯定。有些时候教会别人才算是自己学会的表现，总会在项目上的时候需要自己去复述工作的一个过程，我们需要整理好我们的思路才能带给别人更多的收获。我们的笔记上总会留下自己的学习的一些过程，有些时候我们想要的只是一点点的鼓励，有时是诸如评论一类，有时可能是诸如访问量。更多的可能是我们可以重新整理自己的知识，好好复习一下，以便于好好记住，写出来是一个好的过程。</p>
 <p>无处不在的三剑客就这样到了这里，写得似乎很多也很少，但是还是没有做出来一个东西，于是我们朝着这样一个方向前进。</p>
+<h1 id="第二部分">第二部分</h1>
+<h1 id="第x章-http与restful">第x章 HTTP与RESTful</h1>
+<h2 id="你所没有深入的http">你所没有深入的HTTP</h2>
 <h1 id="第三部分">第三部分</h1>
 <h1 id="第x章-构建基于coap协议的物联网系统">第x章 构建基于CoAP协议的物联网系统</h1>
 <h2 id="coap简介">CoAP简介</h2>
@@ -947,7 +953,6 @@ I-D</code></pre>
 <p>如果我们已经装有LibCoAP那么，我们可以直接用自带的两个命令</p>
 <pre><code>coap-client 
 coap-server</code></pre>
-<h3 id="libcoap使用">libcoap使用</h3>
 <p>1.我们简单地起一个CoAP服务</p>
 <pre><code> coap-server</code></pre>
 <p>2.客户端获取数据</p>
@@ -956,13 +961,13 @@ coap-server</code></pre>
 <pre><code>v:1 t:0 tkl:0 c:1 id:37109
 This is a test server made with libcoap (see http://libcoap.sf.net) 
 Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
-<h2 id="coap的helloworld">CoAP的Hello,World</h2>
+<h2 id="helloworld">Hello,World</h2>
 <p>接着我们便开始试试做一个简单的CoAP协议的应用，开始之前我们需要能访问<a href="coap://localhost/">coap://localhost/</a>，于是我们便需要安装一个Firefox的插件Copper。</p>
 <ol style="list-style-type: decimal">
 <li><p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p></li>
 <li><p>作为测试我们可以访问 <a href="coap://vs0.inf.ethz.ch:5683/">coap://vs0.inf.ethz.ch:5683/</a></p></li>
 </ol>
-<h3 id="node-coap">Node CoAP</h3>
+<h3 id="node-coap">Node-CoAP</h3>
 <p>这是我们这里用到的一个Node的扩展Node-CoAP</p>
 <blockquote>
 <p>node-coap is a client and server library for CoAP modelled after the http module.</p>
@@ -976,7 +981,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>接着执行</p>
 <pre><code>npm install</code></pre>
 <p>就可以安装好这个库</p>
-<h3 id="node-coap-示例">Node CoAP 示例</h3>
+<h3 id="node-coap示例">Node CoAP示例</h3>
 <p>接着，创建这样一个app.js</p>
 <pre><code>const coap        = require(&#39;coap&#39;)
     , server  = coap.createServer()
@@ -1015,7 +1020,7 @@ DBHelper.initDB();</code></pre>
 DBHelper.initDB = function(){};
 module.exports = DBHelper;</code></pre>
 <p>虽然这里的功能很简单，简单也能做我们想做的事情。</p>
-<h3 id="node-sqlite3">Node Sqlite3</h3>
+<h3 id="node-sqlite3">Node-Sqlite3</h3>
 <p>还是继续用到了SQLite3，只是这里用到的只是基本的查询和创建。</p>
 <h4 id="一个简单的initdb函数">一个简单的initDB函数</h4>
 <pre><code>var db = new sqlite3.Database(config[&quot;db_name&quot;]);
@@ -1052,7 +1057,7 @@ db.close();</code></pre>
 <p>将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。</p>
 <h3 id="查询数据">查询数据</h3>
 <p>简单地记录一下在IoT-CoAP中一次获取数据地过程。</p>
-<h3 id="coap-get-client">CoAP Get Client</h3>
+<h3 id="get">GET</h3>
 <p>先看看在示例中的Get.js的代码，这关乎在后面server端的代码。</p>
 <pre><code>const coap       = require(&#39;coap&#39;)
      ,requestURI = &#39;coap://localhost/&#39;
@@ -1134,14 +1139,17 @@ server.listen(function() {
 <p>当resulst的结果为空时，返回一个404，因为没有数据。这样我们就构成了整个的链，再一步步返回结果。</p>
 <p>在<a href="https://github.com/gmszone/iot-coap">IoT-CoAP</a>中我们使用到了一个Block2的东西，于是便整理相关的一些资料，作一个简单的介绍，以及在代码中的使用。</p>
 <h2 id="coap-block">CoAP Block</h2>
-<p>简单地翻译了一下(谷歌 + 理解)</p>
-<blockquote>
-<p>CoAP是一个RESTful传输协议用于受限设备的节点和网络。基本的CoAP消息对于小型载荷——如温度传感器，光开关，和相似的楼宇自动化设备是相当不错的。然而，有时应用将需要传输更大的有效载荷，例如——更新固件。同HTTP，TCP做繁重工作将大型有效载荷分成多个数据包，并确保他们所有到达并以正确的顺序被处理。</p>
-</blockquote>
+<p>CoAP是一个RESTful传输协议用于受限设备的节点和网络。基本的CoAP消息是一个不错的选择对于小型载荷如</p>
+<ul>
+<li>温度传感器</li>
+<li>灯光开关</li>
+<li>楼宇自动化设备</li>
+</ul>
+<p>然而，有时我们的应用需要传输更大的有效载荷，如——更新固件。与HTTP，TCP做繁重工作将大型有效载荷分成多个数据包，并确保他们所有到达并以正确的顺序被处理。</p>
 <p>CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示(resource representation)的最大大小，使得传输不需要太多的分割。虽然UDP支持通过IP分片传输更大的有效载荷，且仅限于64KiB，更重要的是，并没有真正很好地约束应用和网络。</p>
 <p>而不是依赖于IP分片，这种规范基本COAP了对“块”选项，用于传输信息从多个资源区块的请求 - 响应对。在许多重要的情况下，阻止使服务器能够真正无状态：服务器可以处理每块分开传输，而无需建立连接以前的数据块传输的其他服务器端内存。</p>
 <p>综上所述，块(Block)选项提供了传送一个最小的在分块的方式更大的陈述。</p>
-<h3 id="coap-post-block">CoAP Post Block</h3>
+<h3 id="coap-post">CoAP POST</h3>
 <p>看看在IoT CoAP中的post示例。</p>
 <pre><code>const coap     = require(&#39;coap&#39;)
       ,request  = coap.request
@@ -1351,7 +1359,7 @@ Block2,12</code></pre>
 </table>
 <p>简单地说就是：</p>
 <p><code>诸如application/json的Content Types在CoAP中应该是50</code>。如上表所示的结果是其对应的结果，这样的话可以减少传递的信息量。</p>
-<h2 id="iot-coap-json">IoT CoAP JSON</h2>
+<h2 id="coap-json">CoAP JSON</h2>
 <p>于是在一开始的时候首先支持的便是“application/json”这样的类型。</p>
 <p>首先判断请求的header</p>
 <pre><code>request_helper.getHandler = function(req, res) {
@@ -1375,7 +1383,7 @@ registerFormat(&#39;application/json&#39;, 50)</code></pre>
 <pre><code>req.setHeader(&quot;Accept&quot;, &quot;application/json&quot;);</code></pre>
 <h3 id="返回json">返回JSON</h3>
 <p>在给IoT CoAP添加了JSON支持之后，变得非常有意思，至少我们可以获得我们想要的结果。在上一篇中我们介绍了一些常用的工具——<a href="http://www.phodal.com/blog/coap-command-line-tools-set/">CoAP 命令行工具集</a>。</p>
-<h3 id="coap客户端代码示例">CoAP客户端代码示例</h3>
+<h3 id="coap客户端代码">CoAP客户端代码</h3>
 <p>开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析</p>
 <pre><code>var coap = require(&#39;coap&#39;);
 var requestURI = &#39;coap://localhost/&#39;;
