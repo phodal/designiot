@@ -95,18 +95,17 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#第三部分">第三部分</a></li>
 <li><a href="#第x章-构建基于coap协议的物联网系统">第x章 构建基于CoAP协议的物联网系统</a><ul>
 <li><a href="#coap简介">CoAP简介</a></li>
-<li><a href="#物联网系统与coap-helloworld">物联网系统与CoAP Hello,World</a><ul>
-<li><a href="#firefox-copper">Firefox Copper</a></li>
-<li><a href="#node-coap">Node CoAP</a></li>
-<li><a href="#coap-示例">CoAP 示例</a></li>
-</ul></li>
-<li><a href="#coap-cli-命令行工具">CoAP CLI 命令行工具</a><ul>
+<li><a href="#coap-命令行工具">CoAP 命令行工具</a><ul>
 <li><a href="#node-coap-cli">Node CoAP CLI</a></li>
 <li><a href="#coap命令行">CoAP命令行</a></li>
 <li><a href="#libcoap">libcoap</a></li>
 <li><a href="#libcoap使用">libcoap使用</a></li>
 </ul></li>
-<li><a href="#构建基于coap-sqlite-nodejs的物联网之数据库">构建基于CoAP SQLite Nodejs的物联网之数据库</a><ul>
+<li><a href="#coap的helloworld">CoAP的Hello,World</a><ul>
+<li><a href="#node-coap">Node CoAP</a></li>
+<li><a href="#node-coap-示例">Node CoAP 示例</a></li>
+</ul></li>
+<li><a href="#数据库查询">数据库查询</a><ul>
 <li><a href="#node-module">Node Module</a></li>
 <li><a href="#node-sqlite3">Node Sqlite3</a></li>
 <li><a href="#查询数据">查询数据</a></li>
@@ -915,67 +914,21 @@ a[href^=&quot;#&quot;]:after {
 <blockquote>
 <p>受约束的应用协议（COAP）是一种软件协议旨在以非常简单的电子设备，使他们能够在互联网上进行交互式通信中使用。它特别针对小型低功率传感器，开关，阀门和需要被控制或监督远程，通过标准的Internet网络类似的组件。 COAP是一个应用层协议，该协议是用于在资源受限的网络连接设备，例如无线传感器网络节点使用。 COAP被设计为容易地转换为HTTP与Web简化集成，同时也能满足特殊的要求，例如多播支持，非常低的开销，和简单性。多播，低开销，以及简单性是因特网极其重要物联网（IOT）和机器对机器（M2M）设备，这往往是积重难返，有太多的内存和电源，比传统的互联网设备有。因此，效率是非常重要的。 COAP可以在支持UDP或UDP的模拟大多数设备上运行。</p>
 </blockquote>
-<p>简单地来说，CoAP简化了HTTP协议，只提供了REST的四个方法，PUT,GET,POST和DELETE，和其与HTTP的不同之处在于——CoAP简化了HTTP协议。至于为什么是REST可以看一下这个页面<a href="http://www.phodal.com/bare-minimum-iot/">物联网系统设计</a>的相关文章。</p>
-<p>CoAP使用UDP的好处在于: 对于微小的资源受限，在资源受限的通信的IP的网络，HTTP不是一种可行的选择。它占用了太多的资源和太多的带宽。而对于物联网这种嵌入式设备来说，这是我们需要优先考虑的问题。</p>
+<p>简单地来说，CoAP简化了HTTP协议，只提供了REST的四个方法，PUT,GET,POST和DELETE，和其与HTTP的不同之处在于——CoAP简化了HTTP协议。</p>
+<p>CoAP协议中不使用HTTP的原因在于: 对于微小的资源受限，在资源受限的通信的IP的网络，HTTP不是一种可行的选择。它占用了太多的资源和太多的带宽。而对于物联网这种嵌入式设备来说，关于资源与带宽，是我们需要优先考虑的内容。</p>
 <ul>
 <li>CoAP采用了二进制报头，而不是文本报头(text header)</li>
 <li>CoAP降低了头的可用选项的数量。</li>
 <li>CoAP减少了一些HTTP的方法</li>
 <li>CoAP可以支持检测装置</li>
 </ul>
-<h2 id="物联网系统与coap-helloworld">物联网系统与CoAP Hello,World</h2>
-<p>关于CoAP与物联网系统我们在上一篇中(ps:<a href="http://www.phodal.com/blog/use-constrained-application-protocol-in-internet-of-things/">CoAP与物联网系统</a>)中做一个简单的介绍，接着我们便开始试试CoAP协议的应用</p>
-<p>开始之前我们需要能访问<a href="coap://localhost/">coap://localhost/</a>，于是我们便需要安装一个Firefox的插件Copper。</p>
-<h3 id="firefox-copper">Firefox Copper</h3>
-<p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p>
-<p>作为测试我们可以访问 <a href="coap://vs0.inf.ethz.ch:5683/">coap://vs0.inf.ethz.ch:5683/</a></p>
-<h3 id="node-coap">Node CoAP</h3>
-<blockquote>
-<p>node-coap is a client and server library for CoAP modelled after the http module.</p>
-</blockquote>
-<p>Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建一个package.json文件，添加我们的库</p>
-<pre><code>{
-    &quot;dependencies&quot;:{
-        &quot;coap&quot;: &quot;0.7.2&quot;
-    }
-}</code></pre>
-<p>接着执行</p>
-<pre><code>npm install</code></pre>
-<p>就可以安装好我们的依赖</p>
-<h3 id="coap-示例">CoAP 示例</h3>
-<p>于是我们就可以创建这样一个app.js文件</p>
-<pre><code>const coap        = require(&#39;coap&#39;)
-    , server  = coap.createServer()
-
-server.on(&#39;request&#39;, function(req, res) {
-  res.end(&#39;Hello &#39; + req.url.split(&#39;/&#39;)[1] + &#39;\n&#39;)
-})
-
-server.listen(function() {
-  console.log(&#39;server started&#39;)
-})  </code></pre>
-<p>接着执行</p>
-<pre><code>node app.js</code></pre>
-<p>我们就可以在浏览器上访问了，只是现在什么也没有。 接着我们再创建一个client端的js，并运行之</p>
-<pre><code>const coap  = require(&#39;coap&#39;) 
-    , req   = coap.request(&#39;coap://localhost/World&#39;)
-
-req.on(&#39;response&#39;, function(res) {
-  res.pipe(process.stdout)
-})
-
-req.end()</code></pre>
-<p>就可以在console上输出</p>
-<pre><code>Hello World </code></pre>
-<p>也就达到了我们的目的，用CoAP协议创建一个服务，接着我们应该用它创建更多的东西，如产生JSON数据，以及RESTful。</p>
-<p>和HTTP版的最小物联网系统一样，CoAP版的最小物联网系统也是要返回JSON的。</p>
-<h2 id="coap-cli-命令行工具">CoAP CLI 命令行工具</h2>
+<h2 id="coap-命令行工具">CoAP 命令行工具</h2>
 <p>开始之前我们需要安装一个CoAP的命令行工具，以方便我们测试我们的代码是否是正确的。</p>
 <h3 id="node-coap-cli">Node CoAP CLI</h3>
 <pre><code> npm install coap-cli -g </code></pre>
-<p>这样我们就可以用这个来测试我们的代码</p>
+<p>以便于用这个来测试我们的代码</p>
 <h3 id="coap命令行">CoAP命令行</h3>
-<p>一共有四个方法</p>
+<p>coap-cli 一共有四个方法</p>
 <pre><code>Commands:
 
 get                    performs a GET request
@@ -1003,8 +956,54 @@ coap-server</code></pre>
 <pre><code>v:1 t:0 tkl:0 c:1 id:37109
 This is a test server made with libcoap (see http://libcoap.sf.net) 
 Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
-<p>在经历了几次重构之后，我们的IoT终于开始有个好的代码结构，再经过几次修正之后，我们就可以很愉快地发出第一个版本，v0.1或许将会是Nodejs的一个库。</p>
-<h2 id="构建基于coap-sqlite-nodejs的物联网之数据库">构建基于CoAP SQLite Nodejs的物联网之数据库</h2>
+<h2 id="coap的helloworld">CoAP的Hello,World</h2>
+<p>接着我们便开始试试做一个简单的CoAP协议的应用，开始之前我们需要能访问<a href="coap://localhost/">coap://localhost/</a>，于是我们便需要安装一个Firefox的插件Copper。</p>
+<ol style="list-style-type: decimal">
+<li><p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p></li>
+<li><p>作为测试我们可以访问 <a href="coap://vs0.inf.ethz.ch:5683/">coap://vs0.inf.ethz.ch:5683/</a></p></li>
+</ol>
+<h3 id="node-coap">Node CoAP</h3>
+<p>这是我们这里用到的一个Node的扩展Node-CoAP</p>
+<blockquote>
+<p>node-coap is a client and server library for CoAP modelled after the http module.</p>
+</blockquote>
+<p>Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建一个package.json文件，添加这个库</p>
+<pre><code>{
+    &quot;dependencies&quot;:{
+        &quot;coap&quot;: &quot;0.7.2&quot;
+    }
+}</code></pre>
+<p>接着执行</p>
+<pre><code>npm install</code></pre>
+<p>就可以安装好这个库</p>
+<h3 id="node-coap-示例">Node CoAP 示例</h3>
+<p>接着，创建这样一个app.js</p>
+<pre><code>const coap        = require(&#39;coap&#39;)
+    , server  = coap.createServer()
+
+server.on(&#39;request&#39;, function(req, res) {
+  res.end(&#39;Hello &#39; + req.url.split(&#39;/&#39;)[1] + &#39;\n&#39;)
+})
+
+server.listen(function() {
+  console.log(&#39;server started&#39;)
+})  </code></pre>
+<p>执行</p>
+<pre><code>node app.js</code></pre>
+<p>便可以在浏览器上访问了，因为现在什么也没有，所以什么也不会返回。</p>
+<p>接着下来再创建一个client端的js，并运行之</p>
+<pre><code>const coap  = require(&#39;coap&#39;) 
+    , req   = coap.request(&#39;coap://localhost/World&#39;)
+
+req.on(&#39;response&#39;, function(res) {
+  res.pipe(process.stdout)
+})
+
+req.end()</code></pre>
+<p>就可以在console上输出</p>
+<pre><code>Hello World </code></pre>
+<p>也就达到了我们的目的，用CoAP协议创建一个服务，接着我们应该用它创建更多的东西，如产生JSON数据，以及RESTful。和HTTP版的最小物联网系统一样，CoAP版的最小物联网系统也是要返回JSON的。</p>
+<h2 id="数据库查询">数据库查询</h2>
 <h3 id="node-module">Node Module</h3>
 <p>这说里Module的意义是因为我们需要在别的地方引用到db_helper这个库，也就是下一小节要的讲的内容。</p>
 <p>这样我们就可以在server.js类似于这样去引用这个js库。</p>
@@ -1039,7 +1038,7 @@ db.close();</code></pre>
     ],
     &quot;query_table&quot;:&quot;select * from basic;&quot;
 };</code></pre>
-<p>而我们在之前所提到的url查询所做的事情便是</p>
+<p>而之前所提到的url查询所做的事情便是</p>
 <pre><code>DBHelper.urlQueryData = function (url, callback) {
     var db = new sqlite3.Database(&quot;iot.db&quot;);
 
@@ -1050,12 +1049,11 @@ db.close();</code></pre>
         callback(JSON.stringify(rows));
     });
 };</code></pre>
-<p>将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。</p>
-<p>这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。</p>
+<p>将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。</p>
 <h3 id="查询数据">查询数据</h3>
 <p>简单地记录一下在IoT-CoAP中一次获取数据地过程。</p>
 <h3 id="coap-get-client">CoAP Get Client</h3>
-<p>我们先看看我们在示例中的Get.js的代码，这关乎在后面server端的代码。</p>
+<p>先看看在示例中的Get.js的代码，这关乎在后面server端的代码。</p>
 <pre><code>const coap       = require(&#39;coap&#39;)
      ,requestURI = &#39;coap://localhost/&#39;
      ,url        = require(&#39;url&#39;).parse(requestURI + &#39;id/1/&#39;)
