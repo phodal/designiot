@@ -31,10 +31,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <link rel="stylesheet" href="css/vendor.css" />
-  <title>设计物联网系统</title>
+  <title>一步步搭建物联网系统</title>
   <meta name="keywords" content="设计物联网系统,物联网系统设计">
   <meta name="description" content="一份关于如何设计物联网系统的文档">
+  <link rel="stylesheet" href="css/vendor.css" />
 </head>
 <body class="container inner wrap">
 
@@ -42,187 +42,181 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </html>
 <div id="TOC">
 <ul>
-<li><a href="#前言">前言</a></li>
-<li><a href="#目标读者">目标读者</a></li>
-<li><a href="#不适合人群">不适合人群</a></li>
-<li><a href="#介绍">介绍</a><ul>
-<li><a href="#为什么没有c">为什么没有C ?</a></li>
-<li><a href="#为什么不是java">为什么不是JAVA ?</a></li>
+<li><a href="#前言"><span class="toc-section-number">0.1</span> 前言</a></li>
+<li><a href="#目标读者"><span class="toc-section-number">0.2</span> 目标读者</a></li>
+<li><a href="#不适合人群"><span class="toc-section-number">0.3</span> 不适合人群</a></li>
+<li><a href="#介绍"><span class="toc-section-number">0.4</span> 介绍</a><ul>
+<li><a href="#为什么没有c"><span class="toc-section-number">0.4.1</span> 为什么没有C ?</a></li>
+<li><a href="#为什么不是java"><span class="toc-section-number">0.4.2</span> 为什么不是JAVA ?</a></li>
 </ul></li>
-<li><a href="#如何阅读">如何阅读</a></li>
-<li><a href="#第一部分-be-a-geek">第一部分 Be a Geek</a></li>
-<li><a href="#第一章-无处不在的html">第一章 无处不在的HTML</a><ul>
-<li><a href="#html的helloworld">html的hello,world</a><ul>
-<li><a href="#调试helloworld">调试hello,world</a></li>
-<li><a href="#说说helloworld">说说hello,world</a></li>
-<li><a href="#想用中文">想用中文？</a></li>
+<li><a href="#如何阅读"><span class="toc-section-number">0.5</span> 如何阅读</a></li>
+<li><a href="#无处不在的html"><span class="toc-section-number">1</span> 无处不在的HTML</a><ul>
+<li><a href="#html的helloworld"><span class="toc-section-number">1.1</span> html的hello,world</a><ul>
+<li><a href="#调试helloworld"><span class="toc-section-number">1.1.1</span> 调试hello,world</a></li>
+<li><a href="#说说helloworld"><span class="toc-section-number">1.1.2</span> 说说hello,world</a></li>
+<li><a href="#想用中文"><span class="toc-section-number">1.1.3</span> 想用中文？</a></li>
 </ul></li>
-<li><a href="#其他html标记">其他html标记</a><ul>
-<li><a href="#美妙之处">美妙之处</a></li>
-<li><a href="#更多">更多</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#第二章-无处不在的javascript">第二章 无处不在的Javascript</a><ul>
-<li><a href="#javascript的helloworld">Javascript的Hello,world</a></li>
-<li><a href="#更js一点">更js一点</a><ul>
-<li><a href="#从数学出发">从数学出发</a></li>
-</ul></li>
-<li><a href="#设计和编程">设计和编程</a><ul>
-<li><a href="#函数">函数</a></li>
-<li><a href="#重新设计">重新设计</a></li>
-<li><a href="#object和函数">object和函数</a></li>
-<li><a href="#面向对象">面向对象</a></li>
-</ul></li>
-<li><a href="#其他">其他</a></li>
-<li><a href="#美妙之处-1">美妙之处</a></li>
-</ul></li>
-<li><a href="#第三章-无处不在的css">第三章 无处不在的CSS</a><ul>
-<li><a href="#css">CSS</a></li>
-<li><a href="#关于css">关于CSS</a></li>
-<li><a href="#代码结构">代码结构</a></li>
-<li><a href="#样式与目标">样式与目标</a><ul>
-<li><a href="#选择器">选择器</a></li>
-</ul></li>
-<li><a href="#更有趣的css">更有趣的CSS</a></li>
-</ul></li>
-<li><a href="#第四章-无处不在的三剑客">第四章 无处不在的三剑客</a><ul>
-<li><a href="#hellogeek">Hello,Geek</a></li>
-<li><a href="#从源码学习">从源码学习</a><ul>
-<li><a href="#html">HTML</a></li>
-</ul></li>
-<li><a href="#dom树形结构图">DOM树形结构图</a><ul>
-<li><a href="#javascript">javascript</a></li>
-<li><a href="#css-1">CSS</a></li>
-</ul></li>
-<li><a href="#css盒模型图">CSS盒模型图</a></li>
-<li><a href="#笔记">笔记</a></li>
-</ul></li>
-<li><a href="#第五章-gnulinux">第五章 GNU/Linux</a><ul>
-<li><a href="#什么是linux">什么是Linux</a></li>
-<li><a href="#操作系统">操作系统</a><ul>
-<li><a href="#linux架构图">Linux架构图</a></li>
-<li><a href="#shell">Shell</a></li>
-<li><a href="#gcc">GCC</a></li>
-<li><a href="#启动引导程序">启动引导程序</a></li>
+<li><a href="#其他html标记"><span class="toc-section-number">1.2</span> 其他html标记</a><ul>
+<li><a href="#美妙之处"><span class="toc-section-number">1.2.1</span> 美妙之处</a></li>
+<li><a href="#更多"><span class="toc-section-number">1.2.2</span> 更多</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#第六章-arduino">第六章 Arduino</a><ul>
-<li><a href="#极客的玩具">极客的玩具</a></li>
+<li><a href="#无处不在的javascript"><span class="toc-section-number">2</span> 无处不在的Javascript</a><ul>
+<li><a href="#javascript的helloworld"><span class="toc-section-number">2.1</span> Javascript的Hello,world</a></li>
+<li><a href="#更js一点"><span class="toc-section-number">2.2</span> 更js一点</a><ul>
+<li><a href="#从数学出发"><span class="toc-section-number">2.2.1</span> 从数学出发</a></li>
 </ul></li>
-<li><a href="#第七章-python">第七章 Python</a><ul>
-<li><a href="#代码与散文">代码与散文</a></li>
-<li><a href="#开始之前">开始之前</a></li>
-<li><a href="#python的helloworld">Python的Hello,World</a></li>
-<li><a href="#我们想要的helloworld">我们想要的Hello,World</a></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#实用主义哲学">实用主义哲学</a></li>
+<li><a href="#设计和编程"><span class="toc-section-number">2.3</span> 设计和编程</a><ul>
+<li><a href="#函数"><span class="toc-section-number">2.3.1</span> 函数</a></li>
+<li><a href="#重新设计"><span class="toc-section-number">2.3.2</span> 重新设计</a></li>
+<li><a href="#object和函数"><span class="toc-section-number">2.3.3</span> object和函数</a></li>
+<li><a href="#面向对象"><span class="toc-section-number">2.3.4</span> 面向对象</a></li>
 </ul></li>
-<li><a href="#第八章-raspberry-pi">第八章 Raspberry Pi</a><ul>
-<li><a href="#geek的盛宴">Geek的盛宴</a></li>
+<li><a href="#其他"><span class="toc-section-number">2.4</span> 其他</a></li>
+<li><a href="#美妙之处-1"><span class="toc-section-number">2.5</span> 美妙之处</a></li>
 </ul></li>
-<li><a href="#第二部分">第二部分</a></li>
-<li><a href="#第九章-http与restful">第九章 HTTP与RESTful</a><ul>
-<li><a href="#你所没有深入的http">你所没有深入的HTTP</a></li>
-<li><a href="#rest">REST</a></li>
+<li><a href="#无处不在的css"><span class="toc-section-number">3</span> 无处不在的CSS</a><ul>
+<li><a href="#css"><span class="toc-section-number">3.1</span> CSS</a></li>
+<li><a href="#关于css"><span class="toc-section-number">3.2</span> 关于CSS</a></li>
+<li><a href="#代码结构"><span class="toc-section-number">3.3</span> 代码结构</a></li>
+<li><a href="#样式与目标"><span class="toc-section-number">3.4</span> 样式与目标</a><ul>
+<li><a href="#选择器"><span class="toc-section-number">3.4.1</span> 选择器</a></li>
 </ul></li>
-<li><a href="#第三部分">第三部分</a></li>
-<li><a href="#第x章-构建基于coap协议的物联网系统">第x章 构建基于CoAP协议的物联网系统</a><ul>
-<li><a href="#coap简介">CoAP简介</a></li>
-<li><a href="#coap-命令行工具">CoAP 命令行工具</a><ul>
-<li><a href="#node-coap-cli">Node CoAP CLI</a></li>
-<li><a href="#coap命令行">CoAP命令行</a></li>
-<li><a href="#libcoap">libcoap</a></li>
+<li><a href="#更有趣的css"><span class="toc-section-number">3.5</span> 更有趣的CSS</a></li>
 </ul></li>
-<li><a href="#helloworld">Hello,World</a><ul>
-<li><a href="#node-coap">Node-CoAP</a></li>
-<li><a href="#node-coap示例">Node CoAP示例</a></li>
+<li><a href="#无处不在的三剑客"><span class="toc-section-number">4</span> 无处不在的三剑客</a><ul>
+<li><a href="#hellogeek"><span class="toc-section-number">4.1</span> Hello,Geek</a></li>
+<li><a href="#从源码学习"><span class="toc-section-number">4.2</span> 从源码学习</a><ul>
+<li><a href="#html"><span class="toc-section-number">4.2.1</span> HTML</a></li>
 </ul></li>
-<li><a href="#数据库查询">数据库查询</a><ul>
-<li><a href="#node-module">Node Module</a></li>
-<li><a href="#node-sqlite3">Node-Sqlite3</a></li>
-<li><a href="#查询数据">查询数据</a></li>
-<li><a href="#get">GET</a></li>
-<li><a href="#iot-coap">IoT CoAP</a></li>
-<li><a href="#判断请求的方法">判断请求的方法</a></li>
-<li><a href="#database与回调">Database与回调</a></li>
+<li><a href="#dom树形结构图"><span class="toc-section-number">4.3</span> DOM树形结构图</a><ul>
+<li><a href="#javascript"><span class="toc-section-number">4.3.1</span> javascript</a></li>
+<li><a href="#css-1"><span class="toc-section-number">4.3.2</span> CSS</a></li>
 </ul></li>
-<li><a href="#coap-block">CoAP Block</a><ul>
-<li><a href="#coap-post">CoAP POST</a></li>
-<li><a href="#json请求">JSON请求</a></li>
-<li><a href="#coap-content-types">CoAP Content Types</a></li>
+<li><a href="#css盒模型图"><span class="toc-section-number">4.4</span> CSS盒模型图</a></li>
+<li><a href="#笔记"><span class="toc-section-number">4.5</span> 笔记</a></li>
 </ul></li>
-<li><a href="#coap-json">CoAP JSON</a><ul>
-<li><a href="#返回json">返回JSON</a></li>
-<li><a href="#coap客户端代码">CoAP客户端代码</a></li>
-<li><a href="#coap-server端代码">CoAP Server端代码</a></li>
+<li><a href="#gnulinux"><span class="toc-section-number">5</span> GNU/Linux</a><ul>
+<li><a href="#什么是linux"><span class="toc-section-number">5.1</span> 什么是Linux</a></li>
+<li><a href="#操作系统"><span class="toc-section-number">5.2</span> 操作系统</a><ul>
+<li><a href="#linux架构图"><span class="toc-section-number">5.2.1</span> Linux架构图</a></li>
+<li><a href="#shell"><span class="toc-section-number">5.2.2</span> Shell</a></li>
+<li><a href="#gcc"><span class="toc-section-number">5.2.3</span> GCC</a></li>
+<li><a href="#启动引导程序"><span class="toc-section-number">5.2.4</span> 启动引导程序</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#附录一-物联网毕业设计">附录一 物联网毕业设计</a><ul>
-<li><a href="#摘要">摘要</a></li>
-<li><a href="#abstract">Abstract</a></li>
-<li><a href="#绪论">绪论</a><ul>
-<li><a href="#选题背景">选题背景</a></li>
-<li><a href="#设计内容">设计内容</a></li>
-<li><a href="#设计的目的及其意义">设计的目的及其意义</a></li>
-<li><a href="#国内外发展现状和趋势">国内外发展现状和趋势</a></li>
+<li><a href="#arduino"><span class="toc-section-number">6</span> Arduino</a><ul>
+<li><a href="#极客的玩具"><span class="toc-section-number">6.1</span> 极客的玩具</a></li>
+</ul></li>
+<li><a href="#python"><span class="toc-section-number">7</span> Python</a><ul>
+<li><a href="#代码与散文"><span class="toc-section-number">7.1</span> 代码与散文</a></li>
+<li><a href="#开始之前"><span class="toc-section-number">7.2</span> 开始之前</a></li>
+<li><a href="#python的helloworld"><span class="toc-section-number">7.3</span> Python的Hello,World</a></li>
+<li><a href="#我们想要的helloworld"><span class="toc-section-number">7.4</span> 我们想要的Hello,World</a></li>
+<li><a href="#算法"><span class="toc-section-number">7.5</span> 算法</a></li>
+<li><a href="#实用主义哲学"><span class="toc-section-number">7.6</span> 实用主义哲学</a></li>
+</ul></li>
+<li><a href="#raspberry-pi"><span class="toc-section-number">8</span> Raspberry Pi</a><ul>
+<li><a href="#geek的盛宴"><span class="toc-section-number">8.1</span> Geek的盛宴</a></li>
+</ul></li>
+<li><a href="#http与restful"><span class="toc-section-number">9</span> HTTP与RESTful</a><ul>
+<li><a href="#你所没有深入的http"><span class="toc-section-number">9.1</span> 你所没有深入的HTTP</a></li>
+<li><a href="#rest"><span class="toc-section-number">9.2</span> REST</a></li>
+</ul></li>
+<li><a href="#构建基于coap协议的物联网系统"><span class="toc-section-number">10</span> 构建基于CoAP协议的物联网系统</a><ul>
+<li><a href="#coap简介"><span class="toc-section-number">10.1</span> CoAP简介</a></li>
+<li><a href="#coap-命令行工具"><span class="toc-section-number">10.2</span> CoAP 命令行工具</a><ul>
+<li><a href="#node-coap-cli"><span class="toc-section-number">10.2.1</span> Node CoAP CLI</a></li>
+<li><a href="#coap命令行"><span class="toc-section-number">10.2.2</span> CoAP命令行</a></li>
+<li><a href="#libcoap"><span class="toc-section-number">10.2.3</span> libcoap</a></li>
+</ul></li>
+<li><a href="#helloworld"><span class="toc-section-number">10.3</span> Hello,World</a><ul>
+<li><a href="#node-coap"><span class="toc-section-number">10.3.1</span> Node-CoAP</a></li>
+<li><a href="#node-coap示例"><span class="toc-section-number">10.3.2</span> Node CoAP示例</a></li>
+</ul></li>
+<li><a href="#数据库查询"><span class="toc-section-number">10.4</span> 数据库查询</a><ul>
+<li><a href="#node-module"><span class="toc-section-number">10.4.1</span> Node Module</a></li>
+<li><a href="#node-sqlite3"><span class="toc-section-number">10.4.2</span> Node-Sqlite3</a></li>
+<li><a href="#查询数据"><span class="toc-section-number">10.4.3</span> 查询数据</a></li>
+<li><a href="#get"><span class="toc-section-number">10.4.4</span> GET</a></li>
+<li><a href="#iot-coap"><span class="toc-section-number">10.4.5</span> IoT CoAP</a></li>
+<li><a href="#判断请求的方法"><span class="toc-section-number">10.4.6</span> 判断请求的方法</a></li>
+<li><a href="#database与回调"><span class="toc-section-number">10.4.7</span> Database与回调</a></li>
+</ul></li>
+<li><a href="#coap-block"><span class="toc-section-number">10.5</span> CoAP Block</a><ul>
+<li><a href="#coap-post"><span class="toc-section-number">10.5.1</span> CoAP POST</a></li>
+<li><a href="#json请求"><span class="toc-section-number">10.5.2</span> JSON请求</a></li>
+<li><a href="#coap-content-types"><span class="toc-section-number">10.5.3</span> CoAP Content Types</a></li>
+</ul></li>
+<li><a href="#coap-json"><span class="toc-section-number">10.6</span> CoAP JSON</a><ul>
+<li><a href="#返回json"><span class="toc-section-number">10.6.1</span> 返回JSON</a></li>
+<li><a href="#coap客户端代码"><span class="toc-section-number">10.6.2</span> CoAP客户端代码</a></li>
+<li><a href="#coap-server端代码"><span class="toc-section-number">10.6.3</span> CoAP Server端代码</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#系统总体设计方案">系统总体设计方案</a><ul>
-<li><a href="#硬件方案选择">硬件方案选择</a><ul>
-<li><a href="#单片机选择">单片机选择</a></li>
+<li><a href="#物联网毕业设计"><span class="toc-section-number">11</span> 物联网毕业设计</a><ul>
+<li><a href="#摘要"><span class="toc-section-number">11.1</span> 摘要</a></li>
+<li><a href="#abstract"><span class="toc-section-number">11.2</span> Abstract</a></li>
+<li><a href="#绪论"><span class="toc-section-number">11.3</span> 绪论</a><ul>
+<li><a href="#选题背景"><span class="toc-section-number">11.3.1</span> 选题背景</a></li>
+<li><a href="#设计内容"><span class="toc-section-number">11.3.2</span> 设计内容</a></li>
+<li><a href="#设计的目的及其意义"><span class="toc-section-number">11.3.3</span> 设计的目的及其意义</a></li>
+<li><a href="#国内外发展现状和趋势"><span class="toc-section-number">11.3.4</span> 国内外发展现状和趋势</a></li>
 </ul></li>
-<li><a href="#软件方案选择">软件方案选择</a><ul>
-<li><a href="#数据通讯方式选择">数据通讯方式选择</a></li>
-<li><a href="#数据通信格式选择">数据通信格式选择</a></li>
+<li><a href="#系统总体设计方案"><span class="toc-section-number">11.4</span> 系统总体设计方案</a></li>
+<li><a href="#硬件方案选择"><span class="toc-section-number">11.5</span> 硬件方案选择</a><ul>
+<li><a href="#单片机选择"><span class="toc-section-number">11.5.1</span> 单片机选择</a></li>
 </ul></li>
-<li><a href="#网络服务方案选择">网络服务方案选择</a><ul>
-<li><a href="#语言选择">语言选择</a></li>
+<li><a href="#软件方案选择"><span class="toc-section-number">11.6</span> 软件方案选择</a><ul>
+<li><a href="#数据通讯方式选择"><span class="toc-section-number">11.6.1</span> 数据通讯方式选择</a></li>
+<li><a href="#数据通信格式选择"><span class="toc-section-number">11.6.2</span> 数据通信格式选择</a></li>
 </ul></li>
-<li><a href="#其它">其它</a><ul>
-<li><a href="#数据通讯设备">数据通讯设备</a></li>
+<li><a href="#网络服务方案选择"><span class="toc-section-number">11.7</span> 网络服务方案选择</a><ul>
+<li><a href="#语言选择"><span class="toc-section-number">11.7.1</span> 语言选择</a></li>
 </ul></li>
-<li><a href="#辅助语言选择">辅助语言选择</a></li>
-<li><a href="#串口通信模块">串口通信模块</a></li>
-<li><a href="#网页通信">网页通信</a></li>
-<li><a href="#数据可视化框架选择">数据可视化框架选择</a></li>
+<li><a href="#其它"><span class="toc-section-number">11.8</span> 其它</a><ul>
+<li><a href="#数据通讯设备"><span class="toc-section-number">11.8.1</span> 数据通讯设备</a></li>
 </ul></li>
-<li><a href="#本地系统设计">本地系统设计</a><ul>
-<li><a href="#硬件设计">硬件设计</a><ul>
-<li><a href="#raspberry-pi">Raspberry Pi</a></li>
+<li><a href="#辅助语言选择"><span class="toc-section-number">11.9</span> 辅助语言选择</a></li>
+<li><a href="#串口通信模块"><span class="toc-section-number">11.10</span> 串口通信模块</a></li>
+<li><a href="#网页通信"><span class="toc-section-number">11.11</span> 网页通信</a></li>
+<li><a href="#数据可视化框架选择"><span class="toc-section-number">11.12</span> 数据可视化框架选择</a></li>
+<li><a href="#本地系统设计"><span class="toc-section-number">11.13</span> 本地系统设计</a></li>
+<li><a href="#硬件设计"><span class="toc-section-number">11.14</span> 硬件设计</a><ul>
+<li><a href="#raspberry-pi-1"><span class="toc-section-number">11.14.1</span> Raspberry Pi</a></li>
 </ul></li>
-<li><a href="#软件设计">软件设计</a></li>
-<li><a href="#arduino-1">Arduino</a></li>
-<li><a href="#raspberry-pi-1">Raspberry Pi</a><ul>
-<li><a href="#获取数据">获取数据</a></li>
-<li><a href="#串口通讯">串口通讯</a></li>
-<li><a href="#python串口通讯">python串口通讯</a></li>
+<li><a href="#软件设计"><span class="toc-section-number">11.15</span> 软件设计</a></li>
+<li><a href="#arduino-2"><span class="toc-section-number">11.16</span> Arduino</a></li>
+<li><a href="#raspberry-pi-2"><span class="toc-section-number">11.17</span> Raspberry Pi</a><ul>
+<li><a href="#获取数据"><span class="toc-section-number">11.17.1</span> 获取数据</a></li>
+<li><a href="#串口通讯"><span class="toc-section-number">11.17.2</span> 串口通讯</a></li>
+<li><a href="#python串口通讯"><span class="toc-section-number">11.17.3</span> python串口通讯</a></li>
 </ul></li>
+<li><a href="#网络系统设计"><span class="toc-section-number">11.18</span> 网络系统设计</a></li>
+<li><a href="#网络服务程序设计"><span class="toc-section-number">11.19</span> 网络服务程序设计</a><ul>
+<li><a href="#基本的rest服务"><span class="toc-section-number">11.19.1</span> 基本的REST服务</a></li>
 </ul></li>
-<li><a href="#网络系统设计">网络系统设计</a><ul>
-<li><a href="#网络服务程序设计">网络服务程序设计</a><ul>
-<li><a href="#基本的rest服务">基本的REST服务</a></li>
+<li><a href="#系统前台设计"><span class="toc-section-number">11.20</span> 系统前台设计</a><ul>
+<li><a href="#ajax"><span class="toc-section-number">11.20.1</span> Ajax</a></li>
+<li><a href="#highcharts"><span class="toc-section-number">11.20.2</span> Highcharts</a></li>
 </ul></li>
-<li><a href="#系统前台设计">系统前台设计</a><ul>
-<li><a href="#ajax">Ajax</a></li>
-<li><a href="#highcharts">Highcharts</a></li>
-</ul></li>
-<li><a href="#系统后台设计">系统后台设计</a><ul>
-<li><a href="#数据库设计">数据库设计</a></li>
+<li><a href="#系统后台设计"><span class="toc-section-number">11.21</span> 系统后台设计</a><ul>
+<li><a href="#数据库设计"><span class="toc-section-number">11.21.1</span> 数据库设计</a></li>
 </ul></li>
 </ul></li>
 </ul>
 </div>
-<h2 id="前言">前言</h2>
+<h2 id="前言"><span class="header-section-number">0.1</span> 前言</h2>
 <p>设计物联网系统是一种有意思的事情，我们需要考虑到软件、硬件、通讯等等不同的几个方案。探索不同的语言，不同的框架，形成不同的解决方案。</p>
 <p>在文档中，我们将对设计物联网系统有一个简单的介绍，我们会探讨如何设计一个最小的物联网系统。</p>
-<h2 id="目标读者">目标读者</h2>
+<h2 id="目标读者"><span class="header-section-number">0.2</span> 目标读者</h2>
 <p>本文档的目标读者是初入物联网领域，希望对物联网系统有一个大概的认识和把握，并学会如何掌握好一个基础的物联网系统的设计。</p>
 <p>本文档对一些概念(如)只做了一些基本介绍，以及便于理解。如果想进一步了解这些概念，会列出一些推荐书目，以供参考。</p>
-<h2 id="不适合人群">不适合人群</h2>
+<h2 id="不适合人群"><span class="header-section-number">0.3</span> 不适合人群</h2>
 <ul>
 <li>有丰富经验的开发者</li>
 </ul>
-<h2 id="介绍">介绍</h2>
+<h2 id="介绍"><span class="header-section-number">0.4</span> 介绍</h2>
 <p>关于内容的选择上，这是一个有意思的话题，我们很难判断不同的开发者用的是怎样的语言，用的是怎样的框架。</p>
 <p>于是我们便自作主张地选择了那些适合于理论学习的语言、框架、硬件，去除掉其他那些我们不需要考虑的因素，如语法，复杂度等等。当然，这些语言、框架、硬件也是流行的，如果找到相关的文档。</p>
 <ul>
@@ -233,15 +227,15 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>Javascript : 考虑到CoAP、MQTT等版本是基于Nodejs的话，而且这门语言已经无处不在了，而且会更加流行。</li>
 <li>HTML、CSS : 这是必须的，他们仍然也是无处不在。</li>
 </ul>
-<h3 id="为什么没有c">为什么没有C ?</h3>
+<h3 id="为什么没有c"><span class="header-section-number">0.4.1</span> 为什么没有C ?</h3>
 <p>如果你还想用C学理论的话，呵呵。</p>
-<h3 id="为什么不是java">为什么不是JAVA ?</h3>
+<h3 id="为什么不是java"><span class="header-section-number">0.4.2</span> 为什么不是JAVA ?</h3>
 <p>大致有下面两个原因</p>
 <ul>
 <li>JAVA学的人很多，然而不适合我们将主要精力集中于构建与学习，因为无关的代码太多了。</li>
 <li>当时以及现在，我还是不喜欢JAVA(ps:更喜欢脚本语言，可以在更少的时候做更多的事)。</li>
 </ul>
-<h2 id="如何阅读">如何阅读</h2>
+<h2 id="如何阅读"><span class="header-section-number">0.5</span> 如何阅读</h2>
 <p>这是一个简单的建议，仅针对于在选择阅读没有经验的读者。</p>
 <table>
 <thead>
@@ -265,12 +259,11 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </tr>
 </tbody>
 </table>
-<h1 id="第一部分-be-a-geek">第一部分 Be a Geek</h1>
 <p>有一天，走在回学校的路上，我在想：“未来是科技时代（现在也是），只是未来科技会无处不在，而如果我们对于周围的无处不在的代码一无所知的话，或许我们会成为黑客帝国中的一般人”。所以开始想着，人们会开始学习编程就像学习一门语言一样，直到有一天我看到了学习编程如同学习一门语言。这算是一个有趣的时间点，于是我开始想着像之前做最小物联网系统的那些步骤一样，写一个简单的入门。也可以补充好之前在这个最小物联网系统缺失的那些东西，给那些正在开始试图去解决编程问题的人。</p>
 <p>我们先从身边的语言下手，也就是现在无处不在的html+javascript+css。</p>
-<h1 id="第一章-无处不在的html">第一章 无处不在的HTML</h1>
+<h1 id="无处不在的html"><span class="header-section-number">1</span> 无处不在的HTML</h1>
 <p>从html开始的原因在于我们不需要去配置一个复杂的开发环境，也许你还不知道开始环境是什么东西，而这些需要去慢慢的了解才能接触，特别是对于普通的业余爱好者来说，对于专业的选手那些自然不是问题。HTML是Web的核心语言，也算是基础的语言。</p>
-<h2 id="html的helloworld">html的hello,world</h2>
+<h2 id="html的helloworld"><span class="header-section-number">1.1</span> html的hello,world</h2>
 <p>Hello,world是一个传统，所以在这里也遵循这个有趣的传统，我们所要做的事情事实很简单。虽然也有点hack的感觉，所以让我们新建一个文件叫“helloworld.html”。</p>
 <p>(PS:大部分人应该都是在windows下工作的，所以你需要新建一个文本，然后重命名，或者你需要一个编辑器，在这里推荐用<strong>sublime text</strong>。破解不破解，注册不注册都不会对你的使用有太多的影响。)</p>
 <ol style="list-style-type: decimal">
@@ -290,14 +283,14 @@ code > span.er { color: #ff0000; font-weight: bold; }
 
 <p>等等，如果你了解过html的话，会觉得这一点都不符合语法规则，但是他工作了，没有什么比安装完Nginx后看到It works!更让人激动了。</p>
 <p>遗憾的是，它可能无法在所有的浏览器上工作，所以我们需要去调试其中的bug。</p>
-<h3 id="调试helloworld">调试hello,world</h3>
+<h3 id="调试helloworld"><span class="header-section-number">1.1.1</span> 调试hello,world</h3>
 <p>我们会发现我们的代码在浏览器中变成了下面的代码，如果你和我一样用的是chrome，那么你可以右键浏览器中的空白区域，点击审查元素，就会看到下面的代码。</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;&lt;/head&gt;
     &lt;body&gt;hello,world&lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p>这个才是真正能在大部分浏览器上工作的代码，所以复制它到编辑器里吧。</p>
-<h3 id="说说helloworld">说说hello,world</h3>
+<h3 id="说说helloworld"><span class="header-section-number">1.1.2</span> 说说hello,world</h3>
 我很不喜欢其中的&lt;*&gt;<!--*-->超文本标记语言
 </blockquote>
 <p>所以我们可以发现其中的关键词是标记——markup，也就是说html是一个markup，head是一个markup，body是一个markup。</p>
@@ -306,7 +299,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><p>我们所学的汉语是别人创造的，我们所正在学的这门语言也是别人创造的。</p></li>
 <li><p>我们在自己的语言里遵循着<strong>他代表是个男的，她代替是个女的</strong>。</p></li>
 </ol>
-<h3 id="想用中文">想用中文？</h3>
+<h3 id="想用中文"><span class="header-section-number">1.1.3</span> 想用中文？</h3>
 <p>所以我们也可以把计算机语言与现实世界的语言划上一个等号。而我们所要学习的语言，因为没有一门真正意义上的汉语语言，所以我们便觉得这些很复杂，如果我们可以用汉语代换掉上面的代码的话</p>
 <pre><code>&lt;语言&gt;
     &lt;头&gt;&lt;结束头&gt;
@@ -348,7 +341,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>中文输入的速度在某种程度上来说没有英语快。</li>
 </ol>
 <p>我们离开话题已经很远了，但是这里说的都是针对于那些不满于英语的人来说的，只有当我们可以从头构建一个中文系统的时候才是可行的，这些包括的东西有cpu，软件，硬件，而我们还需要考虑重新设计cpu的结构，在某种程度上来说会有些不现实。需要一代又一代的人的努力，只是在当前就更不现实了。忘记那些，师夷长之技以治夷。</p>
-<h2 id="其他html标记">其他html标记</h2>
+<h2 id="其他html标记"><span class="header-section-number">1.2</span> 其他html标记</h2>
 <p>添加一个标题，</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
@@ -373,7 +366,7 @@ hello,world
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p>更多的东西可以在一些书籍上看到，这边所要说的只是一次简单的语言入门，其他的东西都和这些类似。</p>
-<h3 id="美妙之处">美妙之处</h3>
+<h3 id="美妙之处"><span class="header-section-number">1.2.1</span> 美妙之处</h3>
 <p>我们简单地上手了一门不算是语言的语言，浏览器简化了这其中的大部分过程，虽然没有C和其他语言来得有专业感，但是我们试着去开始写代码了。我们可能在未来的某一篇中可能会看到类似的语言，诸如python，我们所要做的就是</p>
 <pre><code>$ python file.py
 =&gt;hello,world</code></pre>
@@ -384,11 +377,11 @@ hello,world
 <li>已经开始写代码，而不是还在配置开发环境。</li>
 <li>随身的工具才是最好的，最常用的code也才是实在的。</li>
 </ol>
-<h3 id="更多">更多</h3>
+<h3 id="更多"><span class="header-section-number">1.2.2</span> 更多</h3>
 <p>我们还没有试着去解决，某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱的问题。也就是说我们学会的是一个还不能解决实际问题的语言，于是我们还需要学点东西如javascript,css。我们可以理解为Javascript是解决问题的语言，html是前端显示，css是配置文件，这样的话，我们会在那之后学会成为一个近乎专业的程序员。我们刚学了下怎么在前端显示那些代码的行为，于是我们还需要Javascript。</p>
-<h1 id="第二章-无处不在的javascript">第二章 无处不在的Javascript</h1>
+<h1 id="无处不在的javascript"><span class="header-section-number">2</span> 无处不在的Javascript</h1>
 <p>Javascript现在已经无处不在了，也许你正打开的某个网站他可能是node.js+json+javascript+mustache.js完成的，虽然你还没理解上面那些是什么，也正是因为你不理解才需要去学习更多的东西。但是Javascript已经无处不在了，可能会在你手机上的某个app里，在你浏览的网页里，在你IDE中的某个进程中运行的。</p>
-<h2 id="javascript的helloworld">Javascript的Hello,world</h2>
+<h2 id="javascript的helloworld"><span class="header-section-number">2.1</span> Javascript的Hello,world</h2>
 <p>这里我们还需要有一个helloworld.html，Javascript是专为网页交互而设计的脚本语言，所以我们一点点来开始这部分的旅途，先写一个符合标准的helloworld.html</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -429,7 +422,7 @@ hello,world
         &lt;/noscript&gt;
     &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-<h2 id="更js一点">更js一点</h2>
+<h2 id="更js一点"><span class="header-section-number">2.2</span> 更js一点</h2>
 <p>我们需要让我们的代码看上去更像是js，同时是以js结尾。C语言的源码但是以C结尾的，所以我们要让我们的代码看上去更正式一点。于是我们需要在helloworld.html的同文件夹下创建一个app.js，里面写着</p>
 <pre><code class="javascript">document.write('hello,world');
 </code></pre>
@@ -446,13 +439,13 @@ hello,world
         &lt;/noscript&gt;
     &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-<h3 id="从数学出发">从数学出发</h3>
+<h3 id="从数学出发"><span class="header-section-number">2.2.1</span> 从数学出发</h3>
 <p>让我们回到第一章讲述的小明的问题，<strong>从实际问题下手编程，更容易学会编程</strong>。小学时代的数学题最喜欢这样子了——某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱的问题。在编程方面，也许我们还算是小学生。最直接的方法就是直接计算3x5=?</p>
 <pre><code class="javascript">document.write(3*5);
 </code></pre>
 
 <p>document.write实际也我们可以理解为输出，也就是往页面里写入3*5的结果，在有双引号的情况下会输出字符串。我们便会在浏览器上看到15，这便是一个好的开始，也是一个不好的开始。</p>
-<h2 id="设计和编程">设计和编程</h2>
+<h2 id="设计和编程"><span class="header-section-number">2.3</span> 设计和编程</h2>
 <p>对于我们的实际问题如果总是止于所要的结果，很多年之后，我们成为了code monkey。对这个问题进行一次设计，所谓的设计有些时候会把简单的问题复杂化，有些时候会使以后的扩展更加简单。这一天因为这家商店的糖价格太高了，于是店长将价格降为了4块钱。</p>
 <pre><code class="javascript">
 document.write(3*4);
@@ -466,7 +459,7 @@ document.write(tang*num);
 </code></pre>
 
 <p>这才能叫得上是程序设计，或许你注意到了“;”这个符号的存在，我想说的是这是另外一个标准，我们不得不去遵守，也不得不去fuck。</p>
-<h3 id="函数">函数</h3>
+<h3 id="函数"><span class="header-section-number">2.3.1</span> 函数</h3>
 <p>记得刚开始学三角函数的时候，我们会写</p>
 <pre><code>sin 30=0.5</code></pre>
 而我们的函数也是类似于此，换句话说，因为很多搞计算机的先驱都学好了数学，都把数学世界的规律带到了计算机世界，所以我们的函数也是类似于此，让我们做一个简单的开始。
@@ -502,7 +495,7 @@ calc(3,4);
 </code></pre>
 
 <p>但是从某种程度上来说，我们的calc做了计算的事又做了输出的事，总的来说设计上有些不好。</p>
-<h3 id="重新设计">重新设计</h3>
+<h3 id="重新设计"><span class="header-section-number">2.3.2</span> 重新设计</h3>
 我们将输出的工作移到函数的外面，
 <pre><code class="javascript">
 function calc(tang,num){
@@ -522,7 +515,7 @@ function printResult(tang,num){
 printResult(3, 4)
 </code></pre>
 <p>看上去更专业了一点点，如果我们只需要计算的时候我们只需要调用calc，如果我们需要输出的时候我们就调用printResult的方法。</p>
-<h3 id="object和函数">object和函数</h3>
+<h3 id="object和函数"><span class="header-section-number">2.3.3</span> object和函数</h3>
 <p>我们还没有说清楚之前我们遇到过的document.write以及Math.sin的语法看上去很奇怪，所以让我们看看他们到底是什么，修改app.js为以及内容</p>
 <pre><code>document.write(typeof document);
 document.write(typeof Math);</code></pre>
@@ -572,7 +565,7 @@ Person.future=dream;
 document.write(typeof Person);
 document.write(Person.future);</code></pre>
 <p>而这些会在我们未来的实际编编程中用得更多。</p>
-<h3 id="面向对象">面向对象</h3>
+<h3 id="面向对象"><span class="header-section-number">2.3.4</span> 面向对象</h3>
 <p>开始之前先我们简化上面的代码，</p>
 <pre><code>Person.future=function dream(){
     future;
@@ -609,7 +602,7 @@ document.write(phodal.weight+&quot;&lt;br&gt;&quot;);
 document.write(phodal.height+&quot;&lt;br&gt;&quot;);
 document.write(phodal.future()+&quot;&lt;br&gt;&quot;);</code></pre>
 <p>于是，产生了这样一个可重用的Javascript对象,this关键字确立了属性的所有者。</p>
-<h2 id="其他">其他</h2>
+<h2 id="其他"><span class="header-section-number">2.4</span> 其他</h2>
 <p>Javascript还有一个很强大的特性，也就是原型继承，不过这里我们先不考虑这些部分，用尽量少的代码及关键字来实际我们所要表达的核心功能，这才是这里的核心，其他的东西我们可以从其他书本上学到。</p>
 <p>所谓的继承，</p>
 <pre><code>var Chinese=function(){
@@ -655,16 +648,16 @@ document.write(phodal.country);</code></pre>
 <pre><code>var para=document.getElementById(&quot;para&quot;);
 para.style.color=&quot;blue&quot;;</code></pre>
 <p>接着，字体就变成了蓝色，有了DOM我们就可以对页面进行操作，可以说我们看到的绝大部分的页面效果都是通过DOM操作实现的。</p>
-<h2 id="美妙之处-1">美妙之处</h2>
+<h2 id="美妙之处-1"><span class="header-section-number">2.5</span> 美妙之处</h2>
 <p>这里说到的Javascript仅仅只是其中的一小小部分，忽略掉的东西很多，只关心的是如何去设计一个实用的app，作为一门编程语言，他还有其他强大的内制函数，要学好需要一本有价值的参考书。这里提到的只是其中的不到20%的东西，其他的80%或者更多会在你解决问题的时候出现。</p>
 <ul>
 <li>我们可以创建一个对象或者说函数，它可以包含基本值、对象或者函数。</li>
 <li>我们可以用Javascript修改页面的属性，虽然只是简单的示例。</li>
 <li>我们还可以去解决实际的编程问题。</li>
 </ul>
-<h1 id="第三章-无处不在的css">第三章 无处不在的CSS</h1>
+<h1 id="无处不在的css"><span class="header-section-number">3</span> 无处不在的CSS</h1>
 <p>CSS或许你觉得他一点儿也不重要，HTML好比是建筑的框架，CSS就是用于装修房子。那么Javascript呢，我听到的最有趣的说法是小三，先让我们回到代码上来吧。</p>
-<h2 id="css">CSS</h2>
+<h2 id="css"><span class="header-section-number">3.1</span> CSS</h2>
 <p>下面就是我们之前说到的代码，css将Red三个字母变成了红色。</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -682,12 +675,12 @@ para.style.color=&quot;blue&quot;;</code></pre>
 <div class="figure">
 <img src="http://designiot.phodal.com/images/redfonts.png" alt="Alt text" /><p class="caption">Alt text</p>
 </div>
-<h2 id="关于css">关于CSS</h2>
+<h2 id="关于css"><span class="header-section-number">3.2</span> 关于CSS</h2>
 <p>这不是一篇好的关于讲述CSS的书籍，所以不会去说CSS是怎么来的，有些东西既然我们可以很容易从其他地方知道，也就不需要花太多时间去重复。诸如重构等这些的目的之一也在于去除重复的代码，不过有些重复是不可少的，也是有必要的，而通常这些东西可能是由其他地方复制过来的。</p>
 <p>到目前为止我们没有依赖于任何特殊的硬件或者是软件，对于我们来说我们最基本的需求就是一台电脑，或者可以是你的平板电脑，当然也可以是你的智能手机，因为他们都有个浏览器，而这些都是能用的，对于我们的CSS来说也不会有例外的。</p>
 <p>CSS是来自于(Cascading Style Sheets)，到今天我也没有记得他的全称，CSS还有一个中文名字是层叠式样式表，翻译成什么样的可能并不是我们关心的内容，我们需要关心的是他能做些什么。作为三剑客之一，它的主要目的在于可以让我们方便灵活地去控制Web页面的外观表现。我们可以用它做出像淘宝一样复杂的界面，也可以像我们的书本一样简单，不过如果要和我们书本一样简单的话，可能不需要用到CSS。HTML一开始就是依照报纸的格式而设计的，我们还可以继续用上面说到的编辑器，又或者是其他的。如果你喜欢DreamWeaver那也不错，不过一开始使用IDE可无助于我们写出良好的代码。</p>
 <p>忘说了，CSS也是有版本的，和windows，Linux内核等等一样，但是更新可能没有那么频繁，HTML也是有版本的，JS也是有版本的，复杂的东西不是当前考虑的内容。</p>
-<h2 id="代码结构">代码结构</h2>
+<h2 id="代码结构"><span class="header-section-number">3.3</span> 代码结构</h2>
 <p>对于我们的上面的Red示例来说，如果没有一个好的结构，那么以后可能就是这样子。</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -784,7 +777,7 @@ para.style.color=&quot;blue&quot;;</code></pre>
 <pre><code>\d{2}/[A-Z][a-z][a-z]/\d{4}</code></pre>
 <p>没有什么会比一开始不理解那是正则表达式，然后去修改上面的代码，为的是去从一堆数据中找出某日/某月/某年。</p>
 <p>这门语言可能是为设计师而设计的，但是设计师大部分还是不懂编程的，不过相对来说还是比其他语言好理解一些。</p>
-<h2 id="样式与目标">样式与目标</h2>
+<h2 id="样式与目标"><span class="header-section-number">3.4</span> 样式与目标</h2>
 <p>下面也就是我们的样式</p>
 <pre><code>.para{
     font-size: 22px;
@@ -795,7 +788,7 @@ para.style.color=&quot;blue&quot;;</code></pre>
 <p>我们的目标就是</p>
 <pre><code>如果没有一个好的结构</code></pre>
 <p>所以样式和目标在这里牵手了，问题是他们是如何在一起的呢？下面就是CSS与HTML沟通的重点所在了:</p>
-<h3 id="选择器">选择器</h3>
+<h3 id="选择器"><span class="header-section-number">3.4.1</span> 选择器</h3>
 <p>我们用到的选择器叫做类选择器，也就是class，或者说应该称之为class选择器更合适。与类选择器最常一起出现的是ID选择器，不过这个适用于比较高级的场合，诸如用JS控制DOM的时候就需要用到ID选择器。而基本的选择器就是如下面的例子:</p>
 <pre><code>p.para{
     color:#f0f;
@@ -844,7 +837,7 @@ p.para{
 div#content p {
     font-size:22px;
 }</code></pre>
-<h2 id="更有趣的css">更有趣的CSS</h2>
+<h2 id="更有趣的css"><span class="header-section-number">3.5</span> 更有趣的CSS</h2>
 <p>一个包含了para2以及para_bg的例子</p>
 <pre><code>    &lt;div id=&quot;content&quot;&gt;
         &lt;p class=&quot;para2 para_bg&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
@@ -857,15 +850,15 @@ div#content p {
 <p>重新改变后的网页变得比原来有趣了很多，所谓的继承与合并就是如上面的例子。</p>
 <p>我们还可以用CSS3做出有趣的效果，而这些并不在我们的讨论范围里面，因为我们讨论的是be a geek。</p>
 <p>或许我们写的代码都是那么的简单，从HTML到Javascript，还有现在的CSS，只是有一些东西才是核心的，而不是去考虑一些基础的语法，基础的东西我们可以从实践的过程中一一发现。但是我们可能发现不了，或者在平时的使用中考虑不到一些有趣的用法或者说特殊的用法，这些可以从观察一些比较好的设计的代码中学习到。复杂的东西可以变得很简单，简单的东西也可以变得很复杂。</p>
-<h1 id="第四章-无处不在的三剑客">第四章 无处不在的三剑客</h1>
+<h1 id="无处不在的三剑客"><span class="header-section-number">4</span> 无处不在的三剑客</h1>
 <p>这时我们终于了解了我们的三剑客，就这么可以结合到一起了，HTML+Javascript+CSS是这一切的基础。而我们用到的其他语言如PHP、Python、Ruby等等的最后都会变成上面的结果，当然还有Coffeescript之类的语言都是以此为基础，这才是我们需要的知识。</p>
-<h2 id="hellogeek">Hello,Geek</h2>
+<h2 id="hellogeek"><span class="header-section-number">4.1</span> Hello,Geek</h2>
 <p>有了一些些的基础之后，我们终于能试着去写一些程序了。也是时候去创建一个像样的东西，或许你在一些见面设计方面的书籍看过类似的东西，可能我写得也没有那些内容好，只是这些都是一些过程。过去我们都是一点点慢慢过来的，只是现在我们也是如此，技术上的一些东西，事实上大家都是知道的。就好比我们都觉得我们可以开个超市，但是如果让我们去开超市的话，我们并不一定能赚钱。</p>
 <p>学习编程的目的可能不在于我们能找到一份工作，那只是在编程之外的东西，虽然确实也是很确定的。但是除些之处，有些东西也是很重要的。、</p>
 <p>过去没有理解为什么会一些人会不厌其烦地去回答别人的问题，有时候可能会想是一种能力越大责任越大的感觉，但是有时候在写一些博客或者回答别人的问题的时候我们又重新思考了这些问题，又重新学习了这些技能。所以这里可能说的不是关于编程的东西而是一些编程以外的东西，关于学习或者学习以外的东西。</p>
-<h2 id="从源码学习">从源码学习</h2>
+<h2 id="从源码学习"><span class="header-section-number">4.2</span> 从源码学习</h2>
 <p>过去总会觉得学了一种语言的语法便算是学了一种语言，于是有一天发现到了这个语言的项目上的时候，虽然会写上几行代码，但是却不像这语言的风格。于是这也是这一篇的意义所在了：</p>
-<h3 id="html">HTML</h3>
+<h3 id="html"><span class="header-section-number">4.2.1</span> HTML</h3>
 <p>写好HTML的一个要点在于看别人写的代码，这只是一方面，我们所说的HTML方面的内容可能不够多，原因有很多，很多东西都需要在实战中去解决。读万卷书和行万里路，分不清哪个有重要的意义，但是如果可以同时做好两个的话，成长会很快的。</p>
 <p>写好HTML应该会有下面的要点</p>
 <ul>
@@ -891,8 +884,8 @@ div#content p {
 &lt;/div&gt;</code></pre>
 <p>换句话说HTML只是基础，而不是日常用到的。我们的HTML是由template生成的，我们可以借助于mustache.js又或者是angluarjs之类的js库来生成最后的HTML，所以这里只是一个开始。</p>
 <p>还需要了解的一部分就是HTML的另外一个重要的部分，DOM树形结构</p>
-<h2 id="dom树形结构图">DOM树形结构图</h2>
-<h3 id="javascript">javascript</h3>
+<h2 id="dom树形结构图"><span class="header-section-number">4.3</span> DOM树形结构图</h2>
+<h3 id="javascript"><span class="header-section-number">4.3.1</span> javascript</h3>
 <p>这里以未压缩的jQuery源码和zepto.js作一个小小的比较，zepto.js是兼容jQuery的，因此我们举几个有意思的函数作一简单的比较，关于源码可以在官网上下载到。</p>
 <p>在zepto.js下面判断一个值是否是函数的方面如下，</p>
 <pre><code>function isFunction(value) { return type(value) == &quot;function&quot; }</code></pre>
@@ -952,7 +945,7 @@ Calc.prototype.sub=function(a,b){
 <p>我们似乎在这里展示了更多的Javascript的用法，但是这不是一好的关于Javascript的介绍，有一天我们还要用诸如qunit之类的工具去为我们的function写测试，这时就是一个更好的开始。</p>
 <p>如果我们乐意的话，我们也可以构建一个类似于jQuery的框架，以用来学习。</p>
 <p>作为一门编程语言来说，我们学得很普通，在某种意义上来说算不上是一种入门。但是如果我们可以在其他的好书在看到的内容，就没有必要在这里进行复述，目的在于一种学习习惯的养成。</p>
-<h3 id="css-1">CSS</h3>
+<h3 id="css-1"><span class="header-section-number">4.3.2</span> CSS</h3>
 <p>CSS有时候很有趣，但是有时候有很多我们没有意识到的用法，这里以Bootstrap为例，这是一个不错的CSS库。最令人兴奋的是没有闭源的CSS，没有闭源的JS，这也就是前端好学习的地方所在了，不过这是一个开源的CSS库，虽然是这样叫的，但是称之为CSS库显然不合适。</p>
 <pre><code>a,
 a:visited {
@@ -974,7 +967,7 @@ a[href^=&quot;#&quot;]:after {
 <li>属性选择器,如a[href]这样当a元素存在href这样的属性的时候来寻找应用元素。</li>
 </ul>
 <p>其他的还需要去好好了解的就是<strong>CSS的盒模型</strong>，作为CSS的基石之一。</p>
-<h2 id="css盒模型图">CSS盒模型图</h2>
+<h2 id="css盒模型图"><span class="header-section-number">4.4</span> CSS盒模型图</h2>
 <p>诸如</p>
 <pre><code>* {
   margin: 0px;
@@ -982,16 +975,16 @@ a[href^=&quot;#&quot;]:after {
   font-family: Helvetica;
 }</code></pre>
 <p>这样的通用器用来进行全局选择的工具和我们用于抵消某个body对于子选择器的影响一样值得注意得多。</p>
-<h2 id="笔记">笔记</h2>
+<h2 id="笔记"><span class="header-section-number">4.5</span> 笔记</h2>
 <p>写博客似乎是一个不错的好习惯，作为一个不是很优秀的写手。对于来说，有时候发现原来能教会别人对于自己的能力来说算是一种肯定。有些时候教会别人才算是自己学会的表现，总会在项目上的时候需要自己去复述工作的一个过程，我们需要整理好我们的思路才能带给别人更多的收获。我们的笔记上总会留下自己的学习的一些过程，有些时候我们想要的只是一点点的鼓励，有时是诸如评论一类，有时可能是诸如访问量。更多的可能是我们可以重新整理自己的知识，好好复习一下，以便于好好记住，写出来是一个好的过程。</p>
 <p>无处不在的三剑客就这样到了这里，写得似乎很多也很少，但是还是没有做出来一个东西，于是我们朝着这样一个方向前进。</p>
-<h1 id="第五章-gnulinux">第五章 GNU/Linux</h1>
-<h2 id="什么是linux">什么是Linux</h2>
+<h1 id="gnulinux"><span class="header-section-number">5</span> GNU/Linux</h1>
+<h2 id="什么是linux"><span class="header-section-number">5.1</span> 什么是Linux</h2>
 <p>Linux是一种自由和开放源码的类UNIX操作系统内核。目前存在着许多不同的Linux发行版，可安装在各种各样的电脑硬件设备，从手机、平板电脑、路由器和影音游戏控制台，到桌上型电脑，大型电脑和超级电脑。 Linux是一个领先的操作系统内核，世界上运算最快的10台超级电脑运行的都是基于Linux内核的操作系统。</p>
 <p>Linux操作系统也是自由软件和开放源代码发展中最著名的例子。只要遵循GNU通用公共许可证,任何人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布。<strong>严格来讲，Linux这个词本身只表示Linux内核，但在实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU 工程各种工具和数据库的操作系统（也被称为GNU/ Linux）。</strong>通常情况下，Linux被打包成供桌上型电脑和服务器使用的Linux发行版本。一些流行的主流Linux发行版本，包括Debian（及其衍生版本Ubuntu），Fedora和openSUSE等。 Linux得名于电脑业余爱好者Linus Torvalds。</p>
 <p>而不是如百度百科所讲的<del>Linux操作系统是UNIX操作系统的一种克隆系统。它诞生于1991 年的 Linux桌面[1]10 月5 日（这是第一次正式向外公布的时间）。以后借助于Internet网络，并通过全世界各地计算机爱好者的共同努力，已成为今天世界上使用最多的一种UNIX 类操作系统，并且使用人数还在迅猛增长。</del></p>
 <p>Linux只是个内核，而不是操作系统，所以在这我们再理解一下操作系统是由什么组成的。</p>
-<h2 id="操作系统">操作系统</h2>
+<h2 id="操作系统"><span class="header-section-number">5.2</span> 操作系统</h2>
 <p>操作系统（英语：Operating System，简称OS）是管理计算机硬件与软件资源的计算机程序，同时也是计算机系统的内核与基石。操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务。操作系统也提供一个让用户与系统交互的操作界面。 操作系统的型态非常多样，不同机器安装的操作系统可从简单到复杂，可从手机的嵌入式系统到超级计算机的大型操作系统。许多操作系统制造者对它涵盖范畴的定义也不尽一致，例如有些操作系统集成了图形用户界面(GUI)，而有些仅使用命令行界面(CLI)，而将GUI视为一种非必要的应用程序。</p>
 <p>操作系统位于底层硬件与用户之间，是两者沟通的桥梁。用户可以通过操作系统的用户界面，输入命令。操作系统则对命令进行解释，驱动硬件设备，实现用户要求。以现代标准而言，一个标准PC的操作系统应该提供以下的功能：</p>
 <ul>
@@ -1004,12 +997,12 @@ a[href^=&quot;#&quot;]:after {
 <li>驱动程序（Device drivers）</li>
 </ul>
 <p>而让我们来看一下两者之间的不同之处，这是一张linux的架构图我们可以发现内核只是位于底层。</p>
-<h3 id="linux架构图">Linux架构图</h3>
-<h4 id="用户模式">用户模式</h4>
+<h3 id="linux架构图"><span class="header-section-number">5.2.1</span> Linux架构图</h3>
+<h4 id="用户模式"><span class="header-section-number">5.2.1.1</span> 用户模式</h4>
 <p>应用程序（sh、<a href="http://zh.wikipedia.org/wiki/Vi" title="Vi">vi</a>、<a href="http://zh.wikipedia.org/wiki/OpenOffice.org" title="OpenOffice.org">OpenOffice.org</a>等）</p>
 <p>复杂<a href="http://zh.wikipedia.org/wiki/%E5%BA%93" title="库">库</a>（<a href="http://zh.wikipedia.org/wiki/KDE" title="KDE">KDE</a>、glib等） 简单库（opendbm、sin等）</p>
 <p>C库（open、fopen、socket、exec、calloc等）</p>
-<h4 id="内核模式">内核模式</h4>
+<h4 id="内核模式"><span class="header-section-number">5.2.1.2</span> 内核模式</h4>
 <ul>
 <li>系统中断、调用、错误等软硬件消息</li>
 <li>内核（驱动程序、进程、网络、内存管理等）</li>
@@ -1017,17 +1010,17 @@ a[href^=&quot;#&quot;]:after {
 </ul>
 <p>我们可以发现，由linux内核+shell可以构成一个操作系统，而linux本身只是个内核，也就是图中的内核模式，负责控制系统的这些部分。也就是我们可以发现，Linux内核构成了一个操作系统除用户界面以外的部分，而shell就是这最后的用户界面。</p>
 <p>而linux内核以外的部分就是由GNU计划构成的。</p>
-<h3 id="shell">Shell</h3>
+<h3 id="shell"><span class="header-section-number">5.2.2</span> Shell</h3>
 <p>Shell是系统的用户界面，提供了用户与内核进行交互操作的一种接口。它接收用户输入的命令并把它送入内核去执行。</p>
 <p>实际上Shell是一个命令解释器，它解释由用户输入的命令并且把它们送到内核。不仅如此，Shell有自己的编程语言用于对命令的编辑，它允许用户编写由shell命令组成的程序。Shell编程语言具有普通编程语言的很多特点，比如它也有循环结构和分支控制结构等，用这种编程语言编写的Shell程序与其他应用程序具有同样的效果</p>
 <p>bash 是一个为GNU计划编写的Unix shell。它的名字是一系列缩写：Bourne-Again SHell — 这是关于Bourne shell（sh）的一个双关语（Bourne again / born again）。Bourne shell是一个早期的重要shell，由史蒂夫·伯恩在1978年前后编写，并同Version 7 Unix一起发布。bash则在1987年由布莱恩·福克斯创造。在1990年，Chet Ramey成为了主要的维护者。</p>
 <p>shell将会是我们在GNU/linux中经常用到的经常有到的工具之一，用来操作计算机用的。在迁移到linux之前我们可以试用cygwin来进行模拟：</p>
 <p><em>Cygwin是许多<a href="http://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6" title="自由软件">自由软件</a>的集合，最初由<a href="http://zh.wikipedia.org/wiki/Cygnus_Solutions" title="Cygnus Solutions">Cygnus Solutions</a>开发，用于各种版本的<a href="http://zh.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a>上，运行<a href="http://zh.wikipedia.org/wiki/Unix-like" title="Unix-like">UNIX类</a>系统。Cygwin</em></p>
-<h3 id="gcc">GCC</h3>
+<h3 id="gcc"><span class="header-section-number">5.2.3</span> GCC</h3>
 <p>GCC（GNU Compiler Collection，GNU编译器套装），是一套由GNU开发的编程语言编译器。它是一套以GPL及LGPL许可证所发行的自由软件，也是GNU计划的关键部分，亦是自由的类Unix及苹果电脑Mac OS X 操作系统的标准编译器。GCC（特别是其中的C语言编译器）也常被认为是跨平台编译器的事实标准。</p>
 <p>GCC原名为GNU C语言编译器（GNU C Compiler），因为它原本只能处理C语言。GCC很快地扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，以及Go与其他语言。</p>
 <p>同shell一样，对于GNU/linux系统而言,GCC的作用也是无可取代的。当然如果只是一般用途的话，GCC对于一般用户可能没用，但是在些GNU/Linux系统上，我们可能就需要自己编译源码成二进制文件，而没有软件包，因而其重要性是不言而喻的。自然的如果我们自己动手编译GNU/Linux操作系统的话，我们会理解其的重要意义。有兴趣的同学可以试一下：Linux From Scratch (LFS)。</p>
-<h3 id="启动引导程序">启动引导程序</h3>
+<h3 id="启动引导程序"><span class="header-section-number">5.2.4</span> 启动引导程序</h3>
 <p>最后，当我们构成以上的那些之后，我们就需要一个引导程序，以便使系统启动，引导进内核。</p>
 <p>启动程序（bootloader）于电脑或其他计算机应用上，是指引导操作系统启动的程序。启动程序启动方式与程序视应用机型种类。例如在普通PC上，引导程序通常分为两部分：第一阶段引导程序位于主引导记录，用于引导位于某个分区上的第二阶段引导程序，如NTLDR、GNU GRUB等。</p>
 <p>BIOS 开机完成后，bootloader就接手初始化硬件设备、创建存储器空间的映射，以便为操作系统内核准备好</p>
@@ -1048,11 +1041,11 @@ a[href^=&quot;#&quot;]:after {
 <p>GNU GRUB（简称“GRUB”）是一个来自GNU项目的启动引导程序。GRUB是多启动规范的实现，它允许用户可以在计算机内同时拥有多个操作系统，并在计算机启动时选择希望运行的操作系统。GRUB可用于选择操作系统分区上的不同内核，也可用于向这些内核传递启动参数。</p>
 <p>GNU GRUB的前身为Grand Unified Bootloader。它主要用于类Unix系统；同大多Linux发行版一样，GNU系统也采用GNU GRUB作为它的启动器。Solaris从10 1/06版开始在x86系统上也采用GNU GRUB作为启动器。</p>
 <p>以上也就构成了一个简单的操作系统。</p>
-<h1 id="第六章-arduino">第六章 Arduino</h1>
-<h2 id="极客的玩具">极客的玩具</h2>
+<h1 id="arduino"><span class="header-section-number">6</span> Arduino</h1>
+<h2 id="极客的玩具"><span class="header-section-number">6.1</span> 极客的玩具</h2>
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
 <p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往串口发送数据时，可以用Serial.write(‘1’)的方式向串口发送字串’1’。</p>
-<h1 id="第七章-python">第七章 Python</h1>
+<h1 id="python"><span class="header-section-number">7</span> Python</h1>
 <p>作为一门计算机语言来说，Python会有下面的特点。</p>
 <ul>
 <li>语言学习起来容易</li>
@@ -1060,7 +1053,7 @@ a[href^=&quot;#&quot;]:after {
 <li>支持多学科</li>
 </ul>
 <p>我们可以和其他不是脚本语言的语言进行一个简单的对比，如C，你需要去编译去运行，有时候还需要解决跨平台问题，本来你是在你的Windows上运行得好好的，但是有一天你换了一个Mac电脑的时候，问题变得很棘手，你甚至不知道怎么去解决问题。我没有用过MFC，听说很方便，但是在其他平台下就没有一个好的解决方案。这里可能跑得有点远，但是不同的用户可能在不同的平台上，这也就是脚本语言的优势所在了。</p>
-<h2 id="代码与散文">代码与散文</h2>
+<h2 id="代码与散文"><span class="header-section-number">7.1</span> 代码与散文</h2>
 <p>你可能听过，也可能了解过，不过在这里我们可能不会去讲述那些基础的语法的东西，我们想说的是代码格式的重要性，在html中你可以这样去写你的代码</p>
 <pre><code>&lt;html&gt;&lt;head&gt;&lt;title&gt;This is a Title
 &lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;content&quot;&gt;
@@ -1121,11 +1114,11 @@ IndentationError: expected an indented block</code></pre>
     message:
             .ascii  &quot;Hello, world\n&quot;</code></pre>
 <p>所以上面的代码的可读性在今天新生一代的程序员来说可能没有那么容易理解。芯片运行的速度越来越快，在程序上我们也需要一个越来越快的解决方案，而所谓的越来越快的解决方案指的不是运行速度上，而是开发速度上。如果你没有办法在同样时间内开发出更好的程序，那么你就可能输给你的竞争对手。</p>
-<h2 id="开始之前">开始之前</h2>
+<h2 id="开始之前"><span class="header-section-number">7.2</span> 开始之前</h2>
 <p>我们终于又从一种语言跳到了另外一种语言，我们可能习惯了一种模式，而不敢于去尝试新的东西，这些或许是我们的一些习惯又或者是因为害怕等等。</p>
 <p>作为另外一个跨平台能力很强的语言，这里说的是与Javascript、HTML比较，或许你会觉得C算是最好的，但是我们这里讨论更多的是脚本语言，也就是直接可以运行的。在现在主流的大多数移动平台上，python也有良好的支持，如Android,IOS，只是这些算是类Unix系统内核，python还支持之前Nokia的Symbian。</p>
 <p>开始之前我们需要确认我们的平台上已经有了python环境，也就是可以运行下面的Hello,World，你可以在网上很多地方看到，最简单的地方还是到官网，又或者是所用移动平台的store下载。</p>
-<h2 id="python的helloworld">Python的Hello,World</h2>
+<h2 id="python的helloworld"><span class="header-section-number">7.3</span> Python的Hello,World</h2>
 <p>Python的Hello,World有两种形式，作为一种脚本语言来说，Javascript也是一种脚本语言，只是两者之间有太多的不同之处，每个人都会有不同的选择对于一种语言用来作为其的习惯。于是这就是我们的</p>
 <pre><code>print &quot;Hello,World&quot;</code></pre>
 当我们把我们的脚本在shell环境下运行时
@@ -1147,7 +1140,7 @@ Hello,world
 <pre><code>./a.out</code></pre>
 <p>也就是执行编译完后的程序，需要注意的是helloworld.py没有编译，不过也会输出</p>
 <pre><code>Hello,world</code></pre>
-<h2 id="我们想要的helloworld">我们想要的Hello,World</h2>
+<h2 id="我们想要的helloworld"><span class="header-section-number">7.4</span> 我们想要的Hello,World</h2>
 <p>我们想展示的是如何结合前面学习的内容做一个更有意思的Hello,World。</p>
 <pre><code>import cherrypy
 class HelloWorld(object):
@@ -1156,27 +1149,25 @@ class HelloWorld(object):
     index.exposed = True
 
 cherrypy.quickstart(HelloWorld())</code></pre>
-<h2 id="算法">算法</h2>
+<h2 id="算法"><span class="header-section-number">7.5</span> 算法</h2>
 <p>我们需要去了解算法(algorithm)，引经据典的话就是这样子:</p>
 <blockquote>
 a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer
 </blockquote>
 
 <p>也就是计算或其他解决问题的操作需要遵循的一个过程或者一套规则，书上还提到的说法是——解决问题的诀窍，让我想起了hack一词。我们总会去想某些东西是否有一个更快的计算方法，有时候在处理某些问题上也显示了一个好的算法的重要性。</p>
-<h2 id="实用主义哲学">实用主义哲学</h2>
-<h1 id="第八章-raspberry-pi">第八章 Raspberry Pi</h1>
-<h2 id="geek的盛宴">Geek的盛宴</h2>
+<h2 id="实用主义哲学"><span class="header-section-number">7.6</span> 实用主义哲学</h2>
+<h1 id="raspberry-pi"><span class="header-section-number">8</span> Raspberry Pi</h1>
+<h2 id="geek的盛宴"><span class="header-section-number">8.1</span> Geek的盛宴</h2>
 <p>Raspberry Pi是一款针对电脑业余爱好者、教师、小学生以及小型企业等用户的迷你电脑，预装Linux系统，体积仅信用卡大小，搭载ARM架构处理器，运算性能和智能手机相仿。在接口方面，Raspberry Pi提供了可供键鼠使用的USB接口，此外还有千兆以太网接口、SD卡扩展接口以及1个HDMI高清视频输出接口，可与显示器或者TV相连。</p>
 <p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
 <p>Raspberry Pi相比于一般的ARM开发板来说，由于其本身搭载着Linux操作系统，可以用诸如Python、Ruby或Bash来执行脚本，而不是通过编译程序来运行，具有更高的开发效率。</p>
-<h1 id="第二部分">第二部分</h1>
-<h1 id="第九章-http与restful">第九章 HTTP与RESTful</h1>
-<h2 id="你所没有深入的http">你所没有深入的HTTP</h2>
-<h2 id="rest">REST</h2>
+<h1 id="http与restful"><span class="header-section-number">9</span> HTTP与RESTful</h1>
+<h2 id="你所没有深入的http"><span class="header-section-number">9.1</span> 你所没有深入的HTTP</h2>
+<h2 id="rest"><span class="header-section-number">9.2</span> REST</h2>
 <p>REST<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> 从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的 应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。 随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转 移。</p>
-<h1 id="第三部分">第三部分</h1>
-<h1 id="第x章-构建基于coap协议的物联网系统">第x章 构建基于CoAP协议的物联网系统</h1>
-<h2 id="coap简介">CoAP简介</h2>
+<h1 id="构建基于coap协议的物联网系统"><span class="header-section-number">10</span> 构建基于CoAP协议的物联网系统</h1>
+<h2 id="coap简介"><span class="header-section-number">10.1</span> CoAP简介</h2>
 <p>引自维基百科上的介绍，用的是谷歌翻译。。。</p>
 <blockquote>
 <p>受约束的应用协议（COAP）是一种软件协议旨在以非常简单的电子设备，使他们能够在互联网上进行交互式通信中使用。它特别针对小型低功率传感器，开关，阀门和需要被控制或监督远程，通过标准的Internet网络类似的组件。 COAP是一个应用层协议，该协议是用于在资源受限的网络连接设备，例如无线传感器网络节点使用。 COAP被设计为容易地转换为HTTP与Web简化集成，同时也能满足特殊的要求，例如多播支持，非常低的开销，和简单性。多播，低开销，以及简单性是因特网极其重要物联网（IOT）和机器对机器（M2M）设备，这往往是积重难返，有太多的内存和电源，比传统的互联网设备有。因此，效率是非常重要的。 COAP可以在支持UDP或UDP的模拟大多数设备上运行。</p>
@@ -1189,12 +1180,12 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>CoAP减少了一些HTTP的方法</li>
 <li>CoAP可以支持检测装置</li>
 </ul>
-<h2 id="coap-命令行工具">CoAP 命令行工具</h2>
+<h2 id="coap-命令行工具"><span class="header-section-number">10.2</span> CoAP 命令行工具</h2>
 <p>开始之前我们需要安装一个CoAP的命令行工具，以方便我们测试我们的代码是否是正确的。</p>
-<h3 id="node-coap-cli">Node CoAP CLI</h3>
+<h3 id="node-coap-cli"><span class="header-section-number">10.2.1</span> Node CoAP CLI</h3>
 <pre><code> npm install coap-cli -g </code></pre>
 <p>以便于用这个来测试我们的代码</p>
-<h3 id="coap命令行">CoAP命令行</h3>
+<h3 id="coap命令行"><span class="header-section-number">10.2.2</span> CoAP命令行</h3>
 <p>coap-cli 一共有四个方法</p>
 <pre><code>Commands:
 
@@ -1210,7 +1201,7 @@ I-D</code></pre>
 <pre><code>coap get coap://coap.phodal.com/id/1
 (4.06)  [{&quot;id&quot;:1,&quot;value&quot;:&quot;is id 1&quot;,&quot;sensors1&quot;:19,&quot;sensors2&quot;:20}]</code></pre>
 <p>数据是直接从数据库中读取出来的，然而状态码是错的，忘了刚代码更新。</p>
-<h3 id="libcoap">libcoap</h3>
+<h3 id="libcoap"><span class="header-section-number">10.2.3</span> libcoap</h3>
 <p>如果我们已经装有LibCoAP那么，我们可以直接用自带的两个命令</p>
 <pre><code>coap-client 
 coap-server</code></pre>
@@ -1222,13 +1213,13 @@ coap-server</code></pre>
 <pre><code>v:1 t:0 tkl:0 c:1 id:37109
 This is a test server made with libcoap (see http://libcoap.sf.net) 
 Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
-<h2 id="helloworld">Hello,World</h2>
+<h2 id="helloworld"><span class="header-section-number">10.3</span> Hello,World</h2>
 <p>接着我们便开始试试做一个简单的CoAP协议的应用，开始之前我们需要能访问<a href="coap://localhost/">coap://localhost/</a>，于是我们便需要安装一个Firefox的插件Copper。</p>
 <ol style="list-style-type: decimal">
 <li><p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p></li>
 <li><p>作为测试我们可以访问 <a href="coap://vs0.inf.ethz.ch:5683/">coap://vs0.inf.ethz.ch:5683/</a></p></li>
 </ol>
-<h3 id="node-coap">Node-CoAP</h3>
+<h3 id="node-coap"><span class="header-section-number">10.3.1</span> Node-CoAP</h3>
 <p>这是我们这里用到的一个Node的扩展Node-CoAP</p>
 <blockquote>
 <p>node-coap is a client and server library for CoAP modelled after the http module.</p>
@@ -1242,7 +1233,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>接着执行</p>
 <pre><code>npm install</code></pre>
 <p>就可以安装好这个库</p>
-<h3 id="node-coap示例">Node CoAP示例</h3>
+<h3 id="node-coap示例"><span class="header-section-number">10.3.2</span> Node CoAP示例</h3>
 <p>接着，创建这样一个app.js</p>
 <pre><code>const coap        = require(&#39;coap&#39;)
     , server  = coap.createServer()
@@ -1269,8 +1260,8 @@ req.end()</code></pre>
 <p>就可以在console上输出</p>
 <pre><code>Hello World </code></pre>
 <p>也就达到了我们的目的，用CoAP协议创建一个服务，接着我们应该用它创建更多的东西，如产生JSON数据，以及RESTful。和HTTP版的最小物联网系统一样，CoAP版的最小物联网系统也是要返回JSON的。</p>
-<h2 id="数据库查询">数据库查询</h2>
-<h3 id="node-module">Node Module</h3>
+<h2 id="数据库查询"><span class="header-section-number">10.4</span> 数据库查询</h2>
+<h3 id="node-module"><span class="header-section-number">10.4.1</span> Node Module</h3>
 <p>这说里Module的意义是因为我们需要在别的地方引用到db_helper这个库，也就是下一小节要的讲的内容。</p>
 <p>这样我们就可以在server.js类似于这样去引用这个js库。</p>
 <pre><code>var DBHelper = require(&#39;./db_helper.js&#39;);
@@ -1281,9 +1272,9 @@ DBHelper.initDB();</code></pre>
 DBHelper.initDB = function(){};
 module.exports = DBHelper;</code></pre>
 <p>虽然这里的功能很简单，简单也能做我们想做的事情。</p>
-<h3 id="node-sqlite3">Node-Sqlite3</h3>
+<h3 id="node-sqlite3"><span class="header-section-number">10.4.2</span> Node-Sqlite3</h3>
 <p>还是继续用到了SQLite3，只是这里用到的只是基本的查询和创建。</p>
-<h4 id="一个简单的initdb函数">一个简单的initDB函数</h4>
+<h4 id="一个简单的initdb函数"><span class="header-section-number">10.4.2.1</span> 一个简单的initDB函数</h4>
 <pre><code>var db = new sqlite3.Database(config[&quot;db_name&quot;]);
 var create_table = &#39;create table if not exists basic (&#39; + config[&quot;db_table&quot;] + &#39;);&#39;;
 
@@ -1316,9 +1307,9 @@ db.close();</code></pre>
     });
 };</code></pre>
 <p>将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。</p>
-<h3 id="查询数据">查询数据</h3>
+<h3 id="查询数据"><span class="header-section-number">10.4.3</span> 查询数据</h3>
 <p>简单地记录一下在IoT-CoAP中一次获取数据地过程。</p>
-<h3 id="get">GET</h3>
+<h3 id="get"><span class="header-section-number">10.4.4</span> GET</h3>
 <p>先看看在示例中的Get.js的代码，这关乎在后面server端的代码。</p>
 <pre><code>const coap       = require(&#39;coap&#39;)
      ,requestURI = &#39;coap://localhost/&#39;
@@ -1339,8 +1330,8 @@ req.end();</code></pre>
 <p>我们构建了一个请求的URL</p>
 <pre><code> coap://localhost/id/1/</code></pre>
 <p>我们对我们的请求添加了一个Header，内容是Accept，值是’application/json’也就是JSON格式。接着，便是等待请求回来，再处理返回的内容。</p>
-<h3 id="iot-coap">IoT CoAP</h3>
-<h3 id="判断请求的方法">判断请求的方法</h3>
+<h3 id="iot-coap"><span class="header-section-number">10.4.5</span> IoT CoAP</h3>
+<h3 id="判断请求的方法"><span class="header-section-number">10.4.6</span> 判断请求的方法</h3>
 <p>在这里先把一些无关的代码删除掉，并保证其能工作，so，下面就是简要的逻辑代码。</p>
 <pre><code>var coap            = require(&#39;coap&#39;);
 var server          = coap.createServer({});
@@ -1368,7 +1359,7 @@ server.listen(function() {
     }
 };</code></pre>
 <p>如果是json刚调用returnJSON,</p>
-<h3 id="database与回调">Database与回调</h3>
+<h3 id="database与回调"><span class="header-section-number">10.4.7</span> Database与回调</h3>
 <p>而这里为了处理回调函数刚分为了两部分</p>
 <pre><code>query_helper.returnJSON = function(req, res) {
     DBHelper.urlQueryData(req.url, function (result) {
@@ -1399,7 +1390,7 @@ server.listen(function() {
 };</code></pre>
 <p>当resulst的结果为空时，返回一个404，因为没有数据。这样我们就构成了整个的链，再一步步返回结果。</p>
 <p>在<a href="https://github.com/gmszone/iot-coap">IoT-CoAP</a>中我们使用到了一个Block2的东西，于是便整理相关的一些资料，作一个简单的介绍，以及在代码中的使用。</p>
-<h2 id="coap-block">CoAP Block</h2>
+<h2 id="coap-block"><span class="header-section-number">10.5</span> CoAP Block</h2>
 <p>CoAP是一个RESTful传输协议用于受限设备的节点和网络。基本的CoAP消息是一个不错的选择对于小型载荷如</p>
 <ul>
 <li>温度传感器</li>
@@ -1410,7 +1401,7 @@ server.listen(function() {
 <p>CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示(resource representation)的最大大小，使得传输不需要太多的分割。虽然UDP支持通过IP分片传输更大的有效载荷，且仅限于64KiB，更重要的是，并没有真正很好地约束应用和网络。</p>
 <p>而不是依赖于IP分片，这种规范基本COAP了对“块”选项，用于传输信息从多个资源区块的请求 - 响应对。在许多重要的情况下，阻止使服务器能够真正无状态：服务器可以处理每块分开传输，而无需建立连接以前的数据块传输的其他服务器端内存。</p>
 <p>综上所述，块(Block)选项提供了传送一个最小的在分块的方式更大的陈述。</p>
-<h3 id="coap-post">CoAP POST</h3>
+<h3 id="coap-post"><span class="header-section-number">10.5.1</span> CoAP POST</h3>
 <p>看看在IoT CoAP中的post示例。</p>
 <pre><code>const coap     = require(&#39;coap&#39;)
       ,request  = coap.request
@@ -1445,9 +1436,9 @@ Block2,12</code></pre>
 <p>就有</p>
 <pre><code>[ &#39;1&#39;, &#39;\&#39;must\&#39;&#39;, &#39;23&#39;, &#39;12&#39; ]</code></pre>
 <p>便可以很愉快地将其post到数据库中了，</p>
-<h3 id="json请求">JSON请求</h3>
+<h3 id="json请求"><span class="header-section-number">10.5.2</span> JSON请求</h3>
 <p>在做IoT-CoAP的过程中只支持JSON，查阅CoAP的草稿时发现支持了诸多的Content Types。</p>
-<h3 id="coap-content-types">CoAP Content Types</h3>
+<h3 id="coap-content-types"><span class="header-section-number">10.5.3</span> CoAP Content Types</h3>
 <p>以下文字来自谷歌翻译:</p>
 <blockquote>
 <p>互联网媒体类型是通过HTTP字符串标识，如“application/xml”。该字符串是由一个顶层的类型“applicaion”和子类型的“XML”。为了尽量减少使用这些类型的媒体类型来表示的开销消息有效载荷，COAP定义一个标识符编码方案互联网媒体类型的子集。预计这桌将可扩展标识符的值的IANA维护。内容类型选项被格式化为一个8位无符号整数。初始映射到一个合适的互联网媒体类型标识符表所示。复合型高层次类型（multipart和不支持消息）。标识符值是从201-255保留的特定于供应商的，应用程序特定的或实验使用和不由IANA。</p>
@@ -1620,7 +1611,7 @@ Block2,12</code></pre>
 </table>
 <p>简单地说就是：</p>
 <p><code>诸如application/json的Content Types在CoAP中应该是50</code>。如上表所示的结果是其对应的结果，这样的话可以减少传递的信息量。</p>
-<h2 id="coap-json">CoAP JSON</h2>
+<h2 id="coap-json"><span class="header-section-number">10.6</span> CoAP JSON</h2>
 <p>于是在一开始的时候首先支持的便是“application/json”这样的类型。</p>
 <p>首先判断请求的header</p>
 <pre><code>request_helper.getHandler = function(req, res) {
@@ -1642,9 +1633,9 @@ registerFormat(&#39;application/exi&#39;, 47)
 registerFormat(&#39;application/json&#39;, 50)</code></pre>
 <p>对应地我们需要在一发出请求的时候设置好Accept，要不就没有办法返回我们需要的结果。</p>
 <pre><code>req.setHeader(&quot;Accept&quot;, &quot;application/json&quot;);</code></pre>
-<h3 id="返回json">返回JSON</h3>
+<h3 id="返回json"><span class="header-section-number">10.6.1</span> 返回JSON</h3>
 <p>在给IoT CoAP添加了JSON支持之后，变得非常有意思，至少我们可以获得我们想要的结果。在上一篇中我们介绍了一些常用的工具——<a href="http://www.phodal.com/blog/coap-command-line-tools-set/">CoAP 命令行工具集</a>。</p>
-<h3 id="coap客户端代码">CoAP客户端代码</h3>
+<h3 id="coap客户端代码"><span class="header-section-number">10.6.2</span> CoAP客户端代码</h3>
 <p>开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析</p>
 <pre><code>var coap = require(&#39;coap&#39;);
 var requestURI = &#39;coap://localhost/&#39;;
@@ -1670,7 +1661,7 @@ req.end();</code></pre>
      //do something
  };</code></pre>
 <p>这样就可以返回数据了</p>
-<h3 id="coap-server端代码">CoAP Server端代码</h3>
+<h3 id="coap-server端代码"><span class="header-section-number">10.6.3</span> CoAP Server端代码</h3>
 <p>Server端的代码比较简单，判断一下</p>
 <pre><code>if (req.headers[&#39;Accept&#39;] == &#39;application/json&#39;) {
         parse_url(req.url, function(result){
@@ -1692,66 +1683,66 @@ req.end();</code></pre>
     })
 }</code></pre>
 <p>并且全部都显示出来，设计得真是有点不行，不过现在已经差不多了。</p>
-<h1 id="附录一-物联网毕业设计">附录一 物联网毕业设计</h1>
-<h2 id="摘要">摘要</h2>
+<h1 id="物联网毕业设计"><span class="header-section-number">11</span> 物联网毕业设计</h1>
+<h2 id="摘要"><span class="header-section-number">11.1</span> 摘要</h2>
 <p>随着经济社会的日趋发展及科学技术水平的不断提高，人们对于便利生活的要求越来越高。近年来，随着物联网领域稳步、缓慢地发展，物联网建设的网络环境已经逐渐成熟。由于物联网系统是一个综合性的，包含了硬件、软件、网络等多学科交叉的系统。对于物联网的研究和开发，已经成为一个个热门的话题。</p>
 <p>本论文中介绍了以REST服务为核心、单片机、ARM开发板而辅助的物联网系统的结构组成及工作原理，提供了相应的软件代码及硬件结构。首先研究了不同服务框架的区别，包括不同语言间开发的优势及劣势，之后重点以REST服务为核心构建系统。本设计中，单片机与ARM开发板通过串口通信的方式实现通信，相互传输所需要的数据，ARM开发板将资源传于互联网上对应的接口，接口可以在互联网上被访问。将ARM开发板获取过来的数据存储于MySQL数据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问这些设备。系统分离了软件、硬件的耦合，不仅可以方便系统开发，也可以方便由不同的硬件替换相应的组成，使之更容易理解，同时可以实现更多设备的连接，以实现真正的物联。</p>
 <p>本论文讨论的代码在GNU/Linux系统上开发，可在不同平台上开发及调度。</p>
 <p><strong>关键词</strong> : <code>物联网</code>、<code>REST服务</code>、<code>RESTful</code></p>
-<h2 id="abstract">Abstract</h2>
+<h2 id="abstract"><span class="header-section-number">11.2</span> Abstract</h2>
 <p>With the increasing development and scientific and technological level of the economy and society continues to improve, people’s lives more convenient for the required high . In recent years, the field of Internet Of Things steady , slow development , networking and building the network environment has gradually matured. Because of Internet Of Things is a comprehensive system , including hardware , software, networks, and other multi-disciplinary systems. Things for research and development, has become one hot topic .</p>
 <p>This paper described the Internet of Things system’s structure and principle in REST services as the core , microcontroller and ARM development board as assisted, and provided the appropriate software code and hardware architecture . First study the differences between the services framework, including language development among different strengths and weaknesses, then focus to build REST service system as the core . In this design, microcontroller communicate with development board by serial communication, mutual transmission of the data needed , ARM development board resources on the Internet pass the corresponding interface , the interface can be accessed on the Internet. The ARM development board to get over the data stored in MySQL, then the REST service to share data , other devices on the Internet will be able to access these devices through the network. Separation of the coupling system software, hardware , and can not only facilitate the development of the system , can also be easily replaced by a composition corresponding to different hardware , to make it easier to understand , and can connect more devices to achieve real objects associated .</p>
 <p>Code discussed in this paper on the GNU / Linux system development, and scheduling can be developed on different platforms .</p>
-<h2 id="绪论">绪论</h2>
-<h3 id="选题背景">选题背景</h3>
+<h2 id="绪论"><span class="header-section-number">11.3</span> 绪论</h2>
+<h3 id="选题背景"><span class="header-section-number">11.3.1</span> 选题背景</h3>
 <p>随着科技的发展，计算机电子技术迅猛发展，已经成为生活中不可缺少的部分。目前人们绝大多数都是采用PC进行网络数据传送，但由于成本高，限制了应用的范围。而嵌入式系统却越来越受到人们的青睐。它采用嵌入式的微处理器，支持 TCP/IP协议，它已成为网络发展新阶段的标志。</p>
 <p>物联网是新一代信息技术的重要组成部分。其英文名称是The Internet of things。顾名思义，物联网的意思就是物物相连的互联网。这有两层意思：第一，物联网是建立在互联网之上的，是互联网的拓展和延伸；第二，其用户端扩 展和延伸到了物品与物品之间，进行信息通信和交换。物联网有如下特征：</p>
 <p>首先，广泛应用了各种感知技术。在物联网中部署了大量的多种传感器，每个传感器都能从外界采集信息，不同类的传感器捕获的信息不同。而且获得的数据具有实时性，按照一定的规律来采集数据，不断更新数据。</p>
 <p>其次，它是建立在互联网上的网络。物联网技术的核心和基础仍是互联网，通过各种无线和有线网络与互联网结合起来，将物体的信息准确实时地传递出去，数据传输过程中必须适应各种网络协议。</p>
 <p>还有，物联网本身也具有一种智能处理的能力，能够智能控制物体。物联网从传感器中获得数据，然后进行分析，处理处有意义的数据，来适应不同用户的需求。</p>
-<h3 id="设计内容">设计内容</h3>
+<h3 id="设计内容"><span class="header-section-number">11.3.2</span> 设计内容</h3>
 <p>设计主要是关于基于RESTful服务的网络服务构建，可采用有线网络、无线网络、手机GSM网络等与Internet相关，通过手机、电脑 、移动设备等登录到网页可实现控制家电的上的，并可实时查看诸如温度等一些信息的基本内容。</p>
 <p>硬件设计时，采用Arduino单片机系统，作为一个基于Atmega328芯片的最小系统，Arduino可以系统代码。Arduino主要用于展示LED灯的控制，通过与RaspberryPI开发板相连来获取实时状态。Raspberry PI作为一个ARM开发板，由于其运行的是Linux系统，在软件方面有着相对于其他开发板较好的支持，在这里是作为数据传输设备以用来进行模块分离。</p>
 <p>软件设计时，由于一个物联网系统其核心是以网络为基础的，需要优先考虑网络 方面的优化，学需要考虑数据库等的问题。</p>
 <p>用户界面设计时，随着近来来平板、手机等移动设备的流行，在设计时不能再以 桌面程序为核心，需要考虑不用设备之间的兼容性等问题，这里便以网页为核心 作为显示。而，随着云计算技术的流行，未来的物联网系统必然也会基于云计算 技术构建。作为一个可视化的网页来说，实时的状态显示等是较为重要，同时我 们需要考虑的是用户体验。</p>
-<h3 id="设计的目的及其意义">设计的目的及其意义</h3>
+<h3 id="设计的目的及其意义"><span class="header-section-number">11.3.3</span> 设计的目的及其意义</h3>
 <p>设计以简化物联网系统为主，简化一个可扩展的最小的物联网系统，以简化系统 的逻辑为起点，为广大的用户提供一个良好的了解物联网系统方面知识的框架。</p>
-<h3 id="国内外发展现状和趋势">国内外发展现状和趋势</h3>
+<h3 id="国内外发展现状和趋势"><span class="header-section-number">11.3.4</span> 国内外发展现状和趋势</h3>
 <p>物联网是建立在互联网技术之上的。目前，我国物联网发展与全球同处于起步阶 段，初步具备了一定的技术、产业和应用基础，呈现出良好的发展态势。把单片 机应用系统和Internet连接也已经是一种趋势。</p>
 <p>目前无线通信网络已经覆盖各地，是实现“物联网”必不可少的设施，可以将安置 在每个物品上的电子介质产生的数字信号通过无线网络传输出去。“云计算”技术 的运用，使数以亿计的各类物品的实时动态管理变得可能。</p>
 <p>物联网技术的推广已经取得一定的成效。在多方面已经开始应用，如远程抄表， 电力行业，视频监控等等。以及在物流领域和医疗领域也都日趋成熟，如物品存 储及运输监测，远程医疗，个人的健康监护等。除此之外在环境监控，楼宇节能， 食品等方面也开展了广泛应用。</p>
 <p>尽管在这些领域已经取得一些进展，但应认识到，物联网发展技术还存在一系列 制约和瓶颈。有几个方面可以表现出来：核心技术与国外差距较大，集成服务能 力不够，缺乏骨干企业，应用水平不高，信息安全存在隐患。我们国家在PC架构 领域还没有主动权，软件产品很少。目前，计算环境正在向以网络为中心发展， 有很多产品不必也windows兼容，因此，研究单片机系统接入网络，前途宽广。</p>
-<h1 id="系统总体设计方案">系统总体设计方案</h1>
+<h2 id="系统总体设计方案"><span class="header-section-number">11.4</span> 系统总体设计方案</h2>
 <p>物联网的核心也就是网络服务，而网络服务在某种意义上来说，就是需要打造一 个多平台的通信协议，在使机器、家电、设备等连上计算机网络。基本的物联 网系统，不仅能控制设备，还可以在远程查看状态。而复杂的物联网系统可以让 互联网上的设备之间实现互联与通信，也就是物联网的最终目标所在——使物体与 物体之间的交互成为可能，不需要人为去干预。</p>
 <p>系统采用的结构是: Arduino+Raspberry Pi+Laravel+JSON+RESTful+Ajax+Python+HighCharts，其框架图如下所示</p>
 <div class="figure">
 <img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/struct.png" title="系统框架图" alt="系统框架图" /><p class="caption">系统框架图</p>
 </div>
 <p>Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据， Raspberry Pi将资源传于互联网上对应的接口，接口可以在互联网上被访问。 Laravel框架构架于服务器之上，将Raspbery Pi获取过来的数据存储于MySQL数 据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问 这些设备。Ajax用于将后台的数据以不需要刷新的方式传递到网站前台，通过 HighCharts框架显示给终端用户。</p>
-<h2 id="硬件方案选择">硬件方案选择</h2>
-<h3 id="单片机选择">单片机选择</h3>
-<h4 id="arduino">Arduino</h4>
+<h2 id="硬件方案选择"><span class="header-section-number">11.5</span> 硬件方案选择</h2>
+<h3 id="单片机选择"><span class="header-section-number">11.5.1</span> 单片机选择</h3>
+<h4 id="arduino-1"><span class="header-section-number">11.5.1.1</span> Arduino</h4>
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用 了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且 具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
 <p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主 要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串 口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往 串口发送数据时，可以用Serial.write(‘1’)的方式向串口发送字串’1’。</p>
-<h4 id="section">51</h4>
+<h4 id="section"><span class="header-section-number">11.5.1.2</span> 51</h4>
 <p>单片机<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>，又称微控制器，是把中央处理器、存储器、定时/计数器 （Timer/Counter）、各种输入输出接口等都集成在一块集成电路芯片上的微型 计算机。与应用在个人计算机中的通用型微处理器相比，它更强调自供应（不用 外接硬件）和节约成本。它的最大优点是体积小，可放在仪表内部，但存储量小， 输入输出接口简单，功能较低。</p>
 <p>51单片机相较于Arduino开发板，不仅代码复杂，由于系统比较古老而不方便于 快速开发。</p>
-<h2 id="软件方案选择">软件方案选择</h2>
-<h3 id="数据通讯方式选择">数据通讯方式选择</h3>
-<h4 id="rest-1">REST</h4>
+<h2 id="软件方案选择"><span class="header-section-number">11.6</span> 软件方案选择</h2>
+<h3 id="数据通讯方式选择"><span class="header-section-number">11.6.1</span> 数据通讯方式选择</h3>
+<h4 id="rest-1"><span class="header-section-number">11.6.1.1</span> REST</h4>
 <p>REST<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> 从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的 应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。 随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转 移。</p>
-<h4 id="soap">SOAP</h4>
+<h4 id="soap"><span class="header-section-number">11.6.1.2</span> SOAP</h4>
 <p>简单对象访问协议是交换数据的一种协议规范，使用在计算机网络Web服务中， 交换带结构信息。SOAP为了简化网页服务器从XML数据库中提取数据时，节省去 格式化页面时间，以及不同应用程序之间按照HTTP通信协议，遵从XML格式执行 资料互换，使其抽象于语言实现、平台和硬件。</p>
-<h3 id="数据通信格式选择">数据通信格式选择</h3>
-<h4 id="json">JSON</h4>
+<h3 id="数据通信格式选择"><span class="header-section-number">11.6.2</span> 数据通信格式选择</h3>
+<h4 id="json"><span class="header-section-number">11.6.2.1</span> JSON</h4>
 <p>JSON<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>是一种轻量级的数据交换格式。 易于人阅读和编写。同时也易于机 器解析和生成。 它基于JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999的一个子集。 JSON采用完全独立于语 言的文本格式，但是也使用了类似于C语言家族的习惯<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>。 这些特性使 JSON成为理想的数据交换语言。</p>
 <p>JSON相对于XML来说可以减少文件的大小，同时我们可以用于网站前端的数据通讯。</p>
 <p>对于基于浏览器的客户端使用的web服务更倾向于使用JSON作为表述格式。</p>
-<h4 id="xml">XML</h4>
+<h4 id="xml"><span class="header-section-number">11.6.2.2</span> XML</h4>
 <p>可扩展标记语言<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>，是一种标记语言。标记指计算机所能理解的信息符号， 通过此种标记，计算机之间可以处理包含各种信息的文章等。如何定义这些标记， 既可以选择国际通用的标记语言，比如HTML，也可以使用像XML这样由相关人士 自由决定的标记语言，这就是语言的可扩展性。XML是从标准通用标记语言 （SGML）中简化修改出来的。它主要用到的有可扩展标记语言、可扩展样式语言 （XSL）、XBRL和XPath等。</p>
 <p>XML具有良好的可读性，有着较好的库支持，从Java语言到其他语言，如Linux系 统上libxml等对XML的支持比较好。</p>
-<h2 id="网络服务方案选择">网络服务方案选择</h2>
-<h3 id="语言选择">语言选择</h3>
+<h2 id="网络服务方案选择"><span class="header-section-number">11.7</span> 网络服务方案选择</h2>
+<h3 id="语言选择"><span class="header-section-number">11.7.1</span> 语言选择</h3>
 <p><strong>PHP Laravel</strong></p>
 <p>PHP <a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> 是一种开源的通用计算机脚本语言，尤其适用于网络开发并可嵌入 HTML中使用。PHP的语法借鉴吸收了C语言、Java和Perl等流行计算机语言的特点， 易于一般程序员学习。PHP的主要目标是允许网络开发人员快速编写动态页面， 但PHP也被用于其他很多领域。</p>
 <p><strong>Laravel</strong></p>
@@ -1762,41 +1753,41 @@ req.end();</code></pre>
 <p><strong>Spring</strong></p>
 <p>Spring是一个开源框架，是为了解决企业应用程序开发复杂性。Spring框架的主 要优势之一就是其分层架构，分层架构允许使用者选择使用哪一个组件，同时为 J2EE 应用程序开发提供集成的框架。Spring使用基本的JavaBean来完成以前只 可能由EJB完成的事情。然而，Spring的用途不仅限于服务器端的开发。从简单 性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。</p>
 <p>由于相较于Java在web方面没有PHP来得快速、简单、有效，同时Laravel框架在 某些方面如数据迁移、代码生成比Spring快，同时不需要依赖于开发环境，这里 以Laravel作为框架，可以利用artisan工具等的强大驱动开发。</p>
-<h2 id="其它">其它</h2>
-<h3 id="数据通讯设备">数据通讯设备</h3>
+<h2 id="其它"><span class="header-section-number">11.8</span> 其它</h2>
+<h3 id="数据通讯设备"><span class="header-section-number">11.8.1</span> 数据通讯设备</h3>
 <p><strong>Raspeberry PI</strong></p>
 <p>Raspberry Pi是一款针对电脑业余爱好者、教师、小学生以及小型企业等用户的 迷你电脑，预装Linux系统，体积仅信用卡大小，搭载ARM架构处理器，运算性能 和智能手机相仿。在接口方面，Raspberry Pi提供了可供键鼠使用的USB接口，此外 还有千兆以太网接口、SD卡扩展接口以及1个HDMI高清视频输出接口，可与显示器或者TV相连。</p>
 <p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的 多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软 件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为 核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
 <p>Raspberry Pi相比于一般的ARM开发板来说，由于其本身搭载着Linux操作系统，可以用 诸如Python、Ruby或Bash来执行脚本，而不是通过编译程序来运行，具有更高的开发效率。</p>
-<h2 id="辅助语言选择">辅助语言选择</h2>
+<h2 id="辅助语言选择"><span class="header-section-number">11.9</span> 辅助语言选择</h2>
 <p><strong>Python</strong></p>
 <p>Python, 是一种面向对象、直译式计算机程序设计语言，由Guido van Rossum于 1989年底发明，第一个公开发行版发行于1991年。Python语法简洁而清晰，具有 丰富和强大的类库。它常被昵称为胶水语言，它能够很轻松的把用其他语言制作 的各种模块（尤其是C/C++）轻松地联结在一起。常见的一种应用情形是，使用 python快速生成程序的原型（有时甚至是程序的最终界面），然后对其中有特别 要求的部分，用更合适的语言改写，比如3D游戏中的图形渲染模块，速度要求非 常高，就可以用C++重写。</p>
 <p><strong>Ruby</strong></p>
 <p>Ruby，一种为简单快捷的面向对象编程（面向对象程序设计）而创的脚本语言， 在20世纪90年代由日本人松本行弘开发，遵守GPL协议和Ruby License。</p>
 <p>Python相对于Ruby有着更好的跨平台能力，同时有理好的可读性，加之Ruby语言 没有对串口通讯及Windows系统更好的支持。</p>
-<h2 id="串口通信模块">串口通信模块</h2>
+<h2 id="串口通信模块"><span class="header-section-number">11.10</span> 串口通信模块</h2>
 <p><strong>PySerial</strong></p>
 <p>PySerial封装了串口通讯模块，支持Linux、Windows、BSD(可能支持所有支持POSIX的操 作系统)，支持Jython(Java)和IconPython(.NET and Mono).</p>
 <p>在使用PySerial之后，我们只需要</p>
 <pre class="sourceCode python"><code class="sourceCode python">ser=serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)
 ser.write(<span class="st">&quot;1&quot;</span>)</code></pre>
 <p>就可以向串口发送一个字符1。</p>
-<h2 id="网页通信">网页通信</h2>
+<h2 id="网页通信"><span class="header-section-number">11.11</span> 网页通信</h2>
 <p><strong>Ajax</strong> AJAX <a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> 是由Jesse James Gaiiett创造的名词，是指一种创建交互式网页 应用的网页开发技术。</p>
 <p>系统主要用Ajax来实现实时温度显示，通过直接访问JSON数据的情况下，可以在 不需要刷新页面的情况下直接读取数据。</p>
-<h2 id="数据可视化框架选择">数据可视化框架选择</h2>
+<h2 id="数据可视化框架选择"><span class="header-section-number">11.12</span> 数据可视化框架选择</h2>
 <p><strong>HighCharts</strong></p>
 <p>Highcharts 是一个用纯JavaScript编写的一个图表库， 能够很简单便捷的在 web网站或是web应用程序添加有交互性的图表，并且免费提供给个人学习、个人 网站和非商业用途使用。HighCharts支持的图表类型有曲线图、区域图、柱状图、 饼状图、散状点图和综合图表。</p>
-<h1 id="本地系统设计">本地系统设计</h1>
-<h2 id="硬件设计">硬件设计</h2>
-<h3 id="raspberry-pi">Raspberry Pi</h3>
+<h2 id="本地系统设计"><span class="header-section-number">11.13</span> 本地系统设计</h2>
+<h2 id="硬件设计"><span class="header-section-number">11.14</span> 硬件设计</h2>
+<h3 id="raspberry-pi-1"><span class="header-section-number">11.14.1</span> Raspberry Pi</h3>
 <p>Raspberry Pi开发板在这里主要工作有:</p>
 <ul>
 <li>与Arduino开发板，通过USB线连接。</li>
 <li>可以直接运行Debian GNU/Linux系统，通过网线上网，并从服务器中读取数据，</li>
 <li>通过Python语言接收、发送串口数据。</li>
 </ul>
-<h2 id="软件设计">软件设计</h2>
+<h2 id="软件设计"><span class="header-section-number">11.15</span> 软件设计</h2>
 <p>在本地我们需要解决的问题可以如下描述，Arduino开发板从串口一直读取数据， Raspberry Pi从URL中验证数据、解析数据，再将数据发送到串口,我们可以用下面的伪代码来描述:</p>
 <pre class="sourceCode ada"><code class="sourceCode ada">arduino:
         <span class="kw">begin</span>
@@ -1817,7 +1808,7 @@ raspberrypi:
                serial.write(data)
            util false
         <span class="kw">end</span></code></pre>
-<h2 id="arduino-1">Arduino</h2>
+<h2 id="arduino-2"><span class="header-section-number">11.16</span> Arduino</h2>
 <div class="figure">
 <img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/ArduinoUnoSmd.png" title="Arduino开发板" alt="Arduino开发板" /><p class="caption">Arduino开发板</p>
 </div>
@@ -1890,7 +1881,7 @@ void loop() {
     digitalWrite(13,LOW);
     digitalWrite(12,HIGH);
    }</code></pre>
-<h2 id="raspberry-pi-1">Raspberry Pi</h2>
+<h2 id="raspberry-pi-2"><span class="header-section-number">11.17</span> Raspberry Pi</h2>
 <p>Raspberrypi如下所示的开发板</p>
 <div class="figure">
 <img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/raspberrypi.png" title="Raspberry Pi开发板" alt="Raspberry Pi开发板" /><p class="caption">Raspberry Pi开发板</p>
@@ -1908,12 +1899,12 @@ void loop() {
                   output &quot;error&quot;
            util false
         end</code></pre>
-<h4 id="raspberry-pi程序">Raspberry Pi程序</h4>
+<h4 id="raspberry-pi程序"><span class="header-section-number">11.17.0.1</span> Raspberry Pi程序</h4>
 <p>其程序流程图如下所示:</p>
 <div class="figure">
 <img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/python.png" title="Python 程序流程图" alt="Python程序流程图" /><p class="caption">Python程序流程图</p>
 </div>
-<h3 id="获取数据">获取数据</h3>
+<h3 id="获取数据"><span class="header-section-number">11.17.1</span> 获取数据</h3>
 <p>Raspberry Pi端的主要功能便是将数据从 <a href="http://www.xianuniversity.com/athome/1">http://www.xianuniversity.com/athome/1</a> [^domain] 下 载下来并解析数据，再将数据用串口通讯的方式传递给Arduino。</p>
 <p>在Debian系统中，自带了python语言，python有良好的动态特性，同时有强大的自建库功能。 在python语言中可以用自带的urllib2库打开并下载网页的内容，将上述网址中 的JSON数据下载到本地。</p>
 <p>数据采用的是JSON格式，具有良好的可读性，同时方便于解析，相比于XML格式 又可以减少文件大小，</p>
@@ -1925,12 +1916,12 @@ void loop() {
         <span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>
    }]</code></pre>
 <p>JSON的 将上述中的数据取出来后，通过python中的json库，将json数据转换为数组，将 取出数据中的第一个结果中的id的值。</p>
-<h3 id="串口通讯">串口通讯</h3>
+<h3 id="串口通讯"><span class="header-section-number">11.17.2</span> 串口通讯</h3>
 <p>由于python中没有用于串口通讯的库，需要寻找并安装这样一个库，这里就用到 了pip这样的包管理工具——用于管理python的库。</p>
-<h4 id="安装pyserial">安装pyserial</h4>
+<h4 id="安装pyserial"><span class="header-section-number">11.17.2.1</span> 安装pyserial</h4>
 <p>pip常用命令有install、uninstall以及search，install顾名思义就是安装，安 装pip库如下所示<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>，如后代码如下所示，$<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>开头:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">    <span class="ot">$pip</span> <span class="kw">install</span> pyserial</code></pre>
-<h3 id="python串口通讯">python串口通讯</h3>
+<h3 id="python串口通讯"><span class="header-section-number">11.17.3</span> python串口通讯</h3>
 <p>在Linux内核的系统<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>中虚拟串口用的节点是ttyACM，位于/dev目录下。</p>
 <pre class="sourceCode python"><code class="sourceCode python">    serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)</code></pre>
 <p>串行接口是一种可以将接受来自CPU的并行数据字符转换为连续的串行数据流发送出去， 同时可将接受的串行数据流转换为并行的数据字符供给CPU的器件。一般完成这种功能 的电路，我们称为串行接口电路。</p>
@@ -1963,8 +1954,8 @@ while 1:
 <div class="figure">
 <img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/change.png" title="改变状态后的结果" alt="改变状态后的结果" /><p class="caption">改变状态后的结果</p>
 </div>
-<h1 id="网络系统设计">网络系统设计</h1>
-<h2 id="网络服务程序设计">网络服务程序设计</h2>
+<h2 id="网络系统设计"><span class="header-section-number">11.18</span> 网络系统设计</h2>
+<h2 id="网络服务程序设计"><span class="header-section-number">11.19</span> 网络服务程序设计</h2>
 <p>对于物联网系统网络的核心是构建一个RESTful服务，而这构建RESTful的核心便 是基础的HTPP协议。基础的HTTP协议便是:GET、POST、PUT、DELETE。它们分别 对应四种基本操作：GET用来获取资源，POST用来新建资源（也可以用于更新资 源），PUT用来更新资源，DELETE用来删除资源。</p>
 <div class="figure">
 <img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/restful.png" title="restful" alt="restful" /><p class="caption">restful</p>
@@ -1973,7 +1964,7 @@ while 1:
 <div class="figure">
 <img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/getrequest.png" title="Get Request" alt="Get Request" /><p class="caption">Get Request</p>
 </div>
-<h3 id="基本的rest服务">基本的REST服务</h3>
+<h3 id="基本的rest服务"><span class="header-section-number">11.19.1</span> 基本的REST服务</h3>
 <p>REST服务实际上是充当着网络与设备的传输介质，构建一个REST服务也就相当于 获取一个URL下的某个数据</p>
 <pre><code>$curl http://www.xianuniversity.com/athome/1</code></pre>
 <p>返回结果如下所示</p>
@@ -2024,9 +2015,9 @@ while 1:
     <span class="kw">Authorization</span>: 123456
     <span class="kw">Accept-Encoding</span>: gzip</code></pre>
 <p>一个PUT动作但是我们更新资源，就好比是我们创建一个日志或者一个说说一样。 DELETE动作，便是删除动作了，而这也是一个物联网系统服务所需要的。</p>
-<h2 id="系统前台设计">系统前台设计</h2>
+<h2 id="系统前台设计"><span class="header-section-number">11.20</span> 系统前台设计</h2>
 <p>在对系统前台设计的时候，在考虑不同移动设备的兼容的同时，也需要保持一个 良好可用的结构。而系统在前台的主要功能是在于控制物体的状态、显示一些数 值的变化，控制物体状态的关键在于如何将数据由前台POST到后台，在网页端可 以用POST，而在移动端则可以用JSON API。</p>
-<h3 id="ajax">Ajax</h3>
+<h3 id="ajax"><span class="header-section-number">11.20.1</span> Ajax</h3>
 <ul>
 <li>AJAX : Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。</li>
 <li>AJAX 不是新的编程语言，而是一种使用现有标准的新方法。</li>
@@ -2063,7 +2054,7 @@ while 1:
             });
     };</code></pre>
 <p>实际上，上面的程序只是从 /athome/ 下面获取数据，再将数据堆到数组里面，再 把这部分放到图形中。</p>
-<h3 id="highcharts">Highcharts</h3>
+<h3 id="highcharts"><span class="header-section-number">11.20.2</span> Highcharts</h3>
 <p>Highcharts有以下的特点</p>
 <ul>
 <li>兼容性：兼容当今所有的浏览器，包括 iPhone、IE 和火狐等等；</li>
@@ -2080,8 +2071,8 @@ while 1:
 <div class="figure">
 <img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/chart.png" title="温度走势图" alt="chart" /><p class="caption">chart</p>
 </div>
-<h2 id="系统后台设计">系统后台设计</h2>
-<h3 id="数据库设计">数据库设计</h3>
+<h2 id="系统后台设计"><span class="header-section-number">11.21</span> 系统后台设计</h2>
+<h3 id="数据库设计"><span class="header-section-number">11.21.1</span> 数据库设计</h3>
 <p>系统使用Laravel框架作为系统底层，需要配置其运行环境<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>，创建数 据库<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>，对应于上面生成的最后的JSON数据，创建对应的数据库:</p>
 <p>系统数据库结构如下所示</p>
 <table>
