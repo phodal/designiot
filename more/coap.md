@@ -88,12 +88,13 @@ coap-cli 一共有四个方法
 
 Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建一个package.json文件，添加这个库
 
-	{
-		"dependencies":{
-			"coap": "0.7.2"
-		}
+``` javascript
+{
+	"dependencies":{
+		"coap": "0.7.2"
 	}
-	
+}
+```	
 	
 接着执行
 
@@ -105,17 +106,18 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 接着，创建这样一个app.js
 
-    const coap        = require('coap')
-        , server  = coap.createServer()
+``` javascript
+const coap        = require('coap')
+    , server  = coap.createServer()
 
-    server.on('request', function(req, res) {
-      res.end('Hello ' + req.url.split('/')[1] + '\n')
-    })
+server.on('request', function(req, res) {
+  res.end('Hello ' + req.url.split('/')[1] + '\n')
+})
 
-    server.listen(function() {
-      console.log('server started')
-    })	
-    
+server.listen(function() {
+  console.log('server started')
+})	
+```    
     
 执行
 
@@ -125,14 +127,16 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 接着下来再创建一个client端的js，并运行之
 
-	const coap  = require('coap') 
-	    , req   = coap.request('coap://localhost/World')
+``` javascript
+const coap  = require('coap') 
+    , req   = coap.request('coap://localhost/World')
 
-	req.on('response', function(res) {
-	  res.pipe(process.stdout)
-	})
+req.on('response', function(res) {
+  res.pipe(process.stdout)
+})
 
-	req.end()
+req.end()
+```
 
 就可以在console上输出
 
@@ -148,15 +152,19 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 这样我们就可以在server.js类似于这样去引用这个js库。
 
-    var DBHelper = require('./db_helper.js');
-    DBHelper.initDB();
+``` javascript
+var DBHelper = require('./db_helper.js');
+DBHelper.initDB();
+```
 
 而这样调用的前提是我们需要去声明这样的module，为了方便地导出函数功能调用。
 
-    function DBHelper(){
-    }
-    DBHelper.initDB = function(){};
-    module.exports = DBHelper;
+``` javascript
+function DBHelper(){
+}
+DBHelper.initDB = function(){};
+module.exports = DBHelper;
+```
 
 虽然这里的功能很简单，简单也能做我们想做的事情。
 
@@ -166,41 +174,47 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 ####一个简单的initDB函数
 
-    var db = new sqlite3.Database(config["db_name"]);
-    var create_table = 'create table if not exists basic (' + config["db_table"] + ');';
+``` javascript
+var db = new sqlite3.Database(config["db_name"]);
+var create_table = 'create table if not exists basic (' + config["db_table"] + ');';
 
-    db.serialize(function() {
-        db.run(create_table);
-        _.each(config["init_table"], function(insert_data) {
-            db.run(insert_data);
-        });
+db.serialize(function() {
+    db.run(create_table);
+    _.each(config["init_table"], function(insert_data) {
+        db.run(insert_data);
     });
-    db.close();
+});
+db.close();
+```
 
 首先从配置中读取db_name，接着创建table，然后调用underscore的each方法，创建几个数据。配置如下所示
 
-	config = {
-	    "db_name": "iot.db",
-	    "db_table": "id integer primary key, value text, sensors1 float, sensors2 float",
-	    "init_table":[
-	        "insert or replace into basic (id,value,sensors1,sensors2) VALUES (1, 'is id 1', 19, 20);",
-	        "insert or replace into basic (id,value,sensors1,sensors2) VALUES (2, 'is id 2', 20, 21);"
-	    ],
-	    "query_table":"select * from basic;"
-	};
+``` javascript
+config = {
+    "db_name": "iot.db",
+    "db_table": "id integer primary key, value text, sensors1 float, sensors2 float",
+    "init_table":[
+        "insert or replace into basic (id,value,sensors1,sensors2) VALUES (1, 'is id 1', 19, 20);",
+        "insert or replace into basic (id,value,sensors1,sensors2) VALUES (2, 'is id 2', 20, 21);"
+    ],
+    "query_table":"select * from basic;"
+};
+```
 
 而之前所提到的url查询所做的事情便是
 
-	DBHelper.urlQueryData = function (url, callback) {
-	    var db = new sqlite3.Database("iot.db");
+``` javascript
+DBHelper.urlQueryData = function (url, callback) {
+    var db = new sqlite3.Database("iot.db");
 
-	    var result = [];
-	    console.log("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2]);
-	    db.all("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2], function(err, rows) {
-	        db.close();
-	        callback(JSON.stringify(rows));
-	    });
-	};
+    var result = [];
+    console.log("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2]);
+    db.all("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2], function(err, rows) {
+        db.close();
+        callback(JSON.stringify(rows));
+    });
+};
+```
 
 将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。
 
@@ -212,21 +226,23 @@ Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建�
 
 先看看在示例中的Get.js的代码，这关乎在后面server端的代码。
 
-	const coap       = require('coap')
-	     ,requestURI = 'coap://localhost/'
-	     ,url        = require('url').parse(requestURI + 'id/1/')
-	     ,req        = coap.request(url)
-	     ,bl         = require('bl');
+``` javascript
+const coap       = require('coap')
+     ,requestURI = 'coap://localhost/'
+     ,url        = require('url').parse(requestURI + 'id/1/')
+     ,req        = coap.request(url)
+     ,bl         = require('bl');
 
-	req.setHeader("Accept", "application/json");
-	req.on('response', function(res) {
-		res.pipe(bl(function(err, data) {
-			var json = JSON.parse(data);
-			console.log(json);
-		}));
+req.setHeader("Accept", "application/json");
+req.on('response', function(res) {
+	res.pipe(bl(function(err, data) {
+		var json = JSON.parse(data);
+		console.log(json);
+	}));
 
-	});
-	req.end();
+});
+req.end();
+```
 
 const定义数据的方法，和我们在其他语言中有点像。只是这的const主要是为了程序的健壮型,减少程序出错，当然这不是javascript的用法。
 
@@ -242,70 +258,80 @@ const定义数据的方法，和我们在其他语言中有点像。只是这的
 
 在这里先把一些无关的代码删除掉，并保证其能工作，so，下面就是简要的逻辑代码。
 
-    var coap            = require('coap');
-    var server          = coap.createServer({});
-    var request_handler = require('./request_handler.js');
+``` javascript
+var coap            = require('coap');
+var server          = coap.createServer({});
+var request_handler = require('./request_handler.js');
 
-    server.on('request', function(req, res) {
-        switch(req.method){
-            case "GET": request_handler.getHandler(req, res);
-                break;
-        }
-    });
+server.on('request', function(req, res) {
+    switch(req.method){
+        case "GET": request_handler.getHandler(req, res);
+            break;
+    }
+});
 
-    server.listen(function() {
-        console.log('server started');
-    });
+server.listen(function() {
+    console.log('server started');
+});
+```
 
 创建一个CoAP服务，判断req.method，也就是请求的方法，如果是GET的话，就调用request_handler.getHandler(req, res)。而在getHandler里，判断了下请求的Accept
 
-    request_helper.getHandler = function(req, res) {
-        switch (req.headers['Accept']) {
-            case "application/json":
-                qh.returnJSON(req, res);
-                break;
-            case "application/xml":
-                qh.returnXML(req, res);
-                break;
-        }
-    };
+``` javascript
+request_helper.getHandler = function(req, res) {
+    switch (req.headers['Accept']) {
+        case "application/json":
+            qh.returnJSON(req, res);
+            break;
+        case "application/xml":
+            qh.returnXML(req, res);
+            break;
+    }
+};
+```
 
 如果是json刚调用returnJSON,
 
 ###Database与回调
 而这里为了处理回调函数刚分为了两部分
 
-    query_helper.returnJSON = function(req, res) {
-        DBHelper.urlQueryData(req.url, function (result) {
-            QueryData.returnJSON(result, res);
-        });
-    };
+``` javascript
+query_helper.returnJSON = function(req, res) {
+    DBHelper.urlQueryData(req.url, function (result) {
+        QueryData.returnJSON(result, res);
+    });
+};
+```
 
 而这里只是调用了
 
-	DBHelper.urlQueryData = function (url, callback) {
-	    var db = new sqlite3.Database(config["db_name"]);
+``` javascript
+DBHelper.urlQueryData = function (url, callback) {
+    var db = new sqlite3.Database(config["db_name"]);
 
-	    console.log("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2]);
-	    db.all("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2], function(err, rows) {
-	        db.close();
-	        callback(JSON.stringify(rows));
-	    });
-	};
+    console.log("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2]);
+    db.all("SELECT * FROM basic where " + url.split('/')[1] + "=" + url.split('/')[2], function(err, rows) {
+        db.close();
+        callback(JSON.stringify(rows));
+    });
+};
+```
 
 这里调用了node sqlite3去查询对应id的数据，用回调处理了数据无法到外部的问题，而上面的returnJSON则只是返回最后的结果，code以及其他的内容。
 
-	QueryData.returnJSON = function(result, res) {
-	    if (result.length == 2) {
-	        res.code = '4.04';
-	        res.end(JSON.stringify({
-	            error: "Not Found"
-	        }));
-	    } else {
-	        res.code = '2.05';
-	        res.end(result);
-	    }
-	};
+``` javascript
+QueryData.returnJSON = function(result, res) {
+    if (result.length == 2) {
+        res.code = '4.04';
+        res.end(JSON.stringify({
+            error: "Not Found"
+        }));
+    } else {
+        res.code = '2.05';
+        res.end(result);
+    }
+};
+```
 
 当resulst的结果为空时，返回一个404，因为没有数据。这样我们就构成了整个的链，再一步步返回结果。
 
@@ -331,34 +357,39 @@ CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示
 
 看看在IoT CoAP中的post示例。
 
-	const coap     = require('coap')
-	      ,request  = coap.request
-	      ,bl       = require('bl')
-	      ,req = request({hostname: 'localhost',port:5683,pathname: '',method: 'POST'});
+``` javascript
+const coap     = require('coap')
+      ,request  = coap.request
+      ,bl       = require('bl')
+      ,req = request({hostname: 'localhost',port:5683,pathname: '',method: 'POST'});
 
-	req.setOption('Block2',  [new Buffer('1'),new Buffer("'must'"), new Buffer('23'), new Buffer('12')]);
-	req.setHeader("Accept", "application/json");
-	req.on('response', function(res) {
-	    res.pipe(bl(function(err, data) {
-	        console.log(data);
-	        process.exit(0);
-	    }));
+req.setOption('Block2',  [new Buffer('1'),new Buffer("'must'"), new Buffer('23'), new Buffer('12')]);
+req.setHeader("Accept", "application/json");
+req.on('response', function(res) {
+    res.pipe(bl(function(err, data) {
+        console.log(data);
+        process.exit(0);
+    }));
 
-	});
+});
 
-	req.end();
+req.end();
+```
 
 Block2中一共有四个数据，相应的数据结果应该是
 
-	{ name: 'Block2', value: <Buffer 31> }
-	{ name: 'Block2', value: <Buffer 27 6d 75 73 74 27> }
-	{ name: 'Block2', value: <Buffer 32 33> }
-	{ name: 'Block2', value: <Buffer 31 32> }
+``` javascript
+{ name: 'Block2', value: <Buffer 31> }
+{ name: 'Block2', value: <Buffer 27 6d 75 73 74 27> }
+{ name: 'Block2', value: <Buffer 32 33> }
+{ name: 'Block2', value: <Buffer 31 32> }
+```
 
 这是没有解析的Block2，简单地可以用
 
-     _.values(e).toString()
-
+``` javascript
+_.values(e).toString()
+```
 将结果转换为
 
 	Block2,1
@@ -368,11 +399,11 @@ Block2中一共有四个数据，相应的数据结果应该是
 
 接着按","分开，
 
-    _.values(e).toString().split(',')[1]
+``` javascript
+_.values(e).toString().split(',')[1]
+```
 
 就有
-
-
 
     [ '1', '\'must\'', '23', '12' ]
 
@@ -442,30 +473,35 @@ Block2中一共有四个数据，相应的数据结果应该是
 
 首先判断请求的header
 
-	request_helper.getHandler = function(req, res) {
-	    switch (req.headers['Accept']) {
-	        case "application/json":
-	            qh.returnJSON(req, res);
-	            break;
-	        case "application/xml":
-	            qh.returnXML(req, res);
-	            break;
-	    }
-	};
+``` javascript
+request_helper.getHandler = function(req, res) {
+    switch (req.headers['Accept']) {
+        case "application/json":
+            qh.returnJSON(req, res);
+            break;
+        case "application/xml":
+            qh.returnXML(req, res);
+            break;
+    }
+};
+```
 
 再转至相应的函数处理，而判断的依据则是Accept是不是"application/json"。
 
-	registerFormat('text/plain', 0)
-	registerFormat('application/link-format', 40)
-	registerFormat('application/xml', 41)
-	registerFormat('application/octet-stream', 42)
-	registerFormat('application/exi', 47)
-	registerFormat('application/json', 50)
+``` javascript
+registerFormat('text/plain', 0)
+registerFormat('application/link-format', 40)
+registerFormat('application/xml', 41)
+registerFormat('application/octet-stream', 42)
+registerFormat('application/exi', 47)
+registerFormat('application/json', 50)
+```
 
 对应地我们需要在一发出请求的时候设置好Accept，要不就没有办法返回我们需要的结果。
 
-    req.setHeader("Accept", "application/json");
-
+``` javascript
+req.setHeader("Accept", "application/json");
+```
 
 ###返回JSON
 
@@ -475,33 +511,39 @@ Block2中一共有四个数据，相应的数据结果应该是
 
 开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析
 
-	var coap = require('coap');
-	var requestURI = 'coap://localhost/';
-	var url = require('url').parse(requestURI + 'id/1/');
-	console.log("Request URL: " + url.href);
-	var req = coap.request(url);
-	var bl = require('bl');
+``` javascript
+var coap = require('coap');
+var requestURI = 'coap://localhost/';
+var url = require('url').parse(requestURI + 'id/1/');
+console.log("Request URL: " + url.href);
+var req = coap.request(url);
+var bl = require('bl');
 
-	req.setHeader("Accept", "application/json");
-	req.on('response', function(res) {
-		res.pipe(bl(function(err, data) {
-			var json = JSON.parse(data);
-			console.log(json);
-		}));
+req.setHeader("Accept", "application/json");
+req.on('response', function(res) {
+	res.pipe(bl(function(err, data) {
+		var json = JSON.parse(data);
+		console.log(json);
+	}));
 
-	});
+});
 
-	req.end();
+req.end();
+```
 
 代码有点长内容也有点多，但是核心是这句话：
 
-     req.setHeader("Accept", "application/json");
+``` javascript
+req.setHeader("Accept", "application/json");
+```
 
 这样的话，我们只需要在我们的服务端一判断，
 
-    if(req.headers['Accept'] == 'application/json') {
-         //do something
-     };
+``` javascript
+if(req.headers['Accept'] == 'application/json') {
+     //do something
+ };
+```
 
 这样就可以返回数据了
 
@@ -509,12 +551,14 @@ Block2中一共有四个数据，相应的数据结果应该是
 
 Server端的代码比较简单，判断一下
 
-    if (req.headers['Accept'] == 'application/json') {
-            parse_url(req.url, function(result){
-                res.end(result);
-            });
-            res.code = '2.05';
-        }
+``` javascript
+if (req.headers['Accept'] == 'application/json') {
+        parse_url(req.url, function(result){
+            res.end(result);
+        });
+        res.code = '2.05';
+    }
+```
 
 请求的是否是JSON格式，再返回一个205，也就是Content，只是这时设计是请求一个URL返回对应的数据。如
 
@@ -522,17 +566,21 @@ Server端的代码比较简单，判断一下
 
 这时应该请求的是ID为1的数据，即
 
-    [ { id: 1, value: 'is id 1', sensors1: 19, sensors2: 20 }]
+``` javascript
+[ { id: 1, value: 'is id 1', sensors1: 19, sensors2: 20 }]
+```
 
 而parse_url只是从数据库从读取相应的数据。
 
-	function parse_url(url ,callback) {
-	    var db = new sqlite3.Database(config["db_name"]);
+``` javascript
+function parse_url(url ,callback) {
+    var db = new sqlite3.Database(config["db_name"]);
 
-	    var result = [];
-	    db.all("SELECT * FROM basic;", function(err, rows) {
-	        callback(JSON.stringify(rows));
-	    })
-	}
+    var result = [];
+    db.all("SELECT * FROM basic;", function(err, rows) {
+        callback(JSON.stringify(rows));
+    })
+}
+```
 
 并且全部都显示出来，设计得真是有点不行，不过现在已经差不多了。
