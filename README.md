@@ -3,6 +3,8 @@
 
 在线查看[一步步搭建物联网系统](http://designiot.phodal.com/)
 
+A Document by [Phodal](http://www.phodal.com) & IoT Future Group
+
 ##如何编辑
 
 你可能需要一点markdown的知识，别担心这货很简单。
@@ -50,8 +52,17 @@
  
     make
 
-A Document by [Phodal](http://www.phodal.com) & IoT Future Group
+##源码相关
 
+代码
+
+- HTTP版 [https://github.com/gmszone/iot](https://github.com/gmszone/iot)
+- CoAP版 [https://github.com/gmszone/iot-coap](https://github.com/gmszone/iot-coap)
+
+测试网站
+
+- HTTP版 [http://b.phodal.com](http://b.phodal.com)
+- CoAP版 [coap://iot-coap.phodal.com](coap://iot-coap.phodal.com) (ps:Firefox下用Copper插件)
 
 ## License
 
