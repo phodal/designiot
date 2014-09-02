@@ -20,7 +20,7 @@ A Document by [Phodal](http://www.phodal.com) & IoT Future Group
 生成文档相关的目录
  
  - template/ 里面放有latex及html的模板
- - build/ 生成PDF版的内容，以及一份毕业设计
+ - build/ PDF版
  - end/ 毕业设计所在目录
  - css/ html版的css
 
