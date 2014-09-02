@@ -31,7 +31,24 @@ A Document by [Phodal](http://www.phodal.com) & IoT Future Group
  - README.md github上显示的内容。
  - License.md 协议相关
  - CNAME 域名的CNAME
- 
+
+##章节及说明
+
+以``1.2.anywhere-javascript.md``为例
+
+1.2
+
+- 1说的是第一部分
+- 2说的是第二章
+
+以此类推
+
+目录一共有三个部分
+
+ - 基础部分
+ - HTTP版部分
+ - 扩展部分(如coap,mqtt,biz等等)
+
 ##如何编译
 
 如果你不是在类Unix平台上的话——说的是Windows，编译可能会很困难。
