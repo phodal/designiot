@@ -107,13 +107,18 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#gcc"><span class="toc-section-number">5.2.3</span> GCC</a></li>
 <li><a href="#启动引导程序"><span class="toc-section-number">5.2.4</span> 启动引导程序</a></li>
 </ul></li>
+<li><a href="#从编译开始"><span class="toc-section-number">5.3</span> 从编译开始</a><ul>
+<li><a href="#开始之前"><span class="toc-section-number">5.3.1</span> 开始之前</a></li>
+<li><a href="#编译nginx"><span class="toc-section-number">5.3.2</span> 编译Nginx</a></li>
+<li><a href="#其他-1"><span class="toc-section-number">5.3.3</span> 其他</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#arduino"><span class="toc-section-number">6</span> Arduino</a><ul>
 <li><a href="#极客的玩具"><span class="toc-section-number">6.1</span> 极客的玩具</a></li>
 </ul></li>
 <li><a href="#python"><span class="toc-section-number">7</span> Python</a><ul>
 <li><a href="#代码与散文"><span class="toc-section-number">7.1</span> 代码与散文</a></li>
-<li><a href="#开始之前"><span class="toc-section-number">7.2</span> 开始之前</a></li>
+<li><a href="#开始之前-1"><span class="toc-section-number">7.2</span> 开始之前</a></li>
 <li><a href="#python的helloworld"><span class="toc-section-number">7.3</span> Python的Hello,World</a></li>
 <li><a href="#我们想要的helloworld"><span class="toc-section-number">7.4</span> 我们想要的Hello,World</a></li>
 <li><a href="#算法"><span class="toc-section-number">7.5</span> 算法</a></li>
@@ -215,9 +220,21 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <h2 id="目标读者"><span class="header-section-number">0.2</span> 目标读者</h2>
 <p>本文档的目标读者是初入物联网领域，希望对物联网系统有一个大概的认识和把握，并学会如何掌握好一个基础的物联网系统的设计。</p>
 <p>本文档对一些概念(如)只做了一些基本介绍，以及便于理解。如果想进一步了解这些概念，会列出一些推荐书目，以供参考。</p>
+<ul>
+<li>硬件开发人员，对物联网有兴趣。</li>
+<li>没有web开发经验</li>
+<li>极少的linux使用经验</li>
+<li>想快速将于生产环境</li>
+<li>对硬件了解有限的开发人员。</li>
+<li>没接触过51、ARM、Arduino</li>
+<li>想了解以下的东西</li>
+<li>RESTful与IOT</li>
+<li>CoAP协议</li>
+<li>MQTT</li>
+</ul>
 <h2 id="不适合人群"><span class="header-section-number">0.3</span> 不适合人群</h2>
 <ul>
-<li>有丰富经验的开发者</li>
+<li>丰富经验的开发者</li>
 </ul>
 <h2 id="介绍"><span class="header-section-number">0.4</span> 介绍</h2>
 <p>关于内容的选择上，这是一个有意思的话题，我们很难判断不同的开发者用的是怎样的语言，用的是怎样的框架。</p>
@@ -959,8 +976,8 @@ a[href^=&quot;#&quot;]:after {
 <h1 id="gnulinux"><span class="header-section-number">5</span> GNU/Linux</h1>
 <h2 id="什么是linux"><span class="header-section-number">5.1</span> 什么是Linux</h2>
 <p>Linux是一种自由和开放源码的类UNIX操作系统内核。目前存在着许多不同的Linux发行版，可安装在各种各样的电脑硬件设备，从手机、平板电脑、路由器和影音游戏控制台，到桌上型电脑，大型电脑和超级电脑。 Linux是一个领先的操作系统内核，世界上运算最快的10台超级电脑运行的都是基于Linux内核的操作系统。</p>
-<p>Linux操作系统也是自由软件和开放源代码发展中最著名的例子。只要遵循GNU通用公共许可证,任何人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布。<strong>严格来讲，Linux这个词本身只表示Linux内核，但在实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU 工程各种工具和数据库的操作系统（也被称为GNU/ Linux）。</strong>通常情况下，Linux被打包成供桌上型电脑和服务器使用的Linux发行版本。一些流行的主流Linux发行版本，包括Debian（及其衍生版本Ubuntu），Fedora和openSUSE等。 Linux得名于电脑业余爱好者Linus Torvalds。</p>
-<p>而不是如百度百科所讲的<del>Linux操作系统是UNIX操作系统的一种克隆系统。它诞生于1991 年的 Linux桌面[1]10 月5 日（这是第一次正式向外公布的时间）。以后借助于Internet网络，并通过全世界各地计算机爱好者的共同努力，已成为今天世界上使用最多的一种UNIX 类操作系统，并且使用人数还在迅猛增长。</del></p>
+<p>Linux操作系统也是自由软件和开放源代码发展中最著名的例子。只要遵循GNU通用公共许可证,任何人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布。<strong>严格来讲，Linux这个词本身只表示Linux内核，但在实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU工程各种工具和数据库的操作系统（也被称为GNU/Linux）。</strong>通常情况下，Linux被打包成供桌上型电脑和服务器使用的Linux发行版本。一些流行的主流Linux发行版本，包括Debian（及其衍生版本Ubuntu），Fedora和openSUSE等。Linux得名于电脑业余爱好者Linus Torvalds。</p>
+<p>而不是如百度百科所讲的<del>Linux操作系统是UNIX操作系统的一种克隆系统。它诞生于1991年的 Linux桌面[1]10 月5日（这是第一次正式向外公布的时间）。以后借助于Internet网络，并通过全世界各地计算机爱好者的共同努力，已成为今天世界上使用最多的一种UNIX类操作系统，并且使用人数还在迅猛增长。</del></p>
 <p>Linux只是个内核，而不是操作系统，所以在这我们再理解一下操作系统是由什么组成的。</p>
 <h2 id="操作系统"><span class="header-section-number">5.2</span> 操作系统</h2>
 <p>操作系统（英语：Operating System，简称OS）是管理计算机硬件与软件资源的计算机程序，同时也是计算机系统的内核与基石。操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务。操作系统也提供一个让用户与系统交互的操作界面。 操作系统的型态非常多样，不同机器安装的操作系统可从简单到复杂，可从手机的嵌入式系统到超级计算机的大型操作系统。许多操作系统制造者对它涵盖范畴的定义也不尽一致，例如有些操作系统集成了图形用户界面(GUI)，而有些仅使用命令行界面(CLI)，而将GUI视为一种非必要的应用程序。</p>
@@ -1019,6 +1036,47 @@ a[href^=&quot;#&quot;]:after {
 <p>GNU GRUB（简称“GRUB”）是一个来自GNU项目的启动引导程序。GRUB是多启动规范的实现，它允许用户可以在计算机内同时拥有多个操作系统，并在计算机启动时选择希望运行的操作系统。GRUB可用于选择操作系统分区上的不同内核，也可用于向这些内核传递启动参数。</p>
 <p>GNU GRUB的前身为Grand Unified Bootloader。它主要用于类Unix系统；同大多Linux发行版一样，GNU系统也采用GNU GRUB作为它的启动器。Solaris从10 1/06版开始在x86系统上也采用GNU GRUB作为启动器。</p>
 <p>以上也就构成了一个简单的操作系统。</p>
+<h2 id="从编译开始"><span class="header-section-number">5.3</span> 从编译开始</h2>
+<p>我们以一次编译开始我们的Linux学习之旅。</p>
+<h3 id="开始之前"><span class="header-section-number">5.3.1</span> 开始之前</h3>
+<ul>
+<li>如果你没有用过GNU/Linux，我想你需要在虚拟机上安装一个。</li>
+<li>一个主流的GNU/Linux发行版，如Ubuntu,CentOS,Debian,Mint,OpenSUSE,Fedora等等。</li>
+<li>学会如何打开shell(ps:bash,zsh,sh等等)。</li>
+</ul>
+<p>或者你也可以在Windows上安装Cygwin。</p>
+<h3 id="编译nginx"><span class="header-section-number">5.3.2</span> 编译Nginx</h3>
+<p>1.下载这个软件的源码包</p>
+<pre><code>wget http://nginx.org/download/nginx-1.7.4.tar.gz</code></pre>
+<p>wget是一个用于下载的软件，当然你也可以用软件，只是用wget似乎会比图形界面快哦。</p>
+<p>2.解压软件包</p>
+<pre><code>tar -vf nginx-1.7.4.tar.gz</code></pre>
+<p>-vf的意思是Extract，也就是解压，而tar则是这个解压软件的名字。看上去似乎比WinRAR来得复制得多，但是你可以计时一下，从下载到解压完，和你用鼠标比哪个比较快。</p>
+<p>3.到nginx目录下</p>
+<p>这里需要分两部进行</p>
+<p>1).列出所有文件</p>
+<pre><code>ls -al
+
+drwxr-xr-x   15 fdhuang  staff   510B Sep  2 13:44 nginx-1.7.4
+-rw-r--r--    1 fdhuang  staff   798K Aug  5 21:55 nginx-1.7.4.tar.gz</code></pre>
+<p>2).到nginx-1.7.4目录</p>
+<pre><code>cd nginx-1.7.4 </code></pre>
+<p>4.配置nginx</p>
+<p>一次简单的配置如下</p>
+<pre><code>./configure</code></pre>
+<p>当你熟练以后，你可能和我一样用下面的配置(<code>注意</code>:用下面的代码会出错。)</p>
+<pre><code>./configure --user=www --group=www --add-module=../ngx_pagespeed-1.8.3.4-beta --add-module=../ngx_cache_purge --prefix=/usr/local/nginx --with-pcre --with-http_spdy_module --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_stub_status_module --with-mail --with-mail_ssl_module --with-ipv6</code></pre>
+<p>过程中可能会提示你其中出了多少错误，而这时你便可以很愉快地去用搜索引擎搜索他们。</p>
+<p>5.make</p>
+<p>这里就会用到GCC等等。</p>
+<pre><code>make</code></pre>
+<p>6.运行</p>
+<p>如果运行顺利的话，应该可以直接</p>
+<pre><code>./objs/nginx   </code></pre>
+<h3 id="其他-1"><span class="header-section-number">5.3.3</span> 其他</h3>
+<p>1.如果没有wget,make,gcc等命令的时候可以用类似于下面的方法安装，</p>
+<pre><code>sudo apt-get install gcc,make,wget</code></pre>
+<p>2.正常情况下一个开源项目都会有一个README，会告诉你应该如何去做。</p>
 <h1 id="arduino"><span class="header-section-number">6</span> Arduino</h1>
 <h2 id="极客的玩具"><span class="header-section-number">6.1</span> 极客的玩具</h2>
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
@@ -1092,7 +1150,7 @@ IndentationError: expected an indented block</code></pre>
     message:
             .ascii  &quot;Hello, world\n&quot;</code></pre>
 <p>所以上面的代码的可读性在今天新生一代的程序员来说可能没有那么容易理解。芯片运行的速度越来越快，在程序上我们也需要一个越来越快的解决方案，而所谓的越来越快的解决方案指的不是运行速度上，而是开发速度上。如果你没有办法在同样时间内开发出更好的程序，那么你就可能输给你的竞争对手。</p>
-<h2 id="开始之前"><span class="header-section-number">7.2</span> 开始之前</h2>
+<h2 id="开始之前-1"><span class="header-section-number">7.2</span> 开始之前</h2>
 <p>我们终于又从一种语言跳到了另外一种语言，我们可能习惯了一种模式，而不敢于去尝试新的东西，这些或许是我们的一些习惯又或者是因为害怕等等。</p>
 <p>作为另外一个跨平台能力很强的语言，这里说的是与Javascript、HTML比较，或许你会觉得C算是最好的，但是我们这里讨论更多的是脚本语言，也就是直接可以运行的。在现在主流的大多数移动平台上，python也有良好的支持，如Android,IOS，只是这些算是类Unix系统内核，python还支持之前Nokia的Symbian。</p>
 <p>开始之前我们需要确认我们的平台上已经有了python环境，也就是可以运行下面的Hello,World，你可以在网上很多地方看到，最简单的地方还是到官网，又或者是所用移动平台的store下载。</p>
