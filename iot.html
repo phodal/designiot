@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="css/vendor.css" type="text/css" />
+</head>
+<body>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<html xmlns:wb="http://open.weibo.com/wb">
+			<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+			<title>一步步搭建物联网系统</title>
+			<meta name="keywords" content="设计物联网系统,物联网系统设计">
+			<meta name="description" content="一份关于如何设计物联网系统的文档">
+			<link rel="stylesheet" href="css/vendor.css" />
+		</head>
+		<body class="container inner wrap">
+			<wb:follow-button uid="1533917471" type="red_4" width="100%" height="64" ></wb:follow-button>
+
+			<table>
+				<tr>
+					<td>
+						<iframe src="http://ghbtns.com/github-btn.html?user=gmszone&repo=designiot&type=watch&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
+					</td>
+					<td>
+						<iframe src="http://ghbtns.com/github-btn.html?user=gmszone&repo=designiot&type=fork&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
+					</td>
+					<td>
+						<iframe src="http://ghbtns.com/github-btn.html?user=gmszone&type=follow&count=true&size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe>
+					</td>
+				</tr>
+			</table>
+			其他:<a href="./iot.html" title="基于REST服务的最小物联网系统设计">基于REST服务的最小物联网系统设计</a>
+			<h2>一步步搭建物联网系统</h2>
+		</body>
+	</html>
+<div id="TOC">
+<ul>
+<li><a href="#物联网毕业设计"><span class="toc-section-number">1</span> 物联网毕业设计</a><ul>
+<li><a href="#摘要"><span class="toc-section-number">1.1</span> 摘要</a></li>
+<li><a href="#abstract"><span class="toc-section-number">1.2</span> Abstract</a></li>
+<li><a href="#绪论"><span class="toc-section-number">1.3</span> 绪论</a><ul>
+<li><a href="#选题背景"><span class="toc-section-number">1.3.1</span> 选题背景</a></li>
+<li><a href="#设计内容"><span class="toc-section-number">1.3.2</span> 设计内容</a></li>
+<li><a href="#设计的目的及其意义"><span class="toc-section-number">1.3.3</span> 设计的目的及其意义</a></li>
+<li><a href="#国内外发展现状和趋势"><span class="toc-section-number">1.3.4</span> 国内外发展现状和趋势</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#系统总体设计方案"><span class="toc-section-number">2</span> 系统总体设计方案</a><ul>
+<li><a href="#硬件方案选择"><span class="toc-section-number">2.1</span> 硬件方案选择</a><ul>
+<li><a href="#单片机选择"><span class="toc-section-number">2.1.1</span> 单片机选择</a></li>
+</ul></li>
+<li><a href="#软件方案选择"><span class="toc-section-number">2.2</span> 软件方案选择</a><ul>
+<li><a href="#数据通讯方式选择"><span class="toc-section-number">2.2.1</span> 数据通讯方式选择</a></li>
+<li><a href="#数据通信格式选择"><span class="toc-section-number">2.2.2</span> 数据通信格式选择</a></li>
+</ul></li>
+<li><a href="#网络服务方案选择"><span class="toc-section-number">2.3</span> 网络服务方案选择</a><ul>
+<li><a href="#语言选择"><span class="toc-section-number">2.3.1</span> 语言选择</a></li>
+</ul></li>
+<li><a href="#其它"><span class="toc-section-number">2.4</span> 其它</a><ul>
+<li><a href="#数据通讯设备"><span class="toc-section-number">2.4.1</span> 数据通讯设备</a></li>
+</ul></li>
+<li><a href="#辅助语言选择"><span class="toc-section-number">2.5</span> 辅助语言选择</a></li>
+<li><a href="#串口通信模块"><span class="toc-section-number">2.6</span> 串口通信模块</a></li>
+<li><a href="#网页通信"><span class="toc-section-number">2.7</span> 网页通信</a></li>
+<li><a href="#数据可视化框架选择"><span class="toc-section-number">2.8</span> 数据可视化框架选择</a></li>
+</ul></li>
+<li><a href="#本地系统设计"><span class="toc-section-number">3</span> 本地系统设计</a><ul>
+<li><a href="#硬件设计"><span class="toc-section-number">3.1</span> 硬件设计</a><ul>
+<li><a href="#raspberry-pi"><span class="toc-section-number">3.1.1</span> Raspberry Pi</a></li>
+</ul></li>
+<li><a href="#软件设计"><span class="toc-section-number">3.2</span> 软件设计</a></li>
+<li><a href="#arduino-1"><span class="toc-section-number">3.3</span> Arduino</a></li>
+<li><a href="#raspberry-pi-1"><span class="toc-section-number">3.4</span> Raspberry Pi</a><ul>
+<li><a href="#获取数据"><span class="toc-section-number">3.4.1</span> 获取数据</a></li>
+<li><a href="#串口通讯"><span class="toc-section-number">3.4.2</span> 串口通讯</a></li>
+<li><a href="#python串口通讯"><span class="toc-section-number">3.4.3</span> python串口通讯</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#网络系统设计"><span class="toc-section-number">4</span> 网络系统设计</a><ul>
+<li><a href="#网络服务程序设计"><span class="toc-section-number">4.1</span> 网络服务程序设计</a><ul>
+<li><a href="#基本的rest服务"><span class="toc-section-number">4.1.1</span> 基本的REST服务</a></li>
+</ul></li>
+<li><a href="#系统前台设计"><span class="toc-section-number">4.2</span> 系统前台设计</a><ul>
+<li><a href="#ajax"><span class="toc-section-number">4.2.1</span> Ajax</a></li>
+<li><a href="#highcharts"><span class="toc-section-number">4.2.2</span> Highcharts</a></li>
+</ul></li>
+<li><a href="#系统后台设计"><span class="toc-section-number">4.3</span> 系统后台设计</a><ul>
+<li><a href="#数据库设计"><span class="toc-section-number">4.3.1</span> 数据库设计</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="物联网毕业设计"><span class="header-section-number">1</span> 物联网毕业设计</h1>
+<h2 id="摘要"><span class="header-section-number">1.1</span> 摘要</h2>
+<p>随着经济社会的日趋发展及科学技术水平的不断提高，人们对于便利生活的要求越来越高。近年来，随着物联网领域稳步、缓慢地发展，物联网建设的网络环境已经逐渐成熟。由于物联网系统是一个综合性的，包含了硬件、软件、网络等多学科交叉的系统。对于物联网的研究和开发，已经成为一个个热门的话题。</p>
+<p>本论文中介绍了以REST服务为核心、单片机、ARM开发板而辅助的物联网系统的结构组成及工作原理，提供了相应的软件代码及硬件结构。首先研究了不同服务框架的区别，包括不同语言间开发的优势及劣势，之后重点以REST服务为核心构建系统。本设计中，单片机与ARM开发板通过串口通信的方式实现通信，相互传输所需要的数据，ARM开发板将资源传于互联网上对应的接口，接口可以在互联网上被访问。将ARM开发板获取过来的数据存储于MySQL数据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问这些设备。系统分离了软件、硬件的耦合，不仅可以方便系统开发，也可以方便由不同的硬件替换相应的组成，使之更容易理解，同时可以实现更多设备的连接，以实现真正的物联。</p>
+<p>本论文讨论的代码在GNU/Linux系统上开发，可在不同平台上开发及调度。</p>
+<p><strong>关键词</strong> : <code>物联网</code>、<code>REST服务</code>、<code>RESTful</code></p>
+<h2 id="abstract"><span class="header-section-number">1.2</span> Abstract</h2>
+<p>With the increasing development and scientific and technological level of the economy and society continues to improve, people’s lives more convenient for the required high . In recent years, the field of Internet Of Things steady , slow development , networking and building the network environment has gradually matured. Because of Internet Of Things is a comprehensive system , including hardware , software, networks, and other multi-disciplinary systems. Things for research and development, has become one hot topic .</p>
+<p>This paper described the Internet of Things system’s structure and principle in REST services as the core , microcontroller and ARM development board as assisted, and provided the appropriate software code and hardware architecture . First study the differences between the services framework, including language development among different strengths and weaknesses, then focus to build REST service system as the core . In this design, microcontroller communicate with development board by serial communication, mutual transmission of the data needed , ARM development board resources on the Internet pass the corresponding interface , the interface can be accessed on the Internet. The ARM development board to get over the data stored in MySQL, then the REST service to share data , other devices on the Internet will be able to access these devices through the network. Separation of the coupling system software, hardware , and can not only facilitate the development of the system , can also be easily replaced by a composition corresponding to different hardware , to make it easier to understand , and can connect more devices to achieve real objects associated .</p>
+<p>Code discussed in this paper on the GNU / Linux system development, and scheduling can be developed on different platforms .</p>
+<h2 id="绪论"><span class="header-section-number">1.3</span> 绪论</h2>
+<h3 id="选题背景"><span class="header-section-number">1.3.1</span> 选题背景</h3>
+<p>随着科技的发展，计算机电子技术迅猛发展，已经成为生活中不可缺少的部分。目前人们绝大多数都是采用PC进行网络数据传送，但由于成本高，限制了应用的范围。而嵌入式系统却越来越受到人们的青睐。它采用嵌入式的微处理器，支持 TCP/IP协议，它已成为网络发展新阶段的标志。</p>
+<p>物联网是新一代信息技术的重要组成部分。其英文名称是The Internet of things。顾名思义，物联网的意思就是物物相连的互联网。这有两层意思：第一，物联网是建立在互联网之上的，是互联网的拓展和延伸；第二，其用户端扩 展和延伸到了物品与物品之间，进行信息通信和交换。物联网有如下特征：</p>
+<p>首先，广泛应用了各种感知技术。在物联网中部署了大量的多种传感器，每个传感器都能从外界采集信息，不同类的传感器捕获的信息不同。而且获得的数据具有实时性，按照一定的规律来采集数据，不断更新数据。</p>
+<p>其次，它是建立在互联网上的网络。物联网技术的核心和基础仍是互联网，通过各种无线和有线网络与互联网结合起来，将物体的信息准确实时地传递出去，数据传输过程中必须适应各种网络协议。</p>
+<p>还有，物联网本身也具有一种智能处理的能力，能够智能控制物体。物联网从传感器中获得数据，然后进行分析，处理处有意义的数据，来适应不同用户的需求。</p>
+<h3 id="设计内容"><span class="header-section-number">1.3.2</span> 设计内容</h3>
+<p>设计主要是关于基于RESTful服务的网络服务构建，可采用有线网络、无线网络、手机GSM网络等与Internet相关，通过手机、电脑 、移动设备等登录到网页可实现控制家电的上的，并可实时查看诸如温度等一些信息的基本内容。</p>
+<p>硬件设计时，采用Arduino单片机系统，作为一个基于Atmega328芯片的最小系统，Arduino可以系统代码。Arduino主要用于展示LED灯的控制，通过与RaspberryPI开发板相连来获取实时状态。Raspberry PI作为一个ARM开发板，由于其运行的是Linux系统，在软件方面有着相对于其他开发板较好的支持，在这里是作为数据传输设备以用来进行模块分离。</p>
+<p>软件设计时，由于一个物联网系统其核心是以网络为基础的，需要优先考虑网络 方面的优化，学需要考虑数据库等的问题。</p>
+<p>用户界面设计时，随着近来来平板、手机等移动设备的流行，在设计时不能再以 桌面程序为核心，需要考虑不用设备之间的兼容性等问题，这里便以网页为核心 作为显示。而，随着云计算技术的流行，未来的物联网系统必然也会基于云计算 技术构建。作为一个可视化的网页来说，实时的状态显示等是较为重要，同时我 们需要考虑的是用户体验。</p>
+<h3 id="设计的目的及其意义"><span class="header-section-number">1.3.3</span> 设计的目的及其意义</h3>
+<p>设计以简化物联网系统为主，简化一个可扩展的最小的物联网系统，以简化系统 的逻辑为起点，为广大的用户提供一个良好的了解物联网系统方面知识的框架。</p>
+<h3 id="国内外发展现状和趋势"><span class="header-section-number">1.3.4</span> 国内外发展现状和趋势</h3>
+<p>物联网是建立在互联网技术之上的。目前，我国物联网发展与全球同处于起步阶 段，初步具备了一定的技术、产业和应用基础，呈现出良好的发展态势。把单片 机应用系统和Internet连接也已经是一种趋势。</p>
+<p>目前无线通信网络已经覆盖各地，是实现“物联网”必不可少的设施，可以将安置 在每个物品上的电子介质产生的数字信号通过无线网络传输出去。“云计算”技术 的运用，使数以亿计的各类物品的实时动态管理变得可能。</p>
+<p>物联网技术的推广已经取得一定的成效。在多方面已经开始应用，如远程抄表， 电力行业，视频监控等等。以及在物流领域和医疗领域也都日趋成熟，如物品存 储及运输监测，远程医疗，个人的健康监护等。除此之外在环境监控，楼宇节能， 食品等方面也开展了广泛应用。</p>
+<p>尽管在这些领域已经取得一些进展，但应认识到，物联网发展技术还存在一系列 制约和瓶颈。有几个方面可以表现出来：核心技术与国外差距较大，集成服务能 力不够，缺乏骨干企业，应用水平不高，信息安全存在隐患。我们国家在PC架构 领域还没有主动权，软件产品很少。目前，计算环境正在向以网络为中心发展， 有很多产品不必也windows兼容，因此，研究单片机系统接入网络，前途宽广。</p>
+<h1 id="系统总体设计方案"><span class="header-section-number">2</span> 系统总体设计方案</h1>
+<p>物联网的核心也就是网络服务，而网络服务在某种意义上来说，就是需要打造一 个多平台的通信协议，在使机器、家电、设备等连上计算机网络。基本的物联 网系统，不仅能控制设备，还可以在远程查看状态。而复杂的物联网系统可以让 互联网上的设备之间实现互联与通信，也就是物联网的最终目标所在——使物体与 物体之间的交互成为可能，不需要人为去干预。</p>
+<p>系统采用的结构是: Arduino+Raspberry Pi+Laravel+JSON+RESTful+Ajax+Python+HighCharts，其框架图如下所示</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/struct.png" title="系统框架图" alt="系统框架图" /><p class="caption">系统框架图</p>
+</div>
+<p>Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据， Raspberry Pi将资源传于互联网上对应的接口，接口可以在互联网上被访问。 Laravel框架构架于服务器之上，将Raspbery Pi获取过来的数据存储于MySQL数 据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问 这些设备。Ajax用于将后台的数据以不需要刷新的方式传递到网站前台，通过 HighCharts框架显示给终端用户。</p>
+<h2 id="硬件方案选择"><span class="header-section-number">2.1</span> 硬件方案选择</h2>
+<h3 id="单片机选择"><span class="header-section-number">2.1.1</span> 单片机选择</h3>
+<h4 id="arduino"><span class="header-section-number">2.1.1.1</span> Arduino</h4>
+<p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用 了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且 具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
+<p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主 要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串 口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往 串口发送数据时，可以用Serial.write(‘1’)的方式向串口发送字串’1’。</p>
+<h4 id="section"><span class="header-section-number">2.1.1.2</span> 51</h4>
+<p>单片机<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>，又称微控制器，是把中央处理器、存储器、定时/计数器 （Timer/Counter）、各种输入输出接口等都集成在一块集成电路芯片上的微型 计算机。与应用在个人计算机中的通用型微处理器相比，它更强调自供应（不用 外接硬件）和节约成本。它的最大优点是体积小，可放在仪表内部，但存储量小， 输入输出接口简单，功能较低。</p>
+<p>51单片机相较于Arduino开发板，不仅代码复杂，由于系统比较古老而不方便于 快速开发。</p>
+<h2 id="软件方案选择"><span class="header-section-number">2.2</span> 软件方案选择</h2>
+<h3 id="数据通讯方式选择"><span class="header-section-number">2.2.1</span> 数据通讯方式选择</h3>
+<h4 id="rest"><span class="header-section-number">2.2.1.1</span> REST</h4>
+<p>REST<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> 从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的 应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。 随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转 移。</p>
+<h4 id="soap"><span class="header-section-number">2.2.1.2</span> SOAP</h4>
+<p>简单对象访问协议是交换数据的一种协议规范，使用在计算机网络Web服务中， 交换带结构信息。SOAP为了简化网页服务器从XML数据库中提取数据时，节省去 格式化页面时间，以及不同应用程序之间按照HTTP通信协议，遵从XML格式执行 资料互换，使其抽象于语言实现、平台和硬件。</p>
+<h3 id="数据通信格式选择"><span class="header-section-number">2.2.2</span> 数据通信格式选择</h3>
+<h4 id="json"><span class="header-section-number">2.2.2.1</span> JSON</h4>
+<p>JSON<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>是一种轻量级的数据交换格式。 易于人阅读和编写。同时也易于机 器解析和生成。 它基于JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999的一个子集。 JSON采用完全独立于语 言的文本格式，但是也使用了类似于C语言家族的习惯<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>。 这些特性使 JSON成为理想的数据交换语言。</p>
+<p>JSON相对于XML来说可以减少文件的大小，同时我们可以用于网站前端的数据通讯。</p>
+<p>对于基于浏览器的客户端使用的web服务更倾向于使用JSON作为表述格式。</p>
+<h4 id="xml"><span class="header-section-number">2.2.2.2</span> XML</h4>
+<p>可扩展标记语言<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>，是一种标记语言。标记指计算机所能理解的信息符号， 通过此种标记，计算机之间可以处理包含各种信息的文章等。如何定义这些标记， 既可以选择国际通用的标记语言，比如HTML，也可以使用像XML这样由相关人士 自由决定的标记语言，这就是语言的可扩展性。XML是从标准通用标记语言 （SGML）中简化修改出来的。它主要用到的有可扩展标记语言、可扩展样式语言 （XSL）、XBRL和XPath等。</p>
+<p>XML具有良好的可读性，有着较好的库支持，从Java语言到其他语言，如Linux系 统上libxml等对XML的支持比较好。</p>
+<h2 id="网络服务方案选择"><span class="header-section-number">2.3</span> 网络服务方案选择</h2>
+<h3 id="语言选择"><span class="header-section-number">2.3.1</span> 语言选择</h3>
+<p><strong>PHP Laravel</strong></p>
+<p>PHP <a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> 是一种开源的通用计算机脚本语言，尤其适用于网络开发并可嵌入 HTML中使用。PHP的语法借鉴吸收了C语言、Java和Perl等流行计算机语言的特点， 易于一般程序员学习。PHP的主要目标是允许网络开发人员快速编写动态页面， 但PHP也被用于其他很多领域。</p>
+<p><strong>Laravel</strong></p>
+<p>Laravel是一套简洁、优雅的PHP Web开发框架。它可以让你从面条一样杂乱的代 码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、 富于表达力。</p>
+<p><strong>Java Spring</strong></p>
+<p><strong>Java</strong></p>
+<p>Java是一种可以撰写跨平台应用软件的面向对象的程序设计语言，是由Sun Microsystems公司于1995年5月推出的Java程序设计语言。Java 技术具有卓越的 通用性、高效性、平台移植性和安全性，广泛应用于个人PC、数据中心、游戏控 制台、科学超级计算机、移动电话和互联网，同时拥有全球最大的开发者专业社 群。在全球云计算和移动互联网的产业环境下，Java更具备了显著优势和广阔前 景。</p>
+<p><strong>Spring</strong></p>
+<p>Spring是一个开源框架，是为了解决企业应用程序开发复杂性。Spring框架的主 要优势之一就是其分层架构，分层架构允许使用者选择使用哪一个组件，同时为 J2EE 应用程序开发提供集成的框架。Spring使用基本的JavaBean来完成以前只 可能由EJB完成的事情。然而，Spring的用途不仅限于服务器端的开发。从简单 性、可测试性和松耦合的角度而言，任何Java应用都可以从Spring中受益。</p>
+<p>由于相较于Java在web方面没有PHP来得快速、简单、有效，同时Laravel框架在 某些方面如数据迁移、代码生成比Spring快，同时不需要依赖于开发环境，这里 以Laravel作为框架，可以利用artisan工具等的强大驱动开发。</p>
+<h2 id="其它"><span class="header-section-number">2.4</span> 其它</h2>
+<h3 id="数据通讯设备"><span class="header-section-number">2.4.1</span> 数据通讯设备</h3>
+<p><strong>Raspeberry PI</strong></p>
+<p>Raspberry Pi是一款针对电脑业余爱好者、教师、小学生以及小型企业等用户的 迷你电脑，预装Linux系统，体积仅信用卡大小，搭载ARM架构处理器，运算性能 和智能手机相仿。在接口方面，Raspberry Pi提供了可供键鼠使用的USB接口，此外 还有千兆以太网接口、SD卡扩展接口以及1个HDMI高清视频输出接口，可与显示器或者TV相连。</p>
+<p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的 多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软 件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为 核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
+<p>Raspberry Pi相比于一般的ARM开发板来说，由于其本身搭载着Linux操作系统，可以用 诸如Python、Ruby或Bash来执行脚本，而不是通过编译程序来运行，具有更高的开发效率。</p>
+<h2 id="辅助语言选择"><span class="header-section-number">2.5</span> 辅助语言选择</h2>
+<p><strong>Python</strong></p>
+<p>Python, 是一种面向对象、直译式计算机程序设计语言，由Guido van Rossum于 1989年底发明，第一个公开发行版发行于1991年。Python语法简洁而清晰，具有 丰富和强大的类库。它常被昵称为胶水语言，它能够很轻松的把用其他语言制作 的各种模块（尤其是C/C++）轻松地联结在一起。常见的一种应用情形是，使用 python快速生成程序的原型（有时甚至是程序的最终界面），然后对其中有特别 要求的部分，用更合适的语言改写，比如3D游戏中的图形渲染模块，速度要求非 常高，就可以用C++重写。</p>
+<p><strong>Ruby</strong></p>
+<p>Ruby，一种为简单快捷的面向对象编程（面向对象程序设计）而创的脚本语言， 在20世纪90年代由日本人松本行弘开发，遵守GPL协议和Ruby License。</p>
+<p>Python相对于Ruby有着更好的跨平台能力，同时有理好的可读性，加之Ruby语言 没有对串口通讯及Windows系统更好的支持。</p>
+<h2 id="串口通信模块"><span class="header-section-number">2.6</span> 串口通信模块</h2>
+<p><strong>PySerial</strong></p>
+<p>PySerial封装了串口通讯模块，支持Linux、Windows、BSD(可能支持所有支持POSIX的操 作系统)，支持Jython(Java)和IconPython(.NET and Mono).</p>
+<p>在使用PySerial之后，我们只需要</p>
+<pre class="sourceCode python"><code class="sourceCode python">ser=serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)
+ser.write(<span class="st">&quot;1&quot;</span>)</code></pre>
+<p>就可以向串口发送一个字符1。</p>
+<h2 id="网页通信"><span class="header-section-number">2.7</span> 网页通信</h2>
+<p><strong>Ajax</strong> AJAX <a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> 是由Jesse James Gaiiett创造的名词，是指一种创建交互式网页 应用的网页开发技术。</p>
+<p>系统主要用Ajax来实现实时温度显示，通过直接访问JSON数据的情况下，可以在 不需要刷新页面的情况下直接读取数据。</p>
+<h2 id="数据可视化框架选择"><span class="header-section-number">2.8</span> 数据可视化框架选择</h2>
+<p><strong>HighCharts</strong></p>
+<p>Highcharts 是一个用纯JavaScript编写的一个图表库， 能够很简单便捷的在 web网站或是web应用程序添加有交互性的图表，并且免费提供给个人学习、个人 网站和非商业用途使用。HighCharts支持的图表类型有曲线图、区域图、柱状图、 饼状图、散状点图和综合图表。</p>
+<h1 id="本地系统设计"><span class="header-section-number">3</span> 本地系统设计</h1>
+<h2 id="硬件设计"><span class="header-section-number">3.1</span> 硬件设计</h2>
+<h3 id="raspberry-pi"><span class="header-section-number">3.1.1</span> Raspberry Pi</h3>
+<p>Raspberry Pi开发板在这里主要工作有:</p>
+<ul>
+<li>与Arduino开发板，通过USB线连接。</li>
+<li>可以直接运行Debian GNU/Linux系统，通过网线上网，并从服务器中读取数据，</li>
+<li>通过Python语言接收、发送串口数据。</li>
+</ul>
+<h2 id="软件设计"><span class="header-section-number">3.2</span> 软件设计</h2>
+<p>在本地我们需要解决的问题可以如下描述，Arduino开发板从串口一直读取数据， Raspberry Pi从URL中验证数据、解析数据，再将数据发送到串口,我们可以用下面的伪代码来描述:</p>
+<pre class="sourceCode ada"><code class="sourceCode ada">arduino:
+        <span class="kw">begin</span>
+           repeat
+             wait(serial.open)
+               data:=receive_data()
+               led_status:=parse(data)
+               <span class="kw">if</span> led_status
+                  oped(led.id)
+           util false
+        <span class="kw">end</span>
+raspberrypi:
+        <span class="kw">begin</span>
+           repeat
+             json:=get_data(url)
+             <span class="kw">if</span> validate(json).success()
+               data:=parse（json)
+               serial.write(data)
+           util false
+        <span class="kw">end</span></code></pre>
+<h2 id="arduino-1"><span class="header-section-number">3.3</span> Arduino</h2>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/ArduinoUnoSmd.png" title="Arduino开发板" alt="Arduino开发板" /><p class="caption">Arduino开发板</p>
+</div>
+<p>Arduino UNO用的处微控制器是Atmega328，它与Arduino芯片的对应关系如下所示</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/atmega328w.png" title="Arduino管脚Atmega328对应图" alt="Arduino管脚Atmega328对应图" /><p class="caption">Arduino管脚Atmega328对应图</p>
+</div>
+<p>其主要参数如下所示:</p>
+<p>高性能,低功耗的AVR®8位微控制器•先进的RISC结构</p>
+<ul>
+<li>131条指令</li>
+<li>绝大多数为单时钟周期执行</li>
+<li>32个通用工作寄存器</li>
+<li>全静态工作</li>
+<li>高达20 MIPS的吞吐量,在20 MHz</li>
+<li>片上2周期乘法器高耐用性非易失性内存段</li>
+<li>8K字节的系统内可编程Flash存储器（ATMEGA88PA中）</li>
+<li>512字节的EEPROM（ATMEGA88PA）</li>
+<li>1K字节的片内SRAM（ATMEGA88PA）</li>
+<li>写/擦除次数：10,000次,000 EEPROM</li>
+<li>数据保存：20年在85°C/100年在25°C(1)</li>
+<li>可选的引导具有独立锁定位代码段在系统编程的片上引导程序真正的同时读</li>
+<li>写操作</li>
+<li>编程软件安全锁外设特点</li>
+<li>两个8位定时器/计数器具有独立预分频器和比较模式</li>
+<li>1个16位定时器/计数器具有独立预分频器,比较模式,并捕获模式</li>
+<li>具有独立振荡器的实时计数器</li>
+<li>6个PWM通道</li>
+<li>8通道10位ADC在TQFP和QFN / MLF封装温度测量</li>
+<li>6通道10位ADC引脚PDIP封装温度测量</li>
+<li>可编程的串行USART</li>
+<li>主/从机模式的SPI串行接口</li>
+<li>面向字节的两线串行接口（飞利浦公司的I2C兼容）</li>
+<li>独立的片内振荡器的可编程看门狗定时器</li>
+<li>片上模拟比较器</li>
+<li>中断和唤醒引脚电平变化单片机的特殊功能</li>
+<li>上电复位以及可编程的掉电检测</li>
+<li>内部校准振荡器</li>
+<li>外部和内部中断源</li>
+<li>6种睡眠模式：空闲模式,ADC噪声抑制,省电,掉电,待机,扩展Standby</li>
+</ul>
+<p>Arduino部分硬件程序如下所示，主要负责从串口中读入数据，并用led灯显示。 程序流程图如下所示</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/arduino.png" title="Arduino程序流程图" alt="Arduino程序流程图" /><p class="caption">Arduino程序流程图</p>
+</div>
+<p>系统主要的功能在于接收和传递数据。</p>
+<p>代码如下所示</p>
+<pre><code>void setup() {
+  Serial.begin(9600);
+  pinMode(13,OUTPUT);
+  pinMode(12,OUTPUT);
+}
+
+int serialData;
+void loop() {
+  String inString = &quot;&quot;;
+  while (Serial.available()&gt; 0)
+  {
+    int inChar = Serial.read();
+    if (isDigit(inChar)) {
+      inString += (char)inChar;
+    }
+    serialData=inString.toInt();
+    Serial.print(serialData);
+  }
+  if(serialData==1){
+    digitalWrite(12,LOW);
+    digitalWrite(13,HIGH);
+  }else{
+    digitalWrite(13,LOW);
+    digitalWrite(12,HIGH);
+   }</code></pre>
+<h2 id="raspberry-pi-1"><span class="header-section-number">3.4</span> Raspberry Pi</h2>
+<p>Raspberrypi如下所示的开发板</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/raspberrypi.png" title="Raspberry Pi开发板" alt="Raspberry Pi开发板" /><p class="caption">Raspberry Pi开发板</p>
+</div>
+<pre><code>        begin
+           repeat
+             json:=get_data(url)
+             if validate(json).success
+               data:=parse（json)
+               if data:==1
+                  serial_send(&quot;1&quot;)
+                else
+                  serial_send(&quot;0&quot;)
+              else
+                  output &quot;error&quot;
+           util false
+        end</code></pre>
+<h4 id="raspberry-pi程序"><span class="header-section-number">3.4.0.1</span> Raspberry Pi程序</h4>
+<p>其程序流程图如下所示:</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/python.png" title="Python 程序流程图" alt="Python程序流程图" /><p class="caption">Python程序流程图</p>
+</div>
+<h3 id="获取数据"><span class="header-section-number">3.4.1</span> 获取数据</h3>
+<p>Raspberry Pi端的主要功能便是将数据从 <a href="http://www.xianuniversity.com/athome/1">http://www.xianuniversity.com/athome/1</a> [^domain] 下 载下来并解析数据，再将数据用串口通讯的方式传递给Arduino。</p>
+<p>在Debian系统中，自带了python语言，python有良好的动态特性，同时有强大的自建库功能。 在python语言中可以用自带的urllib2库打开并下载网页的内容，将上述网址中 的JSON数据下载到本地。</p>
+<p>数据采用的是JSON格式，具有良好的可读性，同时方便于解析，相比于XML格式 又可以减少文件大小，</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">    [{
+        <span class="st">&quot;id&quot;</span>: <span class="dv">1</span>,
+        <span class="st">&quot;temperature&quot;</span>: <span class="dv">10</span>,
+        <span class="st">&quot;sensors1&quot;</span>: <span class="dv">22</span>,
+        <span class="st">&quot;sensors2&quot;</span>: <span class="dv">11</span>,
+        <span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>
+   }]</code></pre>
+<p>JSON的 将上述中的数据取出来后，通过python中的json库，将json数据转换为数组，将 取出数据中的第一个结果中的id的值。</p>
+<h3 id="串口通讯"><span class="header-section-number">3.4.2</span> 串口通讯</h3>
+<p>由于python中没有用于串口通讯的库，需要寻找并安装这样一个库，这里就用到 了pip这样的包管理工具——用于管理python的库。</p>
+<h4 id="安装pyserial"><span class="header-section-number">3.4.2.1</span> 安装pyserial</h4>
+<p>pip常用命令有install、uninstall以及search，install顾名思义就是安装，安 装pip库如下所示<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>，如后代码如下所示，$<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>开头:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">    <span class="ot">$pip</span> <span class="kw">install</span> pyserial</code></pre>
+<h3 id="python串口通讯"><span class="header-section-number">3.4.3</span> python串口通讯</h3>
+<p>在Linux内核的系统<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>中虚拟串口用的节点是ttyACM，位于/dev目录下。</p>
+<pre class="sourceCode python"><code class="sourceCode python">    serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)</code></pre>
+<p>串行接口是一种可以将接受来自CPU的并行数据字符转换为连续的串行数据流发送出去， 同时可将接受的串行数据流转换为并行的数据字符供给CPU的器件。一般完成这种功能 的电路，我们称为串行接口电路。</p>
+<p>便是打开这个设备，以9600的速率传输数据。</p>
+<pre><code>import json
+import urllib2
+import serial
+import time
+
+url=&quot;http://www.xianuniversity.com/athome/1&quot;
+
+while 1:
+    try:
+        date=urllib2.urlopen(url)
+        result=json.load(date)
+        status=result[0][&quot;led1&quot;]
+        ser=serial.Serial(&quot;/dev/ttyACM0&quot;,9600)
+        if status==1 :
+            ser.write(&quot;1&quot;)
+        elif status==0:
+            ser.write(&quot;0&quot;)
+        time.sleep(1)
+    except urllib2.URLError:
+        print &quot;Bad URL or timeout&quot;</code></pre>
+<p>系统还需要对上面的数据进行处理，只拿其中的结果</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/origin.png" title="python处理完后的结果" alt="python处理完后的结果" /><p class="caption">python处理完后的结果</p>
+</div>
+<p>当改变led的状态后，便可以得到下面的结果</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/change.png" title="改变状态后的结果" alt="改变状态后的结果" /><p class="caption">改变状态后的结果</p>
+</div>
+<h1 id="网络系统设计"><span class="header-section-number">4</span> 网络系统设计</h1>
+<h2 id="网络服务程序设计"><span class="header-section-number">4.1</span> 网络服务程序设计</h2>
+<p>对于物联网系统网络的核心是构建一个RESTful服务，而这构建RESTful的核心便 是基础的HTPP协议。基础的HTTP协议便是:GET、POST、PUT、DELETE。它们分别 对应四种基本操作：GET用来获取资源，POST用来新建资源（也可以用于更新资 源），PUT用来更新资源，DELETE用来删除资源。</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/restful.png" title="restful" alt="restful" /><p class="caption">restful</p>
+</div>
+<p>简要的来说，一个GET动作便是在打开一个网页的时候，看到的内容，便是GET到 的资源。而在获取取到网页的内容之前，会有一个POST动作到所要打开的网站的 服务器。</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/getrequest.png" title="Get Request" alt="Get Request" /><p class="caption">Get Request</p>
+</div>
+<h3 id="基本的rest服务"><span class="header-section-number">4.1.1</span> 基本的REST服务</h3>
+<p>REST服务实际上是充当着网络与设备的传输介质，构建一个REST服务也就相当于 获取一个URL下的某个数据</p>
+<pre><code>$curl http://www.xianuniversity.com/athome/1</code></pre>
+<p>返回结果如下所示</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/jsondata.png" title="JSON结果返回图" alt="JSON结果返回图" /><p class="caption">JSON结果返回图</p>
+</div>
+<p>假设有这样一个资源用于呈现led的状态，即 http://localhost/status/1 <a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>，获取这个LED的状态便发出了类似下面这样的请求:</p>
+<pre class="sourceCode python"><code class="sourceCode python">    GET /status/<span class="dv">1</span> HTTP/<span class="fl">1.1</span>
+    Host:localhost
+    Cotent-Type:application/json;charset=UTF<span class="dv">-8</span></code></pre>
+<p>在客户端发出上述的请求的时候，服务端需要对其做出响应，构造出一个下面的结果</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">     [{
+       <span class="st">&quot;status&quot;</span>:<span class="dv">1</span>
+     }]</code></pre>
+<p>1代表给予灯的状态应该是亮的,在那之后需要做的便是将其通过串口发送给单片 机进行处理，对应于一个关机的结果便是</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">     [{
+       <span class="st">&quot;status&quot;</span>:<span class="dv">0</span>
+     }]</code></pre>
+<p>这样就完成了基本的状态设计。而对于系统最后需要解析的数据的结果来说，还需要加入其他元素，</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">    [{
+        <span class="st">&quot;id&quot;</span>: <span class="dv">1</span>,
+        <span class="st">&quot;temperature&quot;</span>: <span class="dv">10</span>,
+        <span class="st">&quot;sensors1&quot;</span>: <span class="dv">22</span>,
+        <span class="st">&quot;sensors2&quot;</span>: <span class="dv">11</span>,
+        <span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>
+   }]</code></pre>
+<p>这里也涉及到了json数据结构的设计，可以将上面的结果设计为</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">  [{
+      <span class="st">&quot;id&quot;</span>: <span class="dv">1</span>,
+      <span class="st">&quot;temperature&quot;</span>: <span class="dv">10</span>,
+      <span class="st">&quot;sensors&quot;</span>:[{
+        <span class="st">&quot;sensor&quot;</span>:<span class="dv">22</span>,
+        <span class="st">&quot;sensor&quot;</span>:<span class="dv">11</span>,
+        }],
+      <span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>
+  }]</code></pre>
+<p>这种具有更好的可读性，然而在对于网速速度要求高的情况下，会表现得不好， 同时会造成额外的系统开销。对于这样一个需要不断读取数据的系统来说，采用 单层结构的json数据会更具有优势。</p>
+<p>在设计这样一个接口的时候，需要考虑客户端可能需要获取全部的数据</p>
+<pre class="sourceCode python"><code class="sourceCode python">    GET /status HTTP/<span class="fl">1.1</span>
+    Host:localhost
+    Cotent-Type:application/json;charset=UTF<span class="dv">-8</span></code></pre>
+<p>设计好这样的接口有助于显示在系统的前台，而这也是无法在物联网系统中产生 统一协议的原因之一，复杂的接口无法用于简单功能的场景。</p>
+<p>下面是一个简单的POST请求的示例，系统需要能接收POST请求，并将请求存储到数据库</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">    <span class="kw">POST</span> / HTTP/1.1
+    <span class="kw">Host</span>:localhost
+    <span class="kw">User-Agent</span>: Go 1.1 package http
+    <span class="kw">Content-Length</span>: 45
+    <span class="kw">Authorization</span>: 123456
+    <span class="kw">Accept-Encoding</span>: gzip</code></pre>
+<p>一个PUT动作但是我们更新资源，就好比是我们创建一个日志或者一个说说一样。 DELETE动作，便是删除动作了，而这也是一个物联网系统服务所需要的。</p>
+<h2 id="系统前台设计"><span class="header-section-number">4.2</span> 系统前台设计</h2>
+<p>在对系统前台设计的时候，在考虑不同移动设备的兼容的同时，也需要保持一个 良好可用的结构。而系统在前台的主要功能是在于控制物体的状态、显示一些数 值的变化，控制物体状态的关键在于如何将数据由前台POST到后台，在网页端可 以用POST，而在移动端则可以用JSON API。</p>
+<h3 id="ajax"><span class="header-section-number">4.2.1</span> Ajax</h3>
+<ul>
+<li>AJAX : Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。</li>
+<li>AJAX 不是新的编程语言，而是一种使用现有标准的新方法。</li>
+<li>AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下。</li>
+</ul>
+<p>剥离后的Ajax部分代码如下所示，主要用的是 jQuery 框架的 getJSON 来实现的</p>
+<p>begin data:=get_data(url) if data.get_success temperature:=data.push(temperature)</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/edit.png" title="控制界面" alt="控制界面" /><p class="caption">控制界面</p>
+</div>
+<p>当按下Change Status按钮时，系统发生了如下变化</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/getpost.png" title="GET POST数据" alt="GET POST数据" /><p class="caption">GET POST数据</p>
+</div>
+<p>系统会先向服务器发送数据，也就是POST请求，在请求结束后，系统将会刷新页面，也就是GET请求。</p>
+<p>系统会不断从后台获取数据结果，如下所示</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/request.png" title="后台获取数据" alt="后台获取数据" /><p class="caption">后台获取数据</p>
+</div>
+<p>在Javascript语言中有函数库可以直接用于获取后台数据——getJSON，可以从指定的URL中获取结果。</p>
+<ul>
+<li>url 用于提供 json 数据的地址页</li>
+<li>data(Optional) 用于传送到服务器的键值对</li>
+<li>callback(Optional) 回调函数，json 数据请求成功后的处理函数</li>
+</ul>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">    <span class="kw">var</span> dataLength = [];
+    <span class="kw">function</span> <span class="fu">drawTemp</span>() {
+        <span class="kw">var</span> zero = [];
+        <span class="ot">$</span>.<span class="fu">getJSON</span>(<span class="st">&#39;/athome/&#39;</span>, <span class="kw">function</span>(json) {
+            <span class="kw">var</span> items = [];
+            <span class="ot">dataLength</span>.<span class="fu">push</span>(<span class="ot">json</span>.<span class="fu">length</span>);
+            <span class="ot">$</span>.<span class="fu">each</span>(json, <span class="kw">function</span>(key, val) {
+                <span class="ot">zero</span>.<span class="fu">push</span>(<span class="ot">val</span>.<span class="fu">temperature</span>);
+            });
+    };</code></pre>
+<p>实际上，上面的程序只是从 /athome/ 下面获取数据，再将数据堆到数组里面，再 把这部分放到图形中。</p>
+<h3 id="highcharts"><span class="header-section-number">4.2.2</span> Highcharts</h3>
+<p>Highcharts有以下的特点</p>
+<ul>
+<li>兼容性：兼容当今所有的浏览器，包括 iPhone、IE 和火狐等等；</li>
+<li>对个人用户完全免费；</li>
+<li>纯JS，无BS；</li>
+<li>支持大部分的图表类型：直线图，曲线图、区域图、区域曲线图、柱状图、饼装图、散布图；</li>
+<li>跨语言：不管是 PHP、Asp.net 还是 Java 都可以使用，它只需要三个文件：一个是Highcharts 的核心文件 highcharts.js，还有 a canvas emulator for IE 和 Jquery类库或者 MooTools 类库；</li>
+<li>提示功能：鼠标移动到图表的某一点上有提示信息；</li>
+<li>放大功能：选中图表部分放大，近距离观察图表；</li>
+<li>易用性：无需要特殊的开发技能，只需要设置一下选项就可以制作适合自己的图表；</li>
+<li>时间轴：可以精确到毫秒;</li>
+</ul>
+<p>在这里只需将需要处理的数据存储到数组中，便可以将其渲染成为图形，下面的温度走势图便是基于Highcharts的结果</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/chart.png" title="温度走势图" alt="chart" /><p class="caption">chart</p>
+</div>
+<h2 id="系统后台设计"><span class="header-section-number">4.3</span> 系统后台设计</h2>
+<h3 id="数据库设计"><span class="header-section-number">4.3.1</span> 数据库设计</h3>
+<p>系统使用Laravel框架作为系统底层，需要配置其运行环境<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>，创建数 据库<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>，对应于上面生成的最后的JSON数据，创建对应的数据库:</p>
+<p>系统数据库结构如下所示</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">表名</th>
+<th align="left">数据类型</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">id</td>
+<td align="left">整数</td>
+<td align="left">ID</td>
+</tr>
+<tr class="even">
+<td align="left">temperature</td>
+<td align="left">浮点数</td>
+<td align="left">温度</td>
+</tr>
+<tr class="odd">
+<td align="left">sensors1</td>
+<td align="left">浮点数</td>
+<td align="left">传感器1</td>
+</tr>
+<tr class="even">
+<td align="left">sensors2</td>
+<td align="left">浮点数</td>
+<td align="left">传感器2</td>
+</tr>
+<tr class="odd">
+<td align="left">led1</td>
+<td align="left">布尔型</td>
+<td align="left">led状态</td>
+</tr>
+</tbody>
+</table>
+<p>对应于数据库，其相应的php代码如下所示</p>
+<pre class="sourceCode php"><code class="sourceCode php">        <span class="kw">public</span> <span class="kw">function</span> up<span class="ot">()</span>
+        {
+            Schema::create<span class="ot">(</span><span class="st">&#39;athomes&#39;</span><span class="ot">,</span> <span class="kw">function</span><span class="ot">(</span>Blueprint <span class="kw">$table</span><span class="ot">)</span>
+            {
+                <span class="kw">$table</span>---&gt;increments<span class="ot">(</span><span class="st">&#39;id&#39;</span><span class="ot">);</span>
+                <span class="kw">$table</span>-&gt;float<span class="ot">(</span><span class="st">&#39;temperature&#39;</span><span class="ot">);</span>
+                <span class="kw">$table</span>-&gt;float<span class="ot">(</span><span class="st">&#39;sensors1&#39;</span><span class="ot">);</span>
+                <span class="kw">$table</span>-&gt;float<span class="ot">(</span><span class="st">&#39;sensors2&#39;</span><span class="ot">);</span>
+                <span class="kw">$table</span>-&gt;boolean<span class="ot">(</span><span class="st">&#39;led1&#39;</span><span class="ot">);</span>
+                <span class="kw">$table</span>-&gt;timestamps<span class="ot">();</span>
+            }<span class="ot">);</span>
+        }</code></pre>
+<p>当POST数据的时候，便是将数据存往数据库，而GET的时候则是从数据库中拿出 数据再渲染给浏览器，GET、PUT、DELETE、POST便是对就于数据库的Create、Refresh、Update、Delete</p>
+<p>系统使用MySQL作为数据库，开始的时候需要创建数据库，在数据库中执行</p>
+<pre><code>CREATE DATABASE IF NOT EXISTS iot default charset utf8 COLLATE utf8_general_ci;</code></pre>
+<p>用于创建一个athomes数据库，同时将PHP与数据库配置好</p>
+<pre class="sourceCode php"><code class="sourceCode php"><span class="st">&#39;mysql&#39;</span> =&gt; <span class="fu">array</span><span class="ot">(</span>
+  <span class="st">&#39;driver&#39;</span> =&gt; <span class="st">&#39;mysql&#39;</span><span class="ot">,</span>
+  <span class="st">&#39;host&#39;</span> =&gt; <span class="st">&#39;localhost&#39;</span><span class="ot">,</span>
+  <span class="st">&#39;database&#39;</span> =&gt; <span class="st">&#39;iot&#39;</span><span class="ot">,</span>
+  <span class="st">&#39;username&#39;</span> =&gt; <span class="st">&#39;root&#39;</span><span class="ot">,</span>
+  <span class="st">&#39;password&#39;</span> =&gt; <span class="st">&#39; &#39;</span><span class="ot">,</span>
+  <span class="st">&#39;charset&#39;</span> =&gt; <span class="st">&#39;utf8&#39;</span><span class="ot">,</span>
+  <span class="st">&#39;collation&#39;</span> =&gt; <span class="st">&#39;utf8_unicode_ci&#39;</span><span class="ot">,</span>
+  <span class="st">&#39;prefix&#39;</span> =&gt; <span class="st">&#39;&#39;</span><span class="ot">,</span>
+<span class="ot">)</span></code></pre>
+<p>当用户在前台创建一个数据后，可以在MySQL的后台查看:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">id</th>
+<th align="left">temperature</th>
+<th align="left">sensors1</th>
+<th align="left">sensors2</th>
+<th align="left">led1</th>
+<th align="left">created_at</th>
+<th align="left">updated_at</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">19.80</td>
+<td align="left">22.20</td>
+<td align="left">7.50</td>
+<td align="left">0</td>
+<td align="left">2013-12-31 07:03:59</td>
+<td align="left">2013-12-31 07:03:59</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">18.80</td>
+<td align="left">22.00</td>
+<td align="left">7.60</td>
+<td align="left">0</td>
+<td align="left">2013-12-31 07:03:59</td>
+<td align="left">2013-12-31 07:03:59</td>
+</tr>
+</tbody>
+</table>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>全称单片微型计算机（英语：Single-Chip Microcomputer）<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Representational State Transfer<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>JavaScript Object Notation<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>包括C, C++, C#, Java, JavaScript, Perl, Python等<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>eXtensible Markup Language，简称: XML<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>PHP：Hypertext Preprocessor，即超文本预处理器<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>Asynchronous JavaScript and XML（异步JavaScript和XML)<a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>在Windows系统中需要先安装pip，再安装pyserial。<a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>指在*nix系统的终端中执行的命令。<a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>在Windows系统上，只需要将/dev/ttyACM0改为对应的com口。 [getjson]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/getjson.png “python返回json数据” [python返回json数据][getjson]<a href="#fnref10">↩</a></p></li>
+<li id="fn11"><p>在本地进行web开发时，浏览器可以识别localhost，配置好Hosts时相当于127.0.0.1。<a href="#fnref11">↩</a></p></li>
+<li id="fn12"><p>这里用的是Linux+Nginx+MySQL+PHP。<a href="#fnref12">↩</a></p></li>
+<li id="fn13"><p>创建数据的代码:CREATE DATABASE IF NOT EXISTS bbs default charset utf8 COLLATE utf8_general_ci;<a href="#fnref13">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>
