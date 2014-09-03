@@ -130,9 +130,41 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#你所没有深入的http"><span class="toc-section-number">9.1</span> 你所没有深入的HTTP</a></li>
 <li><a href="#rest"><span class="toc-section-number">9.2</span> REST</a></li>
 </ul></li>
-<li><a href="#创建rest服务"><span class="toc-section-number">10</span> 创建REST服务</a></li>
-<li><a href="#restful-evertywhere"><span class="toc-section-number">11</span> RESTful Evertywhere</a></li>
-<li><a href="#前端显示"><span class="toc-section-number">12</span> 前端显示</a></li>
+<li><a href="#创建rest服务"><span class="toc-section-number">10</span> 创建REST服务</a><ul>
+<li><a href="#为什么是-laravel"><span class="toc-section-number">10.0.1</span> 为什么是 Laravel</a></li>
+<li><a href="#安装-laravel"><span class="toc-section-number">10.1</span> 安装 Laravel</a></li>
+<li><a href="#配置mysql"><span class="toc-section-number">10.2</span> 配置MySQL</a></li>
+<li><a href="#数据库迁移"><span class="toc-section-number">10.3</span> 数据库迁移</a><ul>
+<li><a href="#创建表"><span class="toc-section-number">10.3.1</span> 创建表</a></li>
+<li><a href="#数据库迁移-1"><span class="toc-section-number">10.3.2</span> 数据库迁移</a></li>
+</ul></li>
+<li><a href="#创建restful"><span class="toc-section-number">10.4</span> 创建RESTful</a><ul>
+<li><a href="#laravel-resources"><span class="toc-section-number">10.4.1</span> Laravel Resources</a></li>
+</ul></li>
+<li><a href="#修改-create"><span class="toc-section-number">10.5</span> 修改 Create()</a></li>
+<li><a href="#创建表单"><span class="toc-section-number">10.6</span> 创建表单</a><ul>
+<li><a href="#创建表单之前"><span class="toc-section-number">10.6.1</span> 创建表单之前</a></li>
+<li><a href="#创建表单-1"><span class="toc-section-number">10.6.2</span> 创建表单</a></li>
+</ul></li>
+<li><a href="#编辑-edit"><span class="toc-section-number">10.7</span> 编辑 edit</a></li>
+</ul></li>
+<li><a href="#restful-evertywhere"><span class="toc-section-number">11</span> RESTful Evertywhere</a><ul>
+<li><a href="#javascript与ajax"><span class="toc-section-number">11.1</span> Javascript与ajax</a><ul>
+<li><a href="#jquery"><span class="toc-section-number">11.1.1</span> jQuery</a></li>
+</ul></li>
+<li><a href="#java与json"><span class="toc-section-number">11.2</span> Java与json</a><ul>
+<li><a href="#android"><span class="toc-section-number">11.2.1</span> Android</a></li>
+</ul></li>
+<li><a href="#python与json"><span class="toc-section-number">11.3</span> Python与json</a><ul>
+<li><a href="#request"><span class="toc-section-number">11.3.1</span> request</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#前端显示"><span class="toc-section-number">12</span> 前端显示</a><ul>
+<li><a href="#jquery-mobile"><span class="toc-section-number">12.1</span> jQuery Mobile</a></li>
+<li><a href="#bootstrap"><span class="toc-section-number">12.2</span> Bootstrap</a></li>
+<li><a href="#库与车轮子"><span class="toc-section-number">12.3</span> 库与车轮子</a></li>
+<li><a href="#网站前台显示"><span class="toc-section-number">12.4</span> 网站前台显示</a></li>
+</ul></li>
 <li><a href="#构建基于coap协议的物联网系统"><span class="toc-section-number">13</span> 构建基于CoAP协议的物联网系统</a><ul>
 <li><a href="#coap简介"><span class="toc-section-number">13.1</span> CoAP简介</a></li>
 <li><a href="#coap-命令行工具"><span class="toc-section-number">13.2</span> CoAP 命令行工具</a><ul>
@@ -1170,8 +1202,527 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <h2 id="rest"><span class="header-section-number">9.2</span> REST</h2>
 <p>REST[^rest] 从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转移。</p>
 <h1 id="创建rest服务"><span class="header-section-number">10</span> 创建REST服务</h1>
+<h3 id="为什么是-laravel"><span class="header-section-number">10.0.1</span> 为什么是 Laravel</h3>
+<p>只是因为个人喜爱，你也可以用 Ruby On Rails 来搭建这样一个功能，或者是 Java。只不过 PHP 在我的服务器上运行得挺不错的，而且我又不需要重新去写配置那些配置。 同时 Laravel 可以简单的开发我们所需要的功能，换句话说他是 PHP 世界的 Ruby On Rails。</p>
+<p>这里不会再重述之前的问题，这里只是将需要的步骤一个个写下来，然后丢到这里好好说一下。至于 RESTful 是什么，前面已经介绍了，就不再重复了。那么下面，我们就用 Laravel 来搭建一个平台给物联网用的。</p>
+<h2 id="安装-laravel"><span class="header-section-number">10.1</span> 安装 Laravel</h2>
+<p>这个就比较简单了，不过在那之前你要有 gi t以及安装了 php 环境，这个在 linux 上面比较好实现，可以用 Raspberry Pi 或者是你的电脑来做这个，不一定用用上你的服务器。</p>
+<pre><code>$ git clone https://github.com/laravel/laravel‎</code></pre>
+<p>先 clone 这个 git，如果你没有安装好 PHP，请安装好，and go on。</p>
+<pre><code>$ cd laravel</code></pre>
+<p>laravel 用到了 php 的包管理工具 composer，于是我们还需要用到 composer，与 Laravel 相比也算是一个优雅的工具。</p>
+<pre><code>$ curl -sS https://getcomposer.org/installer | php</code></pre>
+<p>这里推荐的是 linux 系统，如果你是 *nix 都是可以的(ps:mac os x属于unix分支），除了 windows，所以如果是 windows，请直接下载</p>
+<p><a href="https://getcomposer.org/Composer-Setup.exe">Composer-Setup</a></p>
+<p>然后让我们安装所需要的那些包</p>
+<pre><code>$ php composer.phar install</code></pre>
+<p>当然这里用的是比较通用的，如果你是 *nix，有支持可以直接</p>
+<pre><code>$ composer install</code></pre>
+<h2 id="配置mysql"><span class="header-section-number">10.2</span> 配置MySQL</h2>
+<p>这里并不会列举 MySQL 的安装方法，如果你是 openSUSE，可以</p>
+<pre><code>$ zypper install mysql</code></pre>
+<p>这个也可以，不过最近我尽量到迁移到 MariaDB 了。</p>
+<pre><code>$ zypper install mariadb</code></pre>
+<p>当然，最简单的方法是直接上官网。这里说的是修改 database.php</p>
+<pre><code>app/config/database.php</code></pre>
+<p>要修改的就是这个</p>
+<pre><code>&#39;mysql&#39; =&gt; array(
+    &#39;driver&#39;    =&gt; &#39;mysql&#39;,
+    &#39;host&#39;      =&gt; &#39;localhost&#39;,
+    &#39;database&#39;  =&gt; &#39;iot&#39;,
+    &#39;username&#39;  =&gt; &#39;root&#39;,
+    &#39;password&#39;  =&gt; &#39;940217&#39;,
+    &#39;charset&#39;   =&gt; &#39;utf8&#39;,
+    &#39;collation&#39; =&gt; &#39;utf8_unicode_ci&#39;,
+    &#39;prefix&#39;    =&gt; &#39;&#39;,
+),</code></pre>
+<p>如果你已经有phpmyadmin，似乎对你来说已经很简单了，如果没有的话，就直接用</p>
+<pre><code>$ mysql -uroot -p</code></pre>
+<p>来创建一个新的</p>
+<pre><code>CREATE DATABASE IF NOT EXISTS iot default charset utf8 COLLATE utf8_general_ci;</code></pre>
+<p>数据库的目的在于存储数据等等的闲话这里就不多说了，创建一个RESTful的目的在于产生下面的JSON格式数据，以便于我们在Android、Java、Python、jQuery等语言框架或者平台上可以调用，最主要的是可以直接用Ajax来产生更炫目的效果。</p>
+<pre><code>{
+id: 1,
+temperature: 14,
+sensors1: 12,
+sensors2: 12,
+led1: 0
+}</code></pre>
+<h2 id="数据库迁移"><span class="header-section-number">10.3</span> 数据库迁移</h2>
+<p>这个名字是源自于Ruby On Rails在那时候的印象，不直接使用MySQL的目的在于让我们可以专注于过程。</p>
+<h3 id="创建表"><span class="header-section-number">10.3.1</span> 创建表</h3>
+<p>表的概念，类似于在Excel中的表，如果你真实不懂数据库。 让我们创建一个athomes的表，为什么是athomes，因为以前在写android程序的时候就叫的是athome，忽略掉这些次要的因素吧。</p>
+<pre><code>$ php artisan migrate:make create_athomes_table</code></pre>
+<p>打开 app/database/migrations/<strong><em>create_athomes_table.php这里的</em></strong>是由日期和某些东西组成的，修改生成的代码为下面。</p>
+<pre><code>use Illuminate\Database\Schema\Blueprint;  
+use Illuminate\Database\Migrations\Migration;  
+
+class CreateAthomesTable extends Migration {  
+
+    public function up()  
+    {  
+        Schema::create(&#39;athomes&#39;, function(Blueprint $table)  
+        {  
+            $table---&gt;increments(&#39;id&#39;);  
+            $table-&gt;float(&#39;temperature&#39;);  
+            $table-&gt;float(&#39;sensors1&#39;);  
+            $table-&gt;float(&#39;sensors2&#39;);  
+            $table-&gt;boolean(&#39;led1&#39;);  
+            $table-&gt;timestamps();  
+        });  
+    }  
+
+    public function down()  
+    {  
+        Schema::drop(&#39;athomes&#39;);  
+    }  
+
+}</code></pre>
+<p>意思大致就是id是自加的，也就是我们在localhost/athome/{id}，当我们创建一个新的数据的时候，会自动加上去，最后一个timestamps批的是时间，会包含创建时间和修改时间。 剩下的temperature,sensors1,sensors2是小数，以及只有真和假的led1。</p>
+<h3 id="数据库迁移-1"><span class="header-section-number">10.3.2</span> 数据库迁移</h3>
+<p>我们只是写了我们需要的数据的格式而并没有丢到数据库里，</p>
+<pre><code>$ php artisan migrate</code></pre>
+<p>这个就是我们执行迁移的命令，如果你用phpmyadmin可以直接打开查看，没有的话，可以。</p>
+<pre><code>$ mysql -uroot -p
+
+use iot;
+select * from athomes;</code></pre>
+<p>就可以看到我们写的东西，那么接下来就是创建RESTful 服务了</p>
+<h2 id="创建restful"><span class="header-section-number">10.4</span> 创建RESTful</h2>
+<p>用下面的代码实现我们称之为Athomes控制器的创建</p>
+<pre><code>$ php artisan controller:make AthomesController  </code></pre>
+<p>就会在app/controllers下面生成下面的代码</p>
+<pre><code>class AthomesController extends \BaseController {  
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */  
+    public function index()  
+    {  
+        //  
+    }  
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */  
+    public function create()  
+    {  
+        //  
+    }  
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */  
+    public function store()  
+    {  
+        //  
+    }  
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */  
+    public function show($id)  
+    {  
+        //  
+    }  
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */  
+    public function edit($id)  
+    {  
+        //  
+    }  
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */  
+    public function update($id)  
+    {  
+        //  
+    }  
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */  
+    public function destroy($id)  
+    {  
+        //  
+    }  
+
+}</code></pre>
+<h3 id="laravel-resources"><span class="header-section-number">10.4.1</span> Laravel Resources</h3>
+<p>上面的代码过于沉重，请让我用 Ctrl+C 来带来点知识吧。</p>
+<p>所以我们只需要专注于创建 create, edit, show, destory 等等。好吧，你可能没有耐心了，但是在修改这个之前我们需要先在 app/model 加个 class</p>
+<pre><code>class Athomes extends Eloquent {  
+    protected $table = &#39;athomes&#39;;  
+}</code></pre>
+<p>如果你想要的只是控制器Athomes的代码的话。。</p>
+<pre><code>class AthomesController extends \BaseController {
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public $restful=true;
+
+    protected $athome;
+
+    public function __construct(Athomes $athome)
+    {
+        $this---&gt;athome = $athome ;
+     }
+
+    public function index()
+    {
+        $maxid=Athomes::all();
+        return Response::json($maxid);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        $maxid=Athomes::max(&#39;id&#39;);
+        return View::make(&#39;athome.create&#39;)-&gt;with(&#39;maxid&#39;,$maxid);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            &#39;led1&#39;=&gt;&#39;required&#39;,
+            &#39;sensors1&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
+            &#39;sensors2&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
+            &#39;temperature&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator-&gt;fails()) {
+            return Redirect::to(&#39;athome/create&#39;)
+                -&gt;withErrors($validator)
+                -&gt;withInput(Input::except(&#39;password&#39;));
+        } else {
+            // store
+            $nerd = new Athomes;
+            $nerd-&gt;sensors1       = Input::get(&#39;sensors1&#39;);
+            $nerd-&gt;sensors2       = Input::get(&#39;sensors2&#39;);
+            $nerd-&gt;temperature    = Input::get(&#39;temperature&#39;);
+            $nerd-&gt;led1           = Input::get(&#39;led1&#39;);
+            $nerd-&gt;save();
+
+            // redirect
+            Session::flash(&#39;message&#39;, &#39;Successfully created athome!&#39;);
+            return Redirect::to(&#39;athome&#39;);
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        $myid=Athomes::find($id);
+        $maxid=Athomes::where(&#39;id&#39;,&#39;=&#39;,$id)
+                        -&gt;select(&#39;id&#39;,&#39;temperature&#39;,&#39;sensors1&#39;,&#39;sensors2&#39;,&#39;led1&#39;)
+                        -&gt;get();
+        return Response::json($maxid);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        // get the nerd
+        $athome = Athomes::find($id);
+
+        // show the edit form and pass the nerd
+        return View::make(&#39;athome.edit&#39;)
+            -&gt;with(&#39;athome&#39;, $athome);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            &#39;led1&#39;=&gt;&#39;required|&#39;,
+            &#39;sensors1&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
+            &#39;sensors2&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
+            &#39;temperature&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator-&gt;fails()) {
+            return Redirect::to(&#39;athome/&#39; . $id . &#39;/edit&#39;)
+                -&gt;withErrors($validator);
+        } else {
+            // store
+            $nerd = Athomes::find($id);
+            $nerd-&gt;sensors1       = Input::get(&#39;sensors1&#39;);
+            $nerd-&gt;sensors2       = Input::get(&#39;sensors2&#39;);
+            $nerd-&gt;temperature    = Input::get(&#39;temperature&#39;);
+            $nerd-&gt;led1           = Input::get(&#39;led1&#39;);
+            $nerd-&gt;save();
+
+            // redirect
+            Session::flash(&#39;message&#39;, &#39;Successfully created athome!&#39;);
+            return Redirect::to(&#39;athome&#39;);
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        // delete
+        $athome = Athomes::find($id);
+        $athome-&gt;delete();
+        if(is_null($athome))
+        {
+             return Response::json(&#39;Todo not found&#39;, 404);
+        }
+        // redirect
+        Session::flash(&#39;message&#39;, &#39;Successfully deleted the nerd!&#39;);
+        return Redirect::to(&#39;athome&#39;);
+    }
+
+}</code></pre>
+<p>希望你能读懂，没有的话，关注下一节。</p>
+<p>下面这部分来自于之前的博客，这里就不多加论述了。 这个也就是我们要的模板，</p>
+<h2 id="修改-create"><span class="header-section-number">10.5</span> 修改 Create()</h2>
+<pre><code class="php">
+    public function create()
+    {
+        $maxid=Athomes::max('id');
+        return View::make('athome.create')->with('maxid',$maxid);
+    }
+</code></pre>
+
+
+<p>这里需要在app/views/创建一个athome里面创建一个create.blade.php，至于maxid，暂时还不需要，后面会用到show。如果只需要模板，可以简化为</p>
+<pre><code class="php">
+    public function create()
+    {
+        return View::make('athome.create');
+    }
+</code></pre>
+
+<p>这里只是对其中代码的进行一下说明。</p>
+<h2 id="创建表单"><span class="header-section-number">10.6</span> 创建表单</h2>
+<h3 id="创建表单之前"><span class="header-section-number">10.6.1</span> 创建表单之前</h3>
+<p>由于使用到了bootstrap以及bootstrap-select，记得添加css。</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap.min.css&#39;) ?&gt;&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap-select.min.css&#39;) ?&gt;&quot; /&gt;</code></pre>
+<p>以及javascript</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/jquery.min.js&#39;)?&gt;&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/bootstrap.min.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/bootstrap-select.min.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(&#39;.selectpicker&#39;).selectpicker();
+&lt;/script&gt;</code></pre>
+<h3 id="创建表单-1"><span class="header-section-number">10.6.2</span> 创建表单</h3>
+<p>这里用到的是之前提到的那个作者写下的，稍微修改了一下。</p>
+<pre><code>&lt;div class=&quot;row-fluid&quot;&gt;
+  {{ HTML::ul($errors-&gt;all()) }}
+  {{ Form::open(array(&#39;url&#39; =&gt; &#39;athome&#39;)) }}
+
+     &lt;div class=&quot;form-group&quot;&gt;
+          {{ Form::label(&#39;led1&#39;, &#39;开关1&#39;) }}
+          {{ Form::select(&#39;led1&#39;,array(&#39;关&#39;,&#39;开&#39;),$selected=NULL,array(&#39;class&#39;=&gt;&#39;selectpicker&#39;)) }}
+
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+          {{ Form::label(&#39;sensors1&#39;, &#39;sensors1&#39;) }}
+          {{ Form::text(&#39;sensors1&#39;, Input::old(&#39;sensors1&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+          {{ Form::label(&#39;sensors2&#39;, &#39;sensors2&#39;) }}
+          {{ Form::text(&#39;sensors2&#39;, Input::old(&#39;sensors2&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+          {{ Form::label(&#39;temperature&#39;, &#39;temperature&#39;) }}
+          {{ Form::text(&#39;temperature&#39;, Input::old(&#39;temperature&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
+      &lt;/div&gt;
+
+      {{ Form::submit(&#39;Create!&#39;, array(&#39;class&#39; =&gt; &#39;btn btn-primary&#39;)) }}
+
+  {{ Form::close() }}
+
+  &lt;/div&gt;</code></pre>
+<p>开关一开始打算用 checkbox，加上 bootstrap-switch 实现 ON OFF 弱弱地觉得还是没掌握好的节奏，所以最后用 select 来实现。</p>
+<p>还需要修改一下之前的 create()，添加一行</p>
+<pre><code>return Redirect::to(&#39;athome&#39;);</code></pre>
+<p>也就是添加完后，重定向到首页查看，最后例子给出的 create 如下</p>
+<pre><code>public function store()
+{
+    $rules = array(
+        &#39;led1&#39;=&gt;&#39;required&#39;,
+        &#39;sensors1&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
+        &#39;sensors2&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
+        &#39;temperature&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;
+    );
+    $validator = Validator::make(Input::all(), $rules);
+
+    if ($validator-&gt;fails()) {
+        return Redirect::to(&#39;athome/create&#39;)
+            -&gt;withErrors($validator);
+    } else {
+        // store
+        $nerd = new Athomes;
+        $nerd-&gt;sensors1       = Input::get(&#39;sensors1&#39;);
+        $nerd-&gt;sensors2       = Input::get(&#39;sensors2&#39;);
+        $nerd-&gt;temperature    = Input::get(&#39;temperature&#39;);
+        $nerd-&gt;led1            = Input::get(&#39;led1&#39;);
+        $nerd-&gt;save();
+
+        Session::flash(&#39;message&#39;, &#39;Successfully created athome!&#39;);
+        return Redirect::to(&#39;athome&#39;);
+    }
+}</code></pre>
+<h2 id="编辑-edit"><span class="header-section-number">10.7</span> 编辑 edit</h2>
+<p>完整的 blade 模板文件</p>
+<pre><code>&lt;!DOCTYPE html lang=&quot;zh-cn&quot;&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+        &lt;meta name=&quot;keywords&quot; content=&quot;&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+        &lt;title&gt;@yield(&#39;title&#39;)&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap.min.css&#39;) ?&gt;&quot; /&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap-select.min.css&#39;) ?&gt;&quot; /&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;?= url(&#39;css/justified-nav.css&#39;) ?&gt;&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+    &lt;/head&gt;
+&lt;body&gt;
+
+
+&lt;div class=&quot;container&quot;&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row-fluid&quot;&gt;
+
+&lt;h1&gt;Edit {{ $athome-&gt;id }}&lt;/h1&gt;
+
+&lt;!-- if there are creation errors, they will show here --&gt;
+{{ HTML::ul($errors-&gt;all()) }}
+
+{{ Form::model($athome, array(&#39;route&#39; =&gt; array(&#39;athome.update&#39;, $athome-&gt;id), &#39;method&#39; =&gt; &#39;PUT&#39;)) }}
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            {{ Form::label(&#39;led1&#39;, &#39;开关1&#39;) }}
+            {{ Form::select(&#39;led1&#39;,array(&#39;关&#39;,&#39;开&#39;),$selected=NULL,array(&#39;class&#39;=&gt;&#39;selectpicker&#39;)) }}
+
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            {{ Form::label(&#39;sensors1&#39;, &#39;传感器1&#39;) }}
+            {{ Form::text(&#39;sensors1&#39;, Input::old(&#39;sensors1&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            {{ Form::label(&#39;sensors2&#39;, &#39;传感器2&#39;) }}
+            {{ Form::text(&#39;sensors2&#39;, Input::old(&#39;sensors2&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            {{ Form::label(&#39;temperature&#39;, &#39;温度传感器&#39;) }}
+            {{ Form::text(&#39;temperature&#39;, Input::old(&#39;temperature&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
+        &lt;/div&gt;
+
+
+    {{ Form::submit(&#39;Edit the Nerd!&#39;, array(&#39;class&#39; =&gt; &#39;btn btn-primary&#39;)) }}
+
+{{ Form::close() }}
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&quot;footer&quot;&gt;
+        &lt;p&gt;© Company 2013&lt;/p&gt;
+      &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/jquery.min.js&#39;)?&gt;&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/bootstrap.min.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/bootstrap-select.min.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+ $(&#39;.selectpicker&#39;).selectpicker();
+ &lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/log.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>最后效果见:[http://b.phodal.com/][bphodal]</p>
+<p>代码位置:[http://b.phodal.com/js/app.js][appjs]</p>
 <h1 id="restful-evertywhere"><span class="header-section-number">11</span> RESTful Evertywhere</h1>
+<h2 id="javascript与ajax"><span class="header-section-number">11.1</span> Javascript与ajax</h2>
+<h3 id="jquery"><span class="header-section-number">11.1.1</span> jQuery</h3>
+<h2 id="java与json"><span class="header-section-number">11.2</span> Java与json</h2>
+<h3 id="android"><span class="header-section-number">11.2.1</span> Android</h3>
+<h2 id="python与json"><span class="header-section-number">11.3</span> Python与json</h2>
+<h3 id="request"><span class="header-section-number">11.3.1</span> request</h3>
 <h1 id="前端显示"><span class="header-section-number">12</span> 前端显示</h1>
+<h2 id="jquery-mobile"><span class="header-section-number">12.1</span> jQuery Mobile</h2>
+<blockquote>
+<p>jQuery Mobile是jQuery 在手机上和平板设备上的版本。jQuery Mobile不仅会给主流移动平台带来jQuery核心库，而且会发布一个完整统一的jQuery移动UI框架。支持全球主流的移动平台。jQuery Mobile开发团队说：能开发这个项目，我们非常兴奋。移动Web太需要一个跨浏览器的框架，让开发人员开发出真正的移动Web网站。</p>
+</blockquote>
+<h2 id="bootstrap"><span class="header-section-number">12.2</span> Bootstrap</h2>
+<h2 id="库与车轮子"><span class="header-section-number">12.3</span> 库与车轮子</h2>
+<h2 id="网站前台显示"><span class="header-section-number">12.4</span> 网站前台显示</h2>
 <h1 id="构建基于coap协议的物联网系统"><span class="header-section-number">13</span> 构建基于CoAP协议的物联网系统</h1>
 <h2 id="coap简介"><span class="header-section-number">13.1</span> CoAP简介</h2>
 <p>引自维基百科上的介绍，用的是谷歌翻译。。。</p>
