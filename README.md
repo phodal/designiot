@@ -1,7 +1,9 @@
 
 ##《[一步步搭建物联网系统](http://designiot.phodal.com/)》
 
-在线查看[一步步搭建物联网系统](http://designiot.phodal.com/)
+**在线查看**:[一步步搭建物联网系统](http://designiot.phodal.com/)
+
+**下载PDF版**:[http://designiot.phodal.com/build/iot.pdf] (http://designiot.phodal.com/build/iot.pdf)
 
 A Document by [Phodal](http://www.phodal.com) & IoT Future Group
 
