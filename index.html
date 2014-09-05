@@ -219,7 +219,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#coap-server端代码"><span class="toc-section-number">12.6.3</span> CoAP Server端代码</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#mqtt"><span class="toc-section-number">13</span> MQTT</a></li>
+<li><a href="#mqtt"><span class="toc-section-number">13</span> MQTT</a><ul>
+<li><a href="#nodejs-mqtt"><span class="toc-section-number">13.1</span> Nodejs MQTT</a></li>
+</ul></li>
 </ul>
 </div>
 <h2 id="前言"><span class="header-section-number">0.1</span> 前言</h2>
@@ -1801,11 +1803,51 @@ $(&#39;.selectpicker&#39;).selectpicker();
 <p>代码位置:[http://b.phodal.com/js/app.js][appjs]</p>
 <h1 id="restful-evertywhere"><span class="header-section-number">10</span> RESTful Evertywhere</h1>
 <h2 id="javascript与ajax"><span class="header-section-number">10.1</span> Javascript与ajax</h2>
+<blockquote>
+<p>AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。AJAX = 异步 JavaScript和XML（标准通用标记语言的子集）。</p>
+</blockquote>
 <h3 id="jquery"><span class="header-section-number">10.1.1</span> jQuery</h3>
+<blockquote>
+<p>Jquery是继prototype之后又一个优秀的Javascript框架。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器（IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+），jQuery2.0及后续版本将不再支持IE6/7/8浏览器。jQuery使用户能更方便地处理HTML（标准通用标记语言下的一个应用）、events、实现动画效果，并且方便地为网站提供AJAX交互。jQuery还有一个比较大的优势是，它的文档说明很全，而且各种应用也说得很详细，同时还有许多成熟的插件可供选择。jQuery能够使用户的html页面保持代码和html内容分离，也就是说，不用再在html里面插入一堆js来调用命令了，只需定义id即可。</p>
+</blockquote>
 <h2 id="java与json"><span class="header-section-number">10.2</span> Java与json</h2>
+<blockquote>
+<p>Gson（又称Google Gson）是Google公司发布的一个开放源代码的Java库，主要用途为串行化Java对象为JSON字符串，或反串行化JSON字符串成Java对象。</p>
+</blockquote>
 <h3 id="android"><span class="header-section-number">10.2.1</span> Android</h3>
 <h2 id="python与json"><span class="header-section-number">10.3</span> Python与json</h2>
+<blockquote>
+<p>使用pySerial可以使Python很好地在Windows/Linux/BSD上执行串口操作。</p>
+</blockquote>
+<p>使用urllib2库时</p>
+<pre><code>#!/usr/bin/env python
+import json
+import urllib2
+
+url=&quot;http://b.phodal.com/athome/1&quot;
+
+date=urllib2.urlopen(url)
+result=json.load(date)
+print result</code></pre>
 <h3 id="request"><span class="header-section-number">10.3.1</span> request</h3>
+<blockquote>
+<p>Python 标准库中的 urllib2 模块提供了你所需要的大多数 HTTP 功能，但是它的 API 烂出翔来了。它是为另一个时代、另一个互联网所创建的。它需要巨量的工作，甚至包括各种方法覆盖，来完成最简单的任务。</p>
+</blockquote>
+<p>GET请求</p>
+<pre><code>#!/usr/bin/env python
+import requests
+
+url = &quot;http://b.phodal.com/athome/1&quot;
+r = requests.get(url)
+print r.text</code></pre>
+<p>POST请求</p>
+<pre><code>#!/usr/bin/env python
+import requests
+
+url = &quot;http://b.phodal.com/athome/1&quot;
+data = {&quot;temperature&quot;: 19, &quot;sensors1&quot;: 32, &quot;sensors2&quot;: 7.5, &quot;led1&quot;: 0, &quot;method&quot;: &quot;PUT&quot;}
+r = requests.put(url, data)
+print r.text</code></pre>
 <h1 id="前端显示"><span class="header-section-number">11</span> 前端显示</h1>
 <h2 id="jquery-mobile"><span class="header-section-number">11.1</span> jQuery Mobile</h2>
 <blockquote>
@@ -2329,6 +2371,27 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 }</code></pre>
 <p>并且全部都显示出来，设计得真是有点不行，不过现在已经差不多了。</p>
 <h1 id="mqtt"><span class="header-section-number">13</span> MQTT</h1>
+<blockquote>
+<p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）是IBM开发的一个即时通讯协议，有可能成为物联网的重要组成部分。该协议支持所有平台，几乎可以把所有联网物品和外部连接起来，被用来当做传感器和致动器（比如通过Twitter让房屋联网）的通信协议。</p>
+</blockquote>
+<p>早在1999年，IBM的Andy Stanford-Clark博士以及Arcom公司ArlenNipper博士发明了MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）技术[1] 。据Andy Stanford-Clark博士称，MQTT将在今年和明年呈现爆炸式增长。</p>
+<p>MQTT的话题是我俩谈论开源物联网平台Pachube时提到的。Stanford-Clark认为Pachube很酷，其不足之处是不具备真正的推送功能。你需要不断不断轮询才能得到即时数据。这正是MQTT能够实现的，他提到了使用推送通信系统的石油管道检测系统。</p>
+<h2 id="nodejs-mqtt"><span class="header-section-number">13.1</span> Nodejs MQTT</h2>
+<blockquote>
+<p><a href="https://github.com/adamvr/MQTT.js/">mqtt.js</a> is a library for the MQTT protocol, written in JavaScript to be used in node.js.</p>
+</blockquote>
+<pre><code>var mqtt = require(&#39;mqtt&#39;)
+
+client = mqtt.createClient(1883, &#39;localhost&#39;);
+
+client.subscribe(&#39;presence&#39;);
+client.publish(&#39;presence&#39;, &#39;Hello mqtt&#39;);
+
+client.on(&#39;message&#39;, function (topic, message) {
+  console.log(message);
+});
+
+client.end();</code></pre>
 <div class="footnotes">
 <hr />
 <ol>
