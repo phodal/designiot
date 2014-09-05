@@ -5,7 +5,12 @@
 
 **下载PDF版**:[http://designiot.phodal.com/build/iot.pdf] (http://designiot.phodal.com/build/iot.pdf)
 
-A Document by [Phodal](http://www.phodal.com) & IoT Future Group
+作者名单 
+
+Github | Name
+|--------| ---------|
+[gmszone](https://github.com/gmszone) |[Phodal Huang](http://www.phodal.com)
+[Lboyve](https://github.com/Lboyve) | Fortware
 
 ##如何编辑
 
