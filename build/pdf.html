@@ -112,8 +112,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 <li><a href="#包管理"><span class="toc-section-number">5.4</span> 包管理</a></li>
 <li><a href="#极客的玩具"><span class="toc-section-number">5.5</span> 极客的玩具</a></li>
-<li><a href="#开发环境"><span class="toc-section-number">5.6</span> 开发环境</a></li>
-<li><a href="#基本函数"><span class="toc-section-number">5.7</span> 基本函数</a></li>
+<li><a href="#硬件熟悉"><span class="toc-section-number">5.6</span> 硬件熟悉</a></li>
+<li><a href="#开发环境"><span class="toc-section-number">5.7</span> 开发环境</a></li>
+<li><a href="#点亮一个led"><span class="toc-section-number">5.8</span> 点亮一个LED</a></li>
+<li><a href="#串口通信"><span class="toc-section-number">5.9</span> 串口通信</a></li>
 </ul></li>
 <li><a href="#python"><span class="toc-section-number">6</span> Python</a><ul>
 <li><a href="#代码与散文"><span class="toc-section-number">6.1</span> 代码与散文</a><ul>
@@ -125,16 +127,17 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#实用主义哲学"><span class="toc-section-number">6.3</span> 实用主义哲学</a></li>
 <li><a href="#包管理-1"><span class="toc-section-number">6.4</span> 包管理</a><ul>
 <li><a href="#python-requests"><span class="toc-section-number">6.4.1</span> Python requests</a></li>
-<li><a href="#python-pyserial"><span class="toc-section-number">6.4.2</span> Python PySerial</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#raspberry-pi"><span class="toc-section-number">7</span> Raspberry Pi</a><ul>
 <li><a href="#geek的盛宴"><span class="toc-section-number">7.1</span> Geek的盛宴</a></li>
 </ul></li>
 <li><a href="#http与restful"><span class="toc-section-number">8</span> HTTP与RESTful</a><ul>
-<li><a href="#你所没有深入的http"><span class="toc-section-number">8.1</span> 你所没有深入的HTTP</a></li>
-<li><a href="#一次get请求"><span class="toc-section-number">8.2</span> 一次GET请求</a></li>
-<li><a href="#rest"><span class="toc-section-number">8.3</span> REST</a></li>
+<li><a href="#你所没有深入的http"><span class="toc-section-number">8.1</span> 你所没有深入的HTTP</a><ul>
+<li><a href="#打开网页时发生了什么"><span class="toc-section-number">8.1.1</span> 打开网页时发生了什么</a></li>
+<li><a href="#url组成"><span class="toc-section-number">8.1.2</span> URL组成</a></li>
+</ul></li>
+<li><a href="#rest"><span class="toc-section-number">8.2</span> REST</a></li>
 </ul></li>
 <li><a href="#创建rest服务"><span class="toc-section-number">9</span> 创建REST服务</a><ul>
 <li><a href="#为什么是-laravel"><span class="toc-section-number">9.0.1</span> 为什么是 Laravel</a></li>
@@ -1076,7 +1079,9 @@ drwxr-xr-x   15 fdhuang  staff   510B Sep  2 13:44 nginx-1.7.4
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
 <p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往串口发送数据时，可以用Serial.write(‘1’)的方式向串口发送字串’1’。</p>
 <p>Arduino的出现很大程度上降低了电子制作的难度，初学者甚至不懂编程也可以上手Arduino,这也是它的魅力所在.</p>
-<h2 id="开发环境"><span class="header-section-number">5.6</span> 开发环境</h2>
+<h2 id="硬件熟悉"><span class="header-section-number">5.6</span> 硬件熟悉</h2>
+<p>为了满足各种需求，Arduino团队设计了很多款开发板，如UNO、Pro mini、Mega2560、Due、Leonardo、Yún、Pro、Fio、Nano等十几种 开发板和扩展板。最适合初学者的一款是Arduino UNO 。下图是Arduino UNO 的外观图：</p>
+<h2 id="开发环境"><span class="header-section-number">5.7</span> 开发环境</h2>
 <div class="figure">
 <img src="http://designiot.phodal.com/images/arduino.png" alt="Arduino" /><p class="caption">Arduino</p>
 </div>
@@ -1089,13 +1094,28 @@ void loop(){
 
 }</code></pre>
 <p>“setup()”函数用于初始化（如GPIO初始化，串口初始化，定时器初始化等）特点是只执行一次；“loop()”函数是一个死循环，可以看做C语言的“while(1)”函数</p>
-<h2 id="基本函数"><span class="header-section-number">5.7</span> 基本函数</h2>
+<h2 id="点亮一个led"><span class="header-section-number">5.8</span> 点亮一个LED</h2>
+<p>对初学者来说，点亮led已成为入门必修课，使用Arduino控制led十分简单，并且很容易理解。 使用到的函数：</p>
 <ul>
-<li>Serial.begin()</li>
-<li>Serial.write()</li>
-<li>Serial.read()</li>
-<li>Serial.available()</li>
+<li>pinMode(pin,mode)</li>
+<li>digitalWrite(pin,value)</li>
 </ul>
+<p>上一段代码分析：</p>
+<pre><code>int led=13;    
+void setup()
+{
+    pinMode(led,OUTPUT);
+}
+void loop()
+{
+    digitalWrite(led,HIGH);
+    delay(1000);
+    digitalWrite(led,LOW);
+    delay(1000);
+}</code></pre>
+<p>该程序实现Arduino单片机13号引脚以1S时间电平翻转，如果外接一个led，就可以看到led以1S的间隔闪烁；函数“pinMode()”有两个参数pin、value，pin参数用来指定引脚号,本程序中设置为13号引脚，mode用于设置引脚模式，有三个值：“INPUT”、“OUTPUT”，“INPUT_PULLUP”表示让某一个IO引脚作输入，反之，“OUTPUT”则使一个IO引脚做输出，“INPUT_PULLUP”则配置一个IO引脚具有上拉输入功能(上拉电阻的目的是为了保证在无信号输入时输入端的电平为高电平)，从英文意思也能很直观的看出来。理解了“pinMode()”函数,“digitalWrite()”就很容易理解啦，value的取值有两个“HIGH”、“LOW”,“HIGH”表示让某一个引脚输出高电平，反之，“LOW”则使某一个引脚输出低电平。 程序中还是用到“delay(ms)”函数，它表示延时多少毫秒，例如延时500 ms ,直接调用“delay(500)；”就可以了。</p>
+<h2 id="串口通信"><span class="header-section-number">5.9</span> 串口通信</h2>
+<p>使用到的基本函数： + Serial.begin() + Serial.write() + Serial.read() + Serial.available()</p>
 <p>在此项目中需要使用串口，Arduino串口初始化使用“Serial.begin(9600);”,其传输波特率为9600，其他波特率也行，函数位于“setup()”中，之后可以使用“Serial.read()”、“Serial.write()”读入一个字符，输出一个字符，使用“Serial.print()”输出字符串.代码如下:</p>
 <pre><code>char ch=&#39;1&#39;;
 void setup()
@@ -1229,7 +1249,8 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <h2 id="实用主义哲学"><span class="header-section-number">6.3</span> 实用主义哲学</h2>
 <h2 id="包管理-1"><span class="header-section-number">6.4</span> 包管理</h2>
 <h3 id="python-requests"><span class="header-section-number">6.4.1</span> Python requests</h3>
-<h3 id="python-pyserial"><span class="header-section-number">6.4.2</span> Python PySerial</h3>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream</p>
+<p>======= &gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes ###Python PySerial</p>
 <h1 id="raspberry-pi"><span class="header-section-number">7</span> Raspberry Pi</h1>
 <h2 id="geek的盛宴"><span class="header-section-number">7.1</span> Geek的盛宴</h2>
 <p>Raspberry Pi是一款针对电脑业余爱好者、教师、小学生以及小型企业等用户的迷你电脑，预装Linux系统，体积仅信用卡大小，搭载ARM架构处理器，运算性能和智能手机相仿。在接口方面，Raspberry Pi提供了可供键鼠使用的USB接口，此外还有千兆以太网接口、SD卡扩展接口以及1个HDMI高清视频输出接口，可与显示器或者TV相连。</p>
@@ -1247,10 +1268,11 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>传输层的TCP是基于网络层的IP协议的,而应用层的HTTP协议又是基于传输层的TCP协议的。</li>
 </ul>
 <p><code>注意</code>: HTTP协议只规定了客户端与服务端的通信规则，而没有规定其通讯协议，只是现在的大部分实现都是将TCP作为通讯协议。</p>
-<h2 id="一次get请求"><span class="header-section-number">8.2</span> 一次GET请求</h2>
+<h3 id="打开网页时发生了什么"><span class="header-section-number">8.1.1</span> 打开网页时发生了什么</h3>
+<p>一次GET请求</p>
 <p>简单地来说，当我们在浏览器上输入URL的敲下回车的时候。</p>
 <ul>
-<li>浏览器需要查找<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>的IP，从不同的缓存直至DNS服务器。</li>
+<li>浏览器需要查找域名<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>的IP，从不同的缓存直至DNS服务器。</li>
 <li>浏览器会给web服务器发送一个HTTP请求</li>
 <li>服务器“处理”请求</li>
 <li>服务器发回一个HTML响应</li>
@@ -1270,12 +1292,43 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>browser determines what to do with response (e.g. is it a HTML page, is it an image, is it a sound clip?)</li>
 <li>browser renders response, or offers a download dialog for unrecognized types</li>
 </ul>
-<h2 id="rest"><span class="header-section-number">8.3</span> REST</h2>
-<p>REST[^rest] 从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转移。</p>
-<p>参考书目：</p>
+<p>忽略一些细节便剩下了</p>
+<ol style="list-style-type: decimal">
+<li>从浏览器输入URL</li>
+<li>浏览器找到服务器，服务器返回HTML文档</li>
+<li>从对应的服务器下载资源</li>
+</ol>
+<p>说说第一步，开始时我们输入的是URI(统一资源标识符,Uniform Resource Identifier)，它还有另外一个名字叫统一资源定位器(URL<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>,Uniform Resource Locator)。</p>
+<h3 id="url组成"><span class="header-section-number">8.1.2</span> URL组成</h3>
+<p>网址算是URL的一个俗称，让我们来看看一个URL的组成，以HTTP版IOT中的URL为例。</p>
+<p><code>http://b.phodal.com/athome/1</code></p>
+<p>开始之前，我们需要标出URL的80端口以及json文件的全称，那么上面的网址就会变成</p>
+<p><code>http://b.phodal.com:80/athome/1.json</code></p>
+<p>那么对于这个URL的就有下面几部分组成</p>
+<ul>
+<li><code>http://</code> http说的是这个URL用的是HTTP协议，至于<code>//</code>是一个分隔符，用法和C语言中的<code>;</code>一样。这样的协议还可以是coap,https,ftp等等。</li>
+<li><code>b</code> 是子域名，一个域名在<strong>允许</strong>的情况下可以有不限数量的子域名。</li>
+<li><code>phodal.com</code> 代表了一个URL是phodal.com下面的域名</li>
+<li><code>80</code> 80是指80端口，默认的都是80，对于一个不是80端口的URL应该是这样的<code>http://iot-coap.phodal.com:8896/</code></li>
+<li><code>athome</code> 指的是虚拟目录部分，或者文件路径</li>
+<li><code>1.json</code>看上去就是一个文件名，然而也代表着这是一个资源。</li>
+</ul>
+<p>对就一个稍微复杂点的例子就是</p>
+<p><code>http://designiot.phodal.com/#你所没有深入的http</code></p>
+<p>这里的<code>#</code>后面是锚部分，如果你打开这个URL就会发现会直接跳转到相应的锚部分，对就于下面这样的一个例子来说</p>
+<p><code>http://www.phodal.com/search/?q=iot&amp;type=blog</code></p>
+<p><code>?</code>后面的<code>q=iot&amp;type=blog</code>的部分是参数部分，通常用于查询或者、搜索。</p>
+<h2 id="rest"><span class="header-section-number">8.2</span> REST</h2>
+<blockquote>
+<p>REST从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转移。</p>
+</blockquote>
+<p>因为我们需要的是一个Machine到Machine沟通的平台，而RESTful正好可以做这样的事。</p>
+<p>推荐及参考书目：</p>
 <ul>
 <li>《Web性能权威指南》</li>
 <li>《图解HTTP》</li>
+<li>《RESTful Web Services Cookbook》</li>
+<li>《RESTful Web APIs》</li>
 </ul>
 <h1 id="创建rest服务"><span class="header-section-number">9</span> 创建REST服务</h1>
 <h3 id="为什么是-laravel"><span class="header-section-number">9.0.1</span> 为什么是 Laravel</h3>
@@ -2358,7 +2411,6 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）是IBM开发的一个即时通讯协议，有可能成为物联网的重要组成部分。该协议支持所有平台，几乎可以把所有联网物品和外部连接起来，被用来当做传感器和致动器（比如通过Twitter让房屋联网）的通信协议。</p>
 </blockquote>
 <p>早在1999年，IBM的Andy Stanford-Clark博士以及Arcom公司ArlenNipper博士发明了MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）技术[1] 。据Andy Stanford-Clark博士称，MQTT将在今年和明年呈现爆炸式增长。</p>
-<p>MQTT的话题是我俩谈论开源物联网平台Pachube时提到的。Stanford-Clark认为Pachube很酷，其不足之处是不具备真正的推送功能。你需要不断不断轮询才能得到即时数据。这正是MQTT能够实现的，他提到了使用推送通信系统的石油管道检测系统。</p>
 <h2 id="nodejs-mqtt"><span class="header-section-number">13.1</span> Nodejs MQTT</h2>
 <blockquote>
 <p><a href="https://github.com/adamvr/MQTT.js/">mqtt.js</a> is a library for the MQTT protocol, written in JavaScript to be used in node.js.</p>
@@ -2379,6 +2431,7 @@ client.end();</code></pre>
 <hr />
 <ol>
 <li id="fn1"><p>形如http://www.phodal.com<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>URL 是 URI 的子集<a href="#fnref2">↩</a></p></li>
 </ol>
 </div>
 </body>
