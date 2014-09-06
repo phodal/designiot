@@ -154,7 +154,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#打开网页时发生了什么"><span class="toc-section-number">9.1.1</span> 打开网页时发生了什么</a></li>
 <li><a href="#url组成"><span class="toc-section-number">9.1.2</span> URL组成</a></li>
 </ul></li>
-<li><a href="#http-get"><span class="toc-section-number">9.2</span> HTTP GET</a></li>
+<li><a href="#一次http-get请求"><span class="toc-section-number">9.2</span> 一次HTTP GET请求</a><ul>
+<li><a href="#http响应"><span class="toc-section-number">9.2.1</span> HTTP响应</a></li>
+</ul></li>
 <li><a href="#rest"><span class="toc-section-number">9.3</span> REST</a><ul>
 <li><a href="#资源"><span class="toc-section-number">9.3.1</span> 资源</a></li>
 </ul></li>
@@ -1287,7 +1289,6 @@ a process or set of rules to be followed in calculations or other problem-solvin
 </ul>
 <p><code>注意</code>: HTTP协议只规定了客户端与服务端的通信规则，而没有规定其通讯协议，只是现在的大部分实现都是将TCP作为通讯协议。</p>
 <h3 id="打开网页时发生了什么"><span class="header-section-number">9.1.1</span> 打开网页时发生了什么</h3>
-<p>一次GET请求</p>
 <p>简单地来说，当我们在浏览器上输入URL的敲下回车的时候。</p>
 <ul>
 <li>浏览器需要查找域名<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>的IP，从不同的缓存直至DNS服务器。</li>
@@ -1336,14 +1337,56 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <p>这里的<code>#</code>后面是锚部分，如果你打开这个URL就会发现会直接跳转到相应的锚部分，对就于下面这样的一个例子来说</p>
 <p><code>http://www.phodal.com/search/?q=iot&amp;type=blog</code></p>
 <p><code>?</code>后面的<code>q=iot&amp;type=blog</code>的部分是参数部分，通常用于查询或者、搜索。</p>
-<h2 id="http-get"><span class="header-section-number">9.2</span> HTTP GET</h2>
-<p>一次简单的HTTP GET请求</p>
+<h2 id="一次http-get请求"><span class="header-section-number">9.2</span> 一次HTTP GET请求</h2>
+<p>当我们打开最小物联网系统的一个页面时，如<a href="http://b.phodal.com/athome/1.json">http://b.phodal.com/athome/1.json</a></p>
+<p>我们在浏览器上看到的结果是</p>
+<pre><code>[
+  {
+    &quot;id&quot;: 1,
+    &quot;temperature&quot;: 19,
+    &quot;sensors1&quot;: 31,
+    &quot;sensors2&quot;: 7.5,
+    &quot;led1&quot;: 0
+  }
+]</code></pre>
+<p>只是我们看到的是结果，忽略了这其中的过程，于是我们用curl<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>命令来看看详细的情况。</p>
+<pre><code>curl -I -s http://b.phodal.com/athome/1.json</code></pre>
+<p>出于某种原因考虑，删去了其中一些元素，剩下下面这些。</p>
 <pre><code>HTTP/1.1 200 OK
-Server: phodal/0.17.4
 Content-Type: application/json
 Date: Fri, 05 Sep 2014 15:05:49 GMT
 
 [{&quot;id&quot;:1,&quot;temperature&quot;:19,&quot;sensors1&quot;:31,&quot;sensors2&quot;:7.5,&quot;led1&quot;:0}]</code></pre>
+<p>我们用curl命令向服务器发起了GET请求，服务器返回了上面的结果。</p>
+<h3 id="http响应"><span class="header-section-number">9.2.1</span> HTTP响应</h3>
+<p>一个HTTP响应由三部分组成</p>
+<ul>
+<li>状态行(状态码)</li>
+<li>消息报头(响应报头)</li>
+<li>响应正文(消息体)</li>
+</ul>
+<h4 id="http响应-状态码"><span class="header-section-number">9.2.1.1</span> HTTP响应 状态码</h4>
+<p>在上面的结果中，状态行是</p>
+<pre><code>HTTP/1.1 200 OK</code></pre>
+<p>返回的状态码是200，也就是OK。HTTP Status有五种状态，而这五种状态又有所细分，提一下这五种状态，所以状态码，可参见<a href="http://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81">http://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81</a></p>
+<ul>
+<li>1xx消息</li>
+<li>2xx成功</li>
+<li>3xx重定向</li>
+<li>4xx客户端错误</li>
+<li>5xx服务器错误</li>
+</ul>
+<h4 id="http响应-响应报头"><span class="header-section-number">9.2.1.2</span> HTTP响应 响应报头</h4>
+<p>在这次响应中，返回了两个报头，即</p>
+<pre><code>Content-Type: application/json
+Date: Fri, 05 Sep 2014 15:05:49 GMT</code></pre>
+<p>Content-Type和Date，在这里的Context-Type是application/json，而通常情况下我们打开一个网站时，他的Content-Type应该是text/html。</p>
+<pre><code>Content-Type: text/html;</code></pre>
+<p>Content-Type是最重要的报头。</p>
+<h4 id="http响应-响应正文"><span class="header-section-number">9.2.1.3</span> HTTP响应 响应正文</h4>
+<p>正文才是我们真正想要的内容，上面的都是写给浏览器看的，一般的人不会去关注这些。</p>
+<pre><code>[{&quot;id&quot;:1,&quot;temperature&quot;:19,&quot;sensors1&quot;:31,&quot;sensors2&quot;:7.5,&quot;led1&quot;:0}]</code></pre>
+<p>通常这是以某种格式写的，在这里是以JSON写的，而对于一个网站的时候则是HTML。</p>
 <h2 id="rest"><span class="header-section-number">9.3</span> REST</h2>
 <blockquote>
 <p>REST从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转移。</p>
@@ -2459,6 +2502,7 @@ client.end();</code></pre>
 <ol>
 <li id="fn1"><p>形如http://www.phodal.com<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>URL 是 URI 的子集<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>curl是利用URL语法在命令行方式下工作的开源文件传输工具。<a href="#fnref3">↩</a></p></li>
 </ol>
 </div>
 </body>
