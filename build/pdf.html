@@ -117,7 +117,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#硬件熟悉"><span class="toc-section-number">6.2</span> 硬件熟悉</a></li>
 <li><a href="#开发环境"><span class="toc-section-number">6.3</span> 开发环境</a></li>
 <li><a href="#点亮一个led"><span class="toc-section-number">6.4</span> 点亮一个LED</a></li>
-<li><a href="#串口通信"><span class="toc-section-number">6.5</span> 串口通信</a></li>
 </ul></li>
 <li><a href="#python"><span class="toc-section-number">7</span> Python</a><ul>
 <li><a href="#代码与散文"><span class="toc-section-number">7.1</span> 代码与散文</a><ul>
@@ -1084,9 +1083,13 @@ drwxr-xr-x   15 fdhuang  staff   510B Sep  2 13:44 nginx-1.7.4
 <h2 id="极客的玩具"><span class="header-section-number">6.1</span> 极客的玩具</h2>
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
 <p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往串口发送数据时，可以用Serial.write(‘1’)的方式向串口发送字串’1’。</p>
-<p>Arduino的出现很大程度上降低了电子制作的难度，初学者甚至不懂编程也可以上手Arduino,这也是它的魅力所在.</p>
+<p>Arduino的出现很大程度上降低了电子制作的难度，初学者甚至不懂编程也可以上手Arduino,这也是它的魅力所在。</p>
 <h2 id="硬件熟悉"><span class="header-section-number">6.2</span> 硬件熟悉</h2>
 <p>为了满足各种需求，Arduino团队设计了很多款开发板，如UNO、Pro mini、Mega2560、Due、Leonardo、Yún、Pro、Fio、Nano等十几种 开发板和扩展板。最适合初学者的一款是Arduino UNO 。下图是Arduino UNO 的外观图：</p>
+<div class="figure">
+<img src="http://designiot.phodal.com/images/uno.png" alt="Uno" /><p class="caption">Uno</p>
+</div>
+<p>注：后面的程序也是基于Arduino UNO开发板来讲解。</p>
 <h2 id="开发环境"><span class="header-section-number">6.3</span> 开发环境</h2>
 <div class="figure">
 <img src="http://designiot.phodal.com/images/arduino.png" alt="Arduino" /><p class="caption">Arduino</p>
@@ -1099,7 +1102,7 @@ drwxr-xr-x   15 fdhuang  staff   510B Sep  2 13:44 nginx-1.7.4
 void loop(){
 
 }</code></pre>
-<p>“setup()”函数用于初始化（如GPIO初始化，串口初始化，定时器初始化等）特点是只执行一次；“loop()”函数是一个死循环，可以看做C语言的“while(1)”函数</p>
+<p>“setup()”函数用于初始化（如GPIO初始化，串口初始化，定时器初始化等）特点是只执行一次；“loop()”函数是一个死循环，可以看做C语言的“while(1)”函数。</p>
 <h2 id="点亮一个led"><span class="header-section-number">6.4</span> 点亮一个LED</h2>
 <p>对初学者来说，点亮led已成为入门必修课，使用Arduino控制led十分简单，并且很容易理解。 使用到的函数：</p>
 <ul>
@@ -1120,8 +1123,7 @@ void loop()
     delay(1000);
 }</code></pre>
 <p>该程序实现Arduino单片机13号引脚以1S时间电平翻转，如果外接一个led，就可以看到led以1S的间隔闪烁；函数“pinMode()”有两个参数pin、value，pin参数用来指定引脚号,本程序中设置为13号引脚，mode用于设置引脚模式，有三个值：“INPUT”、“OUTPUT”，“INPUT_PULLUP”表示让某一个IO引脚作输入，反之，“OUTPUT”则使一个IO引脚做输出，“INPUT_PULLUP”则配置一个IO引脚具有上拉输入功能(上拉电阻的目的是为了保证在无信号输入时输入端的电平为高电平)，从英文意思也能很直观的看出来。理解了“pinMode()”函数,“digitalWrite()”就很容易理解啦，value的取值有两个“HIGH”、“LOW”,“HIGH”表示让某一个引脚输出高电平，反之，“LOW”则使某一个引脚输出低电平。 程序中还是用到“delay(ms)”函数，它表示延时多少毫秒，例如延时500 ms ,直接调用“delay(500)；”就可以了。</p>
-<h2 id="串口通信"><span class="header-section-number">6.5</span> 串口通信</h2>
-<p>使用到的基本函数： + Serial.begin() + Serial.write() + Serial.read() + Serial.available()</p>
+<p>如果你仔细查看我的描述，你会发现我没有讲13号引脚怎么来的，是这样的：Arduino团队为了简化对引脚描述，对每个引脚都进行了编号，以UNO开发板为例，可以发现开发板排座的附近有对应的白颜色的数字，那便是所有的引脚编号，A0~A5是6路ADC输入引脚，0-13表示13路基本IO，数字前面的“~”表示该引脚具有PWM功能。如果要使用某一引脚，只要知道引脚编号就可行操作，例如“digitalWrite(2,LOW)”表示向2号引脚输出低电平。其他操作类似，是不是so easy <sup>-</sup> ! ##串口通信## 使用到的基本函数： + Serial.begin() + Serial.write() + Serial.read() + Serial.available()</p>
 <p>在此项目中需要使用串口，Arduino串口初始化使用“Serial.begin(9600);”,其传输波特率为9600，其他波特率也行，函数位于“setup()”中，之后可以使用“Serial.read()”、“Serial.write()”读入一个字符，输出一个字符，使用“Serial.print()”输出字符串.代码如下:</p>
 <pre><code>char ch=&#39;1&#39;;
 void setup()
