@@ -1082,6 +1082,25 @@ drwxr-xr-x   15 fdhuang  staff   510B Sep  2 13:44 nginx-1.7.4
 <p>2.正常情况下一个开源项目都会有一个README，会告诉你应该如何去做。</p>
 <h2 id="包管理"><span class="header-section-number">5.4</span> 包管理</h2>
 <p>GNU/Linux最方便的东西莫过于包管理了。</p>
+<p>引自OpenSUSE官网的说明及图片<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<div class="figure">
+<img src="http://designiot.phodal.com/images/pm.png" alt="package management" /><p class="caption">package management</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><p>Linux 发行版无非就是一堆软件包 (package) 形式的应用程序加上整体地管理这些应用程序的工具。通常这些 Linux 发行版，包括 openSUSE，都是由成千上万不同的软件包构成的。</p></li>
+<li><p>软件包: 软件包不止是一个文件，内含构成软件的所有文件，包括程序本身、共享库、开发包以及使用说明等。</p></li>
+<li><p>元数据 (metadata) 包含于软件包之中，包含软件正常运行所需要的一些信息。软件包安装之后，其元数据就存储于本地的软件包数据库之中，以用于软件包检索。</p></li>
+<li><p>依赖关系 (dependencies) 是软件包管理的一个重要方面。实际上每个软件包都会涉及到其他的软件包，软件包里程序的运行需要有一个可执行的环境（要求有其他的程序、库等），软件包依赖关系正是用来描述这种关系的。</p></li>
+</ol>
+<p>Linux 下的软件包通常是以下三种格式：</p>
+<ul>
+<li>tgz - tar gzip 文件。这类文件是基本的压缩软件包，可以容纳软件包维护者认为有用的所有的东西。此格式除本身的压缩格式外，并没有有关软件包内容的标准。</li>
+<li>deb - 此格式的软件包常用于 Debian 系统，是标准的 Debian 软件包格式。</li>
+<li>rpm - 此格式由 Red Hat Linux 所创建，并经由 LSB 标准化，现已为众多 Linux 发行版所采用，是一个优秀的软件包格式。openSUSE 即是用此格式。更多信息可以参阅此处。</li>
+</ul>
+<blockquote>
+<p>所以这就需要能自动解决依赖关系的软件包管理器。软件包管理系统就是一个工具集，为系统提供一个统一的安装、升级、删除软件的方式。</p>
+</blockquote>
 <h1 id="arduino"><span class="header-section-number">6</span> Arduino</h1>
 <h2 id="极客的玩具"><span class="header-section-number">6.1</span> 极客的玩具</h2>
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
@@ -1279,7 +1298,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <h3 id="打开网页时发生了什么"><span class="header-section-number">9.1.1</span> 打开网页时发生了什么</h3>
 <p>简单地来说，当我们在浏览器上输入URL的敲下回车的时候。</p>
 <ul>
-<li>浏览器需要查找域名<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>的IP，从不同的缓存直至DNS服务器。</li>
+<li>浏览器需要查找域名<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>的IP，从不同的缓存直至DNS服务器。</li>
 <li>浏览器会给web服务器发送一个HTTP请求</li>
 <li>服务器“处理”请求</li>
 <li>服务器发回一个HTML响应</li>
@@ -1305,7 +1324,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>浏览器找到服务器，服务器返回HTML文档</li>
 <li>从对应的服务器下载资源</li>
 </ol>
-<p>说说第一步，开始时我们输入的是URI(统一资源标识符,Uniform Resource Identifier)，它还有另外一个名字叫统一资源定位器(URL<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>,Uniform Resource Locator)。</p>
+<p>说说第一步，开始时我们输入的是URI(统一资源标识符,Uniform Resource Identifier)，它还有另外一个名字叫统一资源定位器(URL<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>,Uniform Resource Locator)。</p>
 <h3 id="url组成"><span class="header-section-number">9.1.2</span> URL组成</h3>
 <p>网址算是URL的一个俗称，让我们来看看一个URL的组成，以HTTP版IOT中的URL为例。</p>
 <p><code>http://b.phodal.com/athome/1</code></p>
@@ -1337,7 +1356,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
     &quot;led1&quot;: 0
   }
 ]</code></pre>
-<p>只是我们看到的是结果，忽略了这其中的过程，于是我们用curl<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>命令来看看详细的情况。</p>
+<p>只是我们看到的是结果，忽略了这其中的过程，于是我们用curl<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>命令来看看详细的情况。</p>
 <pre><code>curl -I -s http://b.phodal.com/athome/1.json</code></pre>
 <p>出于某种原因考虑，删去了其中一些元素，剩下下面这些。</p>
 <pre><code>HTTP/1.1 200 OK
@@ -1888,6 +1907,9 @@ print r.text</code></pre>
 <p>jQuery Mobile是jQuery 在手机上和平板设备上的版本。jQuery Mobile不仅会给主流移动平台带来jQuery核心库，而且会发布一个完整统一的jQuery移动UI框架。支持全球主流的移动平台。jQuery Mobile开发团队说：能开发这个项目，我们非常兴奋。移动Web太需要一个跨浏览器的框架，让开发人员开发出真正的移动Web网站。</p>
 </blockquote>
 <h2 id="bootstrap"><span class="header-section-number">13.2</span> Bootstrap</h2>
+<blockquote>
+<p>Bootstrap是Twitter推出的一个开源的用于前端开发的工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。Bootstrap一经推出后颇受欢迎，一直是GitHub上的热门开源项目，包括NASA的MSNBC（微软全国广播公司）的Breaking News都使用了该项目。</p>
+</blockquote>
 <h2 id="库与车轮子"><span class="header-section-number">13.3</span> 库与车轮子</h2>
 <h2 id="网站前台显示"><span class="header-section-number">13.4</span> 网站前台显示</h2>
 <h3 id="highchart"><span class="header-section-number">13.4.1</span> Highchart</h3>
@@ -2447,9 +2469,10 @@ client.end();</code></pre>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>形如http://www.phodal.com<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>URL 是 URI 的子集<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>curl是利用URL语法在命令行方式下工作的开源文件传输工具。<a href="#fnref3">↩</a></p></li>
+<li id="fn1"><p>https://zh.opensuse.org/index.php?title=%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86&amp;variant=zh<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>形如http://www.phodal.com<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>URL 是 URI 的子集<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>curl是利用URL语法在命令行方式下工作的开源文件传输工具。<a href="#fnref4">↩</a></p></li>
 </ol>
 </div>
 </body>
