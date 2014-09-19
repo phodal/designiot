@@ -149,21 +149,24 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 <li><a href="#创建rest服务"><span class="toc-section-number">11</span> 创建REST服务</a><ul>
 <li><a href="#为什么是-laravel"><span class="toc-section-number">11.0.1</span> 为什么是 Laravel</a></li>
-<li><a href="#安装-laravel"><span class="toc-section-number">11.1</span> 安装 Laravel</a></li>
-<li><a href="#配置mysql"><span class="toc-section-number">11.2</span> 配置MySQL</a></li>
-<li><a href="#数据库迁移"><span class="toc-section-number">11.3</span> 数据库迁移</a><ul>
-<li><a href="#创建表"><span class="toc-section-number">11.3.1</span> 创建表</a></li>
-<li><a href="#数据库迁移-1"><span class="toc-section-number">11.3.2</span> 数据库迁移</a></li>
+<li><a href="#安装-laravel-第一步-安装composer"><span class="toc-section-number">11.0.2</span> 安装 Laravel 第一步 安装Composer</a></li>
+<li><a href="#安装-laravel-第二步-安装laravel"><span class="toc-section-number">11.0.3</span> 安装 Laravel 第二步 安装Laravel</a></li>
+<li><a href="#安装-laravel-第三步-创建laravel工程"><span class="toc-section-number">11.0.4</span> 安装 Laravel 第三步 创建Laravel工程</a></li>
+<li><a href="#mysql"><span class="toc-section-number">11.1</span> MySQL</a><ul>
+<li><a href="#安装mysql"><span class="toc-section-number">11.1.1</span> 安装MySQL</a></li>
+<li><a href="#配置mysql"><span class="toc-section-number">11.1.2</span> 配置MySQL</a></li>
 </ul></li>
-<li><a href="#创建restful"><span class="toc-section-number">11.4</span> 创建RESTful</a><ul>
-<li><a href="#laravel-resources"><span class="toc-section-number">11.4.1</span> Laravel Resources</a></li>
+<li><a href="#数据库迁移"><span class="toc-section-number">11.2</span> 数据库迁移</a><ul>
+<li><a href="#创建表"><span class="toc-section-number">11.2.1</span> 创建表</a></li>
+<li><a href="#数据库迁移-1"><span class="toc-section-number">11.2.2</span> 数据库迁移</a></li>
 </ul></li>
-<li><a href="#修改-create"><span class="toc-section-number">11.5</span> 修改 Create()</a></li>
-<li><a href="#创建表单"><span class="toc-section-number">11.6</span> 创建表单</a><ul>
-<li><a href="#创建表单之前"><span class="toc-section-number">11.6.1</span> 创建表单之前</a></li>
-<li><a href="#创建表单-1"><span class="toc-section-number">11.6.2</span> 创建表单</a></li>
+<li><a href="#创建restful"><span class="toc-section-number">11.3</span> 创建RESTful</a></li>
+<li><a href="#laravel-resources"><span class="toc-section-number">11.4</span> Laravel Resources</a><ul>
+<li><a href="#修改-create"><span class="toc-section-number">11.4.1</span> 修改 Create()</a></li>
+<li><a href="#创建表单"><span class="toc-section-number">11.4.2</span> 创建表单</a></li>
+<li><a href="#创建表单-1"><span class="toc-section-number">11.4.3</span> 创建表单</a></li>
 </ul></li>
-<li><a href="#编辑-edit"><span class="toc-section-number">11.7</span> 编辑 edit</a></li>
+<li><a href="#编辑-edit"><span class="toc-section-number">11.5</span> 编辑 edit</a></li>
 </ul></li>
 <li><a href="#restful-evertywhere"><span class="toc-section-number">12</span> RESTful Evertywhere</a><ul>
 <li><a href="#javascript与ajax"><span class="toc-section-number">12.1</span> Javascript与ajax</a><ul>
@@ -1441,27 +1444,39 @@ Content-Type: text/html; charset=utf-8
 <h2 id="设计restful-uri"><span class="header-section-number">10.2</span> 设计RESTful URI</h2>
 <h1 id="创建rest服务"><span class="header-section-number">11</span> 创建REST服务</h1>
 <h3 id="为什么是-laravel"><span class="header-section-number">11.0.1</span> 为什么是 Laravel</h3>
-<p>只是因为个人喜爱，你也可以用 Ruby On Rails 来搭建这样一个功能，或者是 Java。只不过 PHP 在我的服务器上运行得挺不错的，而且我又不需要重新去写配置那些配置。 同时 Laravel 可以简单的开发我们所需要的功能，换句话说他是 PHP 世界的 Ruby On Rails。</p>
-<p>这里不会再重述之前的问题，这里只是将需要的步骤一个个写下来，然后丢到这里好好说一下。至于 RESTful 是什么，前面已经介绍了，就不再重复了。那么下面，我们就用 Laravel来搭建一个平台给物联网用的。</p>
-<h2 id="安装-laravel"><span class="header-section-number">11.1</span> 安装 Laravel</h2>
-<p>这个就比较简单了，不过在那之前你要有git以及安装了php环境，这个在linux上面比较好实现，可以用Raspberry Pi或者是你的电脑来做这个，不一定直接上你的服务器。</p>
-<pre><code>$ git clone https://github.com/laravel/laravel‎</code></pre>
-<p>先clone这个git，如果你没有安装好 PHP，请安装好，and go on。</p>
-<pre><code>$ cd laravel</code></pre>
-<p>laravel用到了php的包管理工具composer，于是我们还需要用到composer，与Laravel相比也算是一个优雅的工具。</p>
+<ul>
+<li>因为个人喜爱，你也可以用 Ruby On Rails来搭建这样一个功能，或者是Java。</li>
+<li>PHP在我的服务器上运行得挺不错的，而且我又不需要重新去写配置那些配置。</li>
+<li>Laravel 可以简单的开发我们所需要的功能，换句话说他是 PHP 世界的 Ruby On Rails。</li>
+</ul>
+<p>这里不会再重述之前的问题，这里只是将需要的步骤一个个写下来，然后丢到这里好好说一下。至于RESTful是什么，前面已经介绍了，就不再重复了。那么下面，我们就用Laravel来搭建一个平台给物联网用的。</p>
+<h3 id="安装-laravel-第一步-安装composer"><span class="header-section-number">11.0.2</span> 安装 Laravel 第一步 安装Composer</h3>
+<h4 id="gnulinux安装composer"><span class="header-section-number">11.0.2.1</span> GNU/Linux安装Composer</h4>
+<p>GNU/Linux Ubuntu/OpenSUSE下可以执行</p>
 <pre><code>$ curl -sS https://getcomposer.org/installer | php</code></pre>
-<p>这里推荐的是linux系统，如果你是*nix都是可以的(ps:mac os x属于unix分支），除了windows，所以如果是windows，请直接下载</p>
+<h4 id="windows安装composer"><span class="header-section-number">11.0.2.2</span> Windows安装Composer</h4>
+<p>请直接下载</p>
 <p><a href="https://getcomposer.org/Composer-Setup.exe">Composer-Setup</a></p>
-<p>然后让我们安装所需要的那些包</p>
-<pre><code>$ php composer.phar install</code></pre>
-<p>当然这里用的是比较通用的，如果你是 *nix，有支持可以直接</p>
-<pre><code>$ composer install</code></pre>
-<h2 id="配置mysql"><span class="header-section-number">11.2</span> 配置MySQL</h2>
-<p>这里并不会列举 MySQL 的安装方法，如果你是openSUSE，可以</p>
-<pre><code>$ zypper install mysql</code></pre>
-<p>这个也可以，不过最近我尽量到迁移到 MariaDB 了。</p>
-<pre><code>$ zypper install mariadb</code></pre>
-<p>当然，最简单的方法是直接上官网。这里说的是修改 database.php</p>
+<h4 id="mac-os安装composer"><span class="header-section-number">11.0.2.3</span> Mac OS安装Composer</h4>
+<pre><code>brew install homebrew/php/composer</code></pre>
+<h3 id="安装-laravel-第二步-安装laravel"><span class="header-section-number">11.0.3</span> 安装 Laravel 第二步 安装Laravel</h3>
+<pre><code>composer global require &quot;laravel/installer=~1.1&quot;</code></pre>
+<h3 id="安装-laravel-第三步-创建laravel工程"><span class="header-section-number">11.0.4</span> 安装 Laravel 第三步 创建Laravel工程</h3>
+<pre><code>composer create-project laravel/laravel your-project-name --prefer-dist </code></pre>
+<h2 id="mysql"><span class="header-section-number">11.1</span> MySQL</h2>
+<h3 id="安装mysql"><span class="header-section-number">11.1.1</span> 安装MySQL</h3>
+<p><code>出于某些原因，我建议用MariaDB替换MySQL，如果你&quot;真正&quot;需要mysql，将mariadb替换为mysql</code></p>
+<p>ps: 在下文中我会继续用MySQL，而不是MariaDB，MairaDB是MySQL的一个分支，真正的开源分支。</p>
+<p>Ubuntu/Debian/Mint</p>
+<pre><code>$ sudo apt-get install mariadb-server</code></pre>
+<p>Fedora/Centos</p>
+<pre><code>$ sudo yum install mariadb-server    </code></pre>
+<p>openSUSE</p>
+<pre><code>$ sudo zypper install mariadb-server</code></pre>
+<p>Mac OS</p>
+<pre><code> $ brew install mariadb</code></pre>
+<h3 id="配置mysql"><span class="header-section-number">11.1.2</span> 配置MySQL</h3>
+<p>修改database.php</p>
 <pre><code>app/config/database.php</code></pre>
 <p>要修改的就是这个</p>
 <pre><code>&#39;mysql&#39; =&gt; array(
@@ -1486,9 +1501,9 @@ Content-Type: text/html; charset=utf-8
 &quot;sensors2&quot;: 12,
 &quot;led1&quot;: 0
 }</code></pre>
-<h2 id="数据库迁移"><span class="header-section-number">11.3</span> 数据库迁移</h2>
+<h2 id="数据库迁移"><span class="header-section-number">11.2</span> 数据库迁移</h2>
 <p>这个名字是源自于Ruby On Rails在那时候的印象，不直接使用MySQL的目的在于让我们可以专注于过程。</p>
-<h3 id="创建表"><span class="header-section-number">11.3.1</span> 创建表</h3>
+<h3 id="创建表"><span class="header-section-number">11.2.1</span> 创建表</h3>
 <p>表的概念，类似于在Excel中的表，如果你真实不懂数据库。 让我们创建一个athomes的表，为什么是athomes，因为以前在写android程序的时候就叫的是athome，忽略掉这些次要的因素吧。</p>
 <pre><code>$ php artisan migrate:make create_athomes_table</code></pre>
 <p>打开 app/database/migrations/<strong><em>create_athomes_table.php这里的</em></strong>是由日期和某些东西组成的，修改生成的代码为下面。</p>
@@ -1517,7 +1532,7 @@ class CreateAthomesTable extends Migration {
 
 }</code></pre>
 <p>意思大致就是id是自加的，也就是我们在localhost/athome/{id}，当我们创建一个新的数据的时候，会自动加上去，最后一个timestamps批的是时间，会包含创建时间和修改时间。 剩下的temperature,sensors1,sensors2是小数，以及只有真和假的led1。</p>
-<h3 id="数据库迁移-1"><span class="header-section-number">11.3.2</span> 数据库迁移</h3>
+<h3 id="数据库迁移-1"><span class="header-section-number">11.2.2</span> 数据库迁移</h3>
 <p>我们只是写了我们需要的数据的格式而并没有丢到数据库里，</p>
 <pre><code>$ php artisan migrate</code></pre>
 <p>这个就是我们执行迁移的命令，如果你用phpmyadmin可以直接打开查看，没有的话，可以。</p>
@@ -1525,8 +1540,8 @@ class CreateAthomesTable extends Migration {
 
 use iot;
 select * from athomes;</code></pre>
-<p>就可以看到我们写的东西，那么接下来就是创建RESTful 服务了</p>
-<h2 id="创建restful"><span class="header-section-number">11.4</span> 创建RESTful</h2>
+<p>就可以看到我们写的东西，那么接下来就是创建RESTful服务了</p>
+<h2 id="创建restful"><span class="header-section-number">11.3</span> 创建RESTful</h2>
 <p>用下面的代码实现我们称之为Athomes控制器的创建</p>
 <pre><code>$ php artisan controller:make AthomesController  </code></pre>
 <p>就会在app/controllers下面生成下面的代码</p>
@@ -1561,8 +1576,62 @@ select * from athomes;</code></pre>
     }  
 
 }</code></pre>
-<h3 id="laravel-resources"><span class="header-section-number">11.4.1</span> Laravel Resources</h3>
+<h2 id="laravel-resources"><span class="header-section-number">11.4</span> Laravel Resources</h2>
 <p>上面的代码过于沉重，请让我用 Ctrl+C 来带来点知识吧。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Verb</th>
+<th align="left">Path</th>
+<th align="left">Action</th>
+<th align="left">Route Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">GET</td>
+<td align="left">/resource</td>
+<td align="left">index</td>
+<td align="left">resource.index</td>
+</tr>
+<tr class="even">
+<td align="left">GET</td>
+<td align="left">/resource/create</td>
+<td align="left">create</td>
+<td align="left">resource.create</td>
+</tr>
+<tr class="odd">
+<td align="left">POST</td>
+<td align="left">/resource</td>
+<td align="left">store</td>
+<td align="left">resource.store</td>
+</tr>
+<tr class="even">
+<td align="left">GET</td>
+<td align="left">/resource/{resource}</td>
+<td align="left">show</td>
+<td align="left">resource.show</td>
+</tr>
+<tr class="odd">
+<td align="left">GET</td>
+<td align="left">/resource/{resource}/edit</td>
+<td align="left">edit</td>
+<td align="left">resource.edit</td>
+</tr>
+<tr class="even">
+<td align="left">PUT/PATCH</td>
+<td align="left">/resource/{resource}</td>
+<td align="left">update</td>
+<td align="left">resource.update</td>
+</tr>
+<tr class="odd">
+<td align="left">DELETE</td>
+<td align="left">/resource/{resource}</td>
+<td align="left">destroy</td>
+<td align="left">resource.destroy</td>
+</tr>
+</tbody>
+</table>
 <p>所以我们只需要专注于创建 create, edit, show, destory 等等。好吧，你可能没有耐心了，但是在修改这个之前我们需要先在 app/model 加个 class</p>
 <pre><code>class Athomes extends Eloquent {  
     protected $table = &#39;athomes&#39;;  
@@ -1683,7 +1752,7 @@ select * from athomes;</code></pre>
 }</code></pre>
 <p>希望你能读懂，没有的话，关注下一节。</p>
 <p>下面这部分来自于之前的博客，这里就不多加论述了。 这个也就是我们要的模板，</p>
-<h2 id="修改-create"><span class="header-section-number">11.5</span> 修改 Create()</h2>
+<h3 id="修改-create"><span class="header-section-number">11.4.1</span> 修改 Create()</h3>
 <pre><code class="php">
     public function create()
     {
@@ -1702,8 +1771,8 @@ select * from athomes;</code></pre>
 </code></pre>
 
 <p>这里只是对其中代码的进行一下说明。</p>
-<h2 id="创建表单"><span class="header-section-number">11.6</span> 创建表单</h2>
-<h3 id="创建表单之前"><span class="header-section-number">11.6.1</span> 创建表单之前</h3>
+<h3 id="创建表单"><span class="header-section-number">11.4.2</span> 创建表单</h3>
+<h4 id="创建表单之前"><span class="header-section-number">11.4.2.1</span> 创建表单之前</h4>
 <p>由于使用到了bootstrap以及bootstrap-select，记得添加css。</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap.min.css&#39;) ?&gt;&quot; /&gt;
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap-select.min.css&#39;) ?&gt;&quot; /&gt;</code></pre>
@@ -1714,7 +1783,7 @@ select * from athomes;</code></pre>
 &lt;script&gt;
 $(&#39;.selectpicker&#39;).selectpicker();
 &lt;/script&gt;</code></pre>
-<h3 id="创建表单-1"><span class="header-section-number">11.6.2</span> 创建表单</h3>
+<h3 id="创建表单-1"><span class="header-section-number">11.4.3</span> 创建表单</h3>
 <p>这里用到的是之前提到的那个作者写下的，稍微修改了一下。</p>
 <pre><code>&lt;div class=&quot;row-fluid&quot;&gt;
   {{ HTML::ul($errors-&gt;all()) }}
@@ -1776,7 +1845,7 @@ $(&#39;.selectpicker&#39;).selectpicker();
         return Redirect::to(&#39;athome&#39;);
     }
 }</code></pre>
-<h2 id="编辑-edit"><span class="header-section-number">11.7</span> 编辑 edit</h2>
+<h2 id="编辑-edit"><span class="header-section-number">11.5</span> 编辑 edit</h2>
 <p>完整的 blade 模板文件</p>
 <pre><code>&lt;!DOCTYPE html lang=&quot;zh-cn&quot;&gt;
 &lt;html&gt;
