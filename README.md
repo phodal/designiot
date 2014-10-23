@@ -9,7 +9,7 @@
 
 Github | Name
 |--------| ---------|
-[gmszone](https://github.com/gmszone) |[Phodal Huang](http://www.phodal.com)
+[gmszone](https://github.com/phodal) |[Phodal Huang](http://www.phodal.com)
 [Lboyve](https://github.com/Lboyve) | Fortware
 
 ##如何编辑
@@ -80,8 +80,8 @@ Github | Name
 
 代码
 
-- HTTP版 [https://github.com/gmszone/iot](https://github.com/gmszone/iot)
-- CoAP版 [https://github.com/gmszone/iot-coap](https://github.com/gmszone/iot-coap)
+- HTTP版 [https://github.com/phodal/iot](https://github.com/phodal/iot)
+- CoAP版 [https://github.com/phodal/iot-coap](https://github.com/phodal/iot-coap)
 
 测试网站
 
