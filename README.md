@@ -9,7 +9,7 @@
 
 Github | Name
 |--------| ---------|
-[gmszone](https://github.com/phodal) |[Phodal Huang](http://www.phodal.com)
+[phodal](https://github.com/phodal) |[Phodal Huang](http://www.phodal.com)
 [Lboyve](https://github.com/Lboyve) | Fortware
 
 ##如何编辑
@@ -75,18 +75,6 @@ Github | Name
 只需要在目录执行
  
     make
-
-##源码相关
-
-代码
-
-- HTTP版 [https://github.com/phodal/iot](https://github.com/phodal/iot)
-- CoAP版 [https://github.com/phodal/iot-coap](https://github.com/phodal/iot-coap)
-
-测试网站
-
-- HTTP版 [http://b.phodal.com](http://b.phodal.com)
-- CoAP版 [coap://iot-coap.phodal.com](coap://iot-coap.phodal.com) (ps:Firefox下用Copper插件)
 
 ## License
 
