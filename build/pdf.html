@@ -262,7 +262,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>当时以及现在，我还是不喜欢JAVA(ps:更喜欢脚本语言，可以在更少的时候做更多的事)。</li>
 </ul>
 <h3 id="为什么没有android"><span class="header-section-number">0.4.3</span> 为什么没有Android ？</h3>
-<p>在IOT的repo中: <a href="https://github.com/gmszone/iot">https://github.com/gmszone/iot</a> 是有Android的示例，然而这些理论不适合在这里讨论。</p>
+<p>在IOT的repo中: <a href="https://github.com/gmszone/iot" class="uri">https://github.com/gmszone/iot</a> 是有Android的示例，然而这些理论不适合在这里讨论。</p>
 <h2 id="如何阅读"><span class="header-section-number">0.5</span> 如何阅读</h2>
 <p>这是一个简单的建议，仅针对于在选择阅读没有经验的读者。</p>
 <table>
@@ -297,8 +297,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <ol style="list-style-type: decimal">
 <li><p>新建文件</p></li>
 <li>输入
-<pre><code class="html">hello,world</code></pre>
-</li>
+<pre><code class="html">hello,world</code></pre></li>
 <li><p>保存为-&gt;“helloworld.html”，</p></li>
 <li><p>然后双击打开这个文件。 正常情况下应该是刚好用你的默认浏览器打开。只要是一个现代的浏览器的话，应该可以看到上面显示的是“Hello,world”。</p></li>
 </ol>
@@ -527,7 +526,6 @@ document.write(typeof Math);</code></pre>
 <blockquote>
 无序属性的集合，其属性可以包含基本值、对象或者函数。
 </blockquote>
-
 <p>创建一个object，然后观察这便是我们接下来要做的</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript">store={};
 <span class="ot">store</span>.<span class="fu">tang</span>=<span class="dv">4</span>;
@@ -1208,7 +1206,6 @@ IndentationError: expected an indented block</code></pre>
 <blockquote>
 程序应该是具有可读性的短文，它将在计算机上执行，从而解决某些问题
 </blockquote>
-
 <p>我们需要去读懂别人的代码，别人也需要去读懂我们的代码。计算机可以无条件地执行你那未经编排过的程序，但是人就不是如此了。</p>
 <pre><code>var calc={add: function(a,b){return a+b;},sub: function(a,b){return a-b;},dif: function(a,b){if(a&gt;b){return a;}else{return b;}}}</code></pre>
 <p>上面的代码相对于下面的代码可读性没有那么多，但是计算机可以无条件地执行上面的代码。上面的代码对于网络传输来说是好的，但是对于人来说并不是如此，我们需要一些工具来辅助我们去读懂上面的代码。如果代码上写得没有一点可读性，诸如函数命名没有多少实际意义，如果我们把前面的函数就成这样：</p>
@@ -1232,7 +1229,6 @@ IndentationError: expected an indented block</code></pre>
 <blockquote>
 对于特定的问题，只要有一种最好的方法来解决就够了
 </blockquote>
-
 <p>可读性的代码在今天显得比以前重要的多，以前写程序的时候我们需要去考虑使用汇编或者其他工具来提高程序的效率。</p>
 <pre><code>            .global _start
 
@@ -1270,7 +1266,6 @@ IndentationError: unexpected indent
 Hello,world
 >>>
 </code></pre>
-
 <p>如果你没有预料到缩进带来的问题的时候，这就是一个问题了。</p>
 <p>和我们在Javascript或者是CSS里面一样，我们也可以用一个文件的方式来写入我们的代码，文件后缀名是py，所以创建一个helloworld.py，输入上面的代码，然后执行</p>
 <pre><code>python helloworld.py</code></pre>
@@ -1292,7 +1287,6 @@ cherrypy.quickstart(HelloWorld())</code></pre>
 <blockquote>
 a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer
 </blockquote>
-
 <p>也就是计算或其他解决问题的操作需要遵循的一个过程或者一套规则，书上还提到的说法是——解决问题的诀窍，让我想起了hack一词。我们总会去想某些东西是否有一个更快的计算方法，有时候在处理某些问题上也显示了一个好的算法的重要性。</p>
 <h2 id="实用主义哲学"><span class="header-section-number">7.3</span> 实用主义哲学</h2>
 <h2 id="包管理-1"><span class="header-section-number">7.4</span> 包管理</h2>
@@ -1364,7 +1358,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <p><code>http://www.phodal.com/search/?q=iot&amp;type=blog</code></p>
 <p><code>?</code>后面的<code>q=iot&amp;type=blog</code>的部分是参数部分，通常用于查询或者、搜索。</p>
 <h2 id="一次http-get请求"><span class="header-section-number">9.2</span> 一次HTTP GET请求</h2>
-<p>当我们打开最小物联网系统的一个页面时，如<a href="http://b.phodal.com/athome/1.json">http://b.phodal.com/athome/1.json</a></p>
+<p>当我们打开最小物联网系统的一个页面时，如<a href="http://b.phodal.com/athome/1.json" class="uri">http://b.phodal.com/athome/1.json</a></p>
 <p>我们在浏览器上看到的结果是</p>
 <pre><code>[
   {
@@ -1804,8 +1798,6 @@ select * from athomes;</code></pre>
         return View::make('athome.create')->with('maxid',$maxid);
     }
 </code></pre>
-
-
 <p>这里需要在app/views/创建一个athome里面创建一个create.blade.php，至于maxid，暂时还不需要，后面会用到show。如果只需要模板，可以简化为</p>
 <pre><code class="php">
     public function create()
@@ -1813,7 +1805,6 @@ select * from athomes;</code></pre>
         return View::make('athome.create');
     }
 </code></pre>
-
 <p>这里只是对其中代码的进行一下说明。</p>
 <h3 id="创建表单"><span class="header-section-number">10.9.2</span> 创建表单</h3>
 <h4 id="创建表单之前"><span class="header-section-number">10.9.2.1</span> 创建表单之前</h4>
@@ -2064,7 +2055,7 @@ get                    performs a GET request
 put                    performs a PUT request
 post                   performs a POST request
 delete                 performs a DELETE request</code></pre>
-<p>在这里，我们用<a href="coap://vs0.inf.ethz.ch/">coap://vs0.inf.ethz.ch/</a>来作一个简单的测试</p>
+<p>在这里，我们用<a href="coap://vs0.inf.ethz.ch/" class="uri">coap://vs0.inf.ethz.ch/</a>来作一个简单的测试</p>
 <pre><code>coap get coap://vs0.inf.ethz.ch/
 (2.05)  ************************************************************
 I-D</code></pre>
@@ -2093,10 +2084,10 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <h2 id="coap-helloworld"><span class="header-section-number">12.7</span> CoAP Hello,World</h2>
 <p>接着我们便开始试试做一个简单的CoAP协议的应用，</p>
 <h4 id="开始之前-2"><span class="header-section-number">12.7.0.1</span> 开始之前</h4>
-<p>为了能访问<a href="coap://localhost/">coap://localhost/</a>，于是我们便需要安装一个Firefox并安装一个名为Copper的插件。</p>
+<p>为了能访问<a href="coap://localhost/" class="uri">coap://localhost/</a>，于是我们便需要安装一个Firefox并安装一个名为Copper的插件。</p>
 <ol style="list-style-type: decimal">
-<li><p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p></li>
-<li><p>作为测试我们同样可以访问 <a href="coap://vs0.inf.ethz.ch:5683/">coap://vs0.inf.ethz.ch:5683/</a></p></li>
+<li><p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/" class="uri">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p></li>
+<li><p>作为测试我们同样可以访问 <a href="coap://vs0.inf.ethz.ch:5683/" class="uri">coap://vs0.inf.ethz.ch:5683/</a></p></li>
 </ol>
 <h3 id="node-coap"><span class="header-section-number">12.7.1</span> Node-CoAP</h3>
 <p>这里用到的是一个Nodejs的扩展Node-CoAP</p>
