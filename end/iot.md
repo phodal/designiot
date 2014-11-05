@@ -84,7 +84,7 @@ TCP/IP协议，它已成为网络发展新阶段的标志。
 Arduino+Raspberry Pi+Laravel+JSON+RESTful+Ajax+Python+HighCharts，其框架图如下所示
 
 
-[struct]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/struct.png "系统框架图"
+[struct]: https://raw.githubusercontent.com/phodal/thesis/master/dot/struct.png "系统框架图"
 ![系统框架图][struct]
 
 Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据，
@@ -332,13 +332,13 @@ raspberrypi:
 
 ##Arduino##
 
-[arduinouno]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/ArduinoUnoSmd.png "Arduino开发板"
+[arduinouno]: https://raw.githubusercontent.com/phodal/thesis/master/dot/ArduinoUnoSmd.png "Arduino开发板"
 ![Arduino开发板][arduinouno]
 
 
 Arduino UNO用的处微控制器是Atmega328，它与Arduino芯片的对应关系如下所示
 
-[atmega328]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/atmega328w.png "Arduino管脚Atmega328对应图"
+[atmega328]: https://raw.githubusercontent.com/phodal/thesis/master/dot/atmega328w.png "Arduino管脚Atmega328对应图"
 ![Arduino管脚Atmega328对应图][atmega328]
 
 其主要参数如下所示:
@@ -379,7 +379,7 @@ Arduino UNO用的处微控制器是Atmega328，它与Arduino芯片的对应关�
 Arduino部分硬件程序如下所示，主要负责从串口中读入数据，并用led灯显示。
 程序流程图如下所示
 
-[image]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/arduino.png "Arduino程序流程图"
+[image]: https://raw.githubusercontent.com/phodal/thesis/master/dot/arduino.png "Arduino程序流程图"
 ![Arduino程序流程图][image]
 
 系统主要的功能在于接收和传递数据。
@@ -418,7 +418,7 @@ Arduino部分硬件程序如下所示，主要负责从串口中读入数据，�
 ##Raspberry Pi##
 Raspberrypi如下所示的开发板
 
-[raspi]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/raspberrypi.png "Raspberry Pi开发板"
+[raspi]: https://raw.githubusercontent.com/phodal/thesis/master/dot/raspberrypi.png "Raspberry Pi开发板"
 ![Raspberry Pi开发板][raspi]
 
 ```
@@ -441,7 +441,7 @@ Raspberrypi如下所示的开发板
 
 其程序流程图如下所示:
 
-[python2]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/python.png "Python 程序流程图"
+[python2]: https://raw.githubusercontent.com/phodal/thesis/master/dot/python.png "Python 程序流程图"
 ![Python程序流程图][python2]
 
 ###获取数据###
@@ -525,17 +525,17 @@ pip常用命令有install、uninstall以及search，install顾名思义就是安
             print "Bad URL or timeout"
 
 [^windows_com]:在Windows系统上，只需要将/dev/ttyACM0改为对应的com口。
-[getjson]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/getjson.png "python返回json数据"
+[getjson]: https://raw.githubusercontent.com/phodal/thesis/master/dot/getjson.png "python返回json数据"
 ![python返回json数据][getjson]
 
 系统还需要对上面的数据进行处理，只拿其中的结果
 
-[originjson]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/origin.png "python处理完后的结果"
+[originjson]: https://raw.githubusercontent.com/phodal/thesis/master/dot/origin.png "python处理完后的结果"
 ![python处理完后的结果][originjson]
 
 当改变led的状态后，便可以得到下面的结果
 
-[changejson]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/change.png "改变状态后的结果"
+[changejson]: https://raw.githubusercontent.com/phodal/thesis/master/dot/change.png "改变状态后的结果"
 ![改变状态后的结果][changejson]
 
 #网络系统设计#
@@ -547,14 +547,14 @@ pip常用命令有install、uninstall以及search，install顾名思义就是安
 对应四种基本操作：GET用来获取资源，POST用来新建资源（也可以用于更新资
 源），PUT用来更新资源，DELETE用来删除资源。
 
-[restful]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/restful.png "restful"
+[restful]: https://raw.githubusercontent.com/phodal/thesis/master/dot/restful.png "restful"
 ![restful][restful]
 
 简要的来说，一个GET动作便是在打开一个网页的时候，看到的内容，便是GET到
 的资源。而在获取取到网页的内容之前，会有一个POST动作到所要打开的网站的
 服务器。
 
-[getrequest]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/getrequest.png "Get Request"
+[getrequest]: https://raw.githubusercontent.com/phodal/thesis/master/dot/getrequest.png "Get Request"
 ![Get Request][getrequest]
 
 ###基本的REST服务###
@@ -566,7 +566,7 @@ REST服务实际上是充当着网络与设备的传输介质，构建一个REST
 
 返回结果如下所示
 
-[jsondata]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/jsondata.png "JSON结果返回图"
+[jsondata]: https://raw.githubusercontent.com/phodal/thesis/master/dot/jsondata.png "JSON结果返回图"
 ![JSON结果返回图][jsondata]
 
 假设有这样一个资源用于呈现led的状态，即 http://localhost/status/1
@@ -660,19 +660,19 @@ DELETE动作，便是删除动作了，而这也是一个物联网系统服务�
      if data.get_success
         temperature:=data.push(temperature)
 
-[editjson]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/edit.png "控制界面"
+[editjson]: https://raw.githubusercontent.com/phodal/thesis/master/dot/edit.png "控制界面"
 ![控制界面][editjson]
 
 当按下Change Status按钮时，系统发生了如下变化
 
-[getpost]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/getpost.png "GET POST数据"
+[getpost]: https://raw.githubusercontent.com/phodal/thesis/master/dot/getpost.png "GET POST数据"
 ![GET POST数据][getpost]
 
 系统会先向服务器发送数据，也就是POST请求，在请求结束后，系统将会刷新页面，也就是GET请求。
 
 系统会不断从后台获取数据结果，如下所示
 
-[request]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/request.png "后台获取数据"
+[request]: https://raw.githubusercontent.com/phodal/thesis/master/dot/request.png "后台获取数据"
 ![后台获取数据][request]
 
 在Javascript语言中有函数库可以直接用于获取后台数据——getJSON，可以从指定的URL中获取结果。
@@ -715,7 +715,7 @@ Highcharts有以下的特点
 
 在这里只需将需要处理的数据存储到数组中，便可以将其渲染成为图形，下面的温度走势图便是基于Highcharts的结果
 
-[chart1]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/chart.png "温度走势图"
+[chart1]: https://raw.githubusercontent.com/phodal/thesis/master/dot/chart.png "温度走势图"
 ![chart][chart1]
 
 ##系统后台设计##
