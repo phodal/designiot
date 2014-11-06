@@ -16,237 +16,239 @@
 <h2>一步步搭建物联网系统</h2>
 <div id="TOC">
 <ul>
-<li><a href="#前言"><span class="toc-section-number">0.1</span> 前言</a></li>
-<li><a href="#目标读者"><span class="toc-section-number">0.2</span> 目标读者</a></li>
-<li><a href="#不适合人群"><span class="toc-section-number">0.3</span> 不适合人群</a></li>
-<li><a href="#介绍"><span class="toc-section-number">0.4</span> 介绍</a>
+<li><a href="#前言"><span class="toc-section-number">1</span> 前言</a>
 <ul>
-<li><a href="#为什么没有c"><span class="toc-section-number">0.4.1</span> 为什么没有C ?</a></li>
-<li><a href="#为什么不是java"><span class="toc-section-number">0.4.2</span> 为什么不是JAVA ?</a></li>
-<li><a href="#为什么没有android"><span class="toc-section-number">0.4.3</span> 为什么没有Android ？</a></li>
+<li><a href="#目标读者"><span class="toc-section-number">1.1</span> 目标读者</a></li>
+<li><a href="#不适合人群"><span class="toc-section-number">1.2</span> 不适合人群</a></li>
+<li><a href="#介绍"><span class="toc-section-number">1.3</span> 介绍</a>
+<ul>
+<li><a href="#为什么没有c"><span class="toc-section-number">1.3.1</span> 为什么没有C ?</a></li>
+<li><a href="#为什么不是java"><span class="toc-section-number">1.3.2</span> 为什么不是JAVA ?</a></li>
+<li><a href="#为什么没有android"><span class="toc-section-number">1.3.3</span> 为什么没有Android ？</a></li>
 </ul></li>
-<li><a href="#如何阅读"><span class="toc-section-number">0.5</span> 如何阅读</a></li>
-<li><a href="#无处不在的html"><span class="toc-section-number">1</span> 无处不在的HTML</a>
-<ul>
-<li><a href="#html的helloworld"><span class="toc-section-number">1.1</span> html的hello,world</a>
-<ul>
-<li><a href="#调试helloworld"><span class="toc-section-number">1.1.1</span> 调试hello,world</a></li>
-<li><a href="#说说helloworld"><span class="toc-section-number">1.1.2</span> 说说hello,world</a></li>
-<li><a href="#想用中文"><span class="toc-section-number">1.1.3</span> 想用中文？</a></li>
+<li><a href="#如何阅读"><span class="toc-section-number">1.4</span> 如何阅读</a></li>
 </ul></li>
-<li><a href="#其他html标记"><span class="toc-section-number">1.2</span> 其他html标记</a>
+<li><a href="#无处不在的html"><span class="toc-section-number">2</span> 无处不在的HTML</a>
 <ul>
-<li><a href="#美妙之处"><span class="toc-section-number">1.2.1</span> 美妙之处</a></li>
-<li><a href="#更多"><span class="toc-section-number">1.2.2</span> 更多</a></li>
+<li><a href="#html的helloworld"><span class="toc-section-number">2.1</span> html的hello,world</a>
+<ul>
+<li><a href="#调试helloworld"><span class="toc-section-number">2.1.1</span> 调试hello,world</a></li>
+<li><a href="#说说helloworld"><span class="toc-section-number">2.1.2</span> 说说hello,world</a></li>
+<li><a href="#想用中文"><span class="toc-section-number">2.1.3</span> 想用中文？</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#无处不在的javascript"><span class="toc-section-number">2</span> 无处不在的Javascript</a>
+<li><a href="#其他html标记"><span class="toc-section-number">2.2</span> 其他html标记</a>
 <ul>
-<li><a href="#javascript的helloworld"><span class="toc-section-number">2.1</span> Javascript的Hello,world</a></li>
-<li><a href="#更js一点"><span class="toc-section-number">2.2</span> 更js一点</a>
-<ul>
-<li><a href="#从数学出发"><span class="toc-section-number">2.2.1</span> 从数学出发</a></li>
-</ul></li>
-<li><a href="#设计和编程"><span class="toc-section-number">2.3</span> 设计和编程</a>
-<ul>
-<li><a href="#函数"><span class="toc-section-number">2.3.1</span> 函数</a></li>
-<li><a href="#重新设计"><span class="toc-section-number">2.3.2</span> 重新设计</a></li>
-<li><a href="#object和函数"><span class="toc-section-number">2.3.3</span> object和函数</a></li>
-<li><a href="#面向对象"><span class="toc-section-number">2.3.4</span> 面向对象</a></li>
-</ul></li>
-<li><a href="#其他"><span class="toc-section-number">2.4</span> 其他</a></li>
-<li><a href="#美妙之处-1"><span class="toc-section-number">2.5</span> 美妙之处</a></li>
-</ul></li>
-<li><a href="#无处不在的css"><span class="toc-section-number">3</span> 无处不在的CSS</a>
-<ul>
-<li><a href="#css"><span class="toc-section-number">3.1</span> CSS</a></li>
-<li><a href="#关于css"><span class="toc-section-number">3.2</span> 关于CSS</a></li>
-<li><a href="#代码结构"><span class="toc-section-number">3.3</span> 代码结构</a></li>
-<li><a href="#样式与目标"><span class="toc-section-number">3.4</span> 样式与目标</a>
-<ul>
-<li><a href="#选择器"><span class="toc-section-number">3.4.1</span> 选择器</a></li>
-</ul></li>
-<li><a href="#更有趣的css"><span class="toc-section-number">3.5</span> 更有趣的CSS</a></li>
-</ul></li>
-<li><a href="#无处不在的三剑客"><span class="toc-section-number">4</span> 无处不在的三剑客</a>
-<ul>
-<li><a href="#hellogeek"><span class="toc-section-number">4.1</span> Hello,Geek</a></li>
-<li><a href="#从源码学习"><span class="toc-section-number">4.2</span> 从源码学习</a>
-<ul>
-<li><a href="#html"><span class="toc-section-number">4.2.1</span> HTML</a></li>
-</ul></li>
-<li><a href="#dom树形结构图"><span class="toc-section-number">4.3</span> DOM树形结构图</a>
-<ul>
-<li><a href="#javascript"><span class="toc-section-number">4.3.1</span> javascript</a></li>
-<li><a href="#css-1"><span class="toc-section-number">4.3.2</span> CSS</a></li>
-</ul></li>
-<li><a href="#css盒模型图"><span class="toc-section-number">4.4</span> CSS盒模型图</a></li>
-<li><a href="#笔记"><span class="toc-section-number">4.5</span> 笔记</a></li>
-</ul></li>
-<li><a href="#gnulinux"><span class="toc-section-number">5</span> GNU/Linux</a>
-<ul>
-<li><a href="#什么是linux"><span class="toc-section-number">5.1</span> 什么是Linux</a></li>
-<li><a href="#操作系统"><span class="toc-section-number">5.2</span> 操作系统</a>
-<ul>
-<li><a href="#linux架构图"><span class="toc-section-number">5.2.1</span> Linux架构图</a></li>
-<li><a href="#shell"><span class="toc-section-number">5.2.2</span> Shell</a></li>
-<li><a href="#gcc"><span class="toc-section-number">5.2.3</span> GCC</a></li>
-<li><a href="#启动引导程序"><span class="toc-section-number">5.2.4</span> 启动引导程序</a></li>
-</ul></li>
-<li><a href="#从编译开始"><span class="toc-section-number">5.3</span> 从编译开始</a>
-<ul>
-<li><a href="#开始之前"><span class="toc-section-number">5.3.1</span> 开始之前</a></li>
-<li><a href="#编译nginx"><span class="toc-section-number">5.3.2</span> 编译Nginx</a></li>
-<li><a href="#其他-1"><span class="toc-section-number">5.3.3</span> 其他</a></li>
-</ul></li>
-<li><a href="#包管理"><span class="toc-section-number">5.4</span> 包管理</a></li>
-</ul></li>
-<li><a href="#arduino"><span class="toc-section-number">6</span> Arduino</a>
-<ul>
-<li><a href="#极客的玩具"><span class="toc-section-number">6.1</span> 极客的玩具</a></li>
-<li><a href="#硬件熟悉"><span class="toc-section-number">6.2</span> 硬件熟悉</a></li>
-<li><a href="#开发环境"><span class="toc-section-number">6.3</span> 开发环境</a></li>
-<li><a href="#点亮一个led"><span class="toc-section-number">6.4</span> 点亮一个LED</a></li>
-<li><a href="#串口通信"><span class="toc-section-number">6.5</span> 串口通信</a></li>
-</ul></li>
-<li><a href="#python"><span class="toc-section-number">7</span> Python</a>
-<ul>
-<li><a href="#代码与散文"><span class="toc-section-number">7.1</span> 代码与散文</a>
-<ul>
-<li><a href="#开始之前-1"><span class="toc-section-number">7.1.1</span> 开始之前</a></li>
-<li><a href="#python的helloworld"><span class="toc-section-number">7.1.2</span> Python的Hello,World</a></li>
-<li><a href="#我们想要的helloworld"><span class="toc-section-number">7.1.3</span> 我们想要的Hello,World</a></li>
-</ul></li>
-<li><a href="#算法"><span class="toc-section-number">7.2</span> 算法</a></li>
-<li><a href="#实用主义哲学"><span class="toc-section-number">7.3</span> 实用主义哲学</a></li>
-<li><a href="#包管理-1"><span class="toc-section-number">7.4</span> 包管理</a></li>
-</ul></li>
-<li><a href="#raspberry-pi"><span class="toc-section-number">8</span> Raspberry Pi</a>
-<ul>
-<li><a href="#geek的盛宴"><span class="toc-section-number">8.1</span> Geek的盛宴</a></li>
-<li><a href="#raspberry-pi-初始化"><span class="toc-section-number">8.2</span> Raspberry Pi 初始化</a></li>
-</ul></li>
-<li><a href="#http与restful"><span class="toc-section-number">9</span> HTTP与RESTful</a>
-<ul>
-<li><a href="#你所没有深入的http"><span class="toc-section-number">9.1</span> 你所没有深入的HTTP</a>
-<ul>
-<li><a href="#打开网页时发生了什么"><span class="toc-section-number">9.1.1</span> 打开网页时发生了什么</a></li>
-<li><a href="#url组成"><span class="toc-section-number">9.1.2</span> URL组成</a></li>
-</ul></li>
-<li><a href="#一次http-get请求"><span class="toc-section-number">9.2</span> 一次HTTP GET请求</a>
-<ul>
-<li><a href="#http响应"><span class="toc-section-number">9.2.1</span> HTTP响应</a></li>
-</ul></li>
-<li><a href="#rest"><span class="toc-section-number">9.3</span> REST</a>
-<ul>
-<li><a href="#资源"><span class="toc-section-number">9.3.1</span> 资源</a></li>
+<li><a href="#美妙之处"><span class="toc-section-number">2.2.1</span> 美妙之处</a></li>
+<li><a href="#更多"><span class="toc-section-number">2.2.2</span> 更多</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#设计restful-api"><span class="toc-section-number">10</span> 设计RESTful API</a>
+<li><a href="#无处不在的javascript"><span class="toc-section-number">3</span> 无处不在的Javascript</a>
 <ul>
-<li><a href="#rest关键目标"><span class="toc-section-number">10.1</span> REST关键目标</a></li>
-<li><a href="#判断是否是-restful的约束条件"><span class="toc-section-number">10.2</span> 判断是否是 RESTful的约束条件</a></li>
-<li><a href="#设计restful资源"><span class="toc-section-number">10.3</span> 设计RESTful资源</a></li>
-<li><a href="#设计restful-uri"><span class="toc-section-number">10.4</span> 设计RESTful URI</a></li>
+<li><a href="#javascript的helloworld"><span class="toc-section-number">3.1</span> Javascript的Hello,world</a></li>
+<li><a href="#更js一点"><span class="toc-section-number">3.2</span> 更js一点</a>
+<ul>
+<li><a href="#从数学出发"><span class="toc-section-number">3.2.1</span> 从数学出发</a></li>
 </ul></li>
-<li><a href="#创建rest服务"><span class="toc-section-number">11</span> 创建REST服务</a>
+<li><a href="#设计和编程"><span class="toc-section-number">3.3</span> 设计和编程</a>
 <ul>
-<li><a href="#laravel"><span class="toc-section-number">11.1</span> Laravel</a>
-<ul>
-<li><a href="#安装-laravel"><span class="toc-section-number">11.1.1</span> 安装 Laravel</a></li>
+<li><a href="#函数"><span class="toc-section-number">3.3.1</span> 函数</a></li>
+<li><a href="#重新设计"><span class="toc-section-number">3.3.2</span> 重新设计</a></li>
+<li><a href="#object和函数"><span class="toc-section-number">3.3.3</span> object和函数</a></li>
+<li><a href="#面向对象"><span class="toc-section-number">3.3.4</span> 面向对象</a></li>
 </ul></li>
-<li><a href="#mysql"><span class="toc-section-number">11.2</span> MySQL</a>
-<ul>
-<li><a href="#安装mysql"><span class="toc-section-number">11.2.1</span> 安装MySQL</a></li>
-<li><a href="#配置mysql"><span class="toc-section-number">11.2.2</span> 配置MySQL</a></li>
+<li><a href="#其他"><span class="toc-section-number">3.4</span> 其他</a></li>
+<li><a href="#美妙之处-1"><span class="toc-section-number">3.5</span> 美妙之处</a></li>
 </ul></li>
-<li><a href="#数据库迁移"><span class="toc-section-number">11.3</span> 数据库迁移</a>
+<li><a href="#无处不在的css"><span class="toc-section-number">4</span> 无处不在的CSS</a>
 <ul>
-<li><a href="#创建表"><span class="toc-section-number">11.3.1</span> 创建表</a></li>
-<li><a href="#数据库迁移-1"><span class="toc-section-number">11.3.2</span> 数据库迁移</a></li>
-</ul></li>
-<li><a href="#创建restful"><span class="toc-section-number">11.4</span> 创建RESTful</a></li>
-<li><a href="#laravel-resources"><span class="toc-section-number">11.5</span> Laravel Resources</a>
+<li><a href="#css"><span class="toc-section-number">4.1</span> CSS</a></li>
+<li><a href="#关于css"><span class="toc-section-number">4.2</span> 关于CSS</a></li>
+<li><a href="#代码结构"><span class="toc-section-number">4.3</span> 代码结构</a></li>
+<li><a href="#样式与目标"><span class="toc-section-number">4.4</span> 样式与目标</a>
 <ul>
-<li><a href="#修改create"><span class="toc-section-number">11.5.1</span> 修改Create()</a></li>
-<li><a href="#创建表单"><span class="toc-section-number">11.5.2</span> 创建表单</a></li>
-<li><a href="#编辑模板"><span class="toc-section-number">11.5.3</span> 编辑模板</a></li>
+<li><a href="#选择器"><span class="toc-section-number">4.4.1</span> 选择器</a></li>
 </ul></li>
+<li><a href="#更有趣的css"><span class="toc-section-number">4.5</span> 更有趣的CSS</a></li>
 </ul></li>
-<li><a href="#restful-evertywhere"><span class="toc-section-number">12</span> RESTful Evertywhere</a>
+<li><a href="#无处不在的三剑客"><span class="toc-section-number">5</span> 无处不在的三剑客</a>
 <ul>
-<li><a href="#javascript与ajax"><span class="toc-section-number">12.1</span> Javascript与ajax</a>
+<li><a href="#hellogeek"><span class="toc-section-number">5.1</span> Hello,Geek</a></li>
+<li><a href="#从源码学习"><span class="toc-section-number">5.2</span> 从源码学习</a>
 <ul>
-<li><a href="#jquery"><span class="toc-section-number">12.1.1</span> jQuery</a></li>
+<li><a href="#html"><span class="toc-section-number">5.2.1</span> HTML</a></li>
 </ul></li>
-<li><a href="#java与json"><span class="toc-section-number">12.2</span> Java与json</a>
+<li><a href="#dom树形结构图"><span class="toc-section-number">5.3</span> DOM树形结构图</a>
 <ul>
-<li><a href="#android"><span class="toc-section-number">12.2.1</span> Android</a></li>
+<li><a href="#javascript"><span class="toc-section-number">5.3.1</span> javascript</a></li>
+<li><a href="#css-1"><span class="toc-section-number">5.3.2</span> CSS</a></li>
 </ul></li>
-<li><a href="#python与json"><span class="toc-section-number">12.3</span> Python与json</a>
+<li><a href="#css盒模型图"><span class="toc-section-number">5.4</span> CSS盒模型图</a></li>
+<li><a href="#笔记"><span class="toc-section-number">5.5</span> 笔记</a></li>
+</ul></li>
+<li><a href="#gnulinux"><span class="toc-section-number">6</span> GNU/Linux</a>
 <ul>
-<li><a href="#requests"><span class="toc-section-number">12.3.1</span> requests</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#前端显示"><span class="toc-section-number">13</span> 前端显示</a>
+<li><a href="#什么是linux"><span class="toc-section-number">6.1</span> 什么是Linux</a></li>
+<li><a href="#操作系统"><span class="toc-section-number">6.2</span> 操作系统</a>
 <ul>
-<li><a href="#jquery-mobile"><span class="toc-section-number">13.1</span> jQuery Mobile</a></li>
-<li><a href="#bootstrap"><span class="toc-section-number">13.2</span> Bootstrap</a></li>
-<li><a href="#库与车轮子"><span class="toc-section-number">13.3</span> 库与车轮子</a></li>
-<li><a href="#网站前台显示"><span class="toc-section-number">13.4</span> 网站前台显示</a>
+<li><a href="#linux架构图"><span class="toc-section-number">6.2.1</span> Linux架构图</a></li>
+<li><a href="#shell"><span class="toc-section-number">6.2.2</span> Shell</a></li>
+<li><a href="#gcc"><span class="toc-section-number">6.2.3</span> GCC</a></li>
+<li><a href="#启动引导程序"><span class="toc-section-number">6.2.4</span> 启动引导程序</a></li>
+</ul></li>
+<li><a href="#从编译开始"><span class="toc-section-number">6.3</span> 从编译开始</a>
 <ul>
-<li><a href="#highchart"><span class="toc-section-number">13.4.1</span> Highchart</a></li>
+<li><a href="#开始之前"><span class="toc-section-number">6.3.1</span> 开始之前</a></li>
+<li><a href="#编译nginx"><span class="toc-section-number">6.3.2</span> 编译Nginx</a></li>
+<li><a href="#其他-1"><span class="toc-section-number">6.3.3</span> 其他</a></li>
+</ul></li>
+<li><a href="#包管理"><span class="toc-section-number">6.4</span> 包管理</a></li>
+</ul></li>
+<li><a href="#arduino"><span class="toc-section-number">7</span> Arduino</a>
+<ul>
+<li><a href="#极客的玩具"><span class="toc-section-number">7.1</span> 极客的玩具</a></li>
+<li><a href="#硬件熟悉"><span class="toc-section-number">7.2</span> 硬件熟悉</a></li>
+<li><a href="#开发环境"><span class="toc-section-number">7.3</span> 开发环境</a></li>
+<li><a href="#点亮一个led"><span class="toc-section-number">7.4</span> 点亮一个LED</a></li>
+<li><a href="#串口通信"><span class="toc-section-number">7.5</span> 串口通信</a></li>
+</ul></li>
+<li><a href="#python"><span class="toc-section-number">8</span> Python</a>
+<ul>
+<li><a href="#代码与散文"><span class="toc-section-number">8.1</span> 代码与散文</a>
+<ul>
+<li><a href="#开始之前-1"><span class="toc-section-number">8.1.1</span> 开始之前</a></li>
+<li><a href="#python的helloworld"><span class="toc-section-number">8.1.2</span> Python的Hello,World</a></li>
+<li><a href="#我们想要的helloworld"><span class="toc-section-number">8.1.3</span> 我们想要的Hello,World</a></li>
+</ul></li>
+<li><a href="#算法"><span class="toc-section-number">8.2</span> 算法</a></li>
+<li><a href="#实用主义哲学"><span class="toc-section-number">8.3</span> 实用主义哲学</a></li>
+<li><a href="#包管理-1"><span class="toc-section-number">8.4</span> 包管理</a></li>
+</ul></li>
+<li><a href="#raspberry-pi"><span class="toc-section-number">9</span> Raspberry Pi</a>
+<ul>
+<li><a href="#geek的盛宴"><span class="toc-section-number">9.1</span> Geek的盛宴</a></li>
+<li><a href="#raspberry-pi-初始化"><span class="toc-section-number">9.2</span> Raspberry Pi 初始化</a></li>
+</ul></li>
+<li><a href="#http与restful"><span class="toc-section-number">10</span> HTTP与RESTful</a>
+<ul>
+<li><a href="#你所没有深入的http"><span class="toc-section-number">10.1</span> 你所没有深入的HTTP</a>
+<ul>
+<li><a href="#打开网页时发生了什么"><span class="toc-section-number">10.1.1</span> 打开网页时发生了什么</a></li>
+<li><a href="#url组成"><span class="toc-section-number">10.1.2</span> URL组成</a></li>
+</ul></li>
+<li><a href="#一次http-get请求"><span class="toc-section-number">10.2</span> 一次HTTP GET请求</a>
+<ul>
+<li><a href="#http响应"><span class="toc-section-number">10.2.1</span> HTTP响应</a></li>
+</ul></li>
+<li><a href="#rest"><span class="toc-section-number">10.3</span> REST</a>
+<ul>
+<li><a href="#资源"><span class="toc-section-number">10.3.1</span> 资源</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#构建基于coap协议的物联网系统"><span class="toc-section-number">14</span> 构建基于CoAP协议的物联网系统</a>
+<li><a href="#设计restful-api"><span class="toc-section-number">11</span> 设计RESTful API</a>
 <ul>
-<li><a href="#coap-嵌入式系统的rest"><span class="toc-section-number">14.1</span> CoAP: 嵌入式系统的REST</a></li>
-<li><a href="#coap-命令行工具"><span class="toc-section-number">14.2</span> CoAP 命令行工具</a>
-<ul>
-<li><a href="#node-coap-cli"><span class="toc-section-number">14.2.1</span> Node CoAP CLI</a></li>
-<li><a href="#libcoap"><span class="toc-section-number">14.2.2</span> libcoap</a></li>
+<li><a href="#rest关键目标"><span class="toc-section-number">11.1</span> REST关键目标</a></li>
+<li><a href="#判断是否是-restful的约束条件"><span class="toc-section-number">11.2</span> 判断是否是 RESTful的约束条件</a></li>
+<li><a href="#设计restful资源"><span class="toc-section-number">11.3</span> 设计RESTful资源</a></li>
+<li><a href="#设计restful-uri"><span class="toc-section-number">11.4</span> 设计RESTful URI</a></li>
 </ul></li>
-<li><a href="#coap-helloworld"><span class="toc-section-number">14.3</span> CoAP Hello,World</a>
+<li><a href="#创建rest服务"><span class="toc-section-number">12</span> 创建REST服务</a>
 <ul>
-<li><a href="#node-coap"><span class="toc-section-number">14.3.1</span> Node-CoAP</a></li>
-<li><a href="#node-coap示例"><span class="toc-section-number">14.3.2</span> Node CoAP示例</a></li>
-</ul></li>
-<li><a href="#coap-数据库查询"><span class="toc-section-number">14.4</span> CoAP 数据库查询</a>
+<li><a href="#laravel"><span class="toc-section-number">12.1</span> Laravel</a>
 <ul>
-<li><a href="#node-module"><span class="toc-section-number">14.4.1</span> Node Module</a></li>
-<li><a href="#node-sqlite3"><span class="toc-section-number">14.4.2</span> Node-Sqlite3</a></li>
-<li><a href="#查询数据"><span class="toc-section-number">14.4.3</span> 查询数据</a></li>
-<li><a href="#get"><span class="toc-section-number">14.4.4</span> GET</a></li>
-<li><a href="#iot-coap"><span class="toc-section-number">14.4.5</span> IoT CoAP</a></li>
-<li><a href="#判断请求的方法"><span class="toc-section-number">14.4.6</span> 判断请求的方法</a></li>
-<li><a href="#database与回调"><span class="toc-section-number">14.4.7</span> Database与回调</a></li>
+<li><a href="#安装-laravel"><span class="toc-section-number">12.1.1</span> 安装 Laravel</a></li>
 </ul></li>
-<li><a href="#coap-block"><span class="toc-section-number">14.5</span> CoAP Block</a>
+<li><a href="#mysql"><span class="toc-section-number">12.2</span> MySQL</a>
 <ul>
-<li><a href="#coap-post"><span class="toc-section-number">14.5.1</span> CoAP POST</a></li>
-<li><a href="#json请求"><span class="toc-section-number">14.5.2</span> JSON请求</a></li>
-<li><a href="#coap-content-types"><span class="toc-section-number">14.5.3</span> CoAP Content Types</a></li>
+<li><a href="#安装mysql"><span class="toc-section-number">12.2.1</span> 安装MySQL</a></li>
+<li><a href="#配置mysql"><span class="toc-section-number">12.2.2</span> 配置MySQL</a></li>
 </ul></li>
-<li><a href="#coap-json"><span class="toc-section-number">14.6</span> CoAP JSON</a>
+<li><a href="#数据库迁移"><span class="toc-section-number">12.3</span> 数据库迁移</a>
 <ul>
-<li><a href="#返回json"><span class="toc-section-number">14.6.1</span> 返回JSON</a></li>
-<li><a href="#coap客户端代码"><span class="toc-section-number">14.6.2</span> CoAP客户端代码</a></li>
-<li><a href="#coap-server端代码"><span class="toc-section-number">14.6.3</span> CoAP Server端代码</a></li>
+<li><a href="#创建表"><span class="toc-section-number">12.3.1</span> 创建表</a></li>
+<li><a href="#数据库迁移-1"><span class="toc-section-number">12.3.2</span> 数据库迁移</a></li>
 </ul></li>
-<li><a href="#使用iot-coap构建物联网"><span class="toc-section-number">14.7</span> 使用IoT-CoAP构建物联网</a></li>
-<li><a href="#iot-coap-1"><span class="toc-section-number">14.8</span> IoT-CoAP</a></li>
-<li><a href="#install"><span class="toc-section-number">14.9</span> install</a></li>
-</ul></li>
-<li><a href="#mqtt"><span class="toc-section-number">15</span> MQTT</a>
+<li><a href="#创建restful"><span class="toc-section-number">12.4</span> 创建RESTful</a></li>
+<li><a href="#laravel-resources"><span class="toc-section-number">12.5</span> Laravel Resources</a>
 <ul>
-<li><a href="#nodejs-mqtt"><span class="toc-section-number">15.1</span> Nodejs MQTT</a></li>
+<li><a href="#修改create"><span class="toc-section-number">12.5.1</span> 修改Create()</a></li>
+<li><a href="#创建表单"><span class="toc-section-number">12.5.2</span> 创建表单</a></li>
+<li><a href="#编辑模板"><span class="toc-section-number">12.5.3</span> 编辑模板</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#restful-evertywhere"><span class="toc-section-number">13</span> RESTful Evertywhere</a>
+<ul>
+<li><a href="#javascript与ajax"><span class="toc-section-number">13.1</span> Javascript与ajax</a>
+<ul>
+<li><a href="#jquery"><span class="toc-section-number">13.1.1</span> jQuery</a></li>
+</ul></li>
+<li><a href="#java与json"><span class="toc-section-number">13.2</span> Java与json</a>
+<ul>
+<li><a href="#android"><span class="toc-section-number">13.2.1</span> Android</a></li>
+</ul></li>
+<li><a href="#python与json"><span class="toc-section-number">13.3</span> Python与json</a>
+<ul>
+<li><a href="#requests"><span class="toc-section-number">13.3.1</span> requests</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#前端显示"><span class="toc-section-number">14</span> 前端显示</a>
+<ul>
+<li><a href="#jquery-mobile"><span class="toc-section-number">14.1</span> jQuery Mobile</a></li>
+<li><a href="#bootstrap"><span class="toc-section-number">14.2</span> Bootstrap</a></li>
+<li><a href="#库与车轮子"><span class="toc-section-number">14.3</span> 库与车轮子</a></li>
+<li><a href="#网站前台显示"><span class="toc-section-number">14.4</span> 网站前台显示</a>
+<ul>
+<li><a href="#highchart"><span class="toc-section-number">14.4.1</span> Highchart</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#构建基于coap协议的物联网系统"><span class="toc-section-number">15</span> 构建基于CoAP协议的物联网系统</a>
+<ul>
+<li><a href="#coap-嵌入式系统的rest"><span class="toc-section-number">15.1</span> CoAP: 嵌入式系统的REST</a></li>
+<li><a href="#coap-命令行工具"><span class="toc-section-number">15.2</span> CoAP 命令行工具</a>
+<ul>
+<li><a href="#node-coap-cli"><span class="toc-section-number">15.2.1</span> Node CoAP CLI</a></li>
+<li><a href="#libcoap"><span class="toc-section-number">15.2.2</span> libcoap</a></li>
+</ul></li>
+<li><a href="#coap-helloworld"><span class="toc-section-number">15.3</span> CoAP Hello,World</a>
+<ul>
+<li><a href="#node-coap"><span class="toc-section-number">15.3.1</span> Node-CoAP</a></li>
+<li><a href="#node-coap示例"><span class="toc-section-number">15.3.2</span> Node CoAP示例</a></li>
+</ul></li>
+<li><a href="#coap-数据库查询"><span class="toc-section-number">15.4</span> CoAP 数据库查询</a>
+<ul>
+<li><a href="#node-module"><span class="toc-section-number">15.4.1</span> Node Module</a></li>
+<li><a href="#node-sqlite3"><span class="toc-section-number">15.4.2</span> Node-Sqlite3</a></li>
+<li><a href="#查询数据"><span class="toc-section-number">15.4.3</span> 查询数据</a></li>
+<li><a href="#get"><span class="toc-section-number">15.4.4</span> GET</a></li>
+<li><a href="#iot-coap"><span class="toc-section-number">15.4.5</span> IoT CoAP</a></li>
+<li><a href="#判断请求的方法"><span class="toc-section-number">15.4.6</span> 判断请求的方法</a></li>
+<li><a href="#database与回调"><span class="toc-section-number">15.4.7</span> Database与回调</a></li>
+</ul></li>
+<li><a href="#coap-block"><span class="toc-section-number">15.5</span> CoAP Block</a>
+<ul>
+<li><a href="#coap-post"><span class="toc-section-number">15.5.1</span> CoAP POST</a></li>
+<li><a href="#json请求"><span class="toc-section-number">15.5.2</span> JSON请求</a></li>
+<li><a href="#coap-content-types"><span class="toc-section-number">15.5.3</span> CoAP Content Types</a></li>
+</ul></li>
+<li><a href="#coap-json"><span class="toc-section-number">15.6</span> CoAP JSON</a>
+<ul>
+<li><a href="#返回json"><span class="toc-section-number">15.6.1</span> 返回JSON</a></li>
+<li><a href="#coap客户端代码"><span class="toc-section-number">15.6.2</span> CoAP客户端代码</a></li>
+<li><a href="#coap-server端代码"><span class="toc-section-number">15.6.3</span> CoAP Server端代码</a></li>
+</ul></li>
+<li><a href="#使用iot-coap构建物联网"><span class="toc-section-number">15.7</span> 使用IoT-CoAP构建物联网</a></li>
+<li><a href="#iot-coap-1"><span class="toc-section-number">15.8</span> IoT-CoAP</a></li>
+<li><a href="#install"><span class="toc-section-number">15.9</span> install</a></li>
+</ul></li>
+<li><a href="#mqtt"><span class="toc-section-number">16</span> MQTT</a>
+<ul>
+<li><a href="#nodejs-mqtt"><span class="toc-section-number">16.1</span> Nodejs MQTT</a></li>
 </ul></li>
 </ul>
 </div>
-<h2 id="前言"><span class="header-section-number">0.1</span> 前言</h2>
+<h1 id="前言"><span class="header-section-number">1</span> 前言</h1>
 <p>设计物联网系统是一种有意思的事情，我们需要考虑到软件、硬件、通讯等等不同的几个方案。探索不同的语言，不同的框架，形成不同的解决方案。</p>
 <p>在文档中，我们将对设计物联网系统有一个简单的介绍，我们会探讨如何设计一个最小的物联网系统。</p>
-<h2 id="目标读者"><span class="header-section-number">0.2</span> 目标读者</h2>
+<h2 id="目标读者"><span class="header-section-number">1.1</span> 目标读者</h2>
 <p>本文档的目标读者是初入物联网领域，希望对物联网系统有一个大概的认识和把握，并学会如何掌握好一个基础的物联网系统的设计。</p>
 <p>本文档对一些概念(如)只做了一些基本介绍，以及便于理解。如果想进一步了解这些概念，会列出一些推荐书目，以供参考。</p>
 <ul>
@@ -261,11 +263,11 @@
 <li>CoAP协议</li>
 <li>MQTT</li>
 </ul>
-<h2 id="不适合人群"><span class="header-section-number">0.3</span> 不适合人群</h2>
+<h2 id="不适合人群"><span class="header-section-number">1.2</span> 不适合人群</h2>
 <ul>
 <li>如果你在这方面已经有了丰富经验的开发者(ps:我想你帮我们丰富文档)</li>
 </ul>
-<h2 id="介绍"><span class="header-section-number">0.4</span> 介绍</h2>
+<h2 id="介绍"><span class="header-section-number">1.3</span> 介绍</h2>
 <p>关于内容的选择上，这是一个有意思的话题，我们很难判断不同的开发者用的是怎样的语言，用的是怎样的框架。</p>
 <p>于是我们便自作主张地选择了那些适合于理论学习的语言、框架、硬件，去除掉其他那些我们不需要考虑的因素，如语法，复杂度等等。当然，这些语言、框架、硬件也是流行的，如果找到相关的文档。</p>
 <ul>
@@ -276,17 +278,17 @@
 <li>Javascript : 考虑到CoAP、MQTT等版本是基于Nodejs的话，而且这门语言已经无处不在了，而且会更加流行。</li>
 <li>HTML、CSS : 这是必须的，他们仍然也是无处不在。</li>
 </ul>
-<h3 id="为什么没有c"><span class="header-section-number">0.4.1</span> 为什么没有C ?</h3>
+<h3 id="为什么没有c"><span class="header-section-number">1.3.1</span> 为什么没有C ?</h3>
 <p>如果你还想用C学理论的话，呵呵。</p>
-<h3 id="为什么不是java"><span class="header-section-number">0.4.2</span> 为什么不是JAVA ?</h3>
+<h3 id="为什么不是java"><span class="header-section-number">1.3.2</span> 为什么不是JAVA ?</h3>
 <p>大致有下面两个原因</p>
 <ul>
 <li>JAVA学的人很多，然而不适合我们将主要精力集中于构建与学习，因为无关的代码太多了。</li>
 <li>当时以及现在，我还是不喜欢JAVA(ps:更喜欢脚本语言，可以在更少的时候做更多的事)。</li>
 </ul>
-<h3 id="为什么没有android"><span class="header-section-number">0.4.3</span> 为什么没有Android ？</h3>
+<h3 id="为什么没有android"><span class="header-section-number">1.3.3</span> 为什么没有Android ？</h3>
 <p>在IOT的repo中: <a href="https://github.com/phodal/iot" class="uri">https://github.com/phodal/iot</a> 是有Android的示例，然而这些理论不适合在这里讨论。</p>
-<h2 id="如何阅读"><span class="header-section-number">0.5</span> 如何阅读</h2>
+<h2 id="如何阅读"><span class="header-section-number">1.4</span> 如何阅读</h2>
 <p>这是一个简单的建议，仅针对于在选择阅读没有经验的读者。</p>
 <table>
 <thead>
@@ -312,9 +314,9 @@
 </table>
 <p>有一天，走在回学校的路上，我在想：“未来是科技时代（现在也是），只是未来科技会无处不在，而如果我们对于周围的无处不在的代码一无所知的话，或许我们会成为黑客帝国中的一般人”。所以开始想着，人们会开始学习编程就像学习一门语言一样，直到有一天我看到了学习编程如同学习一门语言。这算是一个有趣的时间点，于是我开始想着像之前做最小物联网系统的那些步骤一样，写一个简单的入门。也可以补充好之前在这个最小物联网系统缺失的那些东西，给那些正在开始试图去解决编程问题的人。</p>
 <p>我们先从身边的语言下手，也就是现在无处不在的html+javascript+css。</p>
-<h1 id="无处不在的html"><span class="header-section-number">1</span> 无处不在的HTML</h1>
+<h1 id="无处不在的html"><span class="header-section-number">2</span> 无处不在的HTML</h1>
 <p>从html开始的原因在于我们不需要去配置一个复杂的开发环境，也许你还不知道开始环境是什么东西，而这些需要去慢慢的了解才能接触，特别是对于普通的业余爱好者来说，对于专业的选手那些自然不是问题。HTML是Web的核心语言，也算是基础的语言。</p>
-<h2 id="html的helloworld"><span class="header-section-number">1.1</span> html的hello,world</h2>
+<h2 id="html的helloworld"><span class="header-section-number">2.1</span> html的hello,world</h2>
 <p>Hello,world是一个传统，所以在这里也遵循这个有趣的传统，我们所要做的事情事实很简单。虽然也有点hack的感觉，所以让我们新建一个文件叫“helloworld.html”。</p>
 <p>(PS:大部分人应该都是在windows下工作的，所以你需要新建一个文本，然后重命名，或者你需要一个编辑器，在这里推荐用<strong>sublime text</strong>。破解不破解，注册不注册都不会对你的使用有太多的影响。)</p>
 <ol>
@@ -331,14 +333,14 @@
 <span class="kw">2.0.0-p353</span> :002 <span class="kw">&gt;</span></code></pre>
 <p>等等，如果你了解过html的话，会觉得这一点都不符合语法规则，但是他工作了，没有什么比安装完Nginx后看到It works!更让人激动了。</p>
 <p>遗憾的是，它可能无法在所有的浏览器上工作，所以我们需要去调试其中的bug。</p>
-<h3 id="调试helloworld"><span class="header-section-number">1.1.1</span> 调试hello,world</h3>
+<h3 id="调试helloworld"><span class="header-section-number">2.1.1</span> 调试hello,world</h3>
 <p>我们会发现我们的代码在浏览器中变成了下面的代码，如果你和我一样用的是chrome，那么你可以右键浏览器中的空白区域，点击审查元素，就会看到下面的代码。</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
     <span class="kw">&lt;head&gt;&lt;/head&gt;</span>
     <span class="kw">&lt;body&gt;</span>hello,world<span class="kw">&lt;/body&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre>
 <p>这个才是真正能在大部分浏览器上工作的代码，所以复制它到编辑器里吧。</p>
-<h3 id="说说helloworld"><span class="header-section-number">1.1.2</span> 说说hello,world</h3>
+<h3 id="说说helloworld"><span class="header-section-number">2.1.2</span> 说说hello,world</h3>
 <p>我很不喜欢其中的&lt;*&gt;超文本标记语言</p>
 <p>所以我们可以发现其中的关键词是标记——markup，也就是说html是一个markup，head是一个markup，body是一个markup。</p>
 <p>而后，我们真正工作的代码是在body里面，至于为什么是在里面，这个问题算是太复杂了。</p>
@@ -346,25 +348,25 @@
 <li><p>我们所学的汉语是别人创造的，我们所正在学的这门语言也是别人创造的。</p></li>
 <li><p>我们在自己的语言里遵循着<strong>他代表是个男的，她代替是个女的</strong>。</p></li>
 </ol>
-<h3 id="想用中文"><span class="header-section-number">1.1.3</span> 想用中文？</h3>
+<h3 id="想用中文"><span class="header-section-number">2.1.3</span> 想用中文？</h3>
 <p>所以我们也可以把计算机语言与现实世界的语言划上一个等号。而我们所要学习的语言，因为没有一门真正意义上的汉语语言，所以我们便觉得这些很复杂，如果我们可以用汉语代换掉上面的代码的话</p>
-<pre><code>&lt;语言&gt;
-    &lt;头&gt;&lt;结束头&gt;
-    &lt;身体&gt;你好，世界&lt;结束身体&gt;
-&lt;结束语言&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="er">&lt;</span>语言&gt;
+    <span class="er">&lt;</span>头&gt;<span class="er">&lt;</span>结束头&gt;
+    <span class="er">&lt;</span>身体&gt;你好，世界<span class="er">&lt;</span>结束身体&gt;
+<span class="er">&lt;</span>结束语言&gt;</code></pre>
 <p>看上去很奇怪，只是因为是音译过去的原因，也许你会觉得这样会好理解一点，但是输入上可能一点儿也不方便，因为这键盘都不适合我们去输入汉字，也意味着可能你输入的会有问题。</p>
 <p>让我们把上面的代码代替掉原来的代码然后保存，打开浏览器会看到下面的结果</p>
-<pre><code>&lt;语言&gt; &lt;头&gt;&lt;结束头&gt; &lt;身体&gt;你好，世界&lt;结束身体&gt; &lt;结束语言&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="er">&lt;</span>语言&gt; <span class="er">&lt;</span>头&gt;<span class="er">&lt;</span>结束头&gt; <span class="er">&lt;</span>身体&gt;你好，世界<span class="er">&lt;</span>结束身体&gt; <span class="er">&lt;</span>结束语言&gt;</code></pre>
 <p>更不幸的结果可能是</p>
-<pre><code>&lt;璇█&gt; &lt;澶�&gt;&lt;缁撴潫澶�&gt; &lt;韬綋&gt;浣犲ソ锛屼笘鐣�&lt;缁撴潫韬綋&gt; &lt;缁撴潫璇█&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="er">&lt;</span>璇█&gt; <span class="er">&lt;</span>澶�&gt;<span class="er">&lt;</span>缁撴潫澶�&gt; <span class="er">&lt;</span>韬綋&gt;浣犲ソ锛屼笘鐣�<span class="er">&lt;</span>缁撴潫韬綋&gt; <span class="er">&lt;</span>缁撴潫璇█&gt;</code></pre>
 <p>这是一个编码问题，对中文支持不友好。</p>
 <p>所以我们把上面的代码改为和标记语言一样的结构</p>
-<pre><code>&lt;语言&gt;
-    &lt;头&gt;&lt;/头&gt;
-    &lt;身体&gt;你好，世界&lt;/身体&gt;
-&lt;结束语言&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="er">&lt;</span>语言&gt;
+    <span class="er">&lt;</span>头&gt;<span class="er">&lt;</span>/头&gt;
+    <span class="er">&lt;</span>身体&gt;你好，世界<span class="er">&lt;</span>/身体&gt;
+<span class="er">&lt;</span>结束语言&gt;</code></pre>
 <p>于是我们看到的结果便是</p>
-<pre><code>&lt;语言&gt; &lt;头&gt; &lt;身体&gt;你好，世界</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="er">&lt;</span>语言&gt; <span class="er">&lt;</span>头&gt; <span class="er">&lt;</span>身体&gt;你好，世界</code></pre>
 <p>被chrome浏览器解析成什么样了？</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;</span><span class="er">&lt;</span>语言&gt;
         <span class="er">&lt;</span>头&gt;<span class="co">&lt;!--头--&gt;</span>
@@ -374,9 +376,9 @@
 <p>以</p>
 <p>结尾的是注释，写给人看的代码，不是给机器看的，所以机器不会去理解这些代码。</p>
 <p>但是当我们把代码改成</p>
-<pre><code>&lt;whatwewanttosay&gt;你好世界&lt;/whatwewanttosay&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;whatwewanttosay&gt;</span>你好世界<span class="kw">&lt;/whatwewanttosay&gt;</span></code></pre>
 <p>浏览器上面显示的内容就变成了</p>
-<pre><code>你好世界</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html">你好世界</code></pre>
 <p>或许你会觉得很神奇，但是这一点儿也不神奇，虽然我们的中文语法也遵循着标记语言的标准，但是我们的浏览器不支持中文标记。</p>
 <p>结论:</p>
 <ol>
@@ -389,14 +391,14 @@
 <li>中文输入的速度在某种程度上来说没有英语快。</li>
 </ol>
 <p>我们离开话题已经很远了，但是这里说的都是针对于那些不满于英语的人来说的，只有当我们可以从头构建一个中文系统的时候才是可行的，这些包括的东西有cpu，软件，硬件，而我们还需要考虑重新设计cpu的结构，在某种程度上来说会有些不现实。需要一代又一代的人的努力，只是在当前就更不现实了。忘记那些，师夷长之技以治夷。</p>
-<h2 id="其他html标记"><span class="header-section-number">1.2</span> 其他html标记</h2>
+<h2 id="其他html标记"><span class="header-section-number">2.2</span> 其他html标记</h2>
 <p>添加一个标题，</p>
-<pre><code>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;标题&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;hello,world&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>标题<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>hello,world<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
 <p>我们便可以在浏览器的最上方看到“标题”二字，真实世界的淘宝网也包含了上面的东西，只是还包括了更多的东西，所以你也可以看懂那些我们可以看到的淘宝的标题。</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
 <span class="kw">&lt;head&gt;</span>
@@ -414,10 +416,10 @@ hello,world
 <span class="kw">&lt;/body&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre>
 <p>更多的东西可以在一些书籍上看到，这边所要说的只是一次简单的语言入门，其他的东西都和这些类似。</p>
-<h3 id="美妙之处"><span class="header-section-number">1.2.1</span> 美妙之处</h3>
+<h3 id="美妙之处"><span class="header-section-number">2.2.1</span> 美妙之处</h3>
 <p>我们简单地上手了一门不算是语言的语言，浏览器简化了这其中的大部分过程，虽然没有C和其他语言来得有专业感，但是我们试着去开始写代码了。我们可能在未来的某一篇中可能会看到类似的语言，诸如python，我们所要做的就是</p>
-<pre><code>$ python file.py
-=&gt;hello,world</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> file.py
+=<span class="kw">&gt;hello</span>,world</code></pre>
 <p>然后在终端上返回结果。只是因为在我看来学会html是有意义的，简单的上手，而后再慢慢地深入，如果一开始我们就开始去理解指针，开始去理解类。我们甚至还知道程序是怎么编译运行的时候，在这个过程中又发生了什么。虽然现在我们也没能理解这其中发生了什么，但是至少展示了</p>
 <ol>
 <li>中文编程语言在当前意义不大，不现实，效率不高兼容性差</li>
@@ -425,11 +427,11 @@ hello,world
 <li>已经开始写代码，而不是还在配置开发环境。</li>
 <li>随身的工具才是最好的，最常用的code也才是实在的。</li>
 </ol>
-<h3 id="更多"><span class="header-section-number">1.2.2</span> 更多</h3>
+<h3 id="更多"><span class="header-section-number">2.2.2</span> 更多</h3>
 <p>我们还没有试着去解决，某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱的问题。也就是说我们学会的是一个还不能解决实际问题的语言，于是我们还需要学点东西如javascript,css。我们可以理解为Javascript是解决问题的语言，html是前端显示，css是配置文件，这样的话，我们会在那之后学会成为一个近乎专业的程序员。我们刚学了下怎么在前端显示那些代码的行为，于是我们还需要Javascript。</p>
-<h1 id="无处不在的javascript"><span class="header-section-number">2</span> 无处不在的Javascript</h1>
+<h1 id="无处不在的javascript"><span class="header-section-number">3</span> 无处不在的Javascript</h1>
 <p>Javascript现在已经无处不在了，也许你正打开的某个网站他可能是node.js+json+javascript+mustache.js完成的，虽然你还没理解上面那些是什么，也正是因为你不理解才需要去学习更多的东西。但是Javascript已经无处不在了，可能会在你手机上的某个app里，在你浏览的网页里，在你IDE中的某个进程中运行的。</p>
-<h2 id="javascript的helloworld"><span class="header-section-number">2.1</span> Javascript的Hello,world</h2>
+<h2 id="javascript的helloworld"><span class="header-section-number">3.1</span> Javascript的Hello,world</h2>
 <p>这里我们还需要有一个helloworld.html，Javascript是专为网页交互而设计的脚本语言，所以我们一点点来开始这部分的旅途，先写一个符合标准的helloworld.html</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
 <span class="kw">&lt;html&gt;</span>
@@ -470,7 +472,7 @@ hello,world
         &lt;<span class="ot">/noscript&gt;</span>
 <span class="ot">    &lt;/body</span>&gt;
 &lt;<span class="ot">/html&gt;</span></code></pre>
-<h2 id="更js一点"><span class="header-section-number">2.2</span> 更js一点</h2>
+<h2 id="更js一点"><span class="header-section-number">3.2</span> 更js一点</h2>
 <p>我们需要让我们的代码看上去更像是js，同时是以js结尾。C语言的源码但是以C结尾的，所以我们要让我们的代码看上去更正式一点。于是我们需要在helloworld.html的同文件夹下创建一个app.js，里面写着</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">document</span>.<span class="fu">write</span>(<span class="st">&#39;hello,world&#39;</span>);</code></pre>
 <p>同时我们的helloworld.html还需要告诉我们的浏览器js代码在哪里</p>
@@ -485,11 +487,11 @@ hello,world
         <span class="kw">&lt;/noscript&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre>
-<h3 id="从数学出发"><span class="header-section-number">2.2.1</span> 从数学出发</h3>
+<h3 id="从数学出发"><span class="header-section-number">3.2.1</span> 从数学出发</h3>
 <p>让我们回到第一章讲述的小明的问题，<strong>从实际问题下手编程，更容易学会编程</strong>。小学时代的数学题最喜欢这样子了——某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱的问题。在编程方面，也许我们还算是小学生。最直接的方法就是直接计算3x5=?</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">document</span>.<span class="fu">write</span>(<span class="dv">3</span>*<span class="dv">5</span>);</code></pre>
 <p>document.write实际也我们可以理解为输出，也就是往页面里写入3*5的结果，在有双引号的情况下会输出字符串。我们便会在浏览器上看到15，这便是一个好的开始，也是一个不好的开始。</p>
-<h2 id="设计和编程"><span class="header-section-number">2.3</span> 设计和编程</h2>
+<h2 id="设计和编程"><span class="header-section-number">3.3</span> 设计和编程</h2>
 <p>对于我们的实际问题如果总是止于所要的结果，很多年之后，我们成为了code monkey。对这个问题进行一次设计，所谓的设计有些时候会把简单的问题复杂化，有些时候会使以后的扩展更加简单。这一天因为这家商店的糖价格太高了，于是店长将价格降为了4块钱。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">document</span>.<span class="fu">write</span>(<span class="dv">3</span>*<span class="dv">4</span>);</code></pre>
 <p>于是我们又得到了我们的结果，但是下次我们看到这些代码的时候没有分清楚哪个是糖的数量，哪个是价格，于是我们重新设计了程序</p>
@@ -497,7 +499,7 @@ hello,world
 num=<span class="dv">3</span>;
 <span class="ot">document</span>.<span class="fu">write</span>(tang*num);</code></pre>
 <p>这才能叫得上是程序设计，或许你注意到了“;”这个符号的存在，我想说的是这是另外一个标准，我们不得不去遵守，也不得不去fuck。</p>
-<h3 id="函数"><span class="header-section-number">2.3.1</span> 函数</h3>
+<h3 id="函数"><span class="header-section-number">3.3.1</span> 函数</h3>
 <p>记得刚开始学三角函数的时候，我们会写</p>
 <pre><code>sin 30=0.5</code></pre>
 <p>而我们的函数也是类似于此，换句话说，因为很多搞计算机的先驱都学好了数学，都把数学世界的规律带到了计算机世界，所以我们的函数也是类似于此，让我们做一个简单的开始。</p>
@@ -523,7 +525,7 @@ num=<span class="dv">3</span>;
 }
 <span class="fu">calc</span>(<span class="dv">3</span>,<span class="dv">4</span>);</code></pre>
 <p>但是从某种程度上来说，我们的calc做了计算的事又做了输出的事，总的来说设计上有些不好。</p>
-<h3 id="重新设计"><span class="header-section-number">2.3.2</span> 重新设计</h3>
+<h3 id="重新设计"><span class="header-section-number">3.3.2</span> 重新设计</h3>
 <p>我们将输出的工作移到函数的外面，</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">calc</span>(tang,num){
     <span class="kw">return</span> tang*num;
@@ -538,12 +540,12 @@ num=<span class="dv">3</span>;
 }
 <span class="fu">printResult</span>(<span class="dv">3</span>, <span class="dv">4</span>)</code></pre>
 <p>看上去更专业了一点点，如果我们只需要计算的时候我们只需要调用calc，如果我们需要输出的时候我们就调用printResult的方法。</p>
-<h3 id="object和函数"><span class="header-section-number">2.3.3</span> object和函数</h3>
+<h3 id="object和函数"><span class="header-section-number">3.3.3</span> object和函数</h3>
 <p>我们还没有说清楚之前我们遇到过的document.write以及Math.sin的语法看上去很奇怪，所以让我们看看他们到底是什么，修改app.js为以及内容</p>
-<pre><code>document.write(typeof document);
-document.write(typeof Math);</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> document);
+<span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> Math);</code></pre>
 <p>typeof document会返回document的数据类型，就会发现输出的结果是</p>
-<pre><code>object object</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">object object</code></pre>
 <p>所以我们需要去弄清楚什么是object。对象的定义是</p>
 <blockquote>
 无序属性的集合，其属性可以包含基本值、对象或者函数。
@@ -587,7 +589,7 @@ document.write(typeof Math);</code></pre>
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> Person);
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="ot">Person</span>.<span class="fu">future</span>);</code></pre>
 <p>而这些会在我们未来的实际编编程中用得更多。</p>
-<h3 id="面向对象"><span class="header-section-number">2.3.4</span> 面向对象</h3>
+<h3 id="面向对象"><span class="header-section-number">3.3.4</span> 面向对象</h3>
 <p>开始之前先我们简化上面的代码，</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">Person</span>.<span class="fu">future</span>=<span class="kw">function</span> <span class="fu">dream</span>(){
     future;
@@ -624,7 +626,7 @@ document.write(typeof Math);</code></pre>
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="ot">phodal</span>.<span class="fu">height</span>+<span class="st">&quot;&lt;br&gt;&quot;</span>);
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="ot">phodal</span>.<span class="fu">future</span>()+<span class="st">&quot;&lt;br&gt;&quot;</span>);</code></pre>
 <p>于是，产生了这样一个可重用的Javascript对象,this关键字确立了属性的所有者。</p>
-<h2 id="其他"><span class="header-section-number">2.4</span> 其他</h2>
+<h2 id="其他"><span class="header-section-number">3.4</span> 其他</h2>
 <p>Javascript还有一个很强大的特性，也就是原型继承，不过这里我们先不考虑这些部分，用尽量少的代码及关键字来实际我们所要表达的核心功能，这才是这里的核心，其他的东西我们可以从其他书本上学到。</p>
 <p>所谓的继承，</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> Chinese=<span class="kw">function</span>(){
@@ -664,154 +666,154 @@ document.write(typeof Math);</code></pre>
     <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;app.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre>
 <p>我们需要修改一下helloworld.html添加</p>
-<pre><code>&lt;p id=&quot;para&quot; style=&quot;color:red&quot;&gt;Red&lt;/p&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;para&quot;</span><span class="ot"> style=</span><span class="st">&quot;color:red&quot;</span><span class="kw">&gt;</span>Red<span class="kw">&lt;/p&gt;</span></code></pre>
 <p>同时还需要将script标签移到body下面，如果没有意外的话我们会看到页面上用红色的字体显示Red，修改app.js。</p>
-<pre><code>var para=document.getElementById(&quot;para&quot;);
-para.style.color=&quot;blue&quot;;</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> para=<span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&quot;para&quot;</span>);
+<span class="ot">para</span>.<span class="ot">style</span>.<span class="fu">color</span>=<span class="st">&quot;blue&quot;</span>;</code></pre>
 <p>接着，字体就变成了蓝色，有了DOM我们就可以对页面进行操作，可以说我们看到的绝大部分的页面效果都是通过DOM操作实现的。</p>
-<h2 id="美妙之处-1"><span class="header-section-number">2.5</span> 美妙之处</h2>
+<h2 id="美妙之处-1"><span class="header-section-number">3.5</span> 美妙之处</h2>
 <p>这里说到的Javascript仅仅只是其中的一小小部分，忽略掉的东西很多，只关心的是如何去设计一个实用的app，作为一门编程语言，他还有其他强大的内制函数，要学好需要一本有价值的参考书。这里提到的只是其中的不到20%的东西，其他的80%或者更多会在你解决问题的时候出现。</p>
 <ul>
 <li>我们可以创建一个对象或者说函数，它可以包含基本值、对象或者函数。</li>
 <li>我们可以用Javascript修改页面的属性，虽然只是简单的示例。</li>
 <li>我们还可以去解决实际的编程问题。</li>
 </ul>
-<h1 id="无处不在的css"><span class="header-section-number">3</span> 无处不在的CSS</h1>
+<h1 id="无处不在的css"><span class="header-section-number">4</span> 无处不在的CSS</h1>
 <p>CSS或许你觉得他一点儿也不重要，HTML好比是建筑的框架，CSS就是用于装修房子。那么Javascript呢，我听到的最有趣的说法是小三，先让我们回到代码上来吧。</p>
-<h2 id="css"><span class="header-section-number">3.1</span> CSS</h2>
+<h2 id="css"><span class="header-section-number">4.1</span> CSS</h2>
 <p>下面就是我们之前说到的代码，css将Red三个字母变成了红色。</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p id=&quot;para&quot; style=&quot;color:red&quot;&gt;Red&lt;/p&gt;
-&lt;/body&gt;
-    &lt;script type=&quot;text/javascript&quot; src=&quot;app.js&quot;&gt;&lt;/script&gt;
-&lt;/html&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> id=</span><span class="st">&quot;para&quot;</span><span class="ot"> style=</span><span class="st">&quot;color:red&quot;</span><span class="kw">&gt;</span>Red<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;app.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
 <p>只是，</p>
-<pre><code>var para=document.getElementById(&quot;para&quot;);
-para.style.color=&quot;blue&quot;;</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> para=<span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&quot;para&quot;</span>);
+<span class="ot">para</span>.<span class="ot">style</span>.<span class="fu">color</span>=<span class="st">&quot;blue&quot;</span>;</code></pre>
 <p>将字体变成了蓝色，CSS+HTML让页面有序的工作着，但是Javascript打乱了这些秩序，不过却也让生活多姿多彩，小三不都是这样的么——终于可以理解，为什么以前人们对于Javascript没有好感了？不过这里要讲的是正室，也就是CSS，这时还没有Javascript。</p>
 <div class="figure">
 <img src="./images/redfonts.png" alt="Red Fonts" />
 <p>Red Fonts</p>
 </div>
-<h2 id="关于css"><span class="header-section-number">3.2</span> 关于CSS</h2>
+<h2 id="关于css"><span class="header-section-number">4.2</span> 关于CSS</h2>
 <p>这不是一篇好的关于讲述CSS的书籍，所以不会去说CSS是怎么来的，有些东西既然我们可以很容易从其他地方知道，也就不需要花太多时间去重复。诸如重构等这些的目的之一也在于去除重复的代码，不过有些重复是不可少的，也是有必要的，而通常这些东西可能是由其他地方复制过来的。</p>
 <p>到目前为止我们没有依赖于任何特殊的硬件或者是软件，对于我们来说我们最基本的需求就是一台电脑，或者可以是你的平板电脑，当然也可以是你的智能手机，因为他们都有个浏览器，而这些都是能用的，对于我们的CSS来说也不会有例外的。</p>
 <p>CSS是来自于(Cascading Style Sheets)，到今天我也没有记得他的全称，CSS还有一个中文名字是层叠式样式表，翻译成什么样的可能并不是我们关心的内容，我们需要关心的是他能做些什么。作为三剑客之一，它的主要目的在于可以让我们方便灵活地去控制Web页面的外观表现。我们可以用它做出像淘宝一样复杂的界面，也可以像我们的书本一样简单，不过如果要和我们书本一样简单的话，可能不需要用到CSS。HTML一开始就是依照报纸的格式而设计的，我们还可以继续用上面说到的编辑器，又或者是其他的。如果你喜欢DreamWeaver那也不错，不过一开始使用IDE可无助于我们写出良好的代码。</p>
 <p>忘说了，CSS也是有版本的，和windows，Linux内核等等一样，但是更新可能没有那么频繁，HTML也是有版本的，JS也是有版本的，复杂的东西不是当前考虑的内容。</p>
-<h2 id="代码结构"><span class="header-section-number">3.3</span> 代码结构</h2>
+<h2 id="代码结构"><span class="header-section-number">4.3</span> 代码结构</h2>
 <p>对于我们的上面的Red示例来说，如果没有一个好的结构，那么以后可能就是这样子。</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p style=&quot;font-size: 22px;color:#f00;text-align: center;padding-left: 20px;&quot;&gt;如果没有一个好的结构&lt;/p&gt;
-    &lt;p style=&quot;  font-size:44px;color:#3ed;text-indent: 2em;padding-left: 2em;&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> style=</span><span class="st">&quot;font-size: 22px;color:#f00;text-align: center;padding-left: 20px;&quot;</span><span class="kw">&gt;</span>如果没有一个好的结构<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> style=</span><span class="st">&quot;  font-size:44px;color:#3ed;text-indent: 2em;padding-left: 2em;&quot;</span><span class="kw">&gt;</span>那么以后可能就是这样子。。。。<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
 <p>虽然我们看到的还是一样的:</p>
 <div class="figure">
 <img src="./images/nostyle.png" alt="No Style" />
 <p>No Style</p>
 </div>
 <p>于是我们就按各种书上的建议重新写了上面的代码</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;CSS example&lt;/title&gt;
-    &lt;style type=&quot;text/css&quot;&gt;
-        .para{
-            font-size: 22px;
-            color:#f00;
-            text-align: center;
-            padding-left: 20px;
-        }
-        .para2{
-            font-size:44px;
-            color:#3ed;
-            text-indent: 2em;
-            padding-left: 2em;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p class=&quot;para&quot;&gt;如果没有一个好的结构&lt;/p&gt;
-    &lt;p class=&quot;para2&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;title&gt;</span>CSS example<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
+        <span class="fl">.para</span><span class="kw">{</span>
+            <span class="kw">font-size:</span> <span class="dt">22px</span><span class="kw">;</span>
+            <span class="kw">color:</span><span class="dt">#f00</span><span class="kw">;</span>
+            <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+            <span class="kw">padding-left:</span> <span class="dt">20px</span><span class="kw">;</span>
+        <span class="kw">}</span>
+        <span class="fl">.para2</span><span class="kw">{</span>
+            <span class="kw">font-size:</span><span class="dt">44px</span><span class="kw">;</span>
+            <span class="kw">color:</span><span class="dt">#3ed</span><span class="kw">;</span>
+            <span class="kw">text-indent:</span> <span class="dt">2em</span><span class="kw">;</span>
+            <span class="kw">padding-left:</span> <span class="dt">2em</span><span class="kw">;</span>
+        <span class="kw">}</span>
+    <span class="kw">&lt;/style&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;para&quot;</span><span class="kw">&gt;</span>如果没有一个好的结构<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;para2&quot;</span><span class="kw">&gt;</span>那么以后可能就是这样子。。。。<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
 <p>总算比上面好看也好理解多了，这只是临时的用法，当文件太大的时候，正式一点的写法应该是下面:</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;CSS example&lt;/title&gt;
-    &lt;style type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p class=&quot;para&quot;&gt;如果没有一个好的结构&lt;/p&gt;
-    &lt;p class=&quot;para2&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;title&gt;</span>CSS example<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;style.css&quot;</span><span class="kw">&gt;&lt;/style&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;para&quot;</span><span class="kw">&gt;</span>如果没有一个好的结构<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;para2&quot;</span><span class="kw">&gt;</span>那么以后可能就是这样子。。。。<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
 <p>我们需要</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;CSS example&lt;/title&gt;
-    &lt;link href=&quot;./style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p class=&quot;para&quot;&gt;如果没有一个好的结构&lt;/p&gt;
-    &lt;p class=&quot;para2&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;title&gt;</span>CSS example<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;./style.css&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;para&quot;</span><span class="kw">&gt;</span>如果没有一个好的结构<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;para2&quot;</span><span class="kw">&gt;</span>那么以后可能就是这样子。。。。<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
 <p>然后我们有一个像app.js一样的style.css放在同目录下，而他的内容便是</p>
-<pre><code>.para{
-    font-size: 22px;
-    color:#f00;
-    text-align: center;
-    padding-left: 20px;
-}
-.para2{
-    font-size:44px;
-    color:#3ed;
-    text-indent: 2em;
-    padding-left: 2em;
-}</code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">.para</span><span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">22px</span><span class="kw">;</span>
+    <span class="kw">color:</span><span class="dt">#f00</span><span class="kw">;</span>
+    <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+    <span class="kw">padding-left:</span> <span class="dt">20px</span><span class="kw">;</span>
+<span class="kw">}</span>
+<span class="fl">.para2</span><span class="kw">{</span>
+    <span class="kw">font-size:</span><span class="dt">44px</span><span class="kw">;</span>
+    <span class="kw">color:</span><span class="dt">#3ed</span><span class="kw">;</span>
+    <span class="kw">text-indent:</span> <span class="dt">2em</span><span class="kw">;</span>
+    <span class="kw">padding-left:</span> <span class="dt">2em</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 <p>这代码和JS的代码有如此多的相似</p>
-<pre><code>var para={
-    font_size:&#39;22px&#39;,
-    color:&#39;#f00&#39;,
-    text_align:&#39;center&#39;,
-    padding_left:&#39;20px&#39;,
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> para={
+    <span class="dt">font_size</span>:<span class="st">&#39;22px&#39;</span>,
+    <span class="dt">color</span>:<span class="st">&#39;#f00&#39;</span>,
+    <span class="dt">text_align</span>:<span class="st">&#39;center&#39;</span>,
+    <span class="dt">padding_left</span>:<span class="st">&#39;20px&#39;</span>,
 }</code></pre>
 <p>而22px、20px以及#f00都是数值，因此。。</p>
-<pre><code>var para={
-    font_size:22px,
-    color:#f00,
-    text_align:center,
-    padding_left:20px,
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> para={
+    <span class="dt">font_size</span>:22px,
+    <span class="dt">color</span>:#f00,
+    <span class="dt">text_align</span>:center,
+    <span class="dt">padding_left</span>:20px,
 }   </code></pre>
 <p>目测差距已经尽可能的小了，至于这些话题会在以后讨论到，如果要让我们的编译器更正确的工作，那么我们就需要非常多的这种符号，除非你乐意去理解:</p>
-<pre><code>(dotimes (i 4) (print i))</code></pre>
+<pre class="lisp"><code>(dotimes (i 4) (print i))</code></pre>
 <p>总的来说我们减少了符号的使用，但是用lisp便带入了更多的括号，不过这是一种简洁的表达方式，也许我们可以在其他语言中看到，或者说用这个去。。</p>
-<pre><code>\d{2}/[A-Z][a-z][a-z]/\d{4}</code></pre>
+<pre class="regex"><code>\d{2}/[A-Z][a-z][a-z]/\d{4}</code></pre>
 <p>没有什么会比一开始不理解那是正则表达式，然后去修改上面的代码，为的是去从一堆数据中找出某日/某月/某年。</p>
 <p>这门语言可能是为设计师而设计的，但是设计师大部分还是不懂编程的，不过相对来说还是比其他语言好理解一些。</p>
-<h2 id="样式与目标"><span class="header-section-number">3.4</span> 样式与目标</h2>
+<h2 id="样式与目标"><span class="header-section-number">4.4</span> 样式与目标</h2>
 <p>下面也就是我们的样式</p>
-<pre><code>.para{
-    font-size: 22px;
-    color:#f00;
-    text-align: center;
-    padding-left: 20px;
-}</code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">.para</span><span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">22px</span><span class="kw">;</span>
+    <span class="kw">color:</span><span class="dt">#f00</span><span class="kw">;</span>
+    <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+    <span class="kw">padding-left:</span> <span class="dt">20px</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 <p>我们的目标就是</p>
 <pre><code>如果没有一个好的结构</code></pre>
 <p>所以样式和目标在这里牵手了，问题是他们是如何在一起的呢？下面就是CSS与HTML沟通的重点所在了:</p>
-<h3 id="选择器"><span class="header-section-number">3.4.1</span> 选择器</h3>
+<h3 id="选择器"><span class="header-section-number">4.4.1</span> 选择器</h3>
 <p>我们用到的选择器叫做类选择器，也就是class，或者说应该称之为class选择器更合适。与类选择器最常一起出现的是ID选择器，不过这个适用于比较高级的场合，诸如用JS控制DOM的时候就需要用到ID选择器。而基本的选择器就是如下面的例子:</p>
 <pre><code>p.para{
     color:#f0f;
@@ -860,7 +862,7 @@ p.para{
 div#content p {
     font-size:22px;
 }</code></pre>
-<h2 id="更有趣的css"><span class="header-section-number">3.5</span> 更有趣的CSS</h2>
+<h2 id="更有趣的css"><span class="header-section-number">4.5</span> 更有趣的CSS</h2>
 <p>一个包含了para2以及para_bg的例子</p>
 <pre><code>    &lt;div id=&quot;content&quot;&gt;
         &lt;p class=&quot;para2 para_bg&quot;&gt;那么以后可能就是这样子。。。。&lt;/p&gt;
@@ -873,15 +875,15 @@ div#content p {
 <p>重新改变后的网页变得比原来有趣了很多，所谓的继承与合并就是如上面的例子。</p>
 <p>我们还可以用CSS3做出有趣的效果，而这些并不在我们的讨论范围里面，因为我们讨论的是be a geek。</p>
 <p>或许我们写的代码都是那么的简单，从HTML到Javascript，还有现在的CSS，只是有一些东西才是核心的，而不是去考虑一些基础的语法，基础的东西我们可以从实践的过程中一一发现。但是我们可能发现不了，或者在平时的使用中考虑不到一些有趣的用法或者说特殊的用法，这些可以从观察一些比较好的设计的代码中学习到。复杂的东西可以变得很简单，简单的东西也可以变得很复杂。</p>
-<h1 id="无处不在的三剑客"><span class="header-section-number">4</span> 无处不在的三剑客</h1>
+<h1 id="无处不在的三剑客"><span class="header-section-number">5</span> 无处不在的三剑客</h1>
 <p>这时我们终于了解了我们的三剑客，就这么可以结合到一起了，HTML+Javascript+CSS是这一切的基础。而我们用到的其他语言如PHP、Python、Ruby等等的最后都会变成上面的结果，当然还有Coffeescript之类的语言都是以此为基础，这才是我们需要的知识。</p>
-<h2 id="hellogeek"><span class="header-section-number">4.1</span> Hello,Geek</h2>
+<h2 id="hellogeek"><span class="header-section-number">5.1</span> Hello,Geek</h2>
 <p>有了一些些的基础之后，我们终于能试着去写一些程序了。也是时候去创建一个像样的东西，或许你在一些见面设计方面的书籍看过类似的东西，可能我写得也没有那些内容好，只是这些都是一些过程。过去我们都是一点点慢慢过来的，只是现在我们也是如此，技术上的一些东西，事实上大家都是知道的。就好比我们都觉得我们可以开个超市，但是如果让我们去开超市的话，我们并不一定能赚钱。</p>
 <p>学习编程的目的可能不在于我们能找到一份工作，那只是在编程之外的东西，虽然确实也是很确定的。但是除些之处，有些东西也是很重要的。、</p>
 <p>过去没有理解为什么会一些人会不厌其烦地去回答别人的问题，有时候可能会想是一种能力越大责任越大的感觉，但是有时候在写一些博客或者回答别人的问题的时候我们又重新思考了这些问题，又重新学习了这些技能。所以这里可能说的不是关于编程的东西而是一些编程以外的东西，关于学习或者学习以外的东西。</p>
-<h2 id="从源码学习"><span class="header-section-number">4.2</span> 从源码学习</h2>
+<h2 id="从源码学习"><span class="header-section-number">5.2</span> 从源码学习</h2>
 <p>过去总会觉得学了一种语言的语法便算是学了一种语言，于是有一天发现到了这个语言的项目上的时候，虽然会写上几行代码，但是却不像这语言的风格。于是这也是这一篇的意义所在了：</p>
-<h3 id="html"><span class="header-section-number">4.2.1</span> HTML</h3>
+<h3 id="html"><span class="header-section-number">5.2.1</span> HTML</h3>
 <p>写好HTML的一个要点在于看别人写的代码，这只是一方面，我们所说的HTML方面的内容可能不够多，原因有很多，很多东西都需要在实战中去解决。读万卷书和行万里路，分不清哪个有重要的意义，但是如果可以同时做好两个的话，成长会很快的。</p>
 <p>写好HTML应该会有下面的要点</p>
 <ul>
@@ -891,123 +893,123 @@ div#content p {
 </ul>
 <p>或许在这方面我也算不上很了解，不过按笔者的经验来说，大致就是如此。</p>
 <p>多数情况下我们的HTML是类似于下面这样子的</p>
-<pre><code>&lt;div class=&quot;col-md-3 right&quot;&gt;
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;col-md-3 right&quot;</span><span class="kw">&gt;</span>
     {% nevercache %}
     {% include &quot;includes/user_panel.html&quot; %}
     {% endnevercache %}
-    &lt;div class=&quot;panel panel-default&quot;&gt;
-    &lt;div class=&quot;panel-body&quot;&gt;
+    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;panel panel-default&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;panel-body&quot;</span><span class="kw">&gt;</span>
     {% block right_panel %}
     {% ifinstalled mezzanine.twitter %}
     {% include &quot;twitter/tweets.html&quot; %}
     {% endifinstalled %}
     {% endblock %}
-    &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+    <span class="kw">&lt;/div&gt;</span>
+    <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
 <p>换句话说HTML只是基础，而不是日常用到的。我们的HTML是由template生成的，我们可以借助于mustache.js又或者是angluarjs之类的js库来生成最后的HTML，所以这里只是一个开始。</p>
 <p>还需要了解的一部分就是HTML的另外一个重要的部分，DOM树形结构</p>
-<h2 id="dom树形结构图"><span class="header-section-number">4.3</span> DOM树形结构图</h2>
-<h3 id="javascript"><span class="header-section-number">4.3.1</span> javascript</h3>
+<h2 id="dom树形结构图"><span class="header-section-number">5.3</span> DOM树形结构图</h2>
+<h3 id="javascript"><span class="header-section-number">5.3.1</span> javascript</h3>
 <p>这里以未压缩的jQuery源码和zepto.js作一个小小的比较，zepto.js是兼容jQuery的，因此我们举几个有意思的函数作一简单的比较，关于源码可以在官网上下载到。</p>
 <p>在zepto.js下面判断一个值是否是函数的方面如下，</p>
-<pre><code>function isFunction(value) { return type(value) == &quot;function&quot; }</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">isFunction</span>(value) { <span class="kw">return</span> <span class="fu">type</span>(value) == <span class="st">&quot;function&quot;</span> }</code></pre>
 <p>而在jQuery下面则是这样的</p>
-<pre><code>isFunction: function( obj ) {
-    return jQuery.type(obj) === &quot;function&quot;;
-},</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">isFunction: <span class="kw">function</span>( obj ) {
+    <span class="kw">return</span> <span class="ot">jQuery</span>.<span class="fu">type</span>(obj) === <span class="st">&quot;function&quot;</span>;
+}</code></pre>
 <p>而他们的用法是一样的，都是</p>
-<pre><code>$.isFunction();</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">$</span>.<span class="fu">isFunction</span>();</code></pre>
 <p>jQuery的作法是将诸如isFunction,isArray这些函数打包到jQuery.extend中，而zepto.js的则是 也是这样的，只不过多了一行</p>
-<pre><code>$.isFunction = isFunction</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">$</span>.<span class="fu">isFunction</span> = isFunction</code></pre>
 <p>遗憾的是我也没去了解过为什么，之前我也没有看过这些库的代码，所以这个问题就要交给读者去解决了。jQuery里面提供了函数式编程接口，不过jQuery更多的是构建于CSS选择器之上，对于DOM的操作比javascript自身提供的功能强大得多。如果我们的目的在于更好的编程，那么可能需要诸如Underscore.js之类的库。或许说打包自己常用的函数功能为一个库，诸如jQuery</p>
-<pre><code>function isFunction(value) { return type(value) == &quot;function&quot; }
-function isWindow(obj)     { return obj != null &amp;&amp; obj == obj.window }
-function isDocument(obj)   { return obj != null &amp;&amp; obj.nodeType == obj.DOCUMENT_NODE }
-function isObject(obj)     { return type(obj) == &quot;object&quot; }</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">isFunction</span>(value) { <span class="kw">return</span> <span class="fu">type</span>(value) == <span class="st">&quot;function&quot;</span> }
+<span class="kw">function</span> <span class="fu">isWindow</span>(obj)     { <span class="kw">return</span> obj != <span class="kw">null</span> &amp;&amp; obj == <span class="ot">obj</span>.<span class="fu">window</span> }
+<span class="kw">function</span> <span class="fu">isDocument</span>(obj)   { <span class="kw">return</span> obj != <span class="kw">null</span> &amp;&amp; <span class="ot">obj</span>.<span class="fu">nodeType</span> == <span class="ot">obj</span>.<span class="fu">DOCUMENT_NODE</span> }
+<span class="kw">function</span> <span class="fu">isObject</span>(obj)     { <span class="kw">return</span> <span class="fu">type</span>(obj) == <span class="st">&quot;object&quot;</span> }</code></pre>
 <p>我们需要去了解一些故事背后的原因，越来越害怕GUI的原因之一，在于不知道背后发生了什么，即使是开源的，我们也无法了解真正的背后发生什么了。对于不是这个工具、软件的用户来说，开源更多的意义可能在于我们可以添加新的功能，以及免费。如果没有所谓的危机感，以及认为自己一直在学习工具的话，可以试着去打包自己的函数，打包自己的库。</p>
-<pre><code>var calc={
-    add: function(a,b){
-        return a+b;
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> calc={
+    <span class="dt">add</span>: <span class="kw">function</span>(a,b){
+        <span class="kw">return</span> a+b;
     },
-    sub: function(a,b){
-        return a-b;
+    <span class="dt">sub</span>: <span class="kw">function</span>(a,b){
+        <span class="kw">return</span> a-b;
     },
-    dif: function(a,b){
-        if(a&gt;b){
-            return a;
-        }else{
-            return b;
+    <span class="dt">dif</span>: <span class="kw">function</span>(a,b){
+        <span class="kw">if</span>(a&gt;b){
+            <span class="kw">return</span> a;
+        }<span class="kw">else</span>{
+            <span class="kw">return</span> b;
         }
     }
 }</code></pre>
 <p>然后用诸如jslint测试一下代码。</p>
-<pre><code>$ ./jsl -conf jsl.default.conf
-JavaScript Lint 0.3.0 (JavaScript-C 1.5 2004-09-24)
-Developed by Matthias Miller (http://www.JavaScriptLint.com)
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">./jsl</span> -conf jsl.default.conf
+<span class="kw">JavaScript</span> Lint 0.3.0 (JavaScript-C 1.5 2004-09-24)
+<span class="kw">Developed</span> by Matthias Miller (http://www.JavaScriptLint.com)
 
-app.js
-/Users/fdhuang/beageek/chapter4/src/app.js(15): lint warning: missing semicolon
+<span class="kw">app.js</span>
+<span class="kw">/Users/fdhuang/beageek/chapter4/src</span>/<span class="kw">app.js</span>(15)<span class="kw">:</span> lint warning: missing semicolon
     }
-........^
+<span class="kw">........</span>^
 
 
-0 error(s), 1 warning(s)</code></pre>
+<span class="kw">0</span> error(s), <span class="kw">1</span> warning(s)</code></pre>
 <p>于是我们需要在第15行添加一个分号。</p>
 <p>最好的方法还是阅读别人的代码，而所谓的别人指的是一些相对较大的网站的，有好的开发流程，代码质量也不会太差。而所谓的复杂的代码都是一步步构建上去的，罗马不是一天建成的。</p>
 <p>有意思的是多数情况下，我们可能会用原型去开发我们的应用，而这也是我们需要去了解和掌握的地方，</p>
-<pre><code>function Calc(){
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">Calc</span>(){
 
 }
-Calc.prototype.add=function(a,b){
-    return a+b;
+<span class="ot">Calc</span>.<span class="ot">prototype</span>.<span class="fu">add</span>=<span class="kw">function</span>(a,b){
+    <span class="kw">return</span> a+b;
 };
-Calc.prototype.sub=function(a,b){
-    return a-b;
+<span class="ot">Calc</span>.<span class="ot">prototype</span>.<span class="fu">sub</span>=<span class="kw">function</span>(a,b){
+    <span class="kw">return</span> a-b;
 };</code></pre>
 <p>我们似乎在这里展示了更多的Javascript的用法，但是这不是一好的关于Javascript的介绍，有一天我们还要用诸如qunit之类的工具去为我们的function写测试，这时就是一个更好的开始。</p>
 <p>如果我们乐意的话，我们也可以构建一个类似于jQuery的框架，以用来学习。</p>
 <p>作为一门编程语言来说，我们学得很普通，在某种意义上来说算不上是一种入门。但是如果我们可以在其他的好书在看到的内容，就没有必要在这里进行复述，目的在于一种学习习惯的养成。</p>
-<h3 id="css-1"><span class="header-section-number">4.3.2</span> CSS</h3>
+<h3 id="css-1"><span class="header-section-number">5.3.2</span> CSS</h3>
 <p>CSS有时候很有趣，但是有时候有很多我们没有意识到的用法，这里以Bootstrap为例，这是一个不错的CSS库。最令人兴奋的是没有闭源的CSS，没有闭源的JS，这也就是前端好学习的地方所在了，不过这是一个开源的CSS库，虽然是这样叫的，但是称之为CSS库显然不合适。</p>
-<pre><code>a,
-a:visited {
-  text-decoration: underline;
-}
-a[href]:after {
-  content: &quot; (&quot; attr(href) &quot;)&quot;;
-}
-abbr[title]:after {
-  content: &quot; (&quot; attr(title) &quot;)&quot;;
-}
-a[href^=&quot;javascript:&quot;]:after,
-a[href^=&quot;#&quot;]:after {
-  content: &quot;&quot;;
-}</code></pre>
+<pre class="sourceCode css"><code class="sourceCode css">a,
+a<span class="dv">:visited</span> <span class="kw">{</span>
+  <span class="kw">text-decoration:</span> <span class="dt">underline</span><span class="kw">;</span>
+<span class="kw">}</span>
+a<span class="ch">[href]</span><span class="dv">:after</span> <span class="kw">{</span>
+  <span class="kw">content:</span> <span class="st">&quot; (&quot;</span> <span class="dt">attr(</span>href<span class="dt">)</span> <span class="st">&quot;)&quot;</span><span class="kw">;</span>
+<span class="kw">}</span>
+abbr<span class="ch">[title]</span><span class="dv">:after</span> <span class="kw">{</span>
+  <span class="kw">content:</span> <span class="st">&quot; (&quot;</span> <span class="dt">attr(</span>title<span class="dt">)</span> <span class="st">&quot;)&quot;</span><span class="kw">;</span>
+<span class="kw">}</span>
+a<span class="ch">[href^=</span><span class="st">&quot;javascript:&quot;</span><span class="ch">]</span><span class="dv">:after</span>,
+a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class="ch">]</span><span class="dv">:after</span> <span class="kw">{</span>
+  <span class="kw">content:</span> <span class="st">&quot;&quot;</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 <p>这里有一些有趣的，值得一讲的CSS用法。</p>
 <ul>
 <li>伪类选择器,如a:visited这样需要其他条件来对元素应用样式，用于已访问的链接。</li>
 <li>属性选择器,如a[href]这样当a元素存在href这样的属性的时候来寻找应用元素。</li>
 </ul>
 <p>其他的还需要去好好了解的就是<strong>CSS的盒模型</strong>，作为CSS的基石之一。</p>
-<h2 id="css盒模型图"><span class="header-section-number">4.4</span> CSS盒模型图</h2>
+<h2 id="css盒模型图"><span class="header-section-number">5.4</span> CSS盒模型图</h2>
 <p>诸如</p>
-<pre><code>* {
-  margin: 0px;
-  padding: 0px;
-  font-family: Helvetica;
-}</code></pre>
+<pre class="sourceCode css"><code class="sourceCode css">* <span class="kw">{</span>
+  <span class="kw">margin:</span> <span class="dt">0px</span><span class="kw">;</span>
+  <span class="kw">padding:</span> <span class="dt">0px</span><span class="kw">;</span>
+  <span class="kw">font-family:</span> Helvetica<span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 <p>这样的通用器用来进行全局选择的工具和我们用于抵消某个body对于子选择器的影响一样值得注意得多。</p>
-<h2 id="笔记"><span class="header-section-number">4.5</span> 笔记</h2>
+<h2 id="笔记"><span class="header-section-number">5.5</span> 笔记</h2>
 <p>写博客似乎是一个不错的好习惯，作为一个不是很优秀的写手。对于来说，有时候发现原来能教会别人对于自己的能力来说算是一种肯定。有些时候教会别人才算是自己学会的表现，总会在项目上的时候需要自己去复述工作的一个过程，我们需要整理好我们的思路才能带给别人更多的收获。我们的笔记上总会留下自己的学习的一些过程，有些时候我们想要的只是一点点的鼓励，有时是诸如评论一类，有时可能是诸如访问量。更多的可能是我们可以重新整理自己的知识，好好复习一下，以便于好好记住，写出来是一个好的过程。</p>
 <p>无处不在的三剑客就这样到了这里，写得似乎很多也很少，但是还是没有做出来一个东西，于是我们朝着这样一个方向前进。</p>
-<h1 id="gnulinux"><span class="header-section-number">5</span> GNU/Linux</h1>
-<h2 id="什么是linux"><span class="header-section-number">5.1</span> 什么是Linux</h2>
+<h1 id="gnulinux"><span class="header-section-number">6</span> GNU/Linux</h1>
+<h2 id="什么是linux"><span class="header-section-number">6.1</span> 什么是Linux</h2>
 <p>Linux是一种自由和开放源码的类UNIX操作系统内核。目前存在着许多不同的Linux发行版，可安装在各种各样的电脑硬件设备，从手机、平板电脑、路由器和影音游戏控制台，到桌上型电脑，大型电脑和超级电脑。 Linux是一个领先的操作系统内核，世界上运算最快的10台超级电脑运行的都是基于Linux内核的操作系统。</p>
 <p>Linux操作系统也是自由软件和开放源代码发展中最著名的例子。只要遵循GNU通用公共许可证,任何人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布。<strong>严格来讲，Linux这个词本身只表示Linux内核，但在实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU工程各种工具和数据库的操作系统（也被称为GNU/Linux）。</strong>通常情况下，Linux被打包成供桌上型电脑和服务器使用的Linux发行版本。一些流行的主流Linux发行版本，包括Debian（及其衍生版本Ubuntu），Fedora和openSUSE等。Linux得名于电脑业余爱好者Linus Torvalds。</p>
 <p>而不是如百度百科所讲的<del>Linux操作系统是UNIX操作系统的一种克隆系统。它诞生于1991年的 Linux桌面[1]10 月5日（这是第一次正式向外公布的时间）。以后借助于Internet网络，并通过全世界各地计算机爱好者的共同努力，已成为今天世界上使用最多的一种UNIX类操作系统，并且使用人数还在迅猛增长。</del></p>
 <p>Linux只是个内核，而不是操作系统，所以在这我们再理解一下操作系统是由什么组成的。</p>
-<h2 id="操作系统"><span class="header-section-number">5.2</span> 操作系统</h2>
+<h2 id="操作系统"><span class="header-section-number">6.2</span> 操作系统</h2>
 <p>操作系统（英语：Operating System，简称OS）是管理计算机硬件与软件资源的计算机程序，同时也是计算机系统的内核与基石。操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务。操作系统也提供一个让用户与系统交互的操作界面。 操作系统的型态非常多样，不同机器安装的操作系统可从简单到复杂，可从手机的嵌入式系统到超级计算机的大型操作系统。许多操作系统制造者对它涵盖范畴的定义也不尽一致，例如有些操作系统集成了图形用户界面(GUI)，而有些仅使用命令行界面(CLI)，而将GUI视为一种非必要的应用程序。</p>
 <p>操作系统位于底层硬件与用户之间，是两者沟通的桥梁。用户可以通过操作系统的用户界面，输入命令。操作系统则对命令进行解释，驱动硬件设备，实现用户要求。以现代标准而言，一个标准PC的操作系统应该提供以下的功能：</p>
 <ul>
@@ -1020,12 +1022,12 @@ a[href^=&quot;#&quot;]:after {
 <li>驱动程序（Device drivers）</li>
 </ul>
 <p>而让我们来看一下两者之间的不同之处，这是一张linux的架构图我们可以发现内核只是位于底层。</p>
-<h3 id="linux架构图"><span class="header-section-number">5.2.1</span> Linux架构图</h3>
-<h4 id="用户模式"><span class="header-section-number">5.2.1.1</span> 用户模式</h4>
+<h3 id="linux架构图"><span class="header-section-number">6.2.1</span> Linux架构图</h3>
+<h4 id="用户模式"><span class="header-section-number">6.2.1.1</span> 用户模式</h4>
 <p>应用程序（sh、<a href="http://zh.wikipedia.org/wiki/Vi" title="Vi">vi</a>、<a href="http://zh.wikipedia.org/wiki/OpenOffice.org" title="OpenOffice.org">OpenOffice.org</a>等）</p>
 <p>复杂<a href="http://zh.wikipedia.org/wiki/%E5%BA%93" title="库">库</a>（<a href="http://zh.wikipedia.org/wiki/KDE" title="KDE">KDE</a>、glib等） 简单库（opendbm、sin等）</p>
 <p>C库（open、fopen、socket、exec、calloc等）</p>
-<h4 id="内核模式"><span class="header-section-number">5.2.1.2</span> 内核模式</h4>
+<h4 id="内核模式"><span class="header-section-number">6.2.1.2</span> 内核模式</h4>
 <ul>
 <li>系统中断、调用、错误等软硬件消息</li>
 <li>内核（驱动程序、进程、网络、内存管理等）</li>
@@ -1033,17 +1035,17 @@ a[href^=&quot;#&quot;]:after {
 </ul>
 <p>我们可以发现，由linux内核+shell可以构成一个操作系统，而linux本身只是个内核，也就是图中的内核模式，负责控制系统的这些部分。也就是我们可以发现，Linux内核构成了一个操作系统除用户界面以外的部分，而shell就是这最后的用户界面。</p>
 <p>而linux内核以外的部分就是由GNU计划构成的。</p>
-<h3 id="shell"><span class="header-section-number">5.2.2</span> Shell</h3>
+<h3 id="shell"><span class="header-section-number">6.2.2</span> Shell</h3>
 <p>Shell是系统的用户界面，提供了用户与内核进行交互操作的一种接口。它接收用户输入的命令并把它送入内核去执行。</p>
 <p>实际上Shell是一个命令解释器，它解释由用户输入的命令并且把它们送到内核。不仅如此，Shell有自己的编程语言用于对命令的编辑，它允许用户编写由shell命令组成的程序。Shell编程语言具有普通编程语言的很多特点，比如它也有循环结构和分支控制结构等，用这种编程语言编写的Shell程序与其他应用程序具有同样的效果</p>
 <p>bash 是一个为GNU计划编写的Unix shell。它的名字是一系列缩写：Bourne-Again SHell — 这是关于Bourne shell（sh）的一个双关语（Bourne again / born again）。Bourne shell是一个早期的重要shell，由史蒂夫·伯恩在1978年前后编写，并同Version 7 Unix一起发布。bash则在1987年由布莱恩·福克斯创造。在1990年，Chet Ramey成为了主要的维护者。</p>
 <p>shell将会是我们在GNU/linux中经常用到的经常有到的工具之一，用来操作计算机用的。在迁移到linux之前我们可以试用cygwin来进行模拟：</p>
 <p><em>Cygwin是许多<a href="http://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6" title="自由软件">自由软件</a>的集合，最初由<a href="http://zh.wikipedia.org/wiki/Cygnus_Solutions" title="Cygnus Solutions">Cygnus Solutions</a>开发，用于各种版本的<a href="http://zh.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a>上，运行<a href="http://zh.wikipedia.org/wiki/Unix-like" title="Unix-like">UNIX类</a>系统。Cygwin</em></p>
-<h3 id="gcc"><span class="header-section-number">5.2.3</span> GCC</h3>
+<h3 id="gcc"><span class="header-section-number">6.2.3</span> GCC</h3>
 <p>GCC（GNU Compiler Collection，GNU编译器套装），是一套由GNU开发的编程语言编译器。它是一套以GPL及LGPL许可证所发行的自由软件，也是GNU计划的关键部分，亦是自由的类Unix及苹果电脑Mac OS X 操作系统的标准编译器。GCC（特别是其中的C语言编译器）也常被认为是跨平台编译器的事实标准。</p>
 <p>GCC原名为GNU C语言编译器（GNU C Compiler），因为它原本只能处理C语言。GCC很快地扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，以及Go与其他语言。</p>
 <p>同shell一样，对于GNU/linux系统而言,GCC的作用也是无可取代的。当然如果只是一般用途的话，GCC对于一般用户可能没用，但是在些GNU/Linux系统上，我们可能就需要自己编译源码成二进制文件，而没有软件包，因而其重要性是不言而喻的。自然的如果我们自己动手编译GNU/Linux操作系统的话，我们会理解其的重要意义。有兴趣的同学可以试一下：Linux From Scratch (LFS)。</p>
-<h3 id="启动引导程序"><span class="header-section-number">5.2.4</span> 启动引导程序</h3>
+<h3 id="启动引导程序"><span class="header-section-number">6.2.4</span> 启动引导程序</h3>
 <p>最后，当我们构成以上的那些之后，我们就需要一个引导程序，以便使系统启动，引导进内核。</p>
 <p>启动程序（bootloader）于电脑或其他计算机应用上，是指引导操作系统启动的程序。启动程序启动方式与程序视应用机型种类。例如在普通PC上，引导程序通常分为两部分：第一阶段引导程序位于主引导记录，用于引导位于某个分区上的第二阶段引导程序，如NTLDR、GNU GRUB等。</p>
 <p>BIOS 开机完成后，bootloader就接手初始化硬件设备、创建存储器空间的映射，以便为操作系统内核准备好</p>
@@ -1064,48 +1066,48 @@ a[href^=&quot;#&quot;]:after {
 <p>GNU GRUB（简称“GRUB”）是一个来自GNU项目的启动引导程序。GRUB是多启动规范的实现，它允许用户可以在计算机内同时拥有多个操作系统，并在计算机启动时选择希望运行的操作系统。GRUB可用于选择操作系统分区上的不同内核，也可用于向这些内核传递启动参数。</p>
 <p>GNU GRUB的前身为Grand Unified Bootloader。它主要用于类Unix系统；同大多Linux发行版一样，GNU系统也采用GNU GRUB作为它的启动器。Solaris从10 1/06版开始在x86系统上也采用GNU GRUB作为启动器。</p>
 <p>以上也就构成了一个简单的操作系统。</p>
-<h2 id="从编译开始"><span class="header-section-number">5.3</span> 从编译开始</h2>
+<h2 id="从编译开始"><span class="header-section-number">6.3</span> 从编译开始</h2>
 <p>我们以一次编译开始我们的Linux学习之旅。</p>
-<h3 id="开始之前"><span class="header-section-number">5.3.1</span> 开始之前</h3>
+<h3 id="开始之前"><span class="header-section-number">6.3.1</span> 开始之前</h3>
 <ul>
 <li>如果你没有用过GNU/Linux，我想你需要在虚拟机上安装一个。</li>
 <li>一个主流的GNU/Linux发行版，如Ubuntu,CentOS,Debian,Mint,OpenSUSE,Fedora等等。</li>
 <li>学会如何打开shell(ps:bash,zsh,sh等等)。</li>
 </ul>
 <p>或者你也可以在Windows上安装Cygwin。</p>
-<h3 id="编译nginx"><span class="header-section-number">5.3.2</span> 编译Nginx</h3>
+<h3 id="编译nginx"><span class="header-section-number">6.3.2</span> 编译Nginx</h3>
 <p>1.下载这个软件的源码包</p>
-<pre><code>wget http://nginx.org/download/nginx-1.7.4.tar.gz</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">wget</span> http://nginx.org/download/nginx-1.7.4.tar.gz</code></pre>
 <p>wget是一个用于下载的软件，当然你也可以用软件，只是用wget似乎会比图形界面快哦。</p>
 <p>2.解压软件包</p>
-<pre><code>tar -vf nginx-1.7.4.tar.gz</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">tar</span> -vf nginx-1.7.4.tar.gz</code></pre>
 <p>-vf的意思是Extract，也就是解压，而tar则是这个解压软件的名字。看上去似乎比WinRAR来得复制得多，但是你可以计时一下，从下载到解压完，和你用鼠标比哪个比较快。</p>
 <p>3.到nginx目录下</p>
 <p>这里需要分两部进行</p>
 <p>1).列出所有文件</p>
-<pre><code>ls -al
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ls</span> -al
 
-drwxr-xr-x   15 fdhuang  staff   510B Sep  2 13:44 nginx-1.7.4
--rw-r--r--    1 fdhuang  staff   798K Aug  5 21:55 nginx-1.7.4.tar.gz</code></pre>
+<span class="kw">drwxr-xr-x</span>   15 fdhuang  staff   510B Sep  2 13:44 nginx-1.7.4
+<span class="kw">-rw-r--r--</span>    1 fdhuang  staff   798K Aug  5 21:55 nginx-1.7.4.tar.gz</code></pre>
 <p>2).到nginx-1.7.4目录</p>
-<pre><code>cd nginx-1.7.4 </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span> nginx-1.7.4 </code></pre>
 <p>4.配置nginx</p>
 <p>一次简单的配置如下</p>
-<pre><code>./configure</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">./configure</span></code></pre>
 <p>当你熟练以后，你可能和我一样用下面的配置(<code>注意</code>:用下面的代码会出错。)</p>
-<pre><code>./configure --user=www --group=www --add-module=../ngx_pagespeed-1.8.3.4-beta --add-module=../ngx_cache_purge --prefix=/usr/local/nginx --with-pcre --with-http_spdy_module --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_stub_status_module --with-mail --with-mail_ssl_module --with-ipv6</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">./configure</span> --user=www --group=www --add-module=../ngx_pagespeed-1.8.3.4-beta --add-module=../ngx_cache_purge --prefix=/usr/local/nginx --with-pcre --with-http_spdy_module --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_stub_status_module --with-mail --with-mail_ssl_module --with-ipv6</code></pre>
 <p>过程中可能会提示你其中出了多少错误，而这时你便可以很愉快地去用搜索引擎搜索他们。</p>
 <p>5.make</p>
 <p>这里就会用到GCC等等。</p>
-<pre><code>make</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">make</span></code></pre>
 <p>6.运行</p>
 <p>如果运行顺利的话，应该可以直接</p>
-<pre><code>./objs/nginx   </code></pre>
-<h3 id="其他-1"><span class="header-section-number">5.3.3</span> 其他</h3>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">./objs/nginx</span>   </code></pre>
+<h3 id="其他-1"><span class="header-section-number">6.3.3</span> 其他</h3>
 <p>1.如果没有wget,make,gcc等命令的时候可以用类似于下面的方法安装，</p>
-<pre><code>sudo apt-get install gcc,make,wget</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install gcc,make,wget</code></pre>
 <p>2.正常情况下一个开源项目都会有一个README，会告诉你应该如何去做。</p>
-<h2 id="包管理"><span class="header-section-number">5.4</span> 包管理</h2>
+<h2 id="包管理"><span class="header-section-number">6.4</span> 包管理</h2>
 <p>GNU/Linux最方便的东西莫过于包管理了。</p>
 <p>引自OpenSUSE官网的说明及图片<span id="fnref1"><a href="#fn1"><sup>1</sup></a></span></p>
 <div class="figure">
@@ -1127,51 +1129,51 @@ drwxr-xr-x   15 fdhuang  staff   510B Sep  2 13:44 nginx-1.7.4
 <blockquote>
 <p>所以这就需要能自动解决依赖关系的软件包管理器。软件包管理系统就是一个工具集，为系统提供一个统一的安装、升级、删除软件的方式。</p>
 </blockquote>
-<h1 id="arduino"><span class="header-section-number">6</span> Arduino</h1>
-<h2 id="极客的玩具"><span class="header-section-number">6.1</span> 极客的玩具</h2>
+<h1 id="arduino"><span class="header-section-number">7</span> Arduino</h1>
+<h2 id="极客的玩具"><span class="header-section-number">7.1</span> 极客的玩具</h2>
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
 <p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往串口发送数据时，可以用Serial.write(‘1’)的方式向串口发送字串’1’。</p>
 <p>Arduino的出现很大程度上降低了电子制作的难度，初学者甚至不懂编程也可以上手Arduino,这也是它的魅力所在。</p>
-<h2 id="硬件熟悉"><span class="header-section-number">6.2</span> 硬件熟悉</h2>
+<h2 id="硬件熟悉"><span class="header-section-number">7.2</span> 硬件熟悉</h2>
 <p>为了满足各种需求，Arduino团队设计了很多款开发板，如UNO、Pro mini、Mega2560、Due、Leonardo、Yún、Pro、Fio、Nano等十几种 开发板和扩展板。最适合初学者的一款是Arduino UNO 。下图是Arduino UNO 的外观图：</p>
 <div class="figure">
 <img src="http://designiot.phodal.com/images/uno.png" alt="UNO" />
 <p>UNO</p>
 </div>
 <p>注：后面的程序也是基于Arduino UNO开发板来讲解。</p>
-<h2 id="开发环境"><span class="header-section-number">6.3</span> 开发环境</h2>
+<h2 id="开发环境"><span class="header-section-number">7.3</span> 开发环境</h2>
 <div class="figure">
 <img src="http://designiot.phodal.com/images/arduino.png" alt="Arduino" />
 <p>Arduino</p>
 </div>
 <p>开发环境如上图，十分简洁，编写代码需要知道两个基本的函数：</p>
-<pre><code>void setup(){
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">void</span> setup(){
 
 }
 
-void loop(){
+<span class="dt">void</span> loop(){
 
 }</code></pre>
 <p>“setup()”函数用于初始化（如GPIO初始化，串口初始化，定时器初始化等）特点是只执行一次；“loop()”函数是一个死循环，可以看做C语言的“while(1)”函数。</p>
-<h2 id="点亮一个led"><span class="header-section-number">6.4</span> 点亮一个LED</h2>
+<h2 id="点亮一个led"><span class="header-section-number">7.4</span> 点亮一个LED</h2>
 <p>对初学者来说，点亮led已成为入门必修课，使用Arduino控制led十分简单，并且很容易理解。 使用到的函数：</p>
 <ul>
 <li>pinMode(pin,mode)</li>
 <li>digitalWrite(pin,value)</li>
 </ul>
 <p>上一段代码分析：</p>
-<pre><code>int led=13; 
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">int</span> led=<span class="dv">13</span>; 
 
-void setup()
+<span class="dt">void</span> setup()
 {
     pinMode(led,OUTPUT);
 }
-void loop()
+<span class="dt">void</span> loop()
 {
     digitalWrite(led,HIGH);
-    delay(1000);
+    delay(<span class="dv">1000</span>);
     digitalWrite(led,LOW);
-    delay(1000);
+    delay(<span class="dv">1000</span>);
 }</code></pre>
 <p>该程序实现Arduino单片机13号引脚以1S时间电平翻转，如果外接一个led，就可以看到led以1S的间隔闪烁；函数“pinMode()”有两个参数pin、value，pin参数用来指定引脚号,本程序中设置为13号引脚，mode用于设置引脚模式，有三个值：</p>
 <ul>
@@ -1187,20 +1189,20 @@ void loop()
 <p>理解了“pinMode()”函数,“digitalWrite()”就很容易理解啦，value的取值有两个“HIGH”、“LOW”,“HIGH”表示让某一个引脚输出高电平，反之，“LOW”则使某一个引脚输出低电平。 程序中还是用到“delay(ms)”函数，它表示延时多少毫秒，例如延时500 ms ,直接调用“delay(500)；”就可以了。</p>
 <p>如果你仔细查看我的描述，你会发现我没有讲13号引脚怎么来的，是这样的：Arduino团队为了简化对引脚描述，对每个引脚都进行了编号，以UNO开发板为例，可以发现开发板排座的附近有对应的白颜色的数字，那便是所有的引脚编号，A0~A5是6路ADC输入引脚，0-13表示13路基本IO，数字前面的“~”表示该引脚具有PWM功能。如果要使用某一引脚，只要知道引脚编号就可行操作</p>
 <p>例如“digitalWrite(2,LOW)”表示向2号引脚输出低电平。其他操作类似，是不是so easy <sup>-</sup> !</p>
-<h2 id="串口通信"><span class="header-section-number">6.5</span> 串口通信</h2>
+<h2 id="串口通信"><span class="header-section-number">7.5</span> 串口通信</h2>
 <p>使用到的基本函数： + Serial.begin() + Serial.write() + Serial.read() + Serial.available()</p>
 <p>在此项目中需要使用串口，Arduino串口初始化使用“Serial.begin(9600);”,其传输波特率为9600，其他波特率也行，函数位于“setup()”中，之后可以使用“Serial.read()”、“Serial.write()”读入一个字符，输出一个字符，使用“Serial.print()”输出字符串.代码如下:</p>
-<pre><code>char ch=&#39;1&#39;;
-void setup()
+<pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">char</span> ch=<span class="st">&#39;1&#39;</span>;
+<span class="dt">void</span> setup()
 {
-    Serial.begin(9600);
+    Serial.begin(<span class="dv">9600</span>);
 }
-void loop()
+<span class="dt">void</span> loop()
 {
     Serial.write(ch);
-    while(1)
+    <span class="kw">while</span>(<span class="dv">1</span>)
     {
-        if(Serial.available())    
+        <span class="kw">if</span>(Serial.available())    
         {
             ch = Serial.read();
             Serial.print(ch);
@@ -1208,7 +1210,7 @@ void loop()
     }
 }</code></pre>
 <p>以上程序实现字符的输出(Serial.write(),Serial.print())和读入(Serial.read())。如果需要了解更多，可以参考：<a href="www.arduino.cc">Arduino官网</a></p>
-<h1 id="python"><span class="header-section-number">7</span> Python</h1>
+<h1 id="python"><span class="header-section-number">8</span> Python</h1>
 <p>作为一门计算机语言来说，Python会有下面的特点。</p>
 <ul>
 <li>语言学习起来容易</li>
@@ -1216,38 +1218,38 @@ void loop()
 <li>支持多学科</li>
 </ul>
 <p>我们可以和其他不是脚本语言的语言进行一个简单的对比，如C，你需要去编译去运行，有时候还需要解决跨平台问题，本来你是在你的Windows上运行得好好的，但是有一天你换了一个Mac电脑的时候，问题变得很棘手，你甚至不知道怎么去解决问题。我没有用过MFC，听说很方便，但是在其他平台下就没有一个好的解决方案。这里可能跑得有点远，但是不同的用户可能在不同的平台上，这也就是脚本语言的优势所在了。</p>
-<h2 id="代码与散文"><span class="header-section-number">7.1</span> 代码与散文</h2>
+<h2 id="代码与散文"><span class="header-section-number">8.1</span> 代码与散文</h2>
 <p>你可能听过，也可能了解过，不过在这里我们可能不会去讲述那些基础的语法的东西，我们想说的是代码格式的重要性，在html中你可以这样去写你的代码</p>
-<pre><code>&lt;html&gt;&lt;head&gt;&lt;title&gt;This is a Title
-&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;content&quot;&gt;
-&lt;p&gt;flakjfaklfjalfa&lt;/p&gt;&lt;/div&gt;
-&lt;/body&gt;&lt;/html&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;&lt;head&gt;&lt;title&gt;</span>This is a Title
+<span class="kw">&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div</span><span class="ot"> class=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;p&gt;</span>flakjfaklfjalfa<span class="kw">&lt;/p&gt;&lt;/div&gt;</span>
+<span class="kw">&lt;/body&gt;&lt;/html&gt;</span></code></pre>
 <p>又或者是js的minify，它可能会使你的代码看起来像是这样的:</p>
-<pre><code>function NolTracker(b,a){this.pvar=b;this.mergeFeatures(a)}</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">NolTracker</span>(b,a){<span class="kw">this</span>.<span class="fu">pvar</span>=b;<span class="kw">this</span>.<span class="fu">mergeFeatures</span>(a)}</code></pre>
 <p>可能的是如果是python的话，你可能会遇到下面的问题。。</p>
-<pre><code>File &quot;steps.py&quot;, line 10
-   try:
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">File</span> <span class="st">&quot;steps.py&quot;</span>, line 10
+   <span class="kw">try</span>:
    ^
-IndentationError: expected an indented block</code></pre>
+<span class="kw">IndentationError</span>: expected an indented block</code></pre>
 <p>如果你对JSLint、Lint这类的工具有点印象的话，你也可以认为python集成了这类工具。整洁的代码至少应该看上去要有整洁的衣服，就好像是我们看到的一个人一样，而后我们才会有一个好的印象。更主要的一点是代码是写给人看的，而衣服更多的时候对于像我这样的人来说，他首先应该是要保暖的，其次对于一个懒的人来说。。。</p>
 <blockquote>
 程序应该是具有可读性的短文，它将在计算机上执行，从而解决某些问题
 </blockquote>
 <p>我们需要去读懂别人的代码，别人也需要去读懂我们的代码。计算机可以无条件地执行你那未经编排过的程序，但是人就不是如此了。</p>
-<pre><code>var calc={add: function(a,b){return a+b;},sub: function(a,b){return a-b;},dif: function(a,b){if(a&gt;b){return a;}else{return b;}}}</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">    <span class="kw">var</span> calc={<span class="dt">add</span>: <span class="kw">function</span>(a,b){<span class="kw">return</span> a+b;},<span class="dt">sub</span>: <span class="kw">function</span>(a,b){<span class="kw">return</span> a-b;},<span class="dt">dif</span>: <span class="kw">function</span>(a,b){<span class="kw">if</span>(a&gt;b){<span class="kw">return</span> a;}<span class="kw">else</span>{<span class="kw">return</span> b;}}}</code></pre>
 <p>上面的代码相对于下面的代码可读性没有那么多，但是计算机可以无条件地执行上面的代码。上面的代码对于网络传输来说是好的，但是对于人来说并不是如此，我们需要一些工具来辅助我们去读懂上面的代码。如果代码上写得没有一点可读性，诸如函数命名没有多少实际意义，如果我们把前面的函数就成这样：</p>
-<pre><code>var c={
-    a: function(a,b){
-        return a+b;
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> c={
+    <span class="dt">a</span>: <span class="kw">function</span>(a,b){
+        <span class="kw">return</span> a+b;
     },
-    s: function(a,b){
-        return a-b;
+    <span class="dt">s</span>: <span class="kw">function</span>(a,b){
+        <span class="kw">return</span> a-b;
     },
-    d: function(a,b){
-        if(a&gt;b){
-            return a;
-        }else{
-            return b;
+    <span class="dt">d</span>: <span class="kw">function</span>(a,b){
+        <span class="kw">if</span>(a&gt;b){
+            <span class="kw">return</span> a;
+        }<span class="kw">else</span>{
+            <span class="kw">return</span> b;
         }
     }
 }</code></pre>
@@ -1257,29 +1259,29 @@ IndentationError: expected an indented block</code></pre>
 对于特定的问题，只要有一种最好的方法来解决就够了
 </blockquote>
 <p>可读性的代码在今天显得比以前重要的多，以前写程序的时候我们需要去考虑使用汇编或者其他工具来提高程序的效率。</p>
-<pre><code>            .global _start
+<pre><code>        .global _start
 
-            .text
-    _start:
-            # write(1, message, 13)
-            mov     $1, %rax                # system call 1 is write
-            mov     $1, %rdi                # file handle 1 is stdout
-            mov     $message, %rsi          # address of string to output
-            mov     $13, %rdx               # number of bytes
-            syscall                         # invoke operating system to do the write
+        .text
+_start:
+        # write(1, message, 13)
+        mov     $1, %rax                # system call 1 is write
+        mov     $1, %rdi                # file handle 1 is stdout
+        mov     $message, %rsi          # address of string to output
+        mov     $13, %rdx               # number of bytes
+        syscall                         # invoke operating system to do the write
 
-            # exit(0)
-            mov     $60, %rax               # system call 60 is exit
-            xor     %rdi, %rdi              # we want return code 0
-            syscall                         # invoke operating system to exit
-    message:
-            .ascii  &quot;Hello, world\n&quot;</code></pre>
+        # exit(0)
+        mov     $60, %rax               # system call 60 is exit
+        xor     %rdi, %rdi              # we want return code 0
+        syscall                         # invoke operating system to exit
+message:
+        .ascii  &quot;Hello, world\n&quot;</code></pre>
 <p>所以上面的代码的可读性在今天新生一代的程序员来说可能没有那么容易理解。芯片运行的速度越来越快，在程序上我们也需要一个越来越快的解决方案，而所谓的越来越快的解决方案指的不是运行速度上，而是开发速度上。如果你没有办法在同样时间内开发出更好的程序，那么你就可能输给你的竞争对手。</p>
-<h3 id="开始之前-1"><span class="header-section-number">7.1.1</span> 开始之前</h3>
+<h3 id="开始之前-1"><span class="header-section-number">8.1.1</span> 开始之前</h3>
 <p>我们终于又从一种语言跳到了另外一种语言，我们可能习惯了一种模式，而不敢于去尝试新的东西，这些或许是我们的一些习惯又或者是因为害怕等等。</p>
 <p>作为另外一个跨平台能力很强的语言，这里说的是与Javascript、HTML比较，或许你会觉得C算是最好的，但是我们这里讨论更多的是脚本语言，也就是直接可以运行的。在现在主流的大多数移动平台上，python也有良好的支持，如Android,IOS，只是这些算是类Unix系统内核，python还支持之前Nokia的Symbian。</p>
 <p>开始之前我们需要确认我们的平台上已经有了python环境，也就是可以运行下面的Hello,World，你可以在网上很多地方看到，最简单的地方还是到官网，又或者是所用移动平台的store下载。</p>
-<h3 id="python的helloworld"><span class="header-section-number">7.1.2</span> Python的Hello,World</h3>
+<h3 id="python的helloworld"><span class="header-section-number">8.1.2</span> Python的Hello,World</h3>
 <p>Python的Hello,World有两种形式，作为一种脚本语言来说，Javascript也是一种脚本语言，只是两者之间有太多的不同之处，每个人都会有不同的选择对于一种语言用来作为其的习惯。于是这就是我们的</p>
 <pre><code>print &quot;Hello,World&quot;</code></pre>
 <p>当我们把我们的脚本在shell环境下运行时</p>
@@ -1298,7 +1300,7 @@ Hello,world
 <pre><code>./a.out</code></pre>
 <p>也就是执行编译完后的程序，需要注意的是helloworld.py没有编译，不过也会输出</p>
 <pre><code>Hello,world</code></pre>
-<h3 id="我们想要的helloworld"><span class="header-section-number">7.1.3</span> 我们想要的Hello,World</h3>
+<h3 id="我们想要的helloworld"><span class="header-section-number">8.1.3</span> 我们想要的Hello,World</h3>
 <p>我们想展示的是如何结合前面学习的内容做一个更有意思的Hello,World。</p>
 <pre><code>import cherrypy
 class HelloWorld(object):
@@ -1307,23 +1309,23 @@ class HelloWorld(object):
     index.exposed = True
 
 cherrypy.quickstart(HelloWorld())</code></pre>
-<h2 id="算法"><span class="header-section-number">7.2</span> 算法</h2>
+<h2 id="算法"><span class="header-section-number">8.2</span> 算法</h2>
 <p>我们需要去了解算法(algorithm)，引经据典的话就是这样子:</p>
 <blockquote>
 a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer
 </blockquote>
 <p>也就是计算或其他解决问题的操作需要遵循的一个过程或者一套规则，书上还提到的说法是——解决问题的诀窍，让我想起了hack一词。我们总会去想某些东西是否有一个更快的计算方法，有时候在处理某些问题上也显示了一个好的算法的重要性。</p>
-<h2 id="实用主义哲学"><span class="header-section-number">7.3</span> 实用主义哲学</h2>
-<h2 id="包管理-1"><span class="header-section-number">7.4</span> 包管理</h2>
-<h1 id="raspberry-pi"><span class="header-section-number">8</span> Raspberry Pi</h1>
-<h2 id="geek的盛宴"><span class="header-section-number">8.1</span> Geek的盛宴</h2>
+<h2 id="实用主义哲学"><span class="header-section-number">8.3</span> 实用主义哲学</h2>
+<h2 id="包管理-1"><span class="header-section-number">8.4</span> 包管理</h2>
+<h1 id="raspberry-pi"><span class="header-section-number">9</span> Raspberry Pi</h1>
+<h2 id="geek的盛宴"><span class="header-section-number">9.1</span> Geek的盛宴</h2>
 <p>Raspberry Pi是一款针对电脑业余爱好者、教师、小学生以及小型企业等用户的迷你电脑，预装Linux系统，体积仅信用卡大小，搭载ARM架构处理器，运算性能和智能手机相仿。在接口方面，Raspberry Pi提供了可供键鼠使用的USB接口，此外还有千兆以太网接口、SD卡扩展接口以及1个HDMI高清视频输出接口，可与显示器或者TV相连。</p>
 <p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
 <p>Raspberry Pi相比于一般的ARM开发板来说，由于其本身搭载着Linux操作系统，可以用诸如Python、Ruby或Bash来执行脚本，而不是通过编译程序来运行，具有更高的开发效率。</p>
-<h2 id="raspberry-pi-初始化"><span class="header-section-number">8.2</span> Raspberry Pi 初始化</h2>
+<h2 id="raspberry-pi-初始化"><span class="header-section-number">9.2</span> Raspberry Pi 初始化</h2>
 <p>今天的Raspberry Pi默认已经安装<code>openssh-server</code>，并已经可以登陆上去了。</p>
-<h1 id="http与restful"><span class="header-section-number">9</span> HTTP与RESTful</h1>
-<h2 id="你所没有深入的http"><span class="header-section-number">9.1</span> 你所没有深入的HTTP</h2>
+<h1 id="http与restful"><span class="header-section-number">10</span> HTTP与RESTful</h1>
+<h2 id="你所没有深入的http"><span class="header-section-number">10.1</span> 你所没有深入的HTTP</h2>
 <p>Internet有两个核心协议: IP和TCP，这样讲述起来似乎会很漫长。</p>
 <p>基本概念</p>
 <blockquote>
@@ -1334,7 +1336,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>传输层的TCP是基于网络层的IP协议的,而应用层的HTTP协议又是基于传输层的TCP协议的。</li>
 </ul>
 <p><code>注意</code>: HTTP协议只规定了客户端与服务端的通信规则，而没有规定其通讯协议，只是现在的大部分实现都是将TCP作为通讯协议。</p>
-<h3 id="打开网页时发生了什么"><span class="header-section-number">9.1.1</span> 打开网页时发生了什么</h3>
+<h3 id="打开网页时发生了什么"><span class="header-section-number">10.1.1</span> 打开网页时发生了什么</h3>
 <p>简单地来说，当我们在浏览器上输入URL的敲下回车的时候。</p>
 <ul>
 <li>浏览器需要查找域名<span id="fnref2"><a href="#fn2"><sup>2</sup></a></span>的IP，从不同的缓存直至DNS服务器。</li>
@@ -1364,7 +1366,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>从对应的服务器下载资源</li>
 </ol>
 <p>说说第一步，开始时我们输入的是URI(统一资源标识符,Uniform Resource Identifier)，它还有另外一个名字叫统一资源定位器(URL<span id="fnref3"><a href="#fn3"><sup>3</sup></a></span>,Uniform Resource Locator)。</p>
-<h3 id="url组成"><span class="header-section-number">9.1.2</span> URL组成</h3>
+<h3 id="url组成"><span class="header-section-number">10.1.2</span> URL组成</h3>
 <p>网址算是URL的一个俗称，让我们来看看一个URL的组成，以HTTP版IOT中的URL为例。</p>
 <p><code>http://b.phodal.com/athome/1</code></p>
 <p>开始之前，我们需要标出URL的80端口以及json文件的全称，那么上面的网址就会变成</p>
@@ -1383,42 +1385,42 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <p>这里的<code>#</code>后面是锚部分，如果你打开这个URL就会发现会直接跳转到相应的锚部分，对就于下面这样的一个例子来说</p>
 <p><code>http://www.phodal.com/search/?q=iot&amp;type=blog</code></p>
 <p><code>?</code>后面的<code>q=iot&amp;type=blog</code>的部分是参数部分，通常用于查询或者、搜索。</p>
-<h2 id="一次http-get请求"><span class="header-section-number">9.2</span> 一次HTTP GET请求</h2>
+<h2 id="一次http-get请求"><span class="header-section-number">10.2</span> 一次HTTP GET请求</h2>
 <p>当我们打开最小物联网系统的一个页面时，如<a href="http://b.phodal.com/athome/1.json" class="uri">http://b.phodal.com/athome/1.json</a></p>
 <p>我们在浏览器上看到的结果是</p>
-<pre><code>[
+<pre class="sourceCode javascript"><code class="sourceCode javascript">[
   {
-    &quot;id&quot;: 1,
-    &quot;temperature&quot;: 19,
-    &quot;sensors1&quot;: 31,
-    &quot;sensors2&quot;: 7.5,
-    &quot;led1&quot;: 0
+    <span class="st">&quot;id&quot;</span>: <span class="dv">1</span>,
+    <span class="st">&quot;temperature&quot;</span>: <span class="dv">19</span>,
+    <span class="st">&quot;sensors1&quot;</span>: <span class="dv">31</span>,
+    <span class="st">&quot;sensors2&quot;</span>: <span class="fl">7.5</span>,
+    <span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>
   }
 ]</code></pre>
 <p>只是我们看到的是结果，忽略了这其中的过程，于是我们用curl<span id="fnref4"><a href="#fn4"><sup>4</sup></a></span>命令来看看详细的情况。</p>
-<pre><code>curl -I -s http://b.phodal.com/athome/1.json</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">curl</span> -I -s http://b.phodal.com/athome/1.json</code></pre>
 <p>出于某种原因考虑，删去了其中一些元素，剩下下面这些。</p>
-<pre><code>HTTP/1.1 200 OK
-Content-Type: application/json
-Date: Fri, 05 Sep 2014 15:05:49 GMT
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">HTTP/1.1</span> 200 OK
+<span class="kw">Content-Type</span>: application/json
+<span class="kw">Date</span>: Fri, 05 Sep 2014 15:05:49 GMT
 
-[{&quot;id&quot;:1,&quot;temperature&quot;:19,&quot;sensors1&quot;:31,&quot;sensors2&quot;:7.5,&quot;led1&quot;:0}]</code></pre>
+[<span class="dt">{&quot;id&quot;:1,&quot;temperature&quot;:19,&quot;sensors1&quot;:31,&quot;sensors2&quot;:7.5,&quot;led1&quot;:0}</span>]</code></pre>
 <p>我们用curl命令向服务器发起了GET请求，服务器返回了上面的结果。</p>
-<h3 id="http响应"><span class="header-section-number">9.2.1</span> HTTP响应</h3>
+<h3 id="http响应"><span class="header-section-number">10.2.1</span> HTTP响应</h3>
 <p>一个HTTP响应由三部分组成</p>
 <ul>
 <li>状态行(状态码)</li>
 <li>消息报头(响应报头)</li>
 <li>响应正文(消息体)</li>
 </ul>
-<h4 id="http响应-状态码"><span class="header-section-number">9.2.1.1</span> HTTP响应 状态码</h4>
+<h4 id="http响应-状态码"><span class="header-section-number">10.2.1.1</span> HTTP响应 状态码</h4>
 <p>在上面的结果中，状态行是</p>
-<pre><code>HTTP/1.1 200 OK</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">HTTP/1.1</span> 200 OK</code></pre>
 <p>返回的状态码是200，OK是状态码的原因短语。</p>
 <p>如果是一个跳转的页面，它就可能是下面的结果:</p>
-<pre><code>HTTP/1.0 301 MOVED PERMANENTLY
-Date: Mon, 08 Sep 2014 12:04:01 GMT
-Content-Type: text/html; charset=utf-8  </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">HTTP/1.0</span> 301 MOVED PERMANENTLY
+<span class="kw">Date</span>: Mon, 08 Sep 2014 12:04:01 GMT
+<span class="kw">Content-Type</span>: text/html<span class="kw">;</span> <span class="ot">charset=</span>utf-8  </code></pre>
 <p>HTTP Status有五种状态，而这五种状态又有所细分，提一下这五种状态，详细可参见<a href="http://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81">http://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81</a></p>
 <ul>
 <li>1xx消息</li>
@@ -1427,40 +1429,40 @@ Content-Type: text/html; charset=utf-8  </code></pre>
 <li>4xx客户端错误</li>
 <li>5xx服务器错误</li>
 </ul>
-<h4 id="http响应-响应报头"><span class="header-section-number">9.2.1.2</span> HTTP响应 响应报头</h4>
+<h4 id="http响应-响应报头"><span class="header-section-number">10.2.1.2</span> HTTP响应 响应报头</h4>
 <p>在这次响应中，返回了两个报头，即</p>
-<pre><code>Content-Type: application/json
-Date: Fri, 05 Sep 2014 15:05:49 GMT</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Content-Type</span>: application/json
+<span class="kw">Date</span>: Fri, 05 Sep 2014 15:05:49 GMT</code></pre>
 <p>Content-Type和Date，在这里的Context-Type是application/json，而通常情况下我们打开一个网站时，他的Content-Type应该是text/html。</p>
-<pre><code>Content-Type: text/html;</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Content-Type</span>: text/html<span class="kw">;</span></code></pre>
 <p>Content-Type是最重要的报头。</p>
-<h4 id="http响应-响应正文"><span class="header-section-number">9.2.1.3</span> HTTP响应 响应正文</h4>
+<h4 id="http响应-响应正文"><span class="header-section-number">10.2.1.3</span> HTTP响应 响应正文</h4>
 <p>正文才是我们真正想要的内容，上面的都是写给浏览器看的，一般的人不会去关注这些。</p>
-<pre><code>[{&quot;id&quot;:1,&quot;temperature&quot;:19,&quot;sensors1&quot;:31,&quot;sensors2&quot;:7.5,&quot;led1&quot;:0}]</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">[{<span class="st">&quot;id&quot;</span>:<span class="dv">1</span>,<span class="st">&quot;temperature&quot;</span>:<span class="dv">19</span>,<span class="st">&quot;sensors1&quot;</span>:<span class="dv">31</span>,<span class="st">&quot;sensors2&quot;</span>:<span class="fl">7.5</span>,<span class="st">&quot;led1&quot;</span>:<span class="dv">0</span>}]</code></pre>
 <p>通常这是以某种格式写的，在这里是以JSON写的，而对于一个网站的时候则是HTML，如:</p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span>
+<span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
     
-&lt;/body&gt;
-&lt;/html&gt;     </code></pre>
+<span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span>     </code></pre>
 <p>那么这次GET请求返回的就是:</p>
-<pre><code>HTTP/1.0 200 OK
-Date: Mon, 08 Sep 2014 12:04:01 GMT
-Content-Type: text/html; charset=utf-8  
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">HTTP/1.0</span> 200 OK
+<span class="kw">Date</span>: Mon, 08 Sep 2014 12:04:01 GMT
+<span class="kw">Content-Type</span>: text/html<span class="kw">;</span> <span class="ot">charset=</span>utf-8  
 
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    [{&quot;id&quot;:1,&quot;temperature&quot;:19,&quot;sensors1&quot;:31,&quot;sensors2&quot;:7.5,&quot;led1&quot;:0}]       
-&lt;/body&gt;
-&lt;/html&gt; </code></pre>
+<span class="kw">&lt;html&gt;</span>
+<span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;meta</span> charset=<span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;</span>/title<span class="kw">&gt;</span>
+<span class="kw">&lt;</span>/<span class="kw">head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
+    [<span class="dt">{&quot;id&quot;:1,&quot;temperature&quot;:19,&quot;sensors1&quot;:31,&quot;sensors2&quot;:7.5,&quot;led1&quot;:0}</span>]       
+<span class="kw">&lt;</span>/<span class="kw">body&gt;</span>
+<span class="kw">&lt;</span>/<span class="kw">html&gt;</span> </code></pre>
 <p>虽然与第一次请求的结果在游览器上看似乎是一样的(ps:可能有微小的差异)，然而其本质是不同的。</p>
 <p>推荐及参考书目：</p>
 <ul>
@@ -1469,22 +1471,22 @@ Content-Type: text/html; charset=utf-8
 <li>《RESTful Web Services Cookbook》</li>
 <li>《RESTful Web APIs》</li>
 </ul>
-<h2 id="rest"><span class="header-section-number">9.3</span> REST</h2>
+<h2 id="rest"><span class="header-section-number">10.3</span> REST</h2>
 <blockquote>
 <p>REST从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转移。</p>
 </blockquote>
 <p>因为我们需要的是一个Machine到Machine沟通的平台，需要设计一个API。而设计一个API来说，RESTful是很不错的一种选择，也是主流的选择。而设计一个RESTful服务，的首要步骤便是设计资源模型。</p>
-<h3 id="资源"><span class="header-section-number">9.3.1</span> 资源</h3>
-<h1 id="设计restful-api"><span class="header-section-number">10</span> 设计RESTful API</h1>
+<h3 id="资源"><span class="header-section-number">10.3.1</span> 资源</h3>
+<h1 id="设计restful-api"><span class="header-section-number">11</span> 设计RESTful API</h1>
 <p>设计RESTful API是一个有意思的话题。下面是一些常用的RESTful设计原则:</p>
-<h2 id="rest关键目标"><span class="header-section-number">10.1</span> REST关键目标</h2>
+<h2 id="rest关键目标"><span class="header-section-number">11.1</span> REST关键目标</h2>
 <ul>
 <li>组件间交互的可伸缩性</li>
 <li>接口的通用性</li>
 <li>组件的独立部署</li>
 <li>通过中间组件来减少延迟、实施安全策略和封装已有系统</li>
 </ul>
-<h2 id="判断是否是-restful的约束条件"><span class="header-section-number">10.2</span> 判断是否是 RESTful的约束条件</h2>
+<h2 id="判断是否是-restful的约束条件"><span class="header-section-number">11.2</span> 判断是否是 RESTful的约束条件</h2>
 <ul>
 <li>客户端-服务器分离</li>
 <li>无状态</li>
@@ -1493,10 +1495,10 @@ Content-Type: text/html; charset=utf-8
 <li>统一接口</li>
 <li>随需代码（可选）</li>
 </ul>
-<h2 id="设计restful资源"><span class="header-section-number">10.3</span> 设计RESTful资源</h2>
-<h2 id="设计restful-uri"><span class="header-section-number">10.4</span> 设计RESTful URI</h2>
-<h1 id="创建rest服务"><span class="header-section-number">11</span> 创建REST服务</h1>
-<h2 id="laravel"><span class="header-section-number">11.1</span> Laravel</h2>
+<h2 id="设计restful资源"><span class="header-section-number">11.3</span> 设计RESTful资源</h2>
+<h2 id="设计restful-uri"><span class="header-section-number">11.4</span> 设计RESTful URI</h2>
+<h1 id="创建rest服务"><span class="header-section-number">12</span> 创建REST服务</h1>
+<h2 id="laravel"><span class="header-section-number">12.1</span> Laravel</h2>
 <blockquote>
 <p>Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。</p>
 </blockquote>
@@ -1510,141 +1512,140 @@ Content-Type: text/html; charset=utf-8
 <li>强大的社区支持: 无论你是一个PHP新手还是经验丰富的架构师，都能在社区中找到需要的知识。你可以在IRC中讨论Idea，或者在论坛中发布问题。</li>
 <li>测试、重构: Laravel 从开始就将测试作为重点功能。我们提供了灵活的IoC容器，集成了PHPUnit 测试工具。不用担心，这些都很容易上手。</li>
 </ul>
-<h4 id="为什么是-laravel"><span class="header-section-number">11.1.0.1</span> 为什么是 Laravel</h4>
+<h4 id="为什么是-laravel"><span class="header-section-number">12.1.0.1</span> 为什么是 Laravel</h4>
 <ul>
 <li>因为个人喜爱，你也可以用 Ruby On Rails来搭建这样一个功能，或者是Java。</li>
 <li>PHP在我的服务器上运行得挺不错的，而且我又不需要重新去写配置那些配置。</li>
 <li>Laravel 可以简单的开发我们所需要的功能，换句话说他是 PHP 世界的 Ruby On Rails。</li>
 </ul>
 <p>这里不会再重述之前的问题，这里只是将需要的步骤一个个写下来，然后丢到这里好好说一下。至于RESTful是什么，前面已经介绍了，就不再重复了。那么下面，我们就用Laravel来搭建一个平台给物联网用的。</p>
-<h3 id="安装-laravel"><span class="header-section-number">11.1.1</span> 安装 Laravel</h3>
-<h4 id="第一步-安装composer"><span class="header-section-number">11.1.1.1</span> 第一步 安装Composer</h4>
-<h5 id="gnulinux安装composer"><span class="header-section-number">11.1.1.1.1</span> GNU/Linux安装Composer</h5>
+<h3 id="安装-laravel"><span class="header-section-number">12.1.1</span> 安装 Laravel</h3>
+<h4 id="第一步-安装composer"><span class="header-section-number">12.1.1.1</span> 第一步 安装Composer</h4>
+<h5 id="gnulinux安装composer"><span class="header-section-number">12.1.1.1.1</span> GNU/Linux安装Composer</h5>
 <p>GNU/Linux Ubuntu/OpenSUSE下可以执行</p>
 <pre><code>$ curl -sS https://getcomposer.org/installer | php</code></pre>
-<h5 id="windows安装composer"><span class="header-section-number">11.1.1.1.2</span> Windows安装Composer</h5>
+<h5 id="windows安装composer"><span class="header-section-number">12.1.1.1.2</span> Windows安装Composer</h5>
 <p>请直接下载</p>
 <p><a href="https://getcomposer.org/Composer-Setup.exe">Composer-Setup</a></p>
-<h5 id="mac-os安装composer"><span class="header-section-number">11.1.1.1.3</span> Mac OS安装Composer</h5>
+<h5 id="mac-os安装composer"><span class="header-section-number">12.1.1.1.3</span> Mac OS安装Composer</h5>
 <pre><code>brew install homebrew/php/composer</code></pre>
-<h4 id="安装-laravel-第二步-安装laravel"><span class="header-section-number">11.1.1.2</span> 安装 Laravel 第二步 安装Laravel</h4>
+<h4 id="安装-laravel-第二步-安装laravel"><span class="header-section-number">12.1.1.2</span> 安装 Laravel 第二步 安装Laravel</h4>
 <pre><code>composer global require &quot;laravel/installer=~1.1&quot;</code></pre>
-<h4 id="安装-laravel-第三步-创建laravel工程"><span class="header-section-number">11.1.1.3</span> 安装 Laravel 第三步 创建Laravel工程</h4>
+<h4 id="安装-laravel-第三步-创建laravel工程"><span class="header-section-number">12.1.1.3</span> 安装 Laravel 第三步 创建Laravel工程</h4>
 <pre><code>composer create-project laravel/laravel your-project-name --prefer-dist </code></pre>
-<h2 id="mysql"><span class="header-section-number">11.2</span> MySQL</h2>
-<h3 id="安装mysql"><span class="header-section-number">11.2.1</span> 安装MySQL</h3>
+<h2 id="mysql"><span class="header-section-number">12.2</span> MySQL</h2>
+<h3 id="安装mysql"><span class="header-section-number">12.2.1</span> 安装MySQL</h3>
 <p><code>出于某些原因，我建议用MariaDB替换MySQL，如果你&quot;真正&quot;需要mysql，将mariadb替换为mysql</code></p>
 <p>ps: 在下文中我会继续用MySQL，而不是MariaDB，MairaDB是MySQL的一个分支，真正的开源分支。</p>
 <p>Ubuntu/Debian/Mint</p>
-<pre><code>$ sudo apt-get install mariadb-server</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sudo</span> apt-get install mariadb-server</code></pre>
 <p>Fedora/Centos</p>
-<pre><code>$ sudo yum install mariadb-server    </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sudo</span> yum install mariadb-server    </code></pre>
 <p>openSUSE</p>
-<pre><code>$ sudo zypper install mariadb-server</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sudo</span> zypper install mariadb-server</code></pre>
 <p>Mac OS</p>
-<pre><code> $ brew install mariadb</code></pre>
-<h3 id="配置mysql"><span class="header-section-number">11.2.2</span> 配置MySQL</h3>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">brew</span> install mariadb</code></pre>
+<h3 id="配置mysql"><span class="header-section-number">12.2.2</span> 配置MySQL</h3>
 <p>修改database.php</p>
-<pre><code>app/config/database.php</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">app/config/database.php</span></code></pre>
 <p>要修改的就是这个</p>
-<pre><code>&#39;mysql&#39; =&gt; array(
-    &#39;driver&#39;    =&gt; &#39;mysql&#39;,
-    &#39;host&#39;      =&gt; &#39;localhost&#39;,
-    &#39;database&#39;  =&gt; &#39;iot&#39;,
-    &#39;username&#39;  =&gt; &#39;root&#39;,
-    &#39;password&#39;  =&gt; &#39;940217&#39;,
-    &#39;charset&#39;   =&gt; &#39;utf8&#39;,
-    &#39;collation&#39; =&gt; &#39;utf8_unicode_ci&#39;,
-    &#39;prefix&#39;    =&gt; &#39;&#39;,
-),</code></pre>
+<pre class="sourceCode php"><code class="sourceCode php"><span class="st">&#39;mysql&#39;</span> =&gt; <span class="fu">array</span><span class="ot">(</span>
+    <span class="st">&#39;driver&#39;</span>    =&gt; <span class="st">&#39;mysql&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;host&#39;</span>      =&gt; <span class="st">&#39;localhost&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;database&#39;</span>  =&gt; <span class="st">&#39;iot&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;username&#39;</span>  =&gt; <span class="st">&#39;root&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;password&#39;</span>  =&gt; <span class="st">&#39;940217&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;charset&#39;</span>   =&gt; <span class="st">&#39;utf8&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;collation&#39;</span> =&gt; <span class="st">&#39;utf8_unicode_ci&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;prefix&#39;</span>    =&gt; <span class="st">&#39;&#39;</span><span class="ot">,</span>
+<span class="ot">),</span></code></pre>
 <p>如果你已经有phpmyadmin，似乎对你来说已经很简单了，如果没有的话，就直接用</p>
-<pre><code>$ mysql -uroot -p</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mysql</span> -uroot -p</code></pre>
 <p>来创建一个新的</p>
-<pre><code>CREATE DATABASE IF NOT EXISTS iot default charset utf8 COLLATE utf8_general_ci;</code></pre>
+<pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">CREATE</span> <span class="kw">DATABASE</span> <span class="kw">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> iot <span class="kw">default</span> charset utf8 COLLATE utf8_general_ci;</code></pre>
 <p>数据库的目的在于存储数据等等的闲话这里就不多说了，创建一个RESTful的目的在于产生下面的JSON格式数据，以便于我们在Android、Java、Python、jQuery等语言框架或者平台上可以调用，最主要的是可以直接用Ajax来产生更炫目的效果。</p>
-<pre><code>{
-&quot;id&quot;: 1,
-&quot;temperature&quot;: 14,
-&quot;sensors1&quot;: 12,
-&quot;sensors2&quot;: 12,
-&quot;led1&quot;: 0
+<pre class="sourceCode javascript"><code class="sourceCode javascript">{
+<span class="st">&quot;id&quot;</span>: <span class="dv">1</span>,
+<span class="st">&quot;temperature&quot;</span>: <span class="dv">14</span>,
+<span class="st">&quot;sensors1&quot;</span>: <span class="dv">12</span>,
+<span class="st">&quot;sensors2&quot;</span>: <span class="dv">12</span>,
+<span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>
 }</code></pre>
-<h2 id="数据库迁移"><span class="header-section-number">11.3</span> 数据库迁移</h2>
+<h2 id="数据库迁移"><span class="header-section-number">12.3</span> 数据库迁移</h2>
 <p>这个名字是源自于Ruby On Rails在那时候的印象，不直接使用MySQL的目的在于让我们可以专注于过程。</p>
-<h3 id="创建表"><span class="header-section-number">11.3.1</span> 创建表</h3>
+<h3 id="创建表"><span class="header-section-number">12.3.1</span> 创建表</h3>
 <p>表的概念，类似于在Excel中的表，如果你真实不懂数据库。 让我们创建一个athomes的表，为什么是athomes，因为以前在写android程序的时候就叫的是athome，忽略掉这些次要的因素吧。</p>
-<pre><code>$ php artisan migrate:make create_athomes_table</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan migrate:make create_athomes_table</code></pre>
 <p>打开 app/database/migrations/<strong><em>create_athomes_table.php这里的</em></strong>是由日期和某些东西组成的，修改生成的代码为下面。</p>
-<pre><code>use Illuminate\Database\Schema\Blueprint;  
-use Illuminate\Database\Migrations\Migration;  
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">use</span> Illuminate\Database\Schema\Blueprint<span class="ot">;</span>  
+<span class="kw">use</span> Illuminate\Database\Migrations\Migration<span class="ot">;</span>  
 
-class CreateAthomesTable extends Migration {  
+<span class="kw">class</span> CreateAthomesTable <span class="kw">extends</span> Migration {  
 
-    public function up()  
+    <span class="kw">public</span> <span class="kw">function</span> up<span class="ot">()</span>  
     {  
-        Schema::create(&#39;athomes&#39;, function(Blueprint $table)  
+        Schema::create<span class="ot">(</span><span class="st">&#39;athomes&#39;</span><span class="ot">,</span> <span class="kw">function</span><span class="ot">(</span>Blueprint <span class="kw">$table</span><span class="ot">)</span>  
         {  
-            $table---&gt;increments(&#39;id&#39;);  
-            $table-&gt;float(&#39;temperature&#39;);  
-            $table-&gt;float(&#39;sensors1&#39;);  
-            $table-&gt;float(&#39;sensors2&#39;);  
-            $table-&gt;boolean(&#39;led1&#39;);  
-            $table-&gt;timestamps();  
-        });  
+            <span class="kw">$table</span>---&gt;increments<span class="ot">(</span><span class="st">&#39;id&#39;</span><span class="ot">);</span>  
+            <span class="kw">$table</span>-&gt;float<span class="ot">(</span><span class="st">&#39;temperature&#39;</span><span class="ot">);</span>  
+            <span class="kw">$table</span>-&gt;float<span class="ot">(</span><span class="st">&#39;sensors1&#39;</span><span class="ot">);</span>  
+            <span class="kw">$table</span>-&gt;float<span class="ot">(</span><span class="st">&#39;sensors2&#39;</span><span class="ot">);</span>  
+            <span class="kw">$table</span>-&gt;boolean<span class="ot">(</span><span class="st">&#39;led1&#39;</span><span class="ot">);</span>  
+            <span class="kw">$table</span>-&gt;timestamps<span class="ot">();</span>  
+        }<span class="ot">);</span>  
     }  
 
-    public function down()  
+    <span class="kw">public</span> <span class="kw">function</span> down<span class="ot">()</span>  
     {  
-        Schema::drop(&#39;athomes&#39;);  
+        Schema::drop<span class="ot">(</span><span class="st">&#39;athomes&#39;</span><span class="ot">);</span>  
     }  
 
 }</code></pre>
 <p>意思大致就是id是自加的，也就是我们在localhost/athome/{id}，当我们创建一个新的数据的时候，会自动加上去，最后一个timestamps批的是时间，会包含创建时间和修改时间。 剩下的temperature,sensors1,sensors2是小数，以及只有真和假的led1。</p>
-<h3 id="数据库迁移-1"><span class="header-section-number">11.3.2</span> 数据库迁移</h3>
+<h3 id="数据库迁移-1"><span class="header-section-number">12.3.2</span> 数据库迁移</h3>
 <p>我们只是写了我们需要的数据的格式而并没有丢到数据库里，</p>
-<pre><code>$ php artisan migrate</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan migrate</code></pre>
 <p>这个就是我们执行迁移的命令，如果你用phpmyadmin可以直接打开查看，没有的话，可以。</p>
-<pre><code>$ mysql -uroot -p
-
-use iot;
-select * from athomes;</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">    $ <span class="kw">mysql</span> -uroot -p</code></pre>
+<pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">use</span> iot;
+<span class="kw">select</span> * <span class="kw">from</span> athomes;</code></pre>
 <p>就可以看到我们写的东西，那么接下来就是创建RESTful服务了</p>
-<h2 id="创建restful"><span class="header-section-number">11.4</span> 创建RESTful</h2>
+<h2 id="创建restful"><span class="header-section-number">12.4</span> 创建RESTful</h2>
 <p>用下面的代码实现我们称之为Athomes控制器的创建</p>
-<pre><code>$ php artisan controller:make AthomesController  </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan controller:make AthomesController  </code></pre>
 <p>就会在app/controllers下面生成下面的代码</p>
-<pre><code>class AthomesController extends \BaseController {  
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">class</span> AthomesController <span class="kw">extends</span> \BaseController {  
 
-    public function index()  
+    <span class="kw">public</span> <span class="kw">function</span> index<span class="ot">()</span>  
     {  
     }  
 
-    public function create()  
+    <span class="kw">public</span> <span class="kw">function</span> create<span class="ot">()</span>  
     {  
     }  
 
-    public function store()  
+    <span class="kw">public</span> <span class="kw">function</span> store<span class="ot">()</span>  
     {  
     }  
 
-    public function show($id)  
+    <span class="kw">public</span> <span class="kw">function</span> show<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>  
     {  
     }  
 
-    public function edit($id)  
+    <span class="kw">public</span> <span class="kw">function</span> edit<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>  
     {  
     }  
 
-    public function update($id)  
+    <span class="kw">public</span> <span class="kw">function</span> update<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>  
     {  
     }  
 
-    public function destroy($id)  
+    <span class="kw">public</span> <span class="kw">function</span> destroy<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>  
     {  
     }  
 
 }</code></pre>
-<h2 id="laravel-resources"><span class="header-section-number">11.5</span> Laravel Resources</h2>
+<h2 id="laravel-resources"><span class="header-section-number">12.5</span> Laravel Resources</h2>
 <p>上面的代码过于沉重，请让我用 Ctrl+C 来带来点知识吧。</p>
 <table>
 <thead>
@@ -1701,346 +1702,346 @@ select * from athomes;</code></pre>
 </tbody>
 </table>
 <p>所以我们只需要专注于创建 create, edit, show, destory 等等。好吧，你可能没有耐心了，但是在修改这个之前我们需要先在 app/model 加个 class</p>
-<pre><code>class Athomes extends Eloquent {  
-    protected $table = &#39;athomes&#39;;  
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">class</span> Athomes <span class="kw">extends</span> Eloquent {  
+    <span class="kw">protected</span> <span class="kw">$table</span> = <span class="st">&#39;athomes&#39;</span><span class="ot">;</span>  
 }</code></pre>
 <p>如果你想要的只是控制器Athomes的代码的话。。</p>
-<pre><code>class AthomesController extends \BaseController {
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">class</span> AthomesController <span class="kw">extends</span> \BaseController {
 
-    public $restful=true;
+    <span class="kw">public</span> <span class="kw">$restful</span>=<span class="kw">true</span><span class="ot">;</span>
 
-    protected $athome;
+    <span class="kw">protected</span> <span class="kw">$athome</span><span class="ot">;</span>
 
-    public function __construct(Athomes $athome)
+    <span class="kw">public</span> <span class="kw">function</span> <span class="fu">__construct</span><span class="ot">(</span>Athomes <span class="kw">$athome</span><span class="ot">)</span>
     {
-        $this---&gt;athome = $athome ;
+        <span class="kw">$this</span>---&gt;athome = <span class="kw">$athome</span> <span class="ot">;</span>
      }
 
-    public function index()
+    <span class="kw">public</span> <span class="kw">function</span> index<span class="ot">()</span>
     {
-        $maxid=Athomes::all();
-        return Response::json($maxid);
+        <span class="kw">$maxid</span>=Athomes::all<span class="ot">();</span>
+        <span class="kw">return</span> Response::json<span class="ot">(</span><span class="kw">$maxid</span><span class="ot">);</span>
     }
 
-    public function create()
+    <span class="kw">public</span> <span class="kw">function</span> create<span class="ot">()</span>
     {
-        $maxid=Athomes::max(&#39;id&#39;);
-        return View::make(&#39;athome.create&#39;)-&gt;with(&#39;maxid&#39;,$maxid);
+        <span class="kw">$maxid</span>=Athomes::<span class="fu">max</span><span class="ot">(</span><span class="st">&#39;id&#39;</span><span class="ot">);</span>
+        <span class="kw">return</span> View::make<span class="ot">(</span><span class="st">&#39;athome.create&#39;</span><span class="ot">)</span>-&gt;with<span class="ot">(</span><span class="st">&#39;maxid&#39;</span><span class="ot">,</span><span class="kw">$maxid</span><span class="ot">);</span>
     }
 
-    public function store()
+    <span class="kw">public</span> <span class="kw">function</span> store<span class="ot">()</span>
     {
 
-        $rules = array(
-            &#39;led1&#39;=&gt;&#39;required&#39;,
-            &#39;sensors1&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
-            &#39;sensors2&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
-            &#39;temperature&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;
-        );
-        $validator = Validator::make(Input::all(), $rules);
+        <span class="kw">$rules</span> = <span class="fu">array</span><span class="ot">(</span>
+            <span class="st">&#39;led1&#39;</span>=&gt;<span class="st">&#39;required&#39;</span><span class="ot">,</span>
+            <span class="st">&#39;sensors1&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span><span class="ot">,</span>
+            <span class="st">&#39;sensors2&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span><span class="ot">,</span>
+            <span class="st">&#39;temperature&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span>
+        <span class="ot">);</span>
+        <span class="kw">$validator</span> = Validator::make<span class="ot">(</span>Input::all<span class="ot">(),</span> <span class="kw">$rules</span><span class="ot">);</span>
 
-        if ($validator-&gt;fails()) {
-            return Redirect::to(&#39;athome/create&#39;)
-                -&gt;withErrors($validator)
-                -&gt;withInput(Input::except(&#39;password&#39;));
-        } else {
-            $nerd = new Athomes;
-            $nerd-&gt;sensors1       = Input::get(&#39;sensors1&#39;);
-            $nerd-&gt;sensors2       = Input::get(&#39;sensors2&#39;);
-            $nerd-&gt;temperature    = Input::get(&#39;temperature&#39;);
-            $nerd-&gt;led1           = Input::get(&#39;led1&#39;);
-            $nerd-&gt;save();
+        <span class="kw">if</span> <span class="ot">(</span><span class="kw">$validator</span>-&gt;fails<span class="ot">())</span> {
+            <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome/create&#39;</span><span class="ot">)</span>
+                -&gt;withErrors<span class="ot">(</span><span class="kw">$validator</span><span class="ot">)</span>
+                -&gt;withInput<span class="ot">(</span>Input::except<span class="ot">(</span><span class="st">&#39;password&#39;</span><span class="ot">));</span>
+        } <span class="kw">else</span> {
+            <span class="kw">$nerd</span> = <span class="kw">new</span> Athomes<span class="ot">;</span>
+            <span class="kw">$nerd</span>-&gt;sensors1       = Input::get<span class="ot">(</span><span class="st">&#39;sensors1&#39;</span><span class="ot">);</span>
+            <span class="kw">$nerd</span>-&gt;sensors2       = Input::get<span class="ot">(</span><span class="st">&#39;sensors2&#39;</span><span class="ot">);</span>
+            <span class="kw">$nerd</span>-&gt;temperature    = Input::get<span class="ot">(</span><span class="st">&#39;temperature&#39;</span><span class="ot">);</span>
+            <span class="kw">$nerd</span>-&gt;led1           = Input::get<span class="ot">(</span><span class="st">&#39;led1&#39;</span><span class="ot">);</span>
+            <span class="kw">$nerd</span>-&gt;save<span class="ot">();</span>
 
-            Session::flash(&#39;message&#39;, &#39;Successfully created athome!&#39;);
-            return Redirect::to(&#39;athome&#39;);
+            Session::flash<span class="ot">(</span><span class="st">&#39;message&#39;</span><span class="ot">,</span> <span class="st">&#39;Successfully created athome!&#39;</span><span class="ot">);</span>
+            <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
         }
     }
 
-    public function show($id)
+    <span class="kw">public</span> <span class="kw">function</span> show<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>
     {
-        $myid=Athomes::find($id);
-        $maxid=Athomes::where(&#39;id&#39;,&#39;=&#39;,$id)
-                        -&gt;select(&#39;id&#39;,&#39;temperature&#39;,&#39;sensors1&#39;,&#39;sensors2&#39;,&#39;led1&#39;)
-                        -&gt;get();
-        return Response::json($maxid);
+        <span class="kw">$myid</span>=Athomes::find<span class="ot">(</span><span class="kw">$id</span><span class="ot">);</span>
+        <span class="kw">$maxid</span>=Athomes::where<span class="ot">(</span><span class="st">&#39;id&#39;</span><span class="ot">,</span><span class="st">&#39;=&#39;</span><span class="ot">,</span><span class="kw">$id</span><span class="ot">)</span>
+                        -&gt;select<span class="ot">(</span><span class="st">&#39;id&#39;</span><span class="ot">,</span><span class="st">&#39;temperature&#39;</span><span class="ot">,</span><span class="st">&#39;sensors1&#39;</span><span class="ot">,</span><span class="st">&#39;sensors2&#39;</span><span class="ot">,</span><span class="st">&#39;led1&#39;</span><span class="ot">)</span>
+                        -&gt;get<span class="ot">();</span>
+        <span class="kw">return</span> Response::json<span class="ot">(</span><span class="kw">$maxid</span><span class="ot">);</span>
     }
 
-    public function edit($id)
+    <span class="kw">public</span> <span class="kw">function</span> edit<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>
     {
-        $athome = Athomes::find($id);
+        <span class="kw">$athome</span> = Athomes::find<span class="ot">(</span><span class="kw">$id</span><span class="ot">);</span>
 
-        return View::make(&#39;athome.edit&#39;)
-            -&gt;with(&#39;athome&#39;, $athome);
+        <span class="kw">return</span> View::make<span class="ot">(</span><span class="st">&#39;athome.edit&#39;</span><span class="ot">)</span>
+            -&gt;with<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">,</span> <span class="kw">$athome</span><span class="ot">);</span>
     }
 
-    public function update($id)
+    <span class="kw">public</span> <span class="kw">function</span> update<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>
     {
 
-        $rules = array(
-            &#39;led1&#39;=&gt;&#39;required|&#39;,
-            &#39;sensors1&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
-            &#39;sensors2&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
-            &#39;temperature&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;
-        );
-        $validator = Validator::make(Input::all(), $rules);
+        <span class="kw">$rules</span> = <span class="fu">array</span><span class="ot">(</span>
+            <span class="st">&#39;led1&#39;</span>=&gt;<span class="st">&#39;required|&#39;</span><span class="ot">,</span>
+            <span class="st">&#39;sensors1&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span><span class="ot">,</span>
+            <span class="st">&#39;sensors2&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span><span class="ot">,</span>
+            <span class="st">&#39;temperature&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span>
+        <span class="ot">);</span>
+        <span class="kw">$validator</span> = Validator::make<span class="ot">(</span>Input::all<span class="ot">(),</span> <span class="kw">$rules</span><span class="ot">);</span>
 
-        if ($validator-&gt;fails()) {
-            return Redirect::to(&#39;athome/&#39; . $id . &#39;/edit&#39;)
-                -&gt;withErrors($validator);
-        } else {
-            $nerd = Athomes::find($id);
-            $nerd-&gt;sensors1       = Input::get(&#39;sensors1&#39;);
-            $nerd-&gt;sensors2       = Input::get(&#39;sensors2&#39;);
-            $nerd-&gt;temperature    = Input::get(&#39;temperature&#39;);
-            $nerd-&gt;led1           = Input::get(&#39;led1&#39;);
-            $nerd-&gt;save();
+        <span class="kw">if</span> <span class="ot">(</span><span class="kw">$validator</span>-&gt;fails<span class="ot">())</span> {
+            <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome/&#39;</span> . <span class="kw">$id</span> . <span class="st">&#39;/edit&#39;</span><span class="ot">)</span>
+                -&gt;withErrors<span class="ot">(</span><span class="kw">$validator</span><span class="ot">);</span>
+        } <span class="kw">else</span> {
+            <span class="kw">$nerd</span> = Athomes::find<span class="ot">(</span><span class="kw">$id</span><span class="ot">);</span>
+            <span class="kw">$nerd</span>-&gt;sensors1       = Input::get<span class="ot">(</span><span class="st">&#39;sensors1&#39;</span><span class="ot">);</span>
+            <span class="kw">$nerd</span>-&gt;sensors2       = Input::get<span class="ot">(</span><span class="st">&#39;sensors2&#39;</span><span class="ot">);</span>
+            <span class="kw">$nerd</span>-&gt;temperature    = Input::get<span class="ot">(</span><span class="st">&#39;temperature&#39;</span><span class="ot">);</span>
+            <span class="kw">$nerd</span>-&gt;led1           = Input::get<span class="ot">(</span><span class="st">&#39;led1&#39;</span><span class="ot">);</span>
+            <span class="kw">$nerd</span>-&gt;save<span class="ot">();</span>
 
-            Session::flash(&#39;message&#39;, &#39;Successfully created athome!&#39;);
-            return Redirect::to(&#39;athome&#39;);
+            Session::flash<span class="ot">(</span><span class="st">&#39;message&#39;</span><span class="ot">,</span> <span class="st">&#39;Successfully created athome!&#39;</span><span class="ot">);</span>
+            <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
         }
     }
 
-    public function destroy($id)
+    <span class="kw">public</span> <span class="kw">function</span> destroy<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>
     {
 
-        $athome = Athomes::find($id);
-        $athome-&gt;delete();
-        if(is_null($athome))
+        <span class="kw">$athome</span> = Athomes::find<span class="ot">(</span><span class="kw">$id</span><span class="ot">);</span>
+        <span class="kw">$athome</span>-&gt;delete<span class="ot">();</span>
+        <span class="kw">if</span><span class="ot">(</span><span class="fu">is_null</span><span class="ot">(</span><span class="kw">$athome</span><span class="ot">))</span>
         {
-             return Response::json(&#39;Todo not found&#39;, 404);
+             <span class="kw">return</span> Response::json<span class="ot">(</span><span class="st">&#39;Todo not found&#39;</span><span class="ot">,</span> <span class="dv">404</span><span class="ot">);</span>
         }
 
-        Session::flash(&#39;message&#39;, &#39;Successfully deleted the nerd!&#39;);
-        return Redirect::to(&#39;athome&#39;);
+        Session::flash<span class="ot">(</span><span class="st">&#39;message&#39;</span><span class="ot">,</span> <span class="st">&#39;Successfully deleted the nerd!&#39;</span><span class="ot">);</span>
+        <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
     }
 
 }</code></pre>
-<p>希望你能读懂，没有的话，关注下一节。</p>
+<p>希望你能读懂，没有的话，继续。</p>
 <p>下面这部分来自于之前的博客，这里就不多加论述了。 这个也就是我们要的模板，</p>
-<h3 id="修改create"><span class="header-section-number">11.5.1</span> 修改Create()</h3>
-<pre><code>    public function create()
-    {
-        $maxid=Athomes::max(&#39;id&#39;);
-        return View::make(&#39;athome.create&#39;)-&gt;with(&#39;maxid&#39;,$maxid);
-    }</code></pre>
+<h3 id="修改create"><span class="header-section-number">12.5.1</span> 修改Create()</h3>
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">public</span> <span class="kw">function</span> create<span class="ot">()</span>
+{
+    <span class="kw">$maxid</span>=Athomes::<span class="fu">max</span><span class="ot">(</span><span class="st">&#39;id&#39;</span><span class="ot">);</span>
+    <span class="kw">return</span> View::make<span class="ot">(</span><span class="st">&#39;athome.create&#39;</span><span class="ot">)</span>-&gt;with<span class="ot">(</span><span class="st">&#39;maxid&#39;</span><span class="ot">,</span><span class="kw">$maxid</span><span class="ot">);</span>
+}</code></pre>
 <p>这里需要在app/views/创建一个athome里面创建一个create.blade.php，至于maxid，暂时还不需要，后面会用到show。如果只需要模板，可以简化为</p>
-<pre><code>    public function create()
-    {
-        return View::make(&#39;athome.create&#39;);
-    }</code></pre>
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">public</span> <span class="kw">function</span> create<span class="ot">()</span>
+{
+    <span class="kw">return</span> View::make<span class="ot">(</span><span class="st">&#39;athome.create&#39;</span><span class="ot">);</span>
+}</code></pre>
 <p>这里只是对其中代码的进行一下说明。</p>
-<h3 id="创建表单"><span class="header-section-number">11.5.2</span> 创建表单</h3>
-<h4 id="创建表单之前"><span class="header-section-number">11.5.2.1</span> 创建表单之前</h4>
+<h3 id="创建表单"><span class="header-section-number">12.5.2</span> 创建表单</h3>
+<h4 id="创建表单之前"><span class="header-section-number">12.5.2.1</span> 创建表单之前</h4>
 <p>由于使用到了bootstrap以及bootstrap-select，记得添加css。</p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap.min.css&#39;) ?&gt;&quot; /&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap-select.min.css&#39;) ?&gt;&quot; /&gt;</code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/bootstrap.min.css&#39;) ?&gt;&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/bootstrap-select.min.css&#39;) ?&gt;&quot;</span> <span class="kw">/&gt;</span></code></pre>
 <p>以及javascript</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/jquery.min.js&#39;)?&gt;&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/bootstrap.min.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/bootstrap-select.min.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-$(&#39;.selectpicker&#39;).selectpicker();
-&lt;/script&gt;</code></pre>
-<h4 id="创建表单-1"><span class="header-section-number">11.5.2.2</span> 创建表单</h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;js/jquery.min.js&#39;)?&gt;&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;js/bootstrap.min.js&#39;) ?&gt;&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;js/bootstrap-select.min.js&#39;) ?&gt;&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;script&gt;</span>
+<span class="fu">$</span>(<span class="st">&#39;.selectpicker&#39;</span>).<span class="fu">selectpicker</span>();
+&lt;<span class="ot">/script&gt;</span></code></pre>
+<h4 id="创建表单-1"><span class="header-section-number">12.5.2.2</span> 创建表单</h4>
 <p>这里用到的是之前提到的那个作者写下的，稍微修改了一下。</p>
-<pre><code>&lt;div class=&quot;row-fluid&quot;&gt;
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;row-fluid&quot;</span><span class="kw">&gt;</span>
   {{ HTML::ul($errors-&gt;all()) }}
   {{ Form::open(array(&#39;url&#39; =&gt; &#39;athome&#39;)) }}
 
-     &lt;div class=&quot;form-group&quot;&gt;
+     <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
           {{ Form::label(&#39;led1&#39;, &#39;开关1&#39;) }}
           {{ Form::select(&#39;led1&#39;,array(&#39;关&#39;,&#39;开&#39;),$selected=NULL,array(&#39;class&#39;=&gt;&#39;selectpicker&#39;)) }}
 
-      &lt;/div&gt;
+      <span class="kw">&lt;/div&gt;</span>
 
-      &lt;div class=&quot;form-group&quot;&gt;
+      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
           {{ Form::label(&#39;sensors1&#39;, &#39;sensors1&#39;) }}
           {{ Form::text(&#39;sensors1&#39;, Input::old(&#39;sensors1&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
-      &lt;/div&gt;
+      <span class="kw">&lt;/div&gt;</span>
 
-      &lt;div class=&quot;form-group&quot;&gt;
+      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
           {{ Form::label(&#39;sensors2&#39;, &#39;sensors2&#39;) }}
           {{ Form::text(&#39;sensors2&#39;, Input::old(&#39;sensors2&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
-      &lt;/div&gt;
+      <span class="kw">&lt;/div&gt;</span>
 
-      &lt;div class=&quot;form-group&quot;&gt;
+      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
           {{ Form::label(&#39;temperature&#39;, &#39;temperature&#39;) }}
           {{ Form::text(&#39;temperature&#39;, Input::old(&#39;temperature&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
-      &lt;/div&gt;
+      <span class="kw">&lt;/div&gt;</span>
 
       {{ Form::submit(&#39;Create!&#39;, array(&#39;class&#39; =&gt; &#39;btn btn-primary&#39;)) }}
 
   {{ Form::close() }}
 
-  &lt;/div&gt;</code></pre>
+  <span class="kw">&lt;/div&gt;</span></code></pre>
 <p>开关一开始打算用 checkbox，加上 bootstrap-switch 实现 ON OFF 弱弱地觉得还是没掌握好的节奏，所以最后用 select 来实现。</p>
 <p>还需要修改一下之前的 create()，添加一行</p>
-<pre><code>return Redirect::to(&#39;athome&#39;);</code></pre>
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span></code></pre>
 <p>也就是添加完后，重定向到首页查看，最后例子给出的 create 如下</p>
-<pre><code>public function store()
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">public</span> <span class="kw">function</span> store<span class="ot">()</span>
 {
-    $rules = array(
-        &#39;led1&#39;=&gt;&#39;required&#39;,
-        &#39;sensors1&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
-        &#39;sensors2&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;,
-        &#39;temperature&#39; =&gt; &#39;required|numeric|Min:-50|Max:80&#39;
-    );
-    $validator = Validator::make(Input::all(), $rules);
+    <span class="kw">$rules</span> = <span class="fu">array</span><span class="ot">(</span>
+        <span class="st">&#39;led1&#39;</span>=&gt;<span class="st">&#39;required&#39;</span><span class="ot">,</span>
+        <span class="st">&#39;sensors1&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span><span class="ot">,</span>
+        <span class="st">&#39;sensors2&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span><span class="ot">,</span>
+        <span class="st">&#39;temperature&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span>
+    <span class="ot">);</span>
+    <span class="kw">$validator</span> = Validator::make<span class="ot">(</span>Input::all<span class="ot">(),</span> <span class="kw">$rules</span><span class="ot">);</span>
 
-    if ($validator-&gt;fails()) {
-        return Redirect::to(&#39;athome/create&#39;)
-            -&gt;withErrors($validator);
-    } else {
-        // store
-        $nerd = new Athomes;
-        $nerd-&gt;sensors1       = Input::get(&#39;sensors1&#39;);
-        $nerd-&gt;sensors2       = Input::get(&#39;sensors2&#39;);
-        $nerd-&gt;temperature    = Input::get(&#39;temperature&#39;);
-        $nerd-&gt;led1            = Input::get(&#39;led1&#39;);
-        $nerd-&gt;save();
+    <span class="kw">if</span> <span class="ot">(</span><span class="kw">$validator</span>-&gt;fails<span class="ot">())</span> {
+        <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome/create&#39;</span><span class="ot">)</span>
+            -&gt;withErrors<span class="ot">(</span><span class="kw">$validator</span><span class="ot">);</span>
+    } <span class="kw">else</span> {
+        <span class="co">// store</span>
+        <span class="kw">$nerd</span> = <span class="kw">new</span> Athomes<span class="ot">;</span>
+        <span class="kw">$nerd</span>-&gt;sensors1       = Input::get<span class="ot">(</span><span class="st">&#39;sensors1&#39;</span><span class="ot">);</span>
+        <span class="kw">$nerd</span>-&gt;sensors2       = Input::get<span class="ot">(</span><span class="st">&#39;sensors2&#39;</span><span class="ot">);</span>
+        <span class="kw">$nerd</span>-&gt;temperature    = Input::get<span class="ot">(</span><span class="st">&#39;temperature&#39;</span><span class="ot">);</span>
+        <span class="kw">$nerd</span>-&gt;led1            = Input::get<span class="ot">(</span><span class="st">&#39;led1&#39;</span><span class="ot">);</span>
+        <span class="kw">$nerd</span>-&gt;save<span class="ot">();</span>
 
-        Session::flash(&#39;message&#39;, &#39;Successfully created athome!&#39;);
-        return Redirect::to(&#39;athome&#39;);
+        Session::flash<span class="ot">(</span><span class="st">&#39;message&#39;</span><span class="ot">,</span> <span class="st">&#39;Successfully created athome!&#39;</span><span class="ot">);</span>
+        <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
     }
 }</code></pre>
-<h3 id="编辑模板"><span class="header-section-number">11.5.3</span> 编辑模板</h3>
+<h3 id="编辑模板"><span class="header-section-number">12.5.3</span> 编辑模板</h3>
 <p>完整的 blade 模板文件</p>
-<pre><code>&lt;!DOCTYPE html lang=&quot;zh-cn&quot;&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
-        &lt;meta name=&quot;keywords&quot; content=&quot;&quot;&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
-        &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
-        &lt;title&gt;@yield(&#39;title&#39;)&lt;/title&gt;
-        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap.min.css&#39;) ?&gt;&quot; /&gt;
-        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;?= url(&#39;css/bootstrap-select.min.css&#39;) ?&gt;&quot; /&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;?= url(&#39;css/justified-nav.css&#39;) ?&gt;&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
-    &lt;/head&gt;
-&lt;body&gt;
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html lang=&quot;zh-cn&quot;<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> http-equiv=</span><span class="st">&quot;Content-type&quot;</span><span class="ot"> content=</span><span class="st">&quot;text/html; charset=utf-8&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;keywords&quot;</span><span class="ot"> content=</span><span class="st">&quot;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="ot"> content=</span><span class="st">&quot;&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;title&gt;</span>@yield(&#39;title&#39;)<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/bootstrap.min.css&#39;) ?&gt;&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/bootstrap-select.min.css&#39;) ?&gt;&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/justified-nav.css&#39;) ?&gt;&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> media=</span><span class="st">&quot;screen&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;body&gt;</span>
 
 
-&lt;div class=&quot;container&quot;&gt;
+<span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span>
 
-&lt;div class=&quot;container&quot;&gt;
-  &lt;div class=&quot;row-fluid&quot;&gt;
+<span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;row-fluid&quot;</span><span class="kw">&gt;</span>
 
-&lt;h1&gt;Edit {{ $athome-&gt;id }}&lt;/h1&gt;
+<span class="kw">&lt;h1&gt;</span>Edit {{ $athome-&gt;id }}<span class="kw">&lt;/h1&gt;</span>
 
-&lt;!-- if there are creation errors, they will show here --&gt;
+<span class="co">&lt;!-- if there are creation errors, they will show here --&gt;</span>
 {{ HTML::ul($errors-&gt;all()) }}
 
 {{ Form::model($athome, array(&#39;route&#39; =&gt; array(&#39;athome.update&#39;, $athome-&gt;id), &#39;method&#39; =&gt; &#39;PUT&#39;)) }}
 
-        &lt;div class=&quot;form-group&quot;&gt;
+        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
             {{ Form::label(&#39;led1&#39;, &#39;开关1&#39;) }}
             {{ Form::select(&#39;led1&#39;,array(&#39;关&#39;,&#39;开&#39;),$selected=NULL,array(&#39;class&#39;=&gt;&#39;selectpicker&#39;)) }}
 
-        &lt;/div&gt;
+        <span class="kw">&lt;/div&gt;</span>
 
-        &lt;div class=&quot;form-group&quot;&gt;
+        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
             {{ Form::label(&#39;sensors1&#39;, &#39;传感器1&#39;) }}
             {{ Form::text(&#39;sensors1&#39;, Input::old(&#39;sensors1&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
-        &lt;/div&gt;
+        <span class="kw">&lt;/div&gt;</span>
 
-        &lt;div class=&quot;form-group&quot;&gt;
+        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
             {{ Form::label(&#39;sensors2&#39;, &#39;传感器2&#39;) }}
             {{ Form::text(&#39;sensors2&#39;, Input::old(&#39;sensors2&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
-        &lt;/div&gt;
+        <span class="kw">&lt;/div&gt;</span>
 
-        &lt;div class=&quot;form-group&quot;&gt;
+        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
             {{ Form::label(&#39;temperature&#39;, &#39;温度传感器&#39;) }}
             {{ Form::text(&#39;temperature&#39;, Input::old(&#39;temperature&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
-        &lt;/div&gt;
+        <span class="kw">&lt;/div&gt;</span>
 
 
     {{ Form::submit(&#39;Edit the Nerd!&#39;, array(&#39;class&#39; =&gt; &#39;btn btn-primary&#39;)) }}
 
 {{ Form::close() }}
 
-    &lt;/div&gt;
-&lt;/div&gt;
+    <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/div&gt;</span>
 
 
-&lt;div class=&quot;footer&quot;&gt;
-        &lt;p&gt;© Company 2013&lt;/p&gt;
-      &lt;/div&gt;
-&lt;/div&gt;
+<span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;footer&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;p&gt;</span>© Company 2013<span class="kw">&lt;/p&gt;</span>
+      <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/div&gt;</span>
 
-&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/jquery.min.js&#39;)?&gt;&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/bootstrap.min.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/bootstrap-select.min.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
- $(&#39;.selectpicker&#39;).selectpicker();
- &lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;?= url(&#39;js/log.js&#39;) ?&gt;&quot;&gt;&lt;/script&gt;
+<span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;js/jquery.min.js&#39;)?&gt;&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;js/bootstrap.min.js&#39;) ?&gt;&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;js/bootstrap-select.min.js&#39;) ?&gt;&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;script&gt;</span>
+ <span class="fu">$</span>(<span class="st">&#39;.selectpicker&#39;</span>).<span class="fu">selectpicker</span>();
+ &lt;<span class="ot">/script&gt;</span>
+<span class="ot">&lt;script type=&quot;text/javascript</span><span class="st">&quot; src=&quot;</span>&lt;?= <span class="fu">url</span>(<span class="st">&#39;js/log.js&#39;</span>) ?&gt;<span class="st">&quot;&gt;&lt;/script&gt;</span>
 
 
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;<span class="ot">/body&gt;</span>
+<span class="ot">&lt;/html</span>&gt;</code></pre>
 <p>最后效果见:[http://b.phodal.com/][bphodal]</p>
 <p>代码位置:[http://b.phodal.com/js/app.js][appjs]</p>
-<h1 id="restful-evertywhere"><span class="header-section-number">12</span> RESTful Evertywhere</h1>
-<h2 id="javascript与ajax"><span class="header-section-number">12.1</span> Javascript与ajax</h2>
+<h1 id="restful-evertywhere"><span class="header-section-number">13</span> RESTful Evertywhere</h1>
+<h2 id="javascript与ajax"><span class="header-section-number">13.1</span> Javascript与ajax</h2>
 <blockquote>
 <p>AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。AJAX = 异步 JavaScript和XML（标准通用标记语言的子集）。</p>
 </blockquote>
-<h3 id="jquery"><span class="header-section-number">12.1.1</span> jQuery</h3>
+<h3 id="jquery"><span class="header-section-number">13.1.1</span> jQuery</h3>
 <blockquote>
 <p>Jquery是继prototype之后又一个优秀的Javascript框架。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器（IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+），jQuery2.0及后续版本将不再支持IE6/7/8浏览器。jQuery使用户能更方便地处理HTML（标准通用标记语言下的一个应用）、events、实现动画效果，并且方便地为网站提供AJAX交互。jQuery还有一个比较大的优势是，它的文档说明很全，而且各种应用也说得很详细，同时还有许多成熟的插件可供选择。jQuery能够使用户的html页面保持代码和html内容分离，也就是说，不用再在html里面插入一堆js来调用命令了，只需定义id即可。</p>
 </blockquote>
-<h2 id="java与json"><span class="header-section-number">12.2</span> Java与json</h2>
+<h2 id="java与json"><span class="header-section-number">13.2</span> Java与json</h2>
 <blockquote>
 <p>Gson（又称Google Gson）是Google公司发布的一个开放源代码的Java库，主要用途为串行化Java对象为JSON字符串，或反串行化JSON字符串成Java对象。</p>
 </blockquote>
-<h3 id="android"><span class="header-section-number">12.2.1</span> Android</h3>
-<h2 id="python与json"><span class="header-section-number">12.3</span> Python与json</h2>
+<h3 id="android"><span class="header-section-number">13.2.1</span> Android</h3>
+<h2 id="python与json"><span class="header-section-number">13.3</span> Python与json</h2>
 <blockquote>
 <p>使用pySerial可以使Python很好地在Windows/Linux/BSD上执行串口操作。</p>
 </blockquote>
 <p>使用urllib2库时</p>
-<pre><code>#!/usr/bin/env python
-import json
-import urllib2
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="ch">import</span> json
+<span class="ch">import</span> urllib2
 
-url=&quot;http://b.phodal.com/athome/1&quot;
+url=<span class="st">&quot;http://b.phodal.com/athome/1&quot;</span>
 
 date=urllib2.urlopen(url)
 result=json.load(date)
-   print result</code></pre>
-<h3 id="requests"><span class="header-section-number">12.3.1</span> requests</h3>
+   <span class="dt">print</span> result</code></pre>
+<h3 id="requests"><span class="header-section-number">13.3.1</span> requests</h3>
 <blockquote>
 <p>Python 标准库中的 urllib2 模块提供了你所需要的大多数 HTTP 功能，但是它的 API 烂出翔来了。它是为另一个时代、另一个互联网所创建的。它需要巨量的工作，甚至包括各种方法覆盖，来完成最简单的任务。</p>
 </blockquote>
 <p>GET请求</p>
-<pre><code>#!/usr/bin/env python
-import requests
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="ch">import</span> requests
 
-url = &quot;http://b.phodal.com/athome/1&quot;
+url = <span class="st">&quot;http://b.phodal.com/athome/1&quot;</span>
 r = requests.get(url)
-print r.text</code></pre>
+<span class="dt">print</span> r.text</code></pre>
 <p>POST请求</p>
-<pre><code>#!/usr/bin/env python
-import requests
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="ch">import</span> requests
 
-url = &quot;http://b.phodal.com/athome/1&quot;
-data = {&quot;temperature&quot;: 19, &quot;sensors1&quot;: 32, &quot;sensors2&quot;: 7.5, &quot;led1&quot;: 0, &quot;method&quot;: &quot;PUT&quot;}
+url = <span class="st">&quot;http://b.phodal.com/athome/1&quot;</span>
+data = {<span class="st">&quot;temperature&quot;</span>: <span class="dv">19</span>, <span class="st">&quot;sensors1&quot;</span>: <span class="dv">32</span>, <span class="st">&quot;sensors2&quot;</span>: <span class="fl">7.5</span>, <span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>, <span class="st">&quot;method&quot;</span>: <span class="st">&quot;PUT&quot;</span>}
 r = requests.put(url, data)
-print r.text</code></pre>
-<h1 id="前端显示"><span class="header-section-number">13</span> 前端显示</h1>
-<h2 id="jquery-mobile"><span class="header-section-number">13.1</span> jQuery Mobile</h2>
+<span class="dt">print</span> r.text</code></pre>
+<h1 id="前端显示"><span class="header-section-number">14</span> 前端显示</h1>
+<h2 id="jquery-mobile"><span class="header-section-number">14.1</span> jQuery Mobile</h2>
 <blockquote>
 <p>jQuery Mobile是jQuery 在手机上和平板设备上的版本。jQuery Mobile不仅会给主流移动平台带来jQuery核心库，而且会发布一个完整统一的jQuery移动UI框架。支持全球主流的移动平台。jQuery Mobile开发团队说：能开发这个项目，我们非常兴奋。移动Web太需要一个跨浏览器的框架，让开发人员开发出真正的移动Web网站。</p>
 </blockquote>
-<h2 id="bootstrap"><span class="header-section-number">13.2</span> Bootstrap</h2>
+<h2 id="bootstrap"><span class="header-section-number">14.2</span> Bootstrap</h2>
 <blockquote>
 <p>Bootstrap是Twitter推出的一个开源的用于前端开发的工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。Bootstrap一经推出后颇受欢迎，一直是GitHub上的热门开源项目，包括NASA的MSNBC（微软全国广播公司）的Breaking News都使用了该项目。</p>
 </blockquote>
-<h2 id="库与车轮子"><span class="header-section-number">13.3</span> 库与车轮子</h2>
+<h2 id="库与车轮子"><span class="header-section-number">14.3</span> 库与车轮子</h2>
 <p>在多数的情况下我们都没有理由也没有必要去重新发明我们的车轮，在这时使用库会是一个比较好的做法。</p>
-<h2 id="网站前台显示"><span class="header-section-number">13.4</span> 网站前台显示</h2>
-<h3 id="highchart"><span class="header-section-number">13.4.1</span> Highchart</h3>
+<h2 id="网站前台显示"><span class="header-section-number">14.4</span> 网站前台显示</h2>
+<h3 id="highchart"><span class="header-section-number">14.4.1</span> Highchart</h3>
 <p>Highcharts有以下的特点</p>
 <ul>
 <li>兼容性：兼容当今所有的浏览器，包括 iPhone、IE 和火狐等等；</li>
@@ -2054,8 +2055,8 @@ print r.text</code></pre>
 <li>时间轴：可以精确到毫秒;</li>
 </ul>
 <p>在这里只需将需要处理的数据存储到数组中，便可以将其渲染成为图形，下面的温度走势图便是基于Highcharts的结果</p>
-<h1 id="构建基于coap协议的物联网系统"><span class="header-section-number">14</span> 构建基于CoAP协议的物联网系统</h1>
-<h2 id="coap-嵌入式系统的rest"><span class="header-section-number">14.1</span> CoAP: 嵌入式系统的REST</h2>
+<h1 id="构建基于coap协议的物联网系统"><span class="header-section-number">15</span> 构建基于CoAP协议的物联网系统</h1>
+<h2 id="coap-嵌入式系统的rest"><span class="header-section-number">15.1</span> CoAP: 嵌入式系统的REST</h2>
 <p>引自维基百科上的介绍，用的是谷歌翻译。。。</p>
 <blockquote>
 <p>受约束的应用协议（COAP）是一种软件协议旨在以非常简单的电子设备，使他们能够在互联网上进行交互式通信中使用。它特别针对小型低功率传感器，开关，阀门和需要被控制或监督远程，通过标准的Internet网络类似的组件。 COAP是一个应用层协议，该协议是用于在资源受限的网络连接设备，例如无线传感器网络节点使用。 COAP被设计为容易地转换为HTTP与Web简化集成，同时也能满足特殊的要求，例如多播支持，非常低的开销，和简单性。多播，低开销，以及简单性是因特网极其重要物联网（IOT）和机器对机器（M2M）设备，这往往是积重难返，有太多的内存和电源，比传统的互联网设备有。因此，效率是非常重要的。 COAP可以在支持UDP或UDP的模拟大多数设备上运行。</p>
@@ -2067,11 +2068,11 @@ print r.text</code></pre>
 <li>CoAP减少了一些HTTP的方法</li>
 <li>CoAP可以支持检测装置</li>
 </ul>
-<h2 id="coap-命令行工具"><span class="header-section-number">14.2</span> CoAP 命令行工具</h2>
+<h2 id="coap-命令行工具"><span class="header-section-number">15.2</span> CoAP 命令行工具</h2>
 <p>开始之前，我们需要一个CoAP的命令行工具，以方便我们测试我们的代码是否是正确工作。</p>
-<h3 id="node-coap-cli"><span class="header-section-number">14.2.1</span> Node CoAP CLI</h3>
+<h3 id="node-coap-cli"><span class="header-section-number">15.2.1</span> Node CoAP CLI</h3>
 <pre><code> npm install coap-cli -g </code></pre>
-<h4 id="coap命令行"><span class="header-section-number">14.2.1.1</span> CoAP命令行</h4>
+<h4 id="coap命令行"><span class="header-section-number">15.2.1.1</span> CoAP命令行</h4>
 <p>在coap-cli中，一共有四个方法。</p>
 <pre><code>Commands:
 
@@ -2086,13 +2087,13 @@ I-D</code></pre>
 <p>测试一下现在的最小的物联网系统CoAP版</p>
 <pre><code>coap get coap://iot-coap.phodal.com/id/1
 (2.05)  [{&quot;id&quot;:1,&quot;value&quot;:&quot;is id 1&quot;,&quot;sensors1&quot;:19,&quot;sensors2&quot;:20}]</code></pre>
-<h3 id="libcoap"><span class="header-section-number">14.2.2</span> libcoap</h3>
-<h4 id="mac-os-libcoap安装"><span class="header-section-number">14.2.2.1</span> mac os libcoap安装</h4>
+<h3 id="libcoap"><span class="header-section-number">15.2.2</span> libcoap</h3>
+<h4 id="mac-os-libcoap安装"><span class="header-section-number">15.2.2.1</span> mac os libcoap安装</h4>
 <p>Mac OS下可以直接用</p>
 <pre><code>brew install libcoap</code></pre>
-<h4 id="ubuntu-libcoap安装"><span class="header-section-number">14.2.2.2</span> Ubuntu libcoap安装</h4>
+<h4 id="ubuntu-libcoap安装"><span class="header-section-number">15.2.2.2</span> Ubuntu libcoap安装</h4>
 <p>Ubuntu GNU/Linux下</p>
-<h4 id="windows-libcoap安装"><span class="header-section-number">14.2.2.3</span> Windows libcoap安装</h4>
+<h4 id="windows-libcoap安装"><span class="header-section-number">15.2.2.3</span> Windows libcoap安装</h4>
 <p>Windows 下</p>
 <p>安装完libcoap，我们可以直接用自带的两个命令</p>
 <pre><code>coap-client 
@@ -2105,15 +2106,15 @@ coap-server</code></pre>
 <pre><code>v:1 t:0 tkl:0 c:1 id:37109
 This is a test server made with libcoap (see http://libcoap.sf.net) 
 Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
-<h2 id="coap-helloworld"><span class="header-section-number">14.3</span> CoAP Hello,World</h2>
+<h2 id="coap-helloworld"><span class="header-section-number">15.3</span> CoAP Hello,World</h2>
 <p>接着我们便开始试试做一个简单的CoAP协议的应用，</p>
-<h4 id="开始之前-2"><span class="header-section-number">14.3.0.1</span> 开始之前</h4>
+<h4 id="开始之前-2"><span class="header-section-number">15.3.0.1</span> 开始之前</h4>
 <p>为了能访问<a href="coap://localhost/" class="uri">coap://localhost/</a>，于是我们便需要安装一个Firefox并安装一个名为Copper的插件。</p>
 <ol>
 <li><p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/" class="uri">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p></li>
 <li><p>作为测试我们同样可以访问 <a href="coap://vs0.inf.ethz.ch:5683/" class="uri">coap://vs0.inf.ethz.ch:5683/</a></p></li>
 </ol>
-<h3 id="node-coap"><span class="header-section-number">14.3.1</span> Node-CoAP</h3>
+<h3 id="node-coap"><span class="header-section-number">15.3.1</span> Node-CoAP</h3>
 <p>这里用到的是一个Nodejs的扩展Node-CoAP</p>
 <blockquote>
 <p>node-coap is a client and server library for CoAP modelled after the http module.</p>
@@ -2127,7 +2128,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>接着执行</p>
 <pre><code>npm install</code></pre>
 <p>就可以安装好这个库</p>
-<h3 id="node-coap示例"><span class="header-section-number">14.3.2</span> Node CoAP示例</h3>
+<h3 id="node-coap示例"><span class="header-section-number">15.3.2</span> Node CoAP示例</h3>
 <p>接着，创建这样一个app.js</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap        = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>)
     , server  = <span class="ot">coap</span>.<span class="fu">createServer</span>()
@@ -2154,8 +2155,8 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>就可以在console上输出</p>
 <pre><code>Hello World </code></pre>
 <p>也就达到了我们的目的，用CoAP协议创建一个服务，接着我们应该用它创建更多的东西，如产生JSON数据，以及RESTful。和HTTP版的最小物联网系统一样，CoAP版的最小物联网系统也是要返回JSON的。</p>
-<h2 id="coap-数据库查询"><span class="header-section-number">14.4</span> CoAP 数据库查询</h2>
-<h3 id="node-module"><span class="header-section-number">14.4.1</span> Node Module</h3>
+<h2 id="coap-数据库查询"><span class="header-section-number">15.4</span> CoAP 数据库查询</h2>
+<h3 id="node-module"><span class="header-section-number">15.4.1</span> Node Module</h3>
 <p>这说里Module的意义是因为我们需要在别的地方引用到db_helper这个库，也就是下一小节要的讲的内容。</p>
 <p>这样我们就可以在server.js类似于这样去引用这个js库。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> DBHelper = <span class="fu">require</span>(<span class="st">&#39;./db_helper.js&#39;</span>);
@@ -2166,9 +2167,9 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <span class="ot">DBHelper</span>.<span class="fu">initDB</span> = <span class="kw">function</span>(){};
 <span class="ot">module</span>.<span class="fu">exports</span> = DBHelper;</code></pre>
 <p>虽然这里的功能很简单，简单也能做我们想做的事情。</p>
-<h3 id="node-sqlite3"><span class="header-section-number">14.4.2</span> Node-Sqlite3</h3>
+<h3 id="node-sqlite3"><span class="header-section-number">15.4.2</span> Node-Sqlite3</h3>
 <p>这次我们用的是SQLite3(你可以用MySQL，出于安全考虑用SQLite3，SQLite3产生的是一个文件)</p>
-<h4 id="一个简单的initdb函数"><span class="header-section-number">14.4.2.1</span> 一个简单的initDB函数</h4>
+<h4 id="一个简单的initdb函数"><span class="header-section-number">15.4.2.1</span> 一个简单的initDB函数</h4>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> db = <span class="kw">new</span> <span class="ot">sqlite3</span>.<span class="fu">Database</span>(config[<span class="st">&quot;db_name&quot;</span>]);
 <span class="kw">var</span> create_table = <span class="st">&#39;create table if not exists basic (&#39;</span> + config[<span class="st">&quot;db_table&quot;</span>] + <span class="st">&#39;);&#39;</span>;
 
@@ -2201,9 +2202,9 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
     });
 };</code></pre>
 <p>将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。</p>
-<h3 id="查询数据"><span class="header-section-number">14.4.3</span> 查询数据</h3>
+<h3 id="查询数据"><span class="header-section-number">15.4.3</span> 查询数据</h3>
 <p>简单地记录一下在IoT-CoAP中一次获取数据地过程。</p>
-<h3 id="get"><span class="header-section-number">14.4.4</span> GET</h3>
+<h3 id="get"><span class="header-section-number">15.4.4</span> GET</h3>
 <p>先看看在示例中的Get.js的代码，这关乎在后面server端的代码。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap       = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>)
      ,requestURI = <span class="st">&#39;coap://localhost/&#39;</span>
@@ -2224,8 +2225,8 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>我们构建了一个请求的URL</p>
 <pre><code> coap://localhost/id/1/</code></pre>
 <p>我们对我们的请求添加了一个Header，内容是Accept，值是’application/json’也就是JSON格式。接着，便是等待请求回来，再处理返回的内容。</p>
-<h3 id="iot-coap"><span class="header-section-number">14.4.5</span> IoT CoAP</h3>
-<h3 id="判断请求的方法"><span class="header-section-number">14.4.6</span> 判断请求的方法</h3>
+<h3 id="iot-coap"><span class="header-section-number">15.4.5</span> IoT CoAP</h3>
+<h3 id="判断请求的方法"><span class="header-section-number">15.4.6</span> 判断请求的方法</h3>
 <p>在这里先把一些无关的代码删除掉，并保证其能工作，so，下面就是简要的逻辑代码。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap            = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>);
 <span class="kw">var</span> server          = <span class="ot">coap</span>.<span class="fu">createServer</span>({});
@@ -2253,7 +2254,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
     }
 };</code></pre>
 <p>如果是json刚调用returnJSON,</p>
-<h3 id="database与回调"><span class="header-section-number">14.4.7</span> Database与回调</h3>
+<h3 id="database与回调"><span class="header-section-number">15.4.7</span> Database与回调</h3>
 <p>而这里为了处理回调函数刚分为了两部分</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">query_helper</span>.<span class="fu">returnJSON</span> = <span class="kw">function</span>(req, res) {
     <span class="ot">DBHelper</span>.<span class="fu">urlQueryData</span>(<span class="ot">req</span>.<span class="fu">url</span>, <span class="kw">function</span> (result) {
@@ -2284,7 +2285,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 };</code></pre>
 <p>当resulst的结果为空时，返回一个404，因为没有数据。这样我们就构成了整个的链，再一步步返回结果。</p>
 <p>在<a href="https://github.com/phodal/iot-coap">IoT-CoAP</a>中我们使用到了一个Block2的东西，于是便整理相关的一些资料，作一个简单的介绍，以及在代码中的使用。</p>
-<h2 id="coap-block"><span class="header-section-number">14.5</span> CoAP Block</h2>
+<h2 id="coap-block"><span class="header-section-number">15.5</span> CoAP Block</h2>
 <p>CoAP是一个RESTful传输协议用于受限设备的节点和网络。基本的CoAP消息是一个不错的选择对于小型载荷如</p>
 <ul>
 <li>温度传感器</li>
@@ -2295,7 +2296,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示(resource representation)的最大大小，使得传输不需要太多的分割。虽然UDP支持通过IP分片传输更大的有效载荷，且仅限于64KiB，更重要的是，并没有真正很好地约束应用和网络。</p>
 <p>而不是依赖于IP分片，这种规范基本COAP了对“块”选项，用于传输信息从多个资源区块的请求 - 响应对。在许多重要的情况下，阻止使服务器能够真正无状态：服务器可以处理每块分开传输，而无需建立连接以前的数据块传输的其他服务器端内存。</p>
 <p>综上所述，块(Block)选项提供了传送一个最小的在分块的方式更大的陈述。</p>
-<h3 id="coap-post"><span class="header-section-number">14.5.1</span> CoAP POST</h3>
+<h3 id="coap-post"><span class="header-section-number">15.5.1</span> CoAP POST</h3>
 <p>看看在IoT CoAP中的post示例。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap     = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>)
       ,request  = <span class="ot">coap</span>.<span class="fu">request</span>
@@ -2327,9 +2328,9 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>就有</p>
 <pre><code>[ &#39;1&#39;, &#39;\&#39;must\&#39;&#39;, &#39;23&#39;, &#39;12&#39; ]</code></pre>
 <p>便可以很愉快地将其post到数据库中了，</p>
-<h3 id="json请求"><span class="header-section-number">14.5.2</span> JSON请求</h3>
+<h3 id="json请求"><span class="header-section-number">15.5.2</span> JSON请求</h3>
 <p>在做IoT-CoAP的过程中只支持JSON，查阅CoAP的草稿时发现支持了诸多的Content Types。</p>
-<h3 id="coap-content-types"><span class="header-section-number">14.5.3</span> CoAP Content Types</h3>
+<h3 id="coap-content-types"><span class="header-section-number">15.5.3</span> CoAP Content Types</h3>
 <p>以下文字来自谷歌翻译:</p>
 <blockquote>
 <p>互联网媒体类型是通过HTTP字符串标识，如“application/xml”。该字符串是由一个顶层的类型“applicaion”和子类型的“XML”。为了尽量减少使用这些类型的媒体类型来表示的开销消息有效载荷，COAP定义一个标识符编码方案互联网媒体类型的子集。预计这桌将可扩展标识符的值的IANA维护。内容类型选项被格式化为一个8位无符号整数。初始映射到一个合适的互联网媒体类型标识符表所示。复合型高层次类型（multipart和不支持消息）。标识符值是从201-255保留的特定于供应商的，应用程序特定的或实验使用和不由IANA。</p>
@@ -2508,7 +2509,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 </table>
 <p>简单地说就是：</p>
 <p><code>诸如application/json的Content Types在CoAP中应该是50</code>。如上表所示的结果是其对应的结果，这样的话可以减少传递的信息量。</p>
-<h2 id="coap-json"><span class="header-section-number">14.6</span> CoAP JSON</h2>
+<h2 id="coap-json"><span class="header-section-number">15.6</span> CoAP JSON</h2>
 <p>于是在一开始的时候首先支持的便是“application/json”这样的类型。</p>
 <p>首先判断请求的header</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">request_helper</span>.<span class="fu">getHandler</span> = <span class="kw">function</span>(req, res) {
@@ -2530,9 +2531,9 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <span class="fu">registerFormat</span>(<span class="st">&#39;application/json&#39;</span>, <span class="dv">50</span>)</code></pre>
 <p>对应地我们需要在一发出请求的时候设置好Accept，要不就没有办法返回我们需要的结果。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">req</span>.<span class="fu">setHeader</span>(<span class="st">&quot;Accept&quot;</span>, <span class="st">&quot;application/json&quot;</span>);</code></pre>
-<h3 id="返回json"><span class="header-section-number">14.6.1</span> 返回JSON</h3>
+<h3 id="返回json"><span class="header-section-number">15.6.1</span> 返回JSON</h3>
 <p>在给IoT CoAP添加了JSON支持之后，变得非常有意思，至少我们可以获得我们想要的结果。在上一篇中我们介绍了一些常用的工具——<a href="http://www.phodal.com/blog/coap-command-line-tools-set/">CoAP 命令行工具集</a>。</p>
-<h3 id="coap客户端代码"><span class="header-section-number">14.6.2</span> CoAP客户端代码</h3>
+<h3 id="coap客户端代码"><span class="header-section-number">15.6.2</span> CoAP客户端代码</h3>
 <p>开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>);
 <span class="kw">var</span> requestURI = <span class="st">&#39;coap://localhost/&#39;</span>;
@@ -2558,7 +2559,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
      <span class="co">//do something</span>
  };</code></pre>
 <p>这样就可以返回数据了</p>
-<h3 id="coap-server端代码"><span class="header-section-number">14.6.3</span> CoAP Server端代码</h3>
+<h3 id="coap-server端代码"><span class="header-section-number">15.6.3</span> CoAP Server端代码</h3>
 <p>Server端的代码比较简单，判断一下</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">if</span> (<span class="ot">req</span>.<span class="fu">headers</span>[<span class="st">&#39;Accept&#39;</span>] == <span class="st">&#39;application/json&#39;</span>) {
         <span class="fu">parse_url</span>(<span class="ot">req</span>.<span class="fu">url</span>, <span class="kw">function</span>(result){
@@ -2580,9 +2581,9 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
     })
 }</code></pre>
 <p>并且全部都显示出来，设计得真是有点不行，不过现在已经差不多了。</p>
-<h2 id="使用iot-coap构建物联网"><span class="header-section-number">14.7</span> 使用IoT-CoAP构建物联网</h2>
-<h2 id="iot-coap-1"><span class="header-section-number">14.8</span> IoT-CoAP</h2>
-<h2 id="install"><span class="header-section-number">14.9</span> install</h2>
+<h2 id="使用iot-coap构建物联网"><span class="header-section-number">15.7</span> 使用IoT-CoAP构建物联网</h2>
+<h2 id="iot-coap-1"><span class="header-section-number">15.8</span> IoT-CoAP</h2>
+<h2 id="install"><span class="header-section-number">15.9</span> install</h2>
 <p><code>注意</code>：windows系统npm install失败时，需要自己建立一个C:and Settings[USERNAME]Data文件</p>
 <pre><code>npm install iot-coap</code></pre>
 <p>new a file <code>index.js</code>(新建index.js)</p>
@@ -2631,12 +2632,12 @@ iotcoap.rest.run();</code></pre>
 };</code></pre>
 <p>接着运行(run)</p>
 <pre><code>node index.js</code></pre>
-<h1 id="mqtt"><span class="header-section-number">15</span> MQTT</h1>
+<h1 id="mqtt"><span class="header-section-number">16</span> MQTT</h1>
 <blockquote>
 <p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）是IBM开发的一个即时通讯协议，有可能成为物联网的重要组成部分。该协议支持所有平台，几乎可以把所有联网物品和外部连接起来，被用来当做传感器和致动器（比如通过Twitter让房屋联网）的通信协议。</p>
 </blockquote>
 <p>早在1999年，IBM的Andy Stanford-Clark博士以及Arcom公司ArlenNipper博士发明了MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）技术[1] 。据Andy Stanford-Clark博士称，MQTT将在今年和明年呈现爆炸式增长。</p>
-<h2 id="nodejs-mqtt"><span class="header-section-number">15.1</span> Nodejs MQTT</h2>
+<h2 id="nodejs-mqtt"><span class="header-section-number">16.1</span> Nodejs MQTT</h2>
 <blockquote>
 <p><a href="https://github.com/adamvr/MQTT.js/">mqtt.js</a> is a library for the MQTT protocol, written in JavaScript to be used in node.js.</p>
 </blockquote>
