@@ -1117,7 +1117,7 @@ drwxr-xr-x   15 fdhuang  staff   510B Sep  2 13:44 nginx-1.7.4
 <h2 id="硬件熟悉"><span class="header-section-number">6.2</span> 硬件熟悉</h2>
 <p>为了满足各种需求，Arduino团队设计了很多款开发板，如UNO、Pro mini、Mega2560、Due、Leonardo、Yún、Pro、Fio、Nano等十几种 开发板和扩展板。最适合初学者的一款是Arduino UNO 。下图是Arduino UNO 的外观图：</p>
 <div class="figure">
-<img src="http://designiot.phodal.com/images/uno.png" alt="Uno" /><p class="caption">Uno</p>
+<img src="http://designiot.phodal.com/images/uno.png" alt="UNO" /><p class="caption">UNO</p>
 </div>
 <p>注：后面的程序也是基于Arduino UNO开发板来讲解。</p>
 <h2 id="开发环境"><span class="header-section-number">6.3</span> 开发环境</h2>
@@ -2620,18 +2620,18 @@ iotcoap.rest.run();</code></pre>
 <blockquote>
 <p><a href="https://github.com/adamvr/MQTT.js/">mqtt.js</a> is a library for the MQTT protocol, written in JavaScript to be used in node.js.</p>
 </blockquote>
-<pre><code>var mqtt = require(&#39;mqtt&#39;)
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> mqtt = <span class="fu">require</span>(<span class="st">&#39;mqtt&#39;</span>)
 
-client = mqtt.createClient(1883, &#39;localhost&#39;);
+client = <span class="ot">mqtt</span>.<span class="fu">createClient</span>(<span class="dv">1883</span>, <span class="st">&#39;localhost&#39;</span>);
 
-client.subscribe(&#39;presence&#39;);
-client.publish(&#39;presence&#39;, &#39;Hello mqtt&#39;);
+<span class="ot">client</span>.<span class="fu">subscribe</span>(<span class="st">&#39;presence&#39;</span>);
+<span class="ot">client</span>.<span class="fu">publish</span>(<span class="st">&#39;presence&#39;</span>, <span class="st">&#39;Hello mqtt&#39;</span>);
 
-client.on(&#39;message&#39;, function (topic, message) {
-  console.log(message);
+<span class="ot">client</span>.<span class="fu">on</span>(<span class="st">&#39;message&#39;</span>, <span class="kw">function</span> (topic, message) {
+  <span class="ot">console</span>.<span class="fu">log</span>(message);
 });
 
-client.end();</code></pre>
+<span class="ot">client</span>.<span class="fu">end</span>();</code></pre>
 <div class="footnotes">
 <hr />
 <ol>
