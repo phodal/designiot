@@ -4,10 +4,12 @@
 **在线查看**:[一步步搭建物联网系统](http://designiot.phodal.com/)
 
 **下载PDF版**:[http://designiot.phodal.com/build/iot.pdf] (http://designiot.phodal.com/build/iot.pdf)
+
 **下载EPUB版**:[http://designiot.phodal.com/build/designiot.epub] (http://designiot.phodal.com/build/designiot.epub)
+
 **下载MOBI版**:[http://designiot.phodal.com/build/designiot.mobi] (http://designiot.phodal.com/build/designiot.mobi)
 
-作者名单 
+##作者名单 
 
 Github | Name
 |--------| ---------|
@@ -16,7 +18,7 @@ Github | Name
 
 ##如何编辑
 
-你可能需要一点markdown的知识，别担心这货很简单。
+只需要一点markdown的知识，别担心这货很简单。
 
 ###关于目录
 
@@ -29,7 +31,7 @@ Github | Name
 生成文档相关的目录
  
  - template/ 里面放有latex及html的模板
- - build/ PDF版
+ - build/ PDF版,MOBI版,EPUB版
  - end/ 毕业设计所在目录
  - css/ html版的css
 
