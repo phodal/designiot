@@ -28,18 +28,46 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <link rel="stylesheet" href="css/vendor.css" type="text/css" />
 </head>
 <body>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb" >
 	<head>
+		<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 		<title>一步步搭建物联网系统</title>
 		<meta name="keywords" content="设计物联网系统,物联网系统设计">
 		<meta name="description" content="一份关于如何设计物联网系统的文档">
 		<link rel="stylesheet" href="css/vendor.css" />
 	</head>
 	<body class="container inner wrap">
-		其他:<a href="http://designiot.phodal.com/build/iot.html" title="基于REST服务的最小物联网系统设计">基于REST服务的最小物联网系统设计</a>
+		<wb:follow-button uid="1533917471" type="red_4" width="100%" height="64" ></wb:follow-button>
+		<table>
+			<tr>
+				<td>
+					<iframe src="http://ghbtns.com/github-btn.html?user=phodal&repo=designiot&type=watch&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
+				</td>
+				<td>
+					<iframe src="http://ghbtns.com/github-btn.html?user=phodal&repo=designiot&type=fork&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
+				</td>
+				<td>
+					<iframe src="http://ghbtns.com/github-btn.html?user=phodal&type=follow&count=true&size=large" height="30" width="240" frameborder="0" scrolling="0" style="width:240px; height: 30px;" allowTransparency="true"></iframe>
+				</td>
+			</tr>
+		</table>
+		毕业论文:<a href="http://designiot.phodal.com/iot.html" title="基于REST服务的最小物联网系统设计">基于REST服务的最小物联网系统设计</a>
+<p><strong>下载PDF版</strong>:<a href="http://designiot.phodal.com/build/iot.pdf">http://designiot.phodal.com/build/iot.pdf</a></p>
+
+<p><strong>下载EPUB版</strong>:<a href="http://designiot.phodal.com/build/designiot.epub">http://designiot.phodal.com/build/designiot.epub</a></p>
+<p><strong>下载MOBI版</strong>:<a href="http://designiot.phodal.com/build/designiot.mobi">http://designiot.phodal.com/build/designiot.mobi</a></p>
+
 		<h2>一步步搭建物联网系统</h2>
-		</body>
-	</html>
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-54524083-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+	</body>
+</html>
 <div id="TOC">
 <ul>
 <li><a href="#物联网毕业设计"><span class="toc-section-number">1</span> 物联网毕业设计</a><ul>
@@ -130,7 +158,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>物联网的核心也就是网络服务，而网络服务在某种意义上来说，就是需要打造一 个多平台的通信协议，在使机器、家电、设备等连上计算机网络。基本的物联 网系统，不仅能控制设备，还可以在远程查看状态。而复杂的物联网系统可以让 互联网上的设备之间实现互联与通信，也就是物联网的最终目标所在——使物体与 物体之间的交互成为可能，不需要人为去干预。</p>
 <p>系统采用的结构是: Arduino+Raspberry Pi+Laravel+JSON+RESTful+Ajax+Python+HighCharts，其框架图如下所示</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/struct.png" title="系统框架图" alt="系统框架图" /><p class="caption">系统框架图</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/struct.png" title="系统框架图" alt="系统框架图" /><p class="caption">系统框架图</p>
 </div>
 <p>Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据， Raspberry Pi将资源传于互联网上对应的接口，接口可以在互联网上被访问。 Laravel框架构架于服务器之上，将Raspbery Pi获取过来的数据存储于MySQL数 据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问 这些设备。Ajax用于将后台的数据以不需要刷新的方式传递到网站前台，通过 HighCharts框架显示给终端用户。</p>
 <h2 id="硬件方案选择"><span class="header-section-number">2.1</span> 硬件方案选择</h2>
@@ -224,11 +252,11 @@ raspberrypi:
         <span class="kw">end</span></code></pre>
 <h2 id="arduino-1"><span class="header-section-number">3.3</span> Arduino</h2>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/ArduinoUnoSmd.png" title="Arduino开发板" alt="Arduino开发板" /><p class="caption">Arduino开发板</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/ArduinoUnoSmd.png" title="Arduino开发板" alt="Arduino开发板" /><p class="caption">Arduino开发板</p>
 </div>
 <p>Arduino UNO用的处微控制器是Atmega328，它与Arduino芯片的对应关系如下所示</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/atmega328w.png" title="Arduino管脚Atmega328对应图" alt="Arduino管脚Atmega328对应图" /><p class="caption">Arduino管脚Atmega328对应图</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/atmega328w.png" title="Arduino管脚Atmega328对应图" alt="Arduino管脚Atmega328对应图" /><p class="caption">Arduino管脚Atmega328对应图</p>
 </div>
 <p>其主要参数如下所示:</p>
 <p>高性能,低功耗的AVR®8位微控制器•先进的RISC结构</p>
@@ -266,7 +294,7 @@ raspberrypi:
 </ul>
 <p>Arduino部分硬件程序如下所示，主要负责从串口中读入数据，并用led灯显示。 程序流程图如下所示</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/arduino.png" title="Arduino程序流程图" alt="Arduino程序流程图" /><p class="caption">Arduino程序流程图</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/arduino.png" title="Arduino程序流程图" alt="Arduino程序流程图" /><p class="caption">Arduino程序流程图</p>
 </div>
 <p>系统主要的功能在于接收和传递数据。</p>
 <p>代码如下所示</p>
@@ -298,7 +326,7 @@ void loop() {
 <h2 id="raspberry-pi-1"><span class="header-section-number">3.4</span> Raspberry Pi</h2>
 <p>Raspberrypi如下所示的开发板</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/raspberrypi.png" title="Raspberry Pi开发板" alt="Raspberry Pi开发板" /><p class="caption">Raspberry Pi开发板</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/raspberrypi.png" title="Raspberry Pi开发板" alt="Raspberry Pi开发板" /><p class="caption">Raspberry Pi开发板</p>
 </div>
 <pre><code>        begin
            repeat
@@ -316,10 +344,10 @@ void loop() {
 <h4 id="raspberry-pi程序"><span class="header-section-number">3.4.0.1</span> Raspberry Pi程序</h4>
 <p>其程序流程图如下所示:</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/python.png" title="Python 程序流程图" alt="Python程序流程图" /><p class="caption">Python程序流程图</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/python.png" title="Python 程序流程图" alt="Python程序流程图" /><p class="caption">Python程序流程图</p>
 </div>
 <h3 id="获取数据"><span class="header-section-number">3.4.1</span> 获取数据</h3>
-<p>Raspberry Pi端的主要功能便是将数据从 <a href="http://www.xianuniversity.com/athome/1">http://www.xianuniversity.com/athome/1</a> [^domain] 下 载下来并解析数据，再将数据用串口通讯的方式传递给Arduino。</p>
+<p>Raspberry Pi端的主要功能便是将数据从 <a href="http://www.xianuniversity.com/athome/1" class="uri">http://www.xianuniversity.com/athome/1</a> [^domain] 下 载下来并解析数据，再将数据用串口通讯的方式传递给Arduino。</p>
 <p>在Debian系统中，自带了python语言，python有良好的动态特性，同时有强大的自建库功能。 在python语言中可以用自带的urllib2库打开并下载网页的内容，将上述网址中 的JSON数据下载到本地。</p>
 <p>数据采用的是JSON格式，具有良好的可读性，同时方便于解析，相比于XML格式 又可以减少文件大小，</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript">    [{
@@ -362,28 +390,28 @@ while 1:
         print &quot;Bad URL or timeout&quot;</code></pre>
 <p>系统还需要对上面的数据进行处理，只拿其中的结果</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/origin.png" title="python处理完后的结果" alt="python处理完后的结果" /><p class="caption">python处理完后的结果</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/origin.png" title="python处理完后的结果" alt="python处理完后的结果" /><p class="caption">python处理完后的结果</p>
 </div>
 <p>当改变led的状态后，便可以得到下面的结果</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/change.png" title="改变状态后的结果" alt="改变状态后的结果" /><p class="caption">改变状态后的结果</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/change.png" title="改变状态后的结果" alt="改变状态后的结果" /><p class="caption">改变状态后的结果</p>
 </div>
 <h1 id="网络系统设计"><span class="header-section-number">4</span> 网络系统设计</h1>
 <h2 id="网络服务程序设计"><span class="header-section-number">4.1</span> 网络服务程序设计</h2>
 <p>对于物联网系统网络的核心是构建一个RESTful服务，而这构建RESTful的核心便 是基础的HTPP协议。基础的HTTP协议便是:GET、POST、PUT、DELETE。它们分别 对应四种基本操作：GET用来获取资源，POST用来新建资源（也可以用于更新资 源），PUT用来更新资源，DELETE用来删除资源。</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/restful.png" title="restful" alt="restful" /><p class="caption">restful</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/restful.png" title="restful" alt="restful" /><p class="caption">restful</p>
 </div>
 <p>简要的来说，一个GET动作便是在打开一个网页的时候，看到的内容，便是GET到 的资源。而在获取取到网页的内容之前，会有一个POST动作到所要打开的网站的 服务器。</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/getrequest.png" title="Get Request" alt="Get Request" /><p class="caption">Get Request</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/getrequest.png" title="Get Request" alt="Get Request" /><p class="caption">Get Request</p>
 </div>
 <h3 id="基本的rest服务"><span class="header-section-number">4.1.1</span> 基本的REST服务</h3>
 <p>REST服务实际上是充当着网络与设备的传输介质，构建一个REST服务也就相当于 获取一个URL下的某个数据</p>
 <pre><code>$curl http://www.xianuniversity.com/athome/1</code></pre>
 <p>返回结果如下所示</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/jsondata.png" title="JSON结果返回图" alt="JSON结果返回图" /><p class="caption">JSON结果返回图</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/jsondata.png" title="JSON结果返回图" alt="JSON结果返回图" /><p class="caption">JSON结果返回图</p>
 </div>
 <p>假设有这样一个资源用于呈现led的状态，即 http://localhost/status/1 <a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>，获取这个LED的状态便发出了类似下面这样的请求:</p>
 <pre class="sourceCode python"><code class="sourceCode python">    GET /status/<span class="dv">1</span> HTTP/<span class="fl">1.1</span>
@@ -440,16 +468,16 @@ while 1:
 <p>剥离后的Ajax部分代码如下所示，主要用的是 jQuery 框架的 getJSON 来实现的</p>
 <p>begin data:=get_data(url) if data.get_success temperature:=data.push(temperature)</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/edit.png" title="控制界面" alt="控制界面" /><p class="caption">控制界面</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/edit.png" title="控制界面" alt="控制界面" /><p class="caption">控制界面</p>
 </div>
 <p>当按下Change Status按钮时，系统发生了如下变化</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/getpost.png" title="GET POST数据" alt="GET POST数据" /><p class="caption">GET POST数据</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/getpost.png" title="GET POST数据" alt="GET POST数据" /><p class="caption">GET POST数据</p>
 </div>
 <p>系统会先向服务器发送数据，也就是POST请求，在请求结束后，系统将会刷新页面，也就是GET请求。</p>
 <p>系统会不断从后台获取数据结果，如下所示</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/request.png" title="后台获取数据" alt="后台获取数据" /><p class="caption">后台获取数据</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/request.png" title="后台获取数据" alt="后台获取数据" /><p class="caption">后台获取数据</p>
 </div>
 <p>在Javascript语言中有函数库可以直接用于获取后台数据——getJSON，可以从指定的URL中获取结果。</p>
 <ul>
@@ -483,7 +511,7 @@ while 1:
 </ul>
 <p>在这里只需将需要处理的数据存储到数组中，便可以将其渲染成为图形，下面的温度走势图便是基于Highcharts的结果</p>
 <div class="figure">
-<img src="https://raw.githubusercontent.com/gmszone/thesis/master/dot/chart.png" title="温度走势图" alt="chart" /><p class="caption">chart</p>
+<img src="https://raw.githubusercontent.com/phodal/thesis/master/dot/chart.png" title="温度走势图" alt="chart" /><p class="caption">chart</p>
 </div>
 <h2 id="系统后台设计"><span class="header-section-number">4.3</span> 系统后台设计</h2>
 <h3 id="数据库设计"><span class="header-section-number">4.3.1</span> 数据库设计</h3>
@@ -598,7 +626,7 @@ while 1:
 <li id="fn7"><p>Asynchronous JavaScript and XML（异步JavaScript和XML)<a href="#fnref7">↩</a></p></li>
 <li id="fn8"><p>在Windows系统中需要先安装pip，再安装pyserial。<a href="#fnref8">↩</a></p></li>
 <li id="fn9"><p>指在*nix系统的终端中执行的命令。<a href="#fnref9">↩</a></p></li>
-<li id="fn10"><p>在Windows系统上，只需要将/dev/ttyACM0改为对应的com口。 [getjson]: https://raw.githubusercontent.com/gmszone/thesis/master/dot/getjson.png “python返回json数据” [python返回json数据][getjson]<a href="#fnref10">↩</a></p></li>
+<li id="fn10"><p>在Windows系统上，只需要将/dev/ttyACM0改为对应的com口。 [getjson]: https://raw.githubusercontent.com/phodal/thesis/master/dot/getjson.png “python返回json数据” [python返回json数据][getjson]<a href="#fnref10">↩</a></p></li>
 <li id="fn11"><p>在本地进行web开发时，浏览器可以识别localhost，配置好Hosts时相当于127.0.0.1。<a href="#fnref11">↩</a></p></li>
 <li id="fn12"><p>这里用的是Linux+Nginx+MySQL+PHP。<a href="#fnref12">↩</a></p></li>
 <li id="fn13"><p>创建数据的代码:CREATE DATABASE IF NOT EXISTS bbs default charset utf8 COLLATE utf8_general_ci;<a href="#fnref13">↩</a></p></li>
