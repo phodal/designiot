@@ -12,7 +12,10 @@
 </tr>
 </tbody>
 </table>
-<p>其他:<a href="http://designiot.phodal.com/iot.html" title="基于REST服务的最小物联网系统设计">基于REST服务的最小物联网系统设计</a></p>
+<p>毕业论文:<a href="http://designiot.phodal.com/iot.html" title="基于REST服务的最小物联网系统设计">基于REST服务的最小物联网系统设计</a></p>
+<p><strong>下载PDF版</strong>:<a href="http://designiot.phodal.com/build/iot.pdf" class="uri">http://designiot.phodal.com/build/iot.pdf</a></p>
+<p><strong>下载EPUB版</strong>:<a href="http://designiot.phodal.com/build/designiot.epub" class="uri">http://designiot.phodal.com/build/designiot.epub</a></p>
+<p><strong>下载MOBI版</strong>:<a href="http://designiot.phodal.com/build/designiot.mobi" class="uri">http://designiot.phodal.com/build/designiot.mobi</a></p>
 <h2>一步步搭建物联网系统</h2>
 <div id="TOC">
 <ul>
@@ -73,17 +76,18 @@
 <li><a href="#无处不在的三剑客"><span class="toc-section-number">5</span> 无处不在的三剑客</a>
 <ul>
 <li><a href="#hellogeek"><span class="toc-section-number">5.1</span> Hello,Geek</a></li>
-<li><a href="#从源码学习"><span class="toc-section-number">5.2</span> 从源码学习</a>
+<li><a href="#从源码学习"><span class="toc-section-number">5.2</span> 从源码学习</a></li>
+<li><a href="#浏览器渲染过程"><span class="toc-section-number">5.3</span> 浏览器渲染过程</a>
 <ul>
-<li><a href="#html"><span class="toc-section-number">5.2.1</span> HTML</a></li>
+<li><a href="#html"><span class="toc-section-number">5.3.1</span> HTML</a></li>
 </ul></li>
-<li><a href="#dom树形结构图"><span class="toc-section-number">5.3</span> DOM树形结构图</a>
+<li><a href="#dom树形结构图"><span class="toc-section-number">5.4</span> DOM树形结构图</a>
 <ul>
-<li><a href="#javascript"><span class="toc-section-number">5.3.1</span> javascript</a></li>
-<li><a href="#css-1"><span class="toc-section-number">5.3.2</span> CSS</a></li>
+<li><a href="#javascript"><span class="toc-section-number">5.4.1</span> javascript</a></li>
+<li><a href="#css-1"><span class="toc-section-number">5.4.2</span> CSS</a></li>
 </ul></li>
-<li><a href="#css盒模型图"><span class="toc-section-number">5.4</span> CSS盒模型图</a></li>
-<li><a href="#笔记"><span class="toc-section-number">5.5</span> 笔记</a></li>
+<li><a href="#css盒模型图"><span class="toc-section-number">5.5</span> CSS盒模型图</a></li>
+<li><a href="#笔记"><span class="toc-section-number">5.6</span> 笔记</a></li>
 </ul></li>
 <li><a href="#gnulinux"><span class="toc-section-number">6</span> GNU/Linux</a>
 <ul>
@@ -102,6 +106,13 @@
 <li><a href="#其他-1"><span class="toc-section-number">6.3.3</span> 其他</a></li>
 </ul></li>
 <li><a href="#包管理"><span class="toc-section-number">6.4</span> 包管理</a></li>
+<li><a href="#ubuntu-lnmp"><span class="toc-section-number">6.5</span> Ubuntu LNMP</a>
+<ul>
+<li><a href="#update软件包列表"><span class="toc-section-number">6.5.1</span> Update软件包列表</a></li>
+<li><a href="#安装mysql"><span class="toc-section-number">6.5.2</span> 安装MySQL</a></li>
+<li><a href="#安装nginx"><span class="toc-section-number">6.5.3</span> 安装Nginx</a></li>
+<li><a href="#安装php"><span class="toc-section-number">6.5.4</span> 安装PHP</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#arduino"><span class="toc-section-number">7</span> Arduino</a>
 <ul>
@@ -146,102 +157,96 @@
 <ul>
 <li><a href="#资源"><span class="toc-section-number">10.3.1</span> 资源</a></li>
 </ul></li>
-<li><a href="#rest关键目标"><span class="toc-section-number">10.4</span> REST关键目标</a></li>
-<li><a href="#判断是否是-restful的约束条件"><span class="toc-section-number">10.5</span> 判断是否是 RESTful的约束条件</a></li>
-<li><a href="#设计restful资源"><span class="toc-section-number">10.6</span> 设计RESTful资源</a></li>
-<li><a href="#设计restful-uri"><span class="toc-section-number">10.7</span> 设计RESTful URI</a></li>
 </ul></li>
-<li><a href="#创建rest服务"><span class="toc-section-number">11</span> 创建REST服务</a>
+<li><a href="#设计restful-api"><span class="toc-section-number">11</span> 设计RESTful API</a>
 <ul>
-<li><a href="#laravel"><span class="toc-section-number">11.1</span> Laravel</a>
-<ul>
-<li><a href="#安装-laravel"><span class="toc-section-number">11.1.1</span> 安装 Laravel</a></li>
+<li><a href="#rest关键目标"><span class="toc-section-number">11.1</span> REST关键目标</a></li>
+<li><a href="#判断是否是-restful的约束条件"><span class="toc-section-number">11.2</span> 判断是否是 RESTful的约束条件</a></li>
+<li><a href="#设计restful资源"><span class="toc-section-number">11.3</span> 设计RESTful资源</a></li>
+<li><a href="#设计restful-uri"><span class="toc-section-number">11.4</span> 设计RESTful URI</a></li>
 </ul></li>
-<li><a href="#mysql"><span class="toc-section-number">11.2</span> MySQL</a>
+<li><a href="#创建rest服务"><span class="toc-section-number">12</span> 创建REST服务</a>
 <ul>
-<li><a href="#安装mysql"><span class="toc-section-number">11.2.1</span> 安装MySQL</a></li>
-<li><a href="#配置mysql"><span class="toc-section-number">11.2.2</span> 配置MySQL</a></li>
+<li><a href="#laravel"><span class="toc-section-number">12.1</span> Laravel</a>
+<ul>
+<li><a href="#为什么是-laravel"><span class="toc-section-number">12.1.1</span> 为什么是 Laravel</a></li>
 </ul></li>
-<li><a href="#数据库迁移"><span class="toc-section-number">11.3</span> 数据库迁移</a>
+<li><a href="#安装-laravel"><span class="toc-section-number">12.2</span> 安装 Laravel</a>
 <ul>
-<li><a href="#创建表"><span class="toc-section-number">11.3.1</span> 创建表</a></li>
-<li><a href="#数据库迁移-1"><span class="toc-section-number">11.3.2</span> 数据库迁移</a></li>
+<li><a href="#第一步-安装composer"><span class="toc-section-number">12.2.1</span> 第一步 安装Composer</a></li>
+<li><a href="#安装laravel"><span class="toc-section-number">12.2.2</span> 安装Laravel</a></li>
+<li><a href="#创建laravel工程"><span class="toc-section-number">12.2.3</span> 创建Laravel工程</a></li>
 </ul></li>
-<li><a href="#创建restful"><span class="toc-section-number">11.4</span> 创建RESTful</a></li>
-<li><a href="#laravel-resources"><span class="toc-section-number">11.5</span> Laravel Resources</a>
+<li><a href="#mysql"><span class="toc-section-number">12.3</span> MySQL</a>
 <ul>
-<li><a href="#修改create"><span class="toc-section-number">11.5.1</span> 修改Create()</a></li>
-<li><a href="#创建表单"><span class="toc-section-number">11.5.2</span> 创建表单</a></li>
-<li><a href="#编辑模板"><span class="toc-section-number">11.5.3</span> 编辑模板</a></li>
+<li><a href="#安装mysql-1"><span class="toc-section-number">12.3.1</span> 安装MySQL</a></li>
+<li><a href="#配置mysql"><span class="toc-section-number">12.3.2</span> 配置MySQL</a></li>
 </ul></li>
+<li><a href="#数据库迁移"><span class="toc-section-number">12.4</span> 数据库迁移</a>
+<ul>
+<li><a href="#创建表"><span class="toc-section-number">12.4.1</span> 创建表</a></li>
+<li><a href="#数据库迁移-1"><span class="toc-section-number">12.4.2</span> 数据库迁移</a></li>
 </ul></li>
-<li><a href="#restful-evertywhere"><span class="toc-section-number">12</span> RESTful Evertywhere</a>
+<li><a href="#创建restful"><span class="toc-section-number">12.5</span> 创建RESTful</a></li>
+<li><a href="#laravel-resources"><span class="toc-section-number">12.6</span> Laravel Resources</a>
 <ul>
-<li><a href="#javascript与ajax"><span class="toc-section-number">12.1</span> Javascript与ajax</a>
-<ul>
-<li><a href="#jquery"><span class="toc-section-number">12.1.1</span> jQuery</a></li>
-</ul></li>
-<li><a href="#java与json"><span class="toc-section-number">12.2</span> Java与json</a>
-<ul>
-<li><a href="#android"><span class="toc-section-number">12.2.1</span> Android</a></li>
-</ul></li>
-<li><a href="#python与json"><span class="toc-section-number">12.3</span> Python与json</a>
-<ul>
-<li><a href="#requests"><span class="toc-section-number">12.3.1</span> requests</a></li>
+<li><a href="#修改create"><span class="toc-section-number">12.6.1</span> 修改Create()</a></li>
+<li><a href="#创建表单"><span class="toc-section-number">12.6.2</span> 创建表单</a></li>
+<li><a href="#编辑模板"><span class="toc-section-number">12.6.3</span> 编辑模板</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#前端显示"><span class="toc-section-number">13</span> 前端显示</a>
+<li><a href="#restful-evertywhere"><span class="toc-section-number">13</span> RESTful Evertywhere</a>
 <ul>
-<li><a href="#jquery-mobile"><span class="toc-section-number">13.1</span> jQuery Mobile</a></li>
-<li><a href="#bootstrap"><span class="toc-section-number">13.2</span> Bootstrap</a></li>
-<li><a href="#库与车轮子"><span class="toc-section-number">13.3</span> 库与车轮子</a></li>
-<li><a href="#网站前台显示"><span class="toc-section-number">13.4</span> 网站前台显示</a>
+<li><a href="#javascript与ajax"><span class="toc-section-number">13.1</span> Javascript与ajax</a>
 <ul>
-<li><a href="#highchart"><span class="toc-section-number">13.4.1</span> Highchart</a></li>
+<li><a href="#jquery"><span class="toc-section-number">13.1.1</span> jQuery</a></li>
+</ul></li>
+<li><a href="#java与json"><span class="toc-section-number">13.2</span> Java与json</a>
+<ul>
+<li><a href="#android"><span class="toc-section-number">13.2.1</span> Android</a></li>
+</ul></li>
+<li><a href="#python与json"><span class="toc-section-number">13.3</span> Python与json</a>
+<ul>
+<li><a href="#requests"><span class="toc-section-number">13.3.1</span> requests</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#构建基于coap协议的物联网系统"><span class="toc-section-number">14</span> 构建基于CoAP协议的物联网系统</a>
+<li><a href="#前端显示"><span class="toc-section-number">14</span> 前端显示</a>
 <ul>
-<li><a href="#coap-嵌入式系统的rest"><span class="toc-section-number">14.1</span> CoAP: 嵌入式系统的REST</a></li>
-<li><a href="#coap-命令行工具"><span class="toc-section-number">14.2</span> CoAP 命令行工具</a>
+<li><a href="#jquery-mobile"><span class="toc-section-number">14.1</span> jQuery Mobile</a></li>
+<li><a href="#bootstrap"><span class="toc-section-number">14.2</span> Bootstrap</a></li>
+<li><a href="#库与车轮子"><span class="toc-section-number">14.3</span> 库与车轮子</a></li>
+<li><a href="#网站前台显示"><span class="toc-section-number">14.4</span> 网站前台显示</a>
 <ul>
-<li><a href="#libcoap"><span class="toc-section-number">14.2.1</span> libcoap</a></li>
-<li><a href="#firefox-copper"><span class="toc-section-number">14.2.2</span> Firefox Copper</a></li>
+<li><a href="#highchart"><span class="toc-section-number">14.4.1</span> Highchart</a></li>
 </ul></li>
-<li><a href="#coap-helloworld"><span class="toc-section-number">14.3</span> CoAP Hello,World</a>
-<ul>
-<li><a href="#node-coap"><span class="toc-section-number">14.3.1</span> Node-CoAP</a></li>
-<li><a href="#node-coap示例"><span class="toc-section-number">14.3.2</span> Node CoAP示例</a></li>
 </ul></li>
-<li><a href="#coap-数据库查询"><span class="toc-section-number">14.4</span> CoAP 数据库查询</a>
+<li><a href="#构建基于coap协议的物联网系统"><span class="toc-section-number">15</span> 构建基于CoAP协议的物联网系统</a>
 <ul>
-<li><a href="#node-module"><span class="toc-section-number">14.4.1</span> Node Module</a></li>
-<li><a href="#node-sqlite3"><span class="toc-section-number">14.4.2</span> Node-Sqlite3</a></li>
-<li><a href="#查询数据"><span class="toc-section-number">14.4.3</span> 查询数据</a></li>
-<li><a href="#get"><span class="toc-section-number">14.4.4</span> GET</a></li>
-<li><a href="#iot-coap"><span class="toc-section-number">14.4.5</span> IoT CoAP</a></li>
-<li><a href="#判断请求的方法"><span class="toc-section-number">14.4.6</span> 判断请求的方法</a></li>
-<li><a href="#database与回调"><span class="toc-section-number">14.4.7</span> Database与回调</a></li>
-</ul></li>
-<li><a href="#coap-block"><span class="toc-section-number">14.5</span> CoAP Block</a>
+<li><a href="#coap-嵌入式系统的rest"><span class="toc-section-number">15.1</span> CoAP: 嵌入式系统的REST</a></li>
+<li><a href="#coap-命令行工具"><span class="toc-section-number">15.2</span> CoAP 命令行工具</a>
 <ul>
-<li><a href="#coap-post"><span class="toc-section-number">14.5.1</span> CoAP POST</a></li>
-<li><a href="#json请求"><span class="toc-section-number">14.5.2</span> JSON请求</a></li>
-<li><a href="#coap-content-types"><span class="toc-section-number">14.5.3</span> CoAP Content Types</a></li>
+<li><a href="#node-coap-cli"><span class="toc-section-number">15.2.1</span> Node CoAP CLI</a></li>
+<li><a href="#libcoap"><span class="toc-section-number">15.2.2</span> libcoap</a></li>
+<li><a href="#firefox-copper"><span class="toc-section-number">15.2.3</span> Firefox Copper</a></li>
 </ul></li>
-<li><a href="#coap-json"><span class="toc-section-number">14.6</span> CoAP JSON</a>
+<li><a href="#coap-helloworld"><span class="toc-section-number">15.3</span> CoAP Hello,World</a></li>
+<li><a href="#coap-数据库查询"><span class="toc-section-number">15.4</span> CoAP 数据库查询</a>
 <ul>
-<li><a href="#返回json"><span class="toc-section-number">14.6.1</span> 返回JSON</a></li>
-<li><a href="#coap客户端代码"><span class="toc-section-number">14.6.2</span> CoAP客户端代码</a></li>
-<li><a href="#coap-server端代码"><span class="toc-section-number">14.6.3</span> CoAP Server端代码</a></li>
+<li><a href="#node-module"><span class="toc-section-number">15.4.1</span> Node Module</a></li>
+<li><a href="#node-sqlite3"><span class="toc-section-number">15.4.2</span> Node-Sqlite3</a></li>
+<li><a href="#查询数据"><span class="toc-section-number">15.4.3</span> 查询数据</a></li>
 </ul></li>
-<li><a href="#使用iot-coap构建物联网"><span class="toc-section-number">14.7</span> 使用IoT-CoAP构建物联网</a></li>
-<li><a href="#iot-coap-1"><span class="toc-section-number">14.8</span> IoT-CoAP</a></li>
-<li><a href="#install"><span class="toc-section-number">14.9</span> install</a></li>
-</ul></li>
-<li><a href="#mqtt"><span class="toc-section-number">15</span> MQTT</a>
+<li><a href="#coap-block"><span class="toc-section-number">15.5</span> CoAP Block</a>
 <ul>
-<li><a href="#nodejs-mqtt"><span class="toc-section-number">15.1</span> Nodejs MQTT</a></li>
+<li><a href="#coap-post"><span class="toc-section-number">15.5.1</span> CoAP POST</a></li>
+<li><a href="#coap-content-types"><span class="toc-section-number">15.5.2</span> CoAP Content Types</a></li>
+</ul></li>
+<li><a href="#coap-json"><span class="toc-section-number">15.6</span> CoAP JSON</a></li>
+<li><a href="#使用iot-coap构建物联网"><span class="toc-section-number">15.7</span> 使用IoT-CoAP构建物联网</a></li>
+</ul></li>
+<li><a href="#mqtt"><span class="toc-section-number">16</span> MQTT</a>
+<ul>
+<li><a href="#nodejs-mqtt"><span class="toc-section-number">16.1</span> Nodejs MQTT</a></li>
 </ul></li>
 </ul>
 </div>
@@ -883,7 +888,8 @@ div#content p {
 <p>过去没有理解为什么会一些人会不厌其烦地去回答别人的问题，有时候可能会想是一种能力越大责任越大的感觉，但是有时候在写一些博客或者回答别人的问题的时候我们又重新思考了这些问题，又重新学习了这些技能。所以这里可能说的不是关于编程的东西而是一些编程以外的东西，关于学习或者学习以外的东西。</p>
 <h2 id="从源码学习"><span class="header-section-number">5.2</span> 从源码学习</h2>
 <p>过去总会觉得学了一种语言的语法便算是学了一种语言，于是有一天发现到了这个语言的项目上的时候，虽然会写上几行代码，但是却不像这语言的风格。于是这也是这一篇的意义所在了：</p>
-<h3 id="html"><span class="header-section-number">5.2.1</span> HTML</h3>
+<h2 id="浏览器渲染过程"><span class="header-section-number">5.3</span> 浏览器渲染过程</h2>
+<h3 id="html"><span class="header-section-number">5.3.1</span> HTML</h3>
 <p>写好HTML的一个要点在于看别人写的代码，这只是一方面，我们所说的HTML方面的内容可能不够多，原因有很多，很多东西都需要在实战中去解决。读万卷书和行万里路，分不清哪个有重要的意义，但是如果可以同时做好两个的话，成长会很快的。</p>
 <p>写好HTML应该会有下面的要点</p>
 <ul>
@@ -909,8 +915,15 @@ div#content p {
 <span class="kw">&lt;/div&gt;</span></code></pre>
 <p>换句话说HTML只是基础，而不是日常用到的。我们的HTML是由template生成的，我们可以借助于mustache.js又或者是angluarjs之类的js库来生成最后的HTML，所以这里只是一个开始。</p>
 <p>还需要了解的一部分就是HTML的另外一个重要的部分，DOM树形结构</p>
-<h2 id="dom树形结构图"><span class="header-section-number">5.3</span> DOM树形结构图</h2>
-<h3 id="javascript"><span class="header-section-number">5.3.1</span> javascript</h3>
+<h2 id="dom树形结构图"><span class="header-section-number">5.4</span> DOM树形结构图</h2>
+<blockquote>
+<p>DOM是文档对象化模型（Document Object Model）的简称。DOM Tree是指通过DOM将HTML页面进行解析，并生成的HTML tree树状结构和对应访问方法。</p>
+</blockquote>
+<div class="figure">
+<img src="./images/dom_tree.jpg" alt="DOM Tree" />
+<p>DOM Tree</p>
+</div>
+<h3 id="javascript"><span class="header-section-number">5.4.1</span> javascript</h3>
 <p>这里以未压缩的jQuery源码和zepto.js作一个小小的比较，zepto.js是兼容jQuery的，因此我们举几个有意思的函数作一简单的比较，关于源码可以在官网上下载到。</p>
 <p>在zepto.js下面判断一个值是否是函数的方面如下，</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">isFunction</span>(value) { <span class="kw">return</span> <span class="fu">type</span>(value) == <span class="st">&quot;function&quot;</span> }</code></pre>
@@ -970,7 +983,7 @@ div#content p {
 <p>我们似乎在这里展示了更多的Javascript的用法，但是这不是一好的关于Javascript的介绍，有一天我们还要用诸如qunit之类的工具去为我们的function写测试，这时就是一个更好的开始。</p>
 <p>如果我们乐意的话，我们也可以构建一个类似于jQuery的框架，以用来学习。</p>
 <p>作为一门编程语言来说，我们学得很普通，在某种意义上来说算不上是一种入门。但是如果我们可以在其他的好书在看到的内容，就没有必要在这里进行复述，目的在于一种学习习惯的养成。</p>
-<h3 id="css-1"><span class="header-section-number">5.3.2</span> CSS</h3>
+<h3 id="css-1"><span class="header-section-number">5.4.2</span> CSS</h3>
 <p>CSS有时候很有趣，但是有时候有很多我们没有意识到的用法，这里以Bootstrap为例，这是一个不错的CSS库。最令人兴奋的是没有闭源的CSS，没有闭源的JS，这也就是前端好学习的地方所在了，不过这是一个开源的CSS库，虽然是这样叫的，但是称之为CSS库显然不合适。</p>
 <pre class="sourceCode css"><code class="sourceCode css">a,
 a<span class="dv">:visited</span> <span class="kw">{</span>
@@ -992,7 +1005,22 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
 <li>属性选择器,如a[href]这样当a元素存在href这样的属性的时候来寻找应用元素。</li>
 </ul>
 <p>其他的还需要去好好了解的就是<strong>CSS的盒模型</strong>，作为CSS的基石之一。</p>
-<h2 id="css盒模型图"><span class="header-section-number">5.4</span> CSS盒模型图</h2>
+<h2 id="css盒模型图"><span class="header-section-number">5.5</span> CSS盒模型图</h2>
+<p>(ps:以下内容来自于Mozilla Developer NetWorks)</p>
+<p>CSS下这些矩形盒子由标准盒模型描述。这个模型描述元素内容占用空间。盒子有四个边界：外边距边界margin edge, 边框边界border edge, 内边距边界padding edge 与 内容边界content edge。</p>
+<div class="figure">
+<img src="./images/box-model.gif" alt="CSS Box Model" />
+<p>CSS Box Model</p>
+</div>
+<p>内容区域content area 是真正包含元素内容的区域。位于内容边界的内部，它的大小为内容宽度 或 content-box宽及内容高度或content-box高。</p>
+<p>如果 box-sizing 为默认值， width, min-width, max-width, height, min-height 与 max-height 控制内容大小。</p>
+<p>内边距区域padding area 用内容及可能的边框之间的空白区域扩展内容区域。它位于内边距边界内部，通常有背景——颜色或图片（不透明图片盖住背景颜色）. 它的大小为 padding-box 宽与 padding-box 高。</p>
+<p>内边距与内容边界之间的空间可以由 padding-top, padding-right, padding-bottom, padding-left 和简写属性 padding 控制。</p>
+<p>边框区域border area 是包含边框的区域，扩展了内边距区域。它位于边框边界内部，大小为 border-box 宽和 border-box 高。由 border-width 及简写属性 border控制。</p>
+<p>外边距区域margin area用空白区域扩展边框区域，以分开相邻的元素。它的大小为 margin-box 的高宽。</p>
+<p>外边距区域大小由 margin-top, margin-right, margin-bottom, margin-left 及简写属性 margin 控制。</p>
+<p>在 外边距合并 的情况下，由于盒之间共享外边距，外边距不容易弄清楚。</p>
+<p>最后注意，对于行内非替换元素，其占用空间（行高）由 line-height 决定，即使有内边距与边框。</p>
 <p>诸如</p>
 <pre class="sourceCode css"><code class="sourceCode css">* <span class="kw">{</span>
   <span class="kw">margin:</span> <span class="dt">0px</span><span class="kw">;</span>
@@ -1000,7 +1028,7 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
   <span class="kw">font-family:</span> Helvetica<span class="kw">;</span>
 <span class="kw">}</span></code></pre>
 <p>这样的通用器用来进行全局选择的工具和我们用于抵消某个body对于子选择器的影响一样值得注意得多。</p>
-<h2 id="笔记"><span class="header-section-number">5.5</span> 笔记</h2>
+<h2 id="笔记"><span class="header-section-number">5.6</span> 笔记</h2>
 <p>写博客似乎是一个不错的好习惯，作为一个不是很优秀的写手。对于来说，有时候发现原来能教会别人对于自己的能力来说算是一种肯定。有些时候教会别人才算是自己学会的表现，总会在项目上的时候需要自己去复述工作的一个过程，我们需要整理好我们的思路才能带给别人更多的收获。我们的笔记上总会留下自己的学习的一些过程，有些时候我们想要的只是一点点的鼓励，有时是诸如评论一类，有时可能是诸如访问量。更多的可能是我们可以重新整理自己的知识，好好复习一下，以便于好好记住，写出来是一个好的过程。</p>
 <p>无处不在的三剑客就这样到了这里，写得似乎很多也很少，但是还是没有做出来一个东西，于是我们朝着这样一个方向前进。</p>
 <h1 id="gnulinux"><span class="header-section-number">6</span> GNU/Linux</h1>
@@ -1129,6 +1157,119 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
 <blockquote>
 <p>所以这就需要能自动解决依赖关系的软件包管理器。软件包管理系统就是一个工具集，为系统提供一个统一的安装、升级、删除软件的方式。</p>
 </blockquote>
+<h2 id="ubuntu-lnmp"><span class="header-section-number">6.5</span> Ubuntu LNMP</h2>
+<p>在余下的章节中，我们需要去部署，需要去使用Ubuntu。如果在Windows下可以使用LAMP，但是在这里我们只说Ubuntu。开始之前你需要安装好Ubuntu，无论是在虚拟机，还是在真机安装，或者是Docker。</p>
+<h3 id="update软件包列表"><span class="header-section-number">6.5.1</span> Update软件包列表</h3>
+<p><code>apt-get</code>是debian，ubuntu发行版的包管理工具。<code>apt-get update</code>可以确保我们的软件包列表是最新的，下面是一个简单的更新过程。</p>
+<p>打开Terminal或者Konsole等等之类的终端控制台。</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">root@70cdc7a176a5</span>:/# sudo apt-get update
+<span class="kw">Ign</span> http://archive.ubuntu.com trusty InRelease
+<span class="kw">Ign</span> http://archive.ubuntu.com trusty-updates InRelease
+<span class="kw">Ign</span> http://archive.ubuntu.com trusty-security InRelease
+<span class="kw">Ign</span> http://archive.ubuntu.com trusty-proposed InRelease
+<span class="kw">Get</span>:1 http://archive.ubuntu.com trusty Release.gpg [933 B]
+<span class="kw">Get</span>:2 http://archive.ubuntu.com trusty-updates Release.gpg [933 B]
+<span class="kw">Get</span>:3 http://archive.ubuntu.com trusty-security Release.gpg [933 B]
+<span class="kw">Get</span>:4 http://archive.ubuntu.com trusty-proposed Release.gpg [933 B]
+<span class="kw">Get</span>:5 http://archive.ubuntu.com trusty Release [58.5 kB]
+<span class="kw">Get</span>:6 http://archive.ubuntu.com trusty-updates Release [62.0 kB]
+<span class="kw">Get</span>:7 http://archive.ubuntu.com trusty-security Release [62.0 kB]
+<span class="kw">Get</span>:8 http://archive.ubuntu.com trusty-proposed Release [209 kB]
+<span class="kw">Get</span>:9 http://archive.ubuntu.com trusty/main Sources [1335 kB]
+<span class="kw">Get</span>:10 http://archive.ubuntu.com trusty/restricted Sources [5335 B]
+<span class="kw">Get</span>:11 http://archive.ubuntu.com trusty/universe Sources [7926 kB]
+<span class="kw">Get</span>:12 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+<span class="kw">Get</span>:13 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+<span class="kw">Get</span>:14 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+<span class="kw">64%</span> [14 Packages 664 kB/7589 kB 9%]                          58.3 kB/s 1min 58s</code></pre>
+<p>更新完应该会显示:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Fetched</span> 20.5 MB in 5min 22s (63.6 kB/s)
+<span class="kw">Reading</span> package lists... Done</code></pre>
+<h3 id="安装mysql"><span class="header-section-number">6.5.2</span> 安装MySQL</h3>
+<p>安装命令</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install mysql-server php5-mysql</code></pre>
+<p>过程:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">root@70cdc7a176a5</span>:/# sudo apt-get install mysql-server php5-mysql
+<span class="kw">Reading</span> package lists... 0%
+<span class="kw">Reading</span> package lists... Done
+<span class="kw">Building</span> dependency tree
+<span class="kw">Reading</span> state information... Done
+<span class="kw">The</span> following extra packages will be installed:
+  <span class="kw">libaio1</span> libdbd-mysql-perl libdbi-perl libhtml-template-perl libmysqlclient18
+  <span class="kw">libterm-readkey-perl</span> libwrap0 lsof mysql-client-5.5 mysql-client-core-5.5
+  <span class="kw">mysql-common</span> mysql-server-5.5 mysql-server-core-5.5 php5-common php5-json
+  <span class="kw">psmisc</span> tcpd
+<span class="kw">Suggested</span> packages:
+  <span class="kw">libclone-perl</span> libmldbm-perl libnet-daemon-perl libplrpc-perl
+  <span class="kw">libsql-statement-perl</span> libipc-sharedcache-perl tinyca mailx php5-user-cache
+<span class="kw">The</span> following NEW packages will be installed:
+  <span class="kw">libaio1</span> libdbd-mysql-perl libdbi-perl libhtml-template-perl libmysqlclient18
+  <span class="kw">libterm-readkey-perl</span> libwrap0 lsof mysql-client-5.5 mysql-client-core-5.5
+  <span class="kw">mysql-common</span> mysql-server mysql-server-5.5 mysql-server-core-5.5 php5-common
+  <span class="kw">php5-json</span> php5-mysql psmisc tcpd
+<span class="kw">0</span> upgraded, 19 newly installed, 0 to remove and 12 not upgraded.
+<span class="kw">Need</span> to get 9982 kB of archives.
+<span class="kw">After</span> this operation, 99.1 MB of additional disk space will be used.
+<span class="kw">Get</span>:1 http://archive.ubuntu.com/ubuntu/ trusty/main libaio1 amd64 0.3.109-4 [6364 B]
+<span class="kw">Get</span>:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-common all 5.5.40-0ubuntu0.14.04.1 [14.1 kB]
+<span class="kw">Get</span>:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libmysqlclient18 amd64 5.5.40-0ubuntu0.14.04.1 [598 kB]
+<span class="kw">Get</span>:4 http://archive.ubuntu.com/ubuntu/ trusty/main libwrap0 amd64 7.6.q-25 [46.2 kB]
+<span class="kw">Get</span>:5 http://archive.ubuntu.com/ubuntu/ trusty/main libdbi-perl amd64 1.630-1 [879 kB]
+<span class="kw">Get</span>:6 http://archive.ubuntu.com/ubuntu/ trusty/main libdbd-mysql-perl amd64 4.025-1 [99.3 kB]
+<span class="kw">Get</span>:7 http://archive.ubuntu.com/ubuntu/ trusty/main libterm-readkey-perl amd64 2.31-1 [27.4 kB]
+<span class="kw">Get</span>:8 http://archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-client-core-5.5 amd64 5.5.40-0ubuntu0.14.04.1 [703 kB]
+<span class="kw">Get</span>:9 http://archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-client-5.5 amd64 5.5.40-0ubuntu0.14.04.1 [1466 kB]
+<span class="kw">Get</span>:10 http://archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-server-core-5.5 amd64 5.5.40-0ubuntu0.14.04.1 [3215 kB]
+<span class="kw">47%</span> [10 mysql-server-core-5.5 850 kB/3215 kB 26%]             79.9 kB/s 1min 6s</code></pre>
+<p>在安装的过程中会要求你输入数据库密码。(默认为空)</p>
+<h3 id="安装nginx"><span class="header-section-number">6.5.3</span> 安装Nginx</h3>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">echo</span> <span class="st">&quot;deb http://ppa.launchpad.net/nginx/stable/ubuntu </span><span class="ot">$(</span><span class="kw">lsb_release</span> -sc<span class="ot">)</span><span class="st"> main&quot;</span> <span class="kw">|</span> <span class="kw">sudo</span> tee /etc/apt/sources.list.d/nginx-stable.list
+<span class="kw">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C
+<span class="kw">sudo</span> apt-get update
+<span class="kw">sudo</span> apt-get install nginx</code></pre>
+<p>启动Nginx Server</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> service nginx start</code></pre>
+<h3 id="安装php"><span class="header-section-number">6.5.4</span> 安装PHP</h3>
+<p>sudo apt-get install php5-fpm</p>
+<p>安装过程</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">root@70cdc7a176a5</span>:/# sudo apt-get install php5-fpm
+<span class="kw">Reading</span> package lists... Done
+<span class="kw">Building</span> dependency tree
+<span class="kw">Reading</span> state information... Done
+<span class="kw">The</span> following extra packages will be installed:
+  <span class="kw">libsystemd-daemon0</span>
+<span class="kw">Suggested</span> packages:
+  <span class="kw">php-pear</span>
+<span class="kw">The</span> following NEW packages will be installed:
+  <span class="kw">libsystemd-daemon0</span> php5-fpm
+<span class="kw">0</span> upgraded, 2 newly installed, 0 to remove and 12 not upgraded.
+<span class="kw">Need</span> to get 2201 kB of archives.
+<span class="kw">After</span> this operation, 9326 kB of additional disk space will be used.
+<span class="kw">Do</span> you want to continue? [Y/n] y
+<span class="kw">Get</span>:1 http://archive.ubuntu.com/ubuntu/ trusty-proposed/main libsystemd-daemon0 amd64 204-5ubuntu20.8 [9608 B]
+<span class="kw">Get</span>:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe php5-fpm amd64 5.5.9+dfsg-1ubuntu4.5 [2191 kB]
+<span class="kw">Fetched</span> 2201 kB in 1min 5s (33.6 kB/s)
+<span class="kw">Selecting</span> previously unselected package libsystemd-daemon0:amd64.
+<span class="kw">(Reading</span> database ... 13105 files and directories currently installed.<span class="kw">)</span>
+<span class="kw">Preparing</span> to unpack .../libsystemd-daemon0_204-5ubuntu20.8_amd64.deb ...
+<span class="kw">Unpacking</span> libsystemd-daemon0:amd64 (204-5ubuntu20.8) <span class="kw">...</span>
+<span class="kw">Selecting</span> previously unselected package php5-fpm.
+<span class="kw">Preparing</span> to unpack .../php5-fpm_5.5.9+dfsg-1ubuntu4.5_amd64.deb ...
+<span class="kw">Unpacking</span> php5-fpm (5.5.9+dfsg-1ubuntu4.5) <span class="kw">...</span>
+<span class="kw">Processing</span> triggers for ureadahead (0.100.0-16) <span class="kw">...</span>
+<span class="kw">Setting</span> up libsystemd-daemon0:amd64 (204-5ubuntu20.8) <span class="kw">...</span>
+<span class="kw">Setting</span> up php5-fpm (5.5.9+dfsg-1ubuntu4.5) <span class="kw">...</span>
+
+<span class="kw">Creating</span> config file /etc/php5/fpm/php.ini with new version
+<span class="kw">php5_invoke</span>: Enable module pdo for fpm SAPI
+<span class="kw">php5_invoke</span>: Enable module pdo_mysql for fpm SAPI
+<span class="kw">php5_invoke</span>: Enable module opcache for fpm SAPI
+<span class="kw">php5_invoke</span>: Enable module json for fpm SAPI
+<span class="kw">php5_invoke</span>: Enable module mysql for fpm SAPI
+<span class="kw">php5_invoke</span>: Enable module mysqli for fpm SAPI
+<span class="kw">invoke-rc.d</span>: policy-rc.d denied execution of start.
+<span class="kw">Processing</span> triggers for libc-bin (2.19-0ubuntu6.3) <span class="kw">...</span>
+<span class="kw">Processing</span> triggers for ureadahead (0.100.0-16) <span class="kw">...</span></code></pre>
 <h1 id="arduino"><span class="header-section-number">7</span> Arduino</h1>
 <h2 id="极客的玩具"><span class="header-section-number">7.1</span> 极客的玩具</h2>
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
@@ -1154,7 +1295,7 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
 <span class="dt">void</span> loop(){
 
 }</code></pre>
-<p>“setup()”函数用于初始化（如GPIO初始化，串口初始化，定时器初始化等）特点是只执行一次；“loop()”函数是一个死循环，可以看做C语言的“while(1)”函数。</p>
+<p><code>setup()</code>函数用于初始化（如GPIO初始化，串口初始化，定时器初始化等）特点是只执行一次；<code>loop()</code>函数是一个死循环，可以看做C语言的<code>while(1)</code>函数。</p>
 <h2 id="点亮一个led"><span class="header-section-number">7.4</span> 点亮一个LED</h2>
 <p>对初学者来说，点亮led已成为入门必修课，使用Arduino控制led十分简单，并且很容易理解。 使用到的函数：</p>
 <ul>
@@ -1175,23 +1316,23 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
     digitalWrite(led,LOW);
     delay(<span class="dv">1000</span>);
 }</code></pre>
-<p>该程序实现Arduino单片机13号引脚以1S时间电平翻转，如果外接一个led，就可以看到led以1S的间隔闪烁；函数“pinMode()”有两个参数pin、value，pin参数用来指定引脚号,本程序中设置为13号引脚，mode用于设置引脚模式，有三个值：</p>
+<p>该程序实现Arduino单片机13号引脚以1S时间电平翻转，如果外接一个led，就可以看到led以1S的间隔闪烁；函数<code>pinMode()</code>有两个参数pin、value，pin参数用来指定引脚号,本程序中设置为13号引脚，mode用于设置引脚模式，有三个值：</p>
 <ul>
-<li>“INPUT”</li>
-<li>“OUTPUT”</li>
-<li>“INPUT_PULLUP”</li>
+<li><code>INPUT</code></li>
+<li><code>OUTPUT</code></li>
+<li><code>INPUT_PULLUP</code></li>
 </ul>
 <p>表示让某一个IO引脚作输入，反之，</p>
 <ul>
-<li>“OUTPUT”则使一个IO引脚做输出</li>
-<li>“INPUT_PULLUP”则配置一个IO引脚具有上拉输入功能(上拉电阻的目的是为了保证在无信号输入时输入端的电平为高电平)，从英文意思也能很直观的看出来。</li>
+<li><code>OUTPUT</code>则使一个IO引脚做输出</li>
+<li><code>INPUT_PULLUP</code>则配置一个IO引脚具有上拉输入功能(上拉电阻的目的是为了保证在无信号输入时输入端的电平为高电平)，从英文意思也能很直观的看出来。</li>
 </ul>
-<p>理解了“pinMode()”函数,“digitalWrite()”就很容易理解啦，value的取值有两个“HIGH”、“LOW”,“HIGH”表示让某一个引脚输出高电平，反之，“LOW”则使某一个引脚输出低电平。 程序中还是用到“delay(ms)”函数，它表示延时多少毫秒，例如延时500 ms ,直接调用“delay(500)；”就可以了。</p>
-<p>如果你仔细查看我的描述，你会发现我没有讲13号引脚怎么来的，是这样的：Arduino团队为了简化对引脚描述，对每个引脚都进行了编号，以UNO开发板为例，可以发现开发板排座的附近有对应的白颜色的数字，那便是所有的引脚编号，A0~A5是6路ADC输入引脚，0-13表示13路基本IO，数字前面的“~”表示该引脚具有PWM功能。如果要使用某一引脚，只要知道引脚编号就可行操作</p>
-<p>例如“digitalWrite(2,LOW)”表示向2号引脚输出低电平。其他操作类似，是不是so easy <sup>-</sup> !</p>
+<p>理解了<code>pinMode()</code>函数,<code>digitalWrite()</code>就很容易理解啦，value的取值有两个<code>HIGH</code>、<code>LOW</code>,<code>HIGH</code>表示让某一个引脚输出高电平，反之，<code>LOW</code>则使某一个引脚输出低电平。 程序中还是用到<code>delay(ms)</code>函数，它表示延时多少毫秒，例如延时500 ms ,直接调用<code>delay(500)；</code>就可以了。</p>
+<p>如果你仔细查看我的描述，你会发现我没有讲13号引脚怎么来的，是这样的：Arduino团队为了简化对引脚描述，对每个引脚都进行了编号，以UNO开发板为例，可以发现开发板排座的附近有对应的白颜色的数字，那便是所有的引脚编号，A0~A5是6路ADC输入引脚，0-13表示13路基本IO，数字前面的<code>~</code>表示该引脚具有PWM功能。如果要使用某一引脚，只要知道引脚编号就可行操作</p>
+<p>例如<code>digitalWrite(2,LOW)</code>表示向2号引脚输出低电平。其他操作类似，是不是so easy <sup>-</sup> !</p>
 <h2 id="串口通信"><span class="header-section-number">7.5</span> 串口通信</h2>
 <p>使用到的基本函数： + Serial.begin() + Serial.write() + Serial.read() + Serial.available()</p>
-<p>在此项目中需要使用串口，Arduino串口初始化使用“Serial.begin(9600);”,其传输波特率为9600，其他波特率也行，函数位于“setup()”中，之后可以使用“Serial.read()”、“Serial.write()”读入一个字符，输出一个字符，使用“Serial.print()”输出字符串.代码如下:</p>
+<p>在此项目中需要使用串口，Arduino串口初始化使用<code>Serial.begin(9600);</code>,其传输波特率为9600，其他波特率也行，函数位于<code>setup()</code>中，之后可以使用<code>Serial.read()</code>、<code>Serial.write()</code>读入一个字符，输出一个字符，使用<code>Serial.print()</code>输出字符串.代码如下:</p>
 <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">char</span> ch=<span class="st">&#39;1&#39;</span>;
 <span class="dt">void</span> setup()
 {
@@ -1492,16 +1633,17 @@ a process or set of rules to be followed in calculations or other problem-solvin
 </blockquote>
 <p>因为我们需要的是一个Machine到Machine沟通的平台，需要设计一个API。而设计一个API来说，RESTful是很不错的一种选择，也是主流的选择。而设计一个RESTful服务，的首要步骤便是设计资源模型。</p>
 <h3 id="资源"><span class="header-section-number">10.3.1</span> 资源</h3>
-<p>互联网上的一切信息都可以看作是一种资源。 #设计RESTful API</p>
+<p>互联网上的一切信息都可以看作是一种资源。</p>
+<h1 id="设计restful-api"><span class="header-section-number">11</span> 设计RESTful API</h1>
 <p>设计RESTful API是一个有意思的话题。下面是一些常用的RESTful设计原则:</p>
-<h2 id="rest关键目标"><span class="header-section-number">10.4</span> REST关键目标</h2>
+<h2 id="rest关键目标"><span class="header-section-number">11.1</span> REST关键目标</h2>
 <ul>
 <li>组件间交互的可伸缩性</li>
 <li>接口的通用性</li>
 <li>组件的独立部署</li>
 <li>通过中间组件来减少延迟、实施安全策略和封装已有系统</li>
 </ul>
-<h2 id="判断是否是-restful的约束条件"><span class="header-section-number">10.5</span> 判断是否是 RESTful的约束条件</h2>
+<h2 id="判断是否是-restful的约束条件"><span class="header-section-number">11.2</span> 判断是否是 RESTful的约束条件</h2>
 <ul>
 <li>客户端-服务器分离</li>
 <li>无状态</li>
@@ -1510,10 +1652,10 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>统一接口</li>
 <li>随需代码（可选）</li>
 </ul>
-<h2 id="设计restful资源"><span class="header-section-number">10.6</span> 设计RESTful资源</h2>
-<h2 id="设计restful-uri"><span class="header-section-number">10.7</span> 设计RESTful URI</h2>
-<h1 id="创建rest服务"><span class="header-section-number">11</span> 创建REST服务</h1>
-<h2 id="laravel"><span class="header-section-number">11.1</span> Laravel</h2>
+<h2 id="设计restful资源"><span class="header-section-number">11.3</span> 设计RESTful资源</h2>
+<h2 id="设计restful-uri"><span class="header-section-number">11.4</span> 设计RESTful URI</h2>
+<h1 id="创建rest服务"><span class="header-section-number">12</span> 创建REST服务</h1>
+<h2 id="laravel"><span class="header-section-number">12.1</span> Laravel</h2>
 <blockquote>
 <p>Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。</p>
 </blockquote>
@@ -1527,29 +1669,29 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>强大的社区支持: 无论你是一个PHP新手还是经验丰富的架构师，都能在社区中找到需要的知识。你可以在IRC中讨论Idea，或者在论坛中发布问题。</li>
 <li>测试、重构: Laravel 从开始就将测试作为重点功能。我们提供了灵活的IoC容器，集成了PHPUnit 测试工具。不用担心，这些都很容易上手。</li>
 </ul>
-<h4 id="为什么是-laravel"><span class="header-section-number">11.1.0.1</span> 为什么是 Laravel</h4>
+<h3 id="为什么是-laravel"><span class="header-section-number">12.1.1</span> 为什么是 Laravel</h3>
 <ul>
 <li>因为个人喜爱，你也可以用 Ruby On Rails来搭建这样一个功能，或者是Java。</li>
 <li>PHP在我的服务器上运行得挺不错的，而且我又不需要重新去写配置那些配置。</li>
 <li>Laravel 可以简单的开发我们所需要的功能，换句话说他是 PHP 世界的 Ruby On Rails。</li>
 </ul>
 <p>这里不会再重述之前的问题，这里只是将需要的步骤一个个写下来，然后丢到这里好好说一下。至于RESTful是什么，前面已经介绍了，就不再重复了。那么下面，我们就用Laravel来搭建一个平台给物联网用的。</p>
-<h3 id="安装-laravel"><span class="header-section-number">11.1.1</span> 安装 Laravel</h3>
-<h4 id="第一步-安装composer"><span class="header-section-number">11.1.1.1</span> 第一步 安装Composer</h4>
-<h5 id="gnulinux安装composer"><span class="header-section-number">11.1.1.1.1</span> GNU/Linux安装Composer</h5>
+<h2 id="安装-laravel"><span class="header-section-number">12.2</span> 安装 Laravel</h2>
+<h3 id="第一步-安装composer"><span class="header-section-number">12.2.1</span> 第一步 安装Composer</h3>
+<h4 id="gnulinux安装composer"><span class="header-section-number">12.2.1.1</span> GNU/Linux安装Composer</h4>
 <p>GNU/Linux Ubuntu/OpenSUSE下可以执行</p>
 <pre><code>$ curl -sS https://getcomposer.org/installer | php</code></pre>
-<h5 id="windows安装composer"><span class="header-section-number">11.1.1.1.2</span> Windows安装Composer</h5>
+<h4 id="windows安装composer"><span class="header-section-number">12.2.1.2</span> Windows安装Composer</h4>
 <p>请直接下载</p>
 <p><a href="https://getcomposer.org/Composer-Setup.exe">Composer-Setup</a></p>
-<h5 id="mac-os安装composer"><span class="header-section-number">11.1.1.1.3</span> Mac OS安装Composer</h5>
+<h4 id="mac-os安装composer"><span class="header-section-number">12.2.1.3</span> Mac OS安装Composer</h4>
 <pre><code>brew install homebrew/php/composer</code></pre>
-<h4 id="安装-laravel-第二步-安装laravel"><span class="header-section-number">11.1.1.2</span> 安装 Laravel 第二步 安装Laravel</h4>
+<h3 id="安装laravel"><span class="header-section-number">12.2.2</span> 安装Laravel</h3>
 <pre><code>composer global require &quot;laravel/installer=~1.1&quot;</code></pre>
-<h4 id="安装-laravel-第三步-创建laravel工程"><span class="header-section-number">11.1.1.3</span> 安装 Laravel 第三步 创建Laravel工程</h4>
+<h3 id="创建laravel工程"><span class="header-section-number">12.2.3</span> 创建Laravel工程</h3>
 <pre><code>composer create-project laravel/laravel your-project-name --prefer-dist </code></pre>
-<h2 id="mysql"><span class="header-section-number">11.2</span> MySQL</h2>
-<h3 id="安装mysql"><span class="header-section-number">11.2.1</span> 安装MySQL</h3>
+<h2 id="mysql"><span class="header-section-number">12.3</span> MySQL</h2>
+<h3 id="安装mysql-1"><span class="header-section-number">12.3.1</span> 安装MySQL</h3>
 <p><code>出于某些原因，我建议用MariaDB替换MySQL，如果你&quot;真正&quot;需要mysql，将mariadb替换为mysql</code></p>
 <p>ps: 在下文中我会继续用MySQL，而不是MariaDB，MairaDB是MySQL的一个分支，真正的开源分支。</p>
 <p>Ubuntu/Debian/Mint</p>
@@ -1560,7 +1702,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sudo</span> zypper install mariadb-server</code></pre>
 <p>Mac OS</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">brew</span> install mariadb</code></pre>
-<h3 id="配置mysql"><span class="header-section-number">11.2.2</span> 配置MySQL</h3>
+<h3 id="配置mysql"><span class="header-section-number">12.3.2</span> 配置MySQL</h3>
 <p>修改database.php</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">app/config/database.php</span></code></pre>
 <p>要修改的就是这个</p>
@@ -1586,9 +1728,9 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <span class="st">&quot;sensors2&quot;</span>: <span class="dv">12</span>,
 <span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>
 }</code></pre>
-<h2 id="数据库迁移"><span class="header-section-number">11.3</span> 数据库迁移</h2>
+<h2 id="数据库迁移"><span class="header-section-number">12.4</span> 数据库迁移</h2>
 <p>这个名字是源自于Ruby On Rails在那时候的印象，不直接使用MySQL的目的在于让我们可以专注于过程。</p>
-<h3 id="创建表"><span class="header-section-number">11.3.1</span> 创建表</h3>
+<h3 id="创建表"><span class="header-section-number">12.4.1</span> 创建表</h3>
 <p>表的概念，类似于在Excel中的表，如果你真实不懂数据库。 让我们创建一个athomes的表，为什么是athomes，因为以前在写android程序的时候就叫的是athome，忽略掉这些次要的因素吧。</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan migrate:make create_athomes_table</code></pre>
 <p>打开 app/database/migrations/<strong><em>create_athomes_table.php这里的</em></strong>是由日期和某些东西组成的，修改生成的代码为下面。</p>
@@ -1617,7 +1759,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 
 }</code></pre>
 <p>意思大致就是id是自加的，也就是我们在localhost/athome/{id}，当我们创建一个新的数据的时候，会自动加上去，最后一个timestamps批的是时间，会包含创建时间和修改时间。 剩下的temperature,sensors1,sensors2是小数，以及只有真和假的led1。</p>
-<h3 id="数据库迁移-1"><span class="header-section-number">11.3.2</span> 数据库迁移</h3>
+<h3 id="数据库迁移-1"><span class="header-section-number">12.4.2</span> 数据库迁移</h3>
 <p>我们只是写了我们需要的数据的格式而并没有丢到数据库里，</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan migrate</code></pre>
 <p>这个就是我们执行迁移的命令，如果你用phpmyadmin可以直接打开查看，没有的话，可以。</p>
@@ -1625,7 +1767,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">use</span> iot;
 <span class="kw">select</span> * <span class="kw">from</span> athomes;</code></pre>
 <p>就可以看到我们写的东西，那么接下来就是创建RESTful服务了</p>
-<h2 id="创建restful"><span class="header-section-number">11.4</span> 创建RESTful</h2>
+<h2 id="创建restful"><span class="header-section-number">12.5</span> 创建RESTful</h2>
 <p>用下面的代码实现我们称之为Athomes控制器的创建</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan controller:make AthomesController  </code></pre>
 <p>就会在app/controllers下面生成下面的代码</p>
@@ -1660,7 +1802,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
     }  
 
 }</code></pre>
-<h2 id="laravel-resources"><span class="header-section-number">11.5</span> Laravel Resources</h2>
+<h2 id="laravel-resources"><span class="header-section-number">12.6</span> Laravel Resources</h2>
 <p>上面的代码过于沉重，请让我用 Ctrl+C 来带来点知识吧。</p>
 <table>
 <thead>
@@ -1833,7 +1975,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 }</code></pre>
 <p>希望你能读懂，没有的话，继续。</p>
 <p>下面这部分来自于之前的博客，这里就不多加论述了。 这个也就是我们要的模板，</p>
-<h3 id="修改create"><span class="header-section-number">11.5.1</span> 修改Create()</h3>
+<h3 id="修改create"><span class="header-section-number">12.6.1</span> 修改Create()</h3>
 <pre class="sourceCode php"><code class="sourceCode php"><span class="kw">public</span> <span class="kw">function</span> create<span class="ot">()</span>
 {
     <span class="kw">$maxid</span>=Athomes::<span class="fu">max</span><span class="ot">(</span><span class="st">&#39;id&#39;</span><span class="ot">);</span>
@@ -1845,8 +1987,8 @@ a process or set of rules to be followed in calculations or other problem-solvin
     <span class="kw">return</span> View::make<span class="ot">(</span><span class="st">&#39;athome.create&#39;</span><span class="ot">);</span>
 }</code></pre>
 <p>这里只是对其中代码的进行一下说明。</p>
-<h3 id="创建表单"><span class="header-section-number">11.5.2</span> 创建表单</h3>
-<h4 id="创建表单之前"><span class="header-section-number">11.5.2.1</span> 创建表单之前</h4>
+<h3 id="创建表单"><span class="header-section-number">12.6.2</span> 创建表单</h3>
+<h4 id="创建表单之前"><span class="header-section-number">12.6.2.1</span> 创建表单之前</h4>
 <p>由于使用到了bootstrap以及bootstrap-select，记得添加css。</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/bootstrap.min.css&#39;) ?&gt;&quot;</span> <span class="kw">/&gt;</span>
 <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/bootstrap-select.min.css&#39;) ?&gt;&quot;</span> <span class="kw">/&gt;</span></code></pre>
@@ -1857,7 +1999,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <span class="kw">&lt;script&gt;</span>
 <span class="fu">$</span>(<span class="st">&#39;.selectpicker&#39;</span>).<span class="fu">selectpicker</span>();
 &lt;<span class="ot">/script&gt;</span></code></pre>
-<h4 id="创建表单-1"><span class="header-section-number">11.5.2.2</span> 创建表单</h4>
+<h4 id="创建表单-1"><span class="header-section-number">12.6.2.2</span> 创建表单</h4>
 <p>这里用到的是之前提到的那个作者写下的，稍微修改了一下。</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;row-fluid&quot;</span><span class="kw">&gt;</span>
   {{ HTML::ul($errors-&gt;all()) }}
@@ -1883,11 +2025,8 @@ a process or set of rules to be followed in calculations or other problem-solvin
           {{ Form::label(&#39;temperature&#39;, &#39;temperature&#39;) }}
           {{ Form::text(&#39;temperature&#39;, Input::old(&#39;temperature&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
       <span class="kw">&lt;/div&gt;</span>
-
       {{ Form::submit(&#39;Create!&#39;, array(&#39;class&#39; =&gt; &#39;btn btn-primary&#39;)) }}
-
   {{ Form::close() }}
-
   <span class="kw">&lt;/div&gt;</span></code></pre>
 <p>开关一开始打算用 checkbox，加上 bootstrap-switch 实现 ON OFF 弱弱地觉得还是没掌握好的节奏，所以最后用 select 来实现。</p>
 <p>还需要修改一下之前的 create()，添加一行</p>
@@ -1902,7 +2041,6 @@ a process or set of rules to be followed in calculations or other problem-solvin
         <span class="st">&#39;temperature&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span>
     <span class="ot">);</span>
     <span class="kw">$validator</span> = Validator::make<span class="ot">(</span>Input::all<span class="ot">(),</span> <span class="kw">$rules</span><span class="ot">);</span>
-
     <span class="kw">if</span> <span class="ot">(</span><span class="kw">$validator</span>-&gt;fails<span class="ot">())</span> {
         <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome/create&#39;</span><span class="ot">)</span>
             -&gt;withErrors<span class="ot">(</span><span class="kw">$validator</span><span class="ot">);</span>
@@ -1919,7 +2057,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
         <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
     }
 }</code></pre>
-<h3 id="编辑模板"><span class="header-section-number">11.5.3</span> 编辑模板</h3>
+<h3 id="编辑模板"><span class="header-section-number">12.6.3</span> 编辑模板</h3>
 <p>完整的 blade 模板文件</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html lang=&quot;zh-cn&quot;<span class="dt">&gt;</span>
 <span class="kw">&lt;html&gt;</span>
@@ -1934,55 +2072,37 @@ a process or set of rules to be followed in calculations or other problem-solvin
         <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/justified-nav.css&#39;) ?&gt;&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> media=</span><span class="st">&quot;screen&quot;</span> <span class="kw">/&gt;</span>
     <span class="kw">&lt;/head&gt;</span>
 <span class="kw">&lt;body&gt;</span>
-
-
 <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span>
-
 <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;container&quot;</span><span class="kw">&gt;</span>
   <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;row-fluid&quot;</span><span class="kw">&gt;</span>
-
 <span class="kw">&lt;h1&gt;</span>Edit {{ $athome-&gt;id }}<span class="kw">&lt;/h1&gt;</span>
-
 <span class="co">&lt;!-- if there are creation errors, they will show here --&gt;</span>
 {{ HTML::ul($errors-&gt;all()) }}
-
 {{ Form::model($athome, array(&#39;route&#39; =&gt; array(&#39;athome.update&#39;, $athome-&gt;id), &#39;method&#39; =&gt; &#39;PUT&#39;)) }}
-
         <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
             {{ Form::label(&#39;led1&#39;, &#39;开关1&#39;) }}
             {{ Form::select(&#39;led1&#39;,array(&#39;关&#39;,&#39;开&#39;),$selected=NULL,array(&#39;class&#39;=&gt;&#39;selectpicker&#39;)) }}
-
         <span class="kw">&lt;/div&gt;</span>
-
         <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
             {{ Form::label(&#39;sensors1&#39;, &#39;传感器1&#39;) }}
             {{ Form::text(&#39;sensors1&#39;, Input::old(&#39;sensors1&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
         <span class="kw">&lt;/div&gt;</span>
-
         <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
             {{ Form::label(&#39;sensors2&#39;, &#39;传感器2&#39;) }}
             {{ Form::text(&#39;sensors2&#39;, Input::old(&#39;sensors2&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
         <span class="kw">&lt;/div&gt;</span>
-
         <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
             {{ Form::label(&#39;temperature&#39;, &#39;温度传感器&#39;) }}
             {{ Form::text(&#39;temperature&#39;, Input::old(&#39;temperature&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
         <span class="kw">&lt;/div&gt;</span>
-
-
     {{ Form::submit(&#39;Edit the Nerd!&#39;, array(&#39;class&#39; =&gt; &#39;btn btn-primary&#39;)) }}
-
 {{ Form::close() }}
-
     <span class="kw">&lt;/div&gt;</span>
 <span class="kw">&lt;/div&gt;</span>
-
-
 <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;footer&quot;</span><span class="kw">&gt;</span>
         <span class="kw">&lt;p&gt;</span>© Company 2013<span class="kw">&lt;/p&gt;</span>
       <span class="kw">&lt;/div&gt;</span>
 <span class="kw">&lt;/div&gt;</span>
-
 <span class="kw">&lt;/div&gt;</span>
 <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;js/jquery.min.js&#39;)?&gt;&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
 <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;js/bootstrap.min.js&#39;) ?&gt;&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
@@ -1991,27 +2111,29 @@ a process or set of rules to be followed in calculations or other problem-solvin
  <span class="fu">$</span>(<span class="st">&#39;.selectpicker&#39;</span>).<span class="fu">selectpicker</span>();
  &lt;<span class="ot">/script&gt;</span>
 <span class="ot">&lt;script type=&quot;text/javascript</span><span class="st">&quot; src=&quot;</span>&lt;?= <span class="fu">url</span>(<span class="st">&#39;js/log.js&#39;</span>) ?&gt;<span class="st">&quot;&gt;&lt;/script&gt;</span>
-
-
 &lt;<span class="ot">/body&gt;</span>
 <span class="ot">&lt;/html</span>&gt;</code></pre>
-<p>最后效果见:[http://b.phodal.com/][bphodal]</p>
-<p>代码位置:[http://b.phodal.com/js/app.js][appjs]</p>
-<h1 id="restful-evertywhere"><span class="header-section-number">12</span> RESTful Evertywhere</h1>
-<h2 id="javascript与ajax"><span class="header-section-number">12.1</span> Javascript与ajax</h2>
+<p>效果图:</p>
+<div class="figure">
+<img src="./images/edit.png" alt="Blade Edit" />
+<p>Blade Edit</p>
+</div>
+<p>最后效果见:<a href="http://b.phodal.com/" class="uri">http://b.phodal.com/</a></p>
+<h1 id="restful-evertywhere"><span class="header-section-number">13</span> RESTful Evertywhere</h1>
+<h2 id="javascript与ajax"><span class="header-section-number">13.1</span> Javascript与ajax</h2>
 <blockquote>
 <p>AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。AJAX = 异步 JavaScript和XML（标准通用标记语言的子集）。</p>
 </blockquote>
-<h3 id="jquery"><span class="header-section-number">12.1.1</span> jQuery</h3>
+<h3 id="jquery"><span class="header-section-number">13.1.1</span> jQuery</h3>
 <blockquote>
 <p>Jquery是继prototype之后又一个优秀的Javascript框架。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器（IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+），jQuery2.0及后续版本将不再支持IE6/7/8浏览器。jQuery使用户能更方便地处理HTML（标准通用标记语言下的一个应用）、events、实现动画效果，并且方便地为网站提供AJAX交互。jQuery还有一个比较大的优势是，它的文档说明很全，而且各种应用也说得很详细，同时还有许多成熟的插件可供选择。jQuery能够使用户的html页面保持代码和html内容分离，也就是说，不用再在html里面插入一堆js来调用命令了，只需定义id即可。</p>
 </blockquote>
-<h2 id="java与json"><span class="header-section-number">12.2</span> Java与json</h2>
+<h2 id="java与json"><span class="header-section-number">13.2</span> Java与json</h2>
 <blockquote>
 <p>Gson（又称Google Gson）是Google公司发布的一个开放源代码的Java库，主要用途为串行化Java对象为JSON字符串，或反串行化JSON字符串成Java对象。</p>
 </blockquote>
-<h3 id="android"><span class="header-section-number">12.2.1</span> Android</h3>
-<h2 id="python与json"><span class="header-section-number">12.3</span> Python与json</h2>
+<h3 id="android"><span class="header-section-number">13.2.1</span> Android</h3>
+<h2 id="python与json"><span class="header-section-number">13.3</span> Python与json</h2>
 <blockquote>
 <p>使用pySerial可以使Python很好地在Windows/Linux/BSD上执行串口操作。</p>
 </blockquote>
@@ -2025,7 +2147,7 @@ url=<span class="st">&quot;http://b.phodal.com/athome/1&quot;</span>
 date=urllib2.urlopen(url)
 result=json.load(date)
    <span class="dt">print</span> result</code></pre>
-<h3 id="requests"><span class="header-section-number">12.3.1</span> requests</h3>
+<h3 id="requests"><span class="header-section-number">13.3.1</span> requests</h3>
 <blockquote>
 <p>Python 标准库中的 urllib2 模块提供了你所需要的大多数 HTTP 功能，但是它的 API 烂出翔来了。它是为另一个时代、另一个互联网所创建的。它需要巨量的工作，甚至包括各种方法覆盖，来完成最简单的任务。</p>
 </blockquote>
@@ -2044,19 +2166,19 @@ url = <span class="st">&quot;http://b.phodal.com/athome/1&quot;</span>
 data = {<span class="st">&quot;temperature&quot;</span>: <span class="dv">19</span>, <span class="st">&quot;sensors1&quot;</span>: <span class="dv">32</span>, <span class="st">&quot;sensors2&quot;</span>: <span class="fl">7.5</span>, <span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>, <span class="st">&quot;method&quot;</span>: <span class="st">&quot;PUT&quot;</span>}
 r = requests.put(url, data)
 <span class="dt">print</span> r.text</code></pre>
-<h1 id="前端显示"><span class="header-section-number">13</span> 前端显示</h1>
-<h2 id="jquery-mobile"><span class="header-section-number">13.1</span> jQuery Mobile</h2>
+<h1 id="前端显示"><span class="header-section-number">14</span> 前端显示</h1>
+<h2 id="jquery-mobile"><span class="header-section-number">14.1</span> jQuery Mobile</h2>
 <blockquote>
 <p>jQuery Mobile是jQuery 在手机上和平板设备上的版本。jQuery Mobile不仅会给主流移动平台带来jQuery核心库，而且会发布一个完整统一的jQuery移动UI框架。支持全球主流的移动平台。jQuery Mobile开发团队说：能开发这个项目，我们非常兴奋。移动Web太需要一个跨浏览器的框架，让开发人员开发出真正的移动Web网站。</p>
 </blockquote>
-<h2 id="bootstrap"><span class="header-section-number">13.2</span> Bootstrap</h2>
+<h2 id="bootstrap"><span class="header-section-number">14.2</span> Bootstrap</h2>
 <blockquote>
 <p>Bootstrap是Twitter推出的一个开源的用于前端开发的工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。Bootstrap一经推出后颇受欢迎，一直是GitHub上的热门开源项目，包括NASA的MSNBC（微软全国广播公司）的Breaking News都使用了该项目。</p>
 </blockquote>
-<h2 id="库与车轮子"><span class="header-section-number">13.3</span> 库与车轮子</h2>
+<h2 id="库与车轮子"><span class="header-section-number">14.3</span> 库与车轮子</h2>
 <p>在多数的情况下我们都没有理由也没有必要去重新发明我们的车轮，在这时使用库会是一个比较好的做法。</p>
-<h2 id="网站前台显示"><span class="header-section-number">13.4</span> 网站前台显示</h2>
-<h3 id="highchart"><span class="header-section-number">13.4.1</span> Highchart</h3>
+<h2 id="网站前台显示"><span class="header-section-number">14.4</span> 网站前台显示</h2>
+<h3 id="highchart"><span class="header-section-number">14.4.1</span> Highchart</h3>
 <p>Highcharts有以下的特点</p>
 <ul>
 <li>兼容性：兼容当今所有的浏览器，包括 iPhone、IE 和火狐等等；</li>
@@ -2074,8 +2196,8 @@ r = requests.put(url, data)
 <img src="./images/temperture.png" alt="Temperture" />
 <p>Temperture</p>
 </div>
-<h1 id="构建基于coap协议的物联网系统"><span class="header-section-number">14</span> 构建基于CoAP协议的物联网系统</h1>
-<h2 id="coap-嵌入式系统的rest"><span class="header-section-number">14.1</span> CoAP: 嵌入式系统的REST</h2>
+<h1 id="构建基于coap协议的物联网系统"><span class="header-section-number">15</span> 构建基于CoAP协议的物联网系统</h1>
+<h2 id="coap-嵌入式系统的rest"><span class="header-section-number">15.1</span> CoAP: 嵌入式系统的REST</h2>
 <p>引自维基百科上的介绍，用的是谷歌翻译。。。</p>
 <blockquote>
 <p>受约束的应用协议（COAP）是一种软件协议旨在以非常简单的电子设备，使他们能够在互联网上进行交互式通信中使用。它特别针对小型低功率传感器，开关，阀门和需要被控制或监督远程，通过标准的Internet网络类似的组件。 COAP是一个应用层协议，该协议是用于在资源受限的网络连接设备，例如无线传感器网络节点使用。 COAP被设计为容易地转换为HTTP与Web简化集成，同时也能满足特殊的要求，例如多播支持，非常低的开销，和简单性。多播，低开销，以及简单性是因特网极其重要物联网（IOT）和机器对机器（M2M）设备，这往往是积重难返，有太多的内存和电源，比传统的互联网设备有。因此，效率是非常重要的。 COAP可以在支持UDP或UDP的模拟大多数设备上运行。</p>
@@ -2087,16 +2209,17 @@ r = requests.put(url, data)
 <li>CoAP减少了一些HTTP的方法</li>
 <li>CoAP可以支持检测装置</li>
 </ul>
-<h2 id="coap-命令行工具"><span class="header-section-number">14.2</span> CoAP 命令行工具</h2>
+<h2 id="coap-命令行工具"><span class="header-section-number">15.2</span> CoAP 命令行工具</h2>
 <p>为了测试测试我们的代码是否是正确工作，我们需要一个CoAP的命令行工具。目前有两个不错的工具可以使用。</p>
 <ul>
 <li>CoAP-cli，一个基于NodeJS的CoAP命令行工具，其核心是基于Node-CoAP库。</li>
 <li>libcooap，一个用C写的CoAP命令行工具。</li>
-<li>FireFox Copper， 一个Firefox的插件。 ###Node CoAP CLI</li>
+<li>FireFox Copper， 一个Firefox的插件。</li>
 </ul>
+<h3 id="node-coap-cli"><span class="header-section-number">15.2.1</span> Node CoAP CLI</h3>
 <p>安装命令如下</p>
 <pre><code> npm install coap-cli -g </code></pre>
-<h4 id="coap命令行"><span class="header-section-number">14.2.0.1</span> CoAP命令行</h4>
+<h4 id="coap命令行"><span class="header-section-number">15.2.1.1</span> CoAP命令行</h4>
 <p>在coap-cli中，一共有四个方法。分别表示REST的四种不同的方式:</p>
 <pre><code>Commands:
 
@@ -2111,13 +2234,13 @@ I-D</code></pre>
 <p>测试一下现在的最小的物联网系统CoAP版</p>
 <pre><code>coap get coap://iot-coap.phodal.com/id/1
 (2.05)  [{&quot;id&quot;:1,&quot;value&quot;:&quot;is id 1&quot;,&quot;sensors1&quot;:19,&quot;sensors2&quot;:20}]</code></pre>
-<h3 id="libcoap"><span class="header-section-number">14.2.1</span> libcoap</h3>
-<h4 id="mac-os-libcoap安装"><span class="header-section-number">14.2.1.1</span> mac os libcoap安装</h4>
+<h3 id="libcoap"><span class="header-section-number">15.2.2</span> libcoap</h3>
+<h4 id="mac-os-libcoap安装"><span class="header-section-number">15.2.2.1</span> mac os libcoap安装</h4>
 <p>Mac OS下可以直接用</p>
 <pre><code>brew install libcoap</code></pre>
-<h4 id="ubuntu-libcoap安装"><span class="header-section-number">14.2.1.2</span> Ubuntu libcoap安装</h4>
+<h4 id="ubuntu-libcoap安装"><span class="header-section-number">15.2.2.2</span> Ubuntu libcoap安装</h4>
 <p>Ubuntu GNU/Linux下</p>
-<h4 id="windows-libcoap安装"><span class="header-section-number">14.2.1.3</span> Windows libcoap安装</h4>
+<h4 id="windows-libcoap安装"><span class="header-section-number">15.2.2.3</span> Windows libcoap安装</h4>
 <p>Windows 下</p>
 <p>安装完libcoap，我们可以直接用自带的两个命令</p>
 <pre><code>coap-client 
@@ -2130,15 +2253,14 @@ coap-server</code></pre>
 <pre><code>v:1 t:0 tkl:0 c:1 id:37109
 This is a test server made with libcoap (see http://libcoap.sf.net) 
 Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
-<h3 id="firefox-copper"><span class="header-section-number">14.2.2</span> Firefox Copper</h3>
+<h3 id="firefox-copper"><span class="header-section-number">15.2.3</span> Firefox Copper</h3>
 <p>为了能访问<a href="coap://localhost/" class="uri">coap://localhost/</a>，于是我们便需要安装一个Firefox并安装一个名为Copper的插件。</p>
 <ol>
 <li><p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/" class="uri">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p></li>
 <li><p>作为测试我们同样可以访问 <a href="coap://vs0.inf.ethz.ch:5683/" class="uri">coap://vs0.inf.ethz.ch:5683/</a></p></li>
 </ol>
-<h2 id="coap-helloworld"><span class="header-section-number">14.3</span> CoAP Hello,World</h2>
+<h2 id="coap-helloworld"><span class="header-section-number">15.3</span> CoAP Hello,World</h2>
 <p>接着我们便开始试试做一个简单的CoAP协议的应用:</p>
-<h3 id="node-coap"><span class="header-section-number">14.3.1</span> Node-CoAP</h3>
 <p>这里用到的是一个Nodejs的扩展Node-CoAP</p>
 <blockquote>
 <p>node-coap is a client and server library for CoAP modelled after the http module.</p>
@@ -2153,7 +2275,6 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <pre><code>npm install</code></pre>
 <p>就可以安装好这个库。如果遇到权限问题，请用</p>
 <pre><code>sudo npm install</code></pre>
-<h3 id="node-coap示例"><span class="header-section-number">14.3.2</span> Node CoAP示例</h3>
 <p>接着，创建这样一个app.js</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap        = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>)
     , server  = <span class="ot">coap</span>.<span class="fu">createServer</span>()
@@ -2180,8 +2301,8 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>就可以在console上输出</p>
 <pre><code>Hello World </code></pre>
 <p>也就达到了我们的目的，用CoAP协议创建一个服务，接着我们应该用它创建更多的东西，如产生JSON数据，以及RESTful。和HTTP版的最小物联网系统一样，CoAP版的最小物联网系统也是要返回JSON的。</p>
-<h2 id="coap-数据库查询"><span class="header-section-number">14.4</span> CoAP 数据库查询</h2>
-<h3 id="node-module"><span class="header-section-number">14.4.1</span> Node Module</h3>
+<h2 id="coap-数据库查询"><span class="header-section-number">15.4</span> CoAP 数据库查询</h2>
+<h3 id="node-module"><span class="header-section-number">15.4.1</span> Node Module</h3>
 <p>这说里NodeJS Module的意义是因为我们需要在别的地方引用到db_helper这个库，也就是下一小节要的讲的内容。</p>
 <p>这样我们就可以在server.js类似于这样去引用这个js库。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> DBHelper = <span class="fu">require</span>(<span class="st">&#39;./db_helper.js&#39;</span>);
@@ -2191,9 +2312,8 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 }
 <span class="ot">DBHelper</span>.<span class="fu">initDB</span> = <span class="kw">function</span>(){};
 <span class="ot">module</span>.<span class="fu">exports</span> = DBHelper;</code></pre>
-<h3 id="node-sqlite3"><span class="header-section-number">14.4.2</span> Node-Sqlite3</h3>
-<p>这次我们用的是SQLite3(你可以用MySQL，出于安全考虑用SQLite3，SQLite3产生的是一个文件)</p>
-<h4 id="一个简单的initdb函数"><span class="header-section-number">14.4.2.1</span> 一个简单的initDB函数</h4>
+<h3 id="node-sqlite3"><span class="header-section-number">15.4.2</span> Node-Sqlite3</h3>
+<p>这次我们用的是SQLite3(你可以用MySQL，出于安全考虑用SQLite3，SQLite3产生的是一个文件)。一个简单的initDB函数</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> db = <span class="kw">new</span> <span class="ot">sqlite3</span>.<span class="fu">Database</span>(config[<span class="st">&quot;db_name&quot;</span>]);
 <span class="kw">var</span> create_table = <span class="st">&#39;create table if not exists basic (&#39;</span> + config[<span class="st">&quot;db_table&quot;</span>] + <span class="st">&#39;);&#39;</span>;
 
@@ -2226,9 +2346,8 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
     });
 };</code></pre>
 <p>将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。</p>
-<h3 id="查询数据"><span class="header-section-number">14.4.3</span> 查询数据</h3>
+<h3 id="查询数据"><span class="header-section-number">15.4.3</span> 查询数据</h3>
 <p>简单地记录一下在IoT-CoAP中一次获取数据地过程。</p>
-<h3 id="get"><span class="header-section-number">14.4.4</span> GET</h3>
 <p>先看看在示例中的Get.js的代码，这关乎在后面server端的代码。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap       = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>)
      ,requestURI = <span class="st">&#39;coap://localhost/&#39;</span>
@@ -2249,8 +2368,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>我们构建了一个请求的URL</p>
 <pre><code> coap://localhost/id/1/</code></pre>
 <p>我们对我们的请求添加了一个Header，内容是Accept，值是’application/json’也就是JSON格式。接着，便是等待请求回来，再处理返回的内容。</p>
-<h3 id="iot-coap"><span class="header-section-number">14.4.5</span> IoT CoAP</h3>
-<h3 id="判断请求的方法"><span class="header-section-number">14.4.6</span> 判断请求的方法</h3>
+<p><strong>判断请求的方法</strong></p>
 <p>在这里先把一些无关的代码删除掉，并保证其能工作，so，下面就是简要的逻辑代码。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap            = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>);
 <span class="kw">var</span> server          = <span class="ot">coap</span>.<span class="fu">createServer</span>({});
@@ -2278,7 +2396,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
     }
 };</code></pre>
 <p>如果是json刚调用returnJSON,</p>
-<h3 id="database与回调"><span class="header-section-number">14.4.7</span> Database与回调</h3>
+<p><strong>Database与回调</strong></p>
 <p>而这里为了处理回调函数刚分为了两部分</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">query_helper</span>.<span class="fu">returnJSON</span> = <span class="kw">function</span>(req, res) {
     <span class="ot">DBHelper</span>.<span class="fu">urlQueryData</span>(<span class="ot">req</span>.<span class="fu">url</span>, <span class="kw">function</span> (result) {
@@ -2309,7 +2427,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 };</code></pre>
 <p>当resulst的结果为空时，返回一个404，因为没有数据。这样我们就构成了整个的链，再一步步返回结果。</p>
 <p>在<a href="https://github.com/phodal/iot-coap">IoT-CoAP</a>中我们使用到了一个Block2的东西，于是便整理相关的一些资料，作一个简单的介绍，以及在代码中的使用。</p>
-<h2 id="coap-block"><span class="header-section-number">14.5</span> CoAP Block</h2>
+<h2 id="coap-block"><span class="header-section-number">15.5</span> CoAP Block</h2>
 <p>CoAP是一个RESTful传输协议用于受限设备的节点和网络。基本的CoAP消息是一个不错的选择对于小型载荷如</p>
 <ul>
 <li>温度传感器</li>
@@ -2320,7 +2438,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示(resource representation)的最大大小，使得传输不需要太多的分割。虽然UDP支持通过IP分片传输更大的有效载荷，且仅限于64KiB，更重要的是，并没有真正很好地约束应用和网络。</p>
 <p>而不是依赖于IP分片，这种规范基本COAP了对“块”选项，用于传输信息从多个资源区块的请求 - 响应对。在许多重要的情况下，阻止使服务器能够真正无状态：服务器可以处理每块分开传输，而无需建立连接以前的数据块传输的其他服务器端内存。</p>
 <p>综上所述，块(Block)选项提供了传送一个最小的在分块的方式更大的陈述。</p>
-<h3 id="coap-post"><span class="header-section-number">14.5.1</span> CoAP POST</h3>
+<h3 id="coap-post"><span class="header-section-number">15.5.1</span> CoAP POST</h3>
 <p>看看在IoT CoAP中的post示例。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap     = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>)
       ,request  = <span class="ot">coap</span>.<span class="fu">request</span>
@@ -2352,9 +2470,8 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>就有</p>
 <pre><code>[ &#39;1&#39;, &#39;\&#39;must\&#39;&#39;, &#39;23&#39;, &#39;12&#39; ]</code></pre>
 <p>便可以很愉快地将其post到数据库中了，</p>
-<h3 id="json请求"><span class="header-section-number">14.5.2</span> JSON请求</h3>
 <p>在做IoT-CoAP的过程中只支持JSON，查阅CoAP的草稿时发现支持了诸多的Content Types。</p>
-<h3 id="coap-content-types"><span class="header-section-number">14.5.3</span> CoAP Content Types</h3>
+<h3 id="coap-content-types"><span class="header-section-number">15.5.2</span> CoAP Content Types</h3>
 <p>以下文字来自谷歌翻译:</p>
 <blockquote>
 <p>互联网媒体类型是通过HTTP字符串标识，如“application/xml”。该字符串是由一个顶层的类型“applicaion”和子类型的“XML”。为了尽量减少使用这些类型的媒体类型来表示的开销消息有效载荷，COAP定义一个标识符编码方案互联网媒体类型的子集。预计这桌将可扩展标识符的值的IANA维护。内容类型选项被格式化为一个8位无符号整数。初始映射到一个合适的互联网媒体类型标识符表所示。复合型高层次类型（multipart和不支持消息）。标识符值是从201-255保留的特定于供应商的，应用程序特定的或实验使用和不由IANA。</p>
@@ -2533,7 +2650,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 </table>
 <p>简单地说就是：</p>
 <p><code>诸如application/json的Content Types在CoAP中应该是50</code>。如上表所示的结果是其对应的结果，这样的话可以减少传递的信息量。</p>
-<h2 id="coap-json"><span class="header-section-number">14.6</span> CoAP JSON</h2>
+<h2 id="coap-json"><span class="header-section-number">15.6</span> CoAP JSON</h2>
 <p>于是在一开始的时候首先支持的便是“application/json”这样的类型。</p>
 <p>首先判断请求的header</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">request_helper</span>.<span class="fu">getHandler</span> = <span class="kw">function</span>(req, res) {
@@ -2555,9 +2672,9 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <span class="fu">registerFormat</span>(<span class="st">&#39;application/json&#39;</span>, <span class="dv">50</span>)</code></pre>
 <p>对应地我们需要在一发出请求的时候设置好Accept，要不就没有办法返回我们需要的结果。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">req</span>.<span class="fu">setHeader</span>(<span class="st">&quot;Accept&quot;</span>, <span class="st">&quot;application/json&quot;</span>);</code></pre>
-<h3 id="返回json"><span class="header-section-number">14.6.1</span> 返回JSON</h3>
+<p><strong>返回JSON</strong></p>
 <p>在给IoT CoAP添加了JSON支持之后，变得非常有意思，至少我们可以获得我们想要的结果。在上一篇中我们介绍了一些常用的工具——<a href="http://www.phodal.com/blog/coap-command-line-tools-set/">CoAP 命令行工具集</a>。</p>
-<h3 id="coap客户端代码"><span class="header-section-number">14.6.2</span> CoAP客户端代码</h3>
+<p><strong>CoAP客户端代码</strong></p>
 <p>开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>);
 <span class="kw">var</span> requestURI = <span class="st">&#39;coap://localhost/&#39;</span>;
@@ -2583,7 +2700,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
      <span class="co">//do something</span>
  };</code></pre>
 <p>这样就可以返回数据了</p>
-<h3 id="coap-server端代码"><span class="header-section-number">14.6.3</span> CoAP Server端代码</h3>
+<p><strong>CoAP Server端代码</strong></p>
 <p>Server端的代码比较简单，判断一下</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">if</span> (<span class="ot">req</span>.<span class="fu">headers</span>[<span class="st">&#39;Accept&#39;</span>] == <span class="st">&#39;application/json&#39;</span>) {
         <span class="fu">parse_url</span>(<span class="ot">req</span>.<span class="fu">url</span>, <span class="kw">function</span>(result){
@@ -2605,63 +2722,64 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
     })
 }</code></pre>
 <p>并且全部都显示出来，设计得真是有点不行，不过现在已经差不多了。</p>
-<h2 id="使用iot-coap构建物联网"><span class="header-section-number">14.7</span> 使用IoT-CoAP构建物联网</h2>
-<h2 id="iot-coap-1"><span class="header-section-number">14.8</span> IoT-CoAP</h2>
-<h2 id="install"><span class="header-section-number">14.9</span> install</h2>
+<h2 id="使用iot-coap构建物联网"><span class="header-section-number">15.7</span> 使用IoT-CoAP构建物联网</h2>
 <p><code>注意</code>：windows系统npm install失败时，需要自己建立一个C:and Settings[USERNAME]Data文件</p>
-<pre><code>npm install iot-coap</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">npm</span> install iot-coap</code></pre>
 <p>new a file <code>index.js</code>(新建index.js)</p>
 <p><code>注意</code>: 如果已经存在一个index.js文件，请将下面内容添加到文件末尾(create index.js, and add)</p>
-<pre><code>var iotcoap         = require(&#39;iot-coap&#39;);
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> iotcoap         = <span class="fu">require</span>(<span class="st">&#39;iot-coap&#39;</span>);
 
-iotcoap.run();
-iotcoap.rest.run();</code></pre>
+<span class="ot">iotcoap</span>.<span class="fu">run</span>();
+<span class="ot">iotcoap</span>.<span class="ot">rest</span>.<span class="fu">run</span>();</code></pre>
 <p><code>注意</code>:在db配置可以选择mongodb和sqlite3，替换所需要的数据库即可。(you can choice db on iot.js with ‘sqlite’ or ‘mongodb’)</p>
 <p>创建iot.js(Create iot.js)</p>
-<pre><code>exports.config  = {
-    &quot;db_name&quot;: &quot;iot.db&quot;,
-    &quot;mongodb_name&quot;: &quot;iot&quot;,
-    &quot;mongodb_documents&quot;: &quot;iot&quot;,
-    &quot;db&quot;: &quot;mongodb&quot;,
-    &quot;table_name&quot;: &quot;basic&quot;,
-    &quot;keys&quot;:[
-        &quot;id&quot;,
-        &quot;value&quot;,
-        &quot;sensors1&quot;,
-        &quot;sensors2&quot;
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">exports</span>.<span class="fu">config</span>  = {
+    <span class="st">&quot;db_name&quot;</span>: <span class="st">&quot;iot.db&quot;</span>,
+    <span class="st">&quot;mongodb_name&quot;</span>: <span class="st">&quot;iot&quot;</span>,
+    <span class="st">&quot;mongodb_documents&quot;</span>: <span class="st">&quot;iot&quot;</span>,
+    <span class="st">&quot;db&quot;</span>: <span class="st">&quot;mongodb&quot;</span>,
+    <span class="st">&quot;table_name&quot;</span>: <span class="st">&quot;basic&quot;</span>,
+    <span class="st">&quot;keys&quot;</span>:[
+        <span class="st">&quot;id&quot;</span>,
+        <span class="st">&quot;value&quot;</span>,
+        <span class="st">&quot;sensors1&quot;</span>,
+        <span class="st">&quot;sensors2&quot;</span>
     ],
-    &quot;db_table&quot;: &quot;id integer primary key, value text, sensors1 float, sensors2 float&quot;,
-    &quot;mongodb_init&quot;:[
+    <span class="st">&quot;db_table&quot;</span>: <span class="st">&quot;id integer primary key, value text, sensors1 float, sensors2 float&quot;</span>,
+    <span class="st">&quot;mongodb_init&quot;</span>:[
         {
-            id: 1,
-            value: &quot;is id 1&quot;,
-            sensors1: 19,
-            sensors2: 20
+            <span class="dt">id</span>: <span class="dv">1</span>,
+            <span class="dt">value</span>: <span class="st">&quot;is id 1&quot;</span>,
+            <span class="dt">sensors1</span>: <span class="dv">19</span>,
+            <span class="dt">sensors2</span>: <span class="dv">20</span>
         },
         {
-            id: 2,
-            value: &quot;is id 2&quot;,
-            sensors1: 20,
-            sensors2: 21
+            <span class="dt">id</span>: <span class="dv">2</span>,
+            <span class="dt">value</span>: <span class="st">&quot;is id 2&quot;</span>,
+            <span class="dt">sensors1</span>: <span class="dv">20</span>,
+            <span class="dt">sensors2</span>: <span class="dv">21</span>
         }
     ],
-    &quot;init_table&quot;:[
-        &quot;insert or replace into basic (id,value,sensors1,sensors2) VALUES (1, &#39;is id 1&#39;, 19, 20);&quot;,
-        &quot;insert or replace into basic (id,value,sensors1,sensors2) VALUES (2, &#39;is id 2&#39;, 20, 21);&quot;
+    <span class="st">&quot;init_table&quot;</span>:[
+        <span class="st">&quot;insert or replace into basic (id,value,sensors1,sensors2) VALUES (1, &#39;is id 1&#39;, 19, 20);&quot;</span>,
+        <span class="st">&quot;insert or replace into basic (id,value,sensors1,sensors2) VALUES (2, &#39;is id 2&#39;, 20, 21);&quot;</span>
     ],
-    &quot;query_table&quot;:&quot;select * from basic;&quot;,
-    &quot;rest_url&quot;: &quot;/id/:id&quot;,
-    &quot;rest_post_url&quot;: &quot;/&quot;,
-    &quot;rest_port&quot;: 8848
+    <span class="st">&quot;query_table&quot;</span>:<span class="st">&quot;select * from basic;&quot;</span>,
+    <span class="st">&quot;rest_url&quot;</span>: <span class="st">&quot;/id/:id&quot;</span>,
+    <span class="st">&quot;rest_post_url&quot;</span>: <span class="st">&quot;/&quot;</span>,
+    <span class="st">&quot;rest_port&quot;</span>: <span class="dv">8848</span>
 };</code></pre>
 <p>接着运行(run)</p>
-<pre><code>node index.js</code></pre>
-<h1 id="mqtt"><span class="header-section-number">15</span> MQTT</h1>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">node</span> index.js</code></pre>
+<p>show:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span> listening at coap://0.0.0.0:5683
+<span class="kw">restify</span> listening at http://0.0.0.0:8848</code></pre>
+<h1 id="mqtt"><span class="header-section-number">16</span> MQTT</h1>
 <blockquote>
 <p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）是IBM开发的一个即时通讯协议，有可能成为物联网的重要组成部分。该协议支持所有平台，几乎可以把所有联网物品和外部连接起来，被用来当做传感器和致动器（比如通过Twitter让房屋联网）的通信协议。</p>
 </blockquote>
 <p>早在1999年，IBM的Andy Stanford-Clark博士以及Arcom公司ArlenNipper博士发明了MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）技术[1] 。据Andy Stanford-Clark博士称，MQTT将在今年和明年呈现爆炸式增长。</p>
-<h2 id="nodejs-mqtt"><span class="header-section-number">15.1</span> Nodejs MQTT</h2>
+<h2 id="nodejs-mqtt"><span class="header-section-number">16.1</span> Nodejs MQTT</h2>
 <blockquote>
 <p><a href="https://github.com/adamvr/MQTT.js/">mqtt.js</a> is a library for the MQTT protocol, written in JavaScript to be used in node.js.</p>
 </blockquote>
