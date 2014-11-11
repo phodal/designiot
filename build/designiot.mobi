@@ -1,70 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <style type="text/css">
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; }
-code > span.dt { color: #902000; }
-code > span.dv { color: #40a070; }
-code > span.bn { color: #40a070; }
-code > span.fl { color: #40a070; }
-code > span.ch { color: #4070a0; }
-code > span.st { color: #4070a0; }
-code > span.co { color: #60a0b0; font-style: italic; }
-code > span.ot { color: #007020; }
-code > span.al { color: #ff0000; font-weight: bold; }
-code > span.fu { color: #06287e; }
-code > span.er { color: #ff0000; font-weight: bold; }
-  </style>
-  <link rel="stylesheet" href="css/vendor.css" type="text/css" />
-</head>
-<body>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>一步步搭建物联网系统</title>
-        <meta name="keywords" content="设计物联网系统,物联网系统设计">
-        <meta name="description" content="一份关于如何设计物联网系统的文档">
-        <link rel="stylesheet" href="css/vendor.css" />
-    </head>
-</html>
 <div id="TOC">
 <ul>
-<li><a href="#前言"><span class="toc-section-number">1</span> 前言</a><ul>
+<li><a href="#前言"><span class="toc-section-number">1</span> 前言</a>
+<ul>
 <li><a href="#目标读者"><span class="toc-section-number">1.1</span> 目标读者</a></li>
 <li><a href="#不适合人群"><span class="toc-section-number">1.2</span> 不适合人群</a></li>
-<li><a href="#介绍"><span class="toc-section-number">1.3</span> 介绍</a><ul>
+<li><a href="#介绍"><span class="toc-section-number">1.3</span> 介绍</a>
+<ul>
 <li><a href="#为什么没有c"><span class="toc-section-number">1.3.1</span> 为什么没有C ?</a></li>
 <li><a href="#为什么不是java"><span class="toc-section-number">1.3.2</span> 为什么不是JAVA ?</a></li>
 <li><a href="#为什么没有android"><span class="toc-section-number">1.3.3</span> 为什么没有Android ？</a></li>
 </ul></li>
 <li><a href="#如何阅读"><span class="toc-section-number">1.4</span> 如何阅读</a></li>
 </ul></li>
-<li><a href="#无处不在的html"><span class="toc-section-number">2</span> 无处不在的HTML</a><ul>
-<li><a href="#html的helloworld"><span class="toc-section-number">2.1</span> html的hello,world</a><ul>
+<li><a href="#无处不在的html"><span class="toc-section-number">2</span> 无处不在的HTML</a>
+<ul>
+<li><a href="#html的helloworld"><span class="toc-section-number">2.1</span> html的hello,world</a>
+<ul>
 <li><a href="#调试helloworld"><span class="toc-section-number">2.1.1</span> 调试hello,world</a></li>
 <li><a href="#说说helloworld"><span class="toc-section-number">2.1.2</span> 说说hello,world</a></li>
 <li><a href="#想用中文"><span class="toc-section-number">2.1.3</span> 想用中文？</a></li>
 </ul></li>
-<li><a href="#其他html标记"><span class="toc-section-number">2.2</span> 其他html标记</a><ul>
+<li><a href="#其他html标记"><span class="toc-section-number">2.2</span> 其他html标记</a>
+<ul>
 <li><a href="#美妙之处"><span class="toc-section-number">2.2.1</span> 美妙之处</a></li>
 <li><a href="#更多"><span class="toc-section-number">2.2.2</span> 更多</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#无处不在的javascript"><span class="toc-section-number">3</span> 无处不在的Javascript</a><ul>
+<li><a href="#无处不在的javascript"><span class="toc-section-number">3</span> 无处不在的Javascript</a>
+<ul>
 <li><a href="#javascript的helloworld"><span class="toc-section-number">3.1</span> Javascript的Hello,world</a></li>
-<li><a href="#更js一点"><span class="toc-section-number">3.2</span> 更js一点</a><ul>
+<li><a href="#更js一点"><span class="toc-section-number">3.2</span> 更js一点</a>
+<ul>
 <li><a href="#从数学出发"><span class="toc-section-number">3.2.1</span> 从数学出发</a></li>
 </ul></li>
-<li><a href="#设计和编程"><span class="toc-section-number">3.3</span> 设计和编程</a><ul>
+<li><a href="#设计和编程"><span class="toc-section-number">3.3</span> 设计和编程</a>
+<ul>
 <li><a href="#函数"><span class="toc-section-number">3.3.1</span> 函数</a></li>
 <li><a href="#重新设计"><span class="toc-section-number">3.3.2</span> 重新设计</a></li>
 <li><a href="#object和函数"><span class="toc-section-number">3.3.3</span> object和函数</a></li>
@@ -73,60 +43,73 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#其他"><span class="toc-section-number">3.4</span> 其他</a></li>
 <li><a href="#美妙之处-1"><span class="toc-section-number">3.5</span> 美妙之处</a></li>
 </ul></li>
-<li><a href="#无处不在的css"><span class="toc-section-number">4</span> 无处不在的CSS</a><ul>
+<li><a href="#无处不在的css"><span class="toc-section-number">4</span> 无处不在的CSS</a>
+<ul>
 <li><a href="#css"><span class="toc-section-number">4.1</span> CSS</a></li>
 <li><a href="#关于css"><span class="toc-section-number">4.2</span> 关于CSS</a></li>
 <li><a href="#代码结构"><span class="toc-section-number">4.3</span> 代码结构</a></li>
-<li><a href="#样式与目标"><span class="toc-section-number">4.4</span> 样式与目标</a><ul>
+<li><a href="#样式与目标"><span class="toc-section-number">4.4</span> 样式与目标</a>
+<ul>
 <li><a href="#选择器"><span class="toc-section-number">4.4.1</span> 选择器</a></li>
 </ul></li>
 <li><a href="#更有趣的css"><span class="toc-section-number">4.5</span> 更有趣的CSS</a></li>
 </ul></li>
-<li><a href="#无处不在的三剑客"><span class="toc-section-number">5</span> 无处不在的三剑客</a><ul>
+<li><a href="#无处不在的三剑客"><span class="toc-section-number">5</span> 无处不在的三剑客</a>
+<ul>
 <li><a href="#hellogeek"><span class="toc-section-number">5.1</span> Hello,Geek</a></li>
 <li><a href="#从源码学习"><span class="toc-section-number">5.2</span> 从源码学习</a></li>
-<li><a href="#浏览器渲染过程"><span class="toc-section-number">5.3</span> 浏览器渲染过程</a><ul>
+<li><a href="#浏览器渲染过程"><span class="toc-section-number">5.3</span> 浏览器渲染过程</a>
+<ul>
 <li><a href="#html"><span class="toc-section-number">5.3.1</span> HTML</a></li>
 </ul></li>
-<li><a href="#dom树形结构图"><span class="toc-section-number">5.4</span> DOM树形结构图</a><ul>
+<li><a href="#dom树形结构图"><span class="toc-section-number">5.4</span> DOM树形结构图</a>
+<ul>
 <li><a href="#javascript"><span class="toc-section-number">5.4.1</span> javascript</a></li>
 <li><a href="#css-1"><span class="toc-section-number">5.4.2</span> CSS</a></li>
 </ul></li>
 <li><a href="#css盒模型图"><span class="toc-section-number">5.5</span> CSS盒模型图</a></li>
 <li><a href="#笔记"><span class="toc-section-number">5.6</span> 笔记</a></li>
 </ul></li>
-<li><a href="#gnulinux"><span class="toc-section-number">6</span> GNU/Linux</a><ul>
+<li><a href="#gnulinux"><span class="toc-section-number">6</span> GNU/Linux</a>
+<ul>
 <li><a href="#什么是linux"><span class="toc-section-number">6.1</span> 什么是Linux</a></li>
-<li><a href="#操作系统"><span class="toc-section-number">6.2</span> 操作系统</a><ul>
+<li><a href="#操作系统"><span class="toc-section-number">6.2</span> 操作系统</a>
+<ul>
 <li><a href="#linux架构图"><span class="toc-section-number">6.2.1</span> Linux架构图</a></li>
 <li><a href="#shell"><span class="toc-section-number">6.2.2</span> Shell</a></li>
 <li><a href="#gcc"><span class="toc-section-number">6.2.3</span> GCC</a></li>
 <li><a href="#启动引导程序"><span class="toc-section-number">6.2.4</span> 启动引导程序</a></li>
 </ul></li>
-<li><a href="#从编译开始"><span class="toc-section-number">6.3</span> 从编译开始</a><ul>
+<li><a href="#从编译开始"><span class="toc-section-number">6.3</span> 从编译开始</a>
+<ul>
 <li><a href="#开始之前"><span class="toc-section-number">6.3.1</span> 开始之前</a></li>
 <li><a href="#编译nginx"><span class="toc-section-number">6.3.2</span> 编译Nginx</a></li>
 <li><a href="#其他-1"><span class="toc-section-number">6.3.3</span> 其他</a></li>
 </ul></li>
 <li><a href="#包管理"><span class="toc-section-number">6.4</span> 包管理</a></li>
-<li><a href="#ubuntu-lnmp"><span class="toc-section-number">6.5</span> Ubuntu LNMP</a><ul>
+<li><a href="#ubuntu-lnmp"><span class="toc-section-number">6.5</span> Ubuntu LNMP</a>
+<ul>
 <li><a href="#update软件包列表"><span class="toc-section-number">6.5.1</span> Update软件包列表</a></li>
 <li><a href="#安装mysql"><span class="toc-section-number">6.5.2</span> 安装MySQL</a></li>
 <li><a href="#安装nginx"><span class="toc-section-number">6.5.3</span> 安装Nginx</a></li>
 <li><a href="#安装php"><span class="toc-section-number">6.5.4</span> 安装PHP</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#arduino"><span class="toc-section-number">7</span> Arduino</a><ul>
+<li><a href="#arduino"><span class="toc-section-number">7</span> Arduino</a>
+<ul>
 <li><a href="#极客的玩具"><span class="toc-section-number">7.1</span> 极客的玩具</a></li>
 <li><a href="#硬件熟悉"><span class="toc-section-number">7.2</span> 硬件熟悉</a></li>
 <li><a href="#开发环境"><span class="toc-section-number">7.3</span> 开发环境</a></li>
 <li><a href="#点亮一个led"><span class="toc-section-number">7.4</span> 点亮一个LED</a></li>
-<li><a href="#串口通信"><span class="toc-section-number">7.5</span> 串口通信</a><ul>
+<li><a href="#串口通信"><span class="toc-section-number">7.5</span> 串口通信</a>
+<ul>
 <li><a href="#关于arduino-setup"><span class="toc-section-number">7.5.1</span> 关于Arduino Setup()</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#python"><span class="toc-section-number">8</span> Python</a><ul>
-<li><a href="#代码与散文"><span class="toc-section-number">8.1</span> 代码与散文</a><ul>
+<li><a href="#python"><span class="toc-section-number">8</span> Python</a>
+<ul>
+<li><a href="#代码与散文"><span class="toc-section-number">8.1</span> 代码与散文</a>
+<ul>
 <li><a href="#开始之前-1"><span class="toc-section-number">8.1.1</span> 开始之前</a></li>
 <li><a href="#python的helloworld"><span class="toc-section-number">8.1.2</span> Python的Hello,World</a></li>
 <li><a href="#我们想要的helloworld"><span class="toc-section-number">8.1.3</span> 我们想要的Hello,World</a></li>
@@ -135,99 +118,125 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#实用主义哲学"><span class="toc-section-number">8.3</span> 实用主义哲学</a></li>
 <li><a href="#包管理-1"><span class="toc-section-number">8.4</span> 包管理</a></li>
 </ul></li>
-<li><a href="#raspberry-pi"><span class="toc-section-number">9</span> Raspberry Pi</a><ul>
+<li><a href="#raspberry-pi"><span class="toc-section-number">9</span> Raspberry Pi</a>
+<ul>
 <li><a href="#geek的盛宴"><span class="toc-section-number">9.1</span> Geek的盛宴</a></li>
 <li><a href="#raspberry-pi-初始化"><span class="toc-section-number">9.2</span> Raspberry Pi 初始化</a></li>
 <li><a href="#raspberry-pi-gpio"><span class="toc-section-number">9.3</span> Raspberry Pi GPIO</a></li>
 </ul></li>
-<li><a href="#http与restful"><span class="toc-section-number">10</span> HTTP与RESTful</a><ul>
-<li><a href="#你所没有深入的http"><span class="toc-section-number">10.1</span> 你所没有深入的HTTP</a><ul>
+<li><a href="#http与restful"><span class="toc-section-number">10</span> HTTP与RESTful</a>
+<ul>
+<li><a href="#你所没有深入的http"><span class="toc-section-number">10.1</span> 你所没有深入的HTTP</a>
+<ul>
 <li><a href="#打开网页时发生了什么"><span class="toc-section-number">10.1.1</span> 打开网页时发生了什么</a></li>
 <li><a href="#url组成"><span class="toc-section-number">10.1.2</span> URL组成</a></li>
 </ul></li>
-<li><a href="#一次http-get请求"><span class="toc-section-number">10.2</span> 一次HTTP GET请求</a><ul>
+<li><a href="#一次http-get请求"><span class="toc-section-number">10.2</span> 一次HTTP GET请求</a>
+<ul>
 <li><a href="#http响应"><span class="toc-section-number">10.2.1</span> HTTP响应</a></li>
 </ul></li>
-<li><a href="#rest"><span class="toc-section-number">10.3</span> REST</a><ul>
+<li><a href="#rest"><span class="toc-section-number">10.3</span> REST</a>
+<ul>
 <li><a href="#资源"><span class="toc-section-number">10.3.1</span> 资源</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#设计restful-api"><span class="toc-section-number">11</span> 设计RESTful API</a><ul>
+<li><a href="#设计restful-api"><span class="toc-section-number">11</span> 设计RESTful API</a>
+<ul>
 <li><a href="#rest关键目标"><span class="toc-section-number">11.1</span> REST关键目标</a></li>
 <li><a href="#判断是否是-restful的约束条件"><span class="toc-section-number">11.2</span> 判断是否是 RESTful的约束条件</a></li>
 <li><a href="#设计restful资源"><span class="toc-section-number">11.3</span> 设计RESTful资源</a></li>
 <li><a href="#设计restful-uri"><span class="toc-section-number">11.4</span> 设计RESTful URI</a></li>
 <li><a href="#json"><span class="toc-section-number">11.5</span> JSON</a></li>
 </ul></li>
-<li><a href="#rest服务准备"><span class="toc-section-number">12</span> REST服务准备</a><ul>
-<li><a href="#laravel"><span class="toc-section-number">12.1</span> Laravel</a><ul>
+<li><a href="#rest服务准备"><span class="toc-section-number">12</span> REST服务准备</a>
+<ul>
+<li><a href="#laravel"><span class="toc-section-number">12.1</span> Laravel</a>
+<ul>
 <li><a href="#为什么是-laravel"><span class="toc-section-number">12.1.1</span> 为什么是 Laravel</a></li>
 </ul></li>
-<li><a href="#安装-laravel"><span class="toc-section-number">12.2</span> 安装 Laravel</a><ul>
+<li><a href="#安装-laravel"><span class="toc-section-number">12.2</span> 安装 Laravel</a>
+<ul>
 <li><a href="#gnulinux安装composer"><span class="toc-section-number">12.2.1</span> GNU/Linux安装Composer</a></li>
 </ul></li>
-<li><a href="#mysql"><span class="toc-section-number">12.3</span> MySQL</a><ul>
+<li><a href="#mysql"><span class="toc-section-number">12.3</span> MySQL</a>
+<ul>
 <li><a href="#安装mysql-1"><span class="toc-section-number">12.3.1</span> 安装MySQL</a></li>
 <li><a href="#配置mysql"><span class="toc-section-number">12.3.2</span> 配置MySQL</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#创建rest服务"><span class="toc-section-number">13</span> 创建REST服务</a><ul>
-<li><a href="#数据库迁移"><span class="toc-section-number">13.1</span> 数据库迁移</a><ul>
+<li><a href="#创建rest服务"><span class="toc-section-number">13</span> 创建REST服务</a>
+<ul>
+<li><a href="#数据库迁移"><span class="toc-section-number">13.1</span> 数据库迁移</a>
+<ul>
 <li><a href="#创建表"><span class="toc-section-number">13.1.1</span> 创建表</a></li>
 <li><a href="#数据库迁移-1"><span class="toc-section-number">13.1.2</span> 数据库迁移</a></li>
 </ul></li>
 <li><a href="#创建restful"><span class="toc-section-number">13.2</span> 创建RESTful</a></li>
-<li><a href="#laravel-resources"><span class="toc-section-number">13.3</span> Laravel Resources</a><ul>
+<li><a href="#laravel-resources"><span class="toc-section-number">13.3</span> Laravel Resources</a>
+<ul>
 <li><a href="#修改create"><span class="toc-section-number">13.3.1</span> 修改Create()</a></li>
 <li><a href="#创建表单"><span class="toc-section-number">13.3.2</span> 创建表单</a></li>
 <li><a href="#编辑模板"><span class="toc-section-number">13.3.3</span> 编辑模板</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#restful-evertywhere"><span class="toc-section-number">14</span> RESTful Evertywhere</a><ul>
-<li><a href="#javascript与ajax"><span class="toc-section-number">14.1</span> Javascript与ajax</a><ul>
+<li><a href="#restful-evertywhere"><span class="toc-section-number">14</span> RESTful Evertywhere</a>
+<ul>
+<li><a href="#javascript与ajax"><span class="toc-section-number">14.1</span> Javascript与ajax</a>
+<ul>
 <li><a href="#jquery"><span class="toc-section-number">14.1.1</span> jQuery</a></li>
 </ul></li>
-<li><a href="#java与json"><span class="toc-section-number">14.2</span> Java与json</a><ul>
+<li><a href="#java与json"><span class="toc-section-number">14.2</span> Java与json</a>
+<ul>
 <li><a href="#android"><span class="toc-section-number">14.2.1</span> Android</a></li>
 </ul></li>
-<li><a href="#python与json"><span class="toc-section-number">14.3</span> Python与json</a><ul>
+<li><a href="#python与json"><span class="toc-section-number">14.3</span> Python与json</a>
+<ul>
 <li><a href="#requests"><span class="toc-section-number">14.3.1</span> requests</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#前端显示"><span class="toc-section-number">15</span> 前端显示</a><ul>
+<li><a href="#前端显示"><span class="toc-section-number">15</span> 前端显示</a>
+<ul>
 <li><a href="#库与车轮子"><span class="toc-section-number">15.1</span> 库与车轮子</a></li>
-<li><a href="#库"><span class="toc-section-number">15.2</span> 库</a><ul>
+<li><a href="#库"><span class="toc-section-number">15.2</span> 库</a>
+<ul>
 <li><a href="#jquery-mobile"><span class="toc-section-number">15.2.1</span> jQuery Mobile</a></li>
 <li><a href="#bootstrap"><span class="toc-section-number">15.2.2</span> Bootstrap</a></li>
 </ul></li>
-<li><a href="#网站前台显示"><span class="toc-section-number">15.3</span> 网站前台显示</a><ul>
+<li><a href="#网站前台显示"><span class="toc-section-number">15.3</span> 网站前台显示</a>
+<ul>
 <li><a href="#highcharts"><span class="toc-section-number">15.3.1</span> Highcharts</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#构建基于coap协议的物联网系统"><span class="toc-section-number">16</span> 构建基于CoAP协议的物联网系统</a><ul>
+<li><a href="#构建基于coap协议的物联网系统"><span class="toc-section-number">16</span> 构建基于CoAP协议的物联网系统</a>
+<ul>
 <li><a href="#coap-嵌入式系统的rest"><span class="toc-section-number">16.1</span> CoAP: 嵌入式系统的REST</a></li>
-<li><a href="#coap-命令行工具"><span class="toc-section-number">16.2</span> CoAP 命令行工具</a><ul>
+<li><a href="#coap-命令行工具"><span class="toc-section-number">16.2</span> CoAP 命令行工具</a>
+<ul>
 <li><a href="#node-coap-cli"><span class="toc-section-number">16.2.1</span> Node CoAP CLI</a></li>
 <li><a href="#libcoap"><span class="toc-section-number">16.2.2</span> libcoap</a></li>
 <li><a href="#firefox-copper"><span class="toc-section-number">16.2.3</span> Firefox Copper</a></li>
 </ul></li>
 <li><a href="#coap-helloworld"><span class="toc-section-number">16.3</span> CoAP Hello,World</a></li>
-<li><a href="#coap-数据库查询"><span class="toc-section-number">16.4</span> CoAP 数据库查询</a><ul>
+<li><a href="#coap-数据库查询"><span class="toc-section-number">16.4</span> CoAP 数据库查询</a>
+<ul>
 <li><a href="#node-module"><span class="toc-section-number">16.4.1</span> Node Module</a></li>
 <li><a href="#node-sqlite3"><span class="toc-section-number">16.4.2</span> Node-Sqlite3</a></li>
 <li><a href="#查询数据"><span class="toc-section-number">16.4.3</span> 查询数据</a></li>
 </ul></li>
-<li><a href="#coap-block"><span class="toc-section-number">16.5</span> CoAP Block</a><ul>
+<li><a href="#coap-block"><span class="toc-section-number">16.5</span> CoAP Block</a>
+<ul>
 <li><a href="#coap-post"><span class="toc-section-number">16.5.1</span> CoAP POST</a></li>
 <li><a href="#coap-content-types"><span class="toc-section-number">16.5.2</span> CoAP Content Types</a></li>
 </ul></li>
 <li><a href="#coap-json"><span class="toc-section-number">16.6</span> CoAP JSON</a></li>
 <li><a href="#使用iot-coap构建物联网"><span class="toc-section-number">16.7</span> 使用IoT-CoAP构建物联网</a></li>
 </ul></li>
-<li><a href="#mqtt"><span class="toc-section-number">17</span> MQTT</a><ul>
+<li><a href="#mqtt"><span class="toc-section-number">17</span> MQTT</a>
+<ul>
 <li><a href="#nodejs-mqtt"><span class="toc-section-number">17.1</span> Nodejs MQTT</a></li>
 </ul></li>
-<li><a href="#尾声"><span class="toc-section-number">18</span> 尾声</a><ul>
+<li><a href="#尾声"><span class="toc-section-number">18</span> 尾声</a>
+<ul>
 <li><a href="#路"><span class="toc-section-number">18.1</span> 路</a></li>
 <li><a href="#其他-2"><span class="toc-section-number">18.2</span> 其他</a></li>
 </ul></li>
@@ -312,10 +321,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <h2 id="html的helloworld"><span class="header-section-number">2.1</span> html的hello,world</h2>
 <p>Hello,world是一个传统，所以在这里也遵循这个有趣的传统，我们所要做的事情事实很简单。虽然也有点hack的感觉，所以让我们新建一个文件叫“helloworld.html”。</p>
 <p>(PS:大部分人应该都是在windows下工作的，所以你需要新建一个文本，然后重命名，或者你需要一个编辑器，在这里推荐用<strong>sublime text</strong>。破解不破解，注册不注册都不会对你的使用有太多的影响。)</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li><p>新建文件</p></li>
-<li>输入
-<pre><code class="html">hello,world</code></pre></li>
+<li><p>输入</p>
+<pre><code>hello,world</code></pre></li>
 <li><p>保存为-&gt;“helloworld.html”，</p></li>
 <li><p>然后双击打开这个文件。 正常情况下应该是刚好用你的默认浏览器打开。只要是一个现代的浏览器的话，应该可以看到上面显示的是“Hello,world”。</p></li>
 </ol>
@@ -334,11 +343,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <span class="kw">&lt;/html&gt;</span></code></pre>
 <p>这个才是真正能在大部分浏览器上工作的代码，所以复制它到编辑器里吧。</p>
 <h3 id="说说helloworld"><span class="header-section-number">2.1.2</span> 说说hello,world</h3>
-我很不喜欢其中的&lt;*&gt;<!--*-->超文本标记语言
-</blockquote>
+<p>我很不喜欢其中的&lt;*&gt;超文本标记语言</p>
 <p>所以我们可以发现其中的关键词是标记——markup，也就是说html是一个markup，head是一个markup，body是一个markup。</p>
 <p>而后，我们真正工作的代码是在body里面，至于为什么是在里面，这个问题算是太复杂了。</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li><p>我们所学的汉语是别人创造的，我们所正在学的这门语言也是别人创造的。</p></li>
 <li><p>我们在自己的语言里遵循着<strong>他代表是个男的，她代替是个女的</strong>。</p></li>
 </ol>
@@ -367,7 +375,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
         <span class="er">&lt;</span>身体&gt;你好，世界<span class="co">&lt;!--身体--&gt;</span>
     <span class="co">&lt;!--语言--&gt;</span>
 <span class="kw">&lt;/body&gt;&lt;/html&gt;</span>      </code></pre>
-<p>以 <!--开头，--></p>
+<p>以</p>
 <p>结尾的是注释，写给人看的代码，不是给机器看的，所以机器不会去理解这些代码。</p>
 <p>但是当我们把代码改成</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;whatwewanttosay&gt;</span>你好世界<span class="kw">&lt;/whatwewanttosay&gt;</span></code></pre>
@@ -375,12 +383,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <pre class="sourceCode html"><code class="sourceCode html">你好世界</code></pre>
 <p>或许你会觉得很神奇，但是这一点儿也不神奇，虽然我们的中文语法也遵循着标记语言的标准，但是我们的浏览器不支持中文标记。</p>
 <p>结论:</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li>浏览器对中文支持不友好。</li>
 <li>浏览器对英文支持友好。</li>
 </ol>
 <p>刚开始的时候不要对中文编程有太多的想法，这不是很现实的:</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li>现有的系统都是基于英语构建的，对中文支持不是很友好。</li>
 <li>中文输入的速度在某种程度上来说没有英语快。</li>
 </ol>
@@ -415,7 +423,7 @@ hello,world
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> file.py
 =<span class="kw">&gt;hello</span>,world</code></pre>
 <p>然后在终端上返回结果。只是因为在我看来学会html是有意义的，简单的上手，而后再慢慢地深入，如果一开始我们就开始去理解指针，开始去理解类。我们甚至还知道程序是怎么编译运行的时候，在这个过程中又发生了什么。虽然现在我们也没能理解这其中发生了什么，但是至少展示了</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li>中文编程语言在当前意义不大，不现实，效率不高兼容性差</li>
 <li>语言的语法是固定的。（ps:虽然我们也可以进行扩充，我们将会在后来支持上述的中文标记。）</li>
 <li>已经开始写代码，而不是还在配置开发环境。</li>
@@ -602,7 +610,7 @@ num=<span class="dv">3</span>;
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> person+<span class="st">&quot;&lt;br&gt;&quot;</span>);
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> <span class="ot">person</span>.<span class="fu">future</span>+<span class="st">&quot;&lt;br&gt;&quot;</span>);
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="ot">person</span>.<span class="fu">future</span>()+<span class="st">&quot;&lt;br&gt;&quot;</span>);</code></pre>
-<p>只是在这个时候Person是一个函数，但是我们声明的person却变成了一个对象<strong>一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数。</strong>这里的+“<br>”是HTML中的元素，称之为DOM，在这里起的是换行的作用，我们会在稍后介绍它，这里我们先关心下this。this关键字表示函数的所有者或作用域，也就是这里的Person。</p>
+<p>只是在这个时候Person是一个函数，但是我们声明的person却变成了一个对象<strong>一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数。</strong>这里的+“<br />”是HTML中的元素，称之为DOM，在这里起的是换行的作用，我们会在稍后介绍它，这里我们先关心下this。this关键字表示函数的所有者或作用域，也就是这里的Person。</p>
 <p>上面的方法显得有点不可取，换句话说和一开始的</p>
 <pre><code>document.write(3*4);</code></pre>
 <p>一样，不具有灵活性，因此在我们完成功能之后，我们需要对其进行优化，这就是程序设计的真谛——解决完实际问题后，我们需要开始真正的设计，而不是解决问题时的编程。</p>
@@ -690,7 +698,8 @@ num=<span class="dv">3</span>;
 <span class="ot">para</span>.<span class="ot">style</span>.<span class="fu">color</span>=<span class="st">&quot;blue&quot;</span>;</code></pre>
 <p>将字体变成了蓝色，CSS+HTML让页面有序的工作着，但是Javascript打乱了这些秩序，不过却也让生活多姿多彩，小三不都是这样的么——终于可以理解，为什么以前人们对于Javascript没有好感了？不过这里要讲的是正室，也就是CSS，这时还没有Javascript。</p>
 <div class="figure">
-<img src="./images/redfonts.png" alt="Red Fonts" /><p class="caption">Red Fonts</p>
+<img src="./images/redfonts.png" alt="Red Fonts" />
+<p>Red Fonts</p>
 </div>
 <h2 id="关于css"><span class="header-section-number">4.2</span> 关于CSS</h2>
 <p>这不是一篇好的关于讲述CSS的书籍，所以不会去说CSS是怎么来的，有些东西既然我们可以很容易从其他地方知道，也就不需要花太多时间去重复。诸如重构等这些的目的之一也在于去除重复的代码，不过有些重复是不可少的，也是有必要的，而通常这些东西可能是由其他地方复制过来的。</p>
@@ -710,7 +719,8 @@ num=<span class="dv">3</span>;
 <span class="kw">&lt;/html&gt;</span></code></pre>
 <p>虽然我们看到的还是一样的:</p>
 <div class="figure">
-<img src="./images/nostyle.png" alt="No Style" /><p class="caption">No Style</p>
+<img src="./images/nostyle.png" alt="No Style" />
+<p>No Style</p>
 </div>
 <p>于是我们就按各种书上的建议重新写了上面的代码</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
@@ -878,7 +888,8 @@ div#content p {
 <h2 id="浏览器渲染过程"><span class="header-section-number">5.3</span> 浏览器渲染过程</h2>
 <p>基本的渲染引擎的过程如下图所示:</p>
 <div class="figure">
-<img src="./images/flow.png" alt="flow" /><p class="caption">flow</p>
+<img src="./images/flow.png" alt="flow" />
+<p>flow</p>
 </div>
 <ul>
 <li>解析HTML去构建DOM树</li>
@@ -888,7 +899,8 @@ div#content p {
 </ul>
 <p>对于Webkit浏览器来说，他的过程如下所示:</p>
 <div class="figure">
-<img src="./images/webkitflow.png" alt="webkitflow" /><p class="caption">webkitflow</p>
+<img src="./images/webkitflow.png" alt="webkitflow" />
+<p>webkitflow</p>
 </div>
 <h3 id="html"><span class="header-section-number">5.3.1</span> HTML</h3>
 <p>写好HTML的一个要点在于看别人写的代码，这只是一方面，我们所说的HTML方面的内容可能不够多，原因有很多，很多东西都需要在实战中去解决。读万卷书和行万里路，分不清哪个有重要的意义，但是如果可以同时做好两个的话，成长会很快的。</p>
@@ -921,7 +933,8 @@ div#content p {
 <p>DOM是文档对象化模型（Document Object Model）的简称。DOM Tree是指通过DOM将HTML页面进行解析，并生成的HTML tree树状结构和对应访问方法。</p>
 </blockquote>
 <div class="figure">
-<img src="./images/dom_tree.jpg" alt="DOM Tree" /><p class="caption">DOM Tree</p>
+<img src="./images/dom_tree.jpg" alt="DOM Tree" />
+<p>DOM Tree</p>
 </div>
 <h3 id="javascript"><span class="header-section-number">5.4.1</span> javascript</h3>
 <p>这里以未压缩的jQuery源码和zepto.js作一个小小的比较，zepto.js是兼容jQuery的，因此我们举几个有意思的函数作一简单的比较，关于源码可以在官网上下载到。</p>
@@ -1009,7 +1022,8 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
 <p>(ps:以下内容来自于Mozilla Developer NetWorks)</p>
 <p>CSS下这些矩形盒子由标准盒模型描述。这个模型描述元素内容占用空间。盒子有四个边界：外边距边界margin edge, 边框边界border edge, 内边距边界padding edge 与 内容边界content edge。</p>
 <div class="figure">
-<img src="./images/box-model.gif" alt="CSS Box Model" /><p class="caption">CSS Box Model</p>
+<img src="./images/box-model.gif" alt="CSS Box Model" />
+<p>CSS Box Model</p>
 </div>
 <p>内容区域content area 是真正包含元素内容的区域。位于内容边界的内部，它的大小为内容宽度 或 content-box宽及内容高度或content-box高。</p>
 <p>如果 box-sizing 为默认值， width, min-width, max-width, height, min-height 与 max-height 控制内容大小。</p>
@@ -1136,11 +1150,12 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
 <p>2.正常情况下一个开源项目都会有一个README，会告诉你应该如何去做。</p>
 <h2 id="包管理"><span class="header-section-number">6.4</span> 包管理</h2>
 <p>GNU/Linux最方便的东西莫过于包管理了。</p>
-<p>引自OpenSUSE官网的说明及图片<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>引自OpenSUSE官网的说明及图片<span id="fnref1"><a href="#fn1"><sup>1</sup></a></span></p>
 <div class="figure">
-<img src="http://designiot.phodal.com/images/pm.png" alt="package management" /><p class="caption">package management</p>
+<img src="http://designiot.phodal.com/images/pm.png" alt="package management" />
+<p>package management</p>
 </div>
-<ol style="list-style-type: decimal">
+<ol>
 <li><p>Linux 发行版无非就是一堆软件包 (package) 形式的应用程序加上整体地管理这些应用程序的工具。通常这些 Linux 发行版，包括 openSUSE，都是由成千上万不同的软件包构成的。</p></li>
 <li><p>软件包: 软件包不止是一个文件，内含构成软件的所有文件，包括程序本身、共享库、开发包以及使用说明等。</p></li>
 <li><p>元数据 (metadata) 包含于软件包之中，包含软件正常运行所需要的一些信息。软件包安装之后，其元数据就存储于本地的软件包数据库之中，以用于软件包检索。</p></li>
@@ -1276,12 +1291,14 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
 <h2 id="硬件熟悉"><span class="header-section-number">7.2</span> 硬件熟悉</h2>
 <p>为了满足各种需求，Arduino团队设计了很多款开发板，如UNO、Pro mini、Mega2560、Due、Leonardo、Yún、Pro、Fio、Nano等十几种 开发板和扩展板。最适合初学者的一款是Arduino UNO 。下图是Arduino UNO 的外观图：</p>
 <div class="figure">
-<img src="http://designiot.phodal.com/images/uno.png" alt="UNO" /><p class="caption">UNO</p>
+<img src="http://designiot.phodal.com/images/uno.png" alt="UNO" />
+<p>UNO</p>
 </div>
 <p>注：后面的程序也是基于Arduino UNO开发板来讲解。</p>
 <h2 id="开发环境"><span class="header-section-number">7.3</span> 开发环境</h2>
 <div class="figure">
-<img src="http://designiot.phodal.com/images/arduino.png" alt="Arduino" /><p class="caption">Arduino</p>
+<img src="http://designiot.phodal.com/images/arduino.png" alt="Arduino" />
+<p>Arduino</p>
 </div>
 <p>开发环境如上图，十分简洁，编写代码需要知道两个基本的函数：</p>
 <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">void</span> setup(){
@@ -1438,17 +1455,15 @@ message:
 <h3 id="python的helloworld"><span class="header-section-number">8.1.2</span> Python的Hello,World</h3>
 <p>Python的Hello,World有两种形式，作为一种脚本语言来说，Javascript也是一种脚本语言，只是两者之间有太多的不同之处，每个人都会有不同的选择对于一种语言用来作为其的习惯。于是这就是我们的</p>
 <pre><code>print &quot;Hello,World&quot;</code></pre>
-当我们把我们的脚本在shell环境下运行时
-<pre><code class="bash">
->>>  print "Hello,world"
-  File "<stdin>", line 1
-    print "Hello,world"
+<p>当我们把我们的脚本在shell环境下运行时</p>
+<pre><code>&gt;&gt;&gt;  print &quot;Hello,world&quot;
+  File &quot;&quot;, line 1
+    print &quot;Hello,world&quot;
     ^
 IndentationError: unexpected indent
->>> print "Hello,world"
+&gt;&gt;&gt; print &quot;Hello,world&quot;
 Hello,world
->>>
-</code></pre>
+&gt;&gt;&gt;</code></pre>
 <p>如果你没有预料到缩进带来的问题的时候，这就是一个问题了。</p>
 <p>和我们在Javascript或者是CSS里面一样，我们也可以用一个文件的方式来写入我们的代码，文件后缀名是py，所以创建一个helloworld.py，输入上面的代码，然后执行</p>
 <pre><code>python helloworld.py</code></pre>
@@ -1517,7 +1532,8 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <p><code>Expand Filesystem              Ensures that all of the SD card s</code></p>
 <h2 id="raspberry-pi-gpio"><span class="header-section-number">9.3</span> Raspberry Pi GPIO</h2>
 <div class="figure">
-<img src="./images/gpio.png" alt="GPIO" /><p class="caption">GPIO</p>
+<img src="./images/gpio.png" alt="GPIO" />
+<p>GPIO</p>
 </div>
 <h1 id="http与restful"><span class="header-section-number">10</span> HTTP与RESTful</h1>
 <h2 id="你所没有深入的http"><span class="header-section-number">10.1</span> 你所没有深入的HTTP</h2>
@@ -1534,7 +1550,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <h3 id="打开网页时发生了什么"><span class="header-section-number">10.1.1</span> 打开网页时发生了什么</h3>
 <p>简单地来说，当我们在浏览器上输入URL的敲下回车的时候。</p>
 <ul>
-<li>浏览器需要查找域名<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>的IP，从不同的缓存直至DNS服务器。</li>
+<li>浏览器需要查找域名<span id="fnref2"><a href="#fn2"><sup>2</sup></a></span>的IP，从不同的缓存直至DNS服务器。</li>
 <li>浏览器会给web服务器发送一个HTTP请求</li>
 <li>服务器“处理”请求</li>
 <li>服务器发回一个HTML响应</li>
@@ -1555,12 +1571,12 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>browser renders response, or offers a download dialog for unrecognized types</li>
 </ul>
 <p>忽略一些细节便剩下了</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li>从浏览器输入URL</li>
 <li>浏览器找到服务器，服务器返回HTML文档</li>
 <li>从对应的服务器下载资源</li>
 </ol>
-<p>说说第一步，开始时我们输入的是URI(统一资源标识符,Uniform Resource Identifier)，它还有另外一个名字叫统一资源定位器(URL<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>,Uniform Resource Locator)。</p>
+<p>说说第一步，开始时我们输入的是URI(统一资源标识符,Uniform Resource Identifier)，它还有另外一个名字叫统一资源定位器(URL<span id="fnref3"><a href="#fn3"><sup>3</sup></a></span>,Uniform Resource Locator)。</p>
 <h3 id="url组成"><span class="header-section-number">10.1.2</span> URL组成</h3>
 <p>网址算是URL的一个俗称，让我们来看看一个URL的组成，以HTTP版IOT中的URL为例。</p>
 <p><code>http://b.phodal.com/athome/1</code></p>
@@ -1592,7 +1608,7 @@ a process or set of rules to be followed in calculations or other problem-solvin
     <span class="st">&quot;led1&quot;</span>: <span class="dv">0</span>
   }
 ]</code></pre>
-<p>只是我们看到的是结果，忽略了这其中的过程，于是我们用curl<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>命令来看看详细的情况。</p>
+<p>只是我们看到的是结果，忽略了这其中的过程，于是我们用curl<span id="fnref4"><a href="#fn4"><sup>4</sup></a></span>命令来看看详细的情况。</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">curl</span> -I -s http://b.phodal.com/athome/1.json</code></pre>
 <p>出于某种原因考虑，删去了其中一些元素，剩下下面这些。</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">HTTP/1.1</span> 200 OK
@@ -1714,7 +1730,8 @@ Content-Type: application/json
 <h2 id="设计restful-uri"><span class="header-section-number">11.4</span> 设计RESTful URI</h2>
 <h2 id="json"><span class="header-section-number">11.5</span> JSON</h2>
 <div class="figure">
-<img src="./images/xml-vs-json.png" alt="xml-vs-json" /><p class="caption">xml-vs-json</p>
+<img src="./images/xml-vs-json.png" alt="xml-vs-json" />
+<p>xml-vs-json</p>
 </div>
 <h1 id="rest服务准备"><span class="header-section-number">12</span> REST服务准备</h1>
 <h2 id="laravel"><span class="header-section-number">12.1</span> Laravel</h2>
@@ -2161,7 +2178,8 @@ Content-Type: application/json
 <span class="ot">&lt;/html</span>&gt;</code></pre>
 <p>效果图:</p>
 <div class="figure">
-<img src="./images/edit.png" alt="Blade Edit" /><p class="caption">Blade Edit</p>
+<img src="./images/edit.png" alt="Blade Edit" />
+<p>Blade Edit</p>
 </div>
 <p>最后效果见:<a href="http://b.phodal.com/" class="uri">http://b.phodal.com/</a></p>
 <h1 id="restful-evertywhere"><span class="header-section-number">14</span> RESTful Evertywhere</h1>
@@ -2239,7 +2257,8 @@ r = requests.put(url, data)
 </ul>
 <p>在这里只需将需要处理的数据存储到数组中，便可以将其渲染成为图形，下面的温度走势图便是基于Highcharts的结果:</p>
 <div class="figure">
-<img src="./images/temperture.png" alt="Temperture" /><p class="caption">Temperture</p>
+<img src="./images/temperture.png" alt="Temperture" />
+<p>Temperture</p>
 </div>
 <h1 id="构建基于coap协议的物联网系统"><span class="header-section-number">16</span> 构建基于CoAP协议的物联网系统</h1>
 <h2 id="coap-嵌入式系统的rest"><span class="header-section-number">16.1</span> CoAP: 嵌入式系统的REST</h2>
@@ -2300,7 +2319,7 @@ r = requests.put(url, data)
 <span class="kw">Copyright</span> (C) <span class="kw">2010--2013</span> Olaf Bergmann <span class="kw">&lt;</span>bergmann@tzi.org<span class="kw">&gt;</span></code></pre>
 <h3 id="firefox-copper"><span class="header-section-number">16.2.3</span> Firefox Copper</h3>
 <p>为了能访问<a href="coap://localhost/" class="uri">coap://localhost/</a>，于是我们便需要安装一个Firefox并安装一个名为Copper的插件。</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li><p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/" class="uri">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p></li>
 <li><p>作为测试我们同样可以访问 <a href="coap://vs0.inf.ethz.ch:5683/" class="uri">coap://vs0.inf.ethz.ch:5683/</a></p></li>
 </ol>
@@ -2620,6 +2639,12 @@ r = requests.put(url, data)
 </table>
 <p>而在CoAP中只有简单地几个</p>
 <table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Media type</th>
@@ -2839,11 +2864,21 @@ client = <span class="ot">mqtt</span>.<span class="fu">createClient</span>(<span
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>https://zh.opensuse.org/index.php?title=%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86&amp;variant=zh<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>形如http://www.phodal.com<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>URL 是 URI 的子集<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>curl是利用URL语法在命令行方式下工作的开源文件传输工具。<a href="#fnref4">↩</a></p></li>
+<li><div id="fn1">
+
+</div>
+<p>https://zh.opensuse.org/index.php?title=%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86&amp;variant=zh<a href="#fnref1">↩</a></p></li>
+<li><div id="fn2">
+
+</div>
+<p>形如http://www.phodal.com<a href="#fnref2">↩</a></p></li>
+<li><div id="fn3">
+
+</div>
+<p>URL 是 URI 的子集<a href="#fnref3">↩</a></p></li>
+<li><div id="fn4">
+
+</div>
+<p>curl是利用URL语法在命令行方式下工作的开源文件传输工具。<a href="#fnref4">↩</a></p></li>
 </ol>
 </div>
-</body>
-</html>
