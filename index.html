@@ -52,11 +52,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 			</tr>
 		</table>
 		毕业论文:<a href="http://designiot.phodal.com/iot.html" title="基于REST服务的最小物联网系统设计">基于REST服务的最小物联网系统设计</a>
-<p><strong>下载PDF版</strong>:<a href="http://designiot.phodal.com/build/iot.pdf">http://designiot.phodal.com/build/iot.pdf</a></p>
-
-<p><strong>下载EPUB版</strong>:<a href="http://designiot.phodal.com/build/designiot.epub">http://designiot.phodal.com/build/designiot.epub</a></p>
-<p><strong>下载MOBI版</strong>:<a href="http://designiot.phodal.com/build/designiot.mobi">http://designiot.phodal.com/build/designiot.mobi</a></p>
-
+		<p><strong>下载PDF版</strong>:<a href="http://designiot.phodal.com/build/iot.pdf">http://designiot.phodal.com/build/iot.pdf</a></p>
+		<p><strong>下载EPUB版</strong>:<a href="http://designiot.phodal.com/build/designiot.epub">http://designiot.phodal.com/build/designiot.epub</a></p>
+		<p><strong>下载MOBI版</strong>:<a href="http://designiot.phodal.com/build/designiot.mobi">http://designiot.phodal.com/build/designiot.mobi</a></p>
 		<h2>一步步搭建物联网系统</h2>
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -188,6 +186,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#判断是否是-restful的约束条件"><span class="toc-section-number">11.2</span> 判断是否是 RESTful的约束条件</a></li>
 <li><a href="#设计restful资源"><span class="toc-section-number">11.3</span> 设计RESTful资源</a></li>
 <li><a href="#设计restful-uri"><span class="toc-section-number">11.4</span> 设计RESTful URI</a></li>
+<li><a href="#json"><span class="toc-section-number">11.5</span> JSON</a></li>
 </ul></li>
 <li><a href="#rest服务准备"><span class="toc-section-number">12</span> REST服务准备</a><ul>
 <li><a href="#laravel"><span class="toc-section-number">12.1</span> Laravel</a><ul>
@@ -225,11 +224,13 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 </ul></li>
 <li><a href="#前端显示"><span class="toc-section-number">15</span> 前端显示</a><ul>
-<li><a href="#jquery-mobile"><span class="toc-section-number">15.1</span> jQuery Mobile</a></li>
-<li><a href="#bootstrap"><span class="toc-section-number">15.2</span> Bootstrap</a></li>
-<li><a href="#库与车轮子"><span class="toc-section-number">15.3</span> 库与车轮子</a></li>
-<li><a href="#网站前台显示"><span class="toc-section-number">15.4</span> 网站前台显示</a><ul>
-<li><a href="#highchart"><span class="toc-section-number">15.4.1</span> Highchart</a></li>
+<li><a href="#库与车轮子"><span class="toc-section-number">15.1</span> 库与车轮子</a></li>
+<li><a href="#库"><span class="toc-section-number">15.2</span> 库</a><ul>
+<li><a href="#jquery-mobile"><span class="toc-section-number">15.2.1</span> jQuery Mobile</a></li>
+<li><a href="#bootstrap"><span class="toc-section-number">15.2.2</span> Bootstrap</a></li>
+</ul></li>
+<li><a href="#网站前台显示"><span class="toc-section-number">15.3</span> 网站前台显示</a><ul>
+<li><a href="#highcharts"><span class="toc-section-number">15.3.1</span> Highcharts</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#构建基于coap协议的物联网系统"><span class="toc-section-number">16</span> 构建基于CoAP协议的物联网系统</a><ul>
@@ -255,9 +256,13 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#mqtt"><span class="toc-section-number">17</span> MQTT</a><ul>
 <li><a href="#nodejs-mqtt"><span class="toc-section-number">17.1</span> Nodejs MQTT</a></li>
 </ul></li>
+<li><a href="#尾声"><span class="toc-section-number">18</span> 尾声</a><ul>
+<li><a href="#路"><span class="toc-section-number">18.1</span> 路</a></li>
+<li><a href="#其他-2"><span class="toc-section-number">18.2</span> 其他</a></li>
+</ul></li>
 </ul>
 </div>
-<p><img src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="cc" />本作品采用<a href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。</p>
+<p>本作品采用<a href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。<img src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="cc" /></p>
 <p>© 2014 <a href="http://www.phodal.com">Phodal Huang</a>.</p>
 <h1 id="前言"><span class="header-section-number">1</span> 前言</h1>
 <p>设计物联网系统是一种有意思的事情，我们需要考虑到软件、硬件、通讯等等不同的几个方案。探索不同的语言，不同的框架，形成不同的解决方案。</p>
@@ -1632,6 +1637,21 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>4xx客户端错误</li>
 <li>5xx服务器错误</li>
 </ul>
+<p>如</p>
+<ul>
+<li>200 ok - 成功返回状态，对应，GET,PUT,PATCH,DELETE.</li>
+<li>201 created - 成功创建。</li>
+<li>304 not modified - HTTP缓存有效。</li>
+<li>400 bad request - 请求格式错误。</li>
+<li>401 unauthorized - 未授权。</li>
+<li>403 forbidden - 鉴权成功，但是该用户没有权限。</li>
+<li>404 not found - 请求的资源不存在</li>
+<li>405 method not allowed - 该http方法不被允许。</li>
+<li>410 gone - 这个url对应的资源现在不可用。</li>
+<li>415 unsupported media type - 请求类型错误。</li>
+<li>422 unprocessable entity - 校验错误时用。</li>
+<li>429 too many request - 请求过多。</li>
+</ul>
 <h4 id="http响应-响应报头"><span class="header-section-number">10.2.1.2</span> HTTP响应 响应报头</h4>
 <p>在这次响应中，返回了两个报头，即</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Content-Type</span>: application/json
@@ -1641,7 +1661,11 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <p>Content-Type是最重要的报头。</p>
 <h4 id="http响应-响应正文"><span class="header-section-number">10.2.1.3</span> HTTP响应 响应正文</h4>
 <p>正文才是我们真正想要的内容，上面的都是写给浏览器看的，一般的人不会去关注这些。</p>
-<pre class="sourceCode javascript"><code class="sourceCode javascript">[{<span class="st">&quot;id&quot;</span>:<span class="dv">1</span>,<span class="st">&quot;temperature&quot;</span>:<span class="dv">19</span>,<span class="st">&quot;sensors1&quot;</span>:<span class="dv">31</span>,<span class="st">&quot;sensors2&quot;</span>:<span class="fl">7.5</span>,<span class="st">&quot;led1&quot;</span>:<span class="dv">0</span>}]</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">HTTP/<span class="fl">1.1</span> <span class="dv">200</span> OK
+Server: <span class="ot">phodal</span>.<span class="fu">com</span>/<span class="fl">0.17.5</span>
+Content-Type: application/json
+
+[{<span class="st">&quot;id&quot;</span>:<span class="dv">1</span>,<span class="st">&quot;temperature&quot;</span>:<span class="dv">19</span>,<span class="st">&quot;sensors1&quot;</span>:<span class="dv">31</span>,<span class="st">&quot;sensors2&quot;</span>:<span class="fl">7.5</span>,<span class="st">&quot;led1&quot;</span>:<span class="dv">0</span>}]</code></pre>
 <p>通常这是以某种格式写的，在这里是以JSON写的，而对于一个网站的时候则是HTML，如:</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
 <span class="kw">&lt;head&gt;</span>
@@ -1701,6 +1725,10 @@ a process or set of rules to be followed in calculations or other problem-solvin
 </ul>
 <h2 id="设计restful资源"><span class="header-section-number">11.3</span> 设计RESTful资源</h2>
 <h2 id="设计restful-uri"><span class="header-section-number">11.4</span> 设计RESTful URI</h2>
+<h2 id="json"><span class="header-section-number">11.5</span> JSON</h2>
+<div class="figure">
+<img src="./images/xml-vs-json.png" alt="xml-vs-json" /><p class="caption">xml-vs-json</p>
+</div>
 <h1 id="rest服务准备"><span class="header-section-number">12</span> REST服务准备</h1>
 <h2 id="laravel"><span class="header-section-number">12.1</span> Laravel</h2>
 <blockquote>
@@ -1921,31 +1949,24 @@ a process or set of rules to be followed in calculations or other problem-solvin
 }</code></pre>
 <p>如果你想要的只是控制器Athomes的代码的话。。</p>
 <pre class="sourceCode php"><code class="sourceCode php"><span class="kw">class</span> AthomesController <span class="kw">extends</span> \BaseController {
-
     <span class="kw">public</span> <span class="kw">$restful</span>=<span class="kw">true</span><span class="ot">;</span>
-
     <span class="kw">protected</span> <span class="kw">$athome</span><span class="ot">;</span>
-
     <span class="kw">public</span> <span class="kw">function</span> <span class="fu">__construct</span><span class="ot">(</span>Athomes <span class="kw">$athome</span><span class="ot">)</span>
     {
         <span class="kw">$this</span>---&gt;athome = <span class="kw">$athome</span> <span class="ot">;</span>
      }
-
     <span class="kw">public</span> <span class="kw">function</span> index<span class="ot">()</span>
     {
         <span class="kw">$maxid</span>=Athomes::all<span class="ot">();</span>
         <span class="kw">return</span> Response::json<span class="ot">(</span><span class="kw">$maxid</span><span class="ot">);</span>
     }
-
     <span class="kw">public</span> <span class="kw">function</span> create<span class="ot">()</span>
     {
         <span class="kw">$maxid</span>=Athomes::<span class="fu">max</span><span class="ot">(</span><span class="st">&#39;id&#39;</span><span class="ot">);</span>
         <span class="kw">return</span> View::make<span class="ot">(</span><span class="st">&#39;athome.create&#39;</span><span class="ot">)</span>-&gt;with<span class="ot">(</span><span class="st">&#39;maxid&#39;</span><span class="ot">,</span><span class="kw">$maxid</span><span class="ot">);</span>
     }
-
     <span class="kw">public</span> <span class="kw">function</span> store<span class="ot">()</span>
     {
-
         <span class="kw">$rules</span> = <span class="fu">array</span><span class="ot">(</span>
             <span class="st">&#39;led1&#39;</span>=&gt;<span class="st">&#39;required&#39;</span><span class="ot">,</span>
             <span class="st">&#39;sensors1&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span><span class="ot">,</span>
@@ -1953,7 +1974,6 @@ a process or set of rules to be followed in calculations or other problem-solvin
             <span class="st">&#39;temperature&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span>
         <span class="ot">);</span>
         <span class="kw">$validator</span> = Validator::make<span class="ot">(</span>Input::all<span class="ot">(),</span> <span class="kw">$rules</span><span class="ot">);</span>
-
         <span class="kw">if</span> <span class="ot">(</span><span class="kw">$validator</span>-&gt;fails<span class="ot">())</span> {
             <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome/create&#39;</span><span class="ot">)</span>
                 -&gt;withErrors<span class="ot">(</span><span class="kw">$validator</span><span class="ot">)</span>
@@ -1965,12 +1985,10 @@ a process or set of rules to be followed in calculations or other problem-solvin
             <span class="kw">$nerd</span>-&gt;temperature    = Input::get<span class="ot">(</span><span class="st">&#39;temperature&#39;</span><span class="ot">);</span>
             <span class="kw">$nerd</span>-&gt;led1           = Input::get<span class="ot">(</span><span class="st">&#39;led1&#39;</span><span class="ot">);</span>
             <span class="kw">$nerd</span>-&gt;save<span class="ot">();</span>
-
             Session::flash<span class="ot">(</span><span class="st">&#39;message&#39;</span><span class="ot">,</span> <span class="st">&#39;Successfully created athome!&#39;</span><span class="ot">);</span>
             <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
         }
     }
-
     <span class="kw">public</span> <span class="kw">function</span> show<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>
     {
         <span class="kw">$myid</span>=Athomes::find<span class="ot">(</span><span class="kw">$id</span><span class="ot">);</span>
@@ -1979,18 +1997,14 @@ a process or set of rules to be followed in calculations or other problem-solvin
                         -&gt;get<span class="ot">();</span>
         <span class="kw">return</span> Response::json<span class="ot">(</span><span class="kw">$maxid</span><span class="ot">);</span>
     }
-
     <span class="kw">public</span> <span class="kw">function</span> edit<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>
     {
         <span class="kw">$athome</span> = Athomes::find<span class="ot">(</span><span class="kw">$id</span><span class="ot">);</span>
-
         <span class="kw">return</span> View::make<span class="ot">(</span><span class="st">&#39;athome.edit&#39;</span><span class="ot">)</span>
             -&gt;with<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">,</span> <span class="kw">$athome</span><span class="ot">);</span>
     }
-
     <span class="kw">public</span> <span class="kw">function</span> update<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>
     {
-
         <span class="kw">$rules</span> = <span class="fu">array</span><span class="ot">(</span>
             <span class="st">&#39;led1&#39;</span>=&gt;<span class="st">&#39;required|&#39;</span><span class="ot">,</span>
             <span class="st">&#39;sensors1&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span><span class="ot">,</span>
@@ -1998,7 +2012,6 @@ a process or set of rules to be followed in calculations or other problem-solvin
             <span class="st">&#39;temperature&#39;</span> =&gt; <span class="st">&#39;required|numeric|Min:-50|Max:80&#39;</span>
         <span class="ot">);</span>
         <span class="kw">$validator</span> = Validator::make<span class="ot">(</span>Input::all<span class="ot">(),</span> <span class="kw">$rules</span><span class="ot">);</span>
-
         <span class="kw">if</span> <span class="ot">(</span><span class="kw">$validator</span>-&gt;fails<span class="ot">())</span> {
             <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome/&#39;</span> . <span class="kw">$id</span> . <span class="st">&#39;/edit&#39;</span><span class="ot">)</span>
                 -&gt;withErrors<span class="ot">(</span><span class="kw">$validator</span><span class="ot">);</span>
@@ -2009,26 +2022,21 @@ a process or set of rules to be followed in calculations or other problem-solvin
             <span class="kw">$nerd</span>-&gt;temperature    = Input::get<span class="ot">(</span><span class="st">&#39;temperature&#39;</span><span class="ot">);</span>
             <span class="kw">$nerd</span>-&gt;led1           = Input::get<span class="ot">(</span><span class="st">&#39;led1&#39;</span><span class="ot">);</span>
             <span class="kw">$nerd</span>-&gt;save<span class="ot">();</span>
-
             Session::flash<span class="ot">(</span><span class="st">&#39;message&#39;</span><span class="ot">,</span> <span class="st">&#39;Successfully created athome!&#39;</span><span class="ot">);</span>
             <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
         }
     }
-
     <span class="kw">public</span> <span class="kw">function</span> destroy<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>
     {
-
         <span class="kw">$athome</span> = Athomes::find<span class="ot">(</span><span class="kw">$id</span><span class="ot">);</span>
         <span class="kw">$athome</span>-&gt;delete<span class="ot">();</span>
         <span class="kw">if</span><span class="ot">(</span><span class="fu">is_null</span><span class="ot">(</span><span class="kw">$athome</span><span class="ot">))</span>
         {
              <span class="kw">return</span> Response::json<span class="ot">(</span><span class="st">&#39;Todo not found&#39;</span><span class="ot">,</span> <span class="dv">404</span><span class="ot">);</span>
         }
-
         Session::flash<span class="ot">(</span><span class="st">&#39;message&#39;</span><span class="ot">,</span> <span class="st">&#39;Successfully deleted the nerd!&#39;</span><span class="ot">);</span>
         <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
     }
-
 }</code></pre>
 <p>希望你能读懂，没有的话，继续。</p>
 <p>下面这部分来自于之前的博客，这里就不多加论述了。 这个也就是我们要的模板，</p>
@@ -2061,23 +2069,18 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;row-fluid&quot;</span><span class="kw">&gt;</span>
   {{ HTML::ul($errors-&gt;all()) }}
   {{ Form::open(array(&#39;url&#39; =&gt; &#39;athome&#39;)) }}
-
      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
           {{ Form::label(&#39;led1&#39;, &#39;开关1&#39;) }}
           {{ Form::select(&#39;led1&#39;,array(&#39;关&#39;,&#39;开&#39;),$selected=NULL,array(&#39;class&#39;=&gt;&#39;selectpicker&#39;)) }}
-
       <span class="kw">&lt;/div&gt;</span>
-
       <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
           {{ Form::label(&#39;sensors1&#39;, &#39;sensors1&#39;) }}
           {{ Form::text(&#39;sensors1&#39;, Input::old(&#39;sensors1&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
       <span class="kw">&lt;/div&gt;</span>
-
       <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
           {{ Form::label(&#39;sensors2&#39;, &#39;sensors2&#39;) }}
           {{ Form::text(&#39;sensors2&#39;, Input::old(&#39;sensors2&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
       <span class="kw">&lt;/div&gt;</span>
-
       <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;form-group&quot;</span><span class="kw">&gt;</span>
           {{ Form::label(&#39;temperature&#39;, &#39;temperature&#39;) }}
           {{ Form::text(&#39;temperature&#39;, Input::old(&#39;temperature&#39;), array(&#39;class&#39; =&gt; &#39;form-control&#39;)) }}
@@ -2109,7 +2112,6 @@ a process or set of rules to be followed in calculations or other problem-solvin
         <span class="kw">$nerd</span>-&gt;temperature    = Input::get<span class="ot">(</span><span class="st">&#39;temperature&#39;</span><span class="ot">);</span>
         <span class="kw">$nerd</span>-&gt;led1            = Input::get<span class="ot">(</span><span class="st">&#39;led1&#39;</span><span class="ot">);</span>
         <span class="kw">$nerd</span>-&gt;save<span class="ot">();</span>
-
         Session::flash<span class="ot">(</span><span class="st">&#39;message&#39;</span><span class="ot">,</span> <span class="st">&#39;Successfully created athome!&#39;</span><span class="ot">);</span>
         <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
     }
@@ -2223,18 +2225,19 @@ data = {<span class="st">&quot;temperature&quot;</span>: <span class="dv">19</sp
 r = requests.put(url, data)
 <span class="dt">print</span> r.text</code></pre>
 <h1 id="前端显示"><span class="header-section-number">15</span> 前端显示</h1>
-<h2 id="jquery-mobile"><span class="header-section-number">15.1</span> jQuery Mobile</h2>
+<h2 id="库与车轮子"><span class="header-section-number">15.1</span> 库与车轮子</h2>
+<p>在多数的情况下我们都没有理由也没有必要去重新发明我们的车轮，在这时使用库会是一个比较好的做法。</p>
+<h2 id="库"><span class="header-section-number">15.2</span> 库</h2>
+<h3 id="jquery-mobile"><span class="header-section-number">15.2.1</span> jQuery Mobile</h3>
 <blockquote>
 <p>jQuery Mobile是jQuery 在手机上和平板设备上的版本。jQuery Mobile不仅会给主流移动平台带来jQuery核心库，而且会发布一个完整统一的jQuery移动UI框架。支持全球主流的移动平台。jQuery Mobile开发团队说：能开发这个项目，我们非常兴奋。移动Web太需要一个跨浏览器的框架，让开发人员开发出真正的移动Web网站。</p>
 </blockquote>
-<h2 id="bootstrap"><span class="header-section-number">15.2</span> Bootstrap</h2>
+<h3 id="bootstrap"><span class="header-section-number">15.2.2</span> Bootstrap</h3>
 <blockquote>
 <p>Bootstrap是Twitter推出的一个开源的用于前端开发的工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。Bootstrap一经推出后颇受欢迎，一直是GitHub上的热门开源项目，包括NASA的MSNBC（微软全国广播公司）的Breaking News都使用了该项目。</p>
 </blockquote>
-<h2 id="库与车轮子"><span class="header-section-number">15.3</span> 库与车轮子</h2>
-<p>在多数的情况下我们都没有理由也没有必要去重新发明我们的车轮，在这时使用库会是一个比较好的做法。</p>
-<h2 id="网站前台显示"><span class="header-section-number">15.4</span> 网站前台显示</h2>
-<h3 id="highchart"><span class="header-section-number">15.4.1</span> Highchart</h3>
+<h2 id="网站前台显示"><span class="header-section-number">15.3</span> 网站前台显示</h2>
+<h3 id="highcharts"><span class="header-section-number">15.3.1</span> Highcharts</h3>
 <p>Highcharts有以下的特点</p>
 <ul>
 <li>兼容性：兼容当今所有的浏览器，包括 iPhone、IE 和火狐等等；</li>
@@ -2273,41 +2276,41 @@ r = requests.put(url, data)
 </ul>
 <h3 id="node-coap-cli"><span class="header-section-number">16.2.1</span> Node CoAP CLI</h3>
 <p>安装命令如下</p>
-<pre><code> npm install coap-cli -g </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"> <span class="kw">npm</span> install coap-cli -g </code></pre>
 <h4 id="coap命令行"><span class="header-section-number">16.2.1.1</span> CoAP命令行</h4>
 <p>在coap-cli中，一共有四个方法。分别表示REST的四种不同的方式:</p>
-<pre><code>Commands:
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Commands</span>:
 
-get                    performs a GET request
-put                    performs a PUT request
-post                   performs a POST request
-delete                 performs a DELETE request</code></pre>
+<span class="kw">get</span>                    performs a GET request
+<span class="kw">put</span>                    performs a PUT request
+<span class="kw">post</span>                   performs a POST request
+<span class="kw">delete</span>                 performs a DELETE request</code></pre>
 <p>在这里，我们用<a href="coap://vs0.inf.ethz.ch/" class="uri">coap://vs0.inf.ethz.ch/</a>来作一个简单的测试</p>
-<pre><code>coap get coap://vs0.inf.ethz.ch/
-(2.05)  ************************************************************
-I-D</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span> get coap://vs0.inf.ethz.ch/
+<span class="kw">(2.05)</span>  <span class="kw">************************************************************</span>
+<span class="kw">I-D</span></code></pre>
 <p>测试一下现在的最小的物联网系统CoAP版</p>
-<pre><code>coap get coap://iot-coap.phodal.com/id/1
-(2.05)  [{&quot;id&quot;:1,&quot;value&quot;:&quot;is id 1&quot;,&quot;sensors1&quot;:19,&quot;sensors2&quot;:20}]</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span> get coap://iot-coap.phodal.com/id/1
+<span class="kw">(2.05)</span>  [{<span class="st">&quot;id&quot;</span>:<span class="kw">1</span>,<span class="st">&quot;value&quot;</span>:<span class="st">&quot;is id 1&quot;</span>,<span class="st">&quot;sensors1&quot;</span>:19,<span class="st">&quot;sensors2&quot;</span>:20}]</code></pre>
 <h3 id="libcoap"><span class="header-section-number">16.2.2</span> libcoap</h3>
 <h4 id="mac-os-libcoap安装"><span class="header-section-number">16.2.2.1</span> mac os libcoap安装</h4>
 <p>Mac OS下可以直接用</p>
-<pre><code>brew install libcoap</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">brew</span> install libcoap</code></pre>
 <h4 id="ubuntu-libcoap安装"><span class="header-section-number">16.2.2.2</span> Ubuntu libcoap安装</h4>
 <p>Ubuntu GNU/Linux下</p>
 <h4 id="windows-libcoap安装"><span class="header-section-number">16.2.2.3</span> Windows libcoap安装</h4>
 <p>Windows 下</p>
 <p>安装完libcoap，我们可以直接用自带的两个命令</p>
-<pre><code>coap-client 
-coap-server</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap-client</span> 
+<span class="kw">coap-server</span></code></pre>
 <p>1.用coap-server启一个CoAP服务</p>
-<pre><code> coap-server</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap-server</span></code></pre>
 <p>2.客户端获取数据</p>
-<pre><code>coap-client -m get coap://localhost</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap-client</span> -m get coap://localhost</code></pre>
 <p>返回结果</p>
-<pre><code>v:1 t:0 tkl:0 c:1 id:37109
-This is a test server made with libcoap (see http://libcoap.sf.net) 
-Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">v</span>:1 t:0 tkl:0 c:1 id:37109
+<span class="kw">This</span> is a test server made with libcoap (see http://libcoap.sf.net) 
+<span class="kw">Copyright</span> (C) <span class="kw">2010--2013</span> Olaf Bergmann <span class="kw">&lt;</span>bergmann@tzi.org<span class="kw">&gt;</span></code></pre>
 <h3 id="firefox-copper"><span class="header-section-number">16.2.3</span> Firefox Copper</h3>
 <p>为了能访问<a href="coap://localhost/" class="uri">coap://localhost/</a>，于是我们便需要安装一个Firefox并安装一个名为Copper的插件。</p>
 <ol style="list-style-type: decimal">
@@ -2327,9 +2330,9 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
   }
 }</code></pre>
 <p>接着执行</p>
-<pre><code>npm install</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">npm</span> install</code></pre>
 <p>就可以安装好这个库。如果遇到权限问题，请用</p>
-<pre><code>sudo npm install</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> npm install</code></pre>
 <p>接着，创建这样一个app.js</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap        = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>)
     , server  = <span class="ot">coap</span>.<span class="fu">createServer</span>()
@@ -2342,7 +2345,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
   <span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&#39;server started&#39;</span>)
 })  </code></pre>
 <p>执行</p>
-<pre><code>node app.js</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">node</span> app.js</code></pre>
 <p>便可以在浏览器上访问了，因为现在什么也没有，所以什么也不会返回。</p>
 <p>接着下来再创建一个client端的js，并运行之</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap  = <span class="fu">require</span>(<span class="st">&#39;coap&#39;</span>) 
@@ -2354,7 +2357,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 
 <span class="ot">req</span>.<span class="fu">end</span>()</code></pre>
 <p>就可以在console上输出</p>
-<pre><code>Hello World </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Hello</span> World </code></pre>
 <p>也就达到了我们的目的，用CoAP协议创建一个服务，接着我们应该用它创建更多的东西，如产生JSON数据，以及RESTful。和HTTP版的最小物联网系统一样，CoAP版的最小物联网系统也是要返回JSON的。</p>
 <h2 id="coap-数据库查询"><span class="header-section-number">16.4</span> CoAP 数据库查询</h2>
 <h3 id="node-module"><span class="header-section-number">16.4.1</span> Node Module</h3>
@@ -2392,7 +2395,6 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>而之前所提到的url查询所做的事情便是</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">DBHelper</span>.<span class="fu">urlQueryData</span> = <span class="kw">function</span> (url, callback) {
     <span class="kw">var</span> db = <span class="kw">new</span> <span class="ot">sqlite3</span>.<span class="fu">Database</span>(<span class="st">&quot;iot.db&quot;</span>);
-
     <span class="kw">var</span> result = [];
     <span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;SELECT * FROM basic where &quot;</span> + <span class="ot">url</span>.<span class="fu">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">1</span>] + <span class="st">&quot;=&quot;</span> + <span class="ot">url</span>.<span class="fu">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">2</span>]);
     <span class="ot">db</span>.<span class="fu">all</span>(<span class="st">&quot;SELECT * FROM basic where &quot;</span> + <span class="ot">url</span>.<span class="fu">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">1</span>] + <span class="st">&quot;=&quot;</span> + <span class="ot">url</span>.<span class="fu">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">2</span>], <span class="kw">function</span>(err, rows) {
@@ -2421,7 +2423,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <span class="ot">req</span>.<span class="fu">end</span>();</code></pre>
 <p>const定义数据的方法，和我们在其他语言中有点像。只是这的const主要是为了程序的健壮型,减少程序出错，当然这不是javascript的用法。</p>
 <p>我们构建了一个请求的URL</p>
-<pre><code> coap://localhost/id/1/</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span>://localhost/id/1/</code></pre>
 <p>我们对我们的请求添加了一个Header，内容是Accept，值是’application/json’也就是JSON格式。接着，便是等待请求回来，再处理返回的内容。</p>
 <p><strong>判断请求的方法</strong></p>
 <p>在这里先把一些无关的代码删除掉，并保证其能工作，so，下面就是简要的逻辑代码。</p>
@@ -2461,7 +2463,6 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>而这里只是调用了</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">DBHelper</span>.<span class="fu">urlQueryData</span> = <span class="kw">function</span> (url, callback) {
     <span class="kw">var</span> db = <span class="kw">new</span> <span class="ot">sqlite3</span>.<span class="fu">Database</span>(config[<span class="st">&quot;db_name&quot;</span>]);
-
     <span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;SELECT * FROM basic where &quot;</span> + <span class="ot">url</span>.<span class="fu">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">1</span>] + <span class="st">&quot;=&quot;</span> + <span class="ot">url</span>.<span class="fu">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">2</span>]);
     <span class="ot">db</span>.<span class="fu">all</span>(<span class="st">&quot;SELECT * FROM basic where &quot;</span> + <span class="ot">url</span>.<span class="fu">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">1</span>] + <span class="st">&quot;=&quot;</span> + <span class="ot">url</span>.<span class="fu">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">2</span>], <span class="kw">function</span>(err, rows) {
         <span class="ot">db</span>.<span class="fu">close</span>();
@@ -2523,7 +2524,7 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
 <p>接着按“,”分开，</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">_</span>.<span class="fu">values</span>(e).<span class="fu">toString</span>().<span class="fu">split</span>(<span class="st">&#39;,&#39;</span>)[<span class="dv">1</span>]</code></pre>
 <p>就有</p>
-<pre><code>[ &#39;1&#39;, &#39;\&#39;must\&#39;&#39;, &#39;23&#39;, &#39;12&#39; ]</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">[</span> <span class="st">&#39;1&#39;</span>, <span class="st">&#39;\&#39;</span>must<span class="dt">\&#39;</span><span class="st">&#39;, &#39;</span>23<span class="st">&#39;, &#39;</span>12<span class="st">&#39; ]</span></code></pre>
 <p>便可以很愉快地将其post到数据库中了，</p>
 <p>在做IoT-CoAP的过程中只支持JSON，查阅CoAP的草稿时发现支持了诸多的Content Types。</p>
 <h3 id="coap-content-types"><span class="header-section-number">16.5.2</span> CoAP Content Types</h3>
@@ -2758,13 +2759,12 @@ Copyright (C) 2010--2013 Olaf Bergmann &lt;bergmann@tzi.org&gt;</code></pre>
         <span class="ot">res</span>.<span class="fu">code</span> = <span class="st">&#39;2.05&#39;</span>;
     }</code></pre>
 <p>请求的是否是JSON格式，再返回一个205，也就是Content，只是这时设计是请求一个URL返回对应的数据。如</p>
-<pre><code> coap://localhost/id/1/</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span>://localhost/id/1/</code></pre>
 <p>这时应该请求的是ID为1的数据，即</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript">[ { <span class="dt">id</span>: <span class="dv">1</span>, <span class="dt">value</span>: <span class="st">&#39;is id 1&#39;</span>, <span class="dt">sensors1</span>: <span class="dv">19</span>, <span class="dt">sensors2</span>: <span class="dv">20</span> }]</code></pre>
 <p>而parse_url只是从数据库从读取相应的数据。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">parse_url</span>(url ,callback) {
     <span class="kw">var</span> db = <span class="kw">new</span> <span class="ot">sqlite3</span>.<span class="fu">Database</span>(config[<span class="st">&quot;db_name&quot;</span>]);
-
     <span class="kw">var</span> result = [];
     <span class="ot">db</span>.<span class="fu">all</span>(<span class="st">&quot;SELECT * FROM basic;&quot;</span>, <span class="kw">function</span>(err, rows) {
         <span class="fu">callback</span>(<span class="ot">JSON</span>.<span class="fu">stringify</span>(rows));
@@ -2844,6 +2844,9 @@ client = <span class="ot">mqtt</span>.<span class="fu">createClient</span>(<span
 });
 
 <span class="ot">client</span>.<span class="fu">end</span>();</code></pre>
+<h1 id="尾声"><span class="header-section-number">18</span> 尾声</h1>
+<h2 id="路"><span class="header-section-number">18.1</span> 路</h2>
+<h2 id="其他-2"><span class="header-section-number">18.2</span> 其他</h2>
 <p>意见及建议: <a href="https://github.com/phodal/designiot/issues" class="uri">https://github.com/phodal/designiot/issues</a></p>
 <p>邮箱: <a href="h@phodal.com" class="uri">h@phodal.com</a></p>
 <div class="footnotes">
