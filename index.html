@@ -1061,6 +1061,9 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
 <p>写博客似乎是一个不错的好习惯，作为一个不是很优秀的写手。对于来说，有时候发现原来能教会别人对于自己的能力来说算是一种肯定。有些时候教会别人才算是自己学会的表现，总会在项目上的时候需要自己去复述工作的一个过程，我们需要整理好我们的思路才能带给别人更多的收获。我们的笔记上总会留下自己的学习的一些过程，有些时候我们想要的只是一点点的鼓励，有时是诸如评论一类，有时可能是诸如访问量。更多的可能是我们可以重新整理自己的知识，好好复习一下，以便于好好记住，写出来是一个好的过程。</p>
 <p>无处不在的三剑客就这样到了这里，写得似乎很多也很少，但是还是没有做出来一个东西，于是我们朝着这样一个方向前进。</p>
 <h1 id="gnulinux"><span class="header-section-number">6</span> GNU/Linux</h1>
+<div class="figure">
+<img src="./images/gnu_linux.png" alt="GNU/Linux" /><p class="caption">GNU/Linux</p>
+</div>
 <h2 id="什么是linux"><span class="header-section-number">6.1</span> 什么是Linux</h2>
 <p>Linux是一种自由和开放源码的类UNIX操作系统内核。目前存在着许多不同的Linux发行版，可安装在各种各样的电脑硬件设备，从手机、平板电脑、路由器和影音游戏控制台，到桌上型电脑，大型电脑和超级电脑。 Linux是一个领先的操作系统内核，世界上运算最快的10台超级电脑运行的都是基于Linux内核的操作系统。</p>
 <p>Linux操作系统也是自由软件和开放源代码发展中最著名的例子。只要遵循GNU通用公共许可证,任何人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布。<strong>严格来讲，Linux这个词本身只表示Linux内核，但在实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU工程各种工具和数据库的操作系统（也被称为GNU/Linux）。</strong>通常情况下，Linux被打包成供桌上型电脑和服务器使用的Linux发行版本。一些流行的主流Linux发行版本，包括Debian（及其衍生版本Ubuntu），Fedora和openSUSE等。Linux得名于电脑业余爱好者Linus Torvalds。</p>
@@ -1080,6 +1083,9 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
 </ul>
 <p>而让我们来看一下两者之间的不同之处，这是一张linux的架构图我们可以发现内核只是位于底层。</p>
 <h3 id="linux架构图"><span class="header-section-number">6.2.1</span> Linux架构图</h3>
+<div class="figure">
+<img src="./images/linux_kernel.jpg" alt="Linux Kernel" /><p class="caption">Linux Kernel</p>
+</div>
 <h4 id="用户模式"><span class="header-section-number">6.2.1.1</span> 用户模式</h4>
 <p>应用程序（sh、<a href="http://zh.wikipedia.org/wiki/Vi" title="Vi">vi</a>、<a href="http://zh.wikipedia.org/wiki/OpenOffice.org" title="OpenOffice.org">OpenOffice.org</a>等）</p>
 <p>复杂<a href="http://zh.wikipedia.org/wiki/%E5%BA%93" title="库">库</a>（<a href="http://zh.wikipedia.org/wiki/KDE" title="KDE">KDE</a>、glib等） 简单库（opendbm、sin等）</p>
@@ -1093,11 +1099,14 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
 <p>我们可以发现，由linux内核+shell可以构成一个操作系统，而linux本身只是个内核，也就是图中的内核模式，负责控制系统的这些部分。也就是我们可以发现，Linux内核构成了一个操作系统除用户界面以外的部分，而shell就是这最后的用户界面。</p>
 <p>而linux内核以外的部分就是由GNU计划构成的。</p>
 <h3 id="shell"><span class="header-section-number">6.2.2</span> Shell</h3>
+<div class="figure">
+<img src="./images/shell.png" alt="Shell" /><p class="caption">Shell</p>
+</div>
 <p>Shell是系统的用户界面，提供了用户与内核进行交互操作的一种接口。它接收用户输入的命令并把它送入内核去执行。</p>
 <p>实际上Shell是一个命令解释器，它解释由用户输入的命令并且把它们送到内核。不仅如此，Shell有自己的编程语言用于对命令的编辑，它允许用户编写由shell命令组成的程序。Shell编程语言具有普通编程语言的很多特点，比如它也有循环结构和分支控制结构等，用这种编程语言编写的Shell程序与其他应用程序具有同样的效果</p>
 <p>bash 是一个为GNU计划编写的Unix shell。它的名字是一系列缩写：Bourne-Again SHell — 这是关于Bourne shell（sh）的一个双关语（Bourne again / born again）。Bourne shell是一个早期的重要shell，由史蒂夫·伯恩在1978年前后编写，并同Version 7 Unix一起发布。bash则在1987年由布莱恩·福克斯创造。在1990年，Chet Ramey成为了主要的维护者。</p>
 <p>shell将会是我们在GNU/linux中经常用到的经常有到的工具之一，用来操作计算机用的。在迁移到linux之前我们可以试用cygwin来进行模拟：</p>
-<p><em>Cygwin是许多<a href="http://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6" title="自由软件">自由软件</a>的集合，最初由<a href="http://zh.wikipedia.org/wiki/Cygnus_Solutions" title="Cygnus Solutions">Cygnus Solutions</a>开发，用于各种版本的<a href="http://zh.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a>上，运行<a href="http://zh.wikipedia.org/wiki/Unix-like" title="Unix-like">UNIX类</a>系统。Cygwin</em></p>
+<p>Cygwin是许多自由软件的集合，最初由Cygnus Solutions开发，用于各种版本的Microsoft Windows上，运行<code>UNIX类</code>系统。</p>
 <h3 id="gcc"><span class="header-section-number">6.2.3</span> GCC</h3>
 <p>GCC（GNU Compiler Collection，GNU编译器套装），是一套由GNU开发的编程语言编译器。它是一套以GPL及LGPL许可证所发行的自由软件，也是GNU计划的关键部分，亦是自由的类Unix及苹果电脑Mac OS X 操作系统的标准编译器。GCC（特别是其中的C语言编译器）也常被认为是跨平台编译器的事实标准。</p>
 <p>GCC原名为GNU C语言编译器（GNU C Compiler），因为它原本只能处理C语言。GCC很快地扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，以及Go与其他语言。</p>
@@ -1395,6 +1404,9 @@ a<span class="ch">[href^=</span><span class="st">&quot;#&quot;</span><span class
     <span class="kw">return</span> <span class="dv">0</span>;
 }</code></pre>
 <h1 id="python"><span class="header-section-number">8</span> Python</h1>
+<div class="figure">
+<img src="./images/python.png" alt="python" /><p class="caption">python</p>
+</div>
 <p>作为一门计算机语言来说，Python会有下面的特点。</p>
 <ul>
 <li>语言学习起来容易</li>
