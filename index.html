@@ -51,11 +51,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 				</td>
 			</tr>
 		</table>
-		毕业论文:<a href="http://designiot.phodal.com/iot.html" title="基于REST服务的最小物联网系统设计">基于REST服务的最小物联网系统设计</a>
-		<p><strong>下载PDF版</strong>:<a href="http://designiot.phodal.com/build/iot.pdf">http://designiot.phodal.com/build/iot.pdf</a></p>
-		<p><strong>下载EPUB版</strong>:<a href="http://designiot.phodal.com/build/designiot.epub">http://designiot.phodal.com/build/designiot.epub</a></p>
-		<p><strong>下载MOBI版</strong>:<a href="http://designiot.phodal.com/build/designiot.mobi">http://designiot.phodal.com/build/designiot.mobi</a></p>
-		<h2>一步步搭建物联网系统</h2>
+		<h1>一步步搭建物联网系统</h1>
+		源自毕业论文:<a href="http://designiot.phodal.com/iot.html" title="基于REST服务的最小物联网系统设计">基于REST服务的最小物联网系统设计</a>
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -167,7 +164,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#geek的盛宴"><span class="toc-section-number">8.5</span> Geek的盛宴</a></li>
 <li><a href="#raspberry-pi-初始化"><span class="toc-section-number">8.6</span> Raspberry Pi 初始化</a></li>
 <li><a href="#raspberry-pi-gpio"><span class="toc-section-number">8.7</span> Raspberry Pi GPIO</a></li>
-<li><a href="#raspberry-pi"><span class="toc-section-number">8.8</span> Raspberry Pi</a></li>
 </ul></li>
 <li><a href="#server"><span class="toc-section-number">9</span> Server</a><ul>
 <li><a href="#服务器"><span class="toc-section-number">9.1</span> 服务器</a></li>
@@ -270,7 +266,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 </ul>
 </div>
-<p>本作品采用<a href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。<img src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="cc" /></p>
+<p>本作品采用<a href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。<img src="./images/88x31.png" alt="cc" /></p>
 <p>© 2014 <a href="http://www.phodal.com">Phodal Huang</a>.</p>
 <h1 id="前言"><span class="header-section-number">1</span> 前言</h1>
 <p>设计物联网系统是一种有意思的事情，需要考虑到软件、硬件、通讯等等不同的几个方案。探索不同的语言，不同的框架，形成不同的解决方案。</p>
@@ -1577,18 +1573,22 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> raspi-config</code></pre>
 <p>选择第一个，下面就可以继续了</p>
 <p><code>Expand Filesystem              Ensures that all of the SD card s</code></p>
+<p>接着重启后，便可以扩展SD卡成功。</p>
+<p>注: Raspbian与一般的Debian系统使用起来区别不是太大(ps:命令上)，由于CPU是不同的架构，在编译上可能有所区别。通常PC上的软件需要重新编译才能在RPi上运行，所以如果可以用apt-get安装的话，就不要自己编译了。</p>
 <h2 id="raspberry-pi-gpio"><span class="header-section-number">8.7</span> Raspberry Pi GPIO</h2>
+<blockquote>
+<p>General Purpose Input Output （通用输入/输出）简称为GPIO，或总线扩展器，利用工业标准I2C、SMBus或SPI接口简化了I/O口的扩展。当微控制器或芯片组没有足够的I/O端口，或当系统需要采用远端串行通信或控制时，GPIO产品能够提供额外的控制和监视功能。</p>
+</blockquote>
 <div class="figure">
 <img src="./images/gpio.png" alt="GPIO" /><p class="caption">GPIO</p>
 </div>
-<h2 id="raspberry-pi"><span class="header-section-number">8.8</span> Raspberry Pi</h2>
 <h1 id="server"><span class="header-section-number">9</span> Server</h1>
 <h2 id="服务器"><span class="header-section-number">9.1</span> 服务器</h2>
 <p>服务器（Server）指：</p>
 <ul>
-<li><p>一个管理资源并为用户提供服务的计算机软件，通常分为文件服务器（能使用户在其它计算机访问文件），数据库服务器和应用程序服务器。</p></li>
-<li><p>运行以上软件的计算机，或称为网络主机（Host）。</p></li>
-<li><p>一般来说，服务器通过网络对外提供服务。可以通过Intranet对内网提供服务，也可以通过Internet对外提供服务。</p></li>
+<li>一个管理资源并为用户提供服务的计算机软件，通常分为文件服务器（能使用户在其它计算机访问文件），数据库服务器和应用程序服务器。</li>
+<li>运行以上软件的计算机，或称为网络主机（Host）。</li>
+<li>一般来说，服务器通过网络对外提供服务。可以通过Intranet对内网提供服务，也可以通过Internet对外提供服务。</li>
 </ul>
 <h2 id="web服务器"><span class="header-section-number">9.2</span> Web服务器</h2>
 <p>WEB服务器也称为WWW(WORLD WIDE WEB)服务器，主要功能是提供网上信息浏览服务。 WWW 是 Internet的多媒体信息查询工具，是 Internet 上近年才发展起来的服务，也是发展最快和目前用的最广泛的服务。正是因为有了WWW工具，才使得近年来 Internet 迅速发展，且用户数量飞速增长。</p>
