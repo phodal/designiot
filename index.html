@@ -261,12 +261,24 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#coap-json"><span class="toc-section-number">18.6</span> CoAP JSON</a></li>
 <li><a href="#使用iot-coap构建物联网"><span class="toc-section-number">18.7</span> 使用IoT-CoAP构建物联网</a></li>
 </ul></li>
-<li><a href="#硬件"><span class="toc-section-number">19</span> 硬件</a><ul>
-<li><a href="#串口通信-1"><span class="toc-section-number">19.1</span> 串口通信</a></li>
+<li><a href="#简单物联网"><span class="toc-section-number">19</span> 简单物联网</a><ul>
+<li><a href="#硬件通信"><span class="toc-section-number">19.1</span> 硬件通信</a><ul>
+<li><a href="#串口通信-1"><span class="toc-section-number">19.1.1</span> 串口通信</a></li>
+<li><a href="#i2c通信"><span class="toc-section-number">19.1.2</span> I2C通信</a></li>
 </ul></li>
-<li><a href="#尾声"><span class="toc-section-number">20</span> 尾声</a><ul>
-<li><a href="#路"><span class="toc-section-number">20.1</span> 路</a></li>
-<li><a href="#其他-2"><span class="toc-section-number">20.2</span> 其他</a></li>
+<li><a href="#硬件"><span class="toc-section-number">19.2</span> 硬件</a><ul>
+<li><a href="#单片机"><span class="toc-section-number">19.2.1</span> 51单片机</a></li>
+<li><a href="#arduino-1"><span class="toc-section-number">19.2.2</span> Arduino</a></li>
+<li><a href="#raspberry-pi-1"><span class="toc-section-number">19.2.3</span> Raspberry Pi</a></li>
+<li><a href="#arm"><span class="toc-section-number">19.2.4</span> ARM</a></li>
+<li><a href="#继电器"><span class="toc-section-number">19.2.5</span> 继电器</a></li>
+</ul></li>
+<li><a href="#连接"><span class="toc-section-number">19.3</span> 连接</a></li>
+</ul></li>
+<li><a href="#android简单示例"><span class="toc-section-number">20</span> Android简单示例</a></li>
+<li><a href="#尾声"><span class="toc-section-number">21</span> 尾声</a><ul>
+<li><a href="#路"><span class="toc-section-number">21.1</span> 路</a></li>
+<li><a href="#其他-2"><span class="toc-section-number">21.2</span> 其他</a></li>
 </ul></li>
 </ul>
 </div>
@@ -2965,15 +2977,81 @@ r = requests.put(url, data)
 <p>show:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span> listening at coap://0.0.0.0:5683
 <span class="kw">restify</span> listening at http://0.0.0.0:8848</code></pre>
-<h1 id="硬件"><span class="header-section-number">19</span> 硬件</h1>
-<p>到这时，我们算搭建了一个简单的REST服务了。</p>
-<p>硬件结构图 <img src="./images/arch.jpeg" alt="Hardware" /></p>
-<p>简单实物图 <img src="./images/hardware.jpg" alt="Hardware" /></p>
-<h2 id="串口通信-1"><span class="header-section-number">19.1</span> 串口通信</h2>
+<h1 id="简单物联网"><span class="header-section-number">19</span> 简单物联网</h1>
+<p>到这时，我们算搭建了一个简单的REST服务了。接着我们可以简单的做一个最小的物联网系统，将我们的单片机、MCU等等连上网。</p>
+<div class="figure">
+<img src="./images/arch.jpeg" alt="硬件结构图" /><p class="caption">硬件结构图</p>
+</div>
+<p>考虑到如果我们只是单一连接各个节点，那么系统的结构图，同下所示</p>
+<div class="figure">
+<img src="./images/fullconnected.png" alt="星形结构图" /><p class="caption">星形结构图</p>
+</div>
+<p>下面的星形结构图类似于我们在接下来所要构建的系统</p>
+<div class="figure">
+<img src="./images/star.png" alt="星形结构图" /><p class="caption">星形结构图</p>
+</div>
+<p>一个用于控制真实电器的硬件实物图</p>
+<div class="figure">
+<img src="./images/hardware.jpg" alt="简单实物图" /><p class="caption">简单实物图</p>
+</div>
+<h2 id="硬件通信"><span class="header-section-number">19.1</span> 硬件通信</h2>
+<h3 id="串口通信-1"><span class="header-section-number">19.1.1</span> 串口通信</h3>
 <p>Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据，Raspberry Pi将资源传于互联网上对应的接口，接口可以在互联网上被访问。Laravel框架构架于服务器之上，将Raspbery Pi获取过来的数据存储于MySQL数 据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问这些设备。Ajax用于将后台的数据以不需要刷新的方式传递到网站前台，通过HighCharts框架显示给终端用户。</p>
-<h1 id="尾声"><span class="header-section-number">20</span> 尾声</h1>
-<h2 id="路"><span class="header-section-number">20.1</span> 路</h2>
-<h2 id="其他-2"><span class="header-section-number">20.2</span> 其他</h2>
+<p>在Linux内核的系统Windows[^windows_com]中虚拟串口用的节点是ttyACM，位于/dev目录下。</p>
+<pre class="sourceCode python"><code class="sourceCode python">    serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)</code></pre>
+<p>串行接口是一种可以将接受来自CPU的并行数据字符转换为连续的串行数据流发送出去， 同时可将接受的串行数据流转换为并行的数据字符供给CPU的器件。一般完成这种功能 的电路，我们称为串行接口电路。</p>
+<p>便是打开这个设备，以9600的速率传输数据。</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> json
+<span class="ch">import</span> urllib2
+<span class="ch">import</span> serial
+<span class="ch">import</span> time
+
+url=<span class="st">&quot;http://www.xianuniversity.com/athome/1&quot;</span>
+
+<span class="kw">while</span> <span class="dv">1</span>:
+    <span class="kw">try</span>:
+        date=urllib2.urlopen(url)
+        result=json.load(date)
+        status=result[<span class="dv">0</span>][<span class="st">&quot;led1&quot;</span>]
+        ser=serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)
+        <span class="kw">if</span> status==<span class="dv">1</span> :
+            ser.write(<span class="st">&quot;1&quot;</span>)
+        <span class="kw">elif</span> status==<span class="dv">0</span>:
+            ser.write(<span class="st">&quot;0&quot;</span>)
+        time.sleep(<span class="dv">1</span>)
+    <span class="kw">except</span> urllib2.URLError:
+        <span class="dt">print</span> <span class="st">&quot;Bad URL or timeout&quot;</span></code></pre>
+<div class="figure">
+<img src="./images/getjson.png" alt="python返回json数据" /><p class="caption">python返回json数据</p>
+</div>
+<p>系统还需要对上面的数据进行处理，只拿其中的结果</p>
+<div class="figure">
+<img src="./images/origin.png" alt="python处理完后的结果" /><p class="caption">python处理完后的结果</p>
+</div>
+<p>当改变led的状态后，便可以得到下面的结果</p>
+<div class="figure">
+<img src="./images/change.png" alt="改变状态后的结果" /><p class="caption">改变状态后的结果</p>
+</div>
+<h3 id="i2c通信"><span class="header-section-number">19.1.2</span> I2C通信</h3>
+<h2 id="硬件"><span class="header-section-number">19.2</span> 硬件</h2>
+<h3 id="单片机"><span class="header-section-number">19.2.1</span> 51单片机</h3>
+<blockquote>
+<p>51单片机是对所有兼容Intel 8031指令系统的单片机的统称。该系列单片机的始祖是Intel的8031单片机，后来随着Flash rom技术的发展，8031单片机取得了长足的进展，成为应用最广泛的8位单片机之一，其代表型号是ATMEL公司的AT89系列，它广泛应用于工业测控系统之中。</p>
+</blockquote>
+<p>这里以51单片机为例的原因是，多数大学课程都是以51单片机为主。</p>
+<h3 id="arduino-1"><span class="header-section-number">19.2.2</span> Arduino</h3>
+<h3 id="raspberry-pi-1"><span class="header-section-number">19.2.3</span> Raspberry Pi</h3>
+<p>对于搭载GNU/Linux系统的RPi来说，这活就比较轻松了。</p>
+<h3 id="arm"><span class="header-section-number">19.2.4</span> ARM</h3>
+<h3 id="继电器"><span class="header-section-number">19.2.5</span> 继电器</h3>
+<blockquote>
+<p>继电器（英文名称：relay）是一种电控制器件，是当输入量（激励量）的变化达到规定要求时，在电气输出电路中使被控量发生预定的阶跃变化的一种电器。它具有控制系统（又称输入回路）和被控制系统（又称输出回路）之间的互动关系。通常应用于自动化的控制电路中，它实际上是用小电流去控制大电流运作的一种“自动开关”。故在电路中起着自动调节、安全保护、转换电路等作用。</p>
+</blockquote>
+<h2 id="连接"><span class="header-section-number">19.3</span> 连接</h2>
+<h1 id="android简单示例"><span class="header-section-number">20</span> Android简单示例</h1>
+<h1 id="尾声"><span class="header-section-number">21</span> 尾声</h1>
+<h2 id="路"><span class="header-section-number">21.1</span> 路</h2>
+<h2 id="其他-2"><span class="header-section-number">21.2</span> 其他</h2>
 <p>意见及建议: <a href="https://github.com/phodal/designiot/issues" class="uri">https://github.com/phodal/designiot/issues</a></p>
 <p>邮箱: <a href="h@phodal.com" class="uri">h@phodal.com</a></p>
 <div class="footnotes">
