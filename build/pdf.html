@@ -133,7 +133,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 <li><a href="#算法"><span class="toc-section-number">8.2</span> 算法</a></li>
 <li><a href="#实用主义哲学"><span class="toc-section-number">8.3</span> 实用主义哲学</a></li>
-<li><a href="#包管理-1"><span class="toc-section-number">8.4</span> 包管理</a></li>
+<li><a href="#包管理-1"><span class="toc-section-number">8.4</span> 包管理</a><ul>
+<li><a href="#python-requests"><span class="toc-section-number">8.4.1</span> python requests</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#raspberry-pi"><span class="toc-section-number">9</span> Raspberry Pi</a><ul>
 <li><a href="#geek的盛宴"><span class="toc-section-number">9.1</span> Geek的盛宴</a></li>
@@ -232,9 +234,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#coap-json"><span class="toc-section-number">18.6</span> CoAP JSON</a></li>
 <li><a href="#使用iot-coap构建物联网"><span class="toc-section-number">18.7</span> 使用IoT-CoAP构建物联网</a></li>
 </ul></li>
-<li><a href="#尾声"><span class="toc-section-number">19</span> 尾声</a><ul>
-<li><a href="#路"><span class="toc-section-number">19.1</span> 路</a></li>
-<li><a href="#其他-2"><span class="toc-section-number">19.2</span> 其他</a></li>
+<li><a href="#硬件"><span class="toc-section-number">19</span> 硬件</a><ul>
+<li><a href="#串口通信-1"><span class="toc-section-number">19.1</span> 串口通信</a></li>
+</ul></li>
+<li><a href="#尾声"><span class="toc-section-number">20</span> 尾声</a><ul>
+<li><a href="#路"><span class="toc-section-number">20.1</span> 路</a></li>
+<li><a href="#其他-2"><span class="toc-section-number">20.2</span> 其他</a></li>
 </ul></li>
 </ul>
 </div>
@@ -1511,11 +1516,35 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>OpenCV : 这是一套计算机视觉库，目前的最新版本已经提供了十分完备的Python接口，能够调用OpenCV中众多的图像处理、模式识别函数直接对NumPy数组进行处理。</li>
 </ul>
 <h2 id="包管理-1"><span class="header-section-number">8.4</span> 包管理</h2>
+<p>关于Python的包管理</p>
 <ul>
 <li>Eggs 格式是 setuptools 引入的一种文件格式，它使用 .egg 扩展名，用于 Python 模块的安装。</li>
 <li>pip 是目前 python 包管理的事实标准，2008年发布。它被用作 easy_install 的替代品，但是它仍有大量的功能建立在 setuptools 组件之上。</li>
 </ul>
-<p>```</p>
+<h3 id="python-requests"><span class="header-section-number">8.4.1</span> python requests</h3>
+<pre><code>Requests 是使用 Apache2 Licensed 许可证的 HTTP 库。用 Python 编写，真正的为人类着想。
+
+Python 标准库中的 urllib2 模块提供了你所需要的大多数 HTTP 功能，但是它的 API太渣了。它是为另一个时代、另一个互联网所创建的。它需要巨量的工作，甚至包括各种方法覆盖，来完成最简单的任务。</code></pre>
+<p>以安装requests为例：</p>
+<p>命令:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> pip install requests</code></pre>
+<p>结果:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Downloading/unpacking</span> requests
+  <span class="kw">Downloading</span> requests-2.4.3-py2.py3-none-any.whl (459kB)<span class="kw">:</span> 459kB downloaded
+<span class="kw">Installing</span> collected packages: requests
+<span class="kw">Successfully</span> installed requests
+<span class="kw">Cleaning</span> up...</code></pre>
+<p>用这个库我们可以做些什么？看看官网的示例:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;&gt;&gt;</span> <span class="kw">import</span> requests
+<span class="kw">&gt;&gt;&gt;</span> <span class="kw">r</span> = requests.get(<span class="st">&#39;https://github.com/timeline.json&#39;</span>)
+<span class="kw">&gt;&gt;&gt;</span> <span class="kw">r.json</span>()</code></pre>
+<p>到现在你会发现我们没有说到任何的Python语法，这不是一本关于Python语法的书，如我们在开头所说的。下面是我们将会在后面用到的代码</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="ch">import</span> requests
+
+url = <span class="st">&quot;http://b.phodal.com/athome/1&quot;</span>
+r = requests.get(url)
+<span class="dt">print</span> r.text</code></pre>
 <h1 id="raspberry-pi"><span class="header-section-number">9</span> Raspberry Pi</h1>
 <div class="figure">
 <img src="./images/rpi.jpg" alt="Raspberry Pi" /><p class="caption">Raspberry Pi</p>
@@ -2909,9 +2938,12 @@ r = requests.put(url, data)
 <p>show:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span> listening at coap://0.0.0.0:5683
 <span class="kw">restify</span> listening at http://0.0.0.0:8848</code></pre>
-<h1 id="尾声"><span class="header-section-number">19</span> 尾声</h1>
-<h2 id="路"><span class="header-section-number">19.1</span> 路</h2>
-<h2 id="其他-2"><span class="header-section-number">19.2</span> 其他</h2>
+<h1 id="硬件"><span class="header-section-number">19</span> 硬件</h1>
+<p>到这时，我们算搭建了一个简单的REST服务了。</p>
+<h2 id="串口通信-1"><span class="header-section-number">19.1</span> 串口通信</h2>
+<h1 id="尾声"><span class="header-section-number">20</span> 尾声</h1>
+<h2 id="路"><span class="header-section-number">20.1</span> 路</h2>
+<h2 id="其他-2"><span class="header-section-number">20.2</span> 其他</h2>
 <p>意见及建议: <a href="https://github.com/phodal/designiot/issues" class="uri">https://github.com/phodal/designiot/issues</a></p>
 <p>邮箱: <a href="h@phodal.com" class="uri">h@phodal.com</a></p>
 <div class="footnotes">

@@ -2967,7 +2967,10 @@ r = requests.put(url, data)
 <span class="kw">restify</span> listening at http://0.0.0.0:8848</code></pre>
 <h1 id="硬件"><span class="header-section-number">19</span> 硬件</h1>
 <p>到这时，我们算搭建了一个简单的REST服务了。</p>
+<p>硬件结构图 <img src="./images/arch.jpeg" alt="Hardware" /></p>
+<p>简单实物图 <img src="./images/hardware.jpg" alt="Hardware" /></p>
 <h2 id="串口通信-1"><span class="header-section-number">19.1</span> 串口通信</h2>
+<p>Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据，Raspberry Pi将资源传于互联网上对应的接口，接口可以在互联网上被访问。Laravel框架构架于服务器之上，将Raspbery Pi获取过来的数据存储于MySQL数 据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问这些设备。Ajax用于将后台的数据以不需要刷新的方式传递到网站前台，通过HighCharts框架显示给终端用户。</p>
 <h1 id="尾声"><span class="header-section-number">20</span> 尾声</h1>
 <h2 id="路"><span class="header-section-number">20.1</span> 路</h2>
 <h2 id="其他-2"><span class="header-section-number">20.2</span> 其他</h2>
