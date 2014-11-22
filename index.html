@@ -1394,10 +1394,16 @@ main()
 <li><code>INPUT_PULLUP</code>则配置一个IO引脚具有上拉输入功能(上拉电阻的目的是为了保证在无信号输入时输入端的电平为高电平)，从英文意思也能很直观的看出来。</li>
 </ul>
 <p>理解了<code>pinMode()</code>函数,<code>digitalWrite()</code>就很容易理解啦，value的取值有两个<code>HIGH</code>、<code>LOW</code>,<code>HIGH</code>表示让某一个引脚输出高电平，反之，<code>LOW</code>则使某一个引脚输出低电平。 程序中还是用到<code>delay(ms)</code>函数，它表示延时多少毫秒，例如延时500 ms ,直接调用<code>delay(500)；</code>就可以了。</p>
-<p>如果你仔细查看我的描述，你会发现我没有讲13号引脚怎么来的，是这样的：Arduino团队为了简化对引脚描述，对每个引脚都进行了编号，以UNO开发板为例，可以发现开发板排座的附近有对应的白颜色的数字，那便是所有的引脚编号，A0~A5是6路ADC输入引脚，0-13表示13路基本IO，数字前面的<code>~</code>表示该引脚具有PWM功能。如果要使用某一引脚，只要知道引脚编号就可行操作</p>
+<p>如果你仔细查看我的描述，你会发现我没有讲13号引脚怎么来的，是这样的：Arduino团队为了简化对引脚描述，对每个引脚都进行了编号，以UNO开发板为例，可以发现开发板排座的附近有对应的白颜色的数字，那便是所有的引脚编号，A0~A5是6路ADC输入引脚，0-13表示13路基本IO，数字前面的<code>~</code>表示该引脚具有PWM功能。如果要使用某一引脚，只需要知道引脚编号就可编写相应代码进行操作。</p>
 <p>例如<code>digitalWrite(2,LOW)</code>表示向2号引脚输出低电平。其他操作类似，是不是so easy <sup>-</sup> !</p>
 <h2 id="串口通信"><span class="header-section-number">7.5</span> 串口通信</h2>
-<p>使用到的基本函数： + Serial.begin() + Serial.write() + Serial.read() + Serial.available()</p>
+<p>使用到的基本函数：</p>
+<ul>
+<li>Serial.begin()</li>
+<li>Serial.write()</li>
+<li>Serial.read()</li>
+<li>Serial.available()</li>
+</ul>
 <p>在此项目中需要使用串口，Arduino串口初始化使用<code>Serial.begin(9600);</code>,其传输波特率为9600，其他波特率也行，函数位于<code>setup()</code>中，之后可以使用<code>Serial.read()</code>、<code>Serial.write()</code>读入一个字符，输出一个字符，使用<code>Serial.print()</code>输出字符串.代码如下:</p>
 <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">char</span> ch=<span class="st">&#39;1&#39;</span>;
 <span class="dt">void</span> setup()
