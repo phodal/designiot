@@ -235,7 +235,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#库与车轮子"><span class="toc-section-number">17.1</span> 库与车轮子</a></li>
 <li><a href="#库"><span class="toc-section-number">17.2</span> 库</a><ul>
 <li><a href="#jquery-mobile"><span class="toc-section-number">17.2.1</span> jQuery Mobile</a></li>
-<li><a href="#bootstrap"><span class="toc-section-number">17.2.2</span> Bootstrap</a></li>
 </ul></li>
 <li><a href="#网站前台显示"><span class="toc-section-number">17.3</span> 网站前台显示</a><ul>
 <li><a href="#highcharts"><span class="toc-section-number">17.3.1</span> Highcharts</a></li>
@@ -1973,8 +1972,7 @@ Content-Type: application/json
 <pre class="sourceCode php"><code class="sourceCode php"><span class="kw">use</span> Illuminate\Database\Schema\Blueprint<span class="ot">;</span>  
 <span class="kw">use</span> Illuminate\Database\Migrations\Migration<span class="ot">;</span>  
 
-<span class="kw">class</span> CreateAthomesTable <span class="kw">extends</span> Migration {  
-
+<span class="kw">class</span> CreateAthomesTable <span class="kw">extends</span> Migration {
     <span class="kw">public</span> <span class="kw">function</span> up<span class="ot">()</span>  
     {  
         Schema::create<span class="ot">(</span><span class="st">&#39;athomes&#39;</span><span class="ot">,</span> <span class="kw">function</span><span class="ot">(</span>Blueprint <span class="kw">$table</span><span class="ot">)</span>  
@@ -1987,19 +1985,17 @@ Content-Type: application/json
             <span class="kw">$table</span>-&gt;timestamps<span class="ot">();</span>  
         }<span class="ot">);</span>  
     }  
-
     <span class="kw">public</span> <span class="kw">function</span> down<span class="ot">()</span>  
     {  
         Schema::drop<span class="ot">(</span><span class="st">&#39;athomes&#39;</span><span class="ot">);</span>  
     }  
-
 }</code></pre>
 <p>意思大致就是id是自加的，也就是我们在localhost/athome/{id}，当我们创建一个新的数据的时候，会自动加上去，最后一个timestamps批的是时间，会包含创建时间和修改时间。 剩下的temperature,sensors1,sensors2是小数，以及只有真和假的led1。</p>
 <h3 id="数据库迁移-1"><span class="header-section-number">15.1.2</span> 数据库迁移</h3>
 <p>我们只是写了我们需要的数据的格式而并没有丢到数据库里，</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan migrate</code></pre>
 <p>这个就是我们执行迁移的命令，如果你用phpmyadmin可以直接打开查看，没有的话，可以。</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">    $ <span class="kw">mysql</span> -uroot -p</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mysql</span> -uroot -p</code></pre>
 <pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">use</span> iot;
 <span class="kw">select</span> * <span class="kw">from</span> athomes;</code></pre>
 <p>就可以看到我们写的东西，那么接下来就是创建RESTful服务了</p>
@@ -2008,35 +2004,13 @@ Content-Type: application/json
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan controller:make AthomesController  </code></pre>
 <p>就会在app/controllers下面生成下面的代码</p>
 <pre class="sourceCode php"><code class="sourceCode php"><span class="kw">class</span> AthomesController <span class="kw">extends</span> \BaseController {  
-
-    <span class="kw">public</span> <span class="kw">function</span> index<span class="ot">()</span>  
-    {  
-    }  
-
-    <span class="kw">public</span> <span class="kw">function</span> create<span class="ot">()</span>  
-    {  
-    }  
-
-    <span class="kw">public</span> <span class="kw">function</span> store<span class="ot">()</span>  
-    {  
-    }  
-
-    <span class="kw">public</span> <span class="kw">function</span> show<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>  
-    {  
-    }  
-
-    <span class="kw">public</span> <span class="kw">function</span> edit<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>  
-    {  
-    }  
-
-    <span class="kw">public</span> <span class="kw">function</span> update<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>  
-    {  
-    }  
-
-    <span class="kw">public</span> <span class="kw">function</span> destroy<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span>  
-    {  
-    }  
-
+    <span class="kw">public</span> <span class="kw">function</span> index<span class="ot">()</span> {}  
+    <span class="kw">public</span> <span class="kw">function</span> create<span class="ot">()</span>  {} 
+    <span class="kw">public</span> <span class="kw">function</span> store<span class="ot">()</span> {}  
+    <span class="kw">public</span> <span class="kw">function</span> show<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span> {}  
+    <span class="kw">public</span> <span class="kw">function</span> edit<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span> {}  
+    <span class="kw">public</span> <span class="kw">function</span> update<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span> {}  
+    <span class="kw">public</span> <span class="kw">function</span> destroy<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span> {} 
 }</code></pre>
 <h2 id="laravel-resources"><span class="header-section-number">15.3</span> Laravel Resources</h2>
 <p>上面的代码过于沉重，请让我用 Ctrl+C 来带来点知识吧。</p>
@@ -2383,10 +2357,6 @@ r = requests.put(url, data)
 <blockquote>
 <p>jQuery Mobile是jQuery 在手机上和平板设备上的版本。jQuery Mobile不仅会给主流移动平台带来jQuery核心库，而且会发布一个完整统一的jQuery移动UI框架。支持全球主流的移动平台。jQuery Mobile开发团队说：能开发这个项目，我们非常兴奋。移动Web太需要一个跨浏览器的框架，让开发人员开发出真正的移动Web网站。</p>
 </blockquote>
-<h3 id="bootstrap"><span class="header-section-number">17.2.2</span> Bootstrap</h3>
-<blockquote>
-<p>Bootstrap是Twitter推出的一个开源的用于前端开发的工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。Bootstrap一经推出后颇受欢迎，一直是GitHub上的热门开源项目，包括NASA的MSNBC（微软全国广播公司）的Breaking News都使用了该项目。</p>
-</blockquote>
 <h2 id="网站前台显示"><span class="header-section-number">17.3</span> 网站前台显示</h2>
 <h3 id="highcharts"><span class="header-section-number">17.3.1</span> Highcharts</h3>
 <p>Highcharts有以下的特点</p>
@@ -2405,6 +2375,112 @@ r = requests.put(url, data)
 <div class="figure">
 <img src="./images/temperture.png" alt="Temperture" /><p class="caption">Temperture</p>
 </div>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> dataLength = [];
+
+<span class="kw">function</span> <span class="fu">drawTemp</span>() {
+    <span class="kw">var</span> zero = [];
+    <span class="ot">$</span>.<span class="fu">getJSON</span>(<span class="st">&#39;/athome/&#39;</span>, <span class="kw">function</span>(json) {
+        <span class="kw">var</span> items = [];
+        <span class="ot">dataLength</span>.<span class="fu">push</span>(<span class="ot">json</span>.<span class="fu">length</span>);
+        <span class="ot">$</span>.<span class="fu">each</span>(json, <span class="kw">function</span>(key, val) {
+            <span class="ot">zero</span>.<span class="fu">push</span>(<span class="ot">val</span>.<span class="fu">temperature</span>);
+        });
+        <span class="kw">if</span> (<span class="ot">zero</span>.<span class="fu">length</span> &gt; <span class="dv">30</span>) {
+            <span class="kw">for</span> (<span class="kw">var</span> i = <span class="dv">0</span>; i &lt; <span class="ot">zero</span>.<span class="fu">length</span> - <span class="dv">31</span>; i++) <span class="ot">zero</span>.<span class="fu">shift</span>();
+        }
+        chart = <span class="kw">new</span> <span class="ot">Highcharts</span>.<span class="fu">Chart</span>({
+            <span class="dt">color</span>: {
+                <span class="dt">linearGradient</span>: {
+                    <span class="dt">x1</span>: <span class="dv">0</span>,
+                    <span class="dt">x2</span>: <span class="dv">0</span>,
+                    <span class="dt">y1</span>: <span class="dv">0</span>,
+                    <span class="dt">y1</span>: <span class="dv">1</span>
+                },
+                <span class="dt">stops</span>: [
+                    [<span class="dv">0</span>, <span class="st">&#39;#003399&#39;</span>],
+                    [<span class="dv">1</span>, <span class="st">&#39;#3366AA&#39;</span>]
+                ]
+            },
+            <span class="dt">chart</span>: {
+                <span class="dt">renderTo</span>: <span class="st">&#39;Tchart&#39;</span>,
+                <span class="dt">type</span>: <span class="st">&#39;spline&#39;</span>
+            },
+            <span class="dt">title</span>: {
+                <span class="dt">text</span>: <span class="st">&#39;本月温度情况&#39;</span>
+            },
+            <span class="dt">subtitle</span>: {
+                <span class="dt">text</span>: <span class="st">&#39;&#39;</span>
+            },
+            <span class="dt">xAxis</span>: {
+                <span class="dt">categories</span>: [],
+                <span class="dt">title</span>: {
+                    <span class="dt">text</span>: <span class="st">&#39;&#39;</span>
+                }
+            },
+            <span class="dt">yAxis</span>: {
+                <span class="dt">title</span>: {
+                    <span class="dt">text</span>: <span class="st">&#39;温度 (°C)&#39;</span>
+                }
+            },
+            <span class="dt">tooltip</span>: {
+                <span class="dt">backgroundColor</span>: <span class="st">&#39;#FCFFC5&#39;</span>,
+                <span class="dt">borderColor</span>: <span class="st">&#39;black&#39;</span>,
+                <span class="dt">borderRadius</span>: <span class="dv">10</span>,
+                <span class="dt">borderWidth</span>: <span class="dv">1</span>,
+                <span class="dt">enabled</span>: <span class="kw">true</span>,
+                <span class="dt">formatter</span>: <span class="kw">function</span>() {
+                    <span class="kw">return</span> <span class="st">&#39;&lt;b&gt;&#39;</span> + <span class="kw">this</span>.<span class="ot">series</span>.<span class="fu">name</span> + <span class="st">&#39;&lt;/b&gt;&lt;br/&gt;&#39;</span> + <span class="kw">this</span>.<span class="fu">x</span> + <span class="st">&#39;: &#39;</span> + <span class="kw">this</span>.<span class="fu">y</span> + <span class="st">&#39;°C&#39;</span>;
+                }
+            },
+            <span class="dt">legend</span>: {
+                <span class="dt">layout</span>: <span class="st">&#39;vertical&#39;</span>,
+                <span class="dt">align</span>: <span class="st">&#39;right&#39;</span>,
+                <span class="dt">verticalAlign</span>: <span class="st">&#39;top&#39;</span>,
+                <span class="dt">x</span>: -<span class="dv">10</span>,
+                <span class="dt">y</span>: <span class="dv">100</span>,
+                <span class="dt">borderWidth</span>: <span class="dv">0</span>
+            },
+            <span class="dt">plotOptions</span>: {
+                <span class="dt">line</span>: {
+                    <span class="dt">dataLabels</span>: {
+                        <span class="dt">enabled</span>: <span class="kw">true</span>
+                    },
+                    <span class="dt">enableMouseTracking</span>: <span class="kw">false</span>
+                }
+            },
+            <span class="dt">series</span>: [{
+                <span class="dt">name</span>: <span class="st">&#39;本月&#39;</span>,
+                <span class="dt">data</span>: zero
+            }, {
+                <span class="dt">name</span>: <span class="st">&#39;对比&#39;</span>,
+                <span class="dt">data</span>: [<span class="fl">26.0</span>]
+            }]
+        });
+    });
+};
+
+<span class="kw">function</span> <span class="fu">showTemper</span>() {
+    <span class="kw">var</span> length = dataLength[<span class="dv">0</span>];
+    <span class="ot">$</span>.<span class="fu">ajax</span>({
+        <span class="dt">url</span>: <span class="st">&#39;/athome/&#39;</span> + length,
+        <span class="dt">type</span>: <span class="st">&#39;GET&#39;</span>,
+        <span class="dt">dataType</span>: <span class="st">&#39;json&#39;</span>,
+        <span class="dt">async</span>: <span class="kw">true</span>,
+        <span class="dt">timeout</span>: <span class="dv">1000</span>,
+        <span class="dt">error</span>: <span class="kw">function</span>() {},
+        <span class="dt">success</span>: <span class="kw">function</span>(sdata) {
+            <span class="fu">$</span>(<span class="st">&#39;.temperStatus&#39;</span>).<span class="fu">empty</span>();
+            <span class="fu">$</span>(<span class="st">&#39;.temperStatus&#39;</span>).<span class="fu">append</span>(<span class="ot">sdata</span>.<span class="fu">temperature</span>);
+        }
+    });
+};
+
+<span class="fu">$</span>(document).<span class="fu">ready</span>(<span class="kw">function</span>() {
+    <span class="fu">setInterval</span>(<span class="st">&quot;drawTemp();&quot;</span>, <span class="dv">5000</span>);
+    <span class="fu">setInterval</span>(<span class="st">&quot;showTemper();&quot;</span>, <span class="dv">800</span>);
+    <span class="fu">drawTemp</span>();
+    <span class="fu">showTemper</span>();
+});</code></pre>
 <h1 id="构建基于coap协议的物联网系统"><span class="header-section-number">18</span> 构建基于CoAP协议的物联网系统</h1>
 <h2 id="coap-嵌入式系统的rest"><span class="header-section-number">18.1</span> CoAP: 嵌入式系统的REST</h2>
 <p>引自维基百科上的介绍，用的是谷歌翻译。。。</p>
