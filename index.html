@@ -1431,6 +1431,9 @@ main()
     }
     <span class="kw">return</span> <span class="dv">0</span>;
 }</code></pre>
+<div class="figure">
+<img src="./images/hwcnt.png" alt="hwcnt" /><p class="caption">hwcnt</p>
+</div>
 <h1 id="python"><span class="header-section-number">8</span> Python</h1>
 <div class="figure">
 <img src="./images/python.png" alt="python" /><p class="caption">python</p>
@@ -2385,9 +2388,6 @@ r = requests.put(url, data)
         <span class="ot">$</span>.<span class="fu">each</span>(json, <span class="kw">function</span>(key, val) {
             <span class="ot">zero</span>.<span class="fu">push</span>(<span class="ot">val</span>.<span class="fu">temperature</span>);
         });
-        <span class="kw">if</span> (<span class="ot">zero</span>.<span class="fu">length</span> &gt; <span class="dv">30</span>) {
-            <span class="kw">for</span> (<span class="kw">var</span> i = <span class="dv">0</span>; i &lt; <span class="ot">zero</span>.<span class="fu">length</span> - <span class="dv">31</span>; i++) <span class="ot">zero</span>.<span class="fu">shift</span>();
-        }
         chart = <span class="kw">new</span> <span class="ot">Highcharts</span>.<span class="fu">Chart</span>({
             <span class="dt">color</span>: {
                 <span class="dt">linearGradient</span>: {
