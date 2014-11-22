@@ -1418,9 +1418,6 @@ main()
     }
 }</code></pre>
 <p>以上程序实现字符的输出(Serial.write(),Serial.print())和读入(Serial.read())。如果需要了解更多，可以参考：<a href="www.arduino.cc">Arduino官网</a></p>
-<blockquote>
-<p>I2C（Inter－Integrated Circuit）总线是由PHILIPS公司开发的两线式串行总线，用于连接微控制器及其外围设备。是微电子通信控制领域广泛采用的一种总线标准。 &gt; &gt; I2C 总线支持任何IC 生产过程(NMOS CMOS、双极性）。两线――串行数据（SDA）和串行时钟 （SCL）线在连接到总线的器件间传递信息。每个器件都有一个唯一的地址识别（无论是微控制器——MCU、LCD 驱动器、存储器或键盘接口），而且都可以作为一个发送器或接收器（由器件的功能决定）。很明显，LCD 驱动器只是一个接收器，而存储器则既可以接收又可以发送数据。除了发送器和接收器外器件在执行数 据传输时也可以被看作是主机或从机（见表1）。主机是初始化总线的数据传输并产生允许传输的时钟信号 的器件。此时，任何被寻址的器件都被认为是从机。</p>
-</blockquote>
 <h3 id="关于arduino-setup"><span class="header-section-number">7.5.1</span> 关于Arduino Setup()</h3>
 <p>如果你对Arduino的Setup很疑惑的话，可以看看这里。下面Arduino源码目录中的main函数:</p>
 <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include &lt;Arduino.h&gt;</span>
