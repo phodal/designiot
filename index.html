@@ -353,7 +353,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><p>保存为-&gt;“helloworld.html”，</p></li>
 <li><p>双击打开这个文件。 正常情况下都应该是用你的默认浏览器打开。只要是一个正常工作的现代浏览器，都应该可以看到上面显示的是“Hello,world”。</p></li>
 </ol>
-<p>这才是最短的hello,world程序，其次呢？ruby中的会是这样子的</p>
+<p>这才是最短的hello,world程序，但是呢？在ruby中会是这样子的</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">2.0.0-p353</span> :001 <span class="kw">&gt;</span> p <span class="st">&quot;hello,world&quot;</span>
 <span class="st">&quot;hello,world&quot;</span>
     =<span class="kw">&gt;</span> <span class="st">&quot;hello,world&quot;</span>
@@ -370,25 +370,25 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <h3 id="说说helloworld"><span class="header-section-number">2.1.2</span> 说说hello,world</h3>
 我很不喜欢其中的&lt;*&gt;<!--*-->超文本标记语言
 </blockquote>
-<p>所以我们可以发现其中的关键词是标记——markup，也就是说html是一个markup，head是一个markup，body是一个markup。</p>
-<p>而后，我们真正工作的代码是在body里面，至于为什么是在里面，这个问题算是太复杂了。</p>
+<p>所以我们可以发现其中的关键词是标记——markup，也就是说html是一个markup，head是一个markup，body也是一个markup。</p>
+<p>然而，我们真正工作的代码是在body里面，至于为什么是在这里面，这个问题就太复杂了。打个比方来说：</p>
 <ol style="list-style-type: decimal">
-<li><p>我们所学的汉语是别人创造的，我们所正在学的这门语言也是别人创造的。</p></li>
-<li><p>我们在自己的语言里遵循着<strong>他代表是个男的，她代表是个女的</strong>。</p></li>
+<li><p>我们所使用的汉语是人类用智慧创造的，我们所正在学的这门语言同样也是人类创造的。</p></li>
+<li><p>我们在自己的语言里遵循着<strong>桌子是桌子，凳子是凳子</strong>的原则，很少有人会问为什么。</p></li>
 </ol>
 <h3 id="想用中文"><span class="header-section-number">2.1.3</span> 想用中文？</h3>
-<p>所以我们也可以把计算机语言与现实世界的语言划上一个等号。而我们所要学习的语言，因为没有一门真正意义上的汉语语言，所以我们便觉得这些很复杂，如果我们可以用汉语代换掉上面的代码的话</p>
+<p>所以我们也可以把计算机语言与现实世界里用于交流沟通的语言划上一个等号。而我们所要学习的语言，并不是我们最熟悉的汉语语言，所以我们便觉得这些很复杂，但是如果我们试着用汉语替换掉上面的代码的话</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="er">&lt;</span>语言&gt;
     <span class="er">&lt;</span>头&gt;<span class="er">&lt;</span>结束头&gt;
     <span class="er">&lt;</span>身体&gt;你好，世界<span class="er">&lt;</span>结束身体&gt;
 <span class="er">&lt;</span>结束语言&gt;</code></pre>
-<p>看上去很奇怪，只是因为是音译过去的原因，也许你会觉得这样会好理解一点，但是输入上可能一点儿也不方便，因为这键盘都不适合我们去输入汉字，也意味着可能你输入的会有问题。</p>
+<p>这看上去很奇怪，只是因为是直译过去的原因，也许你会觉得这样会好理解一点，但是输入上可就一点儿也不方便，因为这键盘本身就不适合我们去输入汉字，同时也意味着可能你输入的会有问题。</p>
 <p>让我们把上面的代码代替掉原来的代码然后保存，打开浏览器会看到下面的结果</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="er">&lt;</span>语言&gt; <span class="er">&lt;</span>头&gt;<span class="er">&lt;</span>结束头&gt; <span class="er">&lt;</span>身体&gt;你好，世界<span class="er">&lt;</span>结束身体&gt; <span class="er">&lt;</span>结束语言&gt;</code></pre>
 <p>更不幸的结果可能是</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="er">&lt;</span>璇█&gt; <span class="er">&lt;</span>澶�&gt;<span class="er">&lt;</span>缁撴潫澶�&gt; <span class="er">&lt;</span>韬綋&gt;浣犲ソ锛屼笘鐣�<span class="er">&lt;</span>缁撴潫韬綋&gt; <span class="er">&lt;</span>缁撴潫璇█&gt;</code></pre>
 <p>这是一个编码问题，对中文支持不友好。</p>
-<p>所以我们把上面的代码改为和标记语言一样的结构</p>
+<p>我们把上面的代码改为和标记语言一样的结构</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="er">&lt;</span>语言&gt;
     <span class="er">&lt;</span>头&gt;<span class="er">&lt;</span>/头&gt;
     <span class="er">&lt;</span>身体&gt;你好，世界<span class="er">&lt;</span>/身体&gt;
@@ -413,12 +413,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>浏览器对中文支持不友好。</li>
 <li>浏览器对英文支持友好。</li>
 </ol>
-<p>刚开始的时候不要对中文编程有太多的想法，这不是很现实的:</p>
+<p>刚开始的时候不要对中文编程有太多的想法，这是很不现实的:</p>
 <ol style="list-style-type: decimal">
-<li>现有的系统都是基于英语构建的，对中文支持不是很友好。</li>
+<li>现有的系统都是基于英语语言环境构建的，对中文支持不是很友好。</li>
 <li>中文输入的速度在某种程度上来说没有英语快。</li>
 </ol>
-<p>我们离开话题已经很远了，但是这里说的都是针对于那些不满于英语的人来说的，只有当我们可以从头构建一个中文系统的时候才是可行的，这些包括的东西有cpu，软件，硬件，而我们还需要考虑重新设计cpu的结构，在某种程度上来说会有些不现实。需要一代又一代的人的努力，只是在当前就更不现实了。忘记那些，师夷长之技以治夷。</p>
+<p>我们离开话题已经很远了，但是这里说的都是针对于那些不满于英语的人来说的，只有当我们可以从头构建一个中文系统的时候才是可行的，而这些就要将cpu、软件、硬件都包含在内，甚至我们还需要考虑重新设计cpu的结构，在某种程度上来说会有些不现实。或许，需要一代又一代人的努力。忘记那些吧，师夷长之技以治夷。</p>
 <h2 id="其他html标记"><span class="header-section-number">2.2</span> 其他html标记</h2>
 <p>添加一个标题，</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
@@ -427,7 +427,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
     <span class="kw">&lt;/head&gt;</span>
     <span class="kw">&lt;body&gt;</span>hello,world<span class="kw">&lt;/body&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre>
-<p>我们便可以在浏览器的最上方看到“标题”二字，真实世界的淘宝网也包含了上面的东西，只是还包括了更多的东西，所以你也可以看懂那些我们可以看到的淘宝的标题。</p>
+<p>我们便可以在浏览器的最上方看到“标题”二字，就像我们常用的淘宝网，也包含了上面的东西，只是还包括了更多的东西，所以你也可以看懂那些我们可以看到的淘宝的标题。</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;</span>
 <span class="kw">&lt;head&gt;</span>
     <span class="kw">&lt;title&gt;</span>标题<span class="kw">&lt;/title&gt;</span>
@@ -448,7 +448,7 @@ hello,world
 <p>我们简单地上手了一门不算是语言的语言，浏览器简化了这其中的大部分过程，虽然没有C和其他语言来得有专业感，但是我们试着去开始写代码了。我们可能在未来的某一篇中可能会看到类似的语言，诸如python，我们所要做的就是</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> file.py
 =<span class="kw">&gt;hello</span>,world</code></pre>
-<p>然后在终端上返回结果。只是因为在我看来学会html是有意义的，简单的上手，而后再慢慢地深入，如果一开始我们就开始去理解指针，开始去理解类。我们甚至还知道程序是怎么编译运行的时候，在这个过程中又发生了什么。虽然现在我们也没能理解这其中发生了什么，但是至少展示了</p>
+<p>然后在终端上返回结果。只是因为在我看来学会html是有意义的，简单的上手，然后再慢慢地深入，如果一开始我们就去理解指针，开始去理解类。我们甚至还知道程序是怎么编译运行的时候，在这个过程中又发生了什么。虽然现在我们也没能理解这其中发生了什么，但是至少展示了</p>
 <ol style="list-style-type: decimal">
 <li>中文编程语言在当前意义不大，不现实，效率不高兼容性差</li>
 <li>语言的语法是固定的。（ps:虽然我们也可以进行扩充，我们将会在后来支持上述的中文标记。）</li>
@@ -456,9 +456,9 @@ hello,world
 <li>随身的工具才是最好的，最常用的code也才是实在的。</li>
 </ol>
 <h3 id="更多"><span class="header-section-number">2.2.2</span> 更多</h3>
-<p>我们还没有试着去解决，某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱的问题。也就是说我们学会的是一个还不能解决实际问题的语言，于是我们还需要学点东西如javascript,css。我们可以理解为Javascript是解决问题的语言，html是前端显示，css是配置文件，这样的话，我们会在那之后学会成为一个近乎专业的程序员。我们刚学了下怎么在前端显示那些代码的行为，于是我们还需要Javascript。</p>
+<p>我们还没有试着去解决“某商店里的糖一颗5块钱，小明买了3颗糖，小明一共花了多少钱”的问题。也就是说我们学会的是一个还不能解决实际问题的语言，于是我们还需要学点东西，比如javascript,css。我们可以将Javascript理解为解决问题的语言，html则是前端显示，css是配置文件，这样的话，我们会在那之后学会成为一个近乎专业的程序员。我们刚刚学习了一下怎么在前端显示那些代码的行为，于是我们还需要Javascript。</p>
 <h1 id="无处不在的javascript"><span class="header-section-number">3</span> 无处不在的Javascript</h1>
-<p>Javascript现在已经无处不在了，也许你正打开的某个网站他可能是node.js+json+javascript+mustache.js完成的，虽然你还没理解上面那些是什么，也正是因为你不理解才需要去学习更多的东西。但是Javascript已经无处不在了，可能会在你手机上的某个app里，在你浏览的网页里，在你IDE中的某个进程中运行的。</p>
+<p>Javascript现在已经无处不在了，也许你正打开的某个网站，他便可能是node.js+json+javascript+mustache.js完成的，虽然你还没理解上面那些是什么，也正是因为你不理解才需要去学习更多的东西。但是你只要知道Javascript已经无处不在了，它可能就在你手机上的某个app里，就在你浏览的网页里，就运行在你IDE中的某个进程里。</p>
 <h2 id="javascript的helloworld"><span class="header-section-number">3.1</span> Javascript的Hello,world</h2>
 <p>这里我们还需要有一个helloworld.html，Javascript是专为网页交互而设计的脚本语言，所以我们一点点来开始这部分的旅途，先写一个符合标准的helloworld.html</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
@@ -501,7 +501,7 @@ hello,world
 <span class="ot">    &lt;/body</span>&gt;
 &lt;<span class="ot">/html&gt;</span></code></pre>
 <h2 id="更js一点"><span class="header-section-number">3.2</span> 更js一点</h2>
-<p>我们需要让我们的代码看上去更像是js，同时是以js结尾。C语言的源码但是以C结尾的，所以我们要让我们的代码看上去更正式一点。于是我们需要在helloworld.html的同文件夹下创建一个app.js，里面写着</p>
+<p>我们需要让我们的代码看上去更像是js，同时是以js结尾。就像C语言的源码是以C结尾的，我们也同样需要让我们的代码看上去更正式一点。于是我们需要在helloworld.html的同一文件夹下创建一个app.js文件，在里面写着</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">document</span>.<span class="fu">write</span>(<span class="st">&#39;hello,world&#39;</span>);</code></pre>
 <p>同时我们的helloworld.html还需要告诉我们的浏览器js代码在哪里</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
@@ -516,11 +516,11 @@ hello,world
     <span class="kw">&lt;/body&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre>
 <h3 id="从数学出发"><span class="header-section-number">3.2.1</span> 从数学出发</h3>
-<p>让我们回到第一章讲述的小明的问题，<strong>从实际问题下手编程，更容易学会编程</strong>。小学时代的数学题最喜欢这样子了——某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱的问题。在编程方面，也许我们还算是小学生。最直接的方法就是直接计算3x5=?</p>
+<p>让我们回到第一章讲述的小明的问题，<strong>从实际问题下手编程，更容易学会编程</strong>。小学时代的数学题最喜欢这样子了——某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱。在编程方面，也许我们还算是小学生。最直接的方法就是直接计算3x5=?</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">document</span>.<span class="fu">write</span>(<span class="dv">3</span>*<span class="dv">5</span>);</code></pre>
-<p>document.write实际也我们可以理解为输出，也就是往页面里写入3*5的结果，在有双引号的情况下会输出字符串。我们便会在浏览器上看到15，这便是一个好的开始，也是一个不好的开始。</p>
+<p>document.write实际也我们可以理解为输出，也就是往页面里写入3*5的结果，在有双引号的情况下会输出字符串。我们便会在浏览器上看到15，这便是一个好的开始，也是一个糟糕的开始。</p>
 <h2 id="设计和编程"><span class="header-section-number">3.3</span> 设计和编程</h2>
-<p>对于我们的实际问题如果总是止于所要的结果，很多年之后，我们成为了code monkey。对这个问题进行一次设计，所谓的设计有些时候会把简单的问题复杂化，有些时候会使以后的扩展更加简单。这一天因为这家商店的糖价格太高了，于是店长将价格降为了4块钱。</p>
+<p>对于实际问题，如果我们只是止于所要得到的结果，很多年之后，我们就成为了code monkey。对这个问题进行再一次设计，所谓的设计有些时候会把简单的问题复杂化，有些时候会使以后的扩展更加简单。这一天因为这家商店的糖价格太高了，于是店长将价格降为了4块钱。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">document</span>.<span class="fu">write</span>(<span class="dv">3</span>*<span class="dv">4</span>);</code></pre>
 <p>于是我们又得到了我们的结果，但是下次我们看到这些代码的时候没有分清楚哪个是糖的数量，哪个是价格，于是我们重新设计了程序</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript">tang=<span class="dv">4</span>;
@@ -540,13 +540,13 @@ num=<span class="dv">3</span>;
     <span class="kw">return</span> <span class="ot">document</span>.<span class="fu">write</span>(<span class="ot">Math</span>.<span class="fu">sin</span>(degree));
 }
 <span class="fu">sin</span>(<span class="dv">30</span>);</code></pre>
-<p>在这里degree称之为变量，也就是可以改变的量。 于是输出了-0.9880316240928602，而不是0.5，因为这里用的是弧度制，而不是角度制。</p>
+<p>在这里degree就称之为变量。 于是输出了-0.9880316240928602，而不是0.5，因为这里用的是弧度制，而不是角度制。</p>
 <pre><code>sin(30)</code></pre>
 <p>的输出结果有点类似于sin 30。写括号的目的在于，括号是为了方便解析，这个在不同的语言中可能是不一样的，比如在ruby中我们可以直接用类似于数学中的表达:</p>
 <pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="fl">2.0</span>.<span class="dv">0</span>-p353 :<span class="dv">004</span> &gt; <span class="dt">Math</span>.sin <span class="dv">30</span>
 =&gt; -<span class="fl">0.9880316240928618</span>
 <span class="fl">2.0</span>.<span class="dv">0</span>-p353 :<span class="dv">005</span> &gt;</code></pre>
-<p>我们可以在函数中传入多个变量，于是我们再回到小明的问题，就会这样去写代码。</p>
+<p>我们可以在函数中传入多个变量，于是我们再回到小明的问题，就会这样去编写代码。</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">calc</span>(tang,num){
     result=tang*num;
     <span class="ot">document</span>.<span class="fu">write</span>(result);
@@ -569,7 +569,7 @@ num=<span class="dv">3</span>;
 <span class="fu">printResult</span>(<span class="dv">3</span>, <span class="dv">4</span>)</code></pre>
 <p>看上去更专业了一点点，如果我们只需要计算的时候我们只需要调用calc，如果我们需要输出的时候我们就调用printResult的方法。</p>
 <h3 id="object和函数"><span class="header-section-number">3.3.3</span> object和函数</h3>
-<p>我们还没有说清楚之前我们遇到过的document.write以及Math.sin的语法看上去很奇怪，所以让我们看看他们到底是什么，修改app.js为以及内容</p>
+<p>我们还没有说清楚之前我们遇到过的document.write以及Math.sin的语法为什么看上去很奇怪，所以让我们看看他们到底是什么，修改app.js为以下内容</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> document);
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> Math);</code></pre>
 <p>typeof document会返回document的数据类型，就会发现输出的结果是</p>
@@ -616,9 +616,9 @@ num=<span class="dv">3</span>;
 <span class="ot">Person</span>.<span class="fu">future</span>=dream;
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> Person);
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="ot">Person</span>.<span class="fu">future</span>);</code></pre>
-<p>而这些会在我们未来的实际编编程中用得更多。</p>
+<p>而这些会在我们未来的实际编程过程中用得更多。</p>
 <h3 id="面向对象"><span class="header-section-number">3.3.4</span> 面向对象</h3>
-<p>开始之前先我们简化上面的代码，</p>
+<p>开始之前先让我们简化上面的代码，</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="ot">Person</span>.<span class="fu">future</span>=<span class="kw">function</span> <span class="fu">dream</span>(){
     future;
 }</code></pre>
@@ -636,7 +636,7 @@ num=<span class="dv">3</span>;
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> person+<span class="st">&quot;&lt;br&gt;&quot;</span>);
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="kw">typeof</span> <span class="ot">person</span>.<span class="fu">future</span>+<span class="st">&quot;&lt;br&gt;&quot;</span>);
 <span class="ot">document</span>.<span class="fu">write</span>(<span class="ot">person</span>.<span class="fu">future</span>()+<span class="st">&quot;&lt;br&gt;&quot;</span>);</code></pre>
-<p>只是在这个时候Person是一个函数，但是我们声明的person却变成了一个对象<strong>一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数。</strong>这里的+“<br>”是HTML中的元素，称之为DOM，在这里起的是换行的作用，我们会在稍后介绍它，这里我们先关心下this。this关键字表示函数的所有者或作用域，也就是这里的Person。</p>
+<p>只是在这个时候Person是一个函数，但是我们声明的person却变成了一个对象<strong>一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数。</strong>这里的“&lt;br&gt;”是HTML中的元素，称之为DOM，在这里起的是换行的作用，我们会在稍后介绍它，这里我们先关心下this。this关键字表示函数的所有者或作用域，也就是这里的Person。</p>
 <p>上面的方法显得有点不可取，换句话说和一开始的</p>
 <pre><code>document.write(3*4);</code></pre>
 <p>一样，不具有灵活性，因此在我们完成功能之后，我们需要对其进行优化，这就是程序设计的真谛——解决完实际问题后，我们需要开始真正的设计，而不是解决问题时的编程。</p>
@@ -679,7 +679,7 @@ num=<span class="dv">3</span>;
 <li>文档对象模型(DOM)——访问和操作网页内容的方法和接口</li>
 <li>浏览器对象模型(BOM)——与浏览器交互的方法和接口</li>
 </ul>
-<p>我们在上面讲的都是ECMAScript，也就是语法相关的，但是JS真正强大的，或者说我们最需要的可能就是对DOM的操作，这也就是为什么jQuery等库可以流行的原因之一，而核心语言功能才是真正在哪里都适用的，至于BOM真正用到的机会很少，因为没有好的统一的标准。</p>
+<p>我们在上面讲的都是ECMAScript，也就是语法相关的，但是JS真正强大的，或者说我们最需要的可能就是对DOM的操作，这也就是为什么jQuery等库可以流行的原因之一，而核心语言功能才是真正在哪里都适用的，至于BOM，真正用到的机会很少，因为没有完善的统一的标准。</p>
 <p>一个简单的DOM示例,</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
 <span class="kw">&lt;html&gt;</span>
@@ -702,12 +702,12 @@ num=<span class="dv">3</span>;
 <h2 id="美妙之处-1"><span class="header-section-number">3.5</span> 美妙之处</h2>
 <p>这里说到的Javascript仅仅只是其中的一小小部分，忽略掉的东西很多，只关心的是如何去设计一个实用的app，作为一门编程语言，他还有其他强大的内制函数，要学好需要一本有价值的参考书。这里提到的只是其中的不到20%的东西，其他的80%或者更多会在你解决问题的时候出现。</p>
 <ul>
-<li>我们可以创建一个对象或者说函数，它可以包含基本值、对象或者函数。</li>
+<li>我们可以创建一个对象或者函数，它可以包含基本值、对象或者函数。</li>
 <li>我们可以用Javascript修改页面的属性，虽然只是简单的示例。</li>
 <li>我们还可以去解决实际的编程问题。</li>
 </ul>
 <h1 id="无处不在的css"><span class="header-section-number">4</span> 无处不在的CSS</h1>
-<p>CSS或许你觉得他一点儿也不重要，HTML好比是建筑的框架，CSS就是用于装修房子。那么Javascript呢，我听到的最有趣的说法是小三，先让我们回到代码上来吧。</p>
+<p>或许你觉得CSS一点儿也不重要，而事实上，如果说HTML是建筑的框架，CSS就是房子的装修。那么Javascript呢，我听到的最有趣的说法是小三——还是先让我们回到代码上来吧。</p>
 <h2 id="css"><span class="header-section-number">4.1</span> CSS</h2>
 <p>下面就是我们之前说到的代码，css将Red三个字母变成了红色。</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
@@ -722,14 +722,14 @@ num=<span class="dv">3</span>;
 <p>只是，</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> para=<span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&quot;para&quot;</span>);
 <span class="ot">para</span>.<span class="ot">style</span>.<span class="fu">color</span>=<span class="st">&quot;blue&quot;</span>;</code></pre>
-<p>将字体变成了蓝色，CSS+HTML让页面有序的工作着，但是Javascript打乱了这些秩序，不过却也让生活多姿多彩，小三不都是这样的么——终于可以理解，为什么以前人们对于Javascript没有好感了？不过这里要讲的是正室，也就是CSS，这时还没有Javascript。</p>
+<p>将字体变成了蓝色，CSS+HTML让页面有序的工作着，但是Javascript却打乱了这些秩序，有着唯恐世界不乱的精彩，也难怪被冠以小三之名了——或许终于可以理解，为什么以前人们对于Javascript没有好感了——不过这里要讲的是正室，也就是CSS，这时还没有Javascript。</p>
 <div class="figure">
 <img src="./images/redfonts.png" alt="Red Fonts" /><p class="caption">Red Fonts</p>
 </div>
 <h2 id="关于css"><span class="header-section-number">4.2</span> 关于CSS</h2>
-<p>这不是一篇好的关于讲述CSS的书籍，所以不会去说CSS是怎么来的，有些东西既然我们可以很容易从其他地方知道，也就不需要花太多时间去重复。诸如重构等这些的目的之一也在于去除重复的代码，不过有些重复是不可少的，也是有必要的，而通常这些东西可能是由其他地方复制过来的。</p>
+<p>这不是一篇专业讲述CSS的书籍，所以我不会去说CSS是怎么来的，有些东西我们既然可以很容易从其他地方知道，也就不需要花太多时间去重复。诸如重构等这些的目的之一也在于去除重复的代码，不过有些重复是不可少的，也是有必要的，而通常这些东西可能是由其他地方复制过来的。</p>
 <p>到目前为止我们没有依赖于任何特殊的硬件或者是软件，对于我们来说我们最基本的需求就是一台电脑，或者可以是你的平板电脑，当然也可以是你的智能手机，因为他们都有个浏览器，而这些都是能用的，对于我们的CSS来说也不会有例外的。</p>
-<p>CSS是来自于(Cascading Style Sheets)，到今天我也没有记得他的全称，CSS还有一个中文名字是层叠式样式表，翻译成什么样的可能并不是我们关心的内容，我们需要关心的是他能做些什么。作为三剑客之一，它的主要目的在于可以让我们方便灵活地去控制Web页面的外观表现。我们可以用它做出像淘宝一样复杂的界面，也可以像我们的书本一样简单，不过如果要和我们书本一样简单的话，可能不需要用到CSS。HTML一开始就是依照报纸的格式而设计的，我们还可以继续用上面说到的编辑器，又或者是其他的。如果你喜欢DreamWeaver那也不错，不过一开始使用IDE可无助于我们写出良好的代码。</p>
+<p>CSS(Cascading Style Sheets)，到今天我也没有记得他的全称，CSS还有一个中文名字是层叠式样式表，事实上翻译成什么可能并不是我们关心的内容，我们需要关心的是他能做些什么。作为三剑客之一，它的主要目的在于可以让我们方便灵活地去控制Web页面的外观表现。我们可以用它做出像淘宝一样复杂的界面，也可以像我们的书本一样简单，不过如果要和我们书本一样简单的话，可能不需要用到CSS。HTML一开始就是依照报纸的格式而设计的，我们还可以继续用上面说到的编辑器，又或者是其他的。如果你喜欢DreamWeaver那也不错，不过一开始使用IDE可无助于我们写出良好的代码。</p>
 <p>忘说了，CSS也是有版本的，和windows，Linux内核等等一样，但是更新可能没有那么频繁，HTML也是有版本的，JS也是有版本的，复杂的东西不是当前考虑的内容。</p>
 <h2 id="代码结构"><span class="header-section-number">4.3</span> 代码结构</h2>
 <p>对于我们的上面的Red示例来说，如果没有一个好的结构，那么以后可能就是这样子。</p>
@@ -771,7 +771,7 @@ num=<span class="dv">3</span>;
     <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;para2&quot;</span><span class="kw">&gt;</span>那么以后可能就是这样子。。。。<span class="kw">&lt;/p&gt;</span>
 <span class="kw">&lt;/body&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre>
-<p>总算比上面好看也好理解多了，这只是临时的用法，当文件太大的时候，正式一点的写法应该是下面:</p>
+<p>总算比上面好看也好理解多了，这只是临时的用法，当文件太大的时候，正式一点的写法应该如下所示:</p>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
 <span class="kw">&lt;html&gt;</span>
 <span class="kw">&lt;head&gt;</span>
@@ -815,21 +815,21 @@ num=<span class="dv">3</span>;
     <span class="dt">text_align</span>:<span class="st">&#39;center&#39;</span>,
     <span class="dt">padding_left</span>:<span class="st">&#39;20px&#39;</span>,
 }</code></pre>
-<p>而22px、20px以及#f00都是数值，因此。。</p>
+<p>而22px、20px以及#f00都是数值，因此：</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> para={
     <span class="dt">font_size</span>:22px,
     <span class="dt">color</span>:#f00,
     <span class="dt">text_align</span>:center,
     <span class="dt">padding_left</span>:20px,
 }   </code></pre>
-<p>目测差距已经尽可能的小了，至于这些话题会在以后讨论到，如果要让我们的编译器更正确的工作，那么我们就需要非常多的这种符号，除非你乐意去理解:</p>
+<p>目测差距已经尽可能的小了，至于这些话题会在以后讨论到，如果要让我们的编译器更正确的工作，那么我们就需要非常多这样的符号，除非你乐意去理解:</p>
 <pre class="lisp"><code>(dotimes (i 4) (print i))</code></pre>
-<p>总的来说我们减少了符号的使用，但是用lisp便带入了更多的括号，不过这是一种简洁的表达方式，也许我们可以在其他语言中看到，或者说用这个去。。</p>
+<p>总的来说我们减少了符号的使用，但是用lisp便带入了更多的括号，不过这是一种简洁的表达方式，也许我们可以在其他语言中看到。</p>
 <pre class="regex"><code>\d{2}/[A-Z][a-z][a-z]/\d{4}</code></pre>
-<p>没有什么会比一开始不理解那是正则表达式，然后去修改上面的代码，为的是去从一堆数据中找出某日/某月/某年。</p>
-<p>这门语言可能是为设计师而设计的，但是设计师大部分还是不懂编程的，不过相对来说还是比其他语言好理解一些。</p>
+<p>上面的代码，是为了从一堆数据中找出“某日/某月/某年”。如果一开始不理解那是正则表达式，就会觉得那个很复杂。</p>
+<p>这门语言可能是为设计师而设计的，但是设计师大部分还是不懂编程的，不过相对来说这门语言还是比其他语言简单易懂一些。</p>
 <h2 id="样式与目标"><span class="header-section-number">4.4</span> 样式与目标</h2>
-<p>下面也就是我们的样式</p>
+<p>如下所示，就是我们的样式</p>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="fl">.para</span><span class="kw">{</span>
     <span class="kw">font-size:</span> <span class="dt">22px</span><span class="kw">;</span>
     <span class="kw">color:</span><span class="dt">#f00</span><span class="kw">;</span>
@@ -844,7 +844,7 @@ num=<span class="dv">3</span>;
 <pre><code>p.para{
     color:#f0f;
 }</code></pre>
-<p>将代码添加到style.css的最下面会发现“如果没有一个的结构”变成了粉红色，当然我们还会有这样的写法</p>
+<p>将代码添加到style.css的最下面会发现“如果没有一个好的结构”变成了粉红色，当然我们还会有这样的写法</p>
 <pre><code>p&gt;.para{
     color:#f0f;
 }</code></pre>
@@ -898,9 +898,9 @@ div#content p {
 <pre><code>.para_bg{
     background-color:#000;
 }</code></pre>
-<p>重新改变后的网页变得比原来有趣了很多，所谓的继承与合并就是如上面的例子。</p>
-<p>我们还可以用CSS3做出有趣的效果，而这些并不在我们的讨论范围里面，因为我们讨论的是be a geek。</p>
-<p>或许我们写的代码都是那么的简单，从HTML到Javascript，还有现在的CSS，只是有一些东西才是核心的，而不是去考虑一些基础的语法，基础的东西我们可以从实践的过程中一一发现。但是我们可能发现不了，或者在平时的使用中考虑不到一些有趣的用法或者说特殊的用法，这些可以从观察一些比较好的设计的代码中学习到。复杂的东西可以变得很简单，简单的东西也可以变得很复杂。</p>
+<p>重新改变后的网页变得比原来有趣了很多，所谓的继承与合并就是上面的例子。</p>
+<p>我们还可以用CSS3做出更多有趣的效果，而这些并不在我们的讨论范围里面，因为我们讨论的是be a geek。</p>
+<p>或许我们写的代码都是那么的简单，从HTML到Javascript，还有现在的CSS，只是总有一些核心的东西，而不是去考虑那些基础语法，基础的东西我们可以在实践的过程中一一发现。但是我们可能发现不了，或者在平时的使用中考虑不到一些有趣的用法或者说特殊的用法，这时候可以通过观察一些精致设计的代码中学习到。复杂的东西可以变得很简单，简单的东西也可以变得很复杂。</p>
 <h1 id="无处不在的三剑客"><span class="header-section-number">5</span> 无处不在的三剑客</h1>
 <p>这时我们终于了解了我们的三剑客，就这么可以结合到一起了，HTML+Javascript+CSS是这一切的基础。而我们用到的其他语言如PHP、Python、Ruby等等的最后都会变成上面的结果，当然还有Coffeescript之类的语言都是以此为基础，这才是我们需要的知识。</p>
 <h2 id="hellogeek"><span class="header-section-number">5.1</span> Hello,Geek</h2>
