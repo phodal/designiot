@@ -5,6 +5,10 @@
 
 图灵-电子书版[一步步搭建物联网系统](http://www.ituring.com.cn/book/1580)
 
+###其他
+
+[物联网资料合集](https://github.com/phodal/collection-iot)
+
 ##作者名单 
 
 Github | Name
