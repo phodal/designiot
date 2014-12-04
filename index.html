@@ -191,9 +191,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#设计restful-api-1"><span class="toc-section-number">14</span> 设计RESTful API</a><ul>
 <li><a href="#rest关键目标"><span class="toc-section-number">14.1</span> REST关键目标</a></li>
 <li><a href="#判断是否是-restful的约束条件"><span class="toc-section-number">14.2</span> 判断是否是 RESTful的约束条件</a></li>
-<li><a href="#设计restful资源"><span class="toc-section-number">14.3</span> 设计RESTful资源</a></li>
-<li><a href="#设计restful-uri"><span class="toc-section-number">14.4</span> 设计RESTful URI</a></li>
-<li><a href="#json"><span class="toc-section-number">14.5</span> JSON</a></li>
+<li><a href="#json"><span class="toc-section-number">14.3</span> JSON</a></li>
 </ul></li>
 <li><a href="#环境准备"><span class="toc-section-number">15</span> 环境准备</a><ul>
 <li><a href="#laravel"><span class="toc-section-number">15.1</span> Laravel</a><ul>
@@ -262,7 +260,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#简单物联网"><span class="toc-section-number">20</span> 简单物联网</a><ul>
 <li><a href="#硬件通信"><span class="toc-section-number">20.1</span> 硬件通信</a><ul>
 <li><a href="#串口通信-1"><span class="toc-section-number">20.1.1</span> 串口通信</a></li>
-<li><a href="#i2c通信"><span class="toc-section-number">20.1.2</span> I2C通信</a></li>
 </ul></li>
 <li><a href="#硬件"><span class="toc-section-number">20.2</span> 硬件</a><ul>
 <li><a href="#单片机"><span class="toc-section-number">20.2.1</span> 51单片机</a></li>
@@ -1884,9 +1881,7 @@ Content-Type: application/json
 <li>统一接口</li>
 <li>随需代码（可选）</li>
 </ul>
-<h2 id="设计restful资源"><span class="header-section-number">14.3</span> 设计RESTful资源</h2>
-<h2 id="设计restful-uri"><span class="header-section-number">14.4</span> 设计RESTful URI</h2>
-<h2 id="json"><span class="header-section-number">14.5</span> JSON</h2>
+<h2 id="json"><span class="header-section-number">14.3</span> JSON</h2>
 <div class="figure">
 <img src="./images/xml-vs-json.png" alt="xml-vs-json" /><p class="caption">xml-vs-json</p>
 </div>
@@ -3077,10 +3072,17 @@ r = requests.put(url, data)
 </div>
 <h2 id="硬件通信"><span class="header-section-number">20.1</span> 硬件通信</h2>
 <h3 id="串口通信-1"><span class="header-section-number">20.1.1</span> 串口通信</h3>
-<p>Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据，Raspberry Pi将资源传于互联网上对应的接口，接口可以在互联网上被访问。Laravel框架构架于服务器之上，将Raspbery Pi获取过来的数据存储于MySQL数 据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问这些设备。Ajax用于将后台的数据以不需要刷新的方式传递到网站前台，通过HighCharts框架显示给终端用户。</p>
-<p>在Linux内核的系统Windows[^windows_com]中虚拟串口用的节点是ttyACM，位于/dev目录下。</p>
+<p>Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据，Raspberry Pi将资源传于互联网上对应的接口，接口可以在互联网上被访问。Laravel框架构架于服务器之上，将Raspbery Pi获取过来的数据存储于MySQL数据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问这些设备。Ajax用于将后台的数据以不需要刷新的方式传递到网站前台，通过HighCharts框架显示给终端用户。</p>
+<h4 id="python"><span class="header-section-number">20.1.1.1</span> Python</h4>
+<p>1.在Windows中的串口通常是<code>COM1</code>,<code>COM0</code>等等</p>
+<pre class="sourceCode python"><code class="sourceCode python">ser=serial.Serial(<span class="st">&quot;COM0&quot;</span>,<span class="dv">9600</span>)</code></pre>
+<p>2.Mac OS系统中位于/dev目录下，名字类似于<code>tty.usbmodem1451</code>。</p>
+<pre class="sourceCode python"><code class="sourceCode python">    serial.Serial(<span class="st">&quot;/dev/tty.usbmodem1451&quot;</span>,<span class="dv">9600</span>)</code></pre>
+<p>3.在Linux内核的系统中虚拟串口用的节点是ttyACM，位于/dev目录下。</p>
 <pre class="sourceCode python"><code class="sourceCode python">    serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)</code></pre>
-<p>串行接口是一种可以将接受来自CPU的并行数据字符转换为连续的串行数据流发送出去， 同时可将接受的串行数据流转换为并行的数据字符供给CPU的器件。一般完成这种功能 的电路，我们称为串行接口电路。</p>
+<blockquote>
+<p>串行接口是一种可以将接受来自CPU的并行数据字符转换为连续的串行数据流发送出去，同时可将接受的串行数据流转换为并行的数据字符供给CPU的器件。一般完成这种功能 的电路，我们称为串行接口电路。</p>
+</blockquote>
 <p>便是打开这个设备，以9600的速率传输数据。</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> json
 <span class="ch">import</span> urllib2
@@ -3113,7 +3115,15 @@ url=<span class="st">&quot;http://www.xianuniversity.com/athome/1&quot;</span>
 <div class="figure">
 <img src="./images/change.png" alt="改变状态后的结果" /><p class="caption">改变状态后的结果</p>
 </div>
-<h3 id="i2c通信"><span class="header-section-number">20.1.2</span> I2C通信</h3>
+<h4 id="ruby"><span class="header-section-number">20.1.1.2</span> Ruby</h4>
+<p>如果你用的是Ruby的话，可以尝试使用<code>serialport</code></p>
+<p>安装</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> gem install serialport</code></pre>
+<p>代码大致如下</p>
+<pre class="sourceCode ruby"><code class="sourceCode ruby">require <span class="st">&#39;serialport&#39;</span>
+sp = <span class="dt">SerialPort</span>.new <span class="st">&quot;/dev/ACM0&quot;</span>, <span class="dv">9600</span>
+sp.write <span class="st">&quot;1&quot;</span></code></pre>
+<p>注意: 根据相关的系统修改相关的代码。</p>
 <h2 id="硬件"><span class="header-section-number">20.2</span> 硬件</h2>
 <h3 id="单片机"><span class="header-section-number">20.2.1</span> 51单片机</h3>
 <blockquote>
