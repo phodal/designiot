@@ -262,13 +262,9 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#串口通信-1"><span class="toc-section-number">20.1.1</span> 串口通信</a></li>
 </ul></li>
 <li><a href="#硬件"><span class="toc-section-number">20.2</span> 硬件</a><ul>
-<li><a href="#单片机"><span class="toc-section-number">20.2.1</span> 51单片机</a></li>
-<li><a href="#arduino"><span class="toc-section-number">20.2.2</span> Arduino</a></li>
-<li><a href="#raspberry-pi-1"><span class="toc-section-number">20.2.3</span> Raspberry Pi</a></li>
-<li><a href="#arm"><span class="toc-section-number">20.2.4</span> ARM</a></li>
-<li><a href="#继电器"><span class="toc-section-number">20.2.5</span> 继电器</a></li>
+<li><a href="#arduino"><span class="toc-section-number">20.2.1</span> Arduino</a></li>
+<li><a href="#继电器"><span class="toc-section-number">20.2.2</span> 继电器</a></li>
 </ul></li>
-<li><a href="#协议间通讯"><span class="toc-section-number">20.3</span> 协议间通讯</a></li>
 </ul></li>
 <li><a href="#android简单示例"><span class="toc-section-number">21</span> Android简单示例</a><ul>
 <li><a href="#调用web-services-get"><span class="toc-section-number">21.1</span> 调用Web Services GET</a><ul>
@@ -3084,6 +3080,11 @@ r = requests.put(url, data)
 <p>串行接口是一种可以将接受来自CPU的并行数据字符转换为连续的串行数据流发送出去，同时可将接受的串行数据流转换为并行的数据字符供给CPU的器件。一般完成这种功能 的电路，我们称为串行接口电路。</p>
 </blockquote>
 <p>便是打开这个设备，以9600的速率传输数据。</p>
+<p>程序框架如下所示:</p>
+<div class="figure">
+<img src="./images/raspberrypi_flow.png" alt="Raspberry Pi" /><p class="caption">Raspberry Pi</p>
+</div>
+<p>代码如下:</p>
 <pre class="sourceCode python"><code class="sourceCode python"><span class="ch">import</span> json
 <span class="ch">import</span> urllib2
 <span class="ch">import</span> serial
@@ -3125,26 +3126,40 @@ sp = <span class="dt">SerialPort</span>.new <span class="st">&quot;/dev/ACM0&quo
 sp.write <span class="st">&quot;1&quot;</span></code></pre>
 <p>注意: 根据相关的系统修改相关的代码。</p>
 <h2 id="硬件"><span class="header-section-number">20.2</span> 硬件</h2>
-<h3 id="单片机"><span class="header-section-number">20.2.1</span> 51单片机</h3>
-<blockquote>
-<p>51单片机是对所有兼容Intel 8031指令系统的单片机的统称。该系列单片机的始祖是Intel的8031单片机，后来随着Flash rom技术的发展，8031单片机取得了长足的进展，成为应用最广泛的8位单片机之一，其代表型号是ATMEL公司的AT89系列，它广泛应用于工业测控系统之中。</p>
-</blockquote>
-<p>这里以51单片机为例的原因是，多数大学课程都是以51单片机为主。</p>
-<h3 id="arduino"><span class="header-section-number">20.2.2</span> Arduino</h3>
-<h3 id="raspberry-pi-1"><span class="header-section-number">20.2.3</span> Raspberry Pi</h3>
-<p>对于搭载GNU/Linux系统的RPi来说，这活就比较轻松了。</p>
-<h3 id="arm"><span class="header-section-number">20.2.4</span> ARM</h3>
-<blockquote>
-<p>LwIP是Light Weight (轻型)IP协议，有无操作系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM 的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。</p>
-</blockquote>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> clone git@gitorious.org:coap-lwip/coap-lwip.git</code></pre>
-<p><a href="http://tinyos.stanford.edu/tinyos-wiki/index.php/CoAP">TinyOS CoAP</a></p>
-<h3 id="继电器"><span class="header-section-number">20.2.5</span> 继电器</h3>
+<h3 id="arduino"><span class="header-section-number">20.2.1</span> Arduino</h3>
+<p>这样我们在我们的Arduino上所要做的便是，读取串口的结果并控制IO口。</p>
+<pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> ledPort=<span class="dv">13</span>;
+
+<span class="dt">void</span> setup() {
+  Serial.begin(<span class="dv">9600</span>);
+  pinMode(ledPort,OUTPUT);
+}
+
+<span class="dt">int</span> serialData;
+<span class="dt">void</span> loop() {
+  String inString = <span class="st">&quot;&quot;</span>;
+  <span class="kw">while</span> (Serial.available()&gt; <span class="dv">0</span>)
+  {
+    <span class="dt">int</span> inChar = Serial.read();
+    <span class="kw">if</span> (isDigit(inChar)) {
+      inString += (<span class="dt">char</span>)inChar; 
+    }
+    serialData=inString.toInt();
+    Serial.print(serialData);
+  }
+  <span class="kw">if</span>(serialData==<span class="dv">1</span>){
+    digitalWrite(ledPort,HIGH);
+  }<span class="kw">else</span>{
+    digitalWrite(ledPort,LOW);
+  }
+}</code></pre>
+<p>如果结果是1的话，就让13口为高电平，也就是让灯亮起来。</p>
+<h3 id="继电器"><span class="header-section-number">20.2.2</span> 继电器</h3>
 <blockquote>
 <p>继电器（英文名称：relay）是一种电控制器件，是当输入量（激励量）的变化达到规定要求时，在电气输出电路中使被控量发生预定的阶跃变化的一种电器。它具有控制系统（又称输入回路）和被控制系统（又称输出回路）之间的互动关系。通常应用于自动化的控制电路中，它实际上是用小电流去控制大电流运作的一种“自动开关”。故在电路中起着自动调节、安全保护、转换电路等作用。</p>
 </blockquote>
-<h2 id="协议间通讯"><span class="header-section-number">20.3</span> 协议间通讯</h2>
-<p>当我们有使用CoAP协议的A设备，以及HTTP协议的B设备。这时，就变成一个有意思的话题了。</p>
+<p>在这里我们可以默认为我们想要为单片机的5V电压控制220V的电器。</p>
+<p>最后我们便可以通过些来控制灯的开和关。</p>
 <h1 id="android简单示例"><span class="header-section-number">21</span> Android简单示例</h1>
 <p>由于在某些嵌入式系统中使用的是Android系统，这里给出一个简单的Android App的示例，具体代码可以从clone自<a href="https://github.com/phodal/iot-android" class="uri">https://github.com/phodal/iot-android</a></p>
 <p>代码说明，经过测试的版本有</p>
