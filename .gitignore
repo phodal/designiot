@@ -1,6 +1,4 @@
 .idea/*
-build/designiot.epub
-build/designiot.mobi
 build/iot.pdf
 build/designiot.pdf
 Makefile.old
