@@ -9,8 +9,10 @@
 ##其他相关
 
 [IOT CoAP](https://github.com/phodal/iot-coap)
+
 [物联网资料合集](https://github.com/phodal/collection-iot)
-[最小物联网系统][https://github.com/phodal/iot]
+
+[最小物联网系统](https://github.com/phodal/iot)
 
 ###交流
 
