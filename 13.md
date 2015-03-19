@@ -1,0 +1,162 @@
+#环境准备
+
+##Laravel
+
+> Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。
+
+ - RESTful 路由: 通过简单的闭包就能响应HTTP请求。帮你快速开始构建非凡的应用。
+ - 强大的数据操纵能力: Laravel自带了强大的Eloquent ORM 和迁移工具。能够完美的与MySQL、Postgres、SQL Server 和 SQLite协同工作。
+ - 优雅的模版引擎: PHP代码或轻量级的Blade模版引擎都可无缝融合。Blade模版可以继承，并且拥有极快的解析速度。相信你会喜欢它的。
+ - 为明天做准备: 构建大型的企业级应用或者只是提供简单的JSON API；书写强大的控制器或轻巧的RESTful路由，Laravel适应所有级别的开发工作。
+ - 可靠的基石: Laravel 的基石是数个Symfony组件，这些经过千锤百炼、可靠的组件为你的应用提供坚实的基础。
+ - 基于Composer管理器: Composer 是一套帮你管理第三方扩展包的工具。能够让你迅速在 Packagist 中找到需要的扩展包。
+ - 强大的社区支持: 无论你是一个PHP新手还是经验丰富的架构师，都能在社区中找到需要的知识。你可以在IRC中讨论Idea，或者在论坛中发布问题。
+ - 测试、重构: Laravel 从开始就将测试作为重点功能。我们提供了灵活的IoC容器，集成了PHPUnit 测试工具。不用担心，这些都很容易上手。
+
+###为什么是 Laravel
+
+ - 因为个人喜爱，你也可以用 Ruby On Rails来搭建这样一个功能，或者是Java。
+ - PHP在我的服务器上运行得挺不错的，而且我又不需要重新去写配置那些配置。
+- Laravel 可以简单的开发我们所需要的功能，换句话说他是 PHP 世界的 Ruby On Rails。
+
+这里不会再重述之前的问题，这里只是将需要的步骤一个个写下来，然后丢到这里好好说一下。至于RESTful是什么，前面已经介绍了，就不再重复了。那么下面，我们就用Laravel来搭建一个平台给物联网用的。
+
+##安装 Laravel
+
+###GNU/Linux安装Composer
+
+GNU/Linux Ubuntu/OpenSUSE下可以执行
+
+    $ curl -sS https://getcomposer.org/installer | php
+
+####Windows安装Composer
+
+请直接下载
+
+[Composer-Setup][composer]
+
+####Mac OS
+
+1.安装Composer
+
+```bash
+brew install homebrew/php/composer
+```
+
+2.安装Laravel
+
+```bash
+composer global require "laravel/installer=~1.1"
+```
+
+3.创建Laravel工程
+
+```bash  
+composer create-project laravel/laravel your-project-name --prefer-dist 
+```
+
+####Mac OS
+
+1.下载laravel.phar
+
+```bash
+wget http://laravel.com/laravel.phar
+```
+
+2.重命名
+
+```bash
+mv laravel.phar laravel
+```
+
+3.移动到bin中
+
+```bash
+sudo mv laravel /usr/local/bin
+```
+
+4.创建项目
+
+```bash
+laravel new blog
+```
+
+##MySQL
+
+###安装MySQL
+
+``出于某些原因，我建议用MariaDB替换MySQL，如果你"真正"需要mysql，将mariadb替换为mysql``
+
+ps: 在下文中我会继续用MySQL，而不是MariaDB，MairaDB是MySQL的一个分支，真正的开源分支。
+
+Ubuntu/Debian/Mint
+
+```bash
+$ sudo apt-get install mariadb-server
+```
+
+Fedora/Centos
+
+```bash    
+$ sudo yum install mariadb-server    
+```
+
+openSUSE
+
+```bash
+$ sudo zypper install mariadb-server
+```
+
+Mac OS    
+
+```bash 
+$ brew install mariadb
+```
+
+###配置MySQL
+
+修改database.php
+
+```bash
+app/config/database.php
+```
+
+要修改的就是这个
+
+```php
+'mysql' => array(
+    'driver'    => 'mysql',
+    'host'      => 'localhost',
+    'database'  => 'iot',
+    'username'  => 'root',
+    'password'  => '940217',
+    'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix'    => '',
+),
+```
+
+如果你已经有phpmyadmin，似乎对你来说已经很简单了，如果没有的话，就直接用
+
+```bash
+$ mysql -uroot -p
+```    
+来创建一个新的
+
+```sql
+CREATE DATABASE IF NOT EXISTS iot default charset utf8 COLLATE utf8_general_ci;
+```
+
+[composer]: https://getcomposer.org/Composer-Setup.exe
+
+数据库的目的在于存储数据等等的闲话这里就不多说了，创建一个RESTful的目的在于产生下面的JSON格式数据，以便于我们在Android、Java、Python、jQuery等语言框架或者平台上可以调用，最主要的是可以直接用Ajax来产生更炫目的效果。
+
+```javascript
+{
+"id": 1,
+"temperature": 14,
+"sensors1": 12,
+"sensors2": 12,
+"led1": 0
+}
+```
