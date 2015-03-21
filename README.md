@@ -5,6 +5,18 @@
 
 图灵-电子书版[一步步搭建物联网系统](http://www.ituring.com.cn/book/1580)
 
+Android App版:
+
+<a href="https://play.google.com/store/apps/details?id=com.phodal.designiot">
+  <img alt="Get it on Google Play"
+       src="https://developer.android.com/images/brand/zh-cn_generic_rgb_wo_60.png" />
+</a>
+
+> 你了解多少种计算机语言？你认识这些戴着不同面具的Hello World吗？你想证明自己是程序语言达人吗？那就来答一答～
+
+> 专为程序猿量身打造，全面的语言百科，趣味的问答小游戏，茶余饭后，夜深人静，请来一打 Hello World ，不用客气！
+
+
 ##作者名单 
 
 Github | Name
