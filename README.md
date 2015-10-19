@@ -17,7 +17,7 @@ Android App版:
 Github | Name
 |--------| ---------|
 [phodal](https://github.com/phodal) |[Phodal Huang](http://www.phodal.com)
-[Lboyve](https://github.com/Lboyve) | Fortware
+[Lboyve](https://github.com/Lboyve) | Xiaobing WANG
 
 ## License
 
