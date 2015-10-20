@@ -1,4 +1,76 @@
-<h1 id="简单物联网">简单物联网</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="css/vendor.css" type="text/css" />
+</head>
+<body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb" >
+	<head>
+		<title>一步步搭建物联网系统(教你设计物联网系统)</title>
+		<meta name="keywords" content="设计物联网系统,物联网系统设计">
+		<meta name="description" content="一份关于如何设计物联网系统的文档">
+		<link rel="stylesheet" href="../css/vendor.css" />
+	</head>
+	<body class="container inner wrap">
+		<h1>一步步搭建物联网系统(教你设计物联网系统)</h1>
+	</body>
+</html>
+<div id="TOC">
+<ul>
+<li><a href="#简单物联网"><span class="toc-section-number">1</span> 简单物联网</a><ul>
+<li><a href="#硬件通信"><span class="toc-section-number">1.1</span> 硬件通信</a><ul>
+<li><a href="#串口通信"><span class="toc-section-number">1.1.1</span> 串口通信</a></li>
+</ul></li>
+<li><a href="#硬件"><span class="toc-section-number">1.2</span> 硬件</a><ul>
+<li><a href="#arduino"><span class="toc-section-number">1.2.1</span> Arduino</a></li>
+<li><a href="#继电器"><span class="toc-section-number">1.2.2</span> 继电器</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="简单物联网"><span class="header-section-number">1</span> 简单物联网</h1>
 <p>到这时，我们算搭建了一个简单的REST服务了。接着我们可以简单的做一个最小的物联网系统，将我们的单片机、MCU等等连上网。</p>
 <div class="figure">
 <img src="./images/arch.jpeg" alt="硬件结构图" />
@@ -19,10 +91,10 @@
 <img src="./images/hardware.jpg" alt="简单实物图" />
 <p class="caption">简单实物图</p>
 </div>
-<h2 id="硬件通信">硬件通信</h2>
-<h3 id="串口通信">串口通信</h3>
+<h2 id="硬件通信"><span class="header-section-number">1.1</span> 硬件通信</h2>
+<h3 id="串口通信"><span class="header-section-number">1.1.1</span> 串口通信</h3>
 <p>Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据，Raspberry Pi将资源传于互联网上对应的接口，接口可以在互联网上被访问。Laravel框架构架于服务器之上，将Raspbery Pi获取过来的数据存储于MySQL数据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问这些设备。Ajax用于将后台的数据以不需要刷新的方式传递到网站前台，通过HighCharts框架显示给终端用户。</p>
-<h4 id="python">Python</h4>
+<h4 id="python"><span class="header-section-number">1.1.1.1</span> Python</h4>
 <p>1.在Windows中的串口通常是<code>COM1</code>,<code>COM0</code>等等</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">ser<span class="op">=</span>serial.Serial(<span class="st">&quot;COM0&quot;</span>,<span class="dv">9600</span>)</code></pre></div>
 <p>2.Mac OS系统中位于/dev目录下，名字类似于<code>tty.usbmodem1451</code>。</p>
@@ -73,7 +145,7 @@ url<span class="op">=</span><span class="st">&quot;http://www.xianuniversity.com
 <img src="./images/change.png" alt="改变状态后的结果" />
 <p class="caption">改变状态后的结果</p>
 </div>
-<h4 id="ruby">Ruby</h4>
+<h4 id="ruby"><span class="header-section-number">1.1.1.2</span> Ruby</h4>
 <p>如果你用的是Ruby的话，可以尝试使用<code>serialport</code></p>
 <p>安装</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> gem install serialport</code></pre></div>
@@ -82,8 +154,8 @@ url<span class="op">=</span><span class="st">&quot;http://www.xianuniversity.com
 sp = <span class="dt">SerialPort</span>.new <span class="st">&quot;/dev/ACM0&quot;</span>, <span class="dv">9600</span>
 sp.write <span class="st">&quot;1&quot;</span></code></pre></div>
 <p>注意: 根据相关的系统修改相关的代码。</p>
-<h2 id="硬件">硬件</h2>
-<h3 id="arduino">Arduino</h3>
+<h2 id="硬件"><span class="header-section-number">1.2</span> 硬件</h2>
+<h3 id="arduino"><span class="header-section-number">1.2.1</span> Arduino</h3>
 <p>这样我们在我们的Arduino上所要做的便是，读取串口的结果并控制IO口。</p>
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> ledPort=<span class="dv">13</span>;
 
@@ -111,9 +183,11 @@ sp.write <span class="st">&quot;1&quot;</span></code></pre></div>
   }
 }</code></pre></div>
 <p>如果结果是1的话，就让13口为高电平，也就是让灯亮起来。</p>
-<h3 id="继电器">继电器</h3>
+<h3 id="继电器"><span class="header-section-number">1.2.2</span> 继电器</h3>
 <blockquote>
 <p>继电器（英文名称：relay）是一种电控制器件，是当输入量（激励量）的变化达到规定要求时，在电气输出电路中使被控量发生预定的阶跃变化的一种电器。它具有控制系统（又称输入回路）和被控制系统（又称输出回路）之间的互动关系。通常应用于自动化的控制电路中，它实际上是用小电流去控制大电流运作的一种“自动开关”。故在电路中起着自动调节、安全保护、转换电路等作用。</p>
 </blockquote>
 <p>在这里我们可以默认为我们想要为单片机的5V电压控制220V的电器。</p>
 <p>最后我们便可以通过些来控制灯的开和关。</p>
+</body>
+</html>

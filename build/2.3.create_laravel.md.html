@@ -1,7 +1,82 @@
-<h1 id="创建rest服务">创建REST服务</h1>
-<h2 id="数据库迁移">数据库迁移</h2>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="css/vendor.css" type="text/css" />
+</head>
+<body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb" >
+	<head>
+		<title>一步步搭建物联网系统(教你设计物联网系统)</title>
+		<meta name="keywords" content="设计物联网系统,物联网系统设计">
+		<meta name="description" content="一份关于如何设计物联网系统的文档">
+		<link rel="stylesheet" href="../css/vendor.css" />
+	</head>
+	<body class="container inner wrap">
+		<h1>一步步搭建物联网系统(教你设计物联网系统)</h1>
+	</body>
+</html>
+<div id="TOC">
+<ul>
+<li><a href="#创建rest服务"><span class="toc-section-number">1</span> 创建REST服务</a><ul>
+<li><a href="#数据库迁移"><span class="toc-section-number">1.1</span> 数据库迁移</a><ul>
+<li><a href="#创建表"><span class="toc-section-number">1.1.1</span> 创建表</a></li>
+<li><a href="#数据库迁移-1"><span class="toc-section-number">1.1.2</span> 数据库迁移</a></li>
+</ul></li>
+<li><a href="#创建restful"><span class="toc-section-number">1.2</span> 创建RESTful</a></li>
+<li><a href="#laravel-resources"><span class="toc-section-number">1.3</span> Laravel Resources</a><ul>
+<li><a href="#修改create"><span class="toc-section-number">1.3.1</span> 修改Create()</a></li>
+<li><a href="#创建表单"><span class="toc-section-number">1.3.2</span> 创建表单</a></li>
+<li><a href="#编辑模板"><span class="toc-section-number">1.3.3</span> 编辑模板</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="创建rest服务"><span class="header-section-number">1</span> 创建REST服务</h1>
+<h2 id="数据库迁移"><span class="header-section-number">1.1</span> 数据库迁移</h2>
 <p>这个名字是源自于Ruby On Rails在那时候的印象，不直接使用MySQL的目的在于让我们可以专注于过程。</p>
-<h3 id="创建表">创建表</h3>
+<h3 id="创建表"><span class="header-section-number">1.1.1</span> 创建表</h3>
 <p>表的概念，类似于在Excel中的表，如果你真实不懂数据库。 让我们创建一个athomes的表，为什么是athomes，因为以前在写android程序的时候就叫的是athome，忽略掉这些次要的因素吧。</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan migrate:make create_athomes_table</code></pre></div>
 <p>打开 app/database/migrations/<strong><em>create_athomes_table.php这里的</em></strong>是由日期和某些东西组成的，修改生成的代码为下面。</p>
@@ -27,7 +102,7 @@
     }  
 }</code></pre></div>
 <p>意思大致就是id是自加的，也就是我们在localhost/athome/{id}，当我们创建一个新的数据的时候，会自动加上去，最后一个timestamps批的是时间，会包含创建时间和修改时间。 剩下的temperature,sensors1,sensors2是小数，以及只有真和假的led1。</p>
-<h3 id="数据库迁移-1">数据库迁移</h3>
+<h3 id="数据库迁移-1"><span class="header-section-number">1.1.2</span> 数据库迁移</h3>
 <p>我们只是写了我们需要的数据的格式而并没有丢到数据库里，</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan migrate</code></pre></div>
 <p>这个就是我们执行迁移的命令，如果你用phpmyadmin可以直接打开查看，没有的话，可以。</p>
@@ -35,7 +110,7 @@
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">use</span> iot;
 <span class="kw">select</span> * <span class="kw">from</span> athomes;</code></pre></div>
 <p>就可以看到我们写的东西，那么接下来就是创建RESTful服务了</p>
-<h2 id="创建restful">创建RESTful</h2>
+<h2 id="创建restful"><span class="header-section-number">1.2</span> 创建RESTful</h2>
 <p>用下面的代码实现我们称之为Athomes控制器的创建</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">php</span> artisan controller:make AthomesController  </code></pre></div>
 <p>就会在app/controllers下面生成下面的代码</p>
@@ -48,7 +123,7 @@
     <span class="kw">public</span> <span class="kw">function</span> update<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span> {}  
     <span class="kw">public</span> <span class="kw">function</span> destroy<span class="ot">(</span><span class="kw">$id</span><span class="ot">)</span> {} 
 }</code></pre></div>
-<h2 id="laravel-resources">Laravel Resources</h2>
+<h2 id="laravel-resources"><span class="header-section-number">1.3</span> Laravel Resources</h2>
 <p>上面的代码过于沉重，请让我用 Ctrl+C 来带来点知识吧。</p>
 <table>
 <thead>
@@ -201,7 +276,7 @@
 }</code></pre></div>
 <p>希望你能读懂，没有的话，继续。</p>
 <p>下面这部分来自于之前的博客，这里就不多加论述了。 这个也就是我们要的模板，</p>
-<h3 id="修改create">修改Create()</h3>
+<h3 id="修改create"><span class="header-section-number">1.3.1</span> 修改Create()</h3>
 <div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">public</span> <span class="kw">function</span> create<span class="ot">()</span>
 {
     <span class="kw">$maxid</span>=Athomes::<span class="fu">max</span><span class="ot">(</span><span class="st">&#39;id&#39;</span><span class="ot">);</span>
@@ -213,8 +288,8 @@
     <span class="kw">return</span> View::make<span class="ot">(</span><span class="st">&#39;athome.create&#39;</span><span class="ot">);</span>
 }</code></pre></div>
 <p>这里只是对其中代码的进行一下说明。</p>
-<h3 id="创建表单">创建表单</h3>
-<h4 id="创建表单之前">创建表单之前</h4>
+<h3 id="创建表单"><span class="header-section-number">1.3.2</span> 创建表单</h3>
+<h4 id="创建表单之前"><span class="header-section-number">1.3.2.1</span> 创建表单之前</h4>
 <p>由于使用到了bootstrap以及bootstrap-select，记得添加css。</p>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/bootstrap.min.css&#39;) ?&gt;&quot;</span> <span class="kw">/&gt;</span>
 <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;</span><span class="er">&lt;</span><span class="st">?= url(&#39;css/bootstrap-select.min.css&#39;) ?&gt;&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
@@ -225,7 +300,7 @@
 <span class="kw">&lt;script&gt;</span>
 <span class="at">$</span>(<span class="st">&#39;.selectpicker&#39;</span>).<span class="at">selectpicker</span>()<span class="op">;</span>
 <span class="op">&lt;</span><span class="ss">/script&gt;</span></code></pre></div>
-<h4 id="创建表单-1">创建表单</h4>
+<h4 id="创建表单-1"><span class="header-section-number">1.3.2.2</span> 创建表单</h4>
 <p>这里用到的是之前提到的那个作者写下的，稍微修改了一下。</p>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;row-fluid&quot;</span><span class="kw">&gt;</span>
   {{ HTML::ul($errors-&gt;all()) }}
@@ -277,7 +352,7 @@
         <span class="kw">return</span> Redirect::to<span class="ot">(</span><span class="st">&#39;athome&#39;</span><span class="ot">);</span>
     }
 }</code></pre></div>
-<h3 id="编辑模板">编辑模板</h3>
+<h3 id="编辑模板"><span class="header-section-number">1.3.3</span> 编辑模板</h3>
 <p>完整的 blade 模板文件</p>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html lang=&quot;zh-cn&quot;<span class="dt">&gt;</span>
 <span class="kw">&lt;html&gt;</span>
@@ -339,3 +414,5 @@
 <p class="caption">Blade Edit</p>
 </div>
 <p>最后效果见:<a href="http://b.phodal.com/" class="uri">http://b.phodal.com/</a></p>
+</body>
+</html>

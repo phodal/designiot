@@ -1,16 +1,88 @@
-<h1 id="arduino-极客的玩具">Arduino 极客的玩具</h1>
-<h2 id="极客的玩具">极客的玩具</h2>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="css/vendor.css" type="text/css" />
+</head>
+<body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb" >
+	<head>
+		<title>一步步搭建物联网系统(教你设计物联网系统)</title>
+		<meta name="keywords" content="设计物联网系统,物联网系统设计">
+		<meta name="description" content="一份关于如何设计物联网系统的文档">
+		<link rel="stylesheet" href="../css/vendor.css" />
+	</head>
+	<body class="container inner wrap">
+		<h1>一步步搭建物联网系统(教你设计物联网系统)</h1>
+	</body>
+</html>
+<div id="TOC">
+<ul>
+<li><a href="#arduino-极客的玩具"><span class="toc-section-number">1</span> Arduino 极客的玩具</a><ul>
+<li><a href="#极客的玩具"><span class="toc-section-number">1.1</span> 极客的玩具</a></li>
+<li><a href="#硬件熟悉"><span class="toc-section-number">1.2</span> 硬件熟悉</a></li>
+<li><a href="#开发环境"><span class="toc-section-number">1.3</span> 开发环境</a></li>
+<li><a href="#点亮一个led"><span class="toc-section-number">1.4</span> 点亮一个LED</a></li>
+<li><a href="#串口通信"><span class="toc-section-number">1.5</span> 串口通信</a><ul>
+<li><a href="#关于arduino-setup"><span class="toc-section-number">1.5.1</span> 关于Arduino Setup()</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="arduino-极客的玩具"><span class="header-section-number">1</span> Arduino 极客的玩具</h1>
+<h2 id="极客的玩具"><span class="header-section-number">1.1</span> 极客的玩具</h2>
 <p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
-<p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往串口发送数据时，可以用Serial.write('1')的方式向串口发送字串'1'。</p>
+<p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往串口发送数据时，可以用Serial.write(‘1’)的方式向串口发送字串’1’。</p>
 <p>Arduino的出现很大程度上降低了电子制作的难度，初学者甚至不懂编程也可以上手Arduino,这也是它的魅力所在。</p>
-<h2 id="硬件熟悉">硬件熟悉</h2>
+<h2 id="硬件熟悉"><span class="header-section-number">1.2</span> 硬件熟悉</h2>
 <p>为了满足各种需求，Arduino团队设计了很多款开发板，如UNO、Pro mini、Mega2560、Due、Leonardo、Yún、Pro、Fio、Nano等十几种 开发板和扩展板。最适合初学者的一款是Arduino UNO 。下图是Arduino UNO 的外观图：</p>
 <div class="figure">
 <img src="http://ebook.designiot.cn/images/uno.png" alt="UNO" />
 <p class="caption">UNO</p>
 </div>
 <p>注：后面的程序也是基于Arduino UNO开发板来讲解。</p>
-<h2 id="开发环境">开发环境</h2>
+<h2 id="开发环境"><span class="header-section-number">1.3</span> 开发环境</h2>
 <div class="figure">
 <img src="http://ebook.designiot.cn/images/arduino.png" alt="Arduino" />
 <p class="caption">Arduino</p>
@@ -24,7 +96,7 @@
 
 }</code></pre></div>
 <p><code>setup()</code>函数用于初始化（如GPIO初始化，串口初始化，定时器初始化等）特点是只执行一次；<code>loop()</code>函数是一个死循环，可以看做C语言的<code>while(1)</code>函数。</p>
-<h2 id="点亮一个led">点亮一个LED</h2>
+<h2 id="点亮一个led"><span class="header-section-number">1.4</span> 点亮一个LED</h2>
 <p>对初学者来说，点亮led已成为入门必修课，使用Arduino控制led十分简单，并且很容易理解。 使用到的函数：</p>
 <ul>
 <li>pinMode(pin,mode)</li>
@@ -58,7 +130,7 @@
 <p>理解了<code>pinMode()</code>函数,<code>digitalWrite()</code>就很容易理解啦，value的取值有两个<code>HIGH</code>、<code>LOW</code>,<code>HIGH</code>表示让某一个引脚输出高电平，反之，<code>LOW</code>则使某一个引脚输出低电平。 程序中还是用到<code>delay(ms)</code>函数，它表示延时多少毫秒，例如延时500 ms ,直接调用<code>delay(500)；</code>就可以了。</p>
 <p>如果你仔细查看我的描述，你会发现我没有讲13号引脚怎么来的，是这样的：Arduino团队为了简化对引脚描述，对每个引脚都进行了编号，以UNO开发板为例，可以发现开发板排座的附近有对应的白颜色的数字，那便是所有的引脚编号，A0~A5是6路ADC输入引脚，0-13表示13路基本IO，数字前面的<code>~</code>表示该引脚具有PWM功能。如果要使用某一引脚，只需要知道引脚编号就可编写相应代码进行操作。</p>
 <p>例如<code>digitalWrite(2,LOW)</code>表示向2号引脚输出低电平。其他操作类似，是不是so easy <sup>-</sup> !</p>
-<h2 id="串口通信">串口通信</h2>
+<h2 id="串口通信"><span class="header-section-number">1.5</span> 串口通信</h2>
 <p>使用到的基本函数：</p>
 <ul>
 <li>Serial.begin()</li>
@@ -85,7 +157,7 @@
     }
 }</code></pre></div>
 <p>以上程序实现字符的输出(Serial.write(),Serial.print())和读入(Serial.read())。如果需要了解更多，可以参考：<a href="www.arduino.cc">Arduino官网</a></p>
-<h3 id="关于arduino-setup">关于Arduino Setup()</h3>
+<h3 id="关于arduino-setup"><span class="header-section-number">1.5.1</span> 关于Arduino Setup()</h3>
 <p>如果你对Arduino的Setup很疑惑的话，可以看看这里。下面Arduino源码目录中的main函数:</p>
 <div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include &lt;Arduino.h&gt;</span>
 
@@ -103,3 +175,5 @@
 <img src="./images/hwcnt.png" alt="hwcnt" />
 <p class="caption">hwcnt</p>
 </div>
+</body>
+</html>

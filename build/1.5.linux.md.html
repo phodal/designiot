@@ -1,14 +1,98 @@
-<h1 id="gnulinux-强大且free">GNU/Linux 强大且Free</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="css/vendor.css" type="text/css" />
+</head>
+<body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb" >
+	<head>
+		<title>一步步搭建物联网系统(教你设计物联网系统)</title>
+		<meta name="keywords" content="设计物联网系统,物联网系统设计">
+		<meta name="description" content="一份关于如何设计物联网系统的文档">
+		<link rel="stylesheet" href="../css/vendor.css" />
+	</head>
+	<body class="container inner wrap">
+		<h1>一步步搭建物联网系统(教你设计物联网系统)</h1>
+	</body>
+</html>
+<div id="TOC">
+<ul>
+<li><a href="#gnulinux-强大且free"><span class="toc-section-number">1</span> GNU/Linux 强大且Free</a><ul>
+<li><a href="#什么是linux"><span class="toc-section-number">1.1</span> 什么是Linux</a></li>
+<li><a href="#操作系统"><span class="toc-section-number">1.2</span> 操作系统</a><ul>
+<li><a href="#linux架构图"><span class="toc-section-number">1.2.1</span> Linux架构图</a></li>
+<li><a href="#shell"><span class="toc-section-number">1.2.2</span> Shell</a></li>
+<li><a href="#gcc"><span class="toc-section-number">1.2.3</span> GCC</a></li>
+<li><a href="#启动引导程序"><span class="toc-section-number">1.2.4</span> 启动引导程序</a></li>
+</ul></li>
+<li><a href="#从编译开始"><span class="toc-section-number">1.3</span> 从编译开始</a><ul>
+<li><a href="#开始之前"><span class="toc-section-number">1.3.1</span> 开始之前</a></li>
+<li><a href="#编译nginx"><span class="toc-section-number">1.3.2</span> 编译Nginx</a></li>
+<li><a href="#其他"><span class="toc-section-number">1.3.3</span> 其他</a></li>
+</ul></li>
+<li><a href="#包管理"><span class="toc-section-number">1.4</span> 包管理</a></li>
+<li><a href="#ubuntu-lnmp"><span class="toc-section-number">1.5</span> Ubuntu LNMP</a><ul>
+<li><a href="#update软件包列表"><span class="toc-section-number">1.5.1</span> Update软件包列表</a></li>
+<li><a href="#安装mysql"><span class="toc-section-number">1.5.2</span> 安装MySQL</a></li>
+<li><a href="#安装nginx"><span class="toc-section-number">1.5.3</span> 安装Nginx</a></li>
+<li><a href="#安装php"><span class="toc-section-number">1.5.4</span> 安装PHP</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="gnulinux-强大且free"><span class="header-section-number">1</span> GNU/Linux 强大且Free</h1>
 <div class="figure">
 <img src="./images/gnu_linux.png" alt="GNU/Linux" />
 <p class="caption">GNU/Linux</p>
 </div>
-<h2 id="什么是linux">什么是Linux</h2>
+<h2 id="什么是linux"><span class="header-section-number">1.1</span> 什么是Linux</h2>
 <p>Linux是一种自由和开放源码的类UNIX操作系统内核。目前存在着许多不同的Linux发行版，可安装在各种各样的电脑硬件设备，从手机、平板电脑、路由器和影音游戏控制台，到桌上型电脑，大型电脑和超级电脑。 Linux是一个领先的操作系统内核，世界上运算最快的10台超级电脑运行的都是基于Linux内核的操作系统。</p>
 <p>Linux操作系统也是自由软件和开放源代码发展中最著名的例子。只要遵循GNU通用公共许可证,任何人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布。<strong>严格来讲，Linux这个词本身只表示Linux内核，但在实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU工程各种工具和数据库的操作系统（也被称为GNU/Linux）。</strong>通常情况下，Linux被打包成供桌上型电脑和服务器使用的Linux发行版本。一些流行的主流Linux发行版本，包括Debian（及其衍生版本Ubuntu），Fedora和openSUSE等。Linux得名于电脑业余爱好者Linus Torvalds。</p>
 <p>而不是如百度百科所讲的<del>Linux操作系统是UNIX操作系统的一种克隆系统。它诞生于1991年的 Linux桌面[1]10 月5日（这是第一次正式向外公布的时间）。以后借助于Internet网络，并通过全世界各地计算机爱好者的共同努力，已成为今天世界上使用最多的一种UNIX类操作系统，并且使用人数还在迅猛增长。</del></p>
 <p>Linux只是个内核，而不是操作系统，所以在这我们再理解一下操作系统是由什么组成的。</p>
-<h2 id="操作系统">操作系统</h2>
+<h2 id="操作系统"><span class="header-section-number">1.2</span> 操作系统</h2>
 <p>操作系统（英语：Operating System，简称OS）是管理计算机硬件与软件资源的计算机程序，同时也是计算机系统的内核与基石。操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务。操作系统也提供一个让用户与系统交互的操作界面。 操作系统的型态非常多样，不同机器安装的操作系统可从简单到复杂，可从手机的嵌入式系统到超级计算机的大型操作系统。许多操作系统制造者对它涵盖范畴的定义也不尽一致，例如有些操作系统集成了图形用户界面(GUI)，而有些仅使用命令行界面(CLI)，而将GUI视为一种非必要的应用程序。</p>
 <p>操作系统位于底层硬件与用户之间，是两者沟通的桥梁。用户可以通过操作系统的用户界面，输入命令。操作系统则对命令进行解释，驱动硬件设备，实现用户要求。以现代标准而言，一个标准PC的操作系统应该提供以下的功能：</p>
 <ul>
@@ -21,16 +105,16 @@
 <li>驱动程序（Device drivers）</li>
 </ul>
 <p>而让我们来看一下两者之间的不同之处，这是一张linux的架构图我们可以发现内核只是位于底层。</p>
-<h3 id="linux架构图">Linux架构图</h3>
+<h3 id="linux架构图"><span class="header-section-number">1.2.1</span> Linux架构图</h3>
 <div class="figure">
 <img src="./images/linux_kernel.jpg" alt="Linux Kernel" />
 <p class="caption">Linux Kernel</p>
 </div>
-<h4 id="用户模式">用户模式</h4>
+<h4 id="用户模式"><span class="header-section-number">1.2.1.1</span> 用户模式</h4>
 <p>应用程序（sh、<a href="http://zh.wikipedia.org/wiki/Vi" title="Vi">vi</a>、<a href="http://zh.wikipedia.org/wiki/OpenOffice.org" title="OpenOffice.org">OpenOffice.org</a>等）</p>
 <p>复杂<a href="http://zh.wikipedia.org/wiki/%E5%BA%93" title="库">库</a>（<a href="http://zh.wikipedia.org/wiki/KDE" title="KDE">KDE</a>、glib等） 简单库（opendbm、sin等）</p>
 <p>C库（open、fopen、socket、exec、calloc等）</p>
-<h4 id="内核模式">内核模式</h4>
+<h4 id="内核模式"><span class="header-section-number">1.2.1.2</span> 内核模式</h4>
 <ul>
 <li>系统中断、调用、错误等软硬件消息</li>
 <li>内核（驱动程序、进程、网络、内存管理等）</li>
@@ -38,7 +122,7 @@
 </ul>
 <p>我们可以发现，由linux内核+shell可以构成一个操作系统，而linux本身只是个内核，也就是图中的内核模式，负责控制系统的这些部分。也就是我们可以发现，Linux内核构成了一个操作系统除用户界面以外的部分，而shell就是这最后的用户界面。</p>
 <p>而linux内核以外的部分就是由GNU计划构成的。</p>
-<h3 id="shell">Shell</h3>
+<h3 id="shell"><span class="header-section-number">1.2.2</span> Shell</h3>
 <div class="figure">
 <img src="./images/shell.png" alt="Shell" />
 <p class="caption">Shell</p>
@@ -48,7 +132,7 @@
 <p>bash 是一个为GNU计划编写的Unix shell。它的名字是一系列缩写：Bourne-Again SHell — 这是关于Bourne shell（sh）的一个双关语（Bourne again / born again）。Bourne shell是一个早期的重要shell，由史蒂夫·伯恩在1978年前后编写，并同Version 7 Unix一起发布。bash则在1987年由布莱恩·福克斯创造。在1990年，Chet Ramey成为了主要的维护者。</p>
 <p>shell将会是我们在GNU/linux中经常用到的经常有到的工具之一，用来操作计算机用的。在迁移到linux之前我们可以试用cygwin来进行模拟：</p>
 <p>Cygwin是许多自由软件的集合，最初由Cygnus Solutions开发，用于各种版本的Microsoft Windows上，运行<code>UNIX类</code>系统。</p>
-<h3 id="gcc">GCC</h3>
+<h3 id="gcc"><span class="header-section-number">1.2.3</span> GCC</h3>
 <p>GCC（GNU Compiler Collection，GNU编译器套装），是一套由GNU开发的编程语言编译器。它是一套以GPL及LGPL许可证所发行的自由软件，也是GNU计划的关键部分，亦是自由的类Unix及苹果电脑Mac OS X 操作系统的标准编译器。GCC（特别是其中的C语言编译器）也常被认为是跨平台编译器的事实标准。</p>
 <p>GCC原名为GNU C语言编译器（GNU C Compiler），因为它原本只能处理C语言。GCC很快地扩展，变得可处理C++。之后也变得可处理Fortran、Pascal、Objective-C、Java、Ada，以及Go与其他语言。</p>
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &lt;stdio.h&gt;</span>
@@ -64,7 +148,7 @@ main()
 <span class="kw">~/temp</span>/<span class="kw">free&gt;</span> ./hello
 <span class="kw">Hello</span> world</code></pre></div>
 <p>同shell一样，对于GNU/linux系统而言,GCC的作用也是无可取代的。当然如果只是一般用途的话，GCC对于一般用户可能没用，但是在些GNU/Linux系统上，我们可能就需要自己编译源码成二进制文件，而没有软件包，因而其重要性是不言而喻的。自然的如果我们自己动手编译GNU/Linux操作系统的话，我们会理解其的重要意义。有兴趣的同学可以试一下：Linux From Scratch (LFS)。</p>
-<h3 id="启动引导程序">启动引导程序</h3>
+<h3 id="启动引导程序"><span class="header-section-number">1.2.4</span> 启动引导程序</h3>
 <p>最后，当我们构成以上的那些之后，我们就需要一个引导程序，以便使系统启动，引导进内核。</p>
 <p>启动程序（bootloader）于电脑或其他计算机应用上，是指引导操作系统启动的程序。启动程序启动方式与程序视应用机型种类。例如在普通PC上，引导程序通常分为两部分：第一阶段引导程序位于主引导记录，用于引导位于某个分区上的第二阶段引导程序，如NTLDR、GNU GRUB等。</p>
 <p>BIOS 开机完成后，bootloader就接手初始化硬件设备、创建存储器空间的映射，以便为操作系统内核准备好</p>
@@ -85,16 +169,16 @@ main()
 <p>GNU GRUB（简称“GRUB”）是一个来自GNU项目的启动引导程序。GRUB是多启动规范的实现，它允许用户可以在计算机内同时拥有多个操作系统，并在计算机启动时选择希望运行的操作系统。GRUB可用于选择操作系统分区上的不同内核，也可用于向这些内核传递启动参数。</p>
 <p>GNU GRUB的前身为Grand Unified Bootloader。它主要用于类Unix系统；同大多Linux发行版一样，GNU系统也采用GNU GRUB作为它的启动器。Solaris从10 1/06版开始在x86系统上也采用GNU GRUB作为启动器。</p>
 <p>以上也就构成了一个简单的操作系统。</p>
-<h2 id="从编译开始">从编译开始</h2>
+<h2 id="从编译开始"><span class="header-section-number">1.3</span> 从编译开始</h2>
 <p>我们以一次编译开始我们的Linux学习之旅。</p>
-<h3 id="开始之前">开始之前</h3>
+<h3 id="开始之前"><span class="header-section-number">1.3.1</span> 开始之前</h3>
 <ul>
 <li>如果你没有用过GNU/Linux，我想你需要在虚拟机上安装一个。</li>
 <li>一个主流的GNU/Linux发行版，如Ubuntu,CentOS,Debian,Mint,OpenSUSE,Fedora等等。</li>
 <li>学会如何打开shell(ps:bash,zsh,sh等等)。</li>
 </ul>
 <p>或者你也可以在Windows上安装Cygwin。</p>
-<h3 id="编译nginx">编译Nginx</h3>
+<h3 id="编译nginx"><span class="header-section-number">1.3.2</span> 编译Nginx</h3>
 <p>1.下载这个软件的源码包</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">wget</span> http://nginx.org/download/nginx-1.7.4.tar.gz</code></pre></div>
 <p>wget是一个用于下载的软件，当然你也可以用软件，只是用wget似乎会比图形界面快哦。</p>
@@ -122,11 +206,11 @@ main()
 <p>6.运行</p>
 <p>如果运行顺利的话，应该可以直接</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">./objs/nginx</span>   </code></pre></div>
-<h3 id="其他">其他</h3>
+<h3 id="其他"><span class="header-section-number">1.3.3</span> 其他</h3>
 <p>1.如果没有wget,make,gcc等命令的时候可以用类似于下面的方法安装，</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install gcc,make,wget</code></pre></div>
 <p>2.正常情况下一个开源项目都会有一个README，会告诉你应该如何去做。</p>
-<h2 id="包管理">包管理</h2>
+<h2 id="包管理"><span class="header-section-number">1.4</span> 包管理</h2>
 <p>GNU/Linux最方便的东西莫过于包管理了。</p>
 <p>引自OpenSUSE官网的说明及图片<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
 <div class="figure">
@@ -148,9 +232,9 @@ main()
 <blockquote>
 <p>所以这就需要能自动解决依赖关系的软件包管理器。软件包管理系统就是一个工具集，为系统提供一个统一的安装、升级、删除软件的方式。</p>
 </blockquote>
-<h2 id="ubuntu-lnmp">Ubuntu LNMP</h2>
+<h2 id="ubuntu-lnmp"><span class="header-section-number">1.5</span> Ubuntu LNMP</h2>
 <p>在余下的章节中，我们需要去部署，需要去使用Ubuntu。如果在Windows下可以使用LAMP，但是在这里我们只说Ubuntu。开始之前你需要安装好Ubuntu，无论是在虚拟机，还是在真机安装，或者是Docker。</p>
-<h3 id="update软件包列表">Update软件包列表</h3>
+<h3 id="update软件包列表"><span class="header-section-number">1.5.1</span> Update软件包列表</h3>
 <p><code>apt-get</code>是debian，ubuntu发行版的包管理工具。<code>apt-get update</code>可以确保我们的软件包列表是最新的，下面是一个简单的更新过程。</p>
 <p>打开Terminal或者Konsole等等之类的终端控制台。</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">root@70cdc7a176a5</span>:/# sudo apt-get update
@@ -176,7 +260,7 @@ main()
 <p>更新完应该会显示:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Fetched</span> 20.5 MB in 5min 22s (63.6 kB/s)
 <span class="kw">Reading</span> package lists... Done</code></pre></div>
-<h3 id="安装mysql">安装MySQL</h3>
+<h3 id="安装mysql"><span class="header-section-number">1.5.2</span> 安装MySQL</h3>
 <p>安装命令</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> apt-get install mysql-server php5-mysql</code></pre></div>
 <p>过程:</p>
@@ -213,14 +297,14 @@ main()
 <span class="kw">Get</span>:10 http://archive.ubuntu.com/ubuntu/ trusty-updates/main mysql-server-core-5.5 amd64 5.5.40-0ubuntu0.14.04.1 [3215 kB]
 <span class="kw">47%</span> [10 mysql-server-core-5.5 850 kB/3215 kB 26%]             79.9 kB/s 1min 6s</code></pre></div>
 <p>在安装的过程中会要求你输入数据库密码。(默认为空)</p>
-<h3 id="安装nginx">安装Nginx</h3>
+<h3 id="安装nginx"><span class="header-section-number">1.5.3</span> 安装Nginx</h3>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">echo</span> <span class="st">&quot;deb http://ppa.launchpad.net/nginx/stable/ubuntu </span><span class="ot">$(</span><span class="kw">lsb_release</span> -sc<span class="ot">)</span><span class="st"> main&quot;</span> <span class="kw">|</span> <span class="kw">sudo</span> tee /etc/apt/sources.list.d/nginx-stable.list
 <span class="kw">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C
 <span class="kw">sudo</span> apt-get update
 <span class="kw">sudo</span> apt-get install nginx</code></pre></div>
 <p>启动Nginx Server</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> service nginx start</code></pre></div>
-<h3 id="安装php">安装PHP</h3>
+<h3 id="安装php"><span class="header-section-number">1.5.4</span> 安装PHP</h3>
 <p>sudo apt-get install php5-fpm</p>
 <p>安装过程</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">root@70cdc7a176a5</span>:/# sudo apt-get install php5-fpm
@@ -267,3 +351,5 @@ main()
 <li id="fn1"><p>https://zh.opensuse.org/index.php?title=%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86&amp;variant=zh<a href="#fnref1">↩</a></p></li>
 </ol>
 </div>
+</body>
+</html>

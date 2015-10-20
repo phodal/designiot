@@ -1,6 +1,83 @@
-<h1 id="无处不在的javascript">无处不在的Javascript</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="css/vendor.css" type="text/css" />
+</head>
+<body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb" >
+	<head>
+		<title>一步步搭建物联网系统(教你设计物联网系统)</title>
+		<meta name="keywords" content="设计物联网系统,物联网系统设计">
+		<meta name="description" content="一份关于如何设计物联网系统的文档">
+		<link rel="stylesheet" href="../css/vendor.css" />
+	</head>
+	<body class="container inner wrap">
+		<h1>一步步搭建物联网系统(教你设计物联网系统)</h1>
+	</body>
+</html>
+<div id="TOC">
+<ul>
+<li><a href="#无处不在的javascript"><span class="toc-section-number">1</span> 无处不在的Javascript</a><ul>
+<li><a href="#javascript的helloworld"><span class="toc-section-number">1.1</span> Javascript的Hello,world</a></li>
+<li><a href="#更js一点"><span class="toc-section-number">1.2</span> 更js一点</a><ul>
+<li><a href="#从数学出发"><span class="toc-section-number">1.2.1</span> 从数学出发</a></li>
+</ul></li>
+<li><a href="#设计和编程"><span class="toc-section-number">1.3</span> 设计和编程</a><ul>
+<li><a href="#函数"><span class="toc-section-number">1.3.1</span> 函数</a></li>
+<li><a href="#重新设计"><span class="toc-section-number">1.3.2</span> 重新设计</a></li>
+<li><a href="#object和函数"><span class="toc-section-number">1.3.3</span> object和函数</a></li>
+<li><a href="#面向对象"><span class="toc-section-number">1.3.4</span> 面向对象</a></li>
+</ul></li>
+<li><a href="#其他"><span class="toc-section-number">1.4</span> 其他</a></li>
+<li><a href="#美妙之处"><span class="toc-section-number">1.5</span> 美妙之处</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="无处不在的javascript"><span class="header-section-number">1</span> 无处不在的Javascript</h1>
 <p>Javascript现在已经无处不在了，也许你正打开的某个网站，他便可能是node.js+json+javascript+mustache.js完成的，虽然你还没理解上面那些是什么，也正是因为你不理解才需要去学习更多的东西。但是你只要知道Javascript已经无处不在了，它可能就在你手机上的某个app里，就在你浏览的网页里，就运行在你IDE中的某个进程里。</p>
-<h2 id="javascript的helloworld">Javascript的Hello,world</h2>
+<h2 id="javascript的helloworld"><span class="header-section-number">1.1</span> Javascript的Hello,world</h2>
 <p>这里我们还需要有一个helloworld.html，Javascript是专为网页交互而设计的脚本语言，所以我们一点点来开始这部分的旅途，先写一个符合标准的helloworld.html</p>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
 <span class="kw">&lt;html&gt;</span>
@@ -41,7 +118,7 @@
         <span class="op">&lt;</span><span class="ss">/noscript&gt;</span>
 <span class="ss">    &lt;/body</span><span class="op">&gt;</span>
 <span class="op">&lt;</span><span class="ss">/html&gt;</span></code></pre></div>
-<h2 id="更js一点">更js一点</h2>
+<h2 id="更js一点"><span class="header-section-number">1.2</span> 更js一点</h2>
 <p>我们需要让我们的代码看上去更像是js，同时是以js结尾。就像C语言的源码是以C结尾的，我们也同样需要让我们的代码看上去更正式一点。于是我们需要在helloworld.html的同一文件夹下创建一个app.js文件，在里面写着</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">document</span>.<span class="at">write</span>(<span class="st">&#39;hello,world&#39;</span>)<span class="op">;</span></code></pre></div>
 <p>同时我们的helloworld.html还需要告诉我们的浏览器js代码在哪里</p>
@@ -56,19 +133,19 @@
         <span class="kw">&lt;/noscript&gt;</span>
     <span class="kw">&lt;/body&gt;</span>
 <span class="kw">&lt;/html&gt;</span></code></pre></div>
-<h3 id="从数学出发">从数学出发</h3>
+<h3 id="从数学出发"><span class="header-section-number">1.2.1</span> 从数学出发</h3>
 <p>让我们回到第一章讲述的小明的问题，<strong>从实际问题下手编程，更容易学会编程</strong>。小学时代的数学题最喜欢这样子了——某商店里的糖一个5块钱，小明买了3个糖，小明一共花了多少钱。在编程方面，也许我们还算是小学生。最直接的方法就是直接计算3x5=?</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">document</span>.<span class="at">write</span>(<span class="dv">3</span><span class="op">*</span><span class="dv">5</span>)<span class="op">;</span></code></pre></div>
 <p>document.write实际也我们可以理解为输出，也就是往页面里写入3*5的结果，在有双引号的情况下会输出字符串。我们便会在浏览器上看到15，这便是一个好的开始，也是一个糟糕的开始。</p>
-<h2 id="设计和编程">设计和编程</h2>
+<h2 id="设计和编程"><span class="header-section-number">1.3</span> 设计和编程</h2>
 <p>对于实际问题，如果我们只是止于所要得到的结果，很多年之后，我们就成为了code monkey。对这个问题进行再一次设计，所谓的设计有些时候会把简单的问题复杂化，有些时候会使以后的扩展更加简单。这一天因为这家商店的糖价格太高了，于是店长将价格降为了4块钱。</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">document</span>.<span class="at">write</span>(<span class="dv">3</span><span class="op">*</span><span class="dv">4</span>)<span class="op">;</span></code></pre></div>
 <p>于是我们又得到了我们的结果，但是下次我们看到这些代码的时候没有分清楚哪个是糖的数量，哪个是价格，于是我们重新设计了程序</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">tang<span class="op">=</span><span class="dv">4</span><span class="op">;</span>
 num<span class="op">=</span><span class="dv">3</span><span class="op">;</span>
 <span class="va">document</span>.<span class="at">write</span>(tang<span class="op">*</span>num)<span class="op">;</span></code></pre></div>
-<p>这才能叫得上是程序设计，或许你注意到了&quot;;&quot;这个符号的存在，我想说的是这是另外一个标准，我们不得不去遵守，也不得不去fuck。</p>
-<h3 id="函数">函数</h3>
+<p>这才能叫得上是程序设计，或许你注意到了“;”这个符号的存在，我想说的是这是另外一个标准，我们不得不去遵守，也不得不去fuck。</p>
+<h3 id="函数"><span class="header-section-number">1.3.1</span> 函数</h3>
 <p>记得刚开始学三角函数的时候，我们会写</p>
 <pre><code>sin 30=0.5</code></pre>
 <p>而我们的函数也是类似于此，换句话说，因为很多搞计算机的先驱都学好了数学，都把数学世界的规律带到了计算机世界，所以我们的函数也是类似于此，让我们做一个简单的开始。</p>
@@ -94,7 +171,7 @@ num<span class="op">=</span><span class="dv">3</span><span class="op">;</span>
 <span class="op">}</span>
 <span class="at">calc</span>(<span class="dv">3</span><span class="op">,</span><span class="dv">4</span>)<span class="op">;</span></code></pre></div>
 <p>但是从某种程度上来说，我们的calc做了计算的事又做了输出的事，总的来说设计上有些不好。</p>
-<h3 id="重新设计">重新设计</h3>
+<h3 id="重新设计"><span class="header-section-number">1.3.2</span> 重新设计</h3>
 <p>我们将输出的工作移到函数的外面，</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">calc</span>(tang<span class="op">,</span>num)<span class="op">{</span>
     <span class="cf">return</span> tang<span class="op">*</span>num<span class="op">;</span>
@@ -109,7 +186,7 @@ num<span class="op">=</span><span class="dv">3</span><span class="op">;</span>
 <span class="op">}</span>
 <span class="at">printResult</span>(<span class="dv">3</span><span class="op">,</span> <span class="dv">4</span>)</code></pre></div>
 <p>看上去更专业了一点点，如果我们只需要计算的时候我们只需要调用calc，如果我们需要输出的时候我们就调用printResult的方法。</p>
-<h3 id="object和函数">object和函数</h3>
+<h3 id="object和函数"><span class="header-section-number">1.3.3</span> object和函数</h3>
 <p>我们还没有说清楚之前我们遇到过的document.write以及Math.sin的语法为什么看上去很奇怪，所以让我们看看他们到底是什么，修改app.js为以下内容</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">document</span>.<span class="at">write</span>(<span class="kw">typeof</span> document)<span class="op">;</span>
 <span class="va">document</span>.<span class="at">write</span>(<span class="kw">typeof</span> Math)<span class="op">;</span></code></pre></div>
@@ -158,7 +235,7 @@ num<span class="op">=</span><span class="dv">3</span><span class="op">;</span>
 <span class="va">document</span>.<span class="at">write</span>(<span class="kw">typeof</span> Person)<span class="op">;</span>
 <span class="va">document</span>.<span class="at">write</span>(<span class="va">Person</span>.<span class="at">future</span>)<span class="op">;</span></code></pre></div>
 <p>而这些会在我们未来的实际编程过程中用得更多。</p>
-<h3 id="面向对象">面向对象</h3>
+<h3 id="面向对象"><span class="header-section-number">1.3.4</span> 面向对象</h3>
 <p>开始之前先让我们简化上面的代码，</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">Person</span>.<span class="at">future</span><span class="op">=</span><span class="kw">function</span> <span class="at">dream</span>()<span class="op">{</span>
     future<span class="op">;</span>
@@ -177,7 +254,7 @@ num<span class="op">=</span><span class="dv">3</span><span class="op">;</span>
 <span class="va">document</span>.<span class="at">write</span>(<span class="kw">typeof</span> person<span class="op">+</span><span class="st">&quot;&lt;br&gt;&quot;</span>)<span class="op">;</span>
 <span class="va">document</span>.<span class="at">write</span>(<span class="kw">typeof</span> <span class="va">person</span>.<span class="at">future</span><span class="op">+</span><span class="st">&quot;&lt;br&gt;&quot;</span>)<span class="op">;</span>
 <span class="va">document</span>.<span class="at">write</span>(<span class="va">person</span>.<span class="at">future</span>()<span class="op">+</span><span class="st">&quot;&lt;br&gt;&quot;</span>)<span class="op">;</span></code></pre></div>
-<p>只是在这个时候Person是一个函数，但是我们声明的person却变成了一个对象<strong>一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数。</strong>这里的&quot;&lt;br&gt;&quot;是HTML中的元素，称之为DOM，在这里起的是换行的作用，我们会在稍后介绍它，这里我们先关心下this。this关键字表示函数的所有者或作用域，也就是这里的Person。</p>
+<p>只是在这个时候Person是一个函数，但是我们声明的person却变成了一个对象<strong>一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数。</strong>这里的“&lt;br&gt;”是HTML中的元素，称之为DOM，在这里起的是换行的作用，我们会在稍后介绍它，这里我们先关心下this。this关键字表示函数的所有者或作用域，也就是这里的Person。</p>
 <p>上面的方法显得有点不可取，换句话说和一开始的</p>
 <pre><code>document.write(3*4);</code></pre>
 <p>一样，不具有灵活性，因此在我们完成功能之后，我们需要对其进行优化，这就是程序设计的真谛——解决完实际问题后，我们需要开始真正的设计，而不是解决问题时的编程。</p>
@@ -195,7 +272,7 @@ num<span class="op">=</span><span class="dv">3</span><span class="op">;</span>
 <span class="va">document</span>.<span class="at">write</span>(<span class="va">phodal</span>.<span class="at">height</span><span class="op">+</span><span class="st">&quot;&lt;br&gt;&quot;</span>)<span class="op">;</span>
 <span class="va">document</span>.<span class="at">write</span>(<span class="va">phodal</span>.<span class="at">future</span>()<span class="op">+</span><span class="st">&quot;&lt;br&gt;&quot;</span>)<span class="op">;</span></code></pre></div>
 <p>于是，产生了这样一个可重用的Javascript对象,this关键字确立了属性的所有者。</p>
-<h2 id="其他">其他</h2>
+<h2 id="其他"><span class="header-section-number">1.4</span> 其他</h2>
 <p>Javascript还有一个很强大的特性，也就是原型继承，不过这里我们先不考虑这些部分，用尽量少的代码及关键字来实际我们所要表达的核心功能，这才是这里的核心，其他的东西我们可以从其他书本上学到。</p>
 <p>所谓的继承，</p>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> Chinese<span class="op">=</span><span class="kw">function</span>()<span class="op">{</span>
@@ -240,10 +317,12 @@ num<span class="op">=</span><span class="dv">3</span><span class="op">;</span>
 <div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> para<span class="op">=</span><span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&quot;para&quot;</span>)<span class="op">;</span>
 <span class="va">para</span>.<span class="va">style</span>.<span class="at">color</span><span class="op">=</span><span class="st">&quot;blue&quot;</span><span class="op">;</span></code></pre></div>
 <p>接着，字体就变成了蓝色，有了DOM我们就可以对页面进行操作，可以说我们看到的绝大部分的页面效果都是通过DOM操作实现的。</p>
-<h2 id="美妙之处">美妙之处</h2>
+<h2 id="美妙之处"><span class="header-section-number">1.5</span> 美妙之处</h2>
 <p>这里说到的Javascript仅仅只是其中的一小小部分，忽略掉的东西很多，只关心的是如何去设计一个实用的app，作为一门编程语言，他还有其他强大的内制函数，要学好需要一本有价值的参考书。这里提到的只是其中的不到20%的东西，其他的80%或者更多会在你解决问题的时候出现。</p>
 <ul>
 <li>我们可以创建一个对象或者函数，它可以包含基本值、对象或者函数。</li>
 <li>我们可以用Javascript修改页面的属性，虽然只是简单的示例。</li>
 <li>我们还可以去解决实际的编程问题。</li>
 </ul>
+</body>
+</html>

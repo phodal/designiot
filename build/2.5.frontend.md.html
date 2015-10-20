@@ -1,13 +1,87 @@
-<h1 id="前端显示">前端显示</h1>
-<h2 id="库与车轮子">库与车轮子</h2>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="css/vendor.css" type="text/css" />
+</head>
+<body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb" >
+	<head>
+		<title>一步步搭建物联网系统(教你设计物联网系统)</title>
+		<meta name="keywords" content="设计物联网系统,物联网系统设计">
+		<meta name="description" content="一份关于如何设计物联网系统的文档">
+		<link rel="stylesheet" href="../css/vendor.css" />
+	</head>
+	<body class="container inner wrap">
+		<h1>一步步搭建物联网系统(教你设计物联网系统)</h1>
+	</body>
+</html>
+<div id="TOC">
+<ul>
+<li><a href="#前端显示"><span class="toc-section-number">1</span> 前端显示</a><ul>
+<li><a href="#库与车轮子"><span class="toc-section-number">1.1</span> 库与车轮子</a></li>
+<li><a href="#库"><span class="toc-section-number">1.2</span> 库</a><ul>
+<li><a href="#jquery"><span class="toc-section-number">1.2.1</span> jQuery</a></li>
+<li><a href="#jquery-mobile"><span class="toc-section-number">1.2.2</span> jQuery Mobile</a></li>
+</ul></li>
+<li><a href="#网站前台显示"><span class="toc-section-number">1.3</span> 网站前台显示</a><ul>
+<li><a href="#highcharts"><span class="toc-section-number">1.3.1</span> Highcharts</a></li>
+<li><a href="#实时数据"><span class="toc-section-number">1.3.2</span> 实时数据</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="前端显示"><span class="header-section-number">1</span> 前端显示</h1>
+<h2 id="库与车轮子"><span class="header-section-number">1.1</span> 库与车轮子</h2>
 <p>在多数的情况下我们都没有理由也没有必要去重新发明我们的车轮，在这时使用库会是一个比较好的做法。</p>
-<h2 id="库">库</h2>
-<h3 id="jquery">jQuery</h3>
+<h2 id="库"><span class="header-section-number">1.2</span> 库</h2>
+<h3 id="jquery"><span class="header-section-number">1.2.1</span> jQuery</h3>
 <blockquote>
 <p>Jquery是继prototype之后又一个优秀的Javascript库。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器（IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+），jQuery2.0及后续版本将不再支持IE6/7/8浏览器。jQuery使用户能更方便地处理HTML（标准通用标记语言下的一个应用）、events、实现动画效果，并且方便地为网站提供AJAX交互。jQuery还有一个比较大的优势是，它的文档说明很全，而且各种应用也说得很详细，同时还有许多成熟的插件可供选择。jQuery能够使用户的html页面保持代码和html内容分离，也就是说，不用再在html里面插入一堆js来调用命令了，只需要定义id即可。</p>
 </blockquote>
 <p>在我们的代码里用到了jQuery，然而这是一种简单而且快速有速地方法。</p>
-<h3 id="jquery-mobile">jQuery Mobile</h3>
+<h3 id="jquery-mobile"><span class="header-section-number">1.2.2</span> jQuery Mobile</h3>
 <blockquote>
 <p>jQuery Mobile是jQuery 在手机上和平板设备上的版本。jQuery Mobile不仅会给主流移动平台带来jQuery核心库，而且会发布一个完整统一的jQuery移动UI框架。支持全球主流的移动平台。jQuery Mobile开发团队说：能开发这个项目，我们非常兴奋。移动Web太需要一个跨浏览器的框架，让开发人员开发出真正的移动Web网站。</p>
 </blockquote>
@@ -35,10 +109,10 @@
     <span class="kw">&lt;/div&gt;</span>
 <span class="kw">&lt;/body&gt;</span></code></pre></div>
 <p>可以看到上面的代码与一般的HTML不同的地方是<code>data-role</code>,<code>data-collapsed</code>,<code>data-position</code>，而这些是jQuery Mobile所拥有的data属性。</p>
-<p><strong>data-role参数表</strong>： rold | 详细 --------------|---- page | 页面容器，其内部的mobile元素将会继承这个容器上所设置的属性 header | 页面标题容器，这个容器内部可以包含文字、返回按钮、功能按钮等元素 footer | 页面页脚容器，这个容器内部也可以包含文字、返回按钮、功能按钮等元素 content | 页面内容容器，这是一个很宽容的容器，内部可以包含标准的html元素和jQueryMobile元素 controlgroup | 将几个元素设置成一组，一般是几个相同的元素类型 fieldcontain | 区域包裹容器，用增加边距和分割线的方式将容器内的元素和容器外的元素明显分隔 navbar |功能导航容器，通俗的讲就是工具条 listview |列表展示容器，类似手机中联系人列表的展示方式 list-divider | 列表展示容器的表头，用来展示一组列表的标题，内部不可包含链接 button | 按钮，将链接和普通按钮的样式设置成为jQueryMobile的风格 none | 阻止框架对元素进行渲染，使元素以html原生的状态显示，主要用于form元素。</p>
+<p><strong>data-role参数表</strong>： rold | 详细 ————–|—- page | 页面容器，其内部的mobile元素将会继承这个容器上所设置的属性 header | 页面标题容器，这个容器内部可以包含文字、返回按钮、功能按钮等元素 footer | 页面页脚容器，这个容器内部也可以包含文字、返回按钮、功能按钮等元素 content | 页面内容容器，这是一个很宽容的容器，内部可以包含标准的html元素和jQueryMobile元素 controlgroup | 将几个元素设置成一组，一般是几个相同的元素类型 fieldcontain | 区域包裹容器，用增加边距和分割线的方式将容器内的元素和容器外的元素明显分隔 navbar |功能导航容器，通俗的讲就是工具条 listview |列表展示容器，类似手机中联系人列表的展示方式 list-divider | 列表展示容器的表头，用来展示一组列表的标题，内部不可包含链接 button | 按钮，将链接和普通按钮的样式设置成为jQueryMobile的风格 none | 阻止框架对元素进行渲染，使元素以html原生的状态显示，主要用于form元素。</p>
 <p>同上，我们也可以在网上找到其他相对就的属性。</p>
-<h2 id="网站前台显示">网站前台显示</h2>
-<h3 id="highcharts">Highcharts</h3>
+<h2 id="网站前台显示"><span class="header-section-number">1.3</span> 网站前台显示</h2>
+<h3 id="highcharts"><span class="header-section-number">1.3.1</span> Highcharts</h3>
 <p>Highcharts有以下的特点</p>
 <ul>
 <li>兼容性：兼容当今所有的浏览器，包括 iPhone、IE 和火狐等等；</li>
@@ -197,7 +271,7 @@
     <span class="at">showTemper</span>()<span class="op">;</span>
 <span class="op">}</span>)<span class="op">;</span></code></pre></div>
 <p>代码看上去是由两部分组成的<code>drawTemperature</code>和<code>showTemperature</code></p>
-<h3 id="实时数据">实时数据</h3>
+<h3 id="实时数据"><span class="header-section-number">1.3.2</span> 实时数据</h3>
 <p>剥离后的Ajax部分代码如下所示，主要用的是jQuery框架的getJSON来实现的</p>
 <pre><code>var dataLength = [];
 function drawTemp() {
@@ -215,3 +289,5 @@ function drawTemp() {
 <p>方法定义：jQuery.getJSON( url, data, callback )</p>
 <p>通过get请求得到json数据</p>
 <p>·url用于提供json数据的地址页 ·data(Optional)用于传送到服务器的键值对 ·callback(Optional)回调函数，json数据请求成功后的处理函数 我想你似乎应该懂得了一点，就是在不刷新网页的同时，用javascript获取数据放到图表上，就这么简单。</p>
+</body>
+</html>

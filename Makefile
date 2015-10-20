@@ -5,7 +5,7 @@ iot:
 	pandoc -s -V geometry:margin=1in --number-sections --highlight-style pygments -S --toc -c css/vendor.css -B template/head.html end/iot.md -o iot.html 
 
 chapter:
-	find src/ -name \*.md -type f -exec pandoc -o {}.html {} \;
+	find src/ -name \*.md -type f -exec pandoc  -s -V geometry:margin=1in --number-sections --highlight-style pygments -S --toc -c css/vendor.css -B template/head-chapter.html  -o {}.html {} \;
 	mv src/*/*.html build/
 	mv src/*.html build/
 

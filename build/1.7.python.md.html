@@ -1,4 +1,79 @@
-<h1 id="python-代码如散文">Python 代码如散文</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="css/vendor.css" type="text/css" />
+</head>
+<body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb" >
+	<head>
+		<title>一步步搭建物联网系统(教你设计物联网系统)</title>
+		<meta name="keywords" content="设计物联网系统,物联网系统设计">
+		<meta name="description" content="一份关于如何设计物联网系统的文档">
+		<link rel="stylesheet" href="../css/vendor.css" />
+	</head>
+	<body class="container inner wrap">
+		<h1>一步步搭建物联网系统(教你设计物联网系统)</h1>
+	</body>
+</html>
+<div id="TOC">
+<ul>
+<li><a href="#python-代码如散文"><span class="toc-section-number">1</span> Python 代码如散文</a><ul>
+<li><a href="#代码与散文"><span class="toc-section-number">1.1</span> 代码与散文</a><ul>
+<li><a href="#开始之前"><span class="toc-section-number">1.1.1</span> 开始之前</a></li>
+<li><a href="#python的helloworld"><span class="toc-section-number">1.1.2</span> Python的Hello,World</a></li>
+<li><a href="#我们想要的helloworld"><span class="toc-section-number">1.1.3</span> 我们想要的Hello,World</a></li>
+</ul></li>
+<li><a href="#算法"><span class="toc-section-number">1.2</span> 算法</a></li>
+<li><a href="#实用主义哲学"><span class="toc-section-number">1.3</span> 实用主义哲学</a></li>
+<li><a href="#包管理"><span class="toc-section-number">1.4</span> 包管理</a><ul>
+<li><a href="#python-requests"><span class="toc-section-number">1.4.1</span> python requests</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="python-代码如散文"><span class="header-section-number">1</span> Python 代码如散文</h1>
 <div class="figure">
 <img src="./images/python.png" alt="python" />
 <p class="caption">python</p>
@@ -10,7 +85,7 @@
 <li>支持多学科</li>
 </ul>
 <p>我们可以和其他不是脚本语言的语言进行一个简单的对比，如C，你需要去编译去运行，有时候还需要解决跨平台问题，本来你是在你的Windows上运行得好好的，但是有一天你换了一个Mac电脑的时候，问题变得很棘手，你甚至不知道怎么去解决问题。我没有用过MFC，听说很方便，但是在其他平台下就没有一个好的解决方案。这里可能跑得有点远，但是不同的用户可能在不同的平台上，这也就是脚本语言的优势所在了。</p>
-<h2 id="代码与散文">代码与散文</h2>
+<h2 id="代码与散文"><span class="header-section-number">1.1</span> 代码与散文</h2>
 <p>你可能听过，也可能了解过，不过在这里我们可能不会去讲述那些基础的语法的东西，我们想说的是代码格式的重要性，在html中你可以这样去写你的代码</p>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;&lt;head&gt;&lt;title&gt;</span>This is a Title
 <span class="kw">&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div</span><span class="ot"> class=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span>
@@ -69,11 +144,11 @@ _start:
 message:
         .ascii  &quot;Hello, world\n&quot;</code></pre>
 <p>所以上面的代码的可读性在今天新生一代的程序员来说可能没有那么容易理解。芯片运行的速度越来越快，在程序上我们也需要一个越来越快的解决方案，而所谓的越来越快的解决方案指的不是运行速度上，而是开发速度上。如果你没有办法在同样时间内开发出更好的程序，那么你就可能输给你的竞争对手。</p>
-<h3 id="开始之前">开始之前</h3>
+<h3 id="开始之前"><span class="header-section-number">1.1.1</span> 开始之前</h3>
 <p>我们终于又从一种语言跳到了另外一种语言，我们可能习惯了一种模式，而不敢于去尝试新的东西，这些或许是我们的一些习惯又或者是因为害怕等等。</p>
 <p>作为另外一个跨平台能力很强的语言，这里说的是与Javascript、HTML比较，或许你会觉得C算是最好的，但是我们这里讨论更多的是脚本语言，也就是直接可以运行的。在现在主流的大多数移动平台上，python也有良好的支持，如Android,IOS，只是这些算是类Unix系统内核，python还支持之前Nokia的Symbian。</p>
 <p>开始之前我们需要确认我们的平台上已经有了python环境，也就是可以运行下面的Hello,World，你可以在网上很多地方看到，最简单的地方还是到官网，又或者是所用移动平台的store下载。</p>
-<h3 id="python的helloworld">Python的Hello,World</h3>
+<h3 id="python的helloworld"><span class="header-section-number">1.1.2</span> Python的Hello,World</h3>
 <p>Python的Hello,World有两种形式，作为一种脚本语言来说，Javascript也是一种脚本语言，只是两者之间有太多的不同之处，每个人都会有不同的选择对于一种语言用来作为其的习惯。于是这就是我们的</p>
 <pre><code>print &quot;Hello,World&quot;</code></pre>
 <p>当我们把我们的脚本在shell环境下运行时</p>
@@ -92,7 +167,7 @@ message:
 <pre><code>./a.out</code></pre>
 <p>也就是执行编译完后的程序，需要注意的是helloworld.py没有编译，不过也会输出</p>
 <pre><code>Hello,world</code></pre>
-<h3 id="我们想要的helloworld">我们想要的Hello,World</h3>
+<h3 id="我们想要的helloworld"><span class="header-section-number">1.1.3</span> 我们想要的Hello,World</h3>
 <p>我们想展示的是如何结合前面学习的内容做一个更有意思的Hello,World。</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> cherrypy
 <span class="kw">class</span> HelloWorld(<span class="bu">object</span>):
@@ -101,13 +176,13 @@ message:
     index.exposed <span class="op">=</span> <span class="va">True</span>
 
 cherrypy.quickstart(HelloWorld())</code></pre></div>
-<h2 id="算法">算法</h2>
+<h2 id="算法"><span class="header-section-number">1.2</span> 算法</h2>
 <p>我们需要去了解算法(algorithm)，引经据典的话就是这样子:</p>
 <blockquote>
 a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer
 </blockquote>
 <p>也就是计算或其他解决问题的操作需要遵循的一个过程或者一套规则，书上还提到的说法是——解决问题的诀窍，让我想起了hack一词。我们总会去想某些东西是否有一个更快的计算方法，有时候在处理某些问题上也显示了一个好的算法的重要性。</p>
-<h2 id="实用主义哲学">实用主义哲学</h2>
+<h2 id="实用主义哲学"><span class="header-section-number">1.3</span> 实用主义哲学</h2>
 <p>(来自于:HyryStudio)</p>
 <p>大多数工程师、科学家使用科学计算软件的目的都是为了快速解决其工作中遇到的问题，而不是开发出一套完整的软件。这就是为什么MATLAB这样的商用科学计算软件十分流行的原因。而Python在这一点上实际上和MATLAB十分相似，我们也可以使用Python众多的扩展库快速写出一次性的数据处理、运算的脚本。然而由于Python语言的一些高级特性，以及众多的科学计算之外的扩展库，我们可以将积累下来的一次性脚本进行改造，为它们提供命令行、GUI、数据库、网络等众多接口，最终成为一套完整的工具包或者实用的计算软件。而且由于是开源的自由软件，我们可以在任何系统中安装Python环境，运行我们 的程序。</p>
 <p>Python一直保持着很强的实用主义，它通常不会去试着重新开发一整套函数库，而是将现有的开源函数库包装成其扩展库。而Python则通过这些扩展库将众多的开源函数库连接在一起，是名符其实的胶水语言。例如由华盛顿大学的教授主导开发的 Sage ，就是一套以代替MATLAB、Mathematica、Maple等商用科学计算软件为目的的开源系统。它通过Python结合了众多的开源科学计算软件，并通过网页浏览器提供了一个与其交互的记事本文档界面。 Python的科学计算扩展库非常多，不同专业的技术人员都可以找到适合自己的扩展库。下面是我经常会用到的一个非常不完全的列表：</p>
@@ -118,13 +193,13 @@ a process or set of rules to be followed in calculations or other problem-solvin
 <li>ETS : 这是一套Enthought公司开发的函数库，其中的 Mayavi 能很方便地对数据进行三维可视化。</li>
 <li>OpenCV : 这是一套计算机视觉库，目前的最新版本已经提供了十分完备的Python接口，能够调用OpenCV中众多的图像处理、模式识别函数直接对NumPy数组进行处理。</li>
 </ul>
-<h2 id="包管理">包管理</h2>
+<h2 id="包管理"><span class="header-section-number">1.4</span> 包管理</h2>
 <p>关于Python的包管理</p>
 <ul>
 <li>Eggs 格式是 setuptools 引入的一种文件格式，它使用 .egg 扩展名，用于 Python 模块的安装。</li>
 <li>pip 是目前 python 包管理的事实标准，2008年发布。它被用作 easy_install 的替代品，但是它仍有大量的功能建立在 setuptools 组件之上。</li>
 </ul>
-<h3 id="python-requests">python requests</h3>
+<h3 id="python-requests"><span class="header-section-number">1.4.1</span> python requests</h3>
 <pre><code>Requests 是使用 Apache2 Licensed 许可证的 HTTP 库。用 Python 编写，真正的为人类着想。
 
 Python 标准库中的 urllib2 模块提供了你所需要的大多数 HTTP 功能，但是它的 API太渣了。它是为另一个时代、另一个互联网所创建的。它需要巨量的工作，甚至包括各种方法覆盖，来完成最简单的任务。</code></pre>
@@ -148,3 +223,5 @@ Python 标准库中的 urllib2 模块提供了你所需要的大多数 HTTP 功�
 url <span class="op">=</span> <span class="st">&quot;http://b.phodal.com/athome/1&quot;</span>
 r <span class="op">=</span> requests.get(url)
 <span class="bu">print</span> r.text</code></pre></div>
+</body>
+</html>
