@@ -1,0 +1,21 @@
+<h1 id="mqtt">MQTT</h1>
+<blockquote>
+<p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）是IBM开发的一个即时通讯协议，有可能成为物联网的重要组成部分。该协议支持所有平台，几乎可以把所有联网物品和外部连接起来，被用来当做传感器和致动器（比如通过Twitter让房屋联网）的通信协议。</p>
+</blockquote>
+<p>早在1999年，IBM的Andy Stanford-Clark博士以及Arcom公司ArlenNipper博士发明了MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）技术[1] 。据Andy Stanford-Clark博士称，MQTT将在今年和明年呈现爆炸式增长。</p>
+<h2 id="nodejs-mqtt">Nodejs MQTT</h2>
+<blockquote>
+<p><a href="https://github.com/adamvr/MQTT.js/">mqtt.js</a> is a library for the MQTT protocol, written in JavaScript to be used in node.js.</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> mqtt <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;mqtt&#39;</span>)
+
+client <span class="op">=</span> <span class="va">mqtt</span>.<span class="at">createClient</span>(<span class="dv">1883</span><span class="op">,</span> <span class="st">&#39;localhost&#39;</span>)<span class="op">;</span>
+
+<span class="va">client</span>.<span class="at">subscribe</span>(<span class="st">&#39;presence&#39;</span>)<span class="op">;</span>
+<span class="va">client</span>.<span class="at">publish</span>(<span class="st">&#39;presence&#39;</span><span class="op">,</span> <span class="st">&#39;Hello mqtt&#39;</span>)<span class="op">;</span>
+
+<span class="va">client</span>.<span class="at">on</span>(<span class="st">&#39;message&#39;</span><span class="op">,</span> <span class="kw">function</span> (topic<span class="op">,</span> message) <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(message)<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span>
+
+<span class="va">client</span>.<span class="at">end</span>()<span class="op">;</span></code></pre></div>

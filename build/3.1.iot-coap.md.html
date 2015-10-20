@@ -1,0 +1,52 @@
+<h2 id="使用iot-coap构建物联网">使用IoT-CoAP构建物联网</h2>
+<p>(<code>注意</code>：windows系统npm install失败时，需要自己建立一个C:and Settings[USERNAME]Data文件)</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">npm</span> install iot-coap</code></pre></div>
+<p>1.新建<strong>index.js</strong></p>
+<p><code>注意</code>: 如果已经存在一个index.js文件，请将下面内容添加到文件末尾(create index.js, and add)</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> iotcoap         <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;iot-coap&#39;</span>)<span class="op">;</span>
+
+<span class="va">iotcoap</span>.<span class="at">run</span>()<span class="op">;</span>
+<span class="va">iotcoap</span>.<span class="va">rest</span>.<span class="at">run</span>()<span class="op">;</span></code></pre></div>
+<p><code>注意</code>:在db配置可以选择mongodb和sqlite3，替换所需要的数据库即可。(you can choice db on iot.js with 'sqlite' or 'mongodb')</p>
+<p>2.创建<strong>iot.js</strong></p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">exports</span>.<span class="at">config</span>  <span class="op">=</span> <span class="op">{</span>
+    <span class="st">&quot;db_name&quot;</span><span class="op">:</span> <span class="st">&quot;iot.db&quot;</span><span class="op">,</span>
+    <span class="st">&quot;mongodb_name&quot;</span><span class="op">:</span> <span class="st">&quot;iot&quot;</span><span class="op">,</span>
+    <span class="st">&quot;mongodb_documents&quot;</span><span class="op">:</span> <span class="st">&quot;iot&quot;</span><span class="op">,</span>
+    <span class="st">&quot;db&quot;</span><span class="op">:</span> <span class="st">&quot;mongodb&quot;</span><span class="op">,</span>
+    <span class="st">&quot;table_name&quot;</span><span class="op">:</span> <span class="st">&quot;basic&quot;</span><span class="op">,</span>
+    <span class="st">&quot;keys&quot;</span><span class="op">:</span>[
+        <span class="st">&quot;id&quot;</span><span class="op">,</span>
+        <span class="st">&quot;value&quot;</span><span class="op">,</span>
+        <span class="st">&quot;sensors1&quot;</span><span class="op">,</span>
+        <span class="st">&quot;sensors2&quot;</span>
+    ]<span class="op">,</span>
+    <span class="st">&quot;db_table&quot;</span><span class="op">:</span> <span class="st">&quot;id integer primary key, value text, sensors1 float, sensors2 float&quot;</span><span class="op">,</span>
+    <span class="st">&quot;mongodb_init&quot;</span><span class="op">:</span>[
+        <span class="op">{</span>
+            <span class="dt">id</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
+            <span class="dt">value</span><span class="op">:</span> <span class="st">&quot;is id 1&quot;</span><span class="op">,</span>
+            <span class="dt">sensors1</span><span class="op">:</span> <span class="dv">19</span><span class="op">,</span>
+            <span class="dt">sensors2</span><span class="op">:</span> <span class="dv">20</span>
+        <span class="op">},</span>
+        <span class="op">{</span>
+            <span class="dt">id</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span>
+            <span class="dt">value</span><span class="op">:</span> <span class="st">&quot;is id 2&quot;</span><span class="op">,</span>
+            <span class="dt">sensors1</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span>
+            <span class="dt">sensors2</span><span class="op">:</span> <span class="dv">21</span>
+        <span class="op">}</span>
+    ]<span class="op">,</span>
+    <span class="st">&quot;init_table&quot;</span><span class="op">:</span>[
+        <span class="st">&quot;insert or replace into basic (id,value,sensors1,sensors2) VALUES (1, &#39;is id 1&#39;, 19, 20);&quot;</span><span class="op">,</span>
+        <span class="st">&quot;insert or replace into basic (id,value,sensors1,sensors2) VALUES (2, &#39;is id 2&#39;, 20, 21);&quot;</span>
+    ]<span class="op">,</span>
+    <span class="st">&quot;query_table&quot;</span><span class="op">:</span><span class="st">&quot;select * from basic;&quot;</span><span class="op">,</span>
+    <span class="st">&quot;rest_url&quot;</span><span class="op">:</span> <span class="st">&quot;/id/:id&quot;</span><span class="op">,</span>
+    <span class="st">&quot;rest_post_url&quot;</span><span class="op">:</span> <span class="st">&quot;/&quot;</span><span class="op">,</span>
+    <span class="st">&quot;rest_port&quot;</span><span class="op">:</span> <span class="dv">8848</span>
+<span class="op">};</span></code></pre></div>
+<p>3.运行(run)</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">node</span> index.js</code></pre></div>
+<p>show:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span> listening at coap://0.0.0.0:5683
+<span class="kw">restify</span> listening at http://0.0.0.0:8848</code></pre></div>

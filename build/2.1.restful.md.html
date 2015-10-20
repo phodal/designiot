@@ -1,0 +1,56 @@
+<h1 id="设计restful-api">设计RESTful API</h1>
+<blockquote>
+<p>REST从资源的角度来观察整个网络，分布在各处的资源由URI确定，而客户端的应用通过URI来获取资源的表征。获得这些表征致使这些应用程序转变了其状态。随着不断获取资源的表征，客户端应用不断地在转变着其状态，所谓表征状态转移。</p>
+</blockquote>
+<p>因为我们需要的是一个Machine到Machine沟通的平台，需要设计一个API。而设计一个API来说，RESTful是很不错的一种选择，也是主流的选择。而设计一个RESTful服务，的首要步骤便是设计资源模型。</p>
+<h3 id="资源">资源</h3>
+<p>互联网上的一切信息都可以看作是一种资源。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">HTTP Method</th>
+<th align="left">Operation Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">GET</td>
+<td align="left">Get a resource (Read a resource)</td>
+</tr>
+<tr class="even">
+<td align="left">POST</td>
+<td align="left">Create a resource</td>
+</tr>
+<tr class="odd">
+<td align="left">PUT</td>
+<td align="left">Update a resource</td>
+</tr>
+<tr class="even">
+<td align="left">DELETE</td>
+<td align="left">Delete Resource</td>
+</tr>
+</tbody>
+</table>
+<h2 id="设计restful-api-1">设计RESTful API</h2>
+<p>设计RESTful API是一个有意思的话题。下面是一些常用的RESTful设计原则:</p>
+<h2 id="rest关键目标">REST关键目标</h2>
+<ul>
+<li>组件间交互的可伸缩性</li>
+<li>接口的通用性</li>
+<li>组件的独立部署</li>
+<li>通过中间组件来减少延迟、实施安全策略和封装已有系统</li>
+</ul>
+<h2 id="判断是否是-restful的约束条件">判断是否是 RESTful的约束条件</h2>
+<ul>
+<li>客户端-服务器分离</li>
+<li>无状态</li>
+<li>可缓存</li>
+<li>多层系统</li>
+<li>统一接口</li>
+<li>随需代码（可选）</li>
+</ul>
+<h2 id="json">JSON</h2>
+<div class="figure">
+<img src="./images/xml-vs-json.png" alt="xml-vs-json" />
+<p class="caption">xml-vs-json</p>
+</div>

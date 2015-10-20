@@ -1,0 +1,83 @@
+<h1 id="环境准备">环境准备</h1>
+<h2 id="laravel">Laravel</h2>
+<blockquote>
+<p>Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。</p>
+</blockquote>
+<ul>
+<li>RESTful 路由: 通过简单的闭包就能响应HTTP请求。帮你快速开始构建非凡的应用。</li>
+<li>强大的数据操纵能力: Laravel自带了强大的Eloquent ORM 和迁移工具。能够完美的与MySQL、Postgres、SQL Server 和 SQLite协同工作。</li>
+<li>优雅的模版引擎: PHP代码或轻量级的Blade模版引擎都可无缝融合。Blade模版可以继承，并且拥有极快的解析速度。相信你会喜欢它的。</li>
+<li>为明天做准备: 构建大型的企业级应用或者只是提供简单的JSON API；书写强大的控制器或轻巧的RESTful路由，Laravel适应所有级别的开发工作。</li>
+<li>可靠的基石: Laravel 的基石是数个Symfony组件，这些经过千锤百炼、可靠的组件为你的应用提供坚实的基础。</li>
+<li>基于Composer管理器: Composer 是一套帮你管理第三方扩展包的工具。能够让你迅速在 Packagist 中找到需要的扩展包。</li>
+<li>强大的社区支持: 无论你是一个PHP新手还是经验丰富的架构师，都能在社区中找到需要的知识。你可以在IRC中讨论Idea，或者在论坛中发布问题。</li>
+<li>测试、重构: Laravel 从开始就将测试作为重点功能。我们提供了灵活的IoC容器，集成了PHPUnit 测试工具。不用担心，这些都很容易上手。</li>
+</ul>
+<h3 id="为什么是-laravel">为什么是 Laravel</h3>
+<ul>
+<li>因为个人喜爱，你也可以用 Ruby On Rails来搭建这样一个功能，或者是Java。</li>
+<li>PHP在我的服务器上运行得挺不错的，而且我又不需要重新去写配置那些配置。</li>
+<li>Laravel 可以简单的开发我们所需要的功能，换句话说他是 PHP 世界的 Ruby On Rails。</li>
+</ul>
+<p>这里不会再重述之前的问题，这里只是将需要的步骤一个个写下来，然后丢到这里好好说一下。至于RESTful是什么，前面已经介绍了，就不再重复了。那么下面，我们就用Laravel来搭建一个平台给物联网用的。</p>
+<h2 id="安装-laravel">安装 Laravel</h2>
+<h3 id="gnulinux安装composer">GNU/Linux安装Composer</h3>
+<p>GNU/Linux Ubuntu/OpenSUSE下可以执行</p>
+<pre><code>$ curl -sS https://getcomposer.org/installer | php</code></pre>
+<h4 id="windows安装composer">Windows安装Composer</h4>
+<p>请直接下载</p>
+<p><a href="https://getcomposer.org/Composer-Setup.exe">Composer-Setup</a></p>
+<h4 id="mac-os">Mac OS</h4>
+<p>1.安装Composer</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">brew</span> install homebrew/php/composer</code></pre></div>
+<p>2.安装Laravel</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">composer</span> global require <span class="st">&quot;laravel/installer=~1.1&quot;</span></code></pre></div>
+<p>3.创建Laravel工程</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">composer</span> create-project laravel/laravel your-project-name --prefer-dist </code></pre></div>
+<h4 id="mac-os-1">Mac OS</h4>
+<p>1.下载laravel.phar</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">wget</span> http://laravel.com/laravel.phar</code></pre></div>
+<p>2.重命名</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mv</span> laravel.phar laravel</code></pre></div>
+<p>3.移动到bin中</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> mv laravel /usr/local/bin</code></pre></div>
+<p>4.创建项目</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">laravel</span> new blog</code></pre></div>
+<h2 id="mysql">MySQL</h2>
+<h3 id="安装mysql">安装MySQL</h3>
+<p><code>出于某些原因，我建议用MariaDB替换MySQL，如果你&quot;真正&quot;需要mysql，将mariadb替换为mysql</code></p>
+<p>ps: 在下文中我会继续用MySQL，而不是MariaDB，MairaDB是MySQL的一个分支，真正的开源分支。</p>
+<p>Ubuntu/Debian/Mint</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sudo</span> apt-get install mariadb-server</code></pre></div>
+<p>Fedora/Centos</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sudo</span> yum install mariadb-server    </code></pre></div>
+<p>openSUSE</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sudo</span> zypper install mariadb-server</code></pre></div>
+<p>Mac OS</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">brew</span> install mariadb</code></pre></div>
+<h3 id="配置mysql">配置MySQL</h3>
+<p>修改database.php</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">app/config/database.php</span></code></pre></div>
+<p>要修改的就是这个</p>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="st">&#39;mysql&#39;</span> =&gt; <span class="fu">array</span><span class="ot">(</span>
+    <span class="st">&#39;driver&#39;</span>    =&gt; <span class="st">&#39;mysql&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;host&#39;</span>      =&gt; <span class="st">&#39;localhost&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;database&#39;</span>  =&gt; <span class="st">&#39;iot&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;username&#39;</span>  =&gt; <span class="st">&#39;root&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;password&#39;</span>  =&gt; <span class="st">&#39;940217&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;charset&#39;</span>   =&gt; <span class="st">&#39;utf8&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;collation&#39;</span> =&gt; <span class="st">&#39;utf8_unicode_ci&#39;</span><span class="ot">,</span>
+    <span class="st">&#39;prefix&#39;</span>    =&gt; <span class="st">&#39;&#39;</span><span class="ot">,</span>
+<span class="ot">),</span></code></pre></div>
+<p>如果你已经有phpmyadmin，似乎对你来说已经很简单了，如果没有的话，就直接用</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mysql</span> -uroot -p</code></pre></div>
+<p>来创建一个新的</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">CREATE</span> <span class="kw">DATABASE</span> <span class="kw">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span> iot <span class="kw">default</span> charset utf8 COLLATE utf8_general_ci;</code></pre></div>
+<p>数据库的目的在于存储数据等等的闲话这里就不多说了，创建一个RESTful的目的在于产生下面的JSON格式数据，以便于我们在Android、Java、Python、jQuery等语言框架或者平台上可以调用，最主要的是可以直接用Ajax来产生更炫目的效果。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">{</span>
+<span class="st">&quot;id&quot;</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
+<span class="st">&quot;temperature&quot;</span><span class="op">:</span> <span class="dv">14</span><span class="op">,</span>
+<span class="st">&quot;sensors1&quot;</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span>
+<span class="st">&quot;sensors2&quot;</span><span class="op">:</span> <span class="dv">12</span><span class="op">,</span>
+<span class="st">&quot;led1&quot;</span><span class="op">:</span> <span class="dv">0</span>
+<span class="op">}</span></code></pre></div>

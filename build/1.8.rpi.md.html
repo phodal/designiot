@@ -1,0 +1,42 @@
+<h1 id="raspberry-pi">Raspberry Pi</h1>
+<div class="figure">
+<img src="./images/rpi.jpg" alt="Raspberry Pi" />
+<p class="caption">Raspberry Pi</p>
+</div>
+<h2 id="geek的盛宴">Geek的盛宴</h2>
+<p>Raspberry Pi是一款针对电脑业余爱好者、教师、小学生以及小型企业等用户的迷你电脑，预装Linux系统，体积仅信用卡大小，搭载ARM架构处理器，运算性能和智能手机相仿。在接口方面，Raspberry Pi提供了可供键鼠使用的USB接口，此外还有千兆以太网接口、SD卡扩展接口以及1个HDMI高清视频输出接口，可与显示器或者TV相连。</p>
+<p>Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
+<p>Raspberry Pi相比于一般的ARM开发板来说，由于其本身搭载着Linux操作系统，可以用诸如Python、Ruby或Bash来执行脚本，而不是通过编译程序来运行，具有更高的开发效率。</p>
+<h2 id="raspberry-pi-初始化">Raspberry Pi 初始化</h2>
+<p>今天的Raspbian默认已经安装<code>openssh-server</code>，并默认开启了OpenSSH-Server。</p>
+<p>接着我们就可以看到系统启动了，要我们输入用户名和密码</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Raspbian</span> GNU/Linux 7 raspberrypi ttyAMA0
+
+<span class="kw">raspberrypi</span> login: pi
+<span class="kw">Password</span>:
+<span class="kw">Last</span> login: Sat Apr 26 05:58:07 UTC 2014 on ttyAMA0
+<span class="kw">Linux</span> raspberrypi 3.10.25+ <span class="co">#622 PREEMPT Fri Jan 3 18:41:00 GMT 2014 armv6l</span>
+
+<span class="kw">The</span> programs included with the Debian GNU/Linux system are free software<span class="kw">;</span>
+<span class="kw">the</span> exact distribution terms for each program are described in the
+<span class="kw">individual</span> files in /usr/share/doc/*/copyright.
+
+<span class="kw">Debian</span> GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+<span class="kw">permitted</span> by applicable law.
+<span class="kw">ls</span>
+
+<span class="kw">NOTICE</span>: the software on this Raspberry Pi has not been fully configured. Please run <span class="st">&#39;sudo raspi-config&#39;</span></code></pre></div>
+<p>然后</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> raspi-config</code></pre></div>
+<p>选择第一个，下面就可以继续了</p>
+<p><code>Expand Filesystem              Ensures that all of the SD card s</code></p>
+<p>接着重启后，便可以扩展SD卡成功。</p>
+<p>注: Raspbian与一般的Debian系统使用起来区别不是太大(ps:命令上)，由于CPU是不同的架构，在编译上可能有所区别。通常PC上的软件需要重新编译才能在RPi上运行，所以如果可以用apt-get安装的话，就不要自己编译了。</p>
+<h2 id="raspberry-pi-gpio">Raspberry Pi GPIO</h2>
+<blockquote>
+<p>General Purpose Input Output （通用输入/输出）简称为GPIO，或总线扩展器，利用工业标准I2C、SMBus或SPI接口简化了I/O口的扩展。当微控制器或芯片组没有足够的I/O端口，或当系统需要采用远端串行通信或控制时，GPIO产品能够提供额外的控制和监视功能。</p>
+</blockquote>
+<div class="figure">
+<img src="./images/gpio.png" alt="GPIO" />
+<p class="caption">GPIO</p>
+</div>

@@ -1,0 +1,119 @@
+<h1 id="简单物联网">简单物联网</h1>
+<p>到这时，我们算搭建了一个简单的REST服务了。接着我们可以简单的做一个最小的物联网系统，将我们的单片机、MCU等等连上网。</p>
+<div class="figure">
+<img src="./images/arch.jpeg" alt="硬件结构图" />
+<p class="caption">硬件结构图</p>
+</div>
+<p>考虑到如果我们只是单一连接各个节点，那么系统的结构图，同下所示</p>
+<div class="figure">
+<img src="./images/fullconnected.png" alt="全连接" />
+<p class="caption">全连接</p>
+</div>
+<p>下面的星形结构图类似于我们在接下来所要构建的系统</p>
+<div class="figure">
+<img src="./images/star.png" alt="星形结构图" />
+<p class="caption">星形结构图</p>
+</div>
+<p>一个用于控制真实电器的硬件实物图</p>
+<div class="figure">
+<img src="./images/hardware.jpg" alt="简单实物图" />
+<p class="caption">简单实物图</p>
+</div>
+<h2 id="硬件通信">硬件通信</h2>
+<h3 id="串口通信">串口通信</h3>
+<p>Arduino与Raspberry Pi通过串口通信的方式实现通信，相互传输所需要的数据，Raspberry Pi将资源传于互联网上对应的接口，接口可以在互联网上被访问。Laravel框架构架于服务器之上，将Raspbery Pi获取过来的数据存储于MySQL数据，再以REST服务的方式共享数据，互联网上的其他设备便可以通过网络来访问这些设备。Ajax用于将后台的数据以不需要刷新的方式传递到网站前台，通过HighCharts框架显示给终端用户。</p>
+<h4 id="python">Python</h4>
+<p>1.在Windows中的串口通常是<code>COM1</code>,<code>COM0</code>等等</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">ser<span class="op">=</span>serial.Serial(<span class="st">&quot;COM0&quot;</span>,<span class="dv">9600</span>)</code></pre></div>
+<p>2.Mac OS系统中位于/dev目录下，名字类似于<code>tty.usbmodem1451</code>。</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">    serial.Serial(<span class="st">&quot;/dev/tty.usbmodem1451&quot;</span>,<span class="dv">9600</span>)</code></pre></div>
+<p>3.在Linux内核的系统中虚拟串口用的节点是ttyACM，位于/dev目录下。</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">    serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)</code></pre></div>
+<blockquote>
+<p>串行接口是一种可以将接受来自CPU的并行数据字符转换为连续的串行数据流发送出去，同时可将接受的串行数据流转换为并行的数据字符供给CPU的器件。一般完成这种功能 的电路，我们称为串行接口电路。</p>
+</blockquote>
+<p>便是打开这个设备，以9600的速率传输数据。</p>
+<p>程序框架如下所示:</p>
+<div class="figure">
+<img src="./images/raspberrypi_flow.png" alt="Raspberry Pi" />
+<p class="caption">Raspberry Pi</p>
+</div>
+<p>代码如下:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
+<span class="im">import</span> urllib2
+<span class="im">import</span> serial
+<span class="im">import</span> time
+
+url<span class="op">=</span><span class="st">&quot;http://www.xianuniversity.com/athome/1&quot;</span>
+
+<span class="cf">while</span> <span class="dv">1</span>:
+    <span class="cf">try</span>:
+        date<span class="op">=</span>urllib2.urlopen(url)
+        result<span class="op">=</span>json.load(date)
+        status<span class="op">=</span>result[<span class="dv">0</span>][<span class="st">&quot;led1&quot;</span>]
+        ser<span class="op">=</span>serial.Serial(<span class="st">&quot;/dev/ttyACM0&quot;</span>,<span class="dv">9600</span>)
+        <span class="cf">if</span> status<span class="op">==</span><span class="dv">1</span> :
+            ser.write(<span class="st">&quot;1&quot;</span>)
+        <span class="cf">elif</span> status<span class="op">==</span><span class="dv">0</span>:
+            ser.write(<span class="st">&quot;0&quot;</span>)
+        time.sleep(<span class="dv">1</span>)
+    <span class="cf">except</span> urllib2.URLError:
+        <span class="bu">print</span> <span class="st">&quot;Bad URL or timeout&quot;</span></code></pre></div>
+<div class="figure">
+<img src="./images/getjson.png" alt="python返回json数据" />
+<p class="caption">python返回json数据</p>
+</div>
+<p>系统还需要对上面的数据进行处理，只拿其中的结果</p>
+<div class="figure">
+<img src="./images/origin.png" alt="python处理完后的结果" />
+<p class="caption">python处理完后的结果</p>
+</div>
+<p>当改变led的状态后，便可以得到下面的结果</p>
+<div class="figure">
+<img src="./images/change.png" alt="改变状态后的结果" />
+<p class="caption">改变状态后的结果</p>
+</div>
+<h4 id="ruby">Ruby</h4>
+<p>如果你用的是Ruby的话，可以尝试使用<code>serialport</code></p>
+<p>安装</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> gem install serialport</code></pre></div>
+<p>代码大致如下</p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">require <span class="st">&#39;serialport&#39;</span>
+sp = <span class="dt">SerialPort</span>.new <span class="st">&quot;/dev/ACM0&quot;</span>, <span class="dv">9600</span>
+sp.write <span class="st">&quot;1&quot;</span></code></pre></div>
+<p>注意: 根据相关的系统修改相关的代码。</p>
+<h2 id="硬件">硬件</h2>
+<h3 id="arduino">Arduino</h3>
+<p>这样我们在我们的Arduino上所要做的便是，读取串口的结果并控制IO口。</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> ledPort=<span class="dv">13</span>;
+
+<span class="dt">void</span> setup() {
+  Serial.begin(<span class="dv">9600</span>);
+  pinMode(ledPort,OUTPUT);
+}
+
+<span class="dt">int</span> serialData;
+<span class="dt">void</span> loop() {
+  String inString = <span class="st">&quot;&quot;</span>;
+  <span class="kw">while</span> (Serial.available()&gt; <span class="dv">0</span>)
+  {
+    <span class="dt">int</span> inChar = Serial.read();
+    <span class="kw">if</span> (isDigit(inChar)) {
+      inString += (<span class="dt">char</span>)inChar; 
+    }
+    serialData=inString.toInt();
+    Serial.print(serialData);
+  }
+  <span class="kw">if</span>(serialData==<span class="dv">1</span>){
+    digitalWrite(ledPort,HIGH);
+  }<span class="kw">else</span>{
+    digitalWrite(ledPort,LOW);
+  }
+}</code></pre></div>
+<p>如果结果是1的话，就让13口为高电平，也就是让灯亮起来。</p>
+<h3 id="继电器">继电器</h3>
+<blockquote>
+<p>继电器（英文名称：relay）是一种电控制器件，是当输入量（激励量）的变化达到规定要求时，在电气输出电路中使被控量发生预定的阶跃变化的一种电器。它具有控制系统（又称输入回路）和被控制系统（又称输出回路）之间的互动关系。通常应用于自动化的控制电路中，它实际上是用小电流去控制大电流运作的一种“自动开关”。故在电路中起着自动调节、安全保护、转换电路等作用。</p>
+</blockquote>
+<p>在这里我们可以默认为我们想要为单片机的5V电压控制220V的电器。</p>
+<p>最后我们便可以通过些来控制灯的开和关。</p>

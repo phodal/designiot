@@ -1,0 +1,105 @@
+<h1 id="arduino-极客的玩具">Arduino 极客的玩具</h1>
+<h2 id="极客的玩具">极客的玩具</h2>
+<p>Arduino，是一个开放源代码的单芯片微电脑，它使用了Atmel AVR单片机，采用了基于开放源代码的软硬件平台，构建于开放源代码 simple I/O 接口板，并且具有使用类似Java，C 语言的Processing/Wiring开发环境。</p>
+<p>Arduino开发板封装了常用的库到开发环境中，可以让用户在开发产品时，将主要注意力放置于所需要实现的功能上，而不是开发的过程中。在为Arduino写串口程序时，我们只需要用Serial.begin(9600)以9600的速率初始化串口，而在往串口发送数据时，可以用Serial.write('1')的方式向串口发送字串'1'。</p>
+<p>Arduino的出现很大程度上降低了电子制作的难度，初学者甚至不懂编程也可以上手Arduino,这也是它的魅力所在。</p>
+<h2 id="硬件熟悉">硬件熟悉</h2>
+<p>为了满足各种需求，Arduino团队设计了很多款开发板，如UNO、Pro mini、Mega2560、Due、Leonardo、Yún、Pro、Fio、Nano等十几种 开发板和扩展板。最适合初学者的一款是Arduino UNO 。下图是Arduino UNO 的外观图：</p>
+<div class="figure">
+<img src="http://ebook.designiot.cn/images/uno.png" alt="UNO" />
+<p class="caption">UNO</p>
+</div>
+<p>注：后面的程序也是基于Arduino UNO开发板来讲解。</p>
+<h2 id="开发环境">开发环境</h2>
+<div class="figure">
+<img src="http://ebook.designiot.cn/images/arduino.png" alt="Arduino" />
+<p class="caption">Arduino</p>
+</div>
+<p>开发环境如上图，十分简洁，编写代码需要知道两个基本的函数：</p>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">void</span> setup(){
+
+}
+
+<span class="dt">void</span> loop(){
+
+}</code></pre></div>
+<p><code>setup()</code>函数用于初始化（如GPIO初始化，串口初始化，定时器初始化等）特点是只执行一次；<code>loop()</code>函数是一个死循环，可以看做C语言的<code>while(1)</code>函数。</p>
+<h2 id="点亮一个led">点亮一个LED</h2>
+<p>对初学者来说，点亮led已成为入门必修课，使用Arduino控制led十分简单，并且很容易理解。 使用到的函数：</p>
+<ul>
+<li>pinMode(pin,mode)</li>
+<li>digitalWrite(pin,value)</li>
+</ul>
+<p>上一段代码分析：</p>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">int</span> led=<span class="dv">13</span>; 
+
+<span class="dt">void</span> setup()
+{
+    pinMode(led,OUTPUT);
+}
+<span class="dt">void</span> loop()
+{
+    digitalWrite(led,HIGH);
+    delay(<span class="dv">1000</span>);
+    digitalWrite(led,LOW);
+    delay(<span class="dv">1000</span>);
+}</code></pre></div>
+<p>该程序实现Arduino单片机13号引脚以1S时间电平翻转，如果外接一个led，就可以看到led以1S的间隔闪烁；函数<code>pinMode()</code>有两个参数pin、value，pin参数用来指定引脚号,本程序中设置为13号引脚，mode用于设置引脚模式，有三个值：</p>
+<ul>
+<li><code>INPUT</code></li>
+<li><code>OUTPUT</code></li>
+<li><code>INPUT_PULLUP</code></li>
+</ul>
+<p>表示让某一个IO引脚作输入，反之，</p>
+<ul>
+<li><code>OUTPUT</code>则使一个IO引脚做输出</li>
+<li><code>INPUT_PULLUP</code>则配置一个IO引脚具有上拉输入功能(上拉电阻的目的是为了保证在无信号输入时输入端的电平为高电平)，从英文意思也能很直观的看出来。</li>
+</ul>
+<p>理解了<code>pinMode()</code>函数,<code>digitalWrite()</code>就很容易理解啦，value的取值有两个<code>HIGH</code>、<code>LOW</code>,<code>HIGH</code>表示让某一个引脚输出高电平，反之，<code>LOW</code>则使某一个引脚输出低电平。 程序中还是用到<code>delay(ms)</code>函数，它表示延时多少毫秒，例如延时500 ms ,直接调用<code>delay(500)；</code>就可以了。</p>
+<p>如果你仔细查看我的描述，你会发现我没有讲13号引脚怎么来的，是这样的：Arduino团队为了简化对引脚描述，对每个引脚都进行了编号，以UNO开发板为例，可以发现开发板排座的附近有对应的白颜色的数字，那便是所有的引脚编号，A0~A5是6路ADC输入引脚，0-13表示13路基本IO，数字前面的<code>~</code>表示该引脚具有PWM功能。如果要使用某一引脚，只需要知道引脚编号就可编写相应代码进行操作。</p>
+<p>例如<code>digitalWrite(2,LOW)</code>表示向2号引脚输出低电平。其他操作类似，是不是so easy <sup>-</sup> !</p>
+<h2 id="串口通信">串口通信</h2>
+<p>使用到的基本函数：</p>
+<ul>
+<li>Serial.begin()</li>
+<li>Serial.write()</li>
+<li>Serial.read()</li>
+<li>Serial.available()</li>
+</ul>
+<p>在此项目中需要使用串口，Arduino串口初始化使用<code>Serial.begin(9600);</code>,其传输波特率为9600，其他波特率也行，函数位于<code>setup()</code>中，之后可以使用<code>Serial.read()</code>、<code>Serial.write()</code>读入一个字符，输出一个字符，使用<code>Serial.print()</code>输出字符串.代码如下:</p>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">char</span> ch=<span class="st">&#39;1&#39;</span>;
+<span class="dt">void</span> setup()
+{
+    Serial.begin(<span class="dv">9600</span>);
+}
+<span class="dt">void</span> loop()
+{
+    Serial.write(ch);
+    <span class="kw">while</span>(<span class="dv">1</span>)
+    {
+        <span class="kw">if</span>(Serial.available())    
+        {
+            ch = Serial.read();
+            Serial.print(ch);
+        }
+    }
+}</code></pre></div>
+<p>以上程序实现字符的输出(Serial.write(),Serial.print())和读入(Serial.read())。如果需要了解更多，可以参考：<a href="www.arduino.cc">Arduino官网</a></p>
+<h3 id="关于arduino-setup">关于Arduino Setup()</h3>
+<p>如果你对Arduino的Setup很疑惑的话，可以看看这里。下面Arduino源码目录中的main函数:</p>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include &lt;Arduino.h&gt;</span>
+
+<span class="dt">int</span> main(<span class="dt">void</span>)
+{
+    init();
+    setup();        
+    <span class="kw">for</span> (;;) {
+        loop();
+        <span class="kw">if</span> (serialEventRun) serialEventRun();
+    }
+    <span class="kw">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+<div class="figure">
+<img src="./images/hwcnt.png" alt="hwcnt" />
+<p class="caption">hwcnt</p>
+</div>

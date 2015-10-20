@@ -1,0 +1,150 @@
+<h1 id="python-代码如散文">Python 代码如散文</h1>
+<div class="figure">
+<img src="./images/python.png" alt="python" />
+<p class="caption">python</p>
+</div>
+<p>作为一门计算机语言来说，Python会有下面的特点。</p>
+<ul>
+<li>语言学习起来容易</li>
+<li>解决生活中的实际问题</li>
+<li>支持多学科</li>
+</ul>
+<p>我们可以和其他不是脚本语言的语言进行一个简单的对比，如C，你需要去编译去运行，有时候还需要解决跨平台问题，本来你是在你的Windows上运行得好好的，但是有一天你换了一个Mac电脑的时候，问题变得很棘手，你甚至不知道怎么去解决问题。我没有用过MFC，听说很方便，但是在其他平台下就没有一个好的解决方案。这里可能跑得有点远，但是不同的用户可能在不同的平台上，这也就是脚本语言的优势所在了。</p>
+<h2 id="代码与散文">代码与散文</h2>
+<p>你可能听过，也可能了解过，不过在这里我们可能不会去讲述那些基础的语法的东西，我们想说的是代码格式的重要性，在html中你可以这样去写你的代码</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html&gt;&lt;head&gt;&lt;title&gt;</span>This is a Title
+<span class="kw">&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div</span><span class="ot"> class=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;p&gt;</span>flakjfaklfjalfa<span class="kw">&lt;/p&gt;&lt;/div&gt;</span>
+<span class="kw">&lt;/body&gt;&lt;/html&gt;</span></code></pre></div>
+<p>又或者是js的minify，它可能会使你的代码看起来像是这样的:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">NolTracker</span>(b<span class="op">,</span>a)<span class="op">{</span><span class="kw">this</span>.<span class="at">pvar</span><span class="op">=</span>b<span class="op">;</span><span class="kw">this</span>.<span class="at">mergeFeatures</span>(a)<span class="op">}</span></code></pre></div>
+<p>可能的是如果是python的话，你可能会遇到下面的问题。。</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">File</span> <span class="st">&quot;steps.py&quot;</span>, line 10
+   <span class="kw">try</span>:
+   ^
+<span class="kw">IndentationError</span>: expected an indented block</code></pre></div>
+<p>如果你对JSLint、Lint这类的工具有点印象的话，你也可以认为python集成了这类工具。整洁的代码至少应该看上去要有整洁的衣服，就好像是我们看到的一个人一样，而后我们才会有一个好的印象。更主要的一点是代码是写给人看的，而衣服更多的时候对于像我这样的人来说，他首先应该是要保暖的，其次对于一个懒的人来说。。。</p>
+<blockquote>
+程序应该是具有可读性的短文，它将在计算机上执行，从而解决某些问题
+</blockquote>
+<p>我们需要去读懂别人的代码，别人也需要去读懂我们的代码。计算机可以无条件地执行你那未经编排过的程序，但是人就不是如此了。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">    <span class="kw">var</span> calc<span class="op">={</span><span class="dt">add</span><span class="op">:</span> <span class="kw">function</span>(a<span class="op">,</span>b)<span class="op">{</span><span class="cf">return</span> a<span class="op">+</span>b<span class="op">;},</span><span class="dt">sub</span><span class="op">:</span> <span class="kw">function</span>(a<span class="op">,</span>b)<span class="op">{</span><span class="cf">return</span> a<span class="op">-</span>b<span class="op">;},</span><span class="dt">dif</span><span class="op">:</span> <span class="kw">function</span>(a<span class="op">,</span>b)<span class="op">{</span><span class="cf">if</span>(a<span class="op">&gt;</span>b)<span class="op">{</span><span class="cf">return</span> a<span class="op">;}</span><span class="cf">else</span><span class="op">{</span><span class="cf">return</span> b<span class="op">;}}}</span></code></pre></div>
+<p>上面的代码相对于下面的代码可读性没有那么多，但是计算机可以无条件地执行上面的代码。上面的代码对于网络传输来说是好的，但是对于人来说并不是如此，我们需要一些工具来辅助我们去读懂上面的代码。如果代码上写得没有一点可读性，诸如函数命名没有多少实际意义，如果我们把前面的函数就成这样：</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> c<span class="op">={</span>
+    <span class="dt">a</span><span class="op">:</span> <span class="kw">function</span>(a<span class="op">,</span>b)<span class="op">{</span>
+        <span class="cf">return</span> a<span class="op">+</span>b<span class="op">;</span>
+    <span class="op">},</span>
+    <span class="dt">s</span><span class="op">:</span> <span class="kw">function</span>(a<span class="op">,</span>b)<span class="op">{</span>
+        <span class="cf">return</span> a<span class="op">-</span>b<span class="op">;</span>
+    <span class="op">},</span>
+    <span class="dt">d</span><span class="op">:</span> <span class="kw">function</span>(a<span class="op">,</span>b)<span class="op">{</span>
+        <span class="cf">if</span>(a<span class="op">&gt;</span>b)<span class="op">{</span>
+            <span class="cf">return</span> a<span class="op">;</span>
+        <span class="op">}</span><span class="cf">else</span><span class="op">{</span>
+            <span class="cf">return</span> b<span class="op">;</span>
+        <span class="op">}</span>
+    <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<p>那么只有在我们理解了这个函数是干什么之后才能理解函数是干什么，而不是光看函数名就可以了。</p>
+<p>在Javascript解决一个函数的办法有很多，在其他一些语言如Ruby或者Perl中也是如此，解决问题的办法有很多，对于写代码的人来说是一个享受的过程，但是对于维护的人来说并非如此。而这个和Python的思想不是很一致的是，Python设计的理念是</p>
+<blockquote>
+对于特定的问题，只要有一种最好的方法来解决就够了
+</blockquote>
+<p>可读性的代码在今天显得比以前重要的多，以前写程序的时候我们需要去考虑使用汇编或者其他工具来提高程序的效率。</p>
+<pre><code>        .global _start
+
+        .text
+_start:
+        # write(1, message, 13)
+        mov     $1, %rax                # system call 1 is write
+        mov     $1, %rdi                # file handle 1 is stdout
+        mov     $message, %rsi          # address of string to output
+        mov     $13, %rdx               # number of bytes
+        syscall                         # invoke operating system to do the write
+
+        # exit(0)
+        mov     $60, %rax               # system call 60 is exit
+        xor     %rdi, %rdi              # we want return code 0
+        syscall                         # invoke operating system to exit
+message:
+        .ascii  &quot;Hello, world\n&quot;</code></pre>
+<p>所以上面的代码的可读性在今天新生一代的程序员来说可能没有那么容易理解。芯片运行的速度越来越快，在程序上我们也需要一个越来越快的解决方案，而所谓的越来越快的解决方案指的不是运行速度上，而是开发速度上。如果你没有办法在同样时间内开发出更好的程序，那么你就可能输给你的竞争对手。</p>
+<h3 id="开始之前">开始之前</h3>
+<p>我们终于又从一种语言跳到了另外一种语言，我们可能习惯了一种模式，而不敢于去尝试新的东西，这些或许是我们的一些习惯又或者是因为害怕等等。</p>
+<p>作为另外一个跨平台能力很强的语言，这里说的是与Javascript、HTML比较，或许你会觉得C算是最好的，但是我们这里讨论更多的是脚本语言，也就是直接可以运行的。在现在主流的大多数移动平台上，python也有良好的支持，如Android,IOS，只是这些算是类Unix系统内核，python还支持之前Nokia的Symbian。</p>
+<p>开始之前我们需要确认我们的平台上已经有了python环境，也就是可以运行下面的Hello,World，你可以在网上很多地方看到，最简单的地方还是到官网，又或者是所用移动平台的store下载。</p>
+<h3 id="python的helloworld">Python的Hello,World</h3>
+<p>Python的Hello,World有两种形式，作为一种脚本语言来说，Javascript也是一种脚本语言，只是两者之间有太多的不同之处，每个人都会有不同的选择对于一种语言用来作为其的习惯。于是这就是我们的</p>
+<pre><code>print &quot;Hello,World&quot;</code></pre>
+<p>当我们把我们的脚本在shell环境下运行时</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;&gt;&gt;</span>  <span class="kw">print</span> <span class="st">&quot;Hello,world&quot;</span>
+  <span class="kw">File</span> <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line 1
+    <span class="kw">print</span> <span class="st">&quot;Hello,world&quot;</span>
+    ^
+<span class="kw">IndentationError</span>: unexpected indent
+<span class="kw">&gt;&gt;&gt;</span> <span class="kw">print</span> <span class="st">&quot;Hello,world&quot;</span>
+<span class="kw">Hello</span>,world
+<span class="kw">&gt;&gt;&gt;</span></code></pre></div>
+<p>如果你没有预料到缩进带来的问题的时候，这就是一个问题了。</p>
+<p>和我们在Javascript或者是CSS里面一样，我们也可以用一个文件的方式来写入我们的代码，文件后缀名是py，所以创建一个helloworld.py，输入上面的代码，然后执行</p>
+<pre><code>python helloworld.py</code></pre>
+<p>一个理想的结果，或许你试过C语言的helloworld，如果了解过GCC的话应该是可以这样的:</p>
+<pre><code>./a.out</code></pre>
+<p>也就是执行编译完后的程序，需要注意的是helloworld.py没有编译，不过也会输出</p>
+<pre><code>Hello,world</code></pre>
+<h3 id="我们想要的helloworld">我们想要的Hello,World</h3>
+<p>我们想展示的是如何结合前面学习的内容做一个更有意思的Hello,World。</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> cherrypy
+<span class="kw">class</span> HelloWorld(<span class="bu">object</span>):
+    <span class="kw">def</span> index(<span class="va">self</span>):
+        <span class="cf">return</span> <span class="st">&quot;Hello World!&quot;</span>
+    index.exposed <span class="op">=</span> <span class="va">True</span>
+
+cherrypy.quickstart(HelloWorld())</code></pre></div>
+<h2 id="算法">算法</h2>
+<p>我们需要去了解算法(algorithm)，引经据典的话就是这样子:</p>
+<blockquote>
+a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer
+</blockquote>
+<p>也就是计算或其他解决问题的操作需要遵循的一个过程或者一套规则，书上还提到的说法是——解决问题的诀窍，让我想起了hack一词。我们总会去想某些东西是否有一个更快的计算方法，有时候在处理某些问题上也显示了一个好的算法的重要性。</p>
+<h2 id="实用主义哲学">实用主义哲学</h2>
+<p>(来自于:HyryStudio)</p>
+<p>大多数工程师、科学家使用科学计算软件的目的都是为了快速解决其工作中遇到的问题，而不是开发出一套完整的软件。这就是为什么MATLAB这样的商用科学计算软件十分流行的原因。而Python在这一点上实际上和MATLAB十分相似，我们也可以使用Python众多的扩展库快速写出一次性的数据处理、运算的脚本。然而由于Python语言的一些高级特性，以及众多的科学计算之外的扩展库，我们可以将积累下来的一次性脚本进行改造，为它们提供命令行、GUI、数据库、网络等众多接口，最终成为一套完整的工具包或者实用的计算软件。而且由于是开源的自由软件，我们可以在任何系统中安装Python环境，运行我们 的程序。</p>
+<p>Python一直保持着很强的实用主义，它通常不会去试着重新开发一整套函数库，而是将现有的开源函数库包装成其扩展库。而Python则通过这些扩展库将众多的开源函数库连接在一起，是名符其实的胶水语言。例如由华盛顿大学的教授主导开发的 Sage ，就是一套以代替MATLAB、Mathematica、Maple等商用科学计算软件为目的的开源系统。它通过Python结合了众多的开源科学计算软件，并通过网页浏览器提供了一个与其交互的记事本文档界面。 Python的科学计算扩展库非常多，不同专业的技术人员都可以找到适合自己的扩展库。下面是我经常会用到的一个非常不完全的列表：</p>
+<ul>
+<li>NumPy + SciPy + matplotlib + IPython : 这几个应该是每位开发者都应具备的扩展库。NumPy提供了多维数组以及众多的处理函数，SciPy提供了各种数值运算功能，matplotlib能绘制 出精美的二维图表，IPython则提供了一个超强的命令行，最新版的IPython还添加于Sage类似的浏览器的记事本界面(notebook)。</li>
+<li>SciKits : 其中包括许多独立的扩展库，作为SciPy的补充。其中 scikit-learn 是一套机器学习库，包含了比较完善的文档以及众多的实例程序。</li>
+<li>Pandas : 以Python世界中 R 的替代品为目标的数据分析库。根据其官方网站的测试，Pandas在许多方面的性能都比R要高。</li>
+<li>ETS : 这是一套Enthought公司开发的函数库，其中的 Mayavi 能很方便地对数据进行三维可视化。</li>
+<li>OpenCV : 这是一套计算机视觉库，目前的最新版本已经提供了十分完备的Python接口，能够调用OpenCV中众多的图像处理、模式识别函数直接对NumPy数组进行处理。</li>
+</ul>
+<h2 id="包管理">包管理</h2>
+<p>关于Python的包管理</p>
+<ul>
+<li>Eggs 格式是 setuptools 引入的一种文件格式，它使用 .egg 扩展名，用于 Python 模块的安装。</li>
+<li>pip 是目前 python 包管理的事实标准，2008年发布。它被用作 easy_install 的替代品，但是它仍有大量的功能建立在 setuptools 组件之上。</li>
+</ul>
+<h3 id="python-requests">python requests</h3>
+<pre><code>Requests 是使用 Apache2 Licensed 许可证的 HTTP 库。用 Python 编写，真正的为人类着想。
+
+Python 标准库中的 urllib2 模块提供了你所需要的大多数 HTTP 功能，但是它的 API太渣了。它是为另一个时代、另一个互联网所创建的。它需要巨量的工作，甚至包括各种方法覆盖，来完成最简单的任务。</code></pre>
+<p>以安装requests为例：</p>
+<p>命令:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> pip install requests</code></pre></div>
+<p>结果:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Downloading/unpacking</span> requests
+  <span class="kw">Downloading</span> requests-2.4.3-py2.py3-none-any.whl (459kB)<span class="kw">:</span> 459kB downloaded
+<span class="kw">Installing</span> collected packages: requests
+<span class="kw">Successfully</span> installed requests
+<span class="kw">Cleaning</span> up...</code></pre></div>
+<p>用这个库我们可以做些什么？看看官网的示例:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">&gt;&gt;&gt;</span> <span class="kw">import</span> requests
+<span class="kw">&gt;&gt;&gt;</span> <span class="kw">r</span> = requests.get(<span class="st">&#39;https://github.com/timeline.json&#39;</span>)
+<span class="kw">&gt;&gt;&gt;</span> <span class="kw">r.json</span>()</code></pre></div>
+<p>到现在你会发现我们没有说到任何的Python语法，这不是一本关于Python语法的书，如我们在开头所说的。下面是我们将会在后面用到的代码</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="im">import</span> requests
+
+url <span class="op">=</span> <span class="st">&quot;http://b.phodal.com/athome/1&quot;</span>
+r <span class="op">=</span> requests.get(url)
+<span class="bu">print</span> r.text</code></pre></div>

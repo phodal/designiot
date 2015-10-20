@@ -1,0 +1,517 @@
+<h1 id="restful的coap协议">RESTful的CoAP协议</h1>
+<h2 id="coap-嵌入式系统的rest">CoAP: 嵌入式系统的REST</h2>
+<p>引自维基百科上的介绍，用的是谷歌翻译。。。</p>
+<blockquote>
+<p>受约束的应用协议（COAP）是一种软件协议旨在以非常简单的电子设备，使他们能够在互联网上进行交互式通信中使用。它特别针对小型低功率传感器，开关，阀门和需要被控制或监督远程，通过标准的Internet网络类似的组件。 COAP是一个应用层协议，该协议是用于在资源受限的网络连接设备，例如无线传感器网络节点使用。 COAP被设计为容易地转换为HTTP与Web简化集成，同时也能满足特殊的要求，例如多播支持，非常低的开销，和简单性。多播，低开销，以及简单性是因特网极其重要物联网（IOT）和机器对机器（M2M）设备，这往往是积重难返，有太多的内存和电源，比传统的互联网设备有。因此，效率是非常重要的。 COAP可以在支持UDP或UDP的模拟大多数设备上运行。</p>
+</blockquote>
+<p>简单地来说，CoAP是简化了HTTP协议的RESTful API，因而也只提供了REST的四个方法，即PUT,GET,POST和DELETE。对于微小的资源受限，在资源受限的通信的IP的网络，HTTP不是一种可行的选择。它占用了太多的资源和太多的带宽。而对于物联网这种嵌入式设备来说，关于资源与带宽，是我们需要优先考虑的内容。</p>
+<ul>
+<li>CoAP采用了二进制报头，而不是文本报头(text header)</li>
+<li>CoAP降低了头的可用选项的数量。</li>
+<li>CoAP减少了一些HTTP的方法</li>
+<li>CoAP可以支持检测装置</li>
+</ul>
+<h2 id="coap-命令行工具">CoAP 命令行工具</h2>
+<p>为了测试测试我们的代码是否是正确工作，我们需要一个CoAP的命令行工具。目前有两个不错的工具可以使用。</p>
+<ul>
+<li>CoAP-cli，一个基于NodeJS的CoAP命令行工具，其核心是基于Node-CoAP库。</li>
+<li>libcooap，一个用C写的CoAP命令行工具。</li>
+<li>FireFox Copper， 一个Firefox的插件。</li>
+</ul>
+<h3 id="node-coap-cli">Node CoAP CLI</h3>
+<p>安装命令如下</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"> <span class="kw">npm</span> install coap-cli -g </code></pre></div>
+<h4 id="coap命令行">CoAP命令行</h4>
+<p>在coap-cli中，一共有四个方法。分别表示REST的四种不同的方式:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Commands</span>:
+
+<span class="kw">get</span>                    performs a GET request
+<span class="kw">put</span>                    performs a PUT request
+<span class="kw">post</span>                   performs a POST request
+<span class="kw">delete</span>                 performs a DELETE request</code></pre></div>
+<p>在这里，我们用<a href="coap://vs0.inf.ethz.ch/" class="uri">coap://vs0.inf.ethz.ch/</a>来作一个简单的测试</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span> get coap://vs0.inf.ethz.ch/
+<span class="kw">(2.05)</span>  <span class="kw">************************************************************</span>
+<span class="kw">I-D</span></code></pre></div>
+<p>测试一下现在的最小的物联网系统CoAP版</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span> get coap://iot-coap.phodal.com/id/1
+<span class="kw">(2.05)</span>  [{<span class="st">&quot;id&quot;</span>:<span class="kw">1</span>,<span class="st">&quot;value&quot;</span>:<span class="st">&quot;is id 1&quot;</span>,<span class="st">&quot;sensors1&quot;</span>:19,<span class="st">&quot;sensors2&quot;</span>:20}]</code></pre></div>
+<h3 id="libcoap">libcoap</h3>
+<h4 id="mac-os-libcoap安装">mac os libcoap安装</h4>
+<p>Mac OS下可以直接用</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">brew</span> install libcoap</code></pre></div>
+<h4 id="ubuntu-libcoap安装">Ubuntu libcoap安装</h4>
+<p>Ubuntu GNU/Linux下</p>
+<h4 id="windows-libcoap安装">Windows libcoap安装</h4>
+<p>Windows 下</p>
+<p>安装完libcoap，我们可以直接用自带的两个命令</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap-client</span> 
+<span class="kw">coap-server</span></code></pre></div>
+<p>1.用coap-server启一个CoAP服务</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap-server</span></code></pre></div>
+<p>2.客户端获取数据</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap-client</span> -m get coap://localhost</code></pre></div>
+<p>返回结果</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">v</span>:1 t:0 tkl:0 c:1 id:37109
+<span class="kw">This</span> is a test server made with libcoap (see http://libcoap.sf.net) 
+<span class="kw">Copyright</span> (C) <span class="kw">2010--2013</span> Olaf Bergmann <span class="kw">&lt;</span>bergmann@tzi.org<span class="kw">&gt;</span></code></pre></div>
+<h3 id="firefox-copper">Firefox Copper</h3>
+<p>为了能访问<a href="coap://localhost/" class="uri">coap://localhost/</a>，于是我们便需要安装一个Firefox并安装一个名为Copper的插件。</p>
+<ol style="list-style-type: decimal">
+<li><p>下载地址: <a href="https://addons.mozilla.org/en-US/firefox/addon/copper-270430/" class="uri">https://addons.mozilla.org/en-US/firefox/addon/copper-270430/</a></p></li>
+<li><p>作为测试我们同样可以访问 <a href="coap://vs0.inf.ethz.ch:5683/" class="uri">coap://vs0.inf.ethz.ch:5683/</a></p></li>
+</ol>
+<h2 id="coap-helloworld">CoAP Hello,World</h2>
+<p>接着我们便开始试试做一个简单的CoAP协议的应用:</p>
+<p>这里用到的是一个Nodejs的扩展Node-CoAP</p>
+<blockquote>
+<p>node-coap is a client and server library for CoAP modelled after the http module.</p>
+</blockquote>
+<p>Node-CoAP是一个客户端和服务端的库用于CoAP的模块建模。创建一个package.json文件，添加这个库</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">{</span>
+  <span class="st">&quot;dependencies&quot;</span><span class="op">:{</span>
+    <span class="st">&quot;coap&quot;</span><span class="op">:</span> <span class="st">&quot;0.7.2&quot;</span>
+  <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<p>接着执行</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">npm</span> install</code></pre></div>
+<p>就可以安装好这个库。如果遇到权限问题，请用</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">sudo</span> npm install</code></pre></div>
+<p>接着，创建这样一个app.js</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap        <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)
+    <span class="op">,</span> server  <span class="op">=</span> <span class="va">coap</span>.<span class="at">createServer</span>()
+
+<span class="va">server</span>.<span class="at">on</span>(<span class="st">&#39;request&#39;</span><span class="op">,</span> <span class="kw">function</span>(req<span class="op">,</span> res) <span class="op">{</span>
+  <span class="va">res</span>.<span class="at">end</span>(<span class="st">&#39;Hello &#39;</span> <span class="op">+</span> <span class="va">req</span>.<span class="va">url</span>.<span class="at">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">1</span>] <span class="op">+</span> <span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)
+<span class="op">}</span>)
+
+<span class="va">server</span>.<span class="at">listen</span>(<span class="kw">function</span>() <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;server started&#39;</span>)
+<span class="op">}</span>)  </code></pre></div>
+<p>执行</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">node</span> app.js</code></pre></div>
+<p>便可以在浏览器上访问了，因为现在什么也没有，所以什么也不会返回。</p>
+<p>接着下来再创建一个client端的js，并运行之</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap  <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>) 
+    <span class="op">,</span> req   <span class="op">=</span> <span class="va">coap</span>.<span class="at">request</span>(<span class="st">&#39;coap://localhost/World&#39;</span>)
+
+<span class="va">req</span>.<span class="at">on</span>(<span class="st">&#39;response&#39;</span><span class="op">,</span> <span class="kw">function</span>(res) <span class="op">{</span>
+  <span class="va">res</span>.<span class="at">pipe</span>(<span class="va">process</span>.<span class="at">stdout</span>)
+<span class="op">}</span>)
+
+<span class="va">req</span>.<span class="at">end</span>()</code></pre></div>
+<p>就可以在console上输出</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">Hello</span> World </code></pre></div>
+<p>也就达到了我们的目的，用CoAP协议创建一个服务，接着我们应该用它创建更多的东西，如产生JSON数据，以及RESTful。和HTTP版的最小物联网系统一样，CoAP版的最小物联网系统也是要返回JSON的。</p>
+<h2 id="coap-数据库查询">CoAP 数据库查询</h2>
+<h3 id="node-module">Node Module</h3>
+<p>这说里NodeJS Module的意义是因为我们需要在别的地方引用到db_helper这个库，也就是下一小节要的讲的内容。</p>
+<p>这样我们就可以在server.js类似于这样去引用这个js库。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> DBHelper <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;./db_helper.js&#39;</span>)<span class="op">;</span>
+<span class="va">DBHelper</span>.<span class="at">initDB</span>()<span class="op">;</span></code></pre></div>
+<p>而这样调用的前提是我们需要去声明这样的module，为了方便地导出函数功能调用。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">DBHelper</span>()<span class="op">{</span>
+<span class="op">}</span>
+<span class="va">DBHelper</span>.<span class="at">initDB</span> <span class="op">=</span> <span class="kw">function</span>()<span class="op">{};</span>
+<span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> DBHelper<span class="op">;</span></code></pre></div>
+<h3 id="node-sqlite3">Node-Sqlite3</h3>
+<p>这次我们用的是SQLite3(你可以用MySQL，出于安全考虑用SQLite3，SQLite3产生的是一个文件)。一个简单的initDB函数</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> db <span class="op">=</span> <span class="kw">new</span> <span class="va">sqlite3</span>.<span class="at">Database</span>(config[<span class="st">&quot;db_name&quot;</span>])<span class="op">;</span>
+<span class="kw">var</span> create_table <span class="op">=</span> <span class="st">&#39;create table if not exists basic (&#39;</span> <span class="op">+</span> config[<span class="st">&quot;db_table&quot;</span>] <span class="op">+</span> <span class="st">&#39;);&#39;</span><span class="op">;</span>
+
+<span class="va">db</span>.<span class="at">serialize</span>(<span class="kw">function</span>() <span class="op">{</span>
+    <span class="va">db</span>.<span class="at">run</span>(create_table)<span class="op">;</span>
+    <span class="va">_</span>.<span class="at">each</span>(config[<span class="st">&quot;init_table&quot;</span>]<span class="op">,</span> <span class="kw">function</span>(insert_data) <span class="op">{</span>
+        <span class="va">db</span>.<span class="at">run</span>(insert_data)<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span>
+<span class="va">db</span>.<span class="at">close</span>()<span class="op">;</span></code></pre></div>
+<p>首先从配置中读取db_name，接着创建table，然后调用underscore的each方法，创建几个数据。配置如下所示</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">config <span class="op">=</span> <span class="op">{</span>
+    <span class="st">&quot;db_name&quot;</span><span class="op">:</span> <span class="st">&quot;iot.db&quot;</span><span class="op">,</span>
+    <span class="st">&quot;db_table&quot;</span><span class="op">:</span> <span class="st">&quot;id integer primary key, value text, sensors1 float, sensors2 float&quot;</span><span class="op">,</span>
+    <span class="st">&quot;init_table&quot;</span><span class="op">:</span>[
+        <span class="st">&quot;insert or replace into basic (id,value,sensors1,sensors2) VALUES (1, &#39;is id 1&#39;, 19, 20);&quot;</span><span class="op">,</span>
+        <span class="st">&quot;insert or replace into basic (id,value,sensors1,sensors2) VALUES (2, &#39;is id 2&#39;, 20, 21);&quot;</span>
+    ]<span class="op">,</span>
+    <span class="st">&quot;query_table&quot;</span><span class="op">:</span><span class="st">&quot;select * from basic;&quot;</span>
+<span class="op">};</span></code></pre></div>
+<p>而之前所提到的url查询所做的事情便是</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">DBHelper</span>.<span class="at">urlQueryData</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="kw">var</span> db <span class="op">=</span> <span class="kw">new</span> <span class="va">sqlite3</span>.<span class="at">Database</span>(<span class="st">&quot;iot.db&quot;</span>)<span class="op">;</span>
+    <span class="kw">var</span> result <span class="op">=</span> []<span class="op">;</span>
+    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;SELECT * FROM basic where &quot;</span> <span class="op">+</span> <span class="va">url</span>.<span class="at">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">+</span> <span class="va">url</span>.<span class="at">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">2</span>])<span class="op">;</span>
+    <span class="va">db</span>.<span class="at">all</span>(<span class="st">&quot;SELECT * FROM basic where &quot;</span> <span class="op">+</span> <span class="va">url</span>.<span class="at">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">+</span> <span class="va">url</span>.<span class="at">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">2</span>]<span class="op">,</span> <span class="kw">function</span>(err<span class="op">,</span> rows) <span class="op">{</span>
+        <span class="va">db</span>.<span class="at">close</span>()<span class="op">;</span>
+        <span class="at">callback</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(rows))<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">};</span></code></pre></div>
+<p>将URL传进来，便解析这个参数，接着再放到数据库中查询，再回调回结果。这样我们就可以构成之前所说的查询功能，而我们所谓的post功能似乎也可以用同样的方法加进去。</p>
+<h3 id="查询数据">查询数据</h3>
+<p>简单地记录一下在IoT-CoAP中一次获取数据地过程。</p>
+<p>先看看在示例中的Get.js的代码，这关乎在后面server端的代码。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap       <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)
+     <span class="op">,</span>requestURI <span class="op">=</span> <span class="st">&#39;coap://localhost/&#39;</span>
+     <span class="op">,</span>url        <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;url&#39;</span>).<span class="at">parse</span>(requestURI <span class="op">+</span> <span class="st">&#39;id/1/&#39;</span>)
+     <span class="op">,</span>req        <span class="op">=</span> <span class="va">coap</span>.<span class="at">request</span>(url)
+     <span class="op">,</span>bl         <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;bl&#39;</span>)<span class="op">;</span>
+
+<span class="va">req</span>.<span class="at">setHeader</span>(<span class="st">&quot;Accept&quot;</span><span class="op">,</span> <span class="st">&quot;application/json&quot;</span>)<span class="op">;</span>
+<span class="va">req</span>.<span class="at">on</span>(<span class="st">&#39;response&#39;</span><span class="op">,</span> <span class="kw">function</span>(res) <span class="op">{</span>
+  <span class="va">res</span>.<span class="at">pipe</span>(<span class="at">bl</span>(<span class="kw">function</span>(err<span class="op">,</span> data) <span class="op">{</span>
+    <span class="kw">var</span> json <span class="op">=</span> <span class="va">JSON</span>.<span class="at">parse</span>(data)<span class="op">;</span>
+    <span class="va">console</span>.<span class="at">log</span>(json)<span class="op">;</span>
+  <span class="op">}</span>))<span class="op">;</span>
+
+<span class="op">}</span>)<span class="op">;</span>
+<span class="va">req</span>.<span class="at">end</span>()<span class="op">;</span></code></pre></div>
+<p>const定义数据的方法，和我们在其他语言中有点像。只是这的const主要是为了程序的健壮型,减少程序出错，当然这不是javascript的用法。</p>
+<p>我们构建了一个请求的URL</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span>://localhost/id/1/</code></pre></div>
+<p>我们对我们的请求添加了一个Header，内容是Accept，值是'application/json'也就是JSON格式。接着，便是等待请求回来，再处理返回的内容。</p>
+<p><strong>判断请求的方法</strong></p>
+<p>在这里先把一些无关的代码删除掉，并保证其能工作，so，下面就是简要的逻辑代码。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap            <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)<span class="op">;</span>
+<span class="kw">var</span> server          <span class="op">=</span> <span class="va">coap</span>.<span class="at">createServer</span>(<span class="op">{}</span>)<span class="op">;</span>
+<span class="kw">var</span> request_handler <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;./request_handler.js&#39;</span>)<span class="op">;</span>
+
+<span class="va">server</span>.<span class="at">on</span>(<span class="st">&#39;request&#39;</span><span class="op">,</span> <span class="kw">function</span>(req<span class="op">,</span> res) <span class="op">{</span>
+    <span class="cf">switch</span>(<span class="va">req</span>.<span class="at">method</span>)<span class="op">{</span>
+        <span class="cf">case</span> <span class="st">&quot;GET&quot;</span><span class="op">:</span> <span class="va">request_handler</span>.<span class="at">getHandler</span>(req<span class="op">,</span> res)<span class="op">;</span>
+            <span class="cf">break</span><span class="op">;</span>
+    <span class="op">}</span>
+<span class="op">}</span>)<span class="op">;</span>
+
+<span class="va">server</span>.<span class="at">listen</span>(<span class="kw">function</span>() <span class="op">{</span>
+    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;server started&#39;</span>)<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<p>创建一个CoAP服务，判断req.method，也就是请求的方法，如果是GET的话，就调用request_handler.getHandler(req, res)。而在getHandler里，判断了下请求的Accept</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">request_helper</span>.<span class="at">getHandler</span> <span class="op">=</span> <span class="kw">function</span>(req<span class="op">,</span> res) <span class="op">{</span>
+    <span class="cf">switch</span> (<span class="va">req</span>.<span class="at">headers</span>[<span class="st">&#39;Accept&#39;</span>]) <span class="op">{</span>
+        <span class="cf">case</span> <span class="st">&quot;application/json&quot;</span><span class="op">:</span>
+            <span class="va">qh</span>.<span class="at">returnJSON</span>(req<span class="op">,</span> res)<span class="op">;</span>
+            <span class="cf">break</span><span class="op">;</span>
+        <span class="cf">case</span> <span class="st">&quot;application/xml&quot;</span><span class="op">:</span>
+            <span class="va">qh</span>.<span class="at">returnXML</span>(req<span class="op">,</span> res)<span class="op">;</span>
+            <span class="cf">break</span><span class="op">;</span>
+    <span class="op">}</span>
+<span class="op">};</span></code></pre></div>
+<p>如果是json刚调用returnJSON,</p>
+<p><strong>Database与回调</strong></p>
+<p>而这里为了处理回调函数刚分为了两部分</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">query_helper</span>.<span class="at">returnJSON</span> <span class="op">=</span> <span class="kw">function</span>(req<span class="op">,</span> res) <span class="op">{</span>
+    <span class="va">DBHelper</span>.<span class="at">urlQueryData</span>(<span class="va">req</span>.<span class="at">url</span><span class="op">,</span> <span class="kw">function</span> (result) <span class="op">{</span>
+        <span class="va">QueryData</span>.<span class="at">returnJSON</span>(result<span class="op">,</span> res)<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">};</span></code></pre></div>
+<p>而这里只是调用了</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">DBHelper</span>.<span class="at">urlQueryData</span> <span class="op">=</span> <span class="kw">function</span> (url<span class="op">,</span> callback) <span class="op">{</span>
+    <span class="kw">var</span> db <span class="op">=</span> <span class="kw">new</span> <span class="va">sqlite3</span>.<span class="at">Database</span>(config[<span class="st">&quot;db_name&quot;</span>])<span class="op">;</span>
+    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;SELECT * FROM basic where &quot;</span> <span class="op">+</span> <span class="va">url</span>.<span class="at">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">+</span> <span class="va">url</span>.<span class="at">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">2</span>])<span class="op">;</span>
+    <span class="va">db</span>.<span class="at">all</span>(<span class="st">&quot;SELECT * FROM basic where &quot;</span> <span class="op">+</span> <span class="va">url</span>.<span class="at">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">1</span>] <span class="op">+</span> <span class="st">&quot;=&quot;</span> <span class="op">+</span> <span class="va">url</span>.<span class="at">split</span>(<span class="st">&#39;/&#39;</span>)[<span class="dv">2</span>]<span class="op">,</span> <span class="kw">function</span>(err<span class="op">,</span> rows) <span class="op">{</span>
+        <span class="va">db</span>.<span class="at">close</span>()<span class="op">;</span>
+        <span class="at">callback</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(rows))<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">};</span></code></pre></div>
+<p>这里调用了node sqlite3去查询对应id的数据，用回调处理了数据无法到外部的问题，而上面的returnJSON则只是返回最后的结果，code以及其他的内容。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">QueryData</span>.<span class="at">returnJSON</span> <span class="op">=</span> <span class="kw">function</span>(result<span class="op">,</span> res) <span class="op">{</span>
+    <span class="cf">if</span> (<span class="va">result</span>.<span class="at">length</span> <span class="op">==</span> <span class="dv">2</span>) <span class="op">{</span>
+        <span class="va">res</span>.<span class="at">code</span> <span class="op">=</span> <span class="st">&#39;4.04&#39;</span><span class="op">;</span>
+        <span class="va">res</span>.<span class="at">end</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(<span class="op">{</span>
+            <span class="dt">error</span><span class="op">:</span> <span class="st">&quot;Not Found&quot;</span>
+        <span class="op">}</span>))<span class="op">;</span>
+    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+        <span class="va">res</span>.<span class="at">code</span> <span class="op">=</span> <span class="st">&#39;2.05&#39;</span><span class="op">;</span>
+        <span class="va">res</span>.<span class="at">end</span>(result)<span class="op">;</span>
+    <span class="op">}</span>
+<span class="op">};</span></code></pre></div>
+<p>当resulst的结果为空时，返回一个404，因为没有数据。这样我们就构成了整个的链，再一步步返回结果。</p>
+<p>在<a href="https://github.com/phodal/iot-coap">IoT-CoAP</a>中我们使用到了一个Block2的东西，于是便整理相关的一些资料，作一个简单的介绍，以及在代码中的使用。</p>
+<h2 id="coap-block">CoAP Block</h2>
+<p>CoAP是一个RESTful传输协议用于受限设备的节点和网络。基本的CoAP消息是一个不错的选择对于小型载荷如</p>
+<ul>
+<li>温度传感器</li>
+<li>灯光开关</li>
+<li>楼宇自动化设备</li>
+</ul>
+<p>然而，有时我们的应用需要传输更大的有效载荷，如——更新固件。与HTTP，TCP做繁重工作将大型有效载荷分成多个数据包，并确保他们所有到达并以正确的顺序被处理。</p>
+<p>CoAP是同UDP与DLTS一样是基于数据报传输的，这限制了资源表示(resource representation)的最大大小，使得传输不需要太多的分割。虽然UDP支持通过IP分片传输更大的有效载荷，且仅限于64KiB，更重要的是，并没有真正很好地约束应用和网络。</p>
+<p>而不是依赖于IP分片，这种规范基本COAP了对“块”选项，用于传输信息从多个资源区块的请求 - 响应对。在许多重要的情况下，阻止使服务器能够真正无状态：服务器可以处理每块分开传输，而无需建立连接以前的数据块传输的其他服务器端内存。</p>
+<p>综上所述，块(Block)选项提供了传送一个最小的在分块的方式更大的陈述。</p>
+<h3 id="coap-post">CoAP POST</h3>
+<p>看看在IoT CoAP中的post示例。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">const</span> coap     <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)
+      <span class="op">,</span>request  <span class="op">=</span> <span class="va">coap</span>.<span class="at">request</span>
+      <span class="op">,</span>bl       <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;bl&#39;</span>)
+      <span class="op">,</span>req <span class="op">=</span> <span class="at">request</span>(<span class="op">{</span><span class="dt">hostname</span><span class="op">:</span> <span class="st">&#39;localhost&#39;</span><span class="op">,</span><span class="dt">port</span><span class="op">:</span><span class="dv">5683</span><span class="op">,</span><span class="dt">pathname</span><span class="op">:</span> <span class="st">&#39;&#39;</span><span class="op">,</span><span class="dt">method</span><span class="op">:</span> <span class="st">&#39;POST&#39;</span><span class="op">}</span>)<span class="op">;</span>
+
+<span class="va">req</span>.<span class="at">setOption</span>(<span class="st">&#39;Block2&#39;</span><span class="op">,</span>  [<span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&#39;1&#39;</span>)<span class="op">,</span><span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&quot;&#39;must&#39;&quot;</span>)<span class="op">,</span> <span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&#39;23&#39;</span>)<span class="op">,</span> <span class="kw">new</span> <span class="at">Buffer</span>(<span class="st">&#39;12&#39;</span>)])<span class="op">;</span>
+<span class="va">req</span>.<span class="at">setHeader</span>(<span class="st">&quot;Accept&quot;</span><span class="op">,</span> <span class="st">&quot;application/json&quot;</span>)<span class="op">;</span>
+<span class="va">req</span>.<span class="at">on</span>(<span class="st">&#39;response&#39;</span><span class="op">,</span> <span class="kw">function</span>(res) <span class="op">{</span>
+    <span class="va">res</span>.<span class="at">pipe</span>(<span class="at">bl</span>(<span class="kw">function</span>(err<span class="op">,</span> data) <span class="op">{</span>
+        <span class="va">console</span>.<span class="at">log</span>(data)<span class="op">;</span>
+        <span class="va">process</span>.<span class="at">exit</span>(<span class="dv">0</span>)<span class="op">;</span>
+    <span class="op">}</span>))<span class="op">;</span>
+
+<span class="op">}</span>)<span class="op">;</span>
+
+<span class="va">req</span>.<span class="at">end</span>()<span class="op">;</span></code></pre></div>
+<p>Block2中一共有四个数据，相应的数据结果应该是</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Block2&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="op">&lt;</span>Buffer <span class="dv">31</span><span class="op">&gt;</span> <span class="op">}</span>
+<span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Block2&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="op">&lt;</span>Buffer <span class="dv">27</span> 6d <span class="dv">75</span> <span class="dv">73</span> <span class="dv">74</span> <span class="dv">27</span><span class="op">&gt;</span> <span class="op">}</span>
+<span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Block2&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="op">&lt;</span>Buffer <span class="dv">32</span> <span class="dv">33</span><span class="op">&gt;</span> <span class="op">}</span>
+<span class="op">{</span> <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Block2&#39;</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="op">&lt;</span>Buffer <span class="dv">31</span> <span class="dv">32</span><span class="op">&gt;</span> <span class="op">}</span></code></pre></div>
+<p>这是没有解析的Block2，简单地可以用</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">_</span>.<span class="at">values</span>(e).<span class="at">toString</span>()</code></pre></div>
+<p>将结果转换为</p>
+<p>Block2,1 Block2,'must' Block2,23 Block2,12</p>
+<p>接着按&quot;,&quot;分开，</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">_</span>.<span class="at">values</span>(e).<span class="at">toString</span>().<span class="at">split</span>(<span class="st">&#39;,&#39;</span>)[<span class="dv">1</span>]</code></pre></div>
+<p>就有</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">[</span> <span class="st">&#39;1&#39;</span>, <span class="st">&#39;\&#39;</span>must<span class="dt">\&#39;</span><span class="st">&#39;, &#39;</span>23<span class="st">&#39;, &#39;</span>12<span class="st">&#39; ]</span></code></pre></div>
+<p>便可以很愉快地将其post到数据库中了，</p>
+<p>在做IoT-CoAP的过程中只支持JSON，查阅CoAP的草稿时发现支持了诸多的Content Types。</p>
+<h3 id="coap-content-types">CoAP Content Types</h3>
+<p>以下文字来自谷歌翻译:</p>
+<blockquote>
+<p>互联网媒体类型是通过HTTP字符串标识，如“application/xml”。该字符串是由一个顶层的类型“applicaion”和子类型的“XML”。为了尽量减少使用这些类型的媒体类型来表示的开销消息有效载荷，COAP定义一个标识符编码方案互联网媒体类型的子集。预计这桌将可扩展标识符的值的IANA维护。内容类型选项被格式化为一个8位无符号整数。初始映射到一个合适的互联网媒体类型标识符表所示。复合型高层次类型（multipart和不支持消息）。标识符值是从201-255保留的特定于供应商的，应用程序特定的或实验使用和不由IANA。</p>
+</blockquote>
+<p>下面是HTTP的标识符及类型</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Internet media type</th>
+<th align="left">Identifier</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">text/plain (UTF-8)</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">text/xml (UTF-8)</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">text/csv (UTF-8)</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="left">text/html (UTF-8)</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">image/gif</td>
+<td align="left">21</td>
+</tr>
+<tr class="even">
+<td align="left">image/jpeg</td>
+<td align="left">22</td>
+</tr>
+<tr class="odd">
+<td align="left">image/png</td>
+<td align="left">23</td>
+</tr>
+<tr class="even">
+<td align="left">image/tiff</td>
+<td align="left">24</td>
+</tr>
+<tr class="odd">
+<td align="left">audio/raw</td>
+<td align="left">25</td>
+</tr>
+<tr class="even">
+<td align="left">video/raw</td>
+<td align="left">26</td>
+</tr>
+<tr class="odd">
+<td align="left">application/link-format [I-D.ietf-core-link-format]</td>
+<td align="left">40</td>
+</tr>
+<tr class="even">
+<td align="left">application/xml</td>
+<td align="left">41</td>
+</tr>
+<tr class="odd">
+<td align="left">application/octet-stream</td>
+<td align="left">42</td>
+</tr>
+<tr class="even">
+<td align="left">application/rdf+xml</td>
+<td align="left">43</td>
+</tr>
+<tr class="odd">
+<td align="left">application/soap+xml</td>
+<td align="left">44</td>
+</tr>
+<tr class="even">
+<td align="left">application/atom+xml</td>
+<td align="left">45</td>
+</tr>
+<tr class="odd">
+<td align="left">application/xmpp+xml</td>
+<td align="left">46</td>
+</tr>
+<tr class="even">
+<td align="left">application/exi</td>
+<td align="left">47</td>
+</tr>
+<tr class="odd">
+<td align="left">application/x-bxml</td>
+<td align="left">48</td>
+</tr>
+<tr class="even">
+<td align="left">application/fastinfoset</td>
+<td align="left">49</td>
+</tr>
+<tr class="odd">
+<td align="left">application/soap+fastinfoset</td>
+<td align="left">50</td>
+</tr>
+<tr class="even">
+<td align="left">application/json</td>
+<td align="left">51</td>
+</tr>
+</tbody>
+</table>
+<p>而在CoAP中只有简单地几个</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Media type</th>
+<th align="left">Encoding</th>
+<th align="left">Id.</th>
+<th align="left">Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">text/plain;</td>
+<td align="left">-</td>
+<td align="left">0</td>
+<td align="left">[RFC2046][RFC3676][RFC5147]</td>
+</tr>
+<tr class="even">
+<td align="left">charset=utf-8</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">application/</td>
+<td align="left">-</td>
+<td align="left">40</td>
+<td align="left">[RFC6690]</td>
+</tr>
+<tr class="even">
+<td align="left">link-format</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">application/xml</td>
+<td align="left">-</td>
+<td align="left">41</td>
+<td align="left">[RFC3023]</td>
+</tr>
+<tr class="even">
+<td align="left">application/</td>
+<td align="left">-</td>
+<td align="left">42</td>
+<td align="left">[RFC2045][RFC2046]</td>
+</tr>
+<tr class="odd">
+<td align="left">octet-stream</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">application/exi</td>
+<td align="left">-</td>
+<td align="left">47</td>
+<td align="left">[EXIMIME]</td>
+</tr>
+<tr class="odd">
+<td align="left">application/json</td>
+<td align="left">-</td>
+<td align="left">50</td>
+<td align="left">[RFC4627]</td>
+</tr>
+</tbody>
+</table>
+<p>简单地说就是：</p>
+<p><code>诸如application/json的Content Types在CoAP中应该是50</code>。如上表所示的结果是其对应的结果，这样的话可以减少传递的信息量。</p>
+<h2 id="coap-json">CoAP JSON</h2>
+<p>于是在一开始的时候首先支持的便是&quot;application/json&quot;这样的类型。</p>
+<p>首先判断请求的header</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">request_helper</span>.<span class="at">getHandler</span> <span class="op">=</span> <span class="kw">function</span>(req<span class="op">,</span> res) <span class="op">{</span>
+    <span class="cf">switch</span> (<span class="va">req</span>.<span class="at">headers</span>[<span class="st">&#39;Accept&#39;</span>]) <span class="op">{</span>
+        <span class="cf">case</span> <span class="st">&quot;application/json&quot;</span><span class="op">:</span>
+            <span class="va">qh</span>.<span class="at">returnJSON</span>(req<span class="op">,</span> res)<span class="op">;</span>
+            <span class="cf">break</span><span class="op">;</span>
+        <span class="cf">case</span> <span class="st">&quot;application/xml&quot;</span><span class="op">:</span>
+            <span class="va">qh</span>.<span class="at">returnXML</span>(req<span class="op">,</span> res)<span class="op">;</span>
+            <span class="cf">break</span><span class="op">;</span>
+    <span class="op">}</span>
+<span class="op">};</span></code></pre></div>
+<p>再转至相应的函数处理，而判断的依据则是Accept是不是&quot;application/json&quot;。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="at">registerFormat</span>(<span class="st">&#39;text/plain&#39;</span><span class="op">,</span> <span class="dv">0</span>)
+<span class="at">registerFormat</span>(<span class="st">&#39;application/link-format&#39;</span><span class="op">,</span> <span class="dv">40</span>)
+<span class="at">registerFormat</span>(<span class="st">&#39;application/xml&#39;</span><span class="op">,</span> <span class="dv">41</span>)
+<span class="at">registerFormat</span>(<span class="st">&#39;application/octet-stream&#39;</span><span class="op">,</span> <span class="dv">42</span>)
+<span class="at">registerFormat</span>(<span class="st">&#39;application/exi&#39;</span><span class="op">,</span> <span class="dv">47</span>)
+<span class="at">registerFormat</span>(<span class="st">&#39;application/json&#39;</span><span class="op">,</span> <span class="dv">50</span>)</code></pre></div>
+<p>对应地我们需要在一发出请求的时候设置好Accept，要不就没有办法返回我们需要的结果。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">req</span>.<span class="at">setHeader</span>(<span class="st">&quot;Accept&quot;</span><span class="op">,</span> <span class="st">&quot;application/json&quot;</span>)<span class="op">;</span></code></pre></div>
+<p><strong>返回JSON</strong></p>
+<p>在给IoT CoAP添加了JSON支持之后，变得非常有意思，至少我们可以获得我们想要的结果。在上一篇中我们介绍了一些常用的工具——<a href="http://www.phodal.com/blog/coap-command-line-tools-set/">CoAP 命令行工具集</a>。</p>
+<p><strong>CoAP客户端代码</strong></p>
+<p>开始之前我们需要有一个客户端代码，以便我们的服务端可以返回正确的数据并解析</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> coap <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;coap&#39;</span>)<span class="op">;</span>
+<span class="kw">var</span> requestURI <span class="op">=</span> <span class="st">&#39;coap://localhost/&#39;</span><span class="op">;</span>
+<span class="kw">var</span> url <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;url&#39;</span>).<span class="at">parse</span>(requestURI <span class="op">+</span> <span class="st">&#39;id/1/&#39;</span>)<span class="op">;</span>
+<span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Request URL: &quot;</span> <span class="op">+</span> <span class="va">url</span>.<span class="at">href</span>)<span class="op">;</span>
+<span class="kw">var</span> req <span class="op">=</span> <span class="va">coap</span>.<span class="at">request</span>(url)<span class="op">;</span>
+<span class="kw">var</span> bl <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;bl&#39;</span>)<span class="op">;</span>
+
+<span class="va">req</span>.<span class="at">setHeader</span>(<span class="st">&quot;Accept&quot;</span><span class="op">,</span> <span class="st">&quot;application/json&quot;</span>)<span class="op">;</span>
+<span class="va">req</span>.<span class="at">on</span>(<span class="st">&#39;response&#39;</span><span class="op">,</span> <span class="kw">function</span>(res) <span class="op">{</span>
+  <span class="va">res</span>.<span class="at">pipe</span>(<span class="at">bl</span>(<span class="kw">function</span>(err<span class="op">,</span> data) <span class="op">{</span>
+    <span class="kw">var</span> json <span class="op">=</span> <span class="va">JSON</span>.<span class="at">parse</span>(data)<span class="op">;</span>
+    <span class="va">console</span>.<span class="at">log</span>(json)<span class="op">;</span>
+  <span class="op">}</span>))<span class="op">;</span>
+
+<span class="op">}</span>)<span class="op">;</span>
+
+<span class="va">req</span>.<span class="at">end</span>()<span class="op">;</span></code></pre></div>
+<p>代码有点长内容也有点多，但是核心是这句话：</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="va">req</span>.<span class="at">setHeader</span>(<span class="st">&quot;Accept&quot;</span><span class="op">,</span> <span class="st">&quot;application/json&quot;</span>)<span class="op">;</span></code></pre></div>
+<p>这样的话，我们只需要在我们的服务端一判断，</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span>(<span class="va">req</span>.<span class="at">headers</span>[<span class="st">&#39;Accept&#39;</span>] <span class="op">==</span> <span class="st">&#39;application/json&#39;</span>) <span class="op">{</span>
+     <span class="co">//do something</span>
+ <span class="op">};</span></code></pre></div>
+<p>这样就可以返回数据了</p>
+<p><strong>CoAP Server端代码</strong></p>
+<p>Server端的代码比较简单，判断一下</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="cf">if</span> (<span class="va">req</span>.<span class="at">headers</span>[<span class="st">&#39;Accept&#39;</span>] <span class="op">==</span> <span class="st">&#39;application/json&#39;</span>) <span class="op">{</span>
+        <span class="at">parse_url</span>(<span class="va">req</span>.<span class="at">url</span><span class="op">,</span> <span class="kw">function</span>(result)<span class="op">{</span>
+            <span class="va">res</span>.<span class="at">end</span>(result)<span class="op">;</span>
+        <span class="op">}</span>)<span class="op">;</span>
+        <span class="va">res</span>.<span class="at">code</span> <span class="op">=</span> <span class="st">&#39;2.05&#39;</span><span class="op">;</span>
+    <span class="op">}</span></code></pre></div>
+<p>请求的是否是JSON格式，再返回一个205，也就是Content，只是这时设计是请求一个URL返回对应的数据。如</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">coap</span>://localhost/id/1/</code></pre></div>
+<p>这时应该请求的是ID为1的数据，即</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">[ <span class="op">{</span> <span class="dt">id</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">&#39;is id 1&#39;</span><span class="op">,</span> <span class="dt">sensors1</span><span class="op">:</span> <span class="dv">19</span><span class="op">,</span> <span class="dt">sensors2</span><span class="op">:</span> <span class="dv">20</span> <span class="op">}</span>]</code></pre></div>
+<p>而parse_url只是从数据库从读取相应的数据。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">parse_url</span>(url <span class="op">,</span>callback) <span class="op">{</span>
+    <span class="kw">var</span> db <span class="op">=</span> <span class="kw">new</span> <span class="va">sqlite3</span>.<span class="at">Database</span>(config[<span class="st">&quot;db_name&quot;</span>])<span class="op">;</span>
+    <span class="kw">var</span> result <span class="op">=</span> []<span class="op">;</span>
+    <span class="va">db</span>.<span class="at">all</span>(<span class="st">&quot;SELECT * FROM basic;&quot;</span><span class="op">,</span> <span class="kw">function</span>(err<span class="op">,</span> rows) <span class="op">{</span>
+        <span class="at">callback</span>(<span class="va">JSON</span>.<span class="at">stringify</span>(rows))<span class="op">;</span>
+    <span class="op">}</span>)
+<span class="op">}</span></code></pre></div>
+<p>并且全部都显示出来，设计得真是有点不行，不过现在已经差不多了。</p>

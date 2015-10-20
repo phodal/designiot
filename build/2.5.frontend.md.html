@@ -1,0 +1,217 @@
+<h1 id="前端显示">前端显示</h1>
+<h2 id="库与车轮子">库与车轮子</h2>
+<p>在多数的情况下我们都没有理由也没有必要去重新发明我们的车轮，在这时使用库会是一个比较好的做法。</p>
+<h2 id="库">库</h2>
+<h3 id="jquery">jQuery</h3>
+<blockquote>
+<p>Jquery是继prototype之后又一个优秀的Javascript库。它是轻量级的js库 ，它兼容CSS3，还兼容各种浏览器（IE 6.0+, FF 1.5+, Safari 2.0+, Opera 9.0+），jQuery2.0及后续版本将不再支持IE6/7/8浏览器。jQuery使用户能更方便地处理HTML（标准通用标记语言下的一个应用）、events、实现动画效果，并且方便地为网站提供AJAX交互。jQuery还有一个比较大的优势是，它的文档说明很全，而且各种应用也说得很详细，同时还有许多成熟的插件可供选择。jQuery能够使用户的html页面保持代码和html内容分离，也就是说，不用再在html里面插入一堆js来调用命令了，只需要定义id即可。</p>
+</blockquote>
+<p>在我们的代码里用到了jQuery，然而这是一种简单而且快速有速地方法。</p>
+<h3 id="jquery-mobile">jQuery Mobile</h3>
+<blockquote>
+<p>jQuery Mobile是jQuery 在手机上和平板设备上的版本。jQuery Mobile不仅会给主流移动平台带来jQuery核心库，而且会发布一个完整统一的jQuery移动UI框架。支持全球主流的移动平台。jQuery Mobile开发团队说：能开发这个项目，我们非常兴奋。移动Web太需要一个跨浏览器的框架，让开发人员开发出真正的移动Web网站。</p>
+</blockquote>
+<p>整个展示页面由三部分组成，即<code>header</code>,<code>content</code>,<code>footer</code>。而我们主要需要关心的是content，也就是真下的内容。</p>
+<p>我们只需要结合<code>HighChart</code>来设计我们的content就可以了，下面是一个简单地<code>HighChart</code>示例:</p>
+<pre><code>&lt;div id=&quot;Tchart&quot; style=&quot;min-width:800px;width:100%;height:300px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>剩下的事就由<code>HighChart</code>来做。</p>
+<p>最后代码如下所示</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;body&gt;</span>
+    <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span>
+
+        <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="ot"> class=</span><span class="st">&quot;ui-bar ui-bar-b&quot;</span><span class="ot"> class=</span><span class="st">&quot;jqm-header&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;h1&gt;</span>基础控制<span class="kw">&lt;/h1&gt;</span>
+        <span class="kw">&lt;/div&gt;</span>
+
+        <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;collapsible&quot;</span><span class="ot"> data-collapsed=</span><span class="st">&quot;false&quot;</span><span class="kw">&gt;</span>
+            <span class="kw">&lt;h3&gt;</span>查看温度情况<span class="kw">&lt;/h3&gt;</span>
+        <span class="kw">&lt;div&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;Tchart&quot;</span><span class="ot"> style=</span><span class="st">&quot;min-width:800px;width:100%;height:300px&quot;</span><span class="kw">&gt;&lt;/div&gt;</span>
+        <span class="kw">&lt;/div&gt;</span>
+    <span class="kw">&lt;/div&gt;</span>
+    <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;footer&quot;</span><span class="ot"> class=</span><span class="st">&quot;ui-bar ui-bar-b&quot;</span><span class="ot"> data-position=</span><span class="st">&quot;fixed&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;h4&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.phodal.com&quot;</span><span class="kw">&gt;</span>Power by Phodal<span class="kw">&lt;/a&gt;&lt;/h4&gt;</span>
+    <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/body&gt;</span></code></pre></div>
+<p>可以看到上面的代码与一般的HTML不同的地方是<code>data-role</code>,<code>data-collapsed</code>,<code>data-position</code>，而这些是jQuery Mobile所拥有的data属性。</p>
+<p><strong>data-role参数表</strong>： rold | 详细 --------------|---- page | 页面容器，其内部的mobile元素将会继承这个容器上所设置的属性 header | 页面标题容器，这个容器内部可以包含文字、返回按钮、功能按钮等元素 footer | 页面页脚容器，这个容器内部也可以包含文字、返回按钮、功能按钮等元素 content | 页面内容容器，这是一个很宽容的容器，内部可以包含标准的html元素和jQueryMobile元素 controlgroup | 将几个元素设置成一组，一般是几个相同的元素类型 fieldcontain | 区域包裹容器，用增加边距和分割线的方式将容器内的元素和容器外的元素明显分隔 navbar |功能导航容器，通俗的讲就是工具条 listview |列表展示容器，类似手机中联系人列表的展示方式 list-divider | 列表展示容器的表头，用来展示一组列表的标题，内部不可包含链接 button | 按钮，将链接和普通按钮的样式设置成为jQueryMobile的风格 none | 阻止框架对元素进行渲染，使元素以html原生的状态显示，主要用于form元素。</p>
+<p>同上，我们也可以在网上找到其他相对就的属性。</p>
+<h2 id="网站前台显示">网站前台显示</h2>
+<h3 id="highcharts">Highcharts</h3>
+<p>Highcharts有以下的特点</p>
+<ul>
+<li>兼容性：兼容当今所有的浏览器，包括 iPhone、IE 和火狐等等；</li>
+<li>对个人用户完全免费；</li>
+<li>纯JS，无BS；</li>
+<li>支持大部分的图表类型：直线图，曲线图、区域图、区域曲线图、柱状图、饼装图、散布图；</li>
+<li>跨语言：不管是 PHP、Asp.net 还是 Java 都可以使用，它只需要三个文件：一个是Highcharts 的核心文件 highcharts.js，还有 a canvas emulator for IE 和 Jquery类库或者 MooTools 类库；</li>
+<li>提示功能：鼠标移动到图表的某一点上有提示信息；</li>
+<li>放大功能：选中图表部分放大，近距离观察图表；</li>
+<li>易用性：无需要特殊的开发技能，只需要设置一下选项就可以制作适合自己的图表；</li>
+<li>时间轴：可以精确到毫秒;</li>
+</ul>
+<p>在这里只需将需要处理的数据存储到数组中，便可以将其渲染成为图形，下面的温度走势图便是基于Highcharts的结果:</p>
+<div class="figure">
+<img src="./images/temperture.png" alt="Temperture" />
+<p class="caption">Temperture</p>
+</div>
+<p>先看看最后代码如下所示:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> dataLength <span class="op">=</span> []<span class="op">;</span>
+
+<span class="kw">function</span> <span class="at">drawTemp</span>() <span class="op">{</span>
+    <span class="kw">var</span> zero <span class="op">=</span> []<span class="op">;</span>
+    <span class="va">$</span>.<span class="at">getJSON</span>(<span class="st">&#39;/athome/&#39;</span><span class="op">,</span> <span class="kw">function</span>(json) <span class="op">{</span>
+        <span class="kw">var</span> items <span class="op">=</span> []<span class="op">;</span>
+        <span class="va">dataLength</span>.<span class="at">push</span>(<span class="va">json</span>.<span class="at">length</span>)<span class="op">;</span>
+        <span class="va">$</span>.<span class="at">each</span>(json<span class="op">,</span> <span class="kw">function</span>(key<span class="op">,</span> val) <span class="op">{</span>
+            <span class="va">zero</span>.<span class="at">push</span>(<span class="va">val</span>.<span class="at">temperature</span>)<span class="op">;</span>
+        <span class="op">}</span>)<span class="op">;</span>
+        chart <span class="op">=</span> <span class="kw">new</span> <span class="va">Highcharts</span>.<span class="at">Chart</span>(<span class="op">{</span>
+            <span class="dt">color</span><span class="op">:</span> <span class="op">{</span>
+                <span class="dt">linearGradient</span><span class="op">:</span> <span class="op">{</span>
+                    <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span>
+                    <span class="dt">x2</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span>
+                    <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span>
+                    <span class="dt">y1</span><span class="op">:</span> <span class="dv">1</span>
+                <span class="op">},</span>
+                <span class="dt">stops</span><span class="op">:</span> [
+                    [<span class="dv">0</span><span class="op">,</span> <span class="st">&#39;#003399&#39;</span>]<span class="op">,</span>
+                    [<span class="dv">1</span><span class="op">,</span> <span class="st">&#39;#3366AA&#39;</span>]
+                ]
+            <span class="op">},</span>
+            <span class="dt">chart</span><span class="op">:</span> <span class="op">{</span>
+                <span class="dt">renderTo</span><span class="op">:</span> <span class="st">&#39;Tchart&#39;</span><span class="op">,</span>
+                <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;spline&#39;</span>
+            <span class="op">},</span>
+            <span class="dt">title</span><span class="op">:</span> <span class="op">{</span>
+                <span class="dt">text</span><span class="op">:</span> <span class="st">&#39;本月温度情况&#39;</span>
+            <span class="op">},</span>
+            <span class="dt">subtitle</span><span class="op">:</span> <span class="op">{</span>
+                <span class="dt">text</span><span class="op">:</span> <span class="st">&#39;&#39;</span>
+            <span class="op">},</span>
+            <span class="dt">xAxis</span><span class="op">:</span> <span class="op">{</span>
+                <span class="dt">categories</span><span class="op">:</span> []<span class="op">,</span>
+                <span class="dt">title</span><span class="op">:</span> <span class="op">{</span>
+                    <span class="dt">text</span><span class="op">:</span> <span class="st">&#39;&#39;</span>
+                <span class="op">}</span>
+            <span class="op">},</span>
+            <span class="dt">yAxis</span><span class="op">:</span> <span class="op">{</span>
+                <span class="dt">title</span><span class="op">:</span> <span class="op">{</span>
+                    <span class="dt">text</span><span class="op">:</span> <span class="st">&#39;温度 (°C)&#39;</span>
+                <span class="op">}</span>
+            <span class="op">},</span>
+            <span class="dt">tooltip</span><span class="op">:</span> <span class="op">{</span>
+                <span class="dt">backgroundColor</span><span class="op">:</span> <span class="st">&#39;#FCFFC5&#39;</span><span class="op">,</span>
+                <span class="dt">borderColor</span><span class="op">:</span> <span class="st">&#39;black&#39;</span><span class="op">,</span>
+                <span class="dt">borderRadius</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span>
+                <span class="dt">borderWidth</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
+                <span class="dt">enabled</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span>
+                <span class="dt">formatter</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span>
+                    <span class="cf">return</span> <span class="st">&#39;&lt;b&gt;&#39;</span> <span class="op">+</span> <span class="kw">this</span>.<span class="va">series</span>.<span class="at">name</span> <span class="op">+</span> <span class="st">&#39;&lt;/b&gt;&lt;br/&gt;&#39;</span> <span class="op">+</span> <span class="kw">this</span>.<span class="at">x</span> <span class="op">+</span> <span class="st">&#39;: &#39;</span> <span class="op">+</span> <span class="kw">this</span>.<span class="at">y</span> <span class="op">+</span> <span class="st">&#39;°C&#39;</span><span class="op">;</span>
+                <span class="op">}</span>
+            <span class="op">},</span>
+            <span class="dt">legend</span><span class="op">:</span> <span class="op">{</span>
+                <span class="dt">layout</span><span class="op">:</span> <span class="st">&#39;vertical&#39;</span><span class="op">,</span>
+                <span class="dt">align</span><span class="op">:</span> <span class="st">&#39;right&#39;</span><span class="op">,</span>
+                <span class="dt">verticalAlign</span><span class="op">:</span> <span class="st">&#39;top&#39;</span><span class="op">,</span>
+                <span class="dt">x</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span><span class="op">,</span>
+                <span class="dt">y</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span>
+                <span class="dt">borderWidth</span><span class="op">:</span> <span class="dv">0</span>
+            <span class="op">},</span>
+            <span class="dt">plotOptions</span><span class="op">:</span> <span class="op">{</span>
+                <span class="dt">line</span><span class="op">:</span> <span class="op">{</span>
+                    <span class="dt">dataLabels</span><span class="op">:</span> <span class="op">{</span>
+                        <span class="dt">enabled</span><span class="op">:</span> <span class="kw">true</span>
+                    <span class="op">},</span>
+                    <span class="dt">enableMouseTracking</span><span class="op">:</span> <span class="kw">false</span>
+                <span class="op">}</span>
+            <span class="op">},</span>
+            <span class="dt">series</span><span class="op">:</span> [<span class="op">{</span>
+                <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;本月&#39;</span><span class="op">,</span>
+                <span class="dt">data</span><span class="op">:</span> zero
+            <span class="op">},</span> <span class="op">{</span>
+                <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;对比&#39;</span><span class="op">,</span>
+                <span class="dt">data</span><span class="op">:</span> [<span class="fl">26.0</span>]
+            <span class="op">}</span>]
+        <span class="op">}</span>)<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="kw">function</span> <span class="at">showTemper</span>() <span class="op">{</span>
+    <span class="kw">var</span> length <span class="op">=</span> dataLength[<span class="dv">0</span>]<span class="op">;</span>
+    <span class="va">$</span>.<span class="at">ajax</span>(<span class="op">{</span>
+        <span class="dt">url</span><span class="op">:</span> <span class="st">&#39;/athome/&#39;</span> <span class="op">+</span> length<span class="op">,</span>
+        <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span>
+        <span class="dt">dataType</span><span class="op">:</span> <span class="st">&#39;json&#39;</span><span class="op">,</span>
+        <span class="dt">async</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span>
+        <span class="dt">timeout</span><span class="op">:</span> <span class="dv">1000</span><span class="op">,</span>
+        <span class="dt">error</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{},</span>
+        <span class="dt">success</span><span class="op">:</span> <span class="kw">function</span>(sdata) <span class="op">{</span>
+            <span class="at">$</span>(<span class="st">&#39;.temperStatus&#39;</span>).<span class="at">empty</span>()<span class="op">;</span>
+            <span class="at">$</span>(<span class="st">&#39;.temperStatus&#39;</span>).<span class="at">append</span>(<span class="va">sdata</span>.<span class="at">temperature</span>)<span class="op">;</span>
+        <span class="op">}</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="at">$</span>(document).<span class="at">ready</span>(<span class="kw">function</span>() <span class="op">{</span>
+    <span class="at">setInterval</span>(<span class="st">&quot;drawTemp();&quot;</span><span class="op">,</span> <span class="dv">5000</span>)<span class="op">;</span>
+    <span class="at">setInterval</span>(<span class="st">&quot;showTemper();&quot;</span><span class="op">,</span> <span class="dv">800</span>)<span class="op">;</span>
+    <span class="at">drawTemp</span>()<span class="op">;</span>
+    <span class="at">showTemper</span>()<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<p>我们先把<code>HighChart</code>部分的代码删去，就变成下面的内容：</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> dataLength <span class="op">=</span> []<span class="op">;</span>
+
+<span class="kw">function</span> <span class="at">drawTemp</span>() <span class="op">{</span>
+    <span class="kw">var</span> zero <span class="op">=</span> []<span class="op">;</span>
+    <span class="va">$</span>.<span class="at">getJSON</span>(<span class="st">&#39;/athome/&#39;</span><span class="op">,</span> <span class="kw">function</span>(json) <span class="op">{</span>
+        <span class="kw">var</span> items <span class="op">=</span> []<span class="op">;</span>
+        <span class="va">dataLength</span>.<span class="at">push</span>(<span class="va">json</span>.<span class="at">length</span>)<span class="op">;</span>
+        <span class="va">$</span>.<span class="at">each</span>(json<span class="op">,</span> <span class="kw">function</span>(key<span class="op">,</span> val) <span class="op">{</span>
+            <span class="va">zero</span>.<span class="at">push</span>(<span class="va">val</span>.<span class="at">temperature</span>)<span class="op">;</span>
+        <span class="op">}</span>)<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="kw">function</span> <span class="at">showTemper</span>() <span class="op">{</span>
+    <span class="kw">var</span> length <span class="op">=</span> dataLength[<span class="dv">0</span>]<span class="op">;</span>
+    <span class="va">$</span>.<span class="at">ajax</span>(<span class="op">{</span>
+        <span class="dt">url</span><span class="op">:</span> <span class="st">&#39;/athome/&#39;</span> <span class="op">+</span> length<span class="op">,</span>
+        <span class="dt">type</span><span class="op">:</span> <span class="st">&#39;GET&#39;</span><span class="op">,</span>
+        <span class="dt">dataType</span><span class="op">:</span> <span class="st">&#39;json&#39;</span><span class="op">,</span>
+        <span class="dt">async</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span>
+        <span class="dt">timeout</span><span class="op">:</span> <span class="dv">1000</span><span class="op">,</span>
+        <span class="dt">error</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{},</span>
+        <span class="dt">success</span><span class="op">:</span> <span class="kw">function</span>(sdata) <span class="op">{</span>
+            <span class="at">$</span>(<span class="st">&#39;.temperStatus&#39;</span>).<span class="at">empty</span>()<span class="op">;</span>
+            <span class="at">$</span>(<span class="st">&#39;.temperStatus&#39;</span>).<span class="at">append</span>(<span class="va">sdata</span>.<span class="at">temperature</span>)<span class="op">;</span>
+        <span class="op">}</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">};</span>
+
+<span class="at">$</span>(document).<span class="at">ready</span>(<span class="kw">function</span>() <span class="op">{</span>
+    <span class="at">setInterval</span>(<span class="st">&quot;drawTemp();&quot;</span><span class="op">,</span> <span class="dv">5000</span>)<span class="op">;</span>
+    <span class="at">setInterval</span>(<span class="st">&quot;showTemper();&quot;</span><span class="op">,</span> <span class="dv">800</span>)<span class="op">;</span>
+    <span class="at">drawTemp</span>()<span class="op">;</span>
+    <span class="at">showTemper</span>()<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<p>代码看上去是由两部分组成的<code>drawTemperature</code>和<code>showTemperature</code></p>
+<h3 id="实时数据">实时数据</h3>
+<p>剥离后的Ajax部分代码如下所示，主要用的是jQuery框架的getJSON来实现的</p>
+<pre><code>var dataLength = [];
+function drawTemp() {
+    var zero = [];
+    $.getJSON(&#39;/athome/&#39;, function(json) {
+        var items = [];
+        dataLength.push(json.length);
+        $.each(json, function(key, val) {
+            zero.push(val.temperature);
+        });
+};</code></pre>
+<p>实际上，我们做的只是从/athome/下面获取数据，再将数据堆到数组里面，再把这部分放到图形中。等等，什么是Ajax?</p>
+<p>AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。 AJAX 不是新的编程语言，而是一种使用现有标准的新方法。 AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下。 JSON我们前面也已经了解过了，看看getJSON吧。</p>
+<p>jQuery. getJSON</p>
+<p>方法定义：jQuery.getJSON( url, data, callback )</p>
+<p>通过get请求得到json数据</p>
+<p>·url用于提供json数据的地址页 ·data(Optional)用于传送到服务器的键值对 ·callback(Optional)回调函数，json数据请求成功后的处理函数 我想你似乎应该懂得了一点，就是在不刷新网页的同时，用javascript获取数据放到图表上，就这么简单。</p>

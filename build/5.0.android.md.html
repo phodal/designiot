@@ -1,0 +1,169 @@
+<h1 id="android简单示例">Android简单示例</h1>
+<p>由于在某些嵌入式系统中使用的是Android系统，这里给出一个简单的Android App的示例，具体代码可以从clone自<a href="https://github.com/phodal/iot-android" class="uri">https://github.com/phodal/iot-android</a></p>
+<p>代码说明，经过测试的版本有</p>
+<ul>
+<li>Android 2.3</li>
+<li>Android 4.0.4</li>
+</ul>
+<p>机型有</p>
+<ul>
+<li>HTC G1 (android 2.3)</li>
+<li>Motor xt300 (android 2.3)</li>
+<li>Sony ST25I (android 4.0.4)</li>
+<li>MI2</li>
+</ul>
+<p>应该可以在大部分的手机上工作。</p>
+<h2 id="调用web-services-get">调用Web Services GET</h2>
+<p>这里我们参考一篇文章来调用Web Services——<a href="http://lukencode.com/2010/04/27/calling-web-services-in-android-using-httpclient/">Calling Web Services in Android using HttpClient</a></p>
+<h3 id="创建restclient">创建RESTClient</h3>
+<p>在这里我们首先会定义四个REST方法GET、POST、PUT、DELETE</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">Execute</span>(RequestMethod method) <span class="kw">throws</span> Exception {
+    <span class="kw">switch</span> (method) {
+    <span class="kw">case</span> GET: {
+        <span class="co">// add parameters</span>
+        String combinedParams = <span class="st">&quot;&quot;</span>;
+        <span class="kw">if</span> (!params.<span class="fu">isEmpty</span>()) {
+            combinedParams += <span class="st">&quot;?&quot;</span>;
+            <span class="kw">for</span> (NameValuePair p : params) {
+                String paramString = p.<span class="fu">getName</span>() + <span class="st">&quot;=&quot;</span>
+                        + URLEncoder.<span class="fu">encode</span>(p.<span class="fu">getValue</span>(), HTTP.<span class="fu">UTF_8</span>);
+                <span class="kw">if</span> (combinedParams.<span class="fu">length</span>() &gt; <span class="dv">1</span>) {
+                    combinedParams += <span class="st">&quot;&amp;&quot;</span> + paramString;
+                } <span class="kw">else</span> {
+                    combinedParams += paramString;
+                }
+            }
+        }
+
+        HttpGet request = <span class="kw">new</span> <span class="fu">HttpGet</span>(url + combinedParams);
+        request.<span class="fu">addHeader</span>(<span class="st">&quot;Accept-Encoding&quot;</span>, <span class="st">&quot;gzip&quot;</span>);
+
+        <span class="co">// add headers</span>
+        <span class="kw">for</span> (NameValuePair h : headers) {
+            request.<span class="fu">addHeader</span>(h.<span class="fu">getName</span>(), h.<span class="fu">getValue</span>());
+        }
+
+        <span class="fu">executeRequest</span>(request, url);
+        <span class="kw">break</span>;
+    }
+    <span class="kw">case</span> POST: {
+        HttpPost request = <span class="kw">new</span> <span class="fu">HttpPost</span>(url);
+        request.<span class="fu">addHeader</span>(<span class="st">&quot;Accept-Encoding&quot;</span>, <span class="st">&quot;gzip&quot;</span>);
+
+        <span class="co">// add headers</span>
+        <span class="kw">for</span> (NameValuePair h : headers) {
+            request.<span class="fu">addHeader</span>(h.<span class="fu">getName</span>(), h.<span class="fu">getValue</span>());
+        }
+        <span class="kw">if</span> (!data.<span class="fu">equals</span>(<span class="st">&quot;&quot;</span>)) {
+            request.<span class="fu">setEntity</span>(<span class="kw">new</span> <span class="fu">StringEntity</span>(data, HTTP.<span class="fu">UTF_8</span>));
+        }
+
+        <span class="kw">if</span> (!params.<span class="fu">isEmpty</span>()) {
+            request.<span class="fu">setEntity</span>(<span class="kw">new</span> <span class="fu">UrlEncodedFormEntity</span>(params, HTTP.<span class="fu">UTF_8</span>));
+        }
+
+        <span class="fu">executeRequest</span>(request, url);
+        <span class="kw">break</span>;
+    }
+    <span class="kw">case</span> PUT: {
+        HttpPut request = <span class="kw">new</span> <span class="fu">HttpPut</span>(url);
+        request.<span class="fu">addHeader</span>(<span class="st">&quot;Accept-Encoding&quot;</span>, <span class="st">&quot;gzip&quot;</span>);
+
+        <span class="co">// add headers</span>
+        <span class="kw">for</span> (NameValuePair h : headers) {
+            request.<span class="fu">addHeader</span>(h.<span class="fu">getName</span>(), h.<span class="fu">getValue</span>());
+        }
+        <span class="kw">if</span> (!data.<span class="fu">equals</span>(<span class="st">&quot;&quot;</span>)) {
+            request.<span class="fu">setEntity</span>(<span class="kw">new</span> <span class="fu">StringEntity</span>(data, HTTP.<span class="fu">UTF_8</span>));
+        }
+
+        <span class="kw">if</span> (!params.<span class="fu">isEmpty</span>()) {
+            request.<span class="fu">setEntity</span>(<span class="kw">new</span> <span class="fu">UrlEncodedFormEntity</span>(params, HTTP.<span class="fu">UTF_8</span>));
+        }
+
+        <span class="fu">executeRequest</span>(request, url);
+        <span class="kw">break</span>;
+    }
+    <span class="kw">case</span> DELETE: {
+        HttpDelete request = <span class="kw">new</span> <span class="fu">HttpDelete</span>(url);
+        request.<span class="fu">addHeader</span>(<span class="st">&quot;Accept-Encoding&quot;</span>, <span class="st">&quot;gzip&quot;</span>);
+
+        <span class="co">// add headers</span>
+        <span class="kw">for</span> (NameValuePair h : headers) {
+            request.<span class="fu">addHeader</span>(h.<span class="fu">getName</span>(), h.<span class="fu">getValue</span>());
+        }
+
+        <span class="fu">executeRequest</span>(request, url);
+        <span class="kw">break</span>;
+    }
+    }
+}</code></pre></div>
+<p>这四个方法最后都执行executeRequest来获取响应结果。</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">protected</span> <span class="dt">void</span> <span class="fu">executeRequest</span>(HttpUriRequest request, String url) {
+
+        HttpParams httpParameters = <span class="kw">new</span> <span class="fu">BasicHttpParams</span>();
+        HttpConnectionParams.<span class="fu">setConnectionTimeout</span>(httpParameters,
+                timeoutConnection);
+        HttpConnectionParams.<span class="fu">setSoTimeout</span>(httpParameters, timeoutSocket);
+        
+        HttpProtocolParams.<span class="fu">setUseExpectContinue</span>(httpParameters, <span class="kw">false</span>);
+        request.<span class="fu">setParams</span>(httpParameters);
+        
+        <span class="fu">setOauth</span>(request);
+        
+        DefaultHttpClient client = <span class="kw">new</span> <span class="fu">DefaultHttpClient</span>();
+
+        HttpResponse httpResponse;
+
+        <span class="kw">try</span> {
+            httpResponse = client.<span class="fu">execute</span>(request);
+            responseCode = httpResponse.<span class="fu">getStatusLine</span>().<span class="fu">getStatusCode</span>();
+            message = httpResponse.<span class="fu">getStatusLine</span>().<span class="fu">getReasonPhrase</span>();
+
+            HttpEntity entity = httpResponse.<span class="fu">getEntity</span>();
+
+            <span class="kw">if</span> (entity != <span class="kw">null</span>) {
+                InputStream instream = httpResponse.<span class="fu">getEntity</span>().<span class="fu">getContent</span>();
+                Header contentEncoding = httpResponse
+                        .<span class="fu">getFirstHeader</span>(<span class="st">&quot;Content-Encoding&quot;</span>);
+
+                <span class="kw">if</span> (contentEncoding != <span class="kw">null</span>
+                        &amp;&amp; contentEncoding.<span class="fu">getValue</span>().<span class="fu">equalsIgnoreCase</span>(<span class="st">&quot;gzip&quot;</span>)) {
+                    instream = <span class="kw">new</span> GZIPInputStream(instream);
+                }
+
+                <span class="co">// instream = entity.getContent();</span>
+                response = <span class="fu">convertStreamToString</span>(instream);
+
+                <span class="co">// Closing the input stream will trigger connection release</span>
+                instream.<span class="fu">close</span>();
+            }
+
+        } <span class="kw">catch</span> (ClientProtocolException e) {
+            client.<span class="fu">getConnectionManager</span>().<span class="fu">shutdown</span>();
+            e.<span class="fu">printStackTrace</span>();
+        } <span class="kw">catch</span> (IOException e) {
+            client.<span class="fu">getConnectionManager</span>().<span class="fu">shutdown</span>();
+            e.<span class="fu">printStackTrace</span>();
+        }
+    }</code></pre></div>
+<p>接着，我们便可以执行getResponse()函数来获取结果。</p>
+<h2 id="使用rest-client获取结果">使用REST Client获取结果</h2>
+<p>使用RESTClient时，便可以用下面的示例</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">RestClient client = <span class="kw">new</span> <span class="fu">RestClient</span>(tUrl);
+<span class="kw">try</span> {
+    client.<span class="fu">Execute</span>(RequestMethod.<span class="fu">GET</span>);
+    <span class="kw">if</span> (client.<span class="fu">getResponseCode</span>() != <span class="dv">200</span>) {
+        <span class="co">//do something</span>
+    }
+    <span class="co">//JSONArray jArray = new JSONArray(client.getResponse());</span>
+} <span class="kw">catch</span> (Exception e) {
+    <span class="co">//do something</span>
+}</code></pre></div>
+<p>而这时，我们只需要对相应的数据进行处理就可以了，如</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">JSONArray jArray = <span class="kw">new</span> <span class="fu">JSONArray</span>(client.<span class="fu">getResponse</span>());
+JSONObject jObj=jArray.<span class="fu">getJSONObject</span>(<span class="dv">0</span>);
+vshow.<span class="fu">setText</span>(jObj.<span class="fu">toString</span>());
+
+<span class="fu">outputJSON</span>(jObj);</code></pre></div>
+<p>将他转换为String，接着在Android端上显示最后的结果。</p>
