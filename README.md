@@ -1,7 +1,7 @@
 
-##《[一步步搭建物联网系统](http://designiot.phodal.com/)》
+##《[一步步搭建物联网系统](http://ebook.designiot.cn/)》
 
-**在线查看**:[一步步搭建物联网系统](http://designiot.phodal.com/)
+**在线查看**:[一步步搭建物联网系统](http://ebook.designiot.cn/)
 
 图灵-电子书版[一步步搭建物联网系统](http://www.ituring.com.cn/book/1580)
 
