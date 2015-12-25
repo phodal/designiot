@@ -10,6 +10,15 @@ Android App版:
        src="https://developer.android.com/images/brand/zh-cn_generic_rgb_wo_60.png" />
 </a>
 
+小米应用商店
+
+<a href="http://app.mi.com/detail/90117">
+  <img alt="Get it on Mi Play"
+       src="http://file.market.xiaomi.com/thumbnail/PNG/l114/AppStore/0292aa4706851493f29707ba35516ef2622ee8b57" />
+</a>
+
+
+
 ##作者名单 
 
 Github | Name
