@@ -7,7 +7,7 @@ Android App版:
 
 <a href="https://play.google.com/store/apps/details?id=com.phodal.designiot">
   <img alt="Get it on Google Play"
-       src="https://developer.android.com/images/brand/zh-cn_generic_rgb_wo_60.png" />
+       src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png" width="250" />
 </a>
 
 小米应用商店
