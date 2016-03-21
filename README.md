@@ -10,15 +10,6 @@ Android App版:
        src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png" width="250" />
 </a>
 
-小米应用商店
-
-<a href="http://app.mi.com/detail/90117">
-  <img alt="Get it on Mi Play"
-       src="http://file.market.xiaomi.com/thumbnail/PNG/l114/AppStore/0292aa4706851493f29707ba35516ef2622ee8b57" />
-</a>
-
-
-
 ##作者名单 
 
 Github | Name
@@ -28,7 +19,7 @@ Github | Name
 
 ## License
 
-© 2014 [Phodal Huang](http://www.phodal.com). 
+© 2014~20`6 [Phodal Huang](http://www.phodal.com). 
 
 本作品采用[知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc/4.0/)进行许可。
 
