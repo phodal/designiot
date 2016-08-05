@@ -69,6 +69,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 				</td>
 			</tr>
 		</table>
+		<h2>纸质版《自己动手设计物联网》现已出版</h2>
+
+<p><a href="./designiot.jpg" target="_blank"><img src="./designiot.jpg" alt="Designiot" style="max-width:100%;"></a></p>
+
+<p>立即购买：<a href="https://www.amazon.cn/dp/B01IBZWTWW/ref=wl_it_dp_o_pC_nS_ttl?_encoding=UTF8&amp;colid=BDXF90QZX6WX&amp;coliid=I19EB97K0GNLW8">亚马逊</a>、<a href="http://search.jd.com/Search?keyword=%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E8%AE%BE%E8%AE%A1%E7%89%A9%E8%81%94%E7%BD%91&amp;enc=utf-8&amp;wq=%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E8%AE%BE%E8%AE%A1%E7%89%A9%E8%81%94%E7%BD%91&amp;pvid=k24y6hri.l4xi28">京东</a></p>
+
+
 		<h1>一步步搭建物联网系统(教你设计物联网系统)</h1>
 		源自毕业论文:<a href="http://ebook.designiot.cn/iot.html" title="基于REST服务的最小物联网系统设计">基于REST服务的最小物联网系统设计</a>
 		<script>
@@ -339,22 +346,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <table>
 <thead>
 <tr class="header">
-<th align="left">当前状态</th>
-<th align="left">建议</th>
+<th>当前状态</th>
+<th>建议</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">软件初学者</td>
-<td align="left">从头阅读</td>
+<td>软件初学者</td>
+<td>从头阅读</td>
 </tr>
 <tr class="even">
-<td align="left">硬件开发者</td>
-<td align="left">从头阅读</td>
+<td>硬件开发者</td>
+<td>从头阅读</td>
 </tr>
 <tr class="odd">
-<td align="left">没有web经验的开发者</td>
-<td align="left">从第二部分开始</td>
+<td>没有web经验的开发者</td>
+<td>从第二部分开始</td>
 </tr>
 </tbody>
 </table>
@@ -847,7 +854,7 @@ num<span class="op">=</span><span class="dv">3</span><span class="op">;</span>
     <span class="dt">padding_left</span><span class="op">:</span>20px<span class="op">,</span>
 <span class="op">}</span>   </code></pre></div>
 <p>目测差距已经尽可能的小了，至于这些话题会在以后讨论到，如果要让我们的编译器更正确的工作，那么我们就需要非常多这样的符号，除非你乐意去理解:</p>
-<pre class="lisp"><code>(dotimes (i 4) (print i))</code></pre>
+<div class="sourceCode"><pre class="sourceCode lisp"><code class="sourceCode commonlisp">(<span class="kw">dotimes</span> (i <span class="dv">4</span>) (<span class="kw">print</span> i))</code></pre></div>
 <p>总的来说我们减少了符号的使用，但是用lisp便带入了更多的括号，不过这是一种简洁的表达方式，也许我们可以在其他语言中看到。</p>
 <pre class="regex"><code>\d{2}/[A-Z][a-z][a-z]/\d{4}</code></pre>
 <p>上面的代码，是为了从一堆数据中找出“某日/某月/某年”。如果一开始不理解那是正则表达式，就会觉得那个很复杂。</p>
@@ -1865,26 +1872,26 @@ Content<span class="op">-</span>Type<span class="op">:</span> application/json
 <table>
 <thead>
 <tr class="header">
-<th align="left">HTTP Method</th>
-<th align="left">Operation Performed</th>
+<th>HTTP Method</th>
+<th>Operation Performed</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">GET</td>
-<td align="left">Get a resource (Read a resource)</td>
+<td>GET</td>
+<td>Get a resource (Read a resource)</td>
 </tr>
 <tr class="even">
-<td align="left">POST</td>
-<td align="left">Create a resource</td>
+<td>POST</td>
+<td>Create a resource</td>
 </tr>
 <tr class="odd">
-<td align="left">PUT</td>
-<td align="left">Update a resource</td>
+<td>PUT</td>
+<td>Update a resource</td>
 </tr>
 <tr class="even">
-<td align="left">DELETE</td>
-<td align="left">Delete Resource</td>
+<td>DELETE</td>
+<td>Delete Resource</td>
 </tr>
 </tbody>
 </table>
@@ -2049,54 +2056,54 @@ Content<span class="op">-</span>Type<span class="op">:</span> application/json
 <table>
 <thead>
 <tr class="header">
-<th align="left">Verb</th>
-<th align="left">Path</th>
-<th align="left">Action</th>
-<th align="left">Route Name</th>
+<th>Verb</th>
+<th>Path</th>
+<th>Action</th>
+<th>Route Name</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">GET</td>
-<td align="left">/resource</td>
-<td align="left">index</td>
-<td align="left">resource.index</td>
+<td>GET</td>
+<td>/resource</td>
+<td>index</td>
+<td>resource.index</td>
 </tr>
 <tr class="even">
-<td align="left">GET</td>
-<td align="left">/resource/create</td>
-<td align="left">create</td>
-<td align="left">resource.create</td>
+<td>GET</td>
+<td>/resource/create</td>
+<td>create</td>
+<td>resource.create</td>
 </tr>
 <tr class="odd">
-<td align="left">POST</td>
-<td align="left">/resource</td>
-<td align="left">store</td>
-<td align="left">resource.store</td>
+<td>POST</td>
+<td>/resource</td>
+<td>store</td>
+<td>resource.store</td>
 </tr>
 <tr class="even">
-<td align="left">GET</td>
-<td align="left">/resource/{resource}</td>
-<td align="left">show</td>
-<td align="left">resource.show</td>
+<td>GET</td>
+<td>/resource/{resource}</td>
+<td>show</td>
+<td>resource.show</td>
 </tr>
 <tr class="odd">
-<td align="left">GET</td>
-<td align="left">/resource/{resource}/edit</td>
-<td align="left">edit</td>
-<td align="left">resource.edit</td>
+<td>GET</td>
+<td>/resource/{resource}/edit</td>
+<td>edit</td>
+<td>resource.edit</td>
 </tr>
 <tr class="even">
-<td align="left">PUT/PATCH</td>
-<td align="left">/resource/{resource}</td>
-<td align="left">update</td>
-<td align="left">resource.update</td>
+<td>PUT/PATCH</td>
+<td>/resource/{resource}</td>
+<td>update</td>
+<td>resource.update</td>
 </tr>
 <tr class="odd">
-<td align="left">DELETE</td>
-<td align="left">/resource/{resource}</td>
-<td align="left">destroy</td>
-<td align="left">resource.destroy</td>
+<td>DELETE</td>
+<td>/resource/{resource}</td>
+<td>destroy</td>
+<td>resource.destroy</td>
 </tr>
 </tbody>
 </table>
@@ -2834,98 +2841,98 @@ function drawTemp() {
 <table>
 <thead>
 <tr class="header">
-<th align="left">Internet media type</th>
-<th align="left">Identifier</th>
+<th>Internet media type</th>
+<th>Identifier</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">text/plain (UTF-8)</td>
-<td align="left">0</td>
+<td>text/plain (UTF-8)</td>
+<td>0</td>
 </tr>
 <tr class="even">
-<td align="left">text/xml (UTF-8)</td>
-<td align="left">1</td>
+<td>text/xml (UTF-8)</td>
+<td>1</td>
 </tr>
 <tr class="odd">
-<td align="left">text/csv (UTF-8)</td>
-<td align="left">2</td>
+<td>text/csv (UTF-8)</td>
+<td>2</td>
 </tr>
 <tr class="even">
-<td align="left">text/html (UTF-8)</td>
-<td align="left">3</td>
+<td>text/html (UTF-8)</td>
+<td>3</td>
 </tr>
 <tr class="odd">
-<td align="left">image/gif</td>
-<td align="left">21</td>
+<td>image/gif</td>
+<td>21</td>
 </tr>
 <tr class="even">
-<td align="left">image/jpeg</td>
-<td align="left">22</td>
+<td>image/jpeg</td>
+<td>22</td>
 </tr>
 <tr class="odd">
-<td align="left">image/png</td>
-<td align="left">23</td>
+<td>image/png</td>
+<td>23</td>
 </tr>
 <tr class="even">
-<td align="left">image/tiff</td>
-<td align="left">24</td>
+<td>image/tiff</td>
+<td>24</td>
 </tr>
 <tr class="odd">
-<td align="left">audio/raw</td>
-<td align="left">25</td>
+<td>audio/raw</td>
+<td>25</td>
 </tr>
 <tr class="even">
-<td align="left">video/raw</td>
-<td align="left">26</td>
+<td>video/raw</td>
+<td>26</td>
 </tr>
 <tr class="odd">
-<td align="left">application/link-format [I-D.ietf-core-link-format]</td>
-<td align="left">40</td>
+<td>application/link-format [I-D.ietf-core-link-format]</td>
+<td>40</td>
 </tr>
 <tr class="even">
-<td align="left">application/xml</td>
-<td align="left">41</td>
+<td>application/xml</td>
+<td>41</td>
 </tr>
 <tr class="odd">
-<td align="left">application/octet-stream</td>
-<td align="left">42</td>
+<td>application/octet-stream</td>
+<td>42</td>
 </tr>
 <tr class="even">
-<td align="left">application/rdf+xml</td>
-<td align="left">43</td>
+<td>application/rdf+xml</td>
+<td>43</td>
 </tr>
 <tr class="odd">
-<td align="left">application/soap+xml</td>
-<td align="left">44</td>
+<td>application/soap+xml</td>
+<td>44</td>
 </tr>
 <tr class="even">
-<td align="left">application/atom+xml</td>
-<td align="left">45</td>
+<td>application/atom+xml</td>
+<td>45</td>
 </tr>
 <tr class="odd">
-<td align="left">application/xmpp+xml</td>
-<td align="left">46</td>
+<td>application/xmpp+xml</td>
+<td>46</td>
 </tr>
 <tr class="even">
-<td align="left">application/exi</td>
-<td align="left">47</td>
+<td>application/exi</td>
+<td>47</td>
 </tr>
 <tr class="odd">
-<td align="left">application/x-bxml</td>
-<td align="left">48</td>
+<td>application/x-bxml</td>
+<td>48</td>
 </tr>
 <tr class="even">
-<td align="left">application/fastinfoset</td>
-<td align="left">49</td>
+<td>application/fastinfoset</td>
+<td>49</td>
 </tr>
 <tr class="odd">
-<td align="left">application/soap+fastinfoset</td>
-<td align="left">50</td>
+<td>application/soap+fastinfoset</td>
+<td>50</td>
 </tr>
 <tr class="even">
-<td align="left">application/json</td>
-<td align="left">51</td>
+<td>application/json</td>
+<td>51</td>
 </tr>
 </tbody>
 </table>
@@ -2933,66 +2940,66 @@ function drawTemp() {
 <table>
 <thead>
 <tr class="header">
-<th align="left">Media type</th>
-<th align="left">Encoding</th>
-<th align="left">Id.</th>
-<th align="left">Reference</th>
+<th>Media type</th>
+<th>Encoding</th>
+<th>Id.</th>
+<th>Reference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">text/plain;</td>
-<td align="left">-</td>
-<td align="left">0</td>
-<td align="left">[RFC2046][RFC3676][RFC5147]</td>
+<td>text/plain;</td>
+<td>-</td>
+<td>0</td>
+<td>[RFC2046][RFC3676][RFC5147]</td>
 </tr>
 <tr class="even">
-<td align="left">charset=utf-8</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td>charset=utf-8</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td align="left">application/</td>
-<td align="left">-</td>
-<td align="left">40</td>
-<td align="left">[RFC6690]</td>
+<td>application/</td>
+<td>-</td>
+<td>40</td>
+<td>[RFC6690]</td>
 </tr>
 <tr class="even">
-<td align="left">link-format</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td>link-format</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
-<td align="left">application/xml</td>
-<td align="left">-</td>
-<td align="left">41</td>
-<td align="left">[RFC3023]</td>
+<td>application/xml</td>
+<td>-</td>
+<td>41</td>
+<td>[RFC3023]</td>
 </tr>
 <tr class="even">
-<td align="left">application/</td>
-<td align="left">-</td>
-<td align="left">42</td>
-<td align="left">[RFC2045][RFC2046]</td>
+<td>application/</td>
+<td>-</td>
+<td>42</td>
+<td>[RFC2045][RFC2046]</td>
 </tr>
 <tr class="odd">
-<td align="left">octet-stream</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td>octet-stream</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td align="left">application/exi</td>
-<td align="left">-</td>
-<td align="left">47</td>
-<td align="left">[EXIMIME]</td>
+<td>application/exi</td>
+<td>-</td>
+<td>47</td>
+<td>[EXIMIME]</td>
 </tr>
 <tr class="odd">
-<td align="left">application/json</td>
-<td align="left">-</td>
-<td align="left">50</td>
-<td align="left">[RFC4627]</td>
+<td>application/json</td>
+<td>-</td>
+<td>50</td>
+<td>[RFC4627]</td>
 </tr>
 </tbody>
 </table>
