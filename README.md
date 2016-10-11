@@ -25,6 +25,8 @@ Github | Name
 
 ## License
 
+[![Phodal's Book](http://brand.phodal.com/shields/book-small.svg)](https://www.phodal.com/)
+
 © 2014~2016 [Phodal Huang](http://www.phodal.com). 
 
 本作品采用[知识共享署名-非商业性使用 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc/4.0/)进行许可。
