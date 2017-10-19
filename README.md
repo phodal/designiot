@@ -1,4 +1,4 @@
-《[一步步搭建物联网系统](http://ebook.designiot.cn/)》
+《[一步步搭建物联网系统](http://phodal.github.io/designiot/)》
 ===
 
 《自己动手设计物联网》现已出版：
