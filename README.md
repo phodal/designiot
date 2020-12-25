@@ -16,7 +16,7 @@ Android App版:
        src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png" width="250" />
 </a>
 
-##作者名单 
+## 作者名单 
 
 Github | Name
 |--------| ---------|
